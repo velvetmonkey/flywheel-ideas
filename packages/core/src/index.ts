@@ -56,3 +56,26 @@ export type {
 // Reader
 export { readNote } from './read/notes.js';
 export type { ReadNoteResult } from './read/notes.js';
+
+// IDs (M4 commit 3)
+export {
+  generateId,
+  generateIdeaId,
+  generateAssumptionId,
+  generateOutcomeId,
+  generateCouncilSessionId,
+  generateCouncilViewId,
+  generateTransitionId,
+  generateDispatchId,
+  ID_ALPHABET,
+} from './ids.js';
+
+// Lifecycle (M4 commit 3)
+export {
+  IDEA_STATES,
+  INITIAL_STATE,
+  isIdeaState,
+  recordTransition,
+  listTransitions,
+} from './lifecycle.js';
+export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
