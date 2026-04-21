@@ -136,7 +136,7 @@ npm install @velvetmonkey/flywheel-ideas
 
 ### v0.2 — depth on the loop + closing the feedback loop
 
-`idea.freeze` / `council.freeze` (OSF snapshot) · metric & guardrail fields on assumptions · RAND ABP shaping + hedging actions · **Assumption Radar** (semantic vault-wide signal detection) · daily-note outcome capture · signpost automation via flywheel-engine · agent-driven outcome detection · lifecycle enforcement · `decision_delta` view · digest · lineage queries · steelman council mode · Anti-Portfolio pass memos · Ollama / LM Studio local models
+`idea.freeze` / `council.freeze` (OSF snapshot) · metric & guardrail fields on assumptions · RAND ABP shaping + hedging actions · **Assumption Radar** (semantic vault-wide signal detection) · daily-note outcome capture · automated signpost surfacing · agent-driven outcome detection · lifecycle enforcement · `decision_delta` view · digest · lineage queries · steelman council mode · Anti-Portfolio pass memos · Ollama / LM Studio local models
 
 ### v0.3+ — operator calibration
 
@@ -163,7 +163,6 @@ Your vault becomes an empirical record of your predictions. Personal calibration
 
 - **[vault-core](https://github.com/velvetmonkey/vault-core)** — shared core library (authoritative vault-write orchestration)
 - **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — vault indexing MCP
-- **[flywheel-engine](https://github.com/velvetmonkey/flywheel-engine)** — autonomous daily-note agent
 - **flywheel-ideas** *(this repo)* — decision ledger
 
 ## License
