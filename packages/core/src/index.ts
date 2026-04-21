@@ -29,10 +29,14 @@ export { runMigrations, getCurrentVersion } from './migrations.js';
 export { resolveVaultPath, VaultPathError } from './vault-path.js';
 export type { VaultResolution } from './vault-path.js';
 
-// Writer interface (M4 commit 1)
+// Writer interface (M4 commits 1-2)
 export {
   writeNote,
   WriteNotePathError,
+  patchFrontmatter,
+  applyPatch,
+  serializeScalar,
+  PatchFrontmatterError,
   activeWritePath,
   validatePath,
   validatePathSecure,
@@ -40,7 +44,14 @@ export {
   isWithinDirectory,
   sanitizeNotePath,
 } from './write/index.js';
-export type { WriteNoteOptions, WriteNoteResult, WritePathTier } from './write/index.js';
+export type {
+  WriteNoteOptions,
+  WriteNoteResult,
+  WritePathTier,
+  FrontmatterPatch,
+  PatchFrontmatterResult,
+  ScalarValue,
+} from './write/index.js';
 
 // Reader
 export { readNote } from './read/notes.js';

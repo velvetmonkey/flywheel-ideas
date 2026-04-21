@@ -16,6 +16,18 @@
 export { writeNote, WriteNotePathError } from './direct-fs.js';
 export type { WriteNoteOptions, WriteNoteResult } from './direct-fs.js';
 
+export {
+  patchFrontmatter,
+  applyPatch,
+  serializeScalar,
+  PatchFrontmatterError,
+} from './patch-frontmatter.js';
+export type {
+  FrontmatterPatch,
+  PatchFrontmatterResult,
+  ScalarValue,
+} from './patch-frontmatter.js';
+
 export type WritePathTier = 'direct-fs' | 'mcp-subprocess' | 'vault-core';
 
 /** v0.1 ships direct-fs only. Feature-detection for B/C lands in a later milestone. */
