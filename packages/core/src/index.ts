@@ -24,3 +24,24 @@ export {
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
+
+// Vault path
+export { resolveVaultPath, VaultPathError } from './vault-path.js';
+export type { VaultResolution } from './vault-path.js';
+
+// Writer interface (M4 commit 1)
+export {
+  writeNote,
+  WriteNotePathError,
+  activeWritePath,
+  validatePath,
+  validatePathSecure,
+  isSensitivePath,
+  isWithinDirectory,
+  sanitizeNotePath,
+} from './write/index.js';
+export type { WriteNoteOptions, WriteNoteResult, WritePathTier } from './write/index.js';
+
+// Reader
+export { readNote } from './read/notes.js';
+export type { ReadNoteResult } from './read/notes.js';
