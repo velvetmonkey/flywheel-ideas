@@ -1,0 +1,68 @@
+{
+  "name": "@velvetmonkey/flywheel-ideas",
+  "version": "0.1.0-alpha.0",
+  "description": "The local-first falsifiable decision ledger — MCP server that turns an Obsidian vault into a compounding decision system with multi-model AI council dissent and outcome-driven refutation propagation.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "flywheel-ideas-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "npx esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --packages=external && chmod +x dist/index.js",
+    "dev": "npx esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --packages=external --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:unit": "vitest run test/unit/",
+    "test:integration": "vitest run test/integration/",
+    "test:e2e": "vitest run test/e2e/",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velvetmonkey/flywheel-ideas.git"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "obsidian",
+    "decision-ledger",
+    "falsifiable",
+    "assumptions",
+    "multi-model",
+    "council",
+    "local-first",
+    "markdown",
+    "vault",
+    "claude-code"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "@velvetmonkey/flywheel-ideas-core": "*",
+    "better-sqlite3": "^12.0.0",
+    "gray-matter": "^4.0.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/node": "^20.10.0",
+    "@vitest/coverage-v8": "^4.1.1",
+    "esbuild": "^0.27.4",
+    "fast-check": "^3.15.0",
+    "mcp-testing-kit": "^0.2.0",
+    "typescript": "^5.3.3",
+    "vitest": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

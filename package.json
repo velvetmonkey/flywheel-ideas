@@ -1,0 +1,29 @@
+{
+  "name": "flywheel-ideas-monorepo",
+  "version": "0.0.0-private",
+  "private": true,
+  "description": "The local-first falsifiable decision ledger. Lifecycle tracking + multi-model AI council + outcome-driven refutation propagation, inside your Obsidian vault.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present",
+    "dev": "npm run dev -w @velvetmonkey/flywheel-ideas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velvetmonkey/flywheel-ideas.git"
+  },
+  "author": "velvetmonkey",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
