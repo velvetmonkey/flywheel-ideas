@@ -88,6 +88,39 @@ export {
 } from './lifecycle.js';
 export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
 
+// Approval (M6)
+export {
+  approvalsFilePath,
+  approvalStatusForResponse,
+  grantApprovalFile,
+  readPersistedApproval,
+  resolveApproval,
+  revokeApprovalFile,
+} from './approval.js';
+export type {
+  ApprovalFeature,
+  ApprovalScope,
+  ApprovalState,
+  ApprovalStatusPayload,
+  EnvApprovalValue,
+  PersistedApproval,
+} from './approval.js';
+
+// Dispatches (M6)
+export {
+  forgetDispatch,
+  getDispatch,
+  listDispatches,
+  logDispatchFinish,
+  logDispatchStart,
+} from './dispatches.js';
+export type {
+  DispatchRow,
+  ListDispatchesOptions,
+  LogDispatchStartInput,
+  LogDispatchStartResult,
+} from './dispatches.js';
+
 // Assumptions (M5)
 export {
   declareAssumption,
