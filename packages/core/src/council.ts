@@ -229,32 +229,36 @@ interface RunCellResult {
   stance: CouncilStance | null;
 }
 
-async function runCouncilCell(
+interface PassOutcome {
+  parsed: CouncilStance | null;
+  failure_reason: FailureReason | null;
+  stderrForLog: string;
+  stdout_tail: string;
+  input_hash: string;
+  argv: string[];
+}
+
+async function executePass(
   db: IdeasDatabase,
-  vault_path: string,
   input: RunCellInput,
-): Promise<RunCellResult> {
+  passNum: 1 | 2,
+  pass1_stance: string | undefined,
+): Promise<PassOutcome> {
   const prompt = assemblePrompt({
     persona: input.persona,
     mode: input.mode,
     idea_title: input.idea.title,
     idea_body: input.idea.body,
     assumptions: input.assumptions,
+    pass: passNum,
+    pass1_stance,
   });
   const input_hash = `sha256:${createHash('sha256').update(prompt.digest_material).digest('hex')}`;
 
   const model = resolveModel(input.options);
   const argv = buildClaudeArgv(model, prompt.system);
-
   const timeout_ms = resolveTimeout(input.options);
-  const content_vault_path = buildViewNotePath(
-    input.idea.id,
-    input.session_index,
-    input.cli,
-    input.persona.id,
-  );
 
-  // Dispatch audit row (start)
   const dispatch = logDispatchStart(db, {
     session_id: input.session_id,
     cli: input.cli,
@@ -275,10 +279,7 @@ async function runCouncilCell(
     logDispatchFinish(db, dispatch.id);
   }
 
-  // Classify outcome
   let failure_reason: FailureReason | null = null;
-  let stance_text: string | null = null;
-  let confidence: number | null = null;
   let parsed: CouncilStance | null = null;
   let stderrForLog = spawnResult.stderr_tail;
 
@@ -299,19 +300,174 @@ async function runCouncilCell(
     const parseResult = parseClaudeStanceOutput(spawnResult.stdout);
     if (parseResult.ok) {
       parsed = parseResult.stance;
-      stance_text = parsed.stance;
-      confidence = parsed.confidence;
+      if (passNum === 2 && !parsed.self_critique) {
+        // Model disobedience: Pass 2 response lacks self_critique. Not a
+        // parse failure (schema allows it) — but surface as stderr diagnostic
+        // so the audit trail shows the gap.
+        stderrForLog = stderrForLog.length
+          ? `${stderrForLog}\n[pass2] missing self_critique field (model disobeyed directive)`
+          : '[pass2] missing self_critique field (model disobeyed directive)';
+      }
     } else {
       failure_reason = 'parse';
-      // Save parse diagnostic into stderr_tail for audit visibility
       stderrForLog = stderrForLog.length
         ? `${stderrForLog}\n[parse] ${parseResult.detail}`
         : `[parse] ${parseResult.detail}`;
     }
   }
 
-  // Write per-view markdown note
-  const noteFrontmatter = {
+  return {
+    parsed,
+    failure_reason,
+    stderrForLog,
+    stdout_tail: spawnResult.stdout_tail,
+    input_hash,
+    argv,
+  };
+}
+
+async function runCouncilCell(
+  db: IdeasDatabase,
+  vault_path: string,
+  input: RunCellInput,
+): Promise<RunCellResult> {
+  const content_vault_path = buildViewNotePath(
+    input.idea.id,
+    input.session_index,
+    input.cli,
+    input.persona.id,
+  );
+
+  // Pass 1 — initial stance (no Pass 1 output to inject)
+  const pass1 = await executePass(db, input, 1, undefined);
+
+  // If Pass 1 failed at spawn or parse level, persist a failed view row and
+  // skip Pass 2 (no point in a critique pass with no stance to critique).
+  if (pass1.failure_reason || !pass1.parsed) {
+    const noteFrontmatter = baseNoteFrontmatter(input, pass1.input_hash, null, pass1.failure_reason);
+    const noteBody = buildViewNoteBody({
+      pass1: null,
+      pass2: null,
+      failure_reason: pass1.failure_reason,
+      stderrForLog: pass1.stderrForLog,
+      stdout_tail: pass1.stdout_tail,
+    });
+    await writeNote(vault_path, content_vault_path, noteFrontmatter, noteBody, { overwrite: true });
+
+    const view = persistCouncilView(db, {
+      session_id: input.session_id,
+      model: input.cli,
+      persona: input.persona.id,
+      prompt_version: PROMPT_VERSION,
+      persona_version: PERSONA_VERSION,
+      model_version: null,
+      input_hash: pass1.input_hash,
+      initial_stance: null,
+      stance: null,
+      self_critique: null,
+      confidence: null,
+      content_vault_path,
+      failure_reason: pass1.failure_reason,
+      stderr_tail: pass1.stderrForLog || null,
+    });
+    return {
+      summary: {
+        id: view.id,
+        session_id: input.session_id,
+        model: input.cli,
+        persona: input.persona.id,
+        confidence: null,
+        failure_reason: pass1.failure_reason,
+        content_vault_path,
+      },
+      stance: null,
+    };
+  }
+
+  // Pass 1 succeeded — proceed to Pass 2 with Pass 1 stance injected.
+  const pass2 = await executePass(db, input, 2, pass1.parsed.stance);
+
+  // Final view row combines both passes:
+  // - initial_stance = Pass 1 stance (always populated now we reached here)
+  // - stance + self_critique = Pass 2 values if Pass 2 succeeded, else null
+  // - confidence = Pass 2 confidence (authoritative revision) if present, else Pass 1
+  // - failure_reason = Pass 2's failure if it had one; null on full success
+  const combinedStance = pass2.parsed?.stance ?? null;
+  const combinedSelfCritique = pass2.parsed?.self_critique ?? null;
+  const combinedConfidence = pass2.parsed?.confidence ?? pass1.parsed.confidence;
+  const combinedFailureReason = pass2.failure_reason;
+  // Concatenate stderr from both passes for audit visibility on Pass 2 failures
+  const combinedStderr =
+    pass2.stderrForLog && pass2.stderrForLog !== pass1.stderrForLog
+      ? pass1.stderrForLog
+        ? `[pass1]\n${pass1.stderrForLog}\n[pass2]\n${pass2.stderrForLog}`
+        : pass2.stderrForLog
+      : pass1.stderrForLog;
+
+  const noteFrontmatter = baseNoteFrontmatter(
+    input,
+    pass2.input_hash,
+    combinedConfidence,
+    combinedFailureReason,
+  );
+  const noteBody = buildViewNoteBody({
+    pass1: pass1.parsed,
+    pass2: pass2.parsed,
+    failure_reason: combinedFailureReason,
+    stderrForLog: combinedStderr,
+    stdout_tail: pass2.stdout_tail,
+  });
+  await writeNote(vault_path, content_vault_path, noteFrontmatter, noteBody, { overwrite: true });
+
+  const view = persistCouncilView(db, {
+    session_id: input.session_id,
+    model: input.cli,
+    persona: input.persona.id,
+    prompt_version: PROMPT_VERSION,
+    persona_version: PERSONA_VERSION,
+    model_version: null,
+    // input_hash records Pass 2 (the authoritative pass for the final stance).
+    // Pass 1's hash lives in the ideas_dispatches row's argv for audit.
+    input_hash: pass2.input_hash,
+    initial_stance: pass1.parsed.stance,
+    stance: combinedStance,
+    self_critique: combinedSelfCritique,
+    confidence: combinedConfidence,
+    content_vault_path,
+    failure_reason: combinedFailureReason,
+    stderr_tail: combinedStderr || null,
+  });
+
+  // Citations come from Pass 2 (the revised authoritative view).
+  // If Pass 2 failed, fall back to Pass 1's citations so the edges aren't lost.
+  const citations = pass2.parsed?.assumptions_cited ?? pass1.parsed.assumptions_cited;
+  if (citations.length > 0) {
+    insertAssumptionCitations(db, view.id, citations);
+  }
+
+  return {
+    summary: {
+      id: view.id,
+      session_id: input.session_id,
+      model: input.cli,
+      persona: input.persona.id,
+      confidence: combinedConfidence,
+      failure_reason: combinedFailureReason,
+      content_vault_path,
+    },
+    // Return the Pass 2 stance (or fall back to Pass 1 if Pass 2 failed) so
+    // the synthesis can render the authoritative revision.
+    stance: pass2.parsed ?? pass1.parsed,
+  };
+}
+
+function baseNoteFrontmatter(
+  input: RunCellInput,
+  input_hash: string,
+  confidence: number | null,
+  failure_reason: FailureReason | null,
+): Record<string, unknown> {
+  return {
     type: 'council_view',
     session_id: input.session_id,
     idea_id: input.idea.id,
@@ -324,45 +480,6 @@ async function runCouncilCell(
     input_hash,
     failure_reason: failure_reason ?? null,
     confidence,
-  };
-  const noteBody = buildViewNoteBody({ stance: parsed, failure_reason, stderrForLog, stdout_tail: spawnResult.stdout_tail });
-  await writeNote(vault_path, content_vault_path, noteFrontmatter, noteBody, {
-    overwrite: true,
-  });
-
-  // Persist view row
-  const view = persistCouncilView(db, {
-    session_id: input.session_id,
-    model: input.cli,
-    persona: input.persona.id,
-    prompt_version: PROMPT_VERSION,
-    persona_version: PERSONA_VERSION,
-    model_version: null,
-    input_hash,
-    initial_stance: null, // two-pass → M9
-    stance: stance_text,
-    self_critique: null,
-    confidence,
-    content_vault_path,
-    failure_reason,
-    stderr_tail: stderrForLog || null,
-  });
-
-  if (parsed && parsed.assumptions_cited.length > 0) {
-    insertAssumptionCitations(db, view.id, parsed.assumptions_cited);
-  }
-
-  return {
-    summary: {
-      id: view.id,
-      session_id: input.session_id,
-      model: input.cli,
-      persona: input.persona.id,
-      confidence,
-      failure_reason,
-      content_vault_path,
-    },
-    stance: parsed,
   };
 }
 
@@ -398,14 +515,16 @@ function buildClaudeArgv(model: string, systemPrompt: string): string[] {
 }
 
 interface ViewNoteBodyInput {
-  stance: CouncilStance | null;
+  pass1: CouncilStance | null;
+  pass2: CouncilStance | null;
   failure_reason: FailureReason | null;
   stderrForLog: string;
   stdout_tail: string;
 }
 
 function buildViewNoteBody(input: ViewNoteBodyInput): string {
-  if (input.failure_reason) {
+  // Pass 1 failed outright — no stances to render
+  if (input.failure_reason && !input.pass1) {
     const parts = [
       `# Failed cell — ${input.failure_reason}`,
       '',
@@ -417,53 +536,65 @@ function buildViewNoteBody(input: ViewNoteBodyInput): string {
       '',
     ];
     if (input.stdout_tail.trim()) {
-      parts.push('## Stdout (tail)');
-      parts.push('');
-      parts.push('```');
-      parts.push(input.stdout_tail.trim());
-      parts.push('```');
-      parts.push('');
+      parts.push('## Stdout (tail)', '', '```', input.stdout_tail.trim(), '```', '');
     }
     return parts.join('\n');
   }
 
-  if (!input.stance) return '_(no stance)_\n';
+  if (!input.pass1) return '_(no stance)_\n';
+
+  // Authoritative view: Pass 2 if succeeded, else Pass 1.
+  const authoritative = input.pass2 ?? input.pass1;
 
   const parts = [
-    '## Stance',
+    '## Revised stance (Pass 2)',
     '',
-    input.stance.stance,
+    input.pass2 ? input.pass2.stance : '_(Pass 2 did not succeed; see Pass 1 below)_',
     '',
-    `**Confidence:** ${input.stance.confidence.toFixed(2)}`,
+    `**Confidence:** ${authoritative.confidence.toFixed(2)}`,
     '',
   ];
-  if (input.stance.key_risks.length > 0) {
+
+  if (input.pass2?.self_critique) {
+    parts.push('## Self-critique (Pass 2)', '', input.pass2.self_critique, '');
+  }
+
+  parts.push('## Initial stance (Pass 1)', '', input.pass1.stance, '');
+
+  if (input.failure_reason) {
+    parts.push(`> **Pass 2 failed:** ${input.failure_reason}`, '');
+    if (input.stderrForLog.trim()) {
+      parts.push('```', input.stderrForLog.trim(), '```', '');
+    }
+  }
+
+  if (authoritative.key_risks.length > 0) {
     parts.push('## Key risks', '');
-    for (const r of input.stance.key_risks) parts.push(`- ${r}`);
+    for (const r of authoritative.key_risks) parts.push(`- ${r}`);
     parts.push('');
   }
-  if (input.stance.fragile_insights.length > 0) {
+  if (authoritative.fragile_insights.length > 0) {
     parts.push('## Fragile insights', '');
-    for (const f of input.stance.fragile_insights) parts.push(`- ${f}`);
+    for (const f of authoritative.fragile_insights) parts.push(`- ${f}`);
     parts.push('');
   }
-  if (input.stance.assumptions_cited.length > 0) {
+  if (authoritative.assumptions_cited.length > 0) {
     parts.push('## Assumptions cited', '');
-    for (const a of input.stance.assumptions_cited) parts.push(`- \`${a}\``);
+    for (const a of authoritative.assumptions_cited) parts.push(`- \`${a}\``);
     parts.push('');
   }
   parts.push('## Metacognitive reflection', '');
-  parts.push(`- **Could be wrong if:** ${input.stance.metacognitive_reflection.could_be_wrong_if}`);
+  parts.push(`- **Could be wrong if:** ${authoritative.metacognitive_reflection.could_be_wrong_if}`);
   parts.push(
-    `- **Most vulnerable assumption:** \`${input.stance.metacognitive_reflection.most_vulnerable_assumption}\``,
+    `- **Most vulnerable assumption:** \`${authoritative.metacognitive_reflection.most_vulnerable_assumption}\``,
   );
   parts.push(
-    `- **Confidence rationale:** ${input.stance.metacognitive_reflection.confidence_rationale}`,
+    `- **Confidence rationale:** ${authoritative.metacognitive_reflection.confidence_rationale}`,
   );
   parts.push('');
-  if (input.stance.evidence.length > 0) {
+  if (authoritative.evidence.length > 0) {
     parts.push('## Evidence', '');
-    for (const e of input.stance.evidence) {
+    for (const e of authoritative.evidence) {
       parts.push(`- "${e.claim}" — ${e.source}`);
     }
     parts.push('');

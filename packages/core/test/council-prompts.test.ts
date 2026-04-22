@@ -152,6 +152,112 @@ describe('assemblePrompt — user message', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// Pass 2 — M9 metacognitive structure
+// ---------------------------------------------------------------------------
+
+describe('assemblePrompt — Pass 2', () => {
+  const pass1Stance = 'My initial stance is that pricing is the dominant factor.';
+
+  it('throws when pass=2 and pass1_stance missing', () => {
+    expect(() =>
+      assemblePrompt({
+        persona: PERSONAS[0],
+        mode: 'standard',
+        ...sampleIdea,
+        pass: 2,
+      }),
+    ).toThrow(/pass=2 requires pass1_stance/);
+  });
+
+  it('Pass 2 user message embeds Pass 1 stance verbatim', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+      pass: 2,
+      pass1_stance: pass1Stance,
+    });
+    expect(user).toContain(pass1Stance);
+  });
+
+  it('Pass 2 includes all 3 reflection directives', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+      pass: 2,
+      pass1_stance: pass1Stance,
+    });
+    expect(user).toContain('Could you be wrong');
+    expect(user).toContain('most vulnerable on');
+    expect(user).toContain("haven't you surfaced yet");
+  });
+
+  it('Pass 2 requires self_critique in response envelope', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+      pass: 2,
+      pass1_stance: pass1Stance,
+    });
+    expect(user).toContain('self_critique');
+    expect(user).toContain('REQUIRED in Pass 2');
+  });
+
+  it('Pass 2 user is strictly longer than Pass 1 (appended reflection block)', () => {
+    const p1 = assemblePrompt({ persona: PERSONAS[0], mode: 'standard', ...sampleIdea, pass: 1 });
+    const p2 = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+      pass: 2,
+      pass1_stance: pass1Stance,
+    });
+    expect(p2.user.length).toBeGreaterThan(p1.user.length);
+    expect(p2.user.startsWith(p1.user)).toBe(true);
+  });
+
+  it('digest_material differs between Pass 1 and Pass 2', () => {
+    const p1 = assemblePrompt({ persona: PERSONAS[0], mode: 'standard', ...sampleIdea, pass: 1 });
+    const p2 = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+      pass: 2,
+      pass1_stance: pass1Stance,
+    });
+    expect(p1.digest_material).not.toBe(p2.digest_material);
+  });
+
+  it('snapshot: Pass 2 user message', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+      pass: 2,
+      pass1_stance: pass1Stance,
+    });
+    expect(user).toMatchSnapshot();
+  });
+
+  it('pass defaults to 1 (backwards-compat with M8 callers)', () => {
+    const withoutPass = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+    });
+    const withPass1 = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+      pass: 1,
+    });
+    expect(withoutPass.digest_material).toBe(withPass1.digest_material);
+  });
+});
+
 describe('assemblePrompt — digest material', () => {
   it('is deterministic (same inputs → same digest)', () => {
     const a = assemblePrompt({ persona: PERSONAS[0], mode: 'standard', ...sampleIdea });

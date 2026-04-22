@@ -201,12 +201,12 @@ describe('council.run — approval gate', () => {
 // ---------------------------------------------------------------------------
 
 describe('council.run — dispatch audit (M8 behavior)', () => {
-  it('writes 2 dispatch rows per approved run (one per persona)', async () => {
+  it('writes 4 dispatch rows per approved run (2 personas × 2 passes)', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'always';
     await client.callTool('council', { action: 'run', id: ideaId, confirm: true });
     const rows = listDispatches(db);
-    expect(rows).toHaveLength(2);
+    expect(rows).toHaveLength(4);
     for (const row of rows) {
       expect(row.cli).toBe('claude');
       expect(row.approval_scope).toBe('always');
@@ -233,7 +233,7 @@ describe('council.run — dispatch audit (M8 behavior)', () => {
     for (let i = 0; i < 3; i++) {
       await client.callTool('council', { action: 'run', id: ideaId, confirm: true });
     }
-    expect(listDispatches(db)).toHaveLength(6); // 3 runs × 2 personas
+    expect(listDispatches(db)).toHaveLength(12); // 3 runs × 2 personas × 2 passes
   });
 });
 
