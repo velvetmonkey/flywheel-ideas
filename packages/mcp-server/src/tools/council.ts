@@ -180,10 +180,14 @@ async function handleRun(
   // APPROVED — real dispatch (M8).
   const mode: CouncilMode = args.mode ?? defaultModeForState(idea.state);
 
-  // Test-injection hook: FLYWHEEL_IDEAS_SPAWN_PREFIX can be a JSON array
-  // (e.g., ["node","/path/to/mock-claude.mjs"]) to redirect the spawn at
-  // a mock binary without changing the MCP surface. Unset in production.
+  // Test-injection hooks:
+  //   FLYWHEEL_IDEAS_SPAWN_PREFIX = JSON array (legacy, claude-only)
+  //   FLYWHEEL_IDEAS_SPAWN_PREFIXES = JSON object keyed by cli name
+  //     e.g. '{"claude":["node","/path/mock-claude.mjs"],
+  //            "codex":["node","/path/mock-codex.mjs"]}'
+  // Unset in production.
   const spawn_override = resolveSpawnOverride();
+  const spawn_overrides = resolveSpawnOverrides();
 
   let outcome;
   try {
@@ -196,7 +200,7 @@ async function handleRun(
         mode,
         approval_scope: state.scope,
       },
-      { spawn_override },
+      { spawn_override, spawn_overrides },
     );
   } catch (err) {
     if (err instanceof CouncilOrchestratorError) {
@@ -272,6 +276,25 @@ function resolveSpawnOverride(): string[] | undefined {
     // fall through
   }
   return undefined;
+}
+
+function resolveSpawnOverrides(): Partial<Record<'claude' | 'codex' | 'gemini', string[]>> | undefined {
+  const raw = process.env.FLYWHEEL_IDEAS_SPAWN_PREFIXES;
+  if (!raw) return undefined;
+  try {
+    const parsed = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null) return undefined;
+    const out: Partial<Record<'claude' | 'codex' | 'gemini', string[]>> = {};
+    for (const cli of ['claude', 'codex', 'gemini'] as const) {
+      const v = (parsed as Record<string, unknown>)[cli];
+      if (Array.isArray(v) && v.every((x) => typeof x === 'string')) {
+        out[cli] = v as string[];
+      }
+    }
+    return Object.keys(out).length > 0 ? out : undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 function defaultModeForState(state: string): CouncilMode {

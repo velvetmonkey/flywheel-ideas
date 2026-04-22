@@ -188,11 +188,80 @@ function extractBalancedObject(text: string): string | null {
   return null;
 }
 
-// ---------- codex / gemini stubs (M9) ----------
+// ---------- codex parser (M9) ----------
 
-export function parseCodexStanceOutput(_stdout: string): ParseResult {
-  throw new NotYetImplementedError('codex');
+/**
+ * Parse codex's `exec --json` JSONL stdout and extract a CouncilStance
+ * from the terminal `item.completed` agent_message event.
+ *
+ * Event stream per M7 quirks: `thread.started`, `turn.started`,
+ * `{type:"item.completed", item:{type:"agent_message", text:"..."}}`,
+ * `turn.completed` (or `turn.failed` on failure — that surfaces `failure`
+ * explicitly, which the orchestrator classifies via cli-errors).
+ */
+export function parseCodexStanceOutput(stdout: string): ParseResult {
+  if (stdout.trim() === '') {
+    return { ok: false, reason: 'json_parse_error', detail: 'empty stdout' };
+  }
+
+  const lines = stdout.split('\n').filter((l) => l.trim().length > 0);
+  const events: unknown[] = [];
+  for (const line of lines) {
+    try {
+      events.push(JSON.parse(line));
+    } catch {
+      // Tolerate individual malformed lines — codex may emit a progress
+      // tick we don't understand. Skip; continue scanning.
+    }
+  }
+
+  if (events.length === 0) {
+    return {
+      ok: false,
+      reason: 'json_parse_error',
+      detail: 'no parseable JSONL events in stdout',
+    };
+  }
+
+  // If the stream explicitly failed, surface it as json_parse_error so the
+  // orchestrator's classifier tier sees it. (cli-errors catalogue will
+  // already match `"type":"turn.failed"` from stderr classification.)
+  const failed = events.find(
+    (e): e is { type: 'turn.failed' } =>
+      typeof e === 'object' && e !== null && (e as { type?: unknown }).type === 'turn.failed',
+  );
+  if (failed) {
+    return {
+      ok: false,
+      reason: 'json_parse_error',
+      detail: 'codex turn.failed — no agent_message produced',
+    };
+  }
+
+  // Terminal agent_message event (latest wins if multiple)
+  const agent = [...events].reverse().find(
+    (e): e is { type: 'item.completed'; item: { type: 'agent_message'; text: string } } =>
+      typeof e === 'object' &&
+      e !== null &&
+      (e as { type?: unknown }).type === 'item.completed' &&
+      typeof (e as { item?: unknown }).item === 'object' &&
+      (e as { item: { type?: unknown } }).item !== null &&
+      (e as { item: { type?: unknown } }).item.type === 'agent_message' &&
+      typeof (e as { item: { text?: unknown } }).item.text === 'string',
+  );
+
+  if (!agent) {
+    return {
+      ok: false,
+      reason: 'no_terminal_result',
+      detail: 'no item.completed event with type=agent_message and string text',
+    };
+  }
+
+  return extractEnvelopeFromText(agent.item.text);
 }
+
+// ---------- gemini stub (M10) ----------
 
 export function parseGeminiStanceOutput(_stdout: string): ParseResult {
   throw new NotYetImplementedError('gemini');

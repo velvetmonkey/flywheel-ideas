@@ -22,6 +22,27 @@ const MOCK_CLI = path.join(
   'mock-cli',
   'mock-claude.mjs',
 );
+const MOCK_CODEX = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  'fixtures',
+  'mock-cli',
+  'mock-codex.mjs',
+);
+
+/** Default test-only options: claude-only (for M8-era tests) + claude mock. */
+const CLAUDE_ONLY_OPTIONS = {
+  clis_override: ['claude' as const],
+  spawn_override: ['node', MOCK_CLI],
+};
+
+/** M9 matrix options: both claude + codex with their mocks. */
+const M9_MATRIX_OPTIONS = {
+  clis_override: ['claude' as const, 'codex' as const],
+  spawn_overrides: {
+    claude: ['node', MOCK_CLI],
+    codex: ['node', MOCK_CODEX],
+  },
+};
 
 const VALID_ENVELOPE = {
   stance: 'Mock stance for testing — long enough to read like a paragraph.',
@@ -94,7 +115,7 @@ describe('runCouncil — happy path (2 personas, both succeed)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
 
     expect(result.status).toBe('success');
@@ -148,7 +169,7 @@ describe('runCouncil — happy path (2 personas, both succeed)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     const riskView = result.views.find((v) => v.persona === 'risk-pessimist')!;
     const md = await fsp.readFile(path.join(vault, riskView.content_vault_path), 'utf8');
@@ -166,14 +187,14 @@ describe('runCouncil — happy path (2 personas, both succeed)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     // Mock will pick a different session-index (02), but input_hash per persona should match run1
     const r2 = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     const views1 = listViewsBySession(db, r1.session_id);
     const views2 = listViewsBySession(db, r2.session_id);
@@ -188,14 +209,14 @@ describe('runCouncil — happy path (2 personas, both succeed)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     expect(r1.synthesis_vault_path).toContain('session-01');
     const r2 = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     expect(r2.synthesis_vault_path).toContain('session-02');
   });
@@ -205,7 +226,7 @@ describe('runCouncil — happy path (2 personas, both succeed)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     const views = listViewsBySession(db, result.session_id);
     const citations = db
@@ -230,31 +251,24 @@ describe('runCouncil — mode support', () => {
   });
 
   it('pre_mortem mode runs end-to-end (mode stored on session row)', async () => {
-    const echoFile = path.join(vault, 'prompt-echo.txt');
     const result = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'pre_mortem', approval_scope: 'session' },
-      {
-        spawn_override: ['node', MOCK_CLI],
-      },
+      CLAUDE_ONLY_OPTIONS,
     );
     expect(result.status).toBe('success');
     const session = getCouncilSession(db, result.session_id);
     expect(session?.mode).toBe('pre_mortem');
-    // Suppress unused variable warning
-    void echoFile;
   });
 
   it('pre_mortem user message starts with the failure-backwards prefix', async () => {
-    // Run a single-persona council with mock that echoes stdin → file
-    const echoFile = path.join(vault, 'prompt-echo.txt');
     const result = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'pre_mortem', approval_scope: 'session' },
       {
-        spawn_override: ['node', MOCK_CLI],
+        ...CLAUDE_ONLY_OPTIONS,
         personas_override: [{ id: 'risk-pessimist', name: 'Risk Pessimist', description: 'd' }],
       },
     );
@@ -354,7 +368,7 @@ describe('runCouncil — two-pass structure (M9)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     expect(result.status).toBe('success');
     const views = listViewsBySession(db, result.session_id);
@@ -409,7 +423,7 @@ describe('runCouncil — two-pass structure (M9)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { spawn_override: ['node', MOCK_CLI] },
+      CLAUDE_ONLY_OPTIONS,
     );
     const views = listViewsBySession(db, result.session_id);
     // Both views' input_hash are Pass 2 hashes — they'll differ from each
@@ -451,6 +465,167 @@ describe('runCouncil — two-pass structure (M9)', () => {
 });
 
 // ---------------------------------------------------------------------------
+// Light matrix — claude + codex (M9)
+// ---------------------------------------------------------------------------
+
+describe('runCouncil — light matrix (claude + codex) (M9)', () => {
+  beforeEach(async () => {
+    await seedIdea();
+    await seedSeededAssumption();
+  });
+
+  it('light happy path: 4 cells × 2 passes = 8 dispatches, 4 view rows', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      M9_MATRIX_OPTIONS,
+    );
+    expect(result.status).toBe('success');
+    expect(result.views).toHaveLength(4);
+
+    const dispatches = listDispatches(db);
+    expect(dispatches).toHaveLength(8);
+
+    // Mix of claude and codex dispatches
+    const claudeRows = dispatches.filter((d) => d.cli === 'claude');
+    const codexRows = dispatches.filter((d) => d.cli === 'codex');
+    expect(claudeRows).toHaveLength(4); // 2 personas × 2 passes
+    expect(codexRows).toHaveLength(4);
+  });
+
+  it('views have mixed models (claude + codex)', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      M9_MATRIX_OPTIONS,
+    );
+    const views = listViewsBySession(db, result.session_id);
+    const models = new Set(views.map((v) => v.model));
+    expect(models).toEqual(new Set(['claude', 'codex']));
+  });
+
+  it('codex views have stance populated from JSONL mock', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      M9_MATRIX_OPTIONS,
+    );
+    const views = listViewsBySession(db, result.session_id);
+    const codexViews = views.filter((v) => v.model === 'codex');
+    expect(codexViews).toHaveLength(2);
+    for (const v of codexViews) {
+      expect(v.stance).toContain('codex');
+      expect(v.initial_stance).toContain('codex');
+      expect(v.failure_reason).toBeNull();
+    }
+  });
+
+  it('synthesis renders all 4 views', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      M9_MATRIX_OPTIONS,
+    );
+    const synthesisContent = await fsp.readFile(
+      path.join(vault, result.synthesis_vault_path),
+      'utf8',
+    );
+    // 4 persona-model combinations named in the synthesis
+    expect(synthesisContent).toContain('Risk Pessimist');
+    expect(synthesisContent).toContain('Growth Optimist');
+    expect(synthesisContent).toContain('| claude |');
+    expect(synthesisContent).toContain('| codex |');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Full-depth rejection (M10 wiring)
+// ---------------------------------------------------------------------------
+
+describe('runCouncil — depth="full" rejection', () => {
+  beforeEach(async () => {
+    await seedIdea();
+    await seedSeededAssumption();
+  });
+
+  it('throws CouncilOrchestratorError with M10 pointer', async () => {
+    await expect(
+      runCouncil(
+        db,
+        vault,
+        {
+          idea_id: 'idea-a',
+          mode: 'standard',
+          approval_scope: 'session',
+          depth: 'full',
+        },
+        CLAUDE_ONLY_OPTIONS,
+      ),
+    ).rejects.toThrow(/M10/);
+  });
+
+  it('rejection before session creation (no orphan rows)', async () => {
+    try {
+      await runCouncil(
+        db,
+        vault,
+        {
+          idea_id: 'idea-a',
+          mode: 'standard',
+          approval_scope: 'session',
+          depth: 'full',
+        },
+        CLAUDE_ONLY_OPTIONS,
+      );
+    } catch {
+      // expected
+    }
+    const sessions = db
+      .prepare(`SELECT count(*) AS n FROM ideas_council_sessions`)
+      .get() as { n: number };
+    expect(sessions.n).toBe(0);
+    expect(listDispatches(db)).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Concurrency limiter invariant (M9)
+// ---------------------------------------------------------------------------
+
+describe('runCouncil — concurrency limiter (M9)', () => {
+  beforeEach(async () => {
+    await seedIdea();
+    await seedSeededAssumption();
+  });
+
+  it('completes successfully with max_concurrency=1 (serialized)', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { ...M9_MATRIX_OPTIONS, max_concurrency_override: 1 },
+    );
+    expect(result.status).toBe('success');
+    expect(result.views).toHaveLength(4);
+  });
+
+  it('completes successfully with high max_concurrency (>cell count)', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { ...M9_MATRIX_OPTIONS, max_concurrency_override: 20 },
+    );
+    expect(result.status).toBe('success');
+    expect(result.views).toHaveLength(4);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // helpers
 // ---------------------------------------------------------------------------
 
@@ -473,7 +648,7 @@ async function runCouncilWithEnv(
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
       {
-        spawn_override: ['node', MOCK_CLI],
+        ...CLAUDE_ONLY_OPTIONS,
         timeout_ms_override: options.timeout_ms_override,
       },
     );
