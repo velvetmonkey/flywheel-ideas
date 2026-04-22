@@ -1,0 +1,154 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 5
+        run: |
+          for i in 1 2 3; do
+            npm ci && break
+            echo "::warning::npm ci attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+      - name: Build (required for workspace type resolution)
+        run: npm run build
+      - name: Type check
+        run: npm run lint
+
+  audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 5
+        run: |
+          for i in 1 2 3; do
+            npm ci && break
+            echo "::warning::npm ci attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+      - name: npm audit (high + critical — blocks merge)
+        run: npm audit --audit-level=high
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 5
+        run: |
+          for i in 1 2 3; do
+            npm ci && break
+            echo "::warning::npm ci attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+      - name: Build
+        run: npm run build
+
+  test-core:
+    name: "Test: core"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 5
+        run: |
+          for i in 1 2 3; do
+            npm ci && break
+            echo "::warning::npm ci attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+      - run: npm run build
+      - name: Run core tests
+        run: npm test -w @velvetmonkey/flywheel-ideas-core
+
+  test-mcp:
+    name: "Test: mcp-server"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 5
+        run: |
+          for i in 1 2 3; do
+            npm ci && break
+            echo "::warning::npm ci attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+      - run: npm run build
+      - name: Run mcp-server tests
+        run: npm test -w @velvetmonkey/flywheel-ideas
+
+  test-full-matrix:
+    name: "Test: full (Node ${{ matrix.node }} / ${{ matrix.os }})"
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        timeout-minutes: 5
+        shell: bash
+        run: |
+          for i in 1 2 3; do
+            npm ci && break
+            echo "::warning::npm ci attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+      - name: Build
+        run: npm run build
+      - name: Run core tests
+        run: npm test -w @velvetmonkey/flywheel-ideas-core
+      - name: Run mcp-server tests
+        run: npm test -w @velvetmonkey/flywheel-ideas
