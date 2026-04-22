@@ -150,11 +150,49 @@ describe('codex / gemini stubs', () => {
     expect(() => parseGeminiStanceOutput('')).toThrow(NotYetImplementedError);
   });
 
-  it('NotYetImplementedError message references M9', () => {
+  it('NotYetImplementedError message references a future milestone', () => {
     try {
       parseCodexStanceOutput('');
+      expect.fail('should have thrown');
     } catch (err) {
-      expect((err as Error).message).toMatch(/M9/);
+      expect((err as Error).message).toMatch(/M(9|10)/);
     }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Pass 2 envelope schema — self_critique optional for backwards compat (M9)
+// ---------------------------------------------------------------------------
+
+describe('CouncilStance schema — self_critique (M9)', () => {
+  it('Pass 1 envelope WITHOUT self_critique validates (backwards compat)', () => {
+    const stdout = claudeStdoutFromResult(JSON.stringify(validEnvelope));
+    const r = parseClaudeStanceOutput(stdout);
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.stance.self_critique).toBeUndefined();
+  });
+
+  it('Pass 2 envelope WITH self_critique validates', () => {
+    const pass2 = { ...validEnvelope, self_critique: 'On reflection, I may have overweighted risk.' };
+    const stdout = claudeStdoutFromResult(JSON.stringify(pass2));
+    const r = parseClaudeStanceOutput(stdout);
+    expect(r.ok).toBe(true);
+    if (r.ok) {
+      expect(r.stance.self_critique).toBe('On reflection, I may have overweighted risk.');
+    }
+  });
+
+  it('self_critique present but non-string → invalid_envelope', () => {
+    const bad = { ...validEnvelope, self_critique: 42 as unknown as string };
+    const stdout = claudeStdoutFromResult(JSON.stringify(bad));
+    const r = parseClaudeStanceOutput(stdout);
+    expect(r.ok).toBe(false);
+  });
+
+  it('empty string self_critique is valid (edge case, model may skimp)', () => {
+    const minimal = { ...validEnvelope, self_critique: '' };
+    const stdout = claudeStdoutFromResult(JSON.stringify(minimal));
+    const r = parseClaudeStanceOutput(stdout);
+    expect(r.ok).toBe(true);
   });
 });

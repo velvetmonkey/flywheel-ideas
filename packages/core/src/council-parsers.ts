@@ -35,6 +35,12 @@ export const CouncilStanceSchema = z.object({
     most_vulnerable_assumption: z.string(),
     confidence_rationale: z.string(),
   }),
+  // M9: Pass 2 responses include the model's critique of Pass 1. Optional so
+  // Pass 1 envelopes (which precede the critique) stay backwards-compatible.
+  // The orchestrator validates presence semantically for Pass 2 (not the
+  // schema) to allow model-disobedience to surface as a warning, not a
+  // parse failure.
+  self_critique: z.string().optional(),
 });
 
 export type CouncilStance = z.infer<typeof CouncilStanceSchema>;
@@ -49,7 +55,7 @@ export type ParseResult =
 
 export class NotYetImplementedError extends Error {
   constructor(cli: string) {
-    super(`parser for "${cli}" is not yet wired — lands in M9`);
+    super(`parser for "${cli}" is not yet wired — lands in M10`);
     this.name = 'NotYetImplementedError';
   }
 }

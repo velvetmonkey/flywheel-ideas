@@ -94,6 +94,16 @@ export interface PromptInput {
     text: string;
     load_bearing: boolean;
   }>;
+  /**
+   * Which pass. Defaults to 1 (backwards-compatible with M8 single-pass
+   * callers). Pass 2 requires `pass1_stance` to inject; pass 1 omits it.
+   */
+  pass?: 1 | 2;
+  /**
+   * The full Pass 1 stance text (the envelope's `stance` field, not the
+   * whole response). Required when `pass` is 2.
+   */
+  pass1_stance?: string;
 }
 
 export interface AssembledPrompt {
@@ -102,6 +112,23 @@ export interface AssembledPrompt {
   /** Stable-input digest material — for hashing. Excludes any timestamps. */
   digest_material: string;
 }
+
+const PASS_2_REFLECTION = `---
+
+Your Pass 1 stance was:
+
+{PASS1_STANCE}
+
+Now reflect critically on your own answer:
+  (a) Could you be wrong? What specific evidence would change your mind?
+  (b) Which declared assumption are you most vulnerable on?
+  (c) What counter-argument haven't you surfaced yet?
+
+Respond with the SAME JSON envelope, but now include:
+  - "stance": your REVISED stance (may be unchanged from Pass 1; may differ)
+  - "self_critique": your honest critique of Pass 1 (REQUIRED in Pass 2)
+  - "confidence": updated number — often lower after self-critique
+  - other fields: revised as appropriate`;
 
 /**
  * Produce the system + user messages for a single council cell.
@@ -135,9 +162,23 @@ export function assemblePrompt(input: PromptInput): AssembledPrompt {
     'Attack each assumption explicitly. Cite assumptions by id in `assumptions_cited`.',
   ].join('\n');
 
-  const user = input.mode === 'pre_mortem' ? `${PRE_MORTEM_PREFIX}${userBody}` : userBody;
+  const pass1User = input.mode === 'pre_mortem' ? `${PRE_MORTEM_PREFIX}${userBody}` : userBody;
+
+  let user: string;
+  const pass = input.pass ?? 1;
+  if (pass === 2) {
+    if (!input.pass1_stance) {
+      throw new Error('assemblePrompt: pass=2 requires pass1_stance');
+    }
+    const reflection = PASS_2_REFLECTION.replace('{PASS1_STANCE}', input.pass1_stance);
+    user = `${pass1User}\n\n${reflection}`;
+  } else {
+    user = pass1User;
+  }
 
   // Digest material is the concatenation of system + user — stable, deterministic.
+  // Pass 2 digest differs from Pass 1 (includes Pass 1 stance), so input_hash
+  // distinguishes the two passes in ideas_dispatches.
   const digest_material = `${system}\n\n---\n\n${user}`;
 
   return { system, user, digest_material };

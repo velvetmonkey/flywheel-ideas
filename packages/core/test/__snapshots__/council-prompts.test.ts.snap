@@ -1,5 +1,34 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`assemblePrompt — Pass 2 > snapshot: Pass 2 user message 1`] = `
+"Idea: Switch pricing from seat to usage
+
+Current seat-based pricing underserves low-volume teams and overcharges high-volume. Hypothesis: usage-based converts better at the top.
+
+Declared assumptions:
+- [asm-a1, load-bearing] Top-tier teams will tolerate variable bills
+- [asm-a2] Cost-to-serve scales sub-linearly with usage
+
+Attack each assumption explicitly. Cite assumptions by id in \`assumptions_cited\`.
+
+---
+
+Your Pass 1 stance was:
+
+My initial stance is that pricing is the dominant factor.
+
+Now reflect critically on your own answer:
+  (a) Could you be wrong? What specific evidence would change your mind?
+  (b) Which declared assumption are you most vulnerable on?
+  (c) What counter-argument haven't you surfaced yet?
+
+Respond with the SAME JSON envelope, but now include:
+  - "stance": your REVISED stance (may be unchanged from Pass 1; may differ)
+  - "self_critique": your honest critique of Pass 1 (REQUIRED in Pass 2)
+  - "confidence": updated number — often lower after self-critique
+  - other fields: revised as appropriate"
+`;
+
 exports[`assemblePrompt — system prompt > is stable across runs (snapshot) 1`] = `
 "You are a Risk Pessimist on a decision council. You identifies downside and failure modes; overlooks opportunity cost.
 

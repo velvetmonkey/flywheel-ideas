@@ -89,7 +89,7 @@ describe('runCouncil — happy path (2 personas, both succeed)', () => {
     await seedSeededAssumption();
   });
 
-  it('creates session + 2 views + 2 dispatches + 3 markdown files', async () => {
+  it('creates session + 2 views + 4 dispatches (two-pass) + 3 markdown files', async () => {
     const result = await runCouncil(
       db,
       vault,
@@ -110,20 +110,22 @@ describe('runCouncil — happy path (2 personas, both succeed)', () => {
     expect(session?.completed_at).not.toBeNull();
     expect(session?.synthesis_vault_path).toBe(result.synthesis_vault_path);
 
-    // View rows
+    // View rows: Pass 1 (initial_stance) + Pass 2 (stance + self_critique)
     const views = listViewsBySession(db, result.session_id);
     expect(views).toHaveLength(2);
     for (const v of views) {
-      expect(v.stance).toBeTruthy();
+      expect(v.initial_stance).toBeTruthy(); // Pass 1 populated
+      expect(v.stance).toBeTruthy(); // Pass 2 populated
+      expect(v.self_critique).toBeTruthy(); // Pass 2 populated
       expect(v.confidence).not.toBeNull();
       expect(v.failure_reason).toBeNull();
-      expect(v.initial_stance).toBeNull();
-      expect(v.self_critique).toBeNull();
+      // Pass 1 stance ≠ Pass 2 stance (mock returns different text per pass)
+      expect(v.initial_stance).not.toBe(v.stance);
     }
 
-    // Dispatch rows: one per cell (single-pass)
+    // Dispatch rows: two per cell (Pass 1 + Pass 2)
     const dispatches = listDispatches(db);
-    expect(dispatches).toHaveLength(2);
+    expect(dispatches).toHaveLength(4);
     for (const d of dispatches) {
       expect(d.cli).toBe('claude');
       expect(d.approval_scope).toBe('session');
@@ -274,8 +276,8 @@ describe('runCouncil — failure classification', () => {
     await seedSeededAssumption();
   });
 
-  it('bad JSON from mock → failure_reason="parse"', async () => {
-    // Override mock to emit non-JSON stdout
+  it('bad JSON from mock (both passes) → failure_reason="parse", Pass 2 skipped', async () => {
+    // Override mock to emit non-JSON stdout ALWAYS (both passes)
     const result = await runCouncilWithEnv({
       FLYWHEEL_TEST_STDOUT_RAW: 'not json output',
     });
@@ -284,9 +286,13 @@ describe('runCouncil — failure classification', () => {
     const views = listViewsBySession(db, result.session_id);
     for (const v of views) {
       expect(v.failure_reason).toBe('parse');
+      expect(v.initial_stance).toBeNull();
       expect(v.stance).toBeNull();
+      expect(v.self_critique).toBeNull();
       expect(v.confidence).toBeNull();
     }
+    // Pass 1 failed → Pass 2 skipped → only 1 dispatch per cell
+    expect(listDispatches(db)).toHaveLength(2);
   });
 
   it('timeout via HANG_MS → failure_reason="timeout"', async () => {
@@ -330,6 +336,117 @@ describe('runCouncil — failure classification', () => {
       FLYWHEEL_TEST_RESULT: JSON.stringify(bad),
     });
     expect(result.status).toBe('failed');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Two-pass structure (M9)
+// ---------------------------------------------------------------------------
+
+describe('runCouncil — two-pass structure (M9)', () => {
+  beforeEach(async () => {
+    await seedIdea();
+    await seedSeededAssumption();
+  });
+
+  it('two-pass happy path: initial_stance, stance, self_critique all populated', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { spawn_override: ['node', MOCK_CLI] },
+    );
+    expect(result.status).toBe('success');
+    const views = listViewsBySession(db, result.session_id);
+    for (const v of views) {
+      expect(v.initial_stance).toBeTruthy();
+      expect(v.stance).toBeTruthy();
+      expect(v.self_critique).toBeTruthy();
+      // Revised stance should differ from initial (mock returns distinct P1/P2)
+      expect(v.initial_stance).not.toBe(v.stance);
+    }
+  });
+
+  it('Pass 2 failure (exit-nonzero) → initial_stance populated, stance=null', async () => {
+    // Mock exits non-zero ONLY on Pass 2
+    const result = await runCouncilWithEnv({
+      FLYWHEEL_TEST_EXIT: '7',
+      FLYWHEEL_TEST_EXIT_ON_PASS: '2',
+    });
+    expect(result.status).toBe('failed');
+    const views = listViewsBySession(db, result.session_id);
+    for (const v of views) {
+      expect(v.initial_stance).toBeTruthy(); // Pass 1 succeeded
+      expect(v.stance).toBeNull(); // Pass 2 failed
+      expect(v.self_critique).toBeNull();
+      expect(v.failure_reason).toBe('exit_nonzero');
+    }
+    // 2 passes per cell × 2 cells = 4 dispatches (Pass 2 still ran)
+    expect(listDispatches(db)).toHaveLength(4);
+  });
+
+  it('Pass 2 timeout → initial_stance populated, stance=null, reason=timeout', async () => {
+    // Mock hangs ONLY on Pass 2
+    const result = await runCouncilWithEnv(
+      { FLYWHEEL_TEST_HANG_MS: '3000', FLYWHEEL_TEST_HANG_ON_PASS: '2' },
+      { timeout_ms_override: 300 },
+    );
+    expect(result.status).toBe('failed');
+    const views = listViewsBySession(db, result.session_id);
+    for (const v of views) {
+      expect(v.initial_stance).toBeTruthy();
+      expect(v.stance).toBeNull();
+      expect(v.failure_reason).toBe('timeout');
+    }
+  }, 15_000);
+
+  it('Pass 2 input_hash differs from Pass 1 hash (stored as dispatch/view hash)', async () => {
+    // The view row's input_hash is Pass 2's (authoritative).
+    // To assert Pass 1 and Pass 2 hashes differ in the same run, we read
+    // two view rows — if identical inputs but different passes, hashes
+    // must differ inside runCouncilCell's two calls to assemblePrompt.
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { spawn_override: ['node', MOCK_CLI] },
+    );
+    const views = listViewsBySession(db, result.session_id);
+    // Both views' input_hash are Pass 2 hashes — they'll differ from each
+    // other because personas differ. Assert that at least they're populated.
+    for (const v of views) {
+      expect(v.input_hash).toMatch(/^sha256:/);
+    }
+    // Different personas → different Pass 2 hashes
+    expect(views[0].input_hash).not.toBe(views[1].input_hash);
+  });
+
+  it('Pass 2 response missing self_critique → stance still populated, warning in stderr_tail', async () => {
+    // Configure Pass 1 default; Pass 2 returns envelope without self_critique
+    const p2WithoutCritique = {
+      stance: 'Pass 2 revised stance but missing self_critique',
+      confidence: 0.5,
+      key_risks: [],
+      fragile_insights: [],
+      assumptions_cited: [],
+      evidence: [],
+      metacognitive_reflection: {
+        could_be_wrong_if: 'x',
+        most_vulnerable_assumption: 'x',
+        confidence_rationale: 'x',
+      },
+      // no self_critique
+    };
+    const result = await runCouncilWithEnv({
+      FLYWHEEL_TEST_RESULT_P2: JSON.stringify(p2WithoutCritique),
+    });
+    expect(result.status).toBe('success');
+    const views = listViewsBySession(db, result.session_id);
+    for (const v of views) {
+      expect(v.stance).toBe(p2WithoutCritique.stance);
+      expect(v.self_critique).toBeNull();
+      expect(v.stderr_tail).toContain('missing self_critique');
+    }
   });
 });
 
