@@ -88,6 +88,44 @@ describe('writeNote', () => {
     const dir = await fsp.readdir(path.join(vault, 'ideas'));
     expect(dir.filter((f) => f.includes('.tmp')).length).toBe(0);
   });
+
+  it('serializes concurrent creates to the same path via exclusive-create', async () => {
+    // Both callers race to create ideas/race.md. Exactly one should succeed,
+    // the other should surface EEXIST-like rejection via WriteNotePathError.
+    const results = await Promise.allSettled([
+      writeNote(vault, 'ideas/race.md', { id: 'idea-1' }, 'first'),
+      writeNote(vault, 'ideas/race.md', { id: 'idea-2' }, 'second'),
+    ]);
+    const fulfilled = results.filter((r) => r.status === 'fulfilled');
+    const rejected = results.filter((r) => r.status === 'rejected');
+    expect(fulfilled.length).toBe(1);
+    expect(rejected.length).toBe(1);
+
+    // The loser's rejection should be a WriteNotePathError about existence.
+    const err = (rejected[0] as PromiseRejectedResult).reason;
+    expect(err).toBeInstanceOf(WriteNotePathError);
+    expect((err as Error).message).toMatch(/already exists/);
+
+    // Winner's content is on disk, verbatim.
+    const raw = await fsp.readFile(path.join(vault, 'ideas/race.md'), 'utf8');
+    expect(raw).toMatch(/first|second/);
+  });
+
+  it('tmp-file suffix is collision-safe under bursty concurrent writes', async () => {
+    // 50 parallel writes to distinct paths in the same directory should all
+    // succeed — the random tmp suffix prevents collisions that a
+    // time-plus-pid suffix would hit under a busy event loop.
+    await Promise.all(
+      Array.from({ length: 50 }, (_, i) =>
+        writeNote(vault, `ideas/burst-${i}.md`, { id: `idea-${i}` }, `body ${i}`),
+      ),
+    );
+    const dir = await fsp.readdir(path.join(vault, 'ideas'));
+    const mdFiles = dir.filter((f) => f.endsWith('.md'));
+    const tmpFiles = dir.filter((f) => f.includes('.tmp'));
+    expect(mdFiles.length).toBe(50);
+    expect(tmpFiles.length).toBe(0);
+  });
 });
 
 describe('readNote', () => {

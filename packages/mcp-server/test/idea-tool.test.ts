@@ -250,6 +250,42 @@ describe('idea tool — transition', () => {
     expect(actions).toContain('assumption.declare');
   });
 
+  it('rolls back DB transition when fs patch fails (atomicity)', async () => {
+    // Create then externally delete the markdown so patchFrontmatter will
+    // fail on the next transition attempt. We expect the DB to be rolled
+    // back to the pre-transition state.
+    const create = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Atomic test' }),
+    ).result;
+
+    // Delete the markdown file out-of-band.
+    await fsp.unlink(path.join(vault, create.vault_path));
+
+    // Try to transition — the patchFrontmatter call inside handleTransition
+    // should fail because the file doesn't exist, and the handler should
+    // roll back the DB transition.
+    const trans = await client.callTool('idea', {
+      action: 'transition',
+      id: create.id,
+      to: 'explored',
+    });
+    const { isError } = parseEnvelope(trans);
+    expect(isError).toBe(true);
+
+    // DB state must NOT have advanced — rollback must have restored 'nascent'.
+    const row = db.prepare('SELECT state FROM ideas_notes WHERE id = ?').get(create.id) as {
+      state: string;
+    };
+    expect(row.state).toBe('nascent');
+
+    // No transition rows should exist for this idea (the attempted one was
+    // rolled back).
+    const transitions = db
+      .prepare('SELECT COUNT(*) as c FROM ideas_transitions WHERE idea_id = ?')
+      .all(create.id) as Array<{ c: number }>;
+    expect(transitions[0].c).toBe(0);
+  });
+
   it('records multiple transitions in history', async () => {
     const create = parseEnvelope(
       await client.callTool('idea', { action: 'create', title: 'Multi' }),

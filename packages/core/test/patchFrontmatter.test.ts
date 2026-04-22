@@ -93,6 +93,67 @@ Content here.
     expect(() => applyPatch(doc, { 'bad.key': 'x' })).toThrow(/invalid frontmatter key/);
   });
 
+  it('refuses to patch a key whose value is a block scalar (|)', () => {
+    const blockScalar = `---
+id: idea-a
+description: |
+  Line one
+  Line two
+state: nascent
+---
+
+body
+`;
+    expect(() => applyPatch(blockScalar, { description: 'short' })).toThrow(
+      /multiple lines/,
+    );
+  });
+
+  it('refuses to patch a folded block scalar (>)', () => {
+    const folded = `---
+id: idea-a
+notes: >
+  Wrapped line
+  continues here
+---
+
+body
+`;
+    expect(() => applyPatch(folded, { notes: 'x' })).toThrow(/multiple lines/);
+  });
+
+  it('refuses to patch a key with empty-value + indented continuation', () => {
+    const indented = `---
+id: idea-a
+summary:
+  deeper
+state: nascent
+---
+
+body
+`;
+    expect(() => applyPatch(indented, { summary: 'short' })).toThrow(/multiple lines/);
+  });
+
+  it('still patches keys adjacent to a multi-line value without touching it', () => {
+    const mixed = `---
+id: idea-a
+description: |
+  Multi
+  line
+state: nascent
+---
+
+body
+`;
+    const { patched, keys_changed } = applyPatch(mixed, { state: 'evaluated' });
+    expect(keys_changed).toEqual(['state']);
+    expect(patched).toContain('description: |');
+    expect(patched).toContain('  Multi');
+    expect(patched).toContain('  line');
+    expect(patched).toContain('state: evaluated');
+  });
+
   it('is idempotent — patching the same value twice yields the same content', () => {
     const once = applyPatch(doc, { state: 'evaluated' }).patched;
     const twice = applyPatch(once, { state: 'evaluated' }).patched;

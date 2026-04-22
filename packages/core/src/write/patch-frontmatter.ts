@@ -24,6 +24,7 @@
 import * as fs from 'node:fs';
 import * as fsp from 'node:fs/promises';
 import * as path from 'node:path';
+import { randomBytes } from 'node:crypto';
 import { validatePathSecure } from './path-security.js';
 import { WriteNotePathError } from './direct-fs.js';
 
@@ -77,11 +78,18 @@ export async function patchFrontmatter(
   const raw = await fsp.readFile(full, 'utf8');
   const { patched, keys_changed, keys_appended } = applyPatch(raw, patch);
 
-  // Atomic write-to-tmp + rename (same flow as writeNote).
-  const tmpName = `.${path.basename(full)}.${process.pid}.${Date.now()}.tmp`;
+  // Atomic write via exclusive-create tmp + rename. Crypto-random suffix
+  // prevents collisions under rapid concurrent patches (e.g. transition +
+  // outcome firing in the same millisecond).
+  const tmpName = `.${path.basename(full)}.${randomBytes(8).toString('hex')}.tmp`;
   const tmpPath = path.join(path.dirname(full), tmpName);
   try {
-    await fsp.writeFile(tmpPath, patched, 'utf8');
+    const tmpHandle = await fsp.open(tmpPath, 'wx');
+    try {
+      await tmpHandle.writeFile(patched, { encoding: 'utf8' });
+    } finally {
+      await tmpHandle.close();
+    }
     await fsp.rename(tmpPath, full);
   } catch (err) {
     try {
@@ -143,6 +151,17 @@ export function applyPatch(
     let matched = false;
     for (let i = openIdx + 1; i < closeIdx; i++) {
       if (lineMatchesKey(lines[i], key)) {
+        // Refuse to patch a key whose existing value spans multiple lines.
+        // Line-based replacement of the header would leave orphaned
+        // continuation lines and produce invalid YAML. Users/tools that hit
+        // this should delete the note and recreate via writeNote, or patch a
+        // different key.
+        if (isMultiLineValue(lines, i, openIdx, closeIdx)) {
+          throw new PatchFrontmatterError(
+            `refusing to patch key "${key}" — existing value spans multiple lines ` +
+              `(block scalar or wrapped string). Rewrite the note via writeNote instead.`,
+          );
+        }
         const leadingWhitespace = lines[i].match(/^\s*/)?.[0] ?? '';
         lines[i] = `${leadingWhitespace}${key}: ${serializeScalar(value)}`;
         matched = true;
@@ -169,6 +188,54 @@ export function applyPatch(
 function detectLineEnding(text: string): string {
   // If any CRLF is present, preserve CRLF; else LF. If neither, default LF.
   return text.includes('\r\n') ? '\r\n' : '\n';
+}
+
+/**
+ * Does the key at `keyLineIdx` have a block-scalar or wrapped-string value
+ * that spans additional lines?
+ *
+ * Detects two YAML patterns:
+ *   - Block scalar indicators: `<key>: |` or `<key>: >` (with optional
+ *     chomping/indent modifiers). Following indented lines belong to the value.
+ *   - Empty value after colon + indented continuation line below (YAML folded
+ *     plain scalar on next line). Rare but possible.
+ *
+ * A key with value on the same line (scalar + optional inline comment) always
+ * returns false — safe to replace.
+ */
+function isMultiLineValue(
+  lines: string[],
+  keyLineIdx: number,
+  openIdx: number,
+  closeIdx: number,
+): boolean {
+  const keyLine = lines[keyLineIdx];
+  const afterColon = keyLine.match(/^\s*[A-Za-z_][A-Za-z0-9_-]*\s*:\s*(.*?)\s*$/);
+  const valuePart = afterColon?.[1] ?? '';
+
+  // Block scalar indicator: `|` or `>` (possibly followed by chomping/indent
+  // modifiers like `|-`, `|+`, `>-`, `|2`) and nothing else meaningful.
+  if (/^[|>][-+]?[0-9]*\s*(#.*)?$/.test(valuePart)) {
+    return true;
+  }
+
+  // Empty value on this line and the next line (still inside frontmatter) is
+  // indented more than this key's indent → continuation.
+  if (valuePart === '') {
+    const thisIndent = keyLine.match(/^\s*/)?.[0].length ?? 0;
+    if (keyLineIdx + 1 < closeIdx) {
+      const nextLine = lines[keyLineIdx + 1];
+      const nextIndent = nextLine.match(/^\s*/)?.[0].length ?? 0;
+      if (nextLine.trim() !== '' && nextIndent > thisIndent) {
+        return true;
+      }
+    }
+  }
+
+  // Guard unused params (typescript happier) — openIdx reserved for future use
+  // if we need broader context checks.
+  void openIdx;
+  return false;
 }
 
 function validateKey(key: string): void {
