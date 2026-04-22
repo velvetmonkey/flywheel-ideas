@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`assemblePrompt — system prompt > is stable across runs (snapshot) 1`] = `
+"You are a Risk Pessimist on a decision council. You identifies downside and failure modes; overlooks opportunity cost.
+
+Respond with EXACTLY this JSON envelope and nothing else. No prose before or after. No markdown fences. No code blocks.
+
+{
+  "stance": "<your answer, 2-5 paragraphs, in your persona's voice>",
+  "confidence": <number between 0.0 and 1.0>,
+  "key_risks": ["<risk 1>", "<risk 2>"],
+  "fragile_insights": ["<insight vulnerable to assumption failure>"],
+  "assumptions_cited": ["<assumption id like asm-abc>"],
+  "evidence": [{"claim": "<claim>", "source": "<url | vault://path | citation>"}],
+  "metacognitive_reflection": {
+    "could_be_wrong_if": "<evidence that would falsify your stance>",
+    "most_vulnerable_assumption": "<assumption id>",
+    "confidence_rationale": "<why this confidence number>"
+  }
+}"
+`;
+
+exports[`assemblePrompt — user message > snapshot: pre_mortem user message 1`] = `
+"Assume this idea has failed 12 months from now. Work backwards — what went wrong? Attack every declared assumption as a candidate cause.
+
+---
+
+Idea: Switch pricing from seat to usage
+
+Current seat-based pricing underserves low-volume teams and overcharges high-volume. Hypothesis: usage-based converts better at the top.
+
+Declared assumptions:
+- [asm-a1, load-bearing] Top-tier teams will tolerate variable bills
+- [asm-a2] Cost-to-serve scales sub-linearly with usage
+
+Attack each assumption explicitly. Cite assumptions by id in \`assumptions_cited\`."
+`;

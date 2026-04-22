@@ -88,6 +88,67 @@ export {
 } from './lifecycle.js';
 export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
 
+// Council primitives (M8)
+export {
+  PROMPT_VERSION,
+  PERSONA_VERSION,
+  PERSONAS,
+  M8_PERSONA_SET,
+  assemblePrompt,
+} from './council-prompts.js';
+export type {
+  CouncilMode,
+  PersonaDef,
+  PromptInput,
+  AssembledPrompt,
+} from './council-prompts.js';
+
+export {
+  CouncilStanceSchema,
+  NotYetImplementedError,
+  parseClaudeStanceOutput,
+  parseCodexStanceOutput,
+  parseGeminiStanceOutput,
+} from './council-parsers.js';
+export type {
+  CouncilStance,
+  ParseResult,
+} from './council-parsers.js';
+
+export {
+  spawnCliCell,
+} from './council-spawn.js';
+export type {
+  SpawnCellInput,
+  SpawnResult,
+} from './council-spawn.js';
+
+export {
+  completeCouncilSession,
+  createCouncilSession,
+  getCouncilSession,
+  insertAssumptionCitations,
+  listSessionsByIdea,
+  listViewsBySession,
+  persistCouncilView,
+} from './council-sessions.js';
+export type {
+  CouncilSessionRow,
+  CouncilViewRow,
+  CreateSessionInput,
+  PersistCouncilViewInput,
+} from './council-sessions.js';
+
+export {
+  buildViewNotePath,
+  renderSynthesisMarkdown,
+  writeSynthesis,
+} from './council-synthesis.js';
+export type {
+  SynthesisInput,
+  WriteSynthesisInput,
+} from './council-synthesis.js';
+
 // CLI error classification (M7)
 export {
   classifyCliError,
