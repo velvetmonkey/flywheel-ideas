@@ -88,6 +88,19 @@ export {
 } from './lifecycle.js';
 export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
 
+// CLI error classification (M7)
+export {
+  classifyCliError,
+  CLI_ERROR_PATTERNS,
+  UNCATALOGUED_REASONS,
+} from './cli-errors.js';
+export type {
+  CliErrorClassification,
+  CliErrorContext,
+  CliName,
+  FailureReason,
+} from './cli-errors.js';
+
 // Approval (M6)
 export {
   approvalsFilePath,
