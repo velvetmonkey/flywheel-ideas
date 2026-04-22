@@ -143,6 +143,15 @@ notes under `<vault>/councils/<idea_id>/session-NN/`. M8 ships two
 personas (Risk Pessimist, Growth Optimist); M9 adds concurrency + full
 model matrix. Full operator guide: [docs/council.md](./docs/council.md).
 
+## Outcome + propagation (M12 — the compounding mechanism)
+
+`outcome.log({id, text, refutes?, validates?})` records what reality showed
+after an idea landed. Refutation cascades: every idea whose council cited
+the refuted assumption gets `needs_review=1`. Reversible via `outcome.undo`
+(idempotent with sticky-refutation semantics).
+
+Full operator guide: [docs/outcome.md](./docs/outcome.md).
+
 ## CLI dispatch targets (M8)
 
 Council dispatcher spawns `claude`, `codex`, `gemini` with explicit flags.
