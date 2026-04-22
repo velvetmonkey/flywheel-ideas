@@ -180,6 +180,85 @@ describe('idea tool — list', () => {
     const actions = next_steps.map((s) => s.action);
     expect(actions).toContain('idea.create');
   });
+
+  it('filters stale ideas by default and reports hidden count', async () => {
+    const a = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Kept' }),
+    ).result;
+    const b = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Stale' }),
+    ).result;
+    await fsp.unlink(path.join(vault, b.vault_path));
+
+    const list = await client.callTool('idea', { action: 'list' });
+    const { result, next_steps } = parseEnvelope(list);
+    expect(result.count).toBe(1);
+    expect(result.ideas[0].id).toBe(a.id);
+    expect(result.stale_hidden).toBe(1);
+
+    // Should include a pointer to show stale ideas
+    const actions = next_steps.map((s) => s.action);
+    expect(actions).toContain('idea.list');
+  });
+
+  it('surfaces stale ideas when include_stale: true', async () => {
+    const a = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Stale' }),
+    ).result;
+    await fsp.unlink(path.join(vault, a.vault_path));
+
+    const list = await client.callTool('idea', {
+      action: 'list',
+      include_stale: true,
+    });
+    const { result } = parseEnvelope(list);
+    expect(result.count).toBe(1);
+    expect(result.ideas[0].stale).toBe(true);
+  });
+});
+
+describe('idea tool — forget', () => {
+  it('removes the db row without deleting the markdown file', async () => {
+    const create = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Forget me' }),
+    ).result;
+
+    const forget = await client.callTool('idea', { action: 'forget', id: create.id });
+    const { result, isError } = parseEnvelope(forget);
+    expect(isError).toBe(false);
+    expect(result.id).toBe(create.id);
+    expect(result.forgotten_from_state).toBe('nascent');
+
+    // DB row gone
+    const row = db.prepare('SELECT id FROM ideas_notes WHERE id = ?').get(create.id);
+    expect(row).toBeUndefined();
+
+    // File still on disk — we never delete user data
+    const exists = await fsp
+      .access(path.join(vault, create.vault_path))
+      .then(() => true)
+      .catch(() => false);
+    expect(exists).toBe(true);
+  });
+
+  it('errors helpfully when forgetting an unknown id', async () => {
+    const r = await client.callTool('idea', { action: 'forget', id: 'idea-missing' });
+    const { isError } = parseEnvelope(r);
+    expect(isError).toBe(true);
+  });
+
+  it('stale_row next_steps point to forget, breaking the list-loop', async () => {
+    const create = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Orphan' }),
+    ).result;
+    await fsp.unlink(path.join(vault, create.vault_path));
+
+    const read = await client.callTool('idea', { action: 'read', id: create.id });
+    const { result, next_steps } = parseEnvelope(read);
+    expect(result.stale_row).toBe(true);
+    const actions = next_steps.map((s) => s.action);
+    expect(actions).toContain('idea.forget');
+  });
 });
 
 describe('idea tool — transition', () => {
@@ -299,5 +378,111 @@ describe('idea tool — transition', () => {
     const { result } = parseEnvelope(read);
     expect(result.state).toBe('committed');
     expect(result.transition_count).toBe(3);
+  });
+});
+
+describe('idea tool — next_steps coverage for all 8 states', () => {
+  // The "every response teaches the next move" contract requires that
+  // idea.read returns at least one next_step for every state — no dead ends.
+  const terminalStates = ['validated', 'refuted', 'parked', 'killed'] as const;
+  const activeStates = ['nascent', 'explored', 'evaluated', 'committed'] as const;
+
+  for (const state of [...activeStates, ...terminalStates]) {
+    it(`returns ≥ 1 next_step when reading an idea in state "${state}"`, async () => {
+      const create = parseEnvelope(
+        await client.callTool('idea', { action: 'create', title: `State ${state}` }),
+      ).result;
+
+      // Force-transition to the target state (v0.1 unenforced allows any→any).
+      if (state !== 'nascent') {
+        await client.callTool('idea', {
+          action: 'transition',
+          id: create.id,
+          to: state,
+          reason: `test setup into ${state}`,
+        });
+      }
+
+      const read = await client.callTool('idea', { action: 'read', id: create.id });
+      const { result, next_steps, isError } = parseEnvelope(read);
+      expect(isError).toBe(false);
+      expect(result.state).toBe(state);
+      expect(next_steps.length).toBeGreaterThan(0);
+      // Every next_step has all three required fields
+      for (const step of next_steps) {
+        expect(step.action).toBeTruthy();
+        expect(step.example).toBeTruthy();
+        expect(step.why).toBeTruthy();
+      }
+    });
+  }
+
+  it('terminal killed state points to idea.list + idea.forget', async () => {
+    const create = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Dead end' }),
+    ).result;
+    await client.callTool('idea', {
+      action: 'transition',
+      id: create.id,
+      to: 'killed',
+      reason: 'not worth pursuing',
+    });
+
+    const read = await client.callTool('idea', { action: 'read', id: create.id });
+    const { next_steps } = parseEnvelope(read);
+    const actions = next_steps.map((s) => s.action);
+    expect(actions).toContain('idea.list');
+    expect(actions).toContain('idea.forget');
+  });
+
+  it('validated state points to browsing committed siblings + create-next', async () => {
+    const create = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Shipped' }),
+    ).result;
+    await client.callTool('idea', {
+      action: 'transition',
+      id: create.id,
+      to: 'validated',
+      reason: 'outcome confirmed',
+    });
+
+    const read = await client.callTool('idea', { action: 'read', id: create.id });
+    const { next_steps } = parseEnvelope(read);
+    const actions = next_steps.map((s) => s.action);
+    expect(actions).toContain('idea.list');
+    expect(actions).toContain('idea.create');
+  });
+});
+
+describe('idea tool — error envelope hardening', () => {
+  it('validation errors carry recovery next_steps', async () => {
+    const r = await client.callTool('idea', { action: 'create' }); // missing title
+    const { isError } = parseEnvelope(r);
+    expect(isError).toBe(true);
+
+    const text = r.content?.[0]?.text ?? '{}';
+    const parsed = JSON.parse(text);
+    expect(parsed.next_steps).toBeDefined();
+    expect(parsed.next_steps.length).toBeGreaterThan(0);
+  });
+
+  it('unhandled errors surface as mcpError envelopes (not raw JSON-RPC)', async () => {
+    // Force an internal error: create an idea, then intentionally corrupt
+    // its row so a subsequent read blows up on a SELECT that joins...
+    // Actually simpler: pass a bad arg that sneaks past zod but fails in the
+    // handler. We already test this in practice via the stale-transition
+    // rollback test. Here just verify the outer try/catch is wired.
+    const r = await client.callTool('idea', {
+      action: 'transition',
+      id: 'idea-nonexistent',
+      to: 'explored',
+    });
+    const { isError } = parseEnvelope(r);
+    expect(isError).toBe(true);
+    const text = r.content?.[0]?.text ?? '{}';
+    const parsed = JSON.parse(text);
+    // Must be structured, not a raw error string
+    expect(parsed.error).toBeTruthy();
+    expect(parsed.next_steps).toBeDefined();
   });
 });

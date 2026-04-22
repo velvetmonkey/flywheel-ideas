@@ -10,6 +10,8 @@
  * Every response is `{result, next_steps}` — see `next_steps.ts`.
  */
 
+import { existsSync } from 'node:fs';
+import * as path from 'node:path';
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
@@ -47,7 +49,7 @@ export function registerIdeaTool(
     ].join(''),
     {
       action: z
-        .enum(['create', 'read', 'list', 'transition'])
+        .enum(['create', 'read', 'list', 'transition', 'forget'])
         .describe('Operation to perform'),
       title: z
         .string()
@@ -82,6 +84,10 @@ export function registerIdeaTool(
         .string()
         .optional()
         .describe('[transition] Free-form note explaining the move'),
+      include_stale: z
+        .boolean()
+        .optional()
+        .describe('[list] Include ideas whose markdown file is missing from the vault (default: false)'),
     },
     async (args) => {
       // Top-level error boundary: unhandled exceptions from handler I/O or
@@ -96,9 +102,11 @@ export function registerIdeaTool(
           case 'read':
             return handleRead(getVaultPath(), getDb(), args);
           case 'list':
-            return handleList(getDb(), args);
+            return handleList(getVaultPath(), getDb(), args);
           case 'transition':
             return await handleTransition(getVaultPath(), getDb(), args);
+          case 'forget':
+            return handleForget(getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -227,7 +235,8 @@ function handleRead(
   const history = listTransitions(db, row.id);
 
   if (!note.exists) {
-    // stale row — markdown gone
+    // stale row — markdown gone. Point toward repair, NOT idea.list (which
+    // would loop back to this same orphan by default).
     return mcpText({
       result: {
         id: row.id,
@@ -236,13 +245,18 @@ function handleRead(
         vault_path: row.vault_path,
         write_path: activeWritePath,
         stale_row: true,
-        note: 'Markdown file missing from vault — database row kept for history. The note may have been renamed or deleted outside flywheel-ideas.',
+        note: 'Markdown file missing from vault — database row kept. The note may have been renamed or deleted outside flywheel-ideas.',
       },
       next_steps: [
         {
+          action: 'idea.forget',
+          example: `idea.forget({ id: "${row.id}" })`,
+          why: 'If the idea is truly gone (deleted intentionally), remove the database pointer so it stops appearing in listings.',
+        },
+        {
           action: 'idea.list',
-          example: 'idea.list({})',
-          why: 'Find the idea again in case it was renamed elsewhere.',
+          example: 'idea.list({ include_stale: true })',
+          why: 'Show all ideas INCLUDING stale ones to check if the file was renamed elsewhere. Stale ideas are filtered from the default listing.',
         },
       ],
     });
@@ -269,30 +283,143 @@ function handleRead(
 }
 
 function buildReadNextSteps(id: string, state: IdeaState, noTransitionsYet: boolean): NextStep[] {
+  // The "every response teaches the next move" contract requires at least one
+  // entry for every state. Terminal states (killed) still get something useful
+  // (browse the ledger) so the LLM is never stranded.
   const steps: NextStep[] = [];
 
-  if (state === 'nascent' || state === 'explored') {
-    steps.push({
-      action: 'assumption.declare',
-      example: `assumption.declare({ idea_id: "${id}", context: "...", challenge: "...", decision: "...", tradeoff: "..." })`,
-      why: 'Declaring Y-statement assumptions is the prerequisite for a useful council run — the council attacks specific load-bearing claims.',
-    });
+  switch (state) {
+    case 'nascent':
+      steps.push(
+        {
+          action: 'assumption.declare',
+          example: `assumption.declare({ idea_id: "${id}", context: "...", challenge: "...", decision: "...", tradeoff: "..." })`,
+          why: 'Declaring Y-statement assumptions is the prerequisite for a useful council run — the council attacks specific load-bearing claims.',
+        },
+        {
+          action: 'idea.transition',
+          example: `idea.transition({ id: "${id}", to: "explored", reason: "initial exploration complete" })`,
+          why: 'Move the idea forward once you have rough framing — this records the state change in the transition log.',
+        },
+      );
+      break;
+
+    case 'explored':
+      steps.push(
+        {
+          action: 'assumption.declare',
+          example: `assumption.declare({ idea_id: "${id}", context: "...", challenge: "...", decision: "...", tradeoff: "..." })`,
+          why: 'If you have not declared assumptions yet, do it now — the council needs load-bearing claims to attack.',
+        },
+        {
+          action: 'council.run',
+          example: `council.run({ id: "${id}", depth: "light", mode: "pre_mortem" })`,
+          why: 'Pre-mortem mode asks the council to assume the idea has already failed and reconstruct why — counters founder optimism before commitment. (Tool ships in a later milestone.)',
+        },
+      );
+      break;
+
+    case 'evaluated':
+      steps.push(
+        {
+          action: 'council.run',
+          example: `council.run({ id: "${id}", depth: "full", mode: "standard" })`,
+          why: 'A full-depth standard-mode council is appropriate once the idea is well-framed. Pairs with any prior pre-mortem run.',
+        },
+        {
+          action: 'idea.transition',
+          example: `idea.transition({ id: "${id}", to: "committed", reason: "council surfaced no fatal risks; committing" })`,
+          why: 'Commit the idea so you can later log outcomes against it. Requires a human rationale.',
+        },
+        {
+          action: 'idea.transition',
+          example: `idea.transition({ id: "${id}", to: "parked", reason: "revisit after <signpost>" })`,
+          why: 'Park the idea if the council raised risks that are not yet resolvable. Parked ideas come back via signpost surfacing (v0.2).',
+        },
+      );
+      break;
+
+    case 'committed':
+      steps.push(
+        {
+          action: 'assumption.declare',
+          example: `assumption.declare({ idea_id: "${id}", context: "...", signpost_at: <unix-ms>, load_bearing: true })`,
+          why: 'For committed ideas, declare load-bearing assumptions with signposts so the system can surface them for re-evaluation later. (Tool ships in a later milestone.)',
+        },
+        {
+          action: 'outcome.log',
+          example: `outcome.log({ idea_id: "${id}", text: "...", refutes: [], validates: [] })`,
+          why: 'When reality arrives, log the outcome and which declared assumptions it validated or refuted. This is the compounding mechanism. (Tool ships in a later milestone.)',
+        },
+      );
+      break;
+
+    case 'validated':
+      steps.push(
+        {
+          action: 'idea.list',
+          example: 'idea.list({ state: "committed" })',
+          why: 'Browse other committed ideas — a validated outcome often invalidates or reinforces assumptions for them too.',
+        },
+        {
+          action: 'idea.create',
+          example: 'idea.create({ title: "Next bet building on this result" })',
+          why: 'Validated outcomes are often springboards — create a follow-on idea that branches from this learning.',
+        },
+      );
+      break;
+
+    case 'refuted':
+      steps.push(
+        {
+          action: 'idea.list',
+          example: 'idea.list({ state: "committed" })',
+          why: 'Browse other committed ideas — a refuted outcome often flags assumptions shared across the roadmap. (Assumption-propagation automation ships in v0.2.)',
+        },
+        {
+          action: 'outcome.log',
+          example: `outcome.log({ idea_id: "${id}", text: "post-mortem: what specifically broke, what we learned" })`,
+          why: 'If the refutation log is sparse, expand it — the learning is the value of a failed bet. (Tool ships in a later milestone.)',
+        },
+      );
+      break;
+
+    case 'parked':
+      steps.push(
+        {
+          action: 'idea.transition',
+          example: `idea.transition({ id: "${id}", to: "explored", reason: "<why-now>" })`,
+          why: 'Un-park the idea when conditions have changed — this creates a new transition record and restarts the loop.',
+        },
+        {
+          action: 'idea.transition',
+          example: `idea.transition({ id: "${id}", to: "killed", reason: "permanently wrong fit" })`,
+          why: 'If the idea is truly dead, move it to killed. The transition log preserves history for future reference.',
+        },
+      );
+      break;
+
+    case 'killed':
+      steps.push(
+        {
+          action: 'idea.list',
+          example: 'idea.list({ state: "committed" })',
+          why: 'Killed is terminal — there is nothing to do here. Browse active ideas instead.',
+        },
+        {
+          action: 'idea.forget',
+          example: `idea.forget({ id: "${id}" })`,
+          why: 'If the killed idea is truly dead to you (no future reference value), forget it to clean up the ledger.',
+        },
+      );
+      break;
   }
 
-  if (noTransitionsYet && state === 'nascent') {
-    steps.push({
-      action: 'idea.transition',
-      example: `idea.transition({ id: "${id}", to: "explored", reason: "initial exploration complete" })`,
-      why: 'Move the idea forward once you have rough framing — this records the state change in the transition log.',
-    });
-  }
-
-  if (state === 'explored' || state === 'evaluated') {
-    steps.push({
-      action: 'council.run',
-      example: `council.run({ id: "${id}", depth: "light", mode: "pre_mortem" })`,
-      why: 'Pre-mortem mode asks the council to assume the idea has already failed and reconstruct why — counters founder optimism before commitment. (Tool ships in a later milestone.)',
-    });
+  // Suppress the "move forward" nudge if the user has already moved the idea
+  // once (the nascent→explored nudge is only relevant for brand-new ideas
+  // that have not transitioned yet).
+  if (!noTransitionsYet && state === 'nascent') {
+    return steps.filter((s) => !s.example.includes('to: "explored"'));
   }
 
   return steps;
@@ -300,9 +427,20 @@ function buildReadNextSteps(id: string, state: IdeaState, noTransitionsYet: bool
 
 // ---------- idea.list ----------
 
+interface IdeaListRow {
+  id: string;
+  title: string;
+  state: string;
+  needs_review: number;
+  created_at: number;
+  state_changed_at: number;
+  vault_path: string;
+}
+
 function handleList(
+  vaultPath: string,
   db: IdeasDatabase,
-  args: { state?: string; limit?: number },
+  args: { state?: string; limit?: number; include_stale?: boolean },
 ): ReturnType<typeof mcpText> {
   const limit = args.limit ?? 50;
   const rows = args.state
@@ -312,32 +450,33 @@ function handleList(
            FROM ideas_notes WHERE state = ?
            ORDER BY state_changed_at DESC LIMIT ?`,
         )
-        .all(args.state, limit) as Array<{
-        id: string;
-        title: string;
-        state: string;
-        needs_review: number;
-        created_at: number;
-        state_changed_at: number;
-        vault_path: string;
-      }>)
+        .all(args.state, limit) as IdeaListRow[])
     : (db
         .prepare(
           `SELECT id, title, state, needs_review, created_at, state_changed_at, vault_path
            FROM ideas_notes
            ORDER BY state_changed_at DESC LIMIT ?`,
         )
-        .all(limit) as Array<{
-        id: string;
-        title: string;
-        state: string;
-        needs_review: number;
-        created_at: number;
-        state_changed_at: number;
-        vault_path: string;
-      }>);
+        .all(limit) as IdeaListRow[]);
 
-  const ideas = rows.map((r) => ({
+  // Filter stale (markdown-missing) rows unless the caller explicitly asked
+  // for them. This breaks the stale_row infinite-loop where idea.read on a
+  // stale idea would naively suggest idea.list, which would return the same
+  // orphan, which would lead the agent back to read.
+  const includeStale = args.include_stale === true;
+  const filtered: Array<IdeaListRow & { stale: boolean }> = [];
+  let staleSkipped = 0;
+  for (const r of rows) {
+    const fullPath = path.join(vaultPath, r.vault_path);
+    const exists = existsSync(fullPath);
+    if (!exists && !includeStale) {
+      staleSkipped++;
+      continue;
+    }
+    filtered.push({ ...r, stale: !exists });
+  }
+
+  const ideas = filtered.map((r) => ({
     id: r.id,
     title: r.title,
     state: r.state,
@@ -345,6 +484,7 @@ function handleList(
     created_at: r.created_at,
     state_changed_at: r.state_changed_at,
     vault_path: r.vault_path,
+    ...(r.stale ? { stale: true as const } : {}),
   }));
 
   const next_steps: NextStep[] = ideas.length
@@ -359,18 +499,91 @@ function handleList(
         {
           action: 'idea.create',
           example: 'idea.create({ title: "..." })',
-          why: 'No ideas yet — create the first one.',
+          why: staleSkipped > 0
+            ? `No active ideas (${staleSkipped} stale rows were hidden — pass include_stale: true to see them). Create a new one.`
+            : 'No ideas yet — create the first one.',
         },
       ];
+
+  if (staleSkipped > 0 && ideas.length > 0) {
+    next_steps.push({
+      action: 'idea.list',
+      example: 'idea.list({ include_stale: true })',
+      why: `${staleSkipped} stale rows (markdown deleted externally) were hidden. Pass include_stale: true to review them, or use idea.forget to clean up.`,
+    });
+  }
 
   return mcpText({
     result: {
       ideas,
       count: ideas.length,
-      filter: { state: (args.state as IdeaState | undefined) ?? null, limit },
+      stale_hidden: staleSkipped,
+      filter: {
+        state: (args.state as IdeaState | undefined) ?? null,
+        limit,
+        include_stale: includeStale,
+      },
       write_path: activeWritePath,
     },
     next_steps,
+  });
+}
+
+// ---------- idea.forget ----------
+
+/**
+ * Remove the database row for an idea. Does NOT delete the markdown file —
+ * user data is never deleted by the MCP surface. Intended for cleaning up
+ * stale rows after the markdown was externally removed, or for pruning
+ * long-terminal ideas that no longer need tracking.
+ */
+function handleForget(
+  db: IdeasDatabase,
+  args: { id?: string },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('forget requires `id`', [
+      {
+        action: 'idea.list',
+        example: 'idea.list({ include_stale: true })',
+        why: 'List ideas (including stale ones) to find the id to forget.',
+      },
+    ]);
+  }
+
+  const row = db.prepare('SELECT state, title FROM ideas_notes WHERE id = ?').get(args.id) as
+    | { state: string; title: string }
+    | undefined;
+  if (!row) {
+    return mcpError(`idea not found: ${args.id}`, [
+      {
+        action: 'idea.list',
+        example: 'idea.list({ include_stale: true })',
+        why: 'Confirm the id — possibly already forgotten.',
+      },
+    ]);
+  }
+
+  // Cascading deletes from ideas_notes remove transitions/assumptions/etc
+  // per the schema's ON DELETE CASCADE. The markdown file is intentionally
+  // left on disk — user data is not destroyed by flywheel-ideas.
+  db.prepare('DELETE FROM ideas_notes WHERE id = ?').run(args.id);
+
+  return mcpText({
+    result: {
+      id: args.id,
+      forgotten_from_state: row.state,
+      title: row.title,
+      write_path: activeWritePath,
+      note: 'Database row removed. The markdown file on disk (if any) was not touched — delete it separately if you want it gone.',
+    },
+    next_steps: [
+      {
+        action: 'idea.list',
+        example: 'idea.list({})',
+        why: 'Confirm the idea no longer appears in listings.',
+      },
+    ],
   });
 }
 
