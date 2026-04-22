@@ -25,7 +25,10 @@ import {
   activeWritePath,
   approvalStatusForResponse,
   approvalsFilePath,
+  CouncilOrchestratorError,
   resolveApproval,
+  runCouncil,
+  type CouncilMode,
   type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpText, type NextStep } from '../next_steps.js';
@@ -110,8 +113,8 @@ async function handleRun(
   }
 
   const idea = db
-    .prepare(`SELECT id FROM ideas_notes WHERE id = ?`)
-    .get(args.id) as { id: string } | undefined;
+    .prepare(`SELECT id, state FROM ideas_notes WHERE id = ?`)
+    .get(args.id) as { id: string; state: string } | undefined;
   if (!idea) {
     return mcpError(`idea not found: ${args.id}`, [
       {
@@ -124,11 +127,11 @@ async function handleRun(
 
   if (args.confirm !== true) {
     return mcpError(
-      'council.run requires confirm: true. Once dispatcher ships (M8) this will spawn CLI subprocesses (claude, codex, gemini).',
+      'council.run requires confirm: true. This will spawn the claude CLI (one subprocess per persona). M8 ships claude + two personas (Risk Pessimist, Growth Optimist).',
       [
         {
           action: 'council.run',
-          example: `council.run({ id: "${args.id}", depth: "light", mode: "pre_mortem", confirm: true })`,
+          example: `council.run({ id: "${args.id}", depth: "light", confirm: true })`,
           why: 'Re-call with confirm: true to acknowledge subprocess spawn. Approval is a separate out-of-band gate.',
         },
       ],
@@ -174,35 +177,108 @@ async function handleRun(
     );
   }
 
-  // APPROVED. M6 stub: do NOT write a dispatch row. Real M8 dispatcher owns
-  // the ideas_dispatches audit trail.
+  // APPROVED — real dispatch (M8).
+  const mode: CouncilMode = args.mode ?? defaultModeForState(idea.state);
+
+  // Test-injection hook: FLYWHEEL_IDEAS_SPAWN_PREFIX can be a JSON array
+  // (e.g., ["node","/path/to/mock-claude.mjs"]) to redirect the spawn at
+  // a mock binary without changing the MCP surface. Unset in production.
+  const spawn_override = resolveSpawnOverride();
+
+  let outcome;
+  try {
+    outcome = await runCouncil(
+      db,
+      vaultPath,
+      {
+        idea_id: args.id,
+        depth: args.depth ?? 'light',
+        mode,
+        approval_scope: state.scope,
+      },
+      { spawn_override },
+    );
+  } catch (err) {
+    if (err instanceof CouncilOrchestratorError) {
+      return mcpError(`council dispatch failed: ${err.message}`, [
+        {
+          action: 'idea.list',
+          example: 'idea.list({})',
+          why: 'Sanity-check the idea state before retrying.',
+        },
+      ]);
+    }
+    throw err;
+  }
+
   const next_steps: NextStep[] = [
     {
-      action: 'assumption.signposts_due',
-      example: `assumption.signposts_due({ idea_id: "${args.id}" })`,
-      why: 'Before M8 lands, review any due signposts — they\'re the bias-check the council will later attack.',
+      action: 'read_file',
+      example: outcome.synthesis_vault_path,
+      why: 'Read the deterministic synthesis comparing the two personas side-by-side.',
     },
     {
       action: 'idea.read',
       example: `idea.read({ id: "${args.id}" })`,
-      why: 'Re-read the idea + its assumptions to sanity-check the frame before the real council runs.',
+      why: 'Re-read the idea with council context now present in the vault.',
+    },
+    {
+      action: 'assumption.signposts_due',
+      example: `assumption.signposts_due({ idea_id: "${args.id}" })`,
+      why: 'Any assumption the council flagged as fragile? Check signposts.',
     },
   ];
 
+  if (outcome.failed_any) {
+    next_steps.unshift({
+      action: 'council.run',
+      example: `council.run({ id: "${args.id}", confirm: true, mode: "${mode}" })`,
+      why: 'One or more cells failed. The synthesis carries failure reasons + stderr tails — retry after diagnosing.',
+    });
+  }
+
   return mcpText({
     result: {
-      status: 'dispatcher_pending',
-      message:
-        'Approval verified. Real dispatcher lands in M8 (see milestones-v0-1.md). No dispatch row written.',
-      idea_id: args.id,
-      depth: args.depth ?? 'light',
-      mode: args.mode ?? 'pre_mortem',
+      status: outcome.status,
+      session_id: outcome.session_id,
+      synthesis_vault_path: outcome.synthesis_vault_path,
+      views: outcome.views.map((v) => ({
+        id: v.id,
+        persona: v.persona,
+        model: v.model,
+        confidence: v.confidence,
+        failure_reason: v.failure_reason,
+        content_vault_path: v.content_vault_path,
+      })),
+      mode: outcome.mode,
+      failed_any: outcome.failed_any,
       approval_source: state.source,
       approval_scope: state.scope,
       write_path: activeWritePath,
     },
     next_steps,
   });
+}
+
+function resolveSpawnOverride(): string[] | undefined {
+  const raw = process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX;
+  if (!raw) return undefined;
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed) && parsed.every((x) => typeof x === 'string')) {
+      return parsed as string[];
+    }
+  } catch {
+    // fall through
+  }
+  return undefined;
+}
+
+function defaultModeForState(state: string): CouncilMode {
+  // Per closed-loop spec: nascent/explored default to pre_mortem (counter
+  // founder optimism early); evaluated/committed default to standard.
+  if (state === 'nascent' || state === 'explored') return 'pre_mortem';
+  return 'standard';
 }
 
 // ---------- council.approval_status ----------
