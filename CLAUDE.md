@@ -135,6 +135,19 @@ text out of the audit log.
 
 Detection at startup via `packages/core/src/write/writer.ts`. `result.write_path` field on every tool response reports active tier.
 
+## CLI dispatch targets (M8)
+
+Council dispatcher spawns `claude`, `codex`, `gemini` with explicit flags.
+Per-CLI quirks — prompt-input mechanisms, stdout JSON schemas, stdin
+termination requirements, error-stream surfaces — are catalogued in
+[docs/cli-quirks.md](./docs/cli-quirks.md). Error classification lives
+in `packages/core/src/cli-errors.ts` and is backed by golden fixtures at
+`packages/core/test/fixtures/cli-errors/`.
+
+M7 shipped `parse` + `bad_model` + `timeout` + `exit_nonzero` classes.
+`auth` and `rate_limit` are explicitly TODO for M8 (captured during real
+dispatch).
+
 ## Dependencies
 
 - `@velvetmonkey/flywheel-ideas-core` — workspace sibling
