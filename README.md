@@ -4,10 +4,11 @@
 
 A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea becomes a tracked object with a lifecycle state machine, a declared-assumption ledger, a multi-model AI council that stress-tests the assumptions, and an outcome log that refutes broken assumptions and automatically flags every dependent idea for re-review. The vault compounds. Six months from now, it catches the assumption that failed.
 
+[![npm version](https://img.shields.io/npm/v/@velvetmonkey/flywheel-ideas.svg)](https://www.npmjs.com/package/@velvetmonkey/flywheel-ideas)
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![status: alpha](https://img.shields.io/badge/status-alpha-orange.svg)](#roadmap)
 
-> **Status:** pre-alpha, under active development. v0.1 in progress.
+> **Status:** 0.1.0-alpha, under active development. v0.1 closed loop shipping across M1–M14.
 
 ## Who this is for
 
@@ -70,23 +71,38 @@ The gap nobody fills: **a local, vault-native, human-readable decision ledger wi
 
 **Install**
 
+The `flywheel-ideas` MCP server runs as a subprocess launched by your MCP
+client (Claude Desktop, Claude Code, Cursor, etc.). You don't need to `npm
+install` it globally — `npx` will fetch + cache it on first use.
+
+Grant approval for council dispatch *out-of-band* (the LLM cannot grant it
+itself):
+
 ```bash
-npm install @velvetmonkey/flywheel-ideas
+# Session-scoped (recommended while getting started)
+export FLYWHEEL_IDEAS_APPROVE=session
+# Persistent across restarts — edit <vault>/.flywheel/ideas-approvals.json manually
 ```
 
-**Wire into your MCP client**
+**Wire into your MCP client** (example `mcp.json` entry):
 
 ```json
 {
   "mcpServers": {
     "flywheel-ideas": {
       "command": "npx",
-      "args": ["flywheel-ideas-mcp"],
-      "env": { "VAULT_PATH": "/path/to/your/vault" }
+      "args": ["-y", "@velvetmonkey/flywheel-ideas"],
+      "env": {
+        "VAULT_PATH": "/path/to/your/vault",
+        "FLYWHEEL_IDEAS_APPROVE": "session"
+      }
     }
   }
 }
 ```
+
+The `-y` flag auto-accepts the initial `npx` download prompt. After the first
+run the server is cached locally; subsequent launches are instant.
 
 **First flow**
 
@@ -140,7 +156,13 @@ The core product: four MCP tools forming `idea → assumption → council → ou
 
 - ✅ **`idea`** — `create · read · list · transition · forget`. Lifecycle state machine (8 states), atomic DB + frontmatter transitions with rollback-on-failure, stale-row filtering, `next_steps` guidance for every state.
 - ✅ **`assumption`** — `declare · list · lock · unlock · signposts_due · forget`. Y-statement structured input OR free text, OSF-style pre-registration lock, load-bearing tagging, signpost-based re-evaluation surfacing.
-- ⏳ **`council`** — multi-model subprocess dispatcher (claude/codex/gemini × five personas), two-pass metacognitive structure, structured evidence citations, template synthesis. *Ships across M6–M11.*
+- 🚧 **`council`** — multi-model subprocess dispatcher + deterministic synthesis.
+  - ✅ M6: approval / dispatch-log plane (out-of-band consent; LLM cannot self-grant)
+  - ✅ M7: CLI characterization + error classifier (claude/codex/gemini quirks catalogued)
+  - ✅ M8: real claude dispatcher, 2 personas, single-pass, deterministic `SYNTHESIS.md`, pre_mortem mode
+  - 🚧 M9: two-pass metacognitive + codex dispatch + concurrency limiter (in flight)
+  - ⏳ M10: gemini dispatch + full matrix (3 × 5 = 15 cells)
+  - ⏳ M11: evidence-aware template refinements
 - ⏳ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. *Ships at M12.*
 
 Also shipping during v0.1: real `claude -p` end-to-end in CI (M13) and the install-time custom-categories integration (M14).
@@ -175,6 +197,17 @@ Your vault becomes an empirical record of your predictions. Personal calibration
 - **[vault-core](https://github.com/velvetmonkey/vault-core)** — shared core library (authoritative vault-write orchestration)
 - **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — vault indexing MCP
 - **flywheel-ideas** *(this repo)* — decision ledger
+
+## Packages
+
+This repo publishes two npm packages. Most users only interact with the first:
+
+| Package | Purpose | Users |
+|---|---|---|
+| [`@velvetmonkey/flywheel-ideas`](https://www.npmjs.com/package/@velvetmonkey/flywheel-ideas) | The MCP server users add to their client config | End users |
+| [`@velvetmonkey/flywheel-ideas-core`](https://www.npmjs.com/package/@velvetmonkey/flywheel-ideas-core) | Internal domain library the server depends on | Transitive |
+
+Release + publish workflow: see [RELEASE.md](./RELEASE.md).
 
 ## License
 

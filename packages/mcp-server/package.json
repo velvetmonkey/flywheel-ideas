@@ -16,12 +16,21 @@
     "test:integration": "vitest run test/integration/",
     "test:e2e": "vitest run test/e2e/",
     "lint": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm test",
+    "prepack": "cp ../../README.md ./README.md && cp ../../LICENSE ./LICENSE",
+    "postpack": "rm -f README.md LICENSE"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/velvetmonkey/flywheel-ideas.git"
+    "url": "git+https://github.com/velvetmonkey/flywheel-ideas.git",
+    "directory": "packages/mcp-server"
   },
+  "homepage": "https://github.com/velvetmonkey/flywheel-ideas#readme",
+  "bugs": {
+    "url": "https://github.com/velvetmonkey/flywheel-ideas/issues"
+  },
+  "author": "velvetmonkey",
   "keywords": [
     "mcp",
     "mcp-server",
@@ -38,7 +47,7 @@
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.26.0",
-    "@velvetmonkey/flywheel-ideas-core": "*",
+    "@velvetmonkey/flywheel-ideas-core": "0.1.0-alpha.0",
     "better-sqlite3": "^12.0.0",
     "gray-matter": "^4.0.3",
     "zod": "^3.22.4"

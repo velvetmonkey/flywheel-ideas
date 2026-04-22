@@ -1,8 +1,7 @@
 {
   "name": "@velvetmonkey/flywheel-ideas-core",
   "version": "0.1.0-alpha.0",
-  "private": true,
-  "description": "Core domain logic for flywheel-ideas — lifecycle, assumptions, council dispatcher, outcome propagation",
+  "description": "Core domain logic for flywheel-ideas — lifecycle, assumptions, council dispatcher, outcome propagation. Not intended for direct use; consumed by @velvetmonkey/flywheel-ideas (MCP server).",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,8 +17,28 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm test",
+    "prepack": "cp ../../LICENSE ./LICENSE",
+    "postpack": "rm -f LICENSE"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velvetmonkey/flywheel-ideas.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/velvetmonkey/flywheel-ideas#readme",
+  "bugs": {
+    "url": "https://github.com/velvetmonkey/flywheel-ideas/issues"
+  },
+  "author": "velvetmonkey",
+  "keywords": [
+    "flywheel-ideas",
+    "decision-ledger",
+    "assumptions",
+    "council",
+    "internal"
+  ],
   "dependencies": {
     "better-sqlite3": "^12.0.0",
     "gray-matter": "^4.0.3",
@@ -36,5 +55,13 @@
   "engines": {
     "node": ">=22.0.0"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
