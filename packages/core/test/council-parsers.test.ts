@@ -251,21 +251,6 @@ describe('parseCodexStanceOutput — failure paths', () => {
   });
 });
 
-describe('gemini parser stub (M10)', () => {
-  it('gemini parser throws NotYetImplementedError', () => {
-    expect(() => parseGeminiStanceOutput('')).toThrow(NotYetImplementedError);
-  });
-
-  it('NotYetImplementedError message references M10', () => {
-    try {
-      parseGeminiStanceOutput('');
-      expect.fail('should have thrown');
-    } catch (err) {
-      expect((err as Error).message).toMatch(/M10/);
-    }
-  });
-});
-
 // ---------------------------------------------------------------------------
 // Pass 2 envelope schema — self_critique optional for backwards compat (M9)
 // ---------------------------------------------------------------------------

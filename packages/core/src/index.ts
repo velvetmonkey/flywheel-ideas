@@ -164,11 +164,13 @@ export type {
   WriteSynthesisInput,
 } from './council-synthesis.js';
 
-// CLI error classification (M7)
+// CLI error classification (M7 + M10 benign-stderr filter)
 export {
   classifyCliError,
   CLI_ERROR_PATTERNS,
   UNCATALOGUED_REASONS,
+  BENIGN_STDERR_PATTERNS,
+  stripBenignStderr,
 } from './cli-errors.js';
 export type {
   CliErrorClassification,
