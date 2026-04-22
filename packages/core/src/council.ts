@@ -19,9 +19,12 @@ import { assemblePrompt, M8_PERSONA_SET, PERSONA_VERSION, PROMPT_VERSION } from 
 import type { CouncilMode, PersonaDef } from './council-prompts.js';
 import {
   parseClaudeStanceOutput,
+  parseCodexStanceOutput,
   type CouncilStance,
+  type ParseResult,
 } from './council-parsers.js';
 import { spawnCliCell, type CliName } from './council-spawn.js';
+import { ConcurrencyLimiter } from './concurrency.js';
 import {
   completeCouncilSession,
   createCouncilSession,
@@ -45,7 +48,15 @@ import { logDispatchFinish, logDispatchStart } from './dispatches.js';
 import type { ApprovalScope } from './approval.js';
 
 const CLAUDE_MODEL_DEFAULT = 'claude-haiku-4-5-20251001';
+const CODEX_MODEL_DEFAULT = 'gpt-5-codex';
 const DEFAULT_TIMEOUT_MS = 15 * 60 * 1000; // 15 min per spec
+const DEFAULT_CONCURRENCY = 3;
+
+/**
+ * Codex `exec` has no --system-prompt flag. System prompt goes as a stdin
+ * preamble with an unambiguous delimiter the model can orient on.
+ */
+const CODEX_STDIN_DELIMITER = '\n\n===USER MESSAGE===\n\n';
 
 export interface RunCouncilInput {
   idea_id: string;
@@ -56,15 +67,31 @@ export interface RunCouncilInput {
 }
 
 export interface RunCouncilOptions {
-  /** Override the claude binary spawn (tests use ['node', MOCK_CLI]). */
+  /**
+   * Legacy shorthand for `spawn_overrides.claude`. Overrides the claude
+   * binary spawn (tests use ['node', MOCK_CLI]).
+   */
   spawn_override?: string[];
-  /** Override claude model selection (default from FLYWHEEL_IDEAS_CELL_MODEL or haiku). */
+  /**
+   * Per-CLI spawn prefix overrides. When set, each CLI's entry replaces the
+   * default binary resolution. Tests point at mock-claude.mjs / mock-codex.mjs.
+   */
+  spawn_overrides?: Partial<Record<CliName, string[]>>;
+  /** Legacy claude model override. Prefer per-CLI env vars. */
   model_override?: string;
+  /** Per-CLI model overrides. Fallback chain: this → env var → per-CLI default. */
+  model_overrides?: Partial<Record<CliName, string>>;
   /** Override per-cell timeout (default from FLYWHEEL_IDEAS_CELL_TIMEOUT_MS or 15m). */
   timeout_ms_override?: number;
-  /** Override the persona set (M8 defaults to M8_PERSONA_SET). */
+  /** Override the persona set (M9 defaults to M8_PERSONA_SET — 2 personas). */
   personas_override?: readonly PersonaDef[];
+  /** Override the CLI set (M9 defaults to ['claude','codex']; M10 adds gemini). */
+  clis_override?: readonly CliName[];
+  /** Override maxConcurrent (default FLYWHEEL_IDEAS_MAX_CONCURRENCY or 3). */
+  max_concurrency_override?: number;
 }
+
+const M9_CLI_SET: readonly CliName[] = ['claude', 'codex'];
 
 export interface CouncilViewResult {
   id: string;
@@ -98,6 +125,14 @@ export async function runCouncil(
   input: RunCouncilInput,
   options: RunCouncilOptions = {},
 ): Promise<RunCouncilResult> {
+  // M9 accepts depth at the MCP surface but only `light` runs real work.
+  // `full` requires gemini (→ M10) so we reject here before spawning anything.
+  if (input.depth === 'full') {
+    throw new CouncilOrchestratorError(
+      'council.run depth="full" requires gemini dispatch — lands in M10. Use depth="light" for now.',
+    );
+  }
+
   const idea = db
     .prepare(`SELECT id, vault_path, title FROM ideas_notes WHERE id = ?`)
     .get(input.idea_id) as { id: string; vault_path: string; title: string } | undefined;
@@ -138,25 +173,50 @@ export async function runCouncil(
     mode: input.mode,
   });
 
-  // 2. Iterate personas sequentially (queue-of-one)
+  // 2. Build the full matrix (cli × persona) and fan out through the limiter.
   const personas = options.personas_override ?? M8_PERSONA_SET;
+  const clis = options.clis_override ?? M9_CLI_SET;
+  const cells: Array<{ cli: CliName; persona: PersonaDef }> = [];
+  for (const cli of clis) {
+    for (const persona of personas) {
+      cells.push({ cli, persona });
+    }
+  }
+
+  const maxConcurrent = resolveMaxConcurrency(options);
+  const limiter = new ConcurrencyLimiter(maxConcurrent);
+
+  const settled = await Promise.allSettled(
+    cells.map((cell) =>
+      limiter.run(() =>
+        runCouncilCell(db, vault_path, {
+          session_id,
+          session_index,
+          idea: { id: idea.id, title: idea.title, body: idea_body },
+          persona: cell.persona,
+          mode: input.mode,
+          assumptions: normalizedAssumptions,
+          cli: cell.cli,
+          approval_scope: input.approval_scope,
+          options,
+        }),
+      ),
+    ),
+  );
+
   const viewResults: CouncilViewResult[] = [];
   const parsedStances = new Map<string, CouncilStance>();
-
-  for (const persona of personas) {
-    const result = await runCouncilCell(db, vault_path, {
-      session_id,
-      session_index,
-      idea: { id: idea.id, title: idea.title, body: idea_body },
-      persona,
-      mode: input.mode,
-      assumptions: normalizedAssumptions,
-      cli: 'claude',
-      approval_scope: input.approval_scope,
-      options,
-    });
-    viewResults.push(result.summary);
-    if (result.stance) parsedStances.set(result.summary.id, result.stance);
+  for (const r of settled) {
+    if (r.status === 'fulfilled') {
+      viewResults.push(r.value.summary);
+      if (r.value.stance) parsedStances.set(r.value.summary.id, r.value.stance);
+    } else {
+      // runCouncilCell is designed never to throw — if we see a rejection
+      // here it's an unrecovered bug. Surface it rather than silently drop.
+      throw r.reason instanceof Error
+        ? r.reason
+        : new Error(`council cell rejected unexpectedly: ${String(r.reason)}`);
+    }
   }
 
   // 3. Render + write synthesis
@@ -255,8 +315,9 @@ async function executePass(
   });
   const input_hash = `sha256:${createHash('sha256').update(prompt.digest_material).digest('hex')}`;
 
-  const model = resolveModel(input.options);
-  const argv = buildClaudeArgv(model, prompt.system);
+  const model = resolveModelForCli(input.options, input.cli);
+  const argv = buildArgvForCli(input.cli, model, prompt.system);
+  const stdinPayload = buildStdinForCli(input.cli, prompt.system, prompt.user);
   const timeout_ms = resolveTimeout(input.options);
 
   const dispatch = logDispatchStart(db, {
@@ -271,9 +332,9 @@ async function executePass(
     spawnResult = await spawnCliCell({
       cli: input.cli,
       argv,
-      stdin_prompt: prompt.user,
+      stdin_prompt: stdinPayload,
       timeout_ms,
-      spawn_prefix: input.options.spawn_override,
+      spawn_prefix: resolveSpawnPrefix(input.options, input.cli),
     });
   } finally {
     logDispatchFinish(db, dispatch.id);
@@ -297,7 +358,7 @@ async function executePass(
     });
     failure_reason = classification.reason;
   } else {
-    const parseResult = parseClaudeStanceOutput(spawnResult.stdout);
+    const parseResult = parseForCli(input.cli, spawnResult.stdout);
     if (parseResult.ok) {
       parsed = parseResult.stance;
       if (passNum === 2 && !parsed.self_critique) {
@@ -485,12 +546,41 @@ function baseNoteFrontmatter(
 
 // ---------- helpers ----------
 
-function resolveModel(options: RunCouncilOptions): string {
-  return (
-    options.model_override ??
-    process.env.FLYWHEEL_IDEAS_CELL_MODEL ??
-    CLAUDE_MODEL_DEFAULT
-  );
+function resolveModelForCli(options: RunCouncilOptions, cli: CliName): string {
+  // Precedence: per-CLI override → legacy claude override (claude only) →
+  // per-CLI env var → legacy generic env var → per-CLI default.
+  const perCli = options.model_overrides?.[cli];
+  if (perCli) return perCli;
+  if (cli === 'claude' && options.model_override) return options.model_override;
+
+  const envVar = `FLYWHEEL_IDEAS_${cli.toUpperCase()}_MODEL`;
+  const fromCliEnv = process.env[envVar];
+  if (fromCliEnv) return fromCliEnv;
+
+  if (cli === 'claude' && process.env.FLYWHEEL_IDEAS_CELL_MODEL) {
+    return process.env.FLYWHEEL_IDEAS_CELL_MODEL;
+  }
+
+  return cli === 'claude' ? CLAUDE_MODEL_DEFAULT : CODEX_MODEL_DEFAULT;
+}
+
+function resolveSpawnPrefix(options: RunCouncilOptions, cli: CliName): string[] | undefined {
+  // Per-CLI overrides win. Legacy `spawn_override` applies to claude only
+  // (the M8 single-CLI assumption).
+  const perCli = options.spawn_overrides?.[cli];
+  if (perCli) return perCli;
+  if (cli === 'claude' && options.spawn_override) return options.spawn_override;
+  return undefined;
+}
+
+function resolveMaxConcurrency(options: RunCouncilOptions): number {
+  if (options.max_concurrency_override !== undefined && options.max_concurrency_override > 0) {
+    return options.max_concurrency_override;
+  }
+  const raw = process.env.FLYWHEEL_IDEAS_MAX_CONCURRENCY;
+  if (!raw) return DEFAULT_CONCURRENCY;
+  const n = Number.parseInt(raw, 10);
+  return Number.isFinite(n) && n > 0 ? n : DEFAULT_CONCURRENCY;
 }
 
 function resolveTimeout(options: RunCouncilOptions): number {
@@ -512,6 +602,55 @@ function buildClaudeArgv(model: string, systemPrompt: string): string[] {
     '--no-session-persistence',
     `--system-prompt=${systemPrompt}`,
   ];
+}
+
+function buildCodexArgv(model: string, _systemPrompt: string): string[] {
+  // codex `exec` has no --system-prompt flag per M7 quirks. System prompt
+  // is composed into stdin via buildStdinForCli. argv carries flags only.
+  return [
+    'exec',
+    '--json',
+    '--skip-git-repo-check',
+    '--ephemeral',
+    '--model',
+    model,
+  ];
+}
+
+function buildArgvForCli(cli: CliName, model: string, systemPrompt: string): string[] {
+  switch (cli) {
+    case 'claude':
+      return buildClaudeArgv(model, systemPrompt);
+    case 'codex':
+      return buildCodexArgv(model, systemPrompt);
+    case 'gemini':
+      throw new CouncilOrchestratorError(`gemini dispatch not wired — lands in M10`);
+  }
+}
+
+function buildStdinForCli(cli: CliName, systemPrompt: string, userMessage: string): string {
+  if (cli === 'claude') return userMessage;
+  if (cli === 'codex') {
+    // System prompt prefixed into stdin with an unambiguous delimiter.
+    return `${systemPrompt}${CODEX_STDIN_DELIMITER}${userMessage}`;
+  }
+  // gemini falls through (wired M10)
+  return userMessage;
+}
+
+function parseForCli(cli: CliName, stdout: string): ParseResult {
+  switch (cli) {
+    case 'claude':
+      return parseClaudeStanceOutput(stdout);
+    case 'codex':
+      return parseCodexStanceOutput(stdout);
+    case 'gemini':
+      return {
+        ok: false,
+        reason: 'json_parse_error',
+        detail: 'gemini parser not wired — lands in M10',
+      };
+  }
 }
 
 interface ViewNoteBodyInput {

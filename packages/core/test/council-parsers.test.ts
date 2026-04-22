@@ -141,21 +141,127 @@ describe('parseClaudeStanceOutput — failure paths', () => {
   });
 });
 
-describe('codex / gemini stubs', () => {
-  it('codex parser throws NotYetImplementedError', () => {
-    expect(() => parseCodexStanceOutput('')).toThrow(NotYetImplementedError);
+// ---------- codex parser (M9) ----------
+
+function codexStdoutFromAgentText(text: string, opts: { includeFailed?: boolean } = {}): string {
+  const events: unknown[] = [
+    { type: 'thread.started', thread_id: 'mock-thread' },
+    { type: 'turn.started' },
+    { type: 'item.completed', item: { id: 'item_0', type: 'agent_message', text } },
+    { type: 'turn.completed', usage: { input_tokens: 10, output_tokens: 20 } },
+  ];
+  if (opts.includeFailed) {
+    events.splice(3, 1, { type: 'turn.failed', error: { message: 'mock failed' } });
+  }
+  return events.map((e) => JSON.stringify(e)).join('\n');
+}
+
+describe('parseCodexStanceOutput — success paths', () => {
+  it('extracts valid envelope from terminal agent_message text', () => {
+    const stdout = codexStdoutFromAgentText(JSON.stringify(validEnvelope));
+    const r = parseCodexStanceOutput(stdout);
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.stance.stance).toBe(validEnvelope.stance);
   });
 
+  it('extracts envelope wrapped in fenced ```json block inside agent_message.text', () => {
+    const wrapped = `Sure, here goes:\n\n\`\`\`json\n${JSON.stringify(validEnvelope)}\n\`\`\``;
+    const stdout = codexStdoutFromAgentText(wrapped);
+    const r = parseCodexStanceOutput(stdout);
+    expect(r.ok).toBe(true);
+  });
+
+  it('skips individual malformed JSONL lines but still finds agent_message', () => {
+    const events = [
+      'not-json-line',
+      JSON.stringify({ type: 'thread.started' }),
+      'another-malformed',
+      JSON.stringify({
+        type: 'item.completed',
+        item: { id: 'x', type: 'agent_message', text: JSON.stringify(validEnvelope) },
+      }),
+      JSON.stringify({ type: 'turn.completed' }),
+    ];
+    const r = parseCodexStanceOutput(events.join('\n'));
+    expect(r.ok).toBe(true);
+  });
+});
+
+describe('parseCodexStanceOutput — failure paths', () => {
+  it('empty stdout → json_parse_error', () => {
+    const r = parseCodexStanceOutput('');
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.reason).toBe('json_parse_error');
+  });
+
+  it('all lines malformed → json_parse_error', () => {
+    const r = parseCodexStanceOutput('garbage1\ngarbage2\n');
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.reason).toBe('json_parse_error');
+  });
+
+  it('turn.failed event → json_parse_error with codex-specific detail', () => {
+    const events = [
+      JSON.stringify({ type: 'turn.started' }),
+      JSON.stringify({ type: 'turn.failed', error: { message: 'some error' } }),
+    ];
+    const r = parseCodexStanceOutput(events.join('\n'));
+    expect(r.ok).toBe(false);
+    if (!r.ok) {
+      expect(r.reason).toBe('json_parse_error');
+      expect(r.detail).toContain('turn.failed');
+    }
+  });
+
+  it('no agent_message event → no_terminal_result', () => {
+    const events = [
+      JSON.stringify({ type: 'thread.started' }),
+      JSON.stringify({ type: 'turn.started' }),
+      JSON.stringify({ type: 'turn.completed' }),
+    ];
+    const r = parseCodexStanceOutput(events.join('\n'));
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.reason).toBe('no_terminal_result');
+  });
+
+  it('agent_message.text not valid JSON → json_parse_error', () => {
+    const stdout = codexStdoutFromAgentText('not-json prose');
+    const r = parseCodexStanceOutput(stdout);
+    expect(r.ok).toBe(false);
+  });
+
+  it('agent_message.text valid JSON but bad envelope → invalid_envelope', () => {
+    const { stance, ...partial } = validEnvelope;
+    const stdout = codexStdoutFromAgentText(JSON.stringify(partial));
+    const r = parseCodexStanceOutput(stdout);
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.reason).toBe('invalid_envelope');
+  });
+
+  it('picks the LATEST agent_message when multiple exist', () => {
+    const first = JSON.stringify({ ...validEnvelope, stance: 'FIRST' });
+    const last = JSON.stringify({ ...validEnvelope, stance: 'LAST' });
+    const events = [
+      JSON.stringify({ type: 'item.completed', item: { id: 'a', type: 'agent_message', text: first } }),
+      JSON.stringify({ type: 'item.completed', item: { id: 'b', type: 'agent_message', text: last } }),
+    ];
+    const r = parseCodexStanceOutput(events.join('\n'));
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.stance.stance).toBe('LAST');
+  });
+});
+
+describe('gemini parser stub (M10)', () => {
   it('gemini parser throws NotYetImplementedError', () => {
     expect(() => parseGeminiStanceOutput('')).toThrow(NotYetImplementedError);
   });
 
-  it('NotYetImplementedError message references a future milestone', () => {
+  it('NotYetImplementedError message references M10', () => {
     try {
-      parseCodexStanceOutput('');
+      parseGeminiStanceOutput('');
       expect.fail('should have thrown');
     } catch (err) {
-      expect((err as Error).message).toMatch(/M(9|10)/);
+      expect((err as Error).message).toMatch(/M10/);
     }
   });
 });

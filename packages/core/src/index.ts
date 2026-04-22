@@ -88,6 +88,9 @@ export {
 } from './lifecycle.js';
 export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
 
+// Concurrency limiter (M9)
+export { ConcurrencyLimiter } from './concurrency.js';
+
 // Council orchestrator (M8)
 export {
   CouncilOrchestratorError,
