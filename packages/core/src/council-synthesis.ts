@@ -21,6 +21,7 @@ import matter from 'gray-matter';
 import type { CouncilSessionRow, CouncilViewRow } from './council-sessions.js';
 import type { CouncilStance } from './council-parsers.js';
 import { writeNote, type WriteNoteResult } from './write/direct-fs.js';
+import { extractOverlap, type ViewStanceInput } from './council-overlap.js';
 
 export interface SynthesisInput {
   session: CouncilSessionRow;
@@ -139,6 +140,52 @@ export function renderSynthesisMarkdown(input: SynthesisInput): string {
       bodyLines.push(`- "${e.claim}" — ${e.source}`);
     }
     bodyLines.push('');
+  }
+
+  // Agreement / disagreement (M11): sentence-level Jaccard overlap across
+  // the successful views' stances. Skipped when there are <2 successful
+  // views — no peer to compare against.
+  if (succeeded.length >= 2) {
+    const overlapInput: ViewStanceInput[] = [];
+    for (const v of succeeded) {
+      const parsed = stances.get(v.id);
+      const stance = parsed?.stance ?? v.stance ?? '';
+      if (!stance.trim()) continue;
+      overlapInput.push({
+        persona: v.persona,
+        persona_name: humanPersona(v.persona),
+        model: v.model,
+        stance,
+      });
+    }
+
+    const { agreement, disagreement } = extractOverlap(overlapInput);
+
+    bodyLines.push('## Agreement');
+    bodyLines.push('');
+    if (agreement.length === 0) {
+      bodyLines.push('_(no shared claims across views at current threshold)_');
+    } else {
+      for (const frag of agreement) {
+        bodyLines.push(
+          `- "${frag.sentence}" _(${frag.persona_names.join(', ')})_`,
+        );
+      }
+    }
+    bodyLines.push('');
+
+    bodyLines.push('## Disagreement');
+    bodyLines.push('');
+    if (disagreement.length === 0) {
+      bodyLines.push('_(all claims echoed by another view)_');
+    } else {
+      for (const bucket of disagreement) {
+        bodyLines.push(`### ${bucket.persona_name}`);
+        bodyLines.push('');
+        for (const s of bucket.sentences) bodyLines.push(`- "${s}"`);
+        bodyLines.push('');
+      }
+    }
   }
 
   // Failed cells

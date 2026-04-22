@@ -164,6 +164,21 @@ export type {
   WriteSynthesisInput,
 } from './council-synthesis.js';
 
+// Sentence-level overlap extractor (M11)
+export {
+  DEFAULT_JACCARD_THRESHOLD,
+  extractOverlap,
+  jaccard,
+  splitSentences,
+  tokenize,
+} from './council-overlap.js';
+export type {
+  AgreementFragment,
+  DisagreementBucket,
+  OverlapResult,
+  ViewStanceInput,
+} from './council-overlap.js';
+
 // CLI error classification (M7 + M10 benign-stderr filter)
 export {
   classifyCliError,
