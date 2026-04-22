@@ -20,6 +20,7 @@ import type { CouncilMode, PersonaDef } from './council-prompts.js';
 import {
   parseClaudeStanceOutput,
   parseCodexStanceOutput,
+  parseGeminiStanceOutput,
   type CouncilStance,
   type ParseResult,
 } from './council-parsers.js';
@@ -49,6 +50,7 @@ import type { ApprovalScope } from './approval.js';
 
 const CLAUDE_MODEL_DEFAULT = 'claude-haiku-4-5-20251001';
 const CODEX_MODEL_DEFAULT = 'gpt-5-codex';
+const GEMINI_MODEL_DEFAULT = 'gemini-2.5-flash-lite';
 const DEFAULT_TIMEOUT_MS = 15 * 60 * 1000; // 15 min per spec
 const DEFAULT_CONCURRENCY = 3;
 
@@ -561,7 +563,9 @@ function resolveModelForCli(options: RunCouncilOptions, cli: CliName): string {
     return process.env.FLYWHEEL_IDEAS_CELL_MODEL;
   }
 
-  return cli === 'claude' ? CLAUDE_MODEL_DEFAULT : CODEX_MODEL_DEFAULT;
+  if (cli === 'claude') return CLAUDE_MODEL_DEFAULT;
+  if (cli === 'codex') return CODEX_MODEL_DEFAULT;
+  return GEMINI_MODEL_DEFAULT;
 }
 
 function resolveSpawnPrefix(options: RunCouncilOptions, cli: CliName): string[] | undefined {
@@ -617,6 +621,13 @@ function buildCodexArgv(model: string, _systemPrompt: string): string[] {
   ];
 }
 
+function buildGeminiArgv(model: string, systemPrompt: string): string[] {
+  // gemini `-p <prompt>` takes the system prompt as argv; stdin appends the
+  // user message. System prompt is safe in argv (persona + JSON contract, no
+  // idea text). User message (which CAN contain idea text) goes via stdin.
+  return ['-p', systemPrompt, '-o', 'json', '-m', model];
+}
+
 function buildArgvForCli(cli: CliName, model: string, systemPrompt: string): string[] {
   switch (cli) {
     case 'claude':
@@ -624,7 +635,7 @@ function buildArgvForCli(cli: CliName, model: string, systemPrompt: string): str
     case 'codex':
       return buildCodexArgv(model, systemPrompt);
     case 'gemini':
-      throw new CouncilOrchestratorError(`gemini dispatch not wired — lands in M10`);
+      return buildGeminiArgv(model, systemPrompt);
   }
 }
 
@@ -634,7 +645,7 @@ function buildStdinForCli(cli: CliName, systemPrompt: string, userMessage: strin
     // System prompt prefixed into stdin with an unambiguous delimiter.
     return `${systemPrompt}${CODEX_STDIN_DELIMITER}${userMessage}`;
   }
-  // gemini falls through (wired M10)
+  // gemini: system prompt in argv via `-p`; user message appends via stdin.
   return userMessage;
 }
 
@@ -645,11 +656,7 @@ function parseForCli(cli: CliName, stdout: string): ParseResult {
     case 'codex':
       return parseCodexStanceOutput(stdout);
     case 'gemini':
-      return {
-        ok: false,
-        reason: 'json_parse_error',
-        detail: 'gemini parser not wired — lands in M10',
-      };
+      return parseGeminiStanceOutput(stdout);
   }
 }
 

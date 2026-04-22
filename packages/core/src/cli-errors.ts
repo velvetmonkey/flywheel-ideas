@@ -114,6 +114,47 @@ const PATTERNS: Record<CliName, Pattern[]> = {
 };
 
 /**
+ * Benign stderr lines to strip BEFORE regex classification (M10).
+ *
+ * M7 documented that gemini on Linux without libsecret emits keychain
+ * warnings that are **not** auth failures — they're fallbacks to a file
+ * keychain. Stripping them keeps the classifier from misreading them
+ * OR (more dangerously) from letting a subsequent real auth error match
+ * a pattern tuned for the benign prefix.
+ *
+ * Each pattern is a FULL-LINE regex anchored with `^` and `$` (via `/m` flag
+ * at match time). Partial prefix matches are deliberately NOT used — a
+ * prefix-strip of `/^Keychain initialization/` would hide a real failure
+ * like `"Keychain initialization failed: API key not found"`.
+ */
+export const BENIGN_STDERR_PATTERNS: readonly RegExp[] = [
+  // gemini on Linux without libsecret — known exact line
+  /^Keychain initialization encountered an error: libsecret-1\.so\.0: cannot open shared object file: No such file or directory$/m,
+  // gemini fallback note after the keychain warning
+  /^Using FileKeychain fallback for secure storage\.$/m,
+  // gemini credentials load message
+  /^Loaded cached credentials\.$/m,
+  // shell hook artifact on this workstation (all three CLIs)
+  /^Shell cwd was reset to .+$/m,
+];
+
+/**
+ * Strip benign lines from a stderr buffer, returning only the lines the
+ * classifier should scan. Exported for test assertions.
+ */
+export function stripBenignStderr(stderr: string): string {
+  if (!stderr) return stderr;
+  const lines = stderr.split('\n');
+  const kept: string[] = [];
+  for (const line of lines) {
+    const trimmed = line.trimEnd();
+    const isBenign = BENIGN_STDERR_PATTERNS.some((re) => re.test(trimmed));
+    if (!isBenign) kept.push(line);
+  }
+  return kept.join('\n');
+}
+
+/**
  * Classify the finished-child outcome into one of the FailureReason values.
  *
  * Precedence:
@@ -137,7 +178,9 @@ export function classifyCliError(
 
   const patterns = PATTERNS[cli];
   const stdout = ctx.stdout_tail ?? '';
-  const stderr = ctx.stderr_tail ?? '';
+  // Strip benign lines (keychain warnings, cwd resets) before pattern
+  // matching so the real classifier isn't fooled by noise.
+  const stderr = stripBenignStderr(ctx.stderr_tail ?? '');
 
   for (const p of patterns) {
     const haystack = p.stream === 'stdout' ? stdout : stderr;

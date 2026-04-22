@@ -261,8 +261,67 @@ export function parseCodexStanceOutput(stdout: string): ParseResult {
   return extractEnvelopeFromText(agent.item.text);
 }
 
-// ---------- gemini stub (M10) ----------
+// ---------- gemini parser (M10) ----------
 
-export function parseGeminiStanceOutput(_stdout: string): ParseResult {
-  throw new NotYetImplementedError('gemini');
+/**
+ * Parse gemini's `-p -o json` stdout. Gemini emits a single outer JSON
+ * object: `{session_id, response, stats: {models: {...}}}`. `.response`
+ * is the model's reply as a string (envelope, sometimes fenced).
+ *
+ * Gemini can legitimately return empty/null `.response` on safety blocks
+ * or internal errors — we guard explicitly rather than passing undefined
+ * to `extractEnvelopeFromText`.
+ */
+export function parseGeminiStanceOutput(stdout: string): ParseResult {
+  if (stdout.trim() === '') {
+    return { ok: false, reason: 'json_parse_error', detail: 'empty stdout' };
+  }
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(stdout);
+  } catch (err) {
+    return {
+      ok: false,
+      reason: 'json_parse_error',
+      detail: `outer parse failed: ${(err as Error).message}`,
+    };
+  }
+
+  if (typeof parsed !== 'object' || parsed === null) {
+    return {
+      ok: false,
+      reason: 'json_parse_error',
+      detail: 'expected stdout to be a JSON object',
+    };
+  }
+
+  const response = (parsed as { response?: unknown }).response;
+
+  // Validate .response is a non-empty string. Empty/null means gemini
+  // produced no agent text — safety block, internal error, or
+  // uninitialized output.
+  if (response === undefined || response === null) {
+    return {
+      ok: false,
+      reason: 'no_terminal_result',
+      detail: 'gemini output has no "response" field',
+    };
+  }
+  if (typeof response !== 'string') {
+    return {
+      ok: false,
+      reason: 'invalid_envelope',
+      detail: `gemini .response is ${typeof response}, expected string`,
+    };
+  }
+  if (response.trim() === '') {
+    return {
+      ok: false,
+      reason: 'no_terminal_result',
+      detail: 'gemini .response is empty — likely safety block or internal error',
+    };
+  }
+
+  return extractEnvelopeFromText(response);
 }
