@@ -28,6 +28,12 @@ const MOCK_CODEX = path.join(
   'mock-cli',
   'mock-codex.mjs',
 );
+const MOCK_GEMINI = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  'fixtures',
+  'mock-cli',
+  'mock-gemini.mjs',
+);
 
 /** Default test-only options: claude-only (for M8-era tests) + claude mock. */
 const CLAUDE_ONLY_OPTIONS = {
@@ -43,6 +49,21 @@ const M9_MATRIX_OPTIONS = {
     codex: ['node', MOCK_CODEX],
   },
 };
+
+/** M10 light matrix options: all 3 CLIs × 2 personas with their mocks. */
+const M10_LIGHT_OPTIONS = {
+  clis_override: ['claude' as const, 'codex' as const, 'gemini' as const],
+  spawn_overrides: {
+    claude: ['node', MOCK_CLI],
+    codex: ['node', MOCK_CODEX],
+    gemini: ['node', MOCK_GEMINI],
+  },
+};
+
+/** M10 full matrix options: 3 CLIs × 5 personas with their mocks. Same
+ *  spawn overrides as light; the orchestrator uses FULL_PERSONA_SET when
+ *  depth='full' is passed via RunCouncilInput. */
+const M10_FULL_OPTIONS = M10_LIGHT_OPTIONS;
 
 const VALID_ENVELOPE = {
   stance: 'Mock stance for testing — long enough to read like a paragraph.',
@@ -468,128 +489,189 @@ describe('runCouncil — two-pass structure (M9)', () => {
 // Light matrix — claude + codex (M9)
 // ---------------------------------------------------------------------------
 
-describe('runCouncil — light matrix (claude + codex) (M9)', () => {
+describe('runCouncil — light matrix (claude + codex + gemini) (M10)', () => {
   beforeEach(async () => {
     await seedIdea();
     await seedSeededAssumption();
   });
 
-  it('light happy path: 4 cells × 2 passes = 8 dispatches, 4 view rows', async () => {
+  it('light happy path: 6 cells × 2 passes = 12 dispatches, 6 view rows', async () => {
     const result = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      M9_MATRIX_OPTIONS,
+      M10_LIGHT_OPTIONS,
     );
     expect(result.status).toBe('success');
-    expect(result.views).toHaveLength(4);
+    expect(result.views).toHaveLength(6); // 3 CLIs × 2 personas
 
     const dispatches = listDispatches(db);
-    expect(dispatches).toHaveLength(8);
+    expect(dispatches).toHaveLength(12); // 6 cells × 2 passes
 
-    // Mix of claude and codex dispatches
-    const claudeRows = dispatches.filter((d) => d.cli === 'claude');
-    const codexRows = dispatches.filter((d) => d.cli === 'codex');
-    expect(claudeRows).toHaveLength(4); // 2 personas × 2 passes
-    expect(codexRows).toHaveLength(4);
+    // Each CLI runs 2 personas × 2 passes = 4 dispatches
+    const byCli = new Map<string, number>();
+    for (const d of dispatches) byCli.set(d.cli, (byCli.get(d.cli) ?? 0) + 1);
+    expect(byCli.get('claude')).toBe(4);
+    expect(byCli.get('codex')).toBe(4);
+    expect(byCli.get('gemini')).toBe(4);
   });
 
-  it('views have mixed models (claude + codex)', async () => {
+  it('views have all 3 models (claude + codex + gemini)', async () => {
     const result = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      M9_MATRIX_OPTIONS,
+      M10_LIGHT_OPTIONS,
     );
     const views = listViewsBySession(db, result.session_id);
     const models = new Set(views.map((v) => v.model));
-    expect(models).toEqual(new Set(['claude', 'codex']));
+    expect(models).toEqual(new Set(['claude', 'codex', 'gemini']));
   });
 
-  it('codex views have stance populated from JSONL mock', async () => {
+  it('gemini views have stance populated from JSON-object mock', async () => {
     const result = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      M9_MATRIX_OPTIONS,
+      M10_LIGHT_OPTIONS,
     );
     const views = listViewsBySession(db, result.session_id);
-    const codexViews = views.filter((v) => v.model === 'codex');
-    expect(codexViews).toHaveLength(2);
-    for (const v of codexViews) {
-      expect(v.stance).toContain('codex');
-      expect(v.initial_stance).toContain('codex');
+    const geminiViews = views.filter((v) => v.model === 'gemini');
+    expect(geminiViews).toHaveLength(2);
+    for (const v of geminiViews) {
+      expect(v.stance).toContain('gemini');
+      expect(v.initial_stance).toContain('gemini');
       expect(v.failure_reason).toBeNull();
     }
   });
 
-  it('synthesis renders all 4 views', async () => {
+  it('synthesis renders all 6 views', async () => {
     const result = await runCouncil(
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      M9_MATRIX_OPTIONS,
+      M10_LIGHT_OPTIONS,
     );
     const synthesisContent = await fsp.readFile(
       path.join(vault, result.synthesis_vault_path),
       'utf8',
     );
-    // 4 persona-model combinations named in the synthesis
     expect(synthesisContent).toContain('Risk Pessimist');
     expect(synthesisContent).toContain('Growth Optimist');
     expect(synthesisContent).toContain('| claude |');
     expect(synthesisContent).toContain('| codex |');
+    expect(synthesisContent).toContain('| gemini |');
+  });
+
+  it('CLI-interleaved dispatch order: first 3 dispatched cells hit 3 different CLIs', async () => {
+    // With max=3 concurrency and interleaved matrix [claude-RP, codex-RP,
+    // gemini-RP, claude-GO, codex-GO, gemini-GO], the first wave of 3
+    // in-flight = 3 different CLIs. started_at ordering on the first 3
+    // dispatch rows proves that (pre-M10 roundtable CRITICAL fix).
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { ...M10_LIGHT_OPTIONS, max_concurrency_override: 3 },
+    );
+    expect(result.status).toBe('success');
+    // First 3 dispatches by started_at are all Pass 1s from 3 different CLIs
+    const rows = db
+      .prepare(
+        `SELECT cli, started_at FROM ideas_dispatches ORDER BY started_at ASC LIMIT 3`,
+      )
+      .all() as Array<{ cli: string; started_at: number }>;
+    const firstThreeClis = new Set(rows.map((r) => r.cli));
+    expect(firstThreeClis.size).toBe(3);
+    expect(firstThreeClis).toEqual(new Set(['claude', 'codex', 'gemini']));
+  });
+
+  it('gemini benign keychain warning on stderr does NOT trigger a failure', async () => {
+    // Force mock-gemini to emit the libsecret warning; classifier should
+    // strip and classify as success.
+    const prev = process.env.FLYWHEEL_TEST_EMIT_KEYCHAIN_WARNING;
+    process.env.FLYWHEEL_TEST_EMIT_KEYCHAIN_WARNING = '1';
+    try {
+      const result = await runCouncil(
+        db,
+        vault,
+        { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+        M10_LIGHT_OPTIONS,
+      );
+      expect(result.status).toBe('success');
+      const views = listViewsBySession(db, result.session_id);
+      const geminiViews = views.filter((v) => v.model === 'gemini');
+      for (const v of geminiViews) {
+        expect(v.failure_reason).toBeNull();
+      }
+    } finally {
+      if (prev === undefined) delete process.env.FLYWHEEL_TEST_EMIT_KEYCHAIN_WARNING;
+      else process.env.FLYWHEEL_TEST_EMIT_KEYCHAIN_WARNING = prev;
+    }
   });
 });
 
 // ---------------------------------------------------------------------------
-// Full-depth rejection (M10 wiring)
+// Full-depth matrix (M10)
 // ---------------------------------------------------------------------------
 
-describe('runCouncil — depth="full" rejection', () => {
+describe('runCouncil — depth="full" matrix (M10)', () => {
   beforeEach(async () => {
     await seedIdea();
     await seedSeededAssumption();
   });
 
-  it('throws CouncilOrchestratorError with M10 pointer', async () => {
-    await expect(
-      runCouncil(
-        db,
-        vault,
-        {
-          idea_id: 'idea-a',
-          mode: 'standard',
-          approval_scope: 'session',
-          depth: 'full',
-        },
-        CLAUDE_ONLY_OPTIONS,
-      ),
-    ).rejects.toThrow(/M10/);
-  });
+  it('full happy path: 15 cells × 2 passes = 30 dispatches, 15 view rows', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session', depth: 'full' },
+      M10_FULL_OPTIONS,
+    );
+    expect(result.status).toBe('success');
+    expect(result.views).toHaveLength(15); // 3 CLIs × 5 personas
 
-  it('rejection before session creation (no orphan rows)', async () => {
-    try {
-      await runCouncil(
-        db,
-        vault,
-        {
-          idea_id: 'idea-a',
-          mode: 'standard',
-          approval_scope: 'session',
-          depth: 'full',
-        },
-        CLAUDE_ONLY_OPTIONS,
-      );
-    } catch {
-      // expected
-    }
-    const sessions = db
-      .prepare(`SELECT count(*) AS n FROM ideas_council_sessions`)
-      .get() as { n: number };
-    expect(sessions.n).toBe(0);
-    expect(listDispatches(db)).toEqual([]);
-  });
+    const dispatches = listDispatches(db);
+    expect(dispatches).toHaveLength(30); // 15 cells × 2 passes
+
+    // Per-CLI breakdown: each CLI runs 5 personas × 2 passes = 10 dispatches
+    const byCli = new Map<string, number>();
+    for (const d of dispatches) byCli.set(d.cli, (byCli.get(d.cli) ?? 0) + 1);
+    expect(byCli.get('claude')).toBe(10);
+    expect(byCli.get('codex')).toBe(10);
+    expect(byCli.get('gemini')).toBe(10);
+  }, 30_000);
+
+  it('full depth session row records depth="full"', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session', depth: 'full' },
+      M10_FULL_OPTIONS,
+    );
+    const session = getCouncilSession(db, result.session_id);
+    expect(session?.depth).toBe('full');
+  }, 30_000);
+
+  it('full depth surfaces all 5 personas in views', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session', depth: 'full' },
+      M10_FULL_OPTIONS,
+    );
+    const views = listViewsBySession(db, result.session_id);
+    const personas = new Set(views.map((v) => v.persona));
+    expect(personas).toEqual(
+      new Set([
+        'risk-pessimist',
+        'growth-optimist',
+        'competitor-strategist',
+        'regulator',
+        'customer-advocate',
+      ]),
+    );
+  }, 30_000);
 });
 
 // ---------------------------------------------------------------------------
@@ -607,10 +689,10 @@ describe('runCouncil — concurrency limiter (M9)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { ...M9_MATRIX_OPTIONS, max_concurrency_override: 1 },
+      { ...M10_LIGHT_OPTIONS, max_concurrency_override: 1 },
     );
     expect(result.status).toBe('success');
-    expect(result.views).toHaveLength(4);
+    expect(result.views).toHaveLength(6);
   });
 
   it('completes successfully with high max_concurrency (>cell count)', async () => {
@@ -618,10 +700,10 @@ describe('runCouncil — concurrency limiter (M9)', () => {
       db,
       vault,
       { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
-      { ...M9_MATRIX_OPTIONS, max_concurrency_override: 20 },
+      { ...M10_LIGHT_OPTIONS, max_concurrency_override: 20 },
     );
     expect(result.status).toBe('success');
-    expect(result.views).toHaveLength(4);
+    expect(result.views).toHaveLength(6);
   });
 });
 

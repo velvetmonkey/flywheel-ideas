@@ -15,7 +15,7 @@
  */
 
 import { createHash } from 'node:crypto';
-import { assemblePrompt, M8_PERSONA_SET, PERSONA_VERSION, PROMPT_VERSION } from './council-prompts.js';
+import { assemblePrompt, M8_PERSONA_SET, PERSONAS, PERSONA_VERSION, PROMPT_VERSION } from './council-prompts.js';
 import type { CouncilMode, PersonaDef } from './council-prompts.js';
 import {
   parseClaudeStanceOutput,
@@ -93,7 +93,40 @@ export interface RunCouncilOptions {
   max_concurrency_override?: number;
 }
 
-const M9_CLI_SET: readonly CliName[] = ['claude', 'codex'];
+/** Light-depth CLI roster (M10): all 3 CLIs for every council.run. */
+const LIGHT_CLI_SET: readonly CliName[] = ['claude', 'codex', 'gemini'];
+
+/** Full-depth CLI roster — same as light but with all 5 personas. */
+const FULL_CLI_SET: readonly CliName[] = ['claude', 'codex', 'gemini'];
+
+/** Full-depth persona roster (M10): all 5 shipped personas. */
+const FULL_PERSONA_SET: readonly PersonaDef[] = PERSONAS;
+
+/**
+ * Interleave a persona × cli matrix so consecutive cells cycle through
+ * CLIs. Under a global concurrency limiter, the in-flight set will contain
+ * at most 1 cell per CLI as long as concurrency ≤ number of CLIs. This
+ * prevents rate-limit bursts on any single provider (pre-M10 roundtable
+ * CRITICAL finding).
+ *
+ * Given personas=[RP, GO] and clis=[claude, codex, gemini], the output is:
+ *   [claude/RP, codex/RP, gemini/RP, claude/GO, codex/GO, gemini/GO]
+ *
+ * NOT [claude/RP, claude/GO, codex/RP, codex/GO, ...] which would burst
+ * both claude calls at once under max=3 concurrency.
+ */
+function buildInterleavedMatrix(
+  clis: readonly CliName[],
+  personas: readonly PersonaDef[],
+): Array<{ cli: CliName; persona: PersonaDef }> {
+  const cells: Array<{ cli: CliName; persona: PersonaDef }> = [];
+  for (const persona of personas) {
+    for (const cli of clis) {
+      cells.push({ cli, persona });
+    }
+  }
+  return cells;
+}
 
 export interface CouncilViewResult {
   id: string;
@@ -127,13 +160,7 @@ export async function runCouncil(
   input: RunCouncilInput,
   options: RunCouncilOptions = {},
 ): Promise<RunCouncilResult> {
-  // M9 accepts depth at the MCP surface but only `light` runs real work.
-  // `full` requires gemini (→ M10) so we reject here before spawning anything.
-  if (input.depth === 'full') {
-    throw new CouncilOrchestratorError(
-      'council.run depth="full" requires gemini dispatch — lands in M10. Use depth="light" for now.',
-    );
-  }
+  const depth: 'light' | 'full' = input.depth ?? 'light';
 
   const idea = db
     .prepare(`SELECT id, vault_path, title FROM ideas_notes WHERE id = ?`)
@@ -171,22 +198,29 @@ export async function runCouncil(
 
   const { id: session_id } = createCouncilSession(db, {
     idea_id: input.idea_id,
-    depth: input.depth ?? 'light',
+    depth,
     mode: input.mode,
   });
 
-  // 2. Build the full matrix (cli × persona) and fan out through the limiter.
-  const personas = options.personas_override ?? M8_PERSONA_SET;
-  const clis = options.clis_override ?? M9_CLI_SET;
-  const cells: Array<{ cli: CliName; persona: PersonaDef }> = [];
-  for (const cli of clis) {
-    for (const persona of personas) {
-      cells.push({ cli, persona });
-    }
-  }
+  // 2. Build the interleaved matrix (persona × cli, interleaved by cli so
+  //    consecutive cells cycle through providers).
+  const personas =
+    options.personas_override ?? (depth === 'full' ? FULL_PERSONA_SET : M8_PERSONA_SET);
+  const clis =
+    options.clis_override ?? (depth === 'full' ? FULL_CLI_SET : LIGHT_CLI_SET);
+  const cells = buildInterleavedMatrix(clis, personas);
 
   const maxConcurrent = resolveMaxConcurrency(options);
   const limiter = new ConcurrencyLimiter(maxConcurrent);
+
+  // Cost-visibility log for large runs. 30 cell dispatches × $~0.10/call is
+  // real money for alpha users; surface the plan before spawning.
+  const expectedDispatches = cells.length * 2; // two-pass
+  if (cells.length >= 6) {
+    process.stderr.write(
+      `[flywheel-ideas] council.run depth=${depth}: ${cells.length} cells × 2 passes = ${expectedDispatches} dispatches, max concurrency ${maxConcurrent}\n`,
+    );
+  }
 
   const settled = await Promise.allSettled(
     cells.map((cell) =>
@@ -225,7 +259,7 @@ export async function runCouncil(
   const session: CouncilSessionRow = {
     id: session_id,
     idea_id: input.idea_id,
-    depth: input.depth ?? 'light',
+    depth,
     mode: input.mode,
     started_at: existingSessions[0]?.started_at ?? Date.now(),
     completed_at: null,

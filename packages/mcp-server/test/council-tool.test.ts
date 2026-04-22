@@ -37,6 +37,16 @@ const MOCK_CODEX = path.join(
   'mock-cli',
   'mock-codex.mjs',
 );
+const MOCK_GEMINI = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '..',
+  '..',
+  'core',
+  'test',
+  'fixtures',
+  'mock-cli',
+  'mock-gemini.mjs',
+);
 
 let vault: string;
 let db: IdeasDatabase;
@@ -51,11 +61,12 @@ beforeEach(async () => {
   db = openIdeasDb(vault);
   runMigrations(db);
   delete process.env.FLYWHEEL_IDEAS_APPROVE;
-  // Per-CLI spawn overrides so M9 light matrix (claude + codex) can run
-  // entirely against mocks, zero real-API calls in CI.
+  // Per-CLI spawn overrides so M10 light matrix (claude + codex + gemini)
+  // can run entirely against mocks, zero real-API calls in CI.
   process.env.FLYWHEEL_IDEAS_SPAWN_PREFIXES = JSON.stringify({
     claude: ['node', MOCK_CLI],
     codex: ['node', MOCK_CODEX],
+    gemini: ['node', MOCK_GEMINI],
   });
   delete process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX;
   const server = createConfiguredServer(vault, db);
@@ -165,8 +176,8 @@ describe('council.run — approval gate', () => {
     expect(response.result.status).toBe('success');
     expect(response.result.approval_source).toBe('env');
     expect(response.result.approval_scope).toBe('session');
-    // M9 matrix: 2 CLIs × 2 personas = 4 views
-    expect(response.result.views).toHaveLength(4);
+    // M10 light matrix: 3 CLIs × 2 personas = 6 views
+    expect(response.result.views).toHaveLength(6);
     expect(response.result.synthesis_vault_path).toMatch(/councils\/.*\/session-01\/SYNTHESIS\.md/);
   });
 
@@ -220,13 +231,13 @@ describe('council.run — approval gate', () => {
 // Dispatch audit — M8 writes one row per cell (2 per successful run)
 // ---------------------------------------------------------------------------
 
-describe('council.run — dispatch audit (M8 behavior)', () => {
-  it('writes 8 dispatch rows per approved run (2 CLIs × 2 personas × 2 passes)', async () => {
+describe('council.run — dispatch audit (M10 light matrix behavior)', () => {
+  it('writes 12 dispatch rows per approved run (3 CLIs × 2 personas × 2 passes)', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'always';
     await client.callTool('council', { action: 'run', id: ideaId, confirm: true });
     const rows = listDispatches(db);
-    expect(rows).toHaveLength(8);
+    expect(rows).toHaveLength(12);
     const byCli = new Map<string, number>();
     for (const row of rows) {
       expect(row.approval_scope).toBe('always');
@@ -235,6 +246,7 @@ describe('council.run — dispatch audit (M8 behavior)', () => {
     }
     expect(byCli.get('claude')).toBe(4);
     expect(byCli.get('codex')).toBe(4);
+    expect(byCli.get('gemini')).toBe(4);
   });
 
   it('does not write on rejected run (no approval)', async () => {
@@ -256,7 +268,7 @@ describe('council.run — dispatch audit (M8 behavior)', () => {
     for (let i = 0; i < 3; i++) {
       await client.callTool('council', { action: 'run', id: ideaId, confirm: true });
     }
-    expect(listDispatches(db)).toHaveLength(24); // 3 runs × 2 CLIs × 2 personas × 2 passes
+    expect(listDispatches(db)).toHaveLength(36); // 3 runs × 3 CLIs × 2 personas × 2 passes
   });
 });
 
@@ -272,17 +284,19 @@ describe('council.run — M8 response shape', () => {
       await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
     );
     expect(response.result.session_id).toMatch(/^sess-/);
-    // M9 matrix: 2 CLIs × 2 personas = 4 views
-    expect(response.result.views).toHaveLength(4);
+    // M10 light matrix: 3 CLIs × 2 personas = 6 views
+    expect(response.result.views).toHaveLength(6);
     const personas = response.result.views.map((v: any) => v.persona).sort();
     expect(personas).toEqual([
       'growth-optimist',
       'growth-optimist',
+      'growth-optimist',
+      'risk-pessimist',
       'risk-pessimist',
       'risk-pessimist',
     ]);
     const models = new Set(response.result.views.map((v: any) => v.model));
-    expect(models).toEqual(new Set(['claude', 'codex']));
+    expect(models).toEqual(new Set(['claude', 'codex', 'gemini']));
     for (const v of response.result.views) {
       expect(v.content_vault_path).toMatch(/councils\/.*\/session-01\/.*\.md/);
       expect(typeof v.confidence).toBe('number');
@@ -337,7 +351,7 @@ describe('council.run — M8 response shape', () => {
     expect(actions).toContain('idea.read');
   });
 
-  it('depth=full rejected with M10 pointer (M9 light-only)', async () => {
+  it('depth=full succeeds: 15 views (3 CLIs × 5 personas), 30 dispatches', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
     const response = parseEnvelope(
@@ -348,10 +362,23 @@ describe('council.run — M8 response shape', () => {
         depth: 'full',
       }),
     );
-    expect(response.isError).toBe(true);
-    expect(response.error).toContain('M10');
-    expect(response.error).toMatch(/full/i);
-  });
+    expect(response.isError).toBe(false);
+    expect(response.result.status).toBe('success');
+    expect(response.result.views).toHaveLength(15);
+    expect(listDispatches(db)).toHaveLength(30);
+    const models = new Set(response.result.views.map((v: any) => v.model));
+    expect(models).toEqual(new Set(['claude', 'codex', 'gemini']));
+    const personas = new Set(response.result.views.map((v: any) => v.persona));
+    expect(personas).toEqual(
+      new Set([
+        'risk-pessimist',
+        'growth-optimist',
+        'competitor-strategist',
+        'regulator',
+        'customer-advocate',
+      ]),
+    );
+  }, 30_000);
 });
 
 // ---------------------------------------------------------------------------
