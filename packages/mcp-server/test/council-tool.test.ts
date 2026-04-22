@@ -2,6 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import * as fsp from 'node:fs/promises';
 import * as os from 'node:os';
 import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import {
   approvalsFilePath,
   deleteIdeasDbFiles,
@@ -14,10 +15,24 @@ import {
 import { createConfiguredServer } from '../src/index.js';
 import { connectMcpTestClient, type McpTestClient } from './helpers/mcpClient.js';
 
+// Point MCP-level council.run dispatches at the mock CLI so tests never
+// invoke the real claude binary.
+const MOCK_CLI = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '..',
+  '..',
+  'core',
+  'test',
+  'fixtures',
+  'mock-cli',
+  'mock-claude.mjs',
+);
+
 let vault: string;
 let db: IdeasDatabase;
 let client: McpTestClient;
-const savedEnv = process.env.FLYWHEEL_IDEAS_APPROVE;
+const savedApprove = process.env.FLYWHEEL_IDEAS_APPROVE;
+const savedSpawn = process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX;
 
 beforeEach(async () => {
   vault = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-ideas-council-'));
@@ -25,6 +40,7 @@ beforeEach(async () => {
   db = openIdeasDb(vault);
   runMigrations(db);
   delete process.env.FLYWHEEL_IDEAS_APPROVE;
+  process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX = JSON.stringify(['node', MOCK_CLI]);
   const server = createConfiguredServer(vault, db);
   client = await connectMcpTestClient(server);
 });
@@ -34,8 +50,10 @@ afterEach(async () => {
   db.close();
   deleteIdeasDbFiles(vault);
   await fsp.rm(vault, { recursive: true, force: true });
-  if (savedEnv === undefined) delete process.env.FLYWHEEL_IDEAS_APPROVE;
-  else process.env.FLYWHEEL_IDEAS_APPROVE = savedEnv;
+  if (savedApprove === undefined) delete process.env.FLYWHEEL_IDEAS_APPROVE;
+  else process.env.FLYWHEEL_IDEAS_APPROVE = savedApprove;
+  if (savedSpawn === undefined) delete process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX;
+  else process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX = savedSpawn;
 });
 
 function parseEnvelope(response: {
@@ -118,30 +136,32 @@ describe('council.run — approval gate', () => {
     expect(response.error).toContain('cannot be granted from this tool');
   });
 
-  it('env=session → returns dispatcher_pending, source=env', async () => {
+  it('env=session → real dispatch with source=env + success status', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
     const response = parseEnvelope(
       await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
     );
     expect(response.isError).toBe(false);
-    expect(response.result.status).toBe('dispatcher_pending');
+    expect(response.result.status).toBe('success');
     expect(response.result.approval_source).toBe('env');
     expect(response.result.approval_scope).toBe('session');
-    expect(response.result.idea_id).toBe(ideaId);
+    expect(response.result.views).toHaveLength(2);
+    expect(response.result.synthesis_vault_path).toMatch(/councils\/.*\/session-01\/SYNTHESIS\.md/);
   });
 
-  it('env=always → returns dispatcher_pending, source=env, scope=always', async () => {
+  it('env=always → real dispatch, source=env scope=always', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'always';
     const response = parseEnvelope(
       await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
     );
+    expect(response.result.status).toBe('success');
     expect(response.result.approval_source).toBe('env');
     expect(response.result.approval_scope).toBe('always');
   });
 
-  it('file=always → returns dispatcher_pending, source=persistent', async () => {
+  it('file=always → real dispatch with source=persistent', async () => {
     const ideaId = await seedIdea();
     await grantApprovalFile(vault, 'always');
     const response = parseEnvelope(
@@ -150,6 +170,7 @@ describe('council.run — approval gate', () => {
     expect(response.isError).toBe(false);
     expect(response.result.approval_source).toBe('persistent');
     expect(response.result.approval_scope).toBe('always');
+    expect(response.result.status).toBe('success');
   });
 
   it('file=never → error points at manual file delete', async () => {
@@ -176,15 +197,21 @@ describe('council.run — approval gate', () => {
 });
 
 // ---------------------------------------------------------------------------
-// No audit pollution — the core M6 invariant
+// Dispatch audit — M8 writes one row per cell (2 per successful run)
 // ---------------------------------------------------------------------------
 
-describe('council.run — no dispatch rows written (M6 stub invariant)', () => {
-  it('does not write to ideas_dispatches on approved run', async () => {
+describe('council.run — dispatch audit (M8 behavior)', () => {
+  it('writes 2 dispatch rows per approved run (one per persona)', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'always';
     await client.callTool('council', { action: 'run', id: ideaId, confirm: true });
-    expect(listDispatches(db)).toEqual([]);
+    const rows = listDispatches(db);
+    expect(rows).toHaveLength(2);
+    for (const row of rows) {
+      expect(row.cli).toBe('claude');
+      expect(row.approval_scope).toBe('always');
+      expect(row.finished_at).not.toBeNull();
+    }
   });
 
   it('does not write on rejected run (no approval)', async () => {
@@ -200,13 +227,84 @@ describe('council.run — no dispatch rows written (M6 stub invariant)', () => {
     expect(listDispatches(db)).toEqual([]);
   });
 
-  it('does not write on multiple approved runs', async () => {
+  it('accumulates dispatch rows across multiple approved runs', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
       await client.callTool('council', { action: 'run', id: ideaId, confirm: true });
     }
-    expect(listDispatches(db)).toEqual([]);
+    expect(listDispatches(db)).toHaveLength(6); // 3 runs × 2 personas
+  });
+});
+
+// ---------------------------------------------------------------------------
+// M8 response shape + synthesis artifact
+// ---------------------------------------------------------------------------
+
+describe('council.run — M8 response shape', () => {
+  it('response carries session_id + synthesis_vault_path + view summaries', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
+    );
+    expect(response.result.session_id).toMatch(/^sess-/);
+    expect(response.result.views.map((v: any) => v.persona).sort()).toEqual([
+      'growth-optimist',
+      'risk-pessimist',
+    ]);
+    for (const v of response.result.views) {
+      expect(v.content_vault_path).toMatch(/councils\/.*\/session-01\/claude-.*\.md/);
+      expect(typeof v.confidence).toBe('number');
+      expect(v.failure_reason).toBeNull();
+    }
+  });
+
+  it('synthesis file exists on disk after approved run', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
+    );
+    const full = path.join(vault, response.result.synthesis_vault_path);
+    const content = await fsp.readFile(full, 'utf8');
+    expect(content).toContain('Council session');
+    expect(content).toContain('Risk Pessimist');
+    expect(content).toContain('Growth Optimist');
+  });
+
+  it('defaults mode to pre_mortem for nascent ideas', async () => {
+    const ideaId = await seedIdea(); // nascent default
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
+    );
+    expect(response.result.mode).toBe('pre_mortem');
+  });
+
+  it('explicit mode=standard overrides the nascent → pre_mortem default', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        id: ideaId,
+        confirm: true,
+        mode: 'standard',
+      }),
+    );
+    expect(response.result.mode).toBe('standard');
+  });
+
+  it('next_steps include reading the synthesis', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
+    );
+    const actions = response.next_steps.map((s: any) => s.action);
+    expect(actions).toContain('read_file');
+    expect(actions).toContain('idea.read');
   });
 });
 

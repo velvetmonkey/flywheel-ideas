@@ -135,6 +135,14 @@ text out of the audit log.
 
 Detection at startup via `packages/core/src/write/writer.ts`. `result.write_path` field on every tool response reports active tier.
 
+## Running the council (M8)
+
+`council.run({id, confirm: true})` spawns claude subprocesses (one per
+persona, sequentially) and writes a `SYNTHESIS.md` + per-view markdown
+notes under `<vault>/councils/<idea_id>/session-NN/`. M8 ships two
+personas (Risk Pessimist, Growth Optimist); M9 adds concurrency + full
+model matrix. Full operator guide: [docs/council.md](./docs/council.md).
+
 ## CLI dispatch targets (M8)
 
 Council dispatcher spawns `claude`, `codex`, `gemini` with explicit flags.
