@@ -17,6 +17,7 @@ import {
   VaultPathError,
   type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
+import { registerAssumptionTool } from './tools/assumption.js';
 import { registerIdeaTool } from './tools/idea.js';
 
 /**
@@ -34,6 +35,11 @@ export function createConfiguredServer(
   });
 
   registerIdeaTool(
+    server,
+    () => vaultPath,
+    () => db,
+  );
+  registerAssumptionTool(
     server,
     () => vaultPath,
     () => db,

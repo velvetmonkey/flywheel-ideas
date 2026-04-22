@@ -14,6 +14,7 @@ import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
   activeWritePath,
+  buildAssumptionNextStepsForIdea,
   filterStaleRows,
   generateIdeaId,
   IDEA_STATES,
@@ -262,6 +263,12 @@ function handleRead(
   }
 
   const next_steps = buildReadNextSteps(row.id, row.state as IdeaState, history.length === 0);
+
+  // Cross-domain hint injection. The assumption module owns its own hint
+  // logic (due signposts, missing declarations) and returns NextStep[] we
+  // can append without touching any assumption SQL here.
+  const assumptionHints = buildAssumptionNextStepsForIdea(db, row.id);
+  next_steps.push(...assumptionHints);
 
   return mcpText({
     result: {
