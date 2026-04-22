@@ -20,6 +20,7 @@ import {
 import { registerAssumptionTool } from './tools/assumption.js';
 import { registerCouncilTool } from './tools/council.js';
 import { registerIdeaTool } from './tools/idea.js';
+import { registerOutcomeTool } from './tools/outcome.js';
 
 /**
  * Build a configured MCP server bound to a specific vault + database.
@@ -46,6 +47,11 @@ export function createConfiguredServer(
     () => db,
   );
   registerCouncilTool(
+    server,
+    () => vaultPath,
+    () => db,
+  );
+  registerOutcomeTool(
     server,
     () => vaultPath,
     () => db,
