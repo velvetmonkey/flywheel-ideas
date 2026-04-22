@@ -1,13 +1,15 @@
-# Running the council (M8)
+# Running the council (M10)
 
-M8 wires `council.run` to a real claude subprocess dispatcher. Ships with two
-sequential personas (Risk Pessimist, Growth Optimist) on a single CLI. See
-`docs/cli-quirks.md` for the per-CLI spawn details and `packages/core/src/council*.ts`
-for implementation.
+`council.run` is a real multi-model subprocess dispatcher. M10 ships the full
+matrix: **claude + codex + gemini × 5 personas = up to 15 cells × 2 passes
+= 30 CLI invocations at `depth: "full"`**. Default `depth: "light"` runs
+6 cells (3 CLIs × 2 personas). See `docs/cli-quirks.md` for per-CLI spawn
+details and `packages/core/src/council*.ts` for implementation.
 
 ## Prerequisites
 
-1. `claude` CLI on `$PATH` and authenticated (`claude login` completed).
+1. One or more of `claude`, `codex`, `gemini` on `$PATH`, authenticated.
+   Missing CLIs produce per-cell failures but don't abort the session.
 2. Approval granted out-of-band — either `FLYWHEEL_IDEAS_APPROVE=session|always`
    at server launch, or a manual edit of `<vault>/.flywheel/ideas-approvals.json`.
    See CLAUDE.md "Safety" section for the file format.
@@ -26,12 +28,16 @@ assumption.declare({
   load_bearing: true,
   signpost_at: <unix_ms 60 days out>
 })
-council.run({id: "idea-Xyz", confirm: true})
+council.run({id: "idea-Xyz", confirm: true, depth: "light"})
   → {status: "success", session_id: "sess-...",
      synthesis_vault_path: "councils/idea-Xyz/session-01/SYNTHESIS.md",
      views: [
-       {persona: "risk-pessimist",  confidence: 0.7, ...},
-       {persona: "growth-optimist", confidence: 0.4, ...}
+       {persona: "risk-pessimist",  model: "claude", confidence: 0.72, ...},
+       {persona: "risk-pessimist",  model: "codex",  confidence: 0.65, ...},
+       {persona: "risk-pessimist",  model: "gemini", confidence: 0.70, ...},
+       {persona: "growth-optimist", model: "claude", confidence: 0.48, ...},
+       {persona: "growth-optimist", model: "codex",  confidence: 0.52, ...},
+       {persona: "growth-optimist", model: "gemini", confidence: 0.44, ...}
      ],
      mode: "pre_mortem"}
 ```
@@ -39,13 +45,43 @@ council.run({id: "idea-Xyz", confirm: true})
 Mode defaults to `pre_mortem` for nascent/explored ideas, `standard` for
 evaluated/committed. Pass `mode: "standard"` explicitly to override.
 
+## Matrix
+
+| Depth | CLIs | Personas | Cells | Two-pass spawns | Approx cost (haiku) |
+|---|---|---|---|---|---|
+| `light` (default) | claude + codex + gemini | Risk Pessimist + Growth Optimist | 6 | 12 | ~$0.24 |
+| `full` | claude + codex + gemini | all 5 | 15 | 30 | ~$3.00 |
+
+Full-depth adds the Competitor Strategist, Regulator, and Customer Advocate
+personas. Cost is rough — real pricing varies by provider and prompt size.
+
+Before fan-out, the orchestrator logs a one-line plan to stderr:
+```
+[flywheel-ideas] council.run depth=light: 6 cells × 2 passes = 12 dispatches, max concurrency 3
+```
+
+## Concurrency
+
+Max 3 in-flight cells by default; `FLYWHEEL_IDEAS_MAX_CONCURRENCY` env
+override. Cells are **interleaved by CLI** in the dispatch queue — the
+first 3 cells sent into the limiter are always 3 different providers.
+Prevents rate-limit bursts on any single CLI.
+
+Per-cell work is held through both passes (one cell = Pass 1 + Pass 2
+sequentially inside the same limiter slot).
+
 ## Per-run artifacts in the vault
 
 ```
 <vault>/councils/<idea_id>/session-NN/
   SYNTHESIS.md                            # deterministic markdown summary
   claude-risk-pessimist.md                # stance + reflection + evidence
-  claude-growth-optimist.md               # stance + reflection + evidence
+  codex-risk-pessimist.md
+  gemini-risk-pessimist.md
+  claude-growth-optimist.md
+  codex-growth-optimist.md
+  gemini-growth-optimist.md
+  # (at depth=full: 15 files total, one per CLI×persona)
 ```
 
 `SYNTHESIS.md` contains:
@@ -55,46 +91,53 @@ evaluated/committed. Pass `mode: "standard"` explicitly to override.
 - Failed cells (with reason + stderr tail)
 - Next-steps checklist for `idea.read`, `assumption.signposts_due`, etc.
 
+## Two-pass metacognitive structure
+
+Each cell runs 2 passes:
+
+**Pass 1** — initial stance. Persona produces its first answer.
+**Pass 2** — self-critique. Persona receives Pass 1 output and the prompt:
+> *"(a) Could you be wrong? (b) Which assumption are you most vulnerable on? (c) What counter-argument haven't you surfaced yet?"*
+
+Both stances persist in `ideas_council_views`:
+- `initial_stance` — Pass 1 text
+- `stance` — Pass 2 revised text (authoritative for synthesis)
+- `self_critique` — Pass 2 critique of Pass 1
+
+If Pass 1 fails (parse/spawn/timeout), Pass 2 is skipped — 1 dispatch
+row, `failure_reason` set, everything else null. If Pass 2 fails,
+`initial_stance` still persists so the audit keeps the partial work.
+
 ## What the DB records
 
-- `ideas_council_sessions` — one row per `council.run`
-- `ideas_council_views` — one row per (session, persona) even on failure
-  (null stance + populated `failure_reason` + `stderr_tail` on fail)
-- `ideas_dispatches` — one row per cell spawn (2 per run in M8)
+- `ideas_council_sessions` — one row per `council.run` (depth, mode, synthesis path)
+- `ideas_council_views` — one row per (session × cli × persona) even on failure
+- `ideas_dispatches` — one row per spawn (up to 2 per cell: Pass 1 + Pass 2)
 - `ideas_assumption_citations` — edges from view → cited assumption ids
-
-`initial_stance` + `self_critique` columns stay null in M8 rows. Two-pass
-metacognitive structure lands in M9 and fills them.
 
 ## Tuning
 
 | Env var | Default | Purpose |
 |---|---|---|
-| `FLYWHEEL_IDEAS_CELL_MODEL` | `claude-haiku-4-5-20251001` | Which claude model per cell |
+| `FLYWHEEL_IDEAS_CLAUDE_MODEL` | `claude-haiku-4-5-20251001` | Per-CLI model |
+| `FLYWHEEL_IDEAS_CODEX_MODEL` | `gpt-5-codex` | Per-CLI model |
+| `FLYWHEEL_IDEAS_GEMINI_MODEL` | `gemini-2.5-flash-lite` | Per-CLI model |
+| `FLYWHEEL_IDEAS_CELL_MODEL` | _(claude legacy)_ | Legacy — prefer per-CLI |
 | `FLYWHEEL_IDEAS_CELL_TIMEOUT_MS` | `900000` (15 min) | Per-cell timeout |
 | `FLYWHEEL_IDEAS_MAX_BUFFER_BYTES` | `4194304` (4 MB) | Per-cell stdout cap |
-| `FLYWHEEL_IDEAS_SPAWN_PREFIX` | _(unset)_ | JSON-encoded `[cmd, ...args]`; prepends to the claude invocation. Used by integration tests to redirect at a mock CLI. Do not set in production. |
-
-## What's NOT in M8
-
-| Feature | Lands in |
-|---|---|
-| Two-pass metacognitive structure | M9 |
-| Codex + Gemini dispatch | M9 |
-| Concurrency / fan-out | M9 |
-| `pre_mortem` vs `steelman` mode selection refinements | v0.2 |
-| LLM-based synthesis | v0.2 |
-| Auth / rate_limit error classification | M9 (opportunistic capture) |
+| `FLYWHEEL_IDEAS_MAX_CONCURRENCY` | `3` | Max in-flight cells |
+| `FLYWHEEL_IDEAS_SPAWN_PREFIX` | _(unset)_ | Legacy JSON-array test hook |
+| `FLYWHEEL_IDEAS_SPAWN_PREFIXES` | _(unset)_ | JSON-object keyed by CLI (test-only hook) |
 
 ## Debugging a failed run
 
 ```bash
 # See failed cells + reasons
 sqlite3 $VAULT_PATH/.flywheel/ideas.db \
-  "SELECT session_id, persona, failure_reason, length(stderr_tail) AS stderr_len
+  "SELECT session_id, model, persona, failure_reason, length(stderr_tail) AS stderr_len
      FROM ideas_council_views
     WHERE failure_reason IS NOT NULL
-    ORDER BY rowid DESC LIMIT 10;"
+    ORDER BY rowid DESC LIMIT 20;"
 
 # Inspect full stderr tail for a failed view
 sqlite3 $VAULT_PATH/.flywheel/ideas.db \
@@ -104,6 +147,44 @@ sqlite3 $VAULT_PATH/.flywheel/ideas.db \
 cat $VAULT_PATH/councils/<idea_id>/session-NN/SYNTHESIS.md
 ```
 
-Classification lives in `packages/core/src/cli-errors.ts`. If a real CLI
-failure surfaces a stderr pattern not in the catalogue, add it there with a
-golden fixture under `packages/core/test/fixtures/cli-errors/`.
+## Benign stderr filtering (M10)
+
+Gemini on Linux without libsecret emits the warnings:
+```
+Keychain initialization encountered an error: libsecret-1.so.0: cannot open shared object file: No such file or directory
+Using FileKeychain fallback for secure storage.
+Loaded cached credentials.
+```
+Plus the shell hook artifact `Shell cwd was reset to …` on this dev environment.
+
+These are **stripped before pattern matching** by `BENIGN_STDERR_PATTERNS`
+in `cli-errors.ts` using strict full-line regex. A real failure that looks
+similar (e.g. `Keychain initialization failed: API key not found`) does
+NOT match the benign pattern and passes through to classification as normal.
+
+The raw stderr is still preserved in `ideas_council_views.stderr_tail` for
+audit — only the classifier view of stderr is filtered.
+
+## What's NOT in M10
+
+| Feature | Lands in |
+|---|---|
+| Evidence-aware synthesis refinements (agreement/disagreement sections) | M11 |
+| Outcome log + propagation (the compounding mechanism) | M12 |
+| Real `claude -p` e2e in CI | M13 |
+| Custom-categories / vault-memory integration | M14 |
+| Steelman mode · freeze/preregister · Assumption Radar · LLM synthesis | v0.2 |
+| Dry-run cost preview | v0.2 |
+
+## Failure classification
+
+Classification lives in `packages/core/src/cli-errors.ts`. Current catalogue:
+- `parse` — per-CLI arg-parser stderr (clap, commander, yargs)
+- `bad_model` — claude stdout + codex turn.failed JSONL
+- `timeout` — dispatcher-kill flag + SIGTERM/SIGKILL signals
+- `exit_nonzero` — generic fallback
+- `unknown` — zero exit with no matching pattern
+
+`auth` and `rate_limit` are declared but uncatalogued — add patterns + a
+golden fixture under `packages/core/test/fixtures/cli-errors/` when a real
+failure surfaces during dogfooding.

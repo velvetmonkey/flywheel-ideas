@@ -156,13 +156,13 @@ The core product: four MCP tools forming `idea → assumption → council → ou
 
 - ✅ **`idea`** — `create · read · list · transition · forget`. Lifecycle state machine (8 states), atomic DB + frontmatter transitions with rollback-on-failure, stale-row filtering, `next_steps` guidance for every state.
 - ✅ **`assumption`** — `declare · list · lock · unlock · signposts_due · forget`. Y-statement structured input OR free text, OSF-style pre-registration lock, load-bearing tagging, signpost-based re-evaluation surfacing.
-- 🚧 **`council`** — multi-model subprocess dispatcher + deterministic synthesis.
+- ✅ **`council`** — multi-model subprocess dispatcher + deterministic synthesis.
   - ✅ M6: approval / dispatch-log plane (out-of-band consent; LLM cannot self-grant)
   - ✅ M7: CLI characterization + error classifier (claude/codex/gemini quirks catalogued)
   - ✅ M8: real claude dispatcher, 2 personas, single-pass, deterministic `SYNTHESIS.md`, pre_mortem mode
-  - 🚧 M9: two-pass metacognitive + codex dispatch + concurrency limiter (in flight)
-  - ⏳ M10: gemini dispatch + full matrix (3 × 5 = 15 cells)
-  - ⏳ M11: evidence-aware template refinements
+  - ✅ M9: two-pass metacognitive + codex dispatch + concurrency limiter
+  - ✅ M10: gemini dispatch + full matrix (3 × 5 = 15 cells) + CLI-interleaved concurrency + strict benign-stderr filter
+  - ⏳ M11: evidence-aware synthesis refinements (agreement/disagreement sections)
 - ⏳ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. *Ships at M12.*
 
 Also shipping during v0.1: real `claude -p` end-to-end in CI (M13) and the install-time custom-categories integration (M14).
