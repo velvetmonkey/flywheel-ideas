@@ -88,6 +88,18 @@ export {
 } from './lifecycle.js';
 export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
 
+// Council orchestrator (M8)
+export {
+  CouncilOrchestratorError,
+  runCouncil,
+} from './council.js';
+export type {
+  CouncilViewResult,
+  RunCouncilInput,
+  RunCouncilOptions,
+  RunCouncilResult,
+} from './council.js';
+
 // Council primitives (M8)
 export {
   PROMPT_VERSION,
