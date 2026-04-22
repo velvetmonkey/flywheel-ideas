@@ -57,6 +57,14 @@ export type {
 export { readNote } from './read/notes.js';
 export type { ReadNoteResult } from './read/notes.js';
 
+// Shared helpers
+export { filterStaleRows } from './stale-filter.js';
+export type {
+  StaleFilterable,
+  FilterStaleOptions,
+  FilterStaleResult,
+} from './stale-filter.js';
+
 // IDs (M4 commit 3)
 export {
   generateId,
@@ -79,3 +87,32 @@ export {
   listTransitions,
 } from './lifecycle.js';
 export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
+
+// Assumptions (M5)
+export {
+  declareAssumption,
+  getAssumption,
+  listAssumptions,
+  lockAssumption,
+  unlockAssumption,
+  findDueSignposts,
+  forgetAssumption,
+  renderYStatement,
+  buildAssumptionPath,
+  buildAssumptionNextStepsForIdea,
+  AssumptionNotFoundError,
+  IdeaNotFoundError,
+  AssumptionInputError,
+} from './assumptions.js';
+export type {
+  AssumptionStatus,
+  AssumptionStructured,
+  AssumptionDeclareInput,
+  AssumptionRow,
+  DeclareAssumptionResult,
+  ListAssumptionsOptions,
+  ListAssumptionsResult,
+  DueSignpostEntry,
+  FindDueSignpostsOptions,
+  AssumptionNextStepHint,
+} from './assumptions.js';

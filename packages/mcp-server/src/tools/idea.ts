@@ -10,12 +10,11 @@
  * Every response is `{result, next_steps}` — see `next_steps.ts`.
  */
 
-import { existsSync } from 'node:fs';
-import * as path from 'node:path';
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
   activeWritePath,
+  filterStaleRows,
   generateIdeaId,
   IDEA_STATES,
   INITIAL_STATE,
@@ -464,19 +463,11 @@ function handleList(
   // stale idea would naively suggest idea.list, which would return the same
   // orphan, which would lead the agent back to read.
   const includeStale = args.include_stale === true;
-  const filtered: Array<IdeaListRow & { stale: boolean }> = [];
-  let staleSkipped = 0;
-  for (const r of rows) {
-    const fullPath = path.join(vaultPath, r.vault_path);
-    const exists = existsSync(fullPath);
-    if (!exists && !includeStale) {
-      staleSkipped++;
-      continue;
-    }
-    filtered.push({ ...r, stale: !exists });
-  }
+  const { kept, staleSkipped } = filterStaleRows(vaultPath, rows, {
+    include_stale: includeStale,
+  });
 
-  const ideas = filtered.map((r) => ({
+  const ideas = kept.map((r) => ({
     id: r.id,
     title: r.title,
     state: r.state,
