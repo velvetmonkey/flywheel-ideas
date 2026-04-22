@@ -134,6 +134,17 @@ npm install @velvetmonkey/flywheel-ideas
 
 ## Roadmap
 
+### v0.1 — the closed loop *(in progress)*
+
+The core product: four MCP tools forming `idea → assumption → council → outcome → propagation`.
+
+- ✅ **`idea`** — `create · read · list · transition · forget`. Lifecycle state machine (8 states), atomic DB + frontmatter transitions with rollback-on-failure, stale-row filtering, `next_steps` guidance for every state.
+- ✅ **`assumption`** — `declare · list · lock · unlock · signposts_due · forget`. Y-statement structured input OR free text, OSF-style pre-registration lock, load-bearing tagging, signpost-based re-evaluation surfacing.
+- ⏳ **`council`** — multi-model subprocess dispatcher (claude/codex/gemini × five personas), two-pass metacognitive structure, structured evidence citations, template synthesis. *Ships across M6–M11.*
+- ⏳ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. *Ships at M12.*
+
+Also shipping during v0.1: real `claude -p` end-to-end in CI (M13) and the install-time custom-categories integration (M14).
+
 ### v0.2 — depth on the loop + closing the feedback loop
 
 `idea.freeze` / `council.freeze` (OSF snapshot) · metric & guardrail fields on assumptions · RAND ABP shaping + hedging actions · **Assumption Radar** (semantic vault-wide signal detection) · daily-note outcome capture · automated signpost surfacing · agent-driven outcome detection · lifecycle enforcement · `decision_delta` view · digest · lineage queries · steelman council mode · Anti-Portfolio pass memos · Ollama / LM Studio local models
