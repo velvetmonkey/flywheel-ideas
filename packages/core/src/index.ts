@@ -194,6 +194,29 @@ export type {
   FailureReason,
 } from './cli-errors.js';
 
+// Outcome + propagation (M12)
+export {
+  buildOutcomePath,
+  computeOutcomeDigest,
+  forgetOutcome,
+  getOutcome,
+  listOutcomes,
+  logOutcome,
+  OutcomeAlreadyUndoneError,
+  OutcomeInputError,
+  OutcomeNotFoundError,
+  undoOutcome,
+} from './outcome.js';
+export type {
+  FlaggedIdea,
+  ListOutcomesOptions,
+  ListOutcomesResult,
+  OutcomeLogInput,
+  OutcomeLogResult,
+  OutcomeRow,
+  OutcomeUndoResult,
+} from './outcome.js';
+
 // Approval (M6)
 export {
   approvalsFilePath,
