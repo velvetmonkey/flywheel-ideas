@@ -1,0 +1,144 @@
+/**
+ * Council prompt assembly (M8).
+ *
+ * Two personas ship in M8: Risk Pessimist + Growth Optimist. Two modes:
+ * `standard` (attack assumptions from persona's default stance) and
+ * `pre_mortem` (assume the idea failed 12 months out, work backwards).
+ *
+ * Per-spec two-pass metacognitive structure is deferred to M9 — single-pass
+ * per cell in M8 leaves `initial_stance` + `self_critique` columns null.
+ *
+ * Prompts are deterministic. `PROMPT_VERSION` bumps when any template changes
+ * so `ideas_council_views.prompt_version` is comparable across time.
+ */
+
+export const PROMPT_VERSION = '1.0.0';
+export const PERSONA_VERSION = '1.0.0';
+
+export type CouncilMode = 'standard' | 'pre_mortem';
+
+export interface PersonaDef {
+  /** Stable machine-key used in file paths + DB rows: `risk-pessimist` */
+  id: string;
+  /** Human-facing name: `Risk Pessimist` */
+  name: string;
+  /** One-line role description, rendered into the system prompt. */
+  description: string;
+}
+
+/** v0.1 council matrix ships 5 personas; M8 dispatches only the first two. */
+export const PERSONAS: readonly PersonaDef[] = [
+  {
+    id: 'risk-pessimist',
+    name: 'Risk Pessimist',
+    description:
+      'identifies downside and failure modes; overlooks opportunity cost.',
+  },
+  {
+    id: 'growth-optimist',
+    name: 'Growth Optimist',
+    description:
+      'sees upside and creative alternatives; misses execution risk.',
+  },
+  {
+    id: 'competitor-strategist',
+    name: 'Competitor Strategist',
+    description:
+      'reasons about market dynamics and competitive response; overestimates rationality.',
+  },
+  {
+    id: 'regulator',
+    name: 'Regulator',
+    description:
+      'surfaces legal and compliance exposure; overweights unlikely regulations.',
+  },
+  {
+    id: 'customer-advocate',
+    name: 'Customer Advocate',
+    description:
+      'centers user value and end-to-end experience; ignores unit economics.',
+  },
+] as const;
+
+export const M8_PERSONA_SET: ReadonlyArray<PersonaDef> = [PERSONAS[0], PERSONAS[1]];
+
+const JSON_ENVELOPE_CONTRACT = `Respond with EXACTLY this JSON envelope and nothing else. No prose before or after. No markdown fences. No code blocks.
+
+{
+  "stance": "<your answer, 2-5 paragraphs, in your persona's voice>",
+  "confidence": <number between 0.0 and 1.0>,
+  "key_risks": ["<risk 1>", "<risk 2>"],
+  "fragile_insights": ["<insight vulnerable to assumption failure>"],
+  "assumptions_cited": ["<assumption id like asm-abc>"],
+  "evidence": [{"claim": "<claim>", "source": "<url | vault://path | citation>"}],
+  "metacognitive_reflection": {
+    "could_be_wrong_if": "<evidence that would falsify your stance>",
+    "most_vulnerable_assumption": "<assumption id>",
+    "confidence_rationale": "<why this confidence number>"
+  }
+}`;
+
+const PRE_MORTEM_PREFIX = `Assume this idea has failed 12 months from now. Work backwards — what went wrong? Attack every declared assumption as a candidate cause.
+
+---
+
+`;
+
+export interface PromptInput {
+  persona: PersonaDef;
+  mode: CouncilMode;
+  idea_title: string;
+  idea_body: string;
+  assumptions: Array<{
+    id: string;
+    text: string;
+    load_bearing: boolean;
+  }>;
+}
+
+export interface AssembledPrompt {
+  system: string;
+  user: string;
+  /** Stable-input digest material — for hashing. Excludes any timestamps. */
+  digest_material: string;
+}
+
+/**
+ * Produce the system + user messages for a single council cell.
+ * Deterministic — identical inputs produce identical strings.
+ */
+export function assemblePrompt(input: PromptInput): AssembledPrompt {
+  const system = [
+    `You are a ${input.persona.name} on a decision council. You ${input.persona.description}`,
+    '',
+    JSON_ENVELOPE_CONTRACT,
+  ].join('\n');
+
+  const assumptionsBlock =
+    input.assumptions.length > 0
+      ? input.assumptions
+          .map(
+            (a) =>
+              `- [${a.id}${a.load_bearing ? ', load-bearing' : ''}] ${a.text}`,
+          )
+          .join('\n')
+      : '_(no declared assumptions)_';
+
+  const userBody = [
+    `Idea: ${input.idea_title}`,
+    '',
+    input.idea_body.trim() === '' ? '_(no body)_' : input.idea_body.trim(),
+    '',
+    'Declared assumptions:',
+    assumptionsBlock,
+    '',
+    'Attack each assumption explicitly. Cite assumptions by id in `assumptions_cited`.',
+  ].join('\n');
+
+  const user = input.mode === 'pre_mortem' ? `${PRE_MORTEM_PREFIX}${userBody}` : userBody;
+
+  // Digest material is the concatenation of system + user — stable, deterministic.
+  const digest_material = `${system}\n\n---\n\n${user}`;
+
+  return { system, user, digest_material };
+}

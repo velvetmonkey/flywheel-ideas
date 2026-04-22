@@ -1,0 +1,85 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renderSynthesisMarkdown — success cases > snapshot: 2-persona happy-path synthesis 1`] = `
+"---
+type: council_synthesis
+session_id: sess-abc
+idea_id: idea-xyz
+mode: pre_mortem
+depth: light
+---
+# Council session sess-abc
+
+**Idea:** [[Switch pricing from seat to usage]] (\`idea-xyz\`)
+**Mode:** pre_mortem
+**Depth:** light
+**Started:** 1970-01-01T00:00:01.000Z
+**Completed:** 1970-01-01T00:00:02.500Z
+**Duration:** 1.5s
+
+## Executive
+
+| Persona | Model | Confidence | Stance (first line) |
+|---|---|---|---|
+| Risk Pessimist | claude | 0.70 | risk pessimist stance |
+| Growth Optimist | claude | 0.40 | growth optimist stance |
+
+## Views
+
+### Risk Pessimist (claude)
+
+risk pessimist stance
+
+**Key risks:**
+- r1
+- r2
+
+**Fragile insights:**
+- fi1
+
+**Assumptions cited:** \`asm-a1\`
+
+**Metacognitive reflection:**
+- Could be wrong if: mock
+- Most vulnerable assumption: \`asm-a1\`
+- Confidence rationale: mock
+
+**Evidence:**
+- "c1" — vault://e1
+
+### Growth Optimist (claude)
+
+growth optimist stance
+
+**Key risks:**
+- r1
+- r2
+
+**Fragile insights:**
+- fi1
+
+**Assumptions cited:** \`asm-a1\`
+
+**Metacognitive reflection:**
+- Could be wrong if: mock
+- Most vulnerable assumption: \`asm-a1\`
+- Confidence rationale: mock
+
+**Evidence:**
+- "c1" — vault://e1
+
+## Evidence (union, deduped)
+
+- "c1" — vault://e1
+
+## Failed cells
+
+_(none)_
+## Next steps
+
+- [ ] \`idea.read({ id: "idea-xyz" })\` — re-read with council context
+- [ ] \`assumption.signposts_due({ idea_id: "idea-xyz" })\` — check any flagged signposts
+- [ ] \`idea.transition({ id, to: ..., reason: "..." })\` — if the council changed your view
+- [ ] \`assumption.declare(...)\` — add any new assumption the council surfaced
+"
+`;
