@@ -69,10 +69,55 @@ Four MCP tools, ~15 actions total. Everything else in the roadmap supports this.
 
 ## Safety (MCP-spec-compliant)
 
-- `confirm: true` required on `council.run`
-- Session approval scopes persisted to `ideas_dispatches` audit log
+- `confirm: true` required on `council.run` (acknowledges subprocess spawn)
+- **Approval is out-of-band.** The LLM cannot grant, revoke, or reset the
+  council-dispatch approval — mutation is not exposed on the tool surface.
 - Binary allowlist; no hidden shell construction
 - Vault-write path-security inherited from vault-core (or replicated in direct-fs fallback)
+
+### Granting / revoking council-dispatch approval
+
+Approval is resolved with env-var precedence over a persistent file:
+
+```
+FLYWHEEL_IDEAS_APPROVE=always|session|never   # preferred — set at server launch
+<vault>/.flywheel/ideas-approvals.json         # persistent — manual user edit
+```
+
+Precedence: env-var-never > env-var-always/session > file-never > file-always > no-approval.
+
+**Session (one-off, no persistence):**
+```bash
+FLYWHEEL_IDEAS_APPROVE=session npx @velvetmonkey/flywheel-ideas
+```
+
+**Always (persists across restarts):** create the file manually with
+```json
+{
+  "schema": 1,
+  "approvals": [
+    {
+      "feature": "council_dispatch",
+      "scope": "always",
+      "granted_at": 1714000000000,
+      "binaries": ["claude", "codex", "gemini"]
+    }
+  ]
+}
+```
+
+**Revoke:** delete the file, or set `FLYWHEEL_IDEAS_APPROVE=never`.
+
+**Inspect:** `council.approval_status` (read-only) — reports current state
+without mutation.
+
+### Audit
+
+`ideas_dispatches` is the audit trail — `cli`, `argv`, `approval_scope`,
+`started_at`, `finished_at`. M6 ships the helper primitives but does **not**
+write rows; the real council dispatcher in M8 is the first caller. The argv
+column will carry flags only (prompts route via stdin) to keep user idea
+text out of the audit log.
 
 ## Testing
 
