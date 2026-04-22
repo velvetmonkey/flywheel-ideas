@@ -18,6 +18,7 @@ import {
   type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { registerAssumptionTool } from './tools/assumption.js';
+import { registerCouncilTool } from './tools/council.js';
 import { registerIdeaTool } from './tools/idea.js';
 
 /**
@@ -40,6 +41,11 @@ export function createConfiguredServer(
     () => db,
   );
   registerAssumptionTool(
+    server,
+    () => vaultPath,
+    () => db,
+  );
+  registerCouncilTool(
     server,
     () => vaultPath,
     () => db,
