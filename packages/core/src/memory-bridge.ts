@@ -31,6 +31,8 @@
  * /dist/esm/client/stdio.js DEFAULT_INHERITED_ENV_VARS.
  */
 
+import { existsSync } from 'node:fs';
+import { isAbsolute } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
@@ -80,6 +82,14 @@ export async function registerCustomCategories(
   const binary = opts.binary ?? process.env.FLYWHEEL_MEMORY_BIN ?? 'flywheel-memory';
   const args = opts.args ?? [];
   const timeoutMs = resolveTimeout(opts.timeoutMs);
+
+  // Precheck: an absolute-path binary that doesn't exist is unambiguously
+  // binary_not_found. cross-spawn on Windows wraps the resulting spawn
+  // failure as a generic Error without an ENOENT code, so we can't rely on
+  // post-hoc classification. (Caught by Windows CI in M14 dogfood PR.)
+  if (isAbsolute(binary) && !existsSync(binary)) {
+    return { status: 'skipped', reason: 'binary_not_found', detail: binary };
+  }
 
   const env: Record<string, string> = {
     ...(opts.env ?? {}),
@@ -207,11 +217,13 @@ function classifyError(err: unknown, binary: string, timeoutMs: number): MemoryB
   if (e?.code === 'ENOENT') {
     return { status: 'skipped', reason: 'binary_not_found', detail: binary };
   }
-  return {
-    status: 'skipped',
-    reason: 'spawn_failed',
-    detail: e?.message ?? String(err),
-  };
+  // Windows: cross-spawn doesn't always preserve ENOENT — fall back to
+  // string-matching the message for the binary path.
+  const msg = e?.message ?? String(err);
+  if (msg.includes(binary) && /ENOENT|not found|cannot find|no such file/i.test(msg)) {
+    return { status: 'skipped', reason: 'binary_not_found', detail: binary };
+  }
+  return { status: 'skipped', reason: 'spawn_failed', detail: msg };
 }
 
 function extractText(res: unknown): string | null {
