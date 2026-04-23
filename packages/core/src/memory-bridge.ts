@@ -9,8 +9,10 @@
  *
  * Behaviour:
  *  - Spawn `flywheel-memory` as an MCP subprocess via the SDK.
- *  - GET-MERGE-SET on `flywheel_config({key:'custom_categories'})` so a user's
- *    pre-existing custom categories (e.g. `recipe`, `paper`) are preserved.
+ *  - GET-MERGE-SET on `doctor({action:'config', mode:'get'/'set', key:'custom_categories'})`
+ *    so a user's pre-existing custom categories (e.g. `recipe`, `paper`) are
+ *    preserved. (The standalone `flywheel_config` tool was retired in
+ *    flywheel-memory T43+ and folded into `doctor(action:'config')`.)
  *  - Best-effort: never throw. Returns `{status:'skipped', reason:...}` if the
  *    binary is missing, the call times out, or the response is malformed.
  *
@@ -130,8 +132,8 @@ async function runRegistration(
   onConnected();
 
   const getRes = await client.callTool({
-    name: 'flywheel_config',
-    arguments: { mode: 'get' },
+    name: 'doctor',
+    arguments: { action: 'config', mode: 'get' },
   });
   const getText = extractText(getRes);
   if (getText === null) {
@@ -159,8 +161,8 @@ async function runRegistration(
   const preserved = Object.keys(existing).filter((k) => !(k in IDEAS_CATEGORIES));
 
   const setRes = await client.callTool({
-    name: 'flywheel_config',
-    arguments: { mode: 'set', key: 'custom_categories', value: merged },
+    name: 'doctor',
+    arguments: { action: 'config', mode: 'set', key: 'custom_categories', value: merged },
   });
   const setText = extractText(setRes);
   if (setText === null) {

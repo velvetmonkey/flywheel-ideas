@@ -3,8 +3,9 @@
  * Mock flywheel-memory MCP server for memory-bridge tests (M14).
  *
  * Speaks the MCP stdio protocol via the SDK and exposes a single tool,
- * `flywheel_config`. Behaviour is driven by env knobs so a single mock covers
- * every happy/sad path.
+ * `doctor`, mirroring real flywheel-memory's surface for `action:'config'`.
+ * Behaviour is driven by env knobs so a single mock covers every happy/sad
+ * path.
  *
  * Env knobs:
  *   MOCK_FM_GET_PAYLOAD       JSON string used as the `get` response text
@@ -61,10 +62,11 @@ const defaultSet = (value) =>
 const server = new McpServer({ name: 'mock-flywheel-memory', version: '0.0.0' });
 
 server.tool(
-  'flywheel_config',
-  'Mock flywheel-memory config tool',
+  'doctor',
+  'Mock flywheel-memory doctor tool (action:config only)',
   {
-    mode: z.enum(['get', 'set']),
+    action: z.enum(['health', 'diagnosis', 'stats', 'pipeline', 'config', 'log']),
+    mode: z.enum(['get', 'set']).optional(),
     key: z.string().optional(),
     value: z.unknown().optional(),
   },
@@ -76,7 +78,7 @@ server.tool(
       try {
         fs.appendFileSync(
           process.env.MOCK_FM_INVOKE_LOG,
-          JSON.stringify({ tool: 'flywheel_config', args }) + '\n',
+          JSON.stringify({ tool: 'doctor', args }) + '\n',
         );
       } catch {
         /* non-fatal */
@@ -87,11 +89,23 @@ server.tool(
       return { content: [] };
     }
 
-    if (args.mode === 'get') {
-      const text = process.env.MOCK_FM_GET_PAYLOAD ?? defaultGet();
+    if (args.action !== 'config') {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify({ error: `mock only supports action:config (got ${args.action})` }),
+          },
+        ],
+      };
+    }
+
+    if (args.mode === 'set') {
+      const text = process.env.MOCK_FM_SET_PAYLOAD ?? defaultSet(args.value);
       return { content: [{ type: 'text', text }] };
     } else {
-      const text = process.env.MOCK_FM_SET_PAYLOAD ?? defaultSet(args.value);
+      // mode is 'get' or unspecified — both treated as get (matches real flywheel-memory)
+      const text = process.env.MOCK_FM_GET_PAYLOAD ?? defaultGet();
       return { content: [{ type: 'text', text }] };
     }
   },

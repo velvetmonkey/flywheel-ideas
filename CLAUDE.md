@@ -152,6 +152,23 @@ the refuted assumption gets `needs_review=1`. Reversible via `outcome.undo`
 
 Full operator guide: [docs/outcome.md](./docs/outcome.md).
 
+## Memory bridge (M14 — flywheel-memory category registration)
+
+On server startup, flywheel-ideas spawns `flywheel-memory` as an MCP
+subprocess (best-effort, 15s timeout) and registers four custom categories:
+`ideas_note`, `ideas_assumption`, `ideas_council_session`, `ideas_outcome`.
+This makes ideas notes participate in flywheel-memory's wikilink scorer
+and citation graph instead of being treated as unknown noise.
+
+Failure is non-fatal — if `flywheel-memory` isn't installed or times out,
+the server boots normally with a one-line stderr warning. Disable entirely
+with `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`. Cold-start `init_semantic` may need
+`FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=60000` on first launch.
+
+User-defined custom categories (`recipe`, `paper`, etc.) survive: the
+bridge does GET → MERGE → SET, not plain SET. Full guide:
+[docs/memory-bridge.md](./docs/memory-bridge.md).
+
 ## CLI dispatch targets (M8)
 
 Council dispatcher spawns `claude`, `codex`, `gemini` with explicit flags.

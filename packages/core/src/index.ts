@@ -5,7 +5,19 @@
  * See ~/obsidian/Ben/tech/flywheel/flywheel-ideas/ for the full plan.
  */
 
-export const PACKAGE_VERSION = '0.1.0-alpha.0';
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// Read version from package.json so MCP server's advertised version
+// always matches what users actually installed. (M14 dogfood found that
+// the previous hard-coded literal had drifted to 0.1.0-alpha.0 across
+// alpha.1/alpha.2 releases.)
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const pkg = JSON.parse(
+  readFileSync(join(__dirname, '..', 'package.json'), 'utf8'),
+) as { version: string };
+export const PACKAGE_VERSION = pkg.version;
 
 // Database
 export {

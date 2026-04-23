@@ -92,9 +92,19 @@ describe('registerCustomCategories — merge preservation (gemini CRITICAL)', ()
 
     const lines = (await fsp.readFile(invokeLog, 'utf8')).trim().split('\n');
     expect(lines).toHaveLength(2);
-    const setCall = JSON.parse(lines[1]) as {
-      args: { mode: string; key: string; value: Record<string, unknown> };
+    const getCall = JSON.parse(lines[0]) as {
+      tool: string;
+      args: { action: string; mode: string };
     };
+    expect(getCall.tool).toBe('doctor');
+    expect(getCall.args.action).toBe('config');
+    expect(getCall.args.mode).toBe('get');
+    const setCall = JSON.parse(lines[1]) as {
+      tool: string;
+      args: { action: string; mode: string; key: string; value: Record<string, unknown> };
+    };
+    expect(setCall.tool).toBe('doctor');
+    expect(setCall.args.action).toBe('config');
     expect(setCall.args.mode).toBe('set');
     expect(setCall.args.key).toBe('custom_categories');
     expect(Object.keys(setCall.args.value).sort()).toEqual(
@@ -121,6 +131,23 @@ describe('registerCustomCategories — merge preservation (gemini CRITICAL)', ()
       args: { value: Record<string, { type_boost: number }> };
     };
     expect(setCall.args.value.ideas_note).toEqual({ type_boost: 2 });
+  });
+
+  it('still issues set when get returns config without custom_categories key (real flywheel-memory v2.11+)', async () => {
+    // Real flywheel-memory v2.11.2 omits `custom_categories` from get response
+    // until something has been set. Treat omission as empty object.
+    const invokeLog = path.join(tmpdir, 'invocations.jsonl');
+    const env = {
+      MOCK_FM_GET_PAYLOAD: JSON.stringify({
+        vault_name: 'mock-vault',
+        // no custom_categories key at all
+      }),
+      MOCK_FM_INVOKE_LOG: invokeLog,
+    };
+    const result = await registerCustomCategories(vaultPath, asMock(env));
+    expect(result.status).toBe('registered');
+    if (result.status !== 'registered') return;
+    expect(result.preserved).toEqual([]);
   });
 });
 
