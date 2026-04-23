@@ -9,13 +9,25 @@ Two packages ship from this repo:
 version (`"0.1.0-alpha.0"` etc). The dep is resolved at install-time from npm,
 not from the workspace. **Core must be on npm before the server publishes.**
 
-## Release cadence (v0.1 pre-alpha)
+## Release cadence
 
-- Alpha versions track v0.1 milestones: `0.1.0-alpha.<N>` where `<N>` bumps
-  on each published snapshot
+Two parallel tracks now that v0.1.0 GA has shipped:
+
+**Stable releases** (`0.X.Y` and `0.X.Y+1`, etc.):
+- Publish without `--tag alpha`, so npm `latest` tracks the most recent stable.
+- Bump in lockstep: both packages advance to the same version, mcp-server's
+  dep on core references the exact version.
+
+**Pre-release / alpha train** (next: v0.2 alpha cycle):
+- Alpha versions follow `0.X.0-alpha.<N>` where `<N>` bumps on each snapshot.
+- **`npm publish --tag alpha` is mandatory** so alphas don't claim `@latest`.
+- After the next stable cuts, `npm dist-tag rm @velvetmonkey/flywheel-ideas alpha`
+  to retire the alpha tag (or leave it pointing at the most recent alpha if
+  you want users on `@alpha` to keep tracking pre-releases).
+
+Always:
 - Do not tag a release without CI green on main
-- Both packages bump to the same version in lockstep — the mcp-server dep
-  references core by exact version
+- Both packages bump to the same version in lockstep
 
 ## Prerequisites
 
