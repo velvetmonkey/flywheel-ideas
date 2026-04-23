@@ -310,14 +310,14 @@ describe('registerCustomCategories — process cleanup', () => {
     const pid = Number.parseInt(pidStr.trim(), 10);
     expect(Number.isFinite(pid)).toBe(true);
 
-    // Wait a beat for the SDK SIGTERM→SIGKILL + our SIGKILL fallback to land.
-    // SDK close() takes up to 4s for SIGTERM-grace + SIGKILL when the child
-    // ignores SIGTERM, then our ensureChildExited adds 1s + SIGKILL fallback.
-    await new Promise((r) => setTimeout(r, 1500));
+    // Wait for SDK's own SIGTERM→2s grace→SIGKILL escalation. Alpha.4
+    // dropped our PID-level SIGKILL fallback, so we rely entirely on the
+    // SDK's lifecycle. SDK close() takes up to 4s end-to-end.
+    await new Promise((r) => setTimeout(r, 5000));
 
     // Direct PID check — no shell, no cmdline matching.
     expect(isAlive(pid)).toBe(false);
-  }, 15_000);
+  }, 20_000);
 
   it('debug stderr surfaces transport close errors when FLYWHEEL_IDEAS_DEBUG=1', async () => {
     // Intercept stderr writes for the duration of the call.
