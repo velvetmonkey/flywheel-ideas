@@ -48,15 +48,37 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
-  if (child && child.exitCode === null) {
+  if (child) {
+    if (child.exitCode === null) {
+      try {
+        child.kill('SIGKILL');
+      } catch {
+        /* ignore */
+      }
+      // Wait for child to fully exit so its better-sqlite3 file handles
+      // release. Otherwise Windows EBUSY on unlink ideas.db.
+      await new Promise<void>((resolve) => {
+        const t = setTimeout(resolve, 2000);
+        t.unref();
+        child!.once('close', () => {
+          clearTimeout(t);
+          resolve();
+        });
+      });
+    }
+    child = null;
+  }
+  // Windows: even after process exit, file handles may linger briefly.
+  // Retry the rm a few times before giving up.
+  for (let attempt = 0; attempt < 5; attempt++) {
     try {
-      child.kill('SIGKILL');
-    } catch {
-      /* ignore */
+      await fsp.rm(vaultPath, { recursive: true, force: true });
+      break;
+    } catch (err) {
+      if (attempt === 4) throw err;
+      await new Promise((r) => setTimeout(r, 200));
     }
   }
-  child = null;
-  await fsp.rm(vaultPath, { recursive: true, force: true });
 });
 
 interface SpawnResult {
