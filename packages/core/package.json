@@ -1,6 +1,6 @@
 {
   "name": "@velvetmonkey/flywheel-ideas-core",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "description": "Core domain logic for flywheel-ideas — lifecycle, assumptions, council dispatcher, outcome propagation. Not intended for direct use; consumed by @velvetmonkey/flywheel-ideas (MCP server).",
   "type": "module",
   "main": "dist/index.js",
