@@ -46,25 +46,37 @@ Install @velvetmonkey/flywheel-memory or set FLYWHEEL_MEMORY_BIN to enable.
 |---|---|---|
 | `FLYWHEEL_IDEAS_MEMORY_BRIDGE` | unset | `0` → skip the bridge entirely (no spawn, no warning loud enough to confuse users — just `(disabled)`). |
 | `FLYWHEEL_MEMORY_BIN` | `flywheel-memory` | Override binary path. Useful for non-PATH installs or testing against a custom build. |
-| `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS` | `15000` | Hard timeout for the GET+SET round-trip. Bump for cold-start `init_semantic` / model download (see below). |
+| `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS` | `30000` (alpha.4; was 15000 in alpha.3) | Hard timeout for the GET+SET round-trip. Bump for cold-start `init_semantic` / model download (see below). |
 | `FLYWHEEL_IDEAS_DEBUG` | unset | `1` → surface transport teardown errors on stderr. |
 
 ## Cold-start gotcha
 
 flywheel-memory does `init_semantic` lazily on first run. If your vault is
-new, the first launch can take 20–60s (model download). The default 15s
-timeout will fire as `(timeout)` and the bridge skips registration —
-correctly, since we'd rather skip than block server startup forever.
+new, the first launch can take 20–60s (model download). The default 30s
+timeout (alpha.4 bumped this from 15s) covers most cold starts; pathological
+cases still trigger `(timeout)` and the bridge skips registration — we'd
+rather skip than block server startup forever.
 
-Workaround for first launch: `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=60000`.
-After init_semantic finishes once, subsequent launches are <1s and the
-default timeout is fine.
+Workaround for very-first-run on slow machines:
+`FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=60000`. After init_semantic finishes
+once, subsequent launches are <1s and the default 30s ceiling is plenty.
+
+**Note on the SIGKILL window (alpha.4):** if the timeout DOES fire, the SDK's
+`StdioClientTransport.close()` does a clean SIGTERM → 2s grace → SIGKILL of
+the child. If that SIGKILL lands while flywheel-memory is mid-`init_semantic`
+(model download, schema migration), it can leave a partial state. Alpha.4
+dropped our redundant PID-level fallback after SDK close (the SDK already
+SIGKILLs, and our extra kill couldn't help) — the 30s timeout bump is the
+real mitigation. A future v0.2 enhancement may sniff stderr for `init_semantic`
+markers and extend the timeout dynamically.
 
 ## What gets preserved
 
 If you've manually added custom categories via flywheel-memory's
-`flywheel_config({mode:'set', key:'custom_categories', value:{...}})`,
-those survive. The bridge does GET → MERGE → SET, not plain SET. Example:
+`doctor({action:'config', mode:'set', key:'custom_categories', value:{...}})`,
+those survive. (The standalone `flywheel_config` tool was retired in
+flywheel-memory T43+ and folded into `doctor(action:'config')`.) The bridge
+does GET → MERGE → SET, not plain SET. Example:
 
 Before:
 ```json

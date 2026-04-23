@@ -33,7 +33,6 @@
 
 import { existsSync } from 'node:fs';
 import { isAbsolute } from 'node:path';
-import { spawnSync } from 'node:child_process';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 
@@ -67,7 +66,12 @@ export interface RegisterOptions {
   env?: Record<string, string>;
 }
 
-const DEFAULT_TIMEOUT_MS = 15_000;
+// 30s default — was 15s in alpha.3 but a cold flywheel-memory doing
+// init_semantic (model download, schema migration) routinely exceeded that
+// and tripped a SIGKILL during state.db work. The 30s ceiling covers most
+// cold starts; pathological cases use FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS.
+// Surfaced by the alpha.3 codebase roundtable.
+const DEFAULT_TIMEOUT_MS = 30_000;
 const REGISTRAR_NAME = 'flywheel-ideas-registrar';
 const REGISTRAR_VERSION = '0.1.x';
 
@@ -108,16 +112,17 @@ export async function registerCustomCategories(
     { capabilities: {} },
   );
 
-  let pidSeen: number | null = null;
-  const onConnected = (): void => {
-    pidSeen = transport.pid;
-  };
-
   try {
-    return await raceWithTimeout(runRegistration(client, transport, onConnected), timeoutMs);
+    return await raceWithTimeout(runRegistration(client, transport), timeoutMs);
   } catch (err) {
     return classifyError(err, binary, timeoutMs);
   } finally {
+    // SDK's StdioClientTransport.close() does stdin.end() → 2s grace →
+    // SIGTERM → 2s grace → SIGKILL. We previously had our own PID-level
+    // SIGKILL fallback after this, but it was redundant — the SDK already
+    // escalates, and our extra kill couldn't help when the SDK's SIGKILL
+    // landed during init_semantic. Removed in alpha.4. The 30s default
+    // timeout is the actual mitigation for the corruption window.
     try {
       await client.close();
     } catch (closeErr) {
@@ -127,19 +132,14 @@ export async function registerCustomCategories(
         );
       }
     }
-    if (pidSeen !== null) {
-      await ensureChildExited(pidSeen);
-    }
   }
 }
 
 async function runRegistration(
   client: Client,
   transport: StdioClientTransport,
-  onConnected: () => void,
 ): Promise<MemoryBridgeResult> {
   await client.connect(transport);
-  onConnected();
 
   const getRes = await client.callTool({
     name: 'doctor',
@@ -270,27 +270,3 @@ function resolveTimeout(opt?: number): number {
   return DEFAULT_TIMEOUT_MS;
 }
 
-async function ensureChildExited(pid: number): Promise<void> {
-  if (!isAlive(pid)) return;
-  // Wait briefly for SDK's own SIGTERM + SIGKILL escalation in close() to land.
-  await new Promise((r) => setTimeout(r, 1000));
-  if (!isAlive(pid)) return;
-  try {
-    if (process.platform === 'win32') {
-      spawnSync('taskkill', ['/T', '/F', '/PID', String(pid)], { windowsHide: true });
-    } else {
-      process.kill(pid, 'SIGKILL');
-    }
-  } catch {
-    // ESRCH = already dead; ignore.
-  }
-}
-
-function isAlive(pid: number): boolean {
-  try {
-    process.kill(pid, 0);
-    return true;
-  } catch {
-    return false;
-  }
-}

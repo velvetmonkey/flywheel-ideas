@@ -21,6 +21,7 @@
 
 import type { IdeasDatabase } from './db.js';
 import { generateTransitionId } from './ids.js';
+import { patchFrontmatter } from './write/patch-frontmatter.js';
 
 export type IdeaState =
   | 'nascent'
@@ -117,6 +118,55 @@ export function recordTransition(
   });
 
   return run();
+}
+
+/**
+ * Best-effort sync of an idea's `state` + `state_changed_at` into its
+ * markdown frontmatter. Mirrors the existing `outcome.log` /
+ * `assumption.markRefuted` post-txn pattern: the SQLite DB is authoritative
+ * and the vault markdown is a human-readable mirror; on fs failure we log
+ * a stderr warning and return without rolling back the DB.
+ *
+ * Why a separate helper (not folded into recordTransition): keeps
+ * recordTransition a pure sync DB boundary so its existing unit tests
+ * stay sync + don't need a tmpdir vault.
+ *
+ * **Note for callers:** the MCP `idea.transition` tool (`tools/idea.ts`)
+ * uses a STRICTER pattern — it patches the frontmatter inline and
+ * compensates with a DB rollback if the fs write fails. Library consumers
+ * that prefer DB-authoritative + best-effort-mirror semantics should call
+ * this helper after `recordTransition`. Direct `tools/idea.ts` callers
+ * already get the stricter rollback semantics.
+ *
+ * Added in alpha.4 (gemini codebase roundtable, HIGH — exposed the
+ * divergence in `recordTransition` internals; the user-facing tool path
+ * was already safe via the inline patch + rollback).
+ */
+export async function syncTransitionFrontmatter(
+  db: IdeasDatabase,
+  vaultPath: string,
+  ideaId: string,
+): Promise<void> {
+  const row = db
+    .prepare(
+      'SELECT state, state_changed_at, vault_path FROM ideas_notes WHERE id = ?',
+    )
+    .get(ideaId) as
+    | { state: string; state_changed_at: number; vault_path: string }
+    | undefined;
+  if (!row) return; // recordTransition would have thrown for a missing idea
+  try {
+    await patchFrontmatter(vaultPath, row.vault_path, {
+      state: row.state,
+      state_changed_at: new Date(row.state_changed_at).toISOString(),
+    });
+  } catch (err) {
+    process.stderr.write(
+      `flywheel-ideas: frontmatter sync failed for idea ${ideaId}: ${
+        (err as Error).message
+      }\n`,
+    );
+  }
 }
 
 /**

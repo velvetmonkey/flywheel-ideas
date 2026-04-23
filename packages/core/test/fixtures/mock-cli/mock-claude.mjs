@@ -16,7 +16,10 @@
  *                                   "Pass 1 stance was:" marker. Overrides default P2.
  *   FLYWHEEL_TEST_STDERR          — write this to stderr before exiting.
  *   FLYWHEEL_TEST_EXIT            — exit with this numeric code (default 0).
- *   FLYWHEEL_TEST_HANG_MS         — sleep this many ms before exiting (simulates slow cell / timeout).
+ *   FLYWHEEL_TEST_HANG_MS         — sleep this many ms before writing stdout (simulates slow cell / timeout).
+ *   FLYWHEEL_TEST_HANG_AFTER_STDOUT_MS — sleep this many ms AFTER writing stdout
+ *                                   (simulates a child that floods stdout then refuses to exit;
+ *                                   used by the maxBuffer SIGKILL escalation test).
  *   FLYWHEEL_TEST_HANG_ON_PASS    — only hang when stdin indicates this pass (1 or 2).
  *   FLYWHEEL_TEST_EXIT_ON_PASS    — only non-zero exit when stdin indicates this pass.
  *   FLYWHEEL_TEST_STDOUT_RAW      — skip normal output, write this raw string to stdout.
@@ -132,6 +135,14 @@ async function main() {
       { type: 'result', subtype: 'success', result: resultStr },
     ];
     process.stdout.write(JSON.stringify(events));
+  }
+
+  const hangAfterMs = Number.parseInt(
+    process.env.FLYWHEEL_TEST_HANG_AFTER_STDOUT_MS ?? '0',
+    10,
+  );
+  if (hangAfterMs > 0) {
+    await sleep(hangAfterMs);
   }
 
   const baseExit = Number.parseInt(process.env.FLYWHEEL_TEST_EXIT ?? '0', 10);

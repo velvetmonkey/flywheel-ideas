@@ -293,6 +293,23 @@ export async function validatePathSecure(
           reason: 'Deepest existing ancestor resolves outside vault',
         };
       }
+
+      // Compose the expected real target = realAncestorPath + leftover segments
+      // from fullPath that come after the existing ancestor. Without this check,
+      // a directory symlink (e.g., `vault/foo -> .git`) lets writes to
+      // `vault/foo/config` bypass `isSensitivePath` because the original notePath
+      // (`foo/config`) doesn't match the `.git/*` blacklist. Surfaced by gemini
+      // codebase roundtable on alpha.3.
+      const leftover = path.relative(ancestorPath, fullPath);
+      const composedRealPath = leftover ? path.join(realAncestorPath, leftover) : realAncestorPath;
+      const composedRelative = path.relative(realVaultPath, composedRealPath);
+
+      if (isSensitivePath(composedRelative)) {
+        return {
+          valid: false,
+          reason: 'Symlink-composed target is a sensitive file',
+        };
+      }
     }
   } catch (error) {
     // This shouldn't happen given our earlier checks, but handle gracefully

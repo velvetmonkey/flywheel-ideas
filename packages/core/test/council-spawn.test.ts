@@ -135,6 +135,42 @@ describe('spawnCliCell — maxBuffer enforcement', () => {
       else process.env.FLYWHEEL_IDEAS_MAX_BUFFER_BYTES = prev;
     }
   }, 15_000);
+
+  it('escalates SIGTERM→SIGKILL when a maxBuffer-exceeding child also ignores SIGTERM (gemini CRIT)', async () => {
+    // Pre-fix: maxBuffer path called killTree(SIGTERM) with no escalation.
+    // A SIGTERM-ignoring child + flood would hang the cell + occupy a
+    // concurrency slot until the global timeout fired. Post-fix: same
+    // SIGTERM→killGrace→SIGKILL escalation as the timeout path.
+    const prev = process.env.FLYWHEEL_IDEAS_MAX_BUFFER_BYTES;
+    process.env.FLYWHEEL_IDEAS_MAX_BUFFER_BYTES = '50000';
+    try {
+      const start = Date.now();
+      const result = await spawnCliCell(
+        baseInput({
+          env_override: {
+            FLYWHEEL_TEST_STDOUT_BYTES: '200000',
+            FLYWHEEL_TEST_IGNORE_SIGTERM: '1',
+            FLYWHEEL_TEST_HANG_AFTER_STDOUT_MS: '20000', // sleep AFTER writing stdout so we trigger maxBuffer mid-flight
+          },
+          timeout_ms: 30_000, // global timeout MUST be longer than killGrace so we prove escalation, not timeout
+          kill_grace_ms: 1_500,
+        }),
+      );
+      const elapsed = Date.now() - start;
+      expect(result.exceeded_max_buffer).toBe(true);
+      expect(result.was_killed_by_dispatcher).toBe(true);
+      // POSIX: SIGKILL surfaces as signal === 'SIGKILL'. Windows: taskkill
+      // shows up as signal=null + non-zero/null exit. Either way: the call
+      // returned in WAY less than 20s, proving the child was reaped.
+      if (process.platform !== 'win32') {
+        expect(result.signal).toBe('SIGKILL');
+      }
+      expect(elapsed).toBeLessThan(10_000);
+    } finally {
+      if (prev === undefined) delete process.env.FLYWHEEL_IDEAS_MAX_BUFFER_BYTES;
+      else process.env.FLYWHEEL_IDEAS_MAX_BUFFER_BYTES = prev;
+    }
+  }, 30_000);
 });
 
 describe('spawnCliCell — exit code surfaces', () => {

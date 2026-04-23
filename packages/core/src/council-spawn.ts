@@ -101,7 +101,11 @@ export async function spawnCliCell(input: SpawnCellInput): Promise<SpawnResult> 
     } else if (!exceeded_max_buffer) {
       exceeded_max_buffer = true;
       was_killed_by_dispatcher = true;
-      killTree(child, 'SIGTERM');
+      // Use the same SIGTERM→grace→SIGKILL escalation as the timeout path.
+      // Surfaced by gemini codebase roundtable on alpha.3: a SIGTERM-ignoring
+      // child plus a stdout flood would hang the cell + occupy a concurrency
+      // slot until the global timeout fired.
+      scheduleEscalatingKill(child, killGrace);
     }
   });
 
@@ -132,16 +136,7 @@ export async function spawnCliCell(input: SpawnCellInput): Promise<SpawnResult> 
   const timeoutHandle = setTimeout(() => {
     if (child.exitCode !== null || child.signalCode !== null) return;
     was_killed_by_dispatcher = true;
-    killTree(child, 'SIGTERM');
-    // Grace period for child to finish write-flush, then SIGKILL on Linux.
-    // On Windows taskkill /F already force-kills — grace is moot.
-    if (process.platform !== 'win32') {
-      setTimeout(() => {
-        if (child.exitCode === null && child.signalCode === null) {
-          killTree(child, 'SIGKILL');
-        }
-      }, killGrace).unref();
-    }
+    scheduleEscalatingKill(child, killGrace);
   }, input.timeout_ms);
   timeoutHandle.unref();
 
@@ -184,6 +179,27 @@ export async function spawnCliCell(input: SpawnCellInput): Promise<SpawnResult> 
 }
 
 // ---------- platform-branch kill ----------
+
+/**
+ * SIGTERM the child immediately, then escalate to SIGKILL on POSIX after
+ * `killGrace` ms if the child hasn't exited. Used by both the timeout path
+ * and the maxBuffer-exceed path so a SIGTERM-ignoring child is reaped within
+ * a bounded window. On Windows, `killTree` already calls `taskkill /F` which
+ * is a hard kill — escalation is moot.
+ */
+function scheduleEscalatingKill(
+  child: ChildProcessWithoutNullStreams,
+  killGrace: number,
+): void {
+  killTree(child, 'SIGTERM');
+  if (process.platform !== 'win32') {
+    setTimeout(() => {
+      if (child.exitCode === null && child.signalCode === null) {
+        killTree(child, 'SIGKILL');
+      }
+    }, killGrace).unref();
+  }
+}
 
 function killTree(child: ChildProcessWithoutNullStreams, signal: NodeJS.Signals): void {
   if (child.pid === undefined) return;

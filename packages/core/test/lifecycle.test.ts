@@ -1,11 +1,17 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import * as fsp from 'node:fs/promises';
+import * as os from 'node:os';
+import * as path from 'node:path';
+import matter from 'gray-matter';
 import {
   openInMemoryIdeasDb,
+  openIdeasDb,
   runMigrations,
   IDEA_STATES,
   INITIAL_STATE,
   isIdeaState,
   recordTransition,
+  syncTransitionFrontmatter,
   listTransitions,
   type IdeasDatabase,
 } from '../src/index.js';
@@ -130,5 +136,85 @@ describe('recordTransition', () => {
     expect(history[0].reason).toBe('going');
     expect(history[1].to_state).toBe('evaluated');
     expect(history[2].to_state).toBe('explored');
+  });
+});
+
+describe('syncTransitionFrontmatter (alpha.4 helper, gemini HIGH)', () => {
+  let vault: string;
+  let realDb: IdeasDatabase;
+  const NOTE_REL = 'ideas/2026/04/sync-test.md';
+
+  beforeEach(async () => {
+    vault = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-ideas-sync-'));
+    await fsp.mkdir(path.join(vault, '.flywheel'), { recursive: true });
+    await fsp.mkdir(path.join(vault, 'ideas/2026/04'), { recursive: true });
+    await fsp.writeFile(
+      path.join(vault, NOTE_REL),
+      `---\nid: idea-sync\ntype: idea\nstate: nascent\ntitle: Sync test\n---\n\nbody\n`,
+    );
+    realDb = openIdeasDb(vault);
+    runMigrations(realDb);
+    realDb
+      .prepare(
+        `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)
+         VALUES (?, ?, ?, ?, ?, ?)`,
+      )
+      .run('idea-sync', NOTE_REL, 'Sync test', 'nascent', 1, 1);
+  });
+
+  afterEach(async () => {
+    realDb.close();
+    await fsp.rm(vault, { recursive: true, force: true });
+  });
+
+  it('writes state + ISO state_changed_at to the markdown frontmatter', async () => {
+    recordTransition(realDb, 'idea-sync', 'committed', { at: 1_700_000_000_000 });
+    await syncTransitionFrontmatter(realDb, vault, 'idea-sync');
+
+    const raw = await fsp.readFile(path.join(vault, NOTE_REL), 'utf8');
+    const fm = matter(raw).data;
+    expect(fm.state).toBe('committed');
+    expect(fm.state_changed_at).toBe(new Date(1_700_000_000_000).toISOString());
+  });
+
+  it('best-effort: stderr warning + DB stays correct when fs write fails', async () => {
+    recordTransition(realDb, 'idea-sync', 'committed', { at: 2_000_000_000_000 });
+    // Make the markdown file read-only so patchFrontmatter throws on the
+    // tmp-rename step. (chmod 0o444 forbids writes for the owner.)
+    await fsp.chmod(path.join(vault, NOTE_REL), 0o444);
+    // The file's directory must also be unwritable on Linux for the rename
+    // to fail — patchFrontmatter writes to a tmp file in the same dir.
+    await fsp.chmod(path.join(vault, 'ideas/2026/04'), 0o555);
+
+    let stderrCaptured = '';
+    const origWrite = process.stderr.write.bind(process.stderr);
+    process.stderr.write = ((chunk: string | Uint8Array): boolean => {
+      stderrCaptured += chunk.toString();
+      return true;
+    }) as typeof process.stderr.write;
+
+    try {
+      await syncTransitionFrontmatter(realDb, vault, 'idea-sync');
+    } finally {
+      process.stderr.write = origWrite;
+      // Restore perms so afterEach can rm
+      await fsp.chmod(path.join(vault, 'ideas/2026/04'), 0o755).catch(() => {});
+      await fsp.chmod(path.join(vault, NOTE_REL), 0o644).catch(() => {});
+    }
+
+    expect(stderrCaptured).toMatch(/frontmatter sync failed for idea idea-sync/);
+    // DB still has the new state — best-effort means no rollback
+    const row = realDb
+      .prepare('SELECT state FROM ideas_notes WHERE id = ?')
+      .get('idea-sync') as { state: string };
+    expect(row.state).toBe('committed');
+  });
+
+  it('no-op + no throw when the idea id is missing', async () => {
+    // recordTransition would have already thrown for a missing idea, so this
+    // path is mostly defensive. The helper just returns silently.
+    await expect(
+      syncTransitionFrontmatter(realDb, vault, 'idea-does-not-exist'),
+    ).resolves.toBeUndefined();
   });
 });

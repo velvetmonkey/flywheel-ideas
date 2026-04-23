@@ -366,6 +366,37 @@ describe('logOutcome — propagation', () => {
       | undefined;
     expect(aRow?.needs_review).toBe(0);
   });
+
+  it('syncs needs_review:true to flagged ideas\' markdown frontmatter (alpha.4 fix 5)', async () => {
+    const ideaA = await makeIdea('A');
+    const asmA = await makeAssumption(ideaA);
+    const ideaB = await makeIdea('B-flagged');
+    const ideaC = await makeIdea('C-flagged');
+    stubCitedCouncilSession(ideaB, [asmA]);
+    stubCitedCouncilSession(ideaC, [asmA]);
+
+    const result = await logOutcome(db, vault, {
+      idea_id: ideaA,
+      text: 'A shipped, asmA refuted',
+      refutes: [asmA],
+    });
+
+    expect(result.flagged_ideas.map((f) => f.id).sort()).toEqual([ideaB, ideaC].sort());
+
+    // Both flagged ideas should now have needs_review: true in frontmatter
+    for (const id of [ideaB, ideaC]) {
+      const row = db.prepare('SELECT vault_path FROM ideas_notes WHERE id = ?').get(id) as { vault_path: string };
+      const raw = await fsp.readFile(path.join(vault, row.vault_path), 'utf8');
+      const fm = matter(raw).data;
+      expect(fm.needs_review).toBe(true);
+    }
+
+    // The owning idea (A) was NOT flagged — frontmatter should not have needs_review or it should be falsy
+    const aRow = db.prepare('SELECT vault_path FROM ideas_notes WHERE id = ?').get(ideaA) as { vault_path: string };
+    const aRaw = await fsp.readFile(path.join(vault, aRow.vault_path), 'utf8');
+    const aFm = matter(aRaw).data;
+    expect(aFm.needs_review).toBeFalsy();
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -397,6 +428,29 @@ describe('undoOutcome', () => {
 
     const outcome = getOutcome(db, log.outcome.id);
     expect(outcome?.undone_at).not.toBeNull();
+  });
+
+  it('syncs needs_review:false to cleared idea\'s markdown frontmatter (alpha.4 fix 5)', async () => {
+    const ideaA = await makeIdea('A');
+    const asmA = await makeAssumption(ideaA);
+    const ideaB = await makeIdea('B');
+    stubCitedCouncilSession(ideaB, [asmA]);
+
+    const log = await logOutcome(db, vault, {
+      idea_id: ideaA,
+      text: 'A shipped, asmA refuted',
+      refutes: [asmA],
+    });
+
+    // After log, ideaB's frontmatter should have needs_review: true
+    const bRow = db.prepare('SELECT vault_path FROM ideas_notes WHERE id = ?').get(ideaB) as { vault_path: string };
+    let raw = await fsp.readFile(path.join(vault, bRow.vault_path), 'utf8');
+    expect(matter(raw).data.needs_review).toBe(true);
+
+    // After undo, ideaB's frontmatter should have needs_review: false
+    await undoOutcome(db, vault, log.outcome.id);
+    raw = await fsp.readFile(path.join(vault, bRow.vault_path), 'utf8');
+    expect(matter(raw).data.needs_review).toBe(false);
   });
 
   it('throws OutcomeAlreadyUndoneError on second undo', async () => {
