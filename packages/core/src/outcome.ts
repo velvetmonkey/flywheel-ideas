@@ -305,6 +305,17 @@ export async function logOutcome(
     // in markdown until a future sync tool. Log once per failure.
     await syncAssumptionFrontmatter(db, vault_path, touched);
 
+    // Best-effort sync needs_review:true to each newly-flagged idea's
+    // markdown frontmatter. Without this, the compounding mechanism's
+    // user-visible signal (the dependent idea got flagged) only lives in
+    // SQLite — Obsidian users never see it. Added in alpha.4.
+    await syncIdeaNeedsReviewFrontmatter(
+      db,
+      vault_path,
+      flagged_ideas.map((f) => f.id),
+      true,
+    );
+
     const outcome = getOutcome(db, outcome_id);
     if (!outcome) {
       throw new Error(`logOutcome: outcome ${outcome_id} disappeared after insert`);
@@ -455,6 +466,11 @@ export async function undoOutcome(
 
   // e. Sync assumption frontmatter with recomputed DB status (best-effort)
   await syncAssumptionFrontmatter(db, vault_path, touched);
+
+  // f. Sync needs_review:false for any idea whose flag was cleared.
+  //    Mirror of logOutcome's needs_review sync — keeps Obsidian view
+  //    consistent with DB. Best-effort. Added in alpha.4.
+  await syncIdeaNeedsReviewFrontmatter(db, vault_path, cleared_ideas, false);
 
   // Report status changes
   const status_changes: OutcomeUndoResult['status_changes'] = [];
@@ -620,6 +636,39 @@ async function syncAssumptionFrontmatter(
     } catch (err) {
       process.stderr.write(
         `[flywheel-ideas] assumption frontmatter sync failed for ${row.vault_path}: ${(err as Error).message}\n`,
+      );
+    }
+  }
+}
+
+/**
+ * Best-effort sync of `needs_review` to each named idea's markdown frontmatter.
+ * Mirrors `syncAssumptionFrontmatter` — DB authoritative, vault is mirror,
+ * stderr warning on failure (no rollback). Added in alpha.4 to surface the
+ * compounding-mechanism flag in Obsidian (gemini codebase roundtable HIGH).
+ */
+async function syncIdeaNeedsReviewFrontmatter(
+  db: IdeasDatabase,
+  vault_path: string,
+  idea_ids: string[],
+  needs_review: boolean,
+): Promise<void> {
+  if (idea_ids.length === 0) return;
+  const { patchFrontmatter } = await import('./write/patch-frontmatter.js');
+  const placeholders = idea_ids.map(() => '?').join(',');
+  const rows = db
+    .prepare(
+      `SELECT id, vault_path FROM ideas_notes WHERE id IN (${placeholders})`,
+    )
+    .all(...idea_ids) as Array<{ id: string; vault_path: string }>;
+  for (const row of rows) {
+    try {
+      await patchFrontmatter(vault_path, row.vault_path, {
+        needs_review,
+      });
+    } catch (err) {
+      process.stderr.write(
+        `[flywheel-ideas] needs_review frontmatter sync failed for idea ${row.id}: ${(err as Error).message}\n`,
       );
     }
   }

@@ -96,6 +96,7 @@ export {
   INITIAL_STATE,
   isIdeaState,
   recordTransition,
+  syncTransitionFrontmatter,
   listTransitions,
 } from './lifecycle.js';
 export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';

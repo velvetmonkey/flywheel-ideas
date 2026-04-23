@@ -109,10 +109,30 @@ transaction commits — vault is a human-readable mirror. If fs writes fail,
 the DB stays correct; stderr logs a warning. A future sync tool can
 reconcile drift; in v0.1 this is acceptable trade-off for performance.
 
-**`needs_review` is exclusively written by M12 in v0.1.** Verified via
-grep — schema declares the column, no other code path touches it. Any
-future source (signpost sweep, agent-driven detection, etc.) must
-coordinate with the outcome-clearing path so `undo` doesn't wipe flags
+Alpha.4 extends best-effort sync to two more fields: `state` /
+`state_changed_at` on `idea` notes (via `syncTransitionFrontmatter`) and
+`needs_review` on flagged ideas (via `outcome.log` cascade + `outcome.undo`
+clearance). Both follow the same contract — DB authoritative, stderr on
+failure, no rollback.
+
+### Frontmatter sync semantics (which mutations rollback vs best-effort)
+
+Different vault mutations have different consistency guarantees on fs
+failure. Pinning the contract so future readers don't second-guess:
+
+| Mutation | On fs failure | Why |
+|---|---|---|
+| `assumption.lock` (`lockAssumption`) | **Rollback DB** | OSF-style pre-registration is a strict commitment; "locked but not synced" is meaningfully wrong. |
+| `idea.transition` via MCP tool (`tools/idea.ts`) | **Rollback DB** | The user's tool call returned an error; DB and frontmatter stay aligned at the pre-transition state. |
+| `recordTransition` library helper + `syncTransitionFrontmatter` | Best-effort + stderr warn | Library callers that prefer DB-authoritative mirror semantics; tools/idea.ts gives stricter rollback. |
+| `outcome.log` assumption status sync | Best-effort + stderr warn | Multiple assumptions cascade; partial-success is recoverable + the DB stays correct. |
+| `outcome.log` `needs_review` cascade (alpha.4 fix 5) | Best-effort + stderr warn | One outcome can flag N ideas; rolling back a 10-idea cascade because idea #8's markdown was locked would elevate the read-only mirror to an authoritative constraint. |
+| `outcome.undo` `needs_review` clearance | Best-effort + stderr warn | Symmetric with log path. |
+
+**`needs_review` is exclusively written by M12 + alpha.4 in v0.1.** Verified
+via grep — schema declares the column, only the outcome.log/undo paths
+touch it. Any future source (signpost sweep, agent-driven detection, etc.)
+must coordinate with the outcome-clearing path so `undo` doesn't wipe flags
 set by the other source.
 
 ## Testing
