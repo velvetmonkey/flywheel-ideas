@@ -7,11 +7,14 @@
  * ~/obsidian/Ben/tech/flywheel/flywheel-ideas/ for the full plan.
  */
 
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
   openIdeasDb,
   PACKAGE_VERSION,
+  registerCustomCategories,
   resolveVaultPath,
   runMigrations,
   VaultPathError,
@@ -75,16 +78,46 @@ async function main(): Promise<void> {
   const db = openIdeasDb(vaultPath);
   runMigrations(db);
 
+  // M14 — best-effort flywheel-memory custom-category registration. Bounded
+  // by a 15s default timeout; failure is non-fatal and surfaces a one-line
+  // stderr warning so users notice the missing-binary case.
+  const reg = await registerCustomCategories(vaultPath);
+  if (reg.status === 'skipped') {
+    const detail = reg.detail ? `: ${reg.detail}` : '';
+    process.stderr.write(
+      `flywheel-ideas: memory-bridge skipped (${reg.reason}${detail}). ` +
+        `Ideas notes will not be boosted in flywheel-memory wikilink scoring. ` +
+        `Install @velvetmonkey/flywheel-memory or set FLYWHEEL_MEMORY_BIN to enable.\n`,
+    );
+  }
+
   const server = createConfiguredServer(vaultPath, db);
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }
 
-// Only run when executed directly (not when imported by tests / other entry points)
-const isDirectInvocation =
-  import.meta.url === `file://${process.argv[1]}` ||
-  import.meta.url.endsWith(process.argv[1] ?? '');
+// Only run when executed directly (not when imported by tests / other entry points).
+// Robust against PATH-symlinked global installs and `npx`: compare argv[1]'s
+// realpath to the module path. (The earlier startsWith/endsWith heuristic
+// failed silently when invoked via the bin shim — alpha.2 dogfood found this.)
+const isDirectInvocation = (() => {
+  const argv1 = process.argv[1];
+  if (!argv1) return false;
+  let modulePath: string;
+  try {
+    modulePath = fileURLToPath(import.meta.url);
+  } catch {
+    return false;
+  }
+  if (argv1 === modulePath) return true;
+  try {
+    if (realpathSync(argv1) === modulePath) return true;
+  } catch {
+    // ignore — fall through to false
+  }
+  return false;
+})();
 
 if (isDirectInvocation) {
   main().catch((err) => {
