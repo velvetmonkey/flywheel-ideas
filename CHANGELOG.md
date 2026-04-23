@@ -1,5 +1,79 @@
 # Changelog
 
+## 0.1.0-alpha.4 — 2026-04-23
+
+Last release candidate before v0.1.0 GA. Targeted bug-fix release —
+3 CRITICAL + 5 HIGH from a 2-agent codebase roundtable on alpha.3
+(gemini-2.5-pro + claude-sonnet-4) + a docs/release polish pass.
+
+### Fixed
+
+- **CRITICAL** — Path-security symlink bypass on sensitive files.
+  `validatePathSecure`'s not-yet-exists branch resolved the deepest
+  existing ancestor's symlink and verified it was inside the vault, but
+  never re-checked `isSensitivePath` on the composed real target. An
+  agent could create `vault/foo -> .git` and write to `foo/config`
+  (matching neither blacklist) and the write was approved. Now
+  reconstruct the expected real target from `realAncestorPath + leftover`
+  and re-run `isSensitivePath` before approval.
+- **CRITICAL** — `maxBuffer`-exceed path missed SIGKILL escalation.
+  A SIGTERM-ignoring child that flooded stdout would hang the cell and
+  permanently occupy a concurrency-limiter slot until the 15-min global
+  timeout fired. Extracted `scheduleEscalatingKill` shared by timeout
+  and maxBuffer paths.
+- **CRITICAL** — Windows `.cmd`-shim regression test. The alpha.3
+  Windows test used POSIX symlinks (which Windows npm doesn't actually
+  use). Added a real `.cmd`-shim test gated to win32; the symlink test
+  is now POSIX-only.
+- **HIGH** — `recordTransition` divergence between DB and frontmatter.
+  Added new `syncTransitionFrontmatter` helper for library consumers
+  (the MCP tool path already had stricter rollback).
+- **HIGH** — `outcome.log` / `undoOutcome` never synced `needs_review`
+  to dependent ideas' markdown frontmatter. Added best-effort cascade
+  patch on both paths so the compounding-mechanism flag is visible in
+  Obsidian.
+- **HIGH** — `isDirectInvocation` only realpath'd `argv[1]`, not the
+  module side. Windows drive-letter case mismatch could break the bin
+  invocation. Now realpath both sides.
+- **HIGH** — `PACKAGE_VERSION` `readFileSync(package.json)` had no
+  try/catch. A missing/unreadable file would crash every importer of
+  `@velvetmonkey/flywheel-ideas-core` at module-init. Wrapped with
+  `'unknown'` fallback. Refactored to exported `readPackageVersion`
+  with injectable file reader for testability.
+- **HIGH** — Memory-bridge default timeout bumped from 15s to 30s.
+  Cold-start `init_semantic` (model download / schema migration)
+  routinely exceeded 15s, tripping a SIGKILL during state.db work.
+  Override unchanged via `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS`.
+  Also dropped the redundant PID-level SIGKILL fallback after SDK
+  close — the SDK already escalates, and our extra kill couldn't help
+  when the SDK's SIGKILL hit init_semantic. The 30s bump is the actual
+  mitigation.
+
+### Docs
+
+- README updated: M-status flips (M11/M12/M14 ✅; M13 + GA ⏳),
+  install snippet now uses the `@alpha` dist-tag explicitly.
+- `docs/memory-bridge.md`: switched documented API from the retired
+  `flywheel_config` to `doctor({action:'config'})`; bumped timeout text
+  to 30s; refreshed cold-start guidance.
+- `docs/outcome.md`: new "Frontmatter sync semantics" subsection
+  pinning which mutations rollback DB on fs failure (`lockAssumption`,
+  `idea.transition` MCP tool) vs which are best-effort (`recordTransition`
+  library helper, `outcome.log/undo` cascades).
+- `RELEASE.md`: new pre-publish `npm pack` smoke step; **`npm publish
+  --tag alpha` now mandatory** so alpha versions don't claim `@latest`;
+  rollback playbook added.
+
+### Tests
+
+36 new tests (506 total: 405 core + 101 mcp-server, +1 skipped on
+Linux): 24 path-security tests (symlink-bypass + isSensitivePath/
+isWithinDirectory/sanitizeNotePath direct coverage), 1 council-spawn
+maxBuffer-with-SIGTERM-ignoring-child test, 3 syncTransitionFrontmatter
+tests, 2 outcome needs_review-sync tests, 6 PACKAGE_VERSION/
+readPackageVersion tests, 1 Windows .cmd-shim test (skipped on Linux).
+Full Linux/Windows × Node 22/24 matrix.
+
 ## 0.1.0-alpha.3 — 2026-04-23
 
 **Critical fixes** caught during M14 dogfood + new memory-bridge integration.

@@ -8,7 +8,7 @@ A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea 
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![status: alpha](https://img.shields.io/badge/status-alpha-orange.svg)](#roadmap)
 
-> **Status:** 0.1.0-alpha, under active development. v0.1 closed loop shipping across M1–M14.
+> **Status:** 0.1.0-alpha.4. v0.1 closed loop shipped across M1–M14. M13 (real `claude -p` e2e in CI) and v0.1.0 GA still upcoming.
 
 ## Who this is for
 
@@ -91,7 +91,7 @@ export FLYWHEEL_IDEAS_APPROVE=session
   "mcpServers": {
     "flywheel-ideas": {
       "command": "npx",
-      "args": ["-y", "@velvetmonkey/flywheel-ideas"],
+      "args": ["-y", "@velvetmonkey/flywheel-ideas@alpha"],
       "env": {
         "VAULT_PATH": "/path/to/your/vault",
         "FLYWHEEL_IDEAS_APPROVE": "session"
@@ -101,8 +101,16 @@ export FLYWHEEL_IDEAS_APPROVE=session
 }
 ```
 
-The `-y` flag auto-accepts the initial `npx` download prompt. After the first
-run the server is cached locally; subsequent launches are instant.
+The `@alpha` dist-tag tracks the latest 0.1.0-alpha.* release (as of this
+writing, `0.1.0-alpha.4`). When v0.1.0 GA ships, drop the tag suffix to
+`@velvetmonkey/flywheel-ideas`. The `-y` flag auto-accepts the initial
+`npx` download prompt. After the first run the server is cached locally;
+subsequent launches are instant.
+
+Prefer a global install? `npm install -g @velvetmonkey/flywheel-ideas@alpha`,
+then point the MCP client at `flywheel-ideas-mcp` directly.
+
+See [CHANGELOG.md](./CHANGELOG.md) for what's new in each release.
 
 **First flow**
 
@@ -162,10 +170,13 @@ The core product: four MCP tools forming `idea → assumption → council → ou
   - ✅ M8: real claude dispatcher, 2 personas, single-pass, deterministic `SYNTHESIS.md`, pre_mortem mode
   - ✅ M9: two-pass metacognitive + codex dispatch + concurrency limiter
   - ✅ M10: gemini dispatch + full matrix (3 × 5 = 15 cells) + CLI-interleaved concurrency + strict benign-stderr filter
-  - ⏳ M11: evidence-aware synthesis refinements (agreement/disagreement sections)
-- ⏳ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. *Ships at M12.*
+  - ✅ M11: evidence-aware synthesis with sentence-level Jaccard agreement/disagreement sections
+- ✅ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. Shipped at M12.
+- ✅ **memory-bridge** — flywheel-memory custom-category registration on startup (M14, alpha.3). Path-security + maxBuffer + frontmatter-sync hardening shipped in alpha.4.
 
-Also shipping during v0.1: real `claude -p` end-to-end in CI (M13) and the install-time custom-categories integration (M14).
+Still upcoming for v0.1.0 GA:
+- ⏳ M13 — real `claude -p` end-to-end test in CI with flake-aware demotion.
+- ⏳ Re-dogfood alpha.4 across Linux + Windows installs, then cut v0.1.0.
 
 ### v0.2 — depth on the loop + closing the feedback loop
 
