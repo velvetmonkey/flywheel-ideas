@@ -53,9 +53,15 @@ export type ParseResult =
       detail: string;
     };
 
+/**
+ * Legacy escape hatch for an unrecognized CLI. All v0.1 parsers (claude,
+ * codex, gemini) are wired — this class is exported for the historical
+ * test that asserted the not-yet-implemented surface and for any future
+ * caller that wants to throw before adding a new CLI's parser.
+ */
 export class NotYetImplementedError extends Error {
   constructor(cli: string) {
-    super(`parser for "${cli}" is not yet wired — lands in M10`);
+    super(`parser for "${cli}" is not wired in this build`);
     this.name = 'NotYetImplementedError';
   }
 }

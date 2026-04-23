@@ -1,12 +1,14 @@
 /**
- * Council prompt assembly (M8).
+ * Council prompt assembly.
  *
- * Two personas ship in M8: Risk Pessimist + Growth Optimist. Two modes:
- * `standard` (attack assumptions from persona's default stance) and
- * `pre_mortem` (assume the idea failed 12 months out, work backwards).
+ * Light-depth runs use 2 personas: Risk Pessimist + Growth Optimist. Full
+ * depth adds 3 more (the M10 5-persona set). Two modes: `standard` (attack
+ * assumptions from persona's default stance) and `pre_mortem` (assume the
+ * idea failed 12 months out, work backwards).
  *
- * Per-spec two-pass metacognitive structure is deferred to M9 — single-pass
- * per cell in M8 leaves `initial_stance` + `self_critique` columns null.
+ * Each cell runs the mandatory two-pass metacognitive structure — Pass 1
+ * `initial_stance`, Pass 2 `self_critique` + revised `stance` — both
+ * persisted to the view row.
  *
  * Prompts are deterministic. `PROMPT_VERSION` bumps when any template changes
  * so `ideas_council_views.prompt_version` is comparable across time.

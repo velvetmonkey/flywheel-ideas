@@ -2,9 +2,11 @@
 /**
  * flywheel-ideas — MCP server entrypoint.
  *
- * The local-first falsifiable decision ledger. v0.1 ships the `idea` tool;
- * `assumption`, `council`, and `outcome` land in later milestones. See
- * ~/obsidian/Ben/tech/flywheel/flywheel-ideas/ for the full plan.
+ * The local-first falsifiable decision ledger. v0.1 ships four tools —
+ * `idea`, `assumption`, `council`, `outcome` — plus a memory-bridge that
+ * registers ideas_* note types as custom categories with flywheel-memory
+ * on startup. See ~/obsidian/Ben/tech/flywheel/flywheel-ideas/ for the
+ * full plan.
  */
 
 import { realpathSync } from 'node:fs';
