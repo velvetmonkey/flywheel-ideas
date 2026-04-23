@@ -278,3 +278,11 @@ export type {
   FindDueSignpostsOptions,
   AssumptionNextStepHint,
 } from './assumptions.js';
+
+// Memory bridge (M14) — best-effort flywheel-memory custom-category registration
+export { registerCustomCategories, IDEAS_CATEGORIES } from './memory-bridge.js';
+export type {
+  MemoryBridgeResult,
+  MemoryBridgeSkipReason,
+  RegisterOptions as MemoryBridgeRegisterOptions,
+} from './memory-bridge.js';
