@@ -99,8 +99,10 @@ async function main(): Promise<void> {
 
 // Only run when executed directly (not when imported by tests / other entry points).
 // Robust against PATH-symlinked global installs and `npx`: compare argv[1]'s
-// realpath to the module path. (The earlier startsWith/endsWith heuristic
-// failed silently when invoked via the bin shim — alpha.2 dogfood found this.)
+// realpath to the module's realpath. (The earlier startsWith/endsWith
+// heuristic failed silently when invoked via the bin shim — alpha.2 dogfood
+// found this. Alpha.4 also realpaths the module side after the codebase
+// roundtable surfaced a Windows drive-letter case-mismatch risk.)
 const isDirectInvocation = (() => {
   const argv1 = process.argv[1];
   if (!argv1) return false;
@@ -111,8 +113,14 @@ const isDirectInvocation = (() => {
     return false;
   }
   if (argv1 === modulePath) return true;
+  let realModulePath: string;
   try {
-    if (realpathSync(argv1) === modulePath) return true;
+    realModulePath = realpathSync(modulePath);
+  } catch {
+    realModulePath = modulePath;
+  }
+  try {
+    if (realpathSync(argv1) === realModulePath) return true;
   } catch {
     // ignore — fall through to false
   }

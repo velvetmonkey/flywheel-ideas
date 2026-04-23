@@ -174,10 +174,15 @@ describe('server startup — memory-bridge', () => {
     expect(elapsed).toBeLessThan(2000);
   }, 10_000);
 
-  it('boots when invoked through a PATH-style symlink (alpha.2 dogfood regression)', async () => {
+  // Skip the POSIX symlink test on Windows. Symlink creation on Windows
+  // requires Developer Mode or admin (alpha.4 finding). Windows npm doesn't
+  // even use symlinks for global bins — it generates `.cmd` shims, which
+  // the next test exercises.
+  it.skipIf(process.platform === 'win32')('boots when invoked through a PATH-style symlink (alpha.2 dogfood regression, POSIX path)', async () => {
     // alpha.2 silently no-op'd when invoked via the bin symlink npm install
-    // -g creates. Mirror that: symlink the dist binary into tmpdir and spawn
-    // via the symlink. The fixed isDirectInvocation must resolve realpath.
+    // -g creates on POSIX. Mirror that: symlink the dist binary into tmpdir
+    // and spawn via the symlink. The fixed isDirectInvocation must resolve
+    // realpath.
     const symlinkPath = path.join(vaultPath, 'flywheel-ideas-mcp-symlink');
     await fsp.symlink(SERVER_BIN, symlinkPath);
     await fsp.chmod(symlinkPath, 0o755).catch(() => {});
@@ -204,6 +209,51 @@ describe('server startup — memory-bridge', () => {
           protocolVersion: '2024-11-05',
           capabilities: {},
           clientInfo: { name: 'symlink-test', version: '0' },
+        },
+      }) + '\n',
+    );
+
+    const initResponse = await waitForLine(
+      () => stdout,
+      (line) => line.includes('"id":1'),
+      5_000,
+    );
+    expect(initResponse).not.toBeNull();
+    expect(initResponse).toContain('"id":1');
+  }, 10_000);
+
+  // The Windows analogue of the symlink test. npm install -g on Windows
+  // generates a `.cmd` shim that does `node "<full path to dist/index.js>" %*`.
+  // The shim makes argv[1] an absolute path to the .js file (no symlink
+  // realpath dance), which exercises the simpler equality branch of
+  // isDirectInvocation. Alpha.4 fix 3.
+  it.skipIf(process.platform !== 'win32')('boots when invoked through a Windows .cmd shim (Windows install path)', async () => {
+    const cmdShim = path.join(vaultPath, 'flywheel-ideas-mcp.cmd');
+    await fsp.writeFile(cmdShim, `@node "${SERVER_BIN}" %*\r\n`);
+
+    child = spawn('cmd.exe', ['/c', cmdShim], {
+      env: {
+        PATH: process.env.PATH ?? '',
+        USERPROFILE: process.env.USERPROFILE ?? '',
+        APPDATA: process.env.APPDATA ?? '',
+        VAULT_PATH: vaultPath,
+        FLYWHEEL_IDEAS_MEMORY_BRIDGE: '0',
+      },
+      stdio: ['pipe', 'pipe', 'pipe'],
+    }) as ChildProcessWithoutNullStreams;
+
+    let stdout = '';
+    child.stdout.on('data', (c: Buffer) => (stdout += c.toString('utf8')));
+
+    child.stdin.write(
+      JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'initialize',
+        params: {
+          protocolVersion: '2024-11-05',
+          capabilities: {},
+          clientInfo: { name: 'cmd-shim-test', version: '0' },
         },
       }) + '\n',
     );

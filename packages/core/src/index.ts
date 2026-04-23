@@ -9,15 +9,38 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Read version from package.json so MCP server's advertised version
-// always matches what users actually installed. (M14 dogfood found that
-// the previous hard-coded literal had drifted to 0.1.0-alpha.0 across
-// alpha.1/alpha.2 releases.)
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const pkg = JSON.parse(
-  readFileSync(join(__dirname, '..', 'package.json'), 'utf8'),
-) as { version: string };
-export const PACKAGE_VERSION = pkg.version;
+/**
+ * Read this package's version from package.json at module-load time so the
+ * MCP server's advertised serverInfo.version always tracks what users
+ * actually installed. (M14 dogfood found that the previous hard-coded
+ * literal had drifted to 0.1.0-alpha.0 across alpha.1 + alpha.2 releases.)
+ *
+ * Wrapped in try/catch — if the package.json is missing or unreadable
+ * (downstream bundlers that exclude package.json files; broken installs;
+ * permissions), we fall back to `'unknown'` rather than crashing every
+ * importer of `@velvetmonkey/flywheel-ideas-core`. (Alpha.4 hardening
+ * after the codebase roundtable flagged the bare readFileSync as a
+ * module-init crash surface.)
+ *
+ * Exported separately + accepts a custom `read` function for test injection.
+ */
+export function readPackageVersion(
+  read: (p: string) => string = (p) => readFileSync(p, 'utf8'),
+): string {
+  try {
+    const here = dirname(fileURLToPath(import.meta.url));
+    const raw = read(join(here, '..', 'package.json'));
+    const pkg = JSON.parse(raw) as { version?: string };
+    if (typeof pkg.version === 'string' && pkg.version.length > 0) {
+      return pkg.version;
+    }
+  } catch {
+    /* fall through to 'unknown' */
+  }
+  return 'unknown';
+}
+
+export const PACKAGE_VERSION = readPackageVersion();
 
 // Database
 export {
