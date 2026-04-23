@@ -317,6 +317,10 @@ export type {
 
 // Memory bridge (M14) — best-effort flywheel-memory custom-category registration
 export { registerCustomCategories, IDEAS_CATEGORIES } from './memory-bridge.js';
+
+// CLI version probe (alpha.5 fix D) — populates ideas_council_views.model_version
+export { probeCliVersion, clearVersionCache } from './cli-version.js';
+export type { ProbeOptions as CliVersionProbeOptions } from './cli-version.js';
 export type {
   MemoryBridgeResult,
   MemoryBridgeSkipReason,

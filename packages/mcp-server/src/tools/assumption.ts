@@ -226,7 +226,7 @@ async function handleDeclare(
     next_steps.push({
       action: 'council.run',
       example: `council.run({ id: "${args.idea_id}", depth: "light", mode: "pre_mortem" })`,
-      why: 'Run the council to stress-test the assumption(s). (Tool ships in a later milestone.)',
+      why: 'Run the council to stress-test the assumption(s).',
     });
 
     return mcpText({
@@ -375,7 +375,7 @@ async function handleLock(
         {
           action: 'council.run',
           example: `council.run({ id: "${updated.idea_id}", depth: "light", mode: "pre_mortem" })`,
-          why: 'Assumptions are preregistered — run the council now to evaluate against the locked set. (Tool ships in a later milestone.)',
+          why: 'Assumptions are preregistered — run the council now to evaluate against the locked set.',
         },
         {
           action: 'assumption.unlock',

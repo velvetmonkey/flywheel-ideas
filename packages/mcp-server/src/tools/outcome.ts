@@ -161,8 +161,8 @@ async function handleLog(
       });
       next_steps.push({
         action: 'idea.list',
-        example: 'idea.list({ state: "committed" })',
-        why: 'See all committed ideas with needs_review flags set by this outcome.',
+        example: 'idea.list({ needs_review: true })',
+        why: `Surface every idea flagged by this or prior outcomes — the compounding mechanism's queue. ${result.flagged_ideas.length} new idea(s) just landed in it.`,
       });
     }
     next_steps.push({

@@ -1,5 +1,54 @@
 # Changelog
 
+## 0.1.0-alpha.5 — 2026-04-23
+
+Consolidation milestone — last release candidate before v0.1.0 GA.
+Sourced from an external code-review re-appraisal that scored the repo
+"good progress, real product, still early, not yet trustworthy enough to
+call mature." Their core thesis: tighten the surface so the repo tells
+one consistent story. 4 fixes; no new product surface.
+
+### Added
+
+- **`idea.list({needs_review: true})` filter.** The compounding
+  mechanism's queue (ideas flagged for re-review by outcome.log
+  refutation cascades) was returned in results but couldn't be queried.
+  Filter is index-supported via the partial index on `needs_review = 1`
+  added in M3. `outcome.log` next_steps now suggest the new filter so
+  users discover it immediately after their first cascade.
+- **`ideas_council_views.model_version` capture.** New
+  `packages/core/src/cli-version.ts` `probeCliVersion(cli)` helper
+  spawns `<cli> --version`, parses the first semver-shaped substring,
+  caches by CLI name (a 30-cell council pays the probe at most 3 times),
+  hard 3s timeout. The 2 hard-coded `model_version: null` sites in
+  `council.ts` now `await probeCliVersion(input.cli)`.
+  `FLYWHEEL_IDEAS_NO_VERSION_PROBE=1` disables the probe in tests.
+
+### Changed
+
+- **Stale milestone references swept** across MCP tool descriptions +
+  next_step `why` strings (council/idea/assumption) AND core developer
+  comments (council.ts, council-prompts.ts, council-parsers.ts, MCP
+  server entrypoint). Removed "(Tool ships in a later milestone.)"
+  parentheticals on shipped surfaces; rewrote file headers from M8/M9
+  future-tense to present-tense describing what actually ships.
+  External re-appraisal called this "construction-site vibe"; gemini
+  roundtable round 2 expanded the sweep into core/src/.
+
+### Tests
+
+515 tests total (was 506, +9): 411 core + 104 mcp + 1 skipped
+(platform-gated). New: 6 cli-version tests using `node --version` as
+the real-CLI stand-in; 3 idea-tool tests for the needs_review filter.
+Full Linux/Windows × Node 22/24 matrix.
+
+### Out of scope (carries forward)
+
+- M13 — real `claude -p` E2E in CI with flake-aware demotion.
+- CLI auth / rate_limit error patterns — need real failure samples to
+  write the regex; defer to v0.1.1 unless a sample lands.
+- Lifecycle prerequisite enforcement — by-design unenforced in v0.1.
+
 ## 0.1.0-alpha.4 — 2026-04-23
 
 Last release candidate before v0.1.0 GA. Targeted bug-fix release —

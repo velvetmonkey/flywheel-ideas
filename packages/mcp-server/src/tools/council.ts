@@ -44,11 +44,14 @@ export function registerCouncilTool(
     'council',
     [
       'Multi-model AI council that stress-tests the assumptions behind an ',
-      'idea. In v0.1 the real dispatcher lands in M8 — M6 ships the consent ',
-      'plane (approval-gated stub) so the safety UX can be exercised now. ',
-      'Actions: run (approval-gated; returns dispatcher_pending in M6), ',
-      'approval_status (read-only). Approval is set out-of-band via env ',
-      'var FLYWHEEL_IDEAS_APPROVE or a manual edit of ',
+      'idea. Spawns one subprocess per (CLI × persona) cell — full depth ',
+      'is 3 CLIs (claude, codex, gemini) × 5 personas = 15 cells, each ',
+      'doing a two-pass metacognitive run. Concurrency capped (default 3); ',
+      'failures classified per cell; one cell failing never aborts the ',
+      'session; synthesis distills agreement + disagreement across views. ',
+      'Actions: run (approval-gated; spawns subprocesses), approval_status ',
+      '(read-only). Approval is set out-of-band via env var ',
+      'FLYWHEEL_IDEAS_APPROVE or a manual edit of ',
       '<vault>/.flywheel/ideas-approvals.json — the LLM cannot grant, ',
       'revoke, or reset approval. Every response includes next_steps.',
     ].join(''),
@@ -318,12 +321,12 @@ async function handleApprovalStatus(
       {
         action: 'idea.list',
         example: 'idea.list({})',
-        why: 'Pick an idea to stress-test. Real council dispatcher lands in M8.',
+        why: 'Pick an idea to stress-test with the council.',
       },
       {
         action: 'council.run',
         example: 'council.run({ id: "<idea_id>", confirm: true, depth: "light", mode: "pre_mortem" })',
-        why: 'Exercise the approval-gated stub end-to-end (returns dispatcher_pending until M8).',
+        why: 'Run a real council session — spawns the configured CLI subprocesses with the approved scope. Light depth is 2 personas; full is 5.',
       },
     );
   } else {

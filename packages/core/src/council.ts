@@ -1,17 +1,21 @@
 /**
- * Council orchestrator (M8).
+ * Council orchestrator.
  *
- * `runCouncil(db, vault, input)` creates a session, iterates the M8 persona
- * set (Risk Pessimist, Growth Optimist) SEQUENTIALLY on claude, writes a
- * view-note + DB row per cell (even on failure), renders deterministic
- * SYNTHESIS.md, and returns the result.
+ * `runCouncil(db, vault, input)` creates a session, dispatches the
+ * (CLI × persona) matrix concurrently across claude / codex / gemini,
+ * writes a view-note + DB row per cell (even on failure), renders the
+ * deterministic SYNTHESIS.md with agreement + disagreement sections,
+ * and returns the result.
  *
- * Single-pass per cell in M8. Two-pass (initial_stance + self_critique) is
- * deferred to M9 — the columns stay null in M8 rows. Sequential dispatch is
- * a queue-of-one; M9 layers the concurrency limiter on top.
+ * Each cell is two-pass — Pass 1 stance + Pass 2 self-critique — both
+ * persisted to the view row's `initial_stance` / `stance` / `self_critique`
+ * columns. The CLI-interleaved matrix orders cells so the first N in
+ * flight (limited by the configurable concurrency cap, default 3) hit
+ * different CLIs, spreading rate-limit pressure across providers.
  *
- * No real CLI spawned during tests — callers pass `options.spawn_override`
- * with `['node', '<mock-claude.mjs>']` to redirect to the mock binary.
+ * No real CLI spawned during tests — callers pass `options.spawn_overrides`
+ * keyed by CLI with `['node', '<mock.mjs>']` to redirect to a mock binary,
+ * and `FLYWHEEL_IDEAS_NO_VERSION_PROBE=1` to skip the model_version probe.
  */
 
 import { createHash } from 'node:crypto';
@@ -25,6 +29,7 @@ import {
   type ParseResult,
 } from './council-parsers.js';
 import { spawnCliCell, type CliName } from './council-spawn.js';
+import { probeCliVersion } from './cli-version.js';
 import { ConcurrencyLimiter } from './concurrency.js';
 import {
   completeCouncilSession,
@@ -457,7 +462,7 @@ async function runCouncilCell(
       persona: input.persona.id,
       prompt_version: PROMPT_VERSION,
       persona_version: PERSONA_VERSION,
-      model_version: null,
+      model_version: await probeCliVersion(input.cli),
       input_hash: pass1.input_hash,
       initial_stance: null,
       stance: null,
@@ -522,7 +527,7 @@ async function runCouncilCell(
     persona: input.persona.id,
     prompt_version: PROMPT_VERSION,
     persona_version: PERSONA_VERSION,
-    model_version: null,
+    model_version: await probeCliVersion(input.cli),
     // input_hash records Pass 2 (the authoritative pass for the final stance).
     // Pass 1's hash lives in the ideas_dispatches row's argv for audit.
     input_hash: pass2.input_hash,

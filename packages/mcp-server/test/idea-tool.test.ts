@@ -215,6 +215,66 @@ describe('idea tool — list', () => {
     expect(result.count).toBe(1);
     expect(result.ideas[0].stale).toBe(true);
   });
+
+  it('filters by needs_review: true (alpha.5 fix A)', async () => {
+    const flagged = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Flagged' }),
+    ).result;
+    const clean = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Clean' }),
+    ).result;
+    // Flip needs_review on `flagged` directly via DB — outcome.log path
+    // requires assumption + council scaffolding which is out of scope here.
+    db.prepare('UPDATE ideas_notes SET needs_review = 1 WHERE id = ?').run(flagged.id);
+
+    const list = await client.callTool('idea', { action: 'list', needs_review: true });
+    const { result } = parseEnvelope(list);
+    expect(result.count).toBe(1);
+    expect(result.ideas[0].id).toBe(flagged.id);
+    expect(result.ideas[0].needs_review).toBe(true);
+    // Sanity: the unflagged idea is excluded
+    expect(result.ideas.find((i: { id: string }) => i.id === clean.id)).toBeUndefined();
+  });
+
+  it('filters by needs_review: false (alpha.5 fix A)', async () => {
+    const flagged = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Flagged' }),
+    ).result;
+    const clean = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'Clean' }),
+    ).result;
+    db.prepare('UPDATE ideas_notes SET needs_review = 1 WHERE id = ?').run(flagged.id);
+
+    const list = await client.callTool('idea', { action: 'list', needs_review: false });
+    const { result } = parseEnvelope(list);
+    expect(result.count).toBe(1);
+    expect(result.ideas[0].id).toBe(clean.id);
+  });
+
+  it('AND-combines needs_review with state filter (alpha.5 fix A)', async () => {
+    const a = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'A' }),
+    ).result;
+    const b = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'B' }),
+    ).result;
+    const c = parseEnvelope(
+      await client.callTool('idea', { action: 'create', title: 'C' }),
+    ).result;
+    // a: nascent + flagged. b: committed + flagged. c: committed + clean.
+    db.prepare('UPDATE ideas_notes SET needs_review = 1 WHERE id IN (?, ?)').run(a.id, b.id);
+    await client.callTool('idea', { action: 'transition', id: b.id, to: 'committed' });
+    await client.callTool('idea', { action: 'transition', id: c.id, to: 'committed' });
+
+    const list = await client.callTool('idea', {
+      action: 'list',
+      state: 'committed',
+      needs_review: true,
+    });
+    const { result } = parseEnvelope(list);
+    expect(result.count).toBe(1);
+    expect(result.ideas[0].id).toBe(b.id);
+  });
 });
 
 describe('idea tool — forget', () => {

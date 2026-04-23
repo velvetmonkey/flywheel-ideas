@@ -76,6 +76,10 @@ export function registerIdeaTool(
         .max(200)
         .optional()
         .describe('[list] Max results (default 50)'),
+      needs_review: z
+        .boolean()
+        .optional()
+        .describe('[list] Filter by the needs_review flag set by outcome.log refutation cascades. true → only flagged ideas (the compounding mechanism\'s queue); false → only un-flagged.'),
       to: z
         .enum(IDEA_STATES as unknown as [string, ...string[]])
         .optional()
@@ -320,7 +324,7 @@ function buildReadNextSteps(id: string, state: IdeaState, noTransitionsYet: bool
         {
           action: 'council.run',
           example: `council.run({ id: "${id}", depth: "light", mode: "pre_mortem" })`,
-          why: 'Pre-mortem mode asks the council to assume the idea has already failed and reconstruct why — counters founder optimism before commitment. (Tool ships in a later milestone.)',
+          why: 'Pre-mortem mode asks the council to assume the idea has already failed and reconstruct why — counters founder optimism before commitment.',
         },
       );
       break;
@@ -350,12 +354,12 @@ function buildReadNextSteps(id: string, state: IdeaState, noTransitionsYet: bool
         {
           action: 'assumption.declare',
           example: `assumption.declare({ idea_id: "${id}", context: "...", signpost_at: <unix-ms>, load_bearing: true })`,
-          why: 'For committed ideas, declare load-bearing assumptions with signposts so the system can surface them for re-evaluation later. (Tool ships in a later milestone.)',
+          why: 'For committed ideas, declare load-bearing assumptions with signposts so the system can surface them for re-evaluation later.',
         },
         {
           action: 'outcome.log',
           example: `outcome.log({ idea_id: "${id}", text: "...", refutes: [], validates: [] })`,
-          why: 'When reality arrives, log the outcome and which declared assumptions it validated or refuted. This is the compounding mechanism. (Tool ships in a later milestone.)',
+          why: 'When reality arrives, log the outcome and which declared assumptions it validated or refuted. This is the compounding mechanism.',
         },
       );
       break;
@@ -385,7 +389,7 @@ function buildReadNextSteps(id: string, state: IdeaState, noTransitionsYet: bool
         {
           action: 'outcome.log',
           example: `outcome.log({ idea_id: "${id}", text: "post-mortem: what specifically broke, what we learned" })`,
-          why: 'If the refutation log is sparse, expand it — the learning is the value of a failed bet. (Tool ships in a later milestone.)',
+          why: 'If the refutation log is sparse, expand it — the learning is the value of a failed bet.',
         },
       );
       break;
@@ -446,24 +450,33 @@ interface IdeaListRow {
 function handleList(
   vaultPath: string,
   db: IdeasDatabase,
-  args: { state?: string; limit?: number; include_stale?: boolean },
+  args: { state?: string; needs_review?: boolean; limit?: number; include_stale?: boolean },
 ): ReturnType<typeof mcpText> {
   const limit = args.limit ?? 50;
-  const rows = args.state
-    ? (db
-        .prepare(
-          `SELECT id, title, state, needs_review, created_at, state_changed_at, vault_path
-           FROM ideas_notes WHERE state = ?
-           ORDER BY state_changed_at DESC LIMIT ?`,
-        )
-        .all(args.state, limit) as IdeaListRow[])
-    : (db
-        .prepare(
-          `SELECT id, title, state, needs_review, created_at, state_changed_at, vault_path
-           FROM ideas_notes
-           ORDER BY state_changed_at DESC LIMIT ?`,
-        )
-        .all(limit) as IdeaListRow[]);
+
+  // Compose WHERE clause from optional filters. needs_review uses the partial
+  // index when filtering for true (alpha.5 fix A — was missing despite docs
+  // saying you could query on it).
+  const where: string[] = [];
+  const bind: unknown[] = [];
+  if (args.state) {
+    where.push('state = ?');
+    bind.push(args.state);
+  }
+  if (args.needs_review === true) {
+    where.push('needs_review = 1');
+  } else if (args.needs_review === false) {
+    where.push('needs_review = 0');
+  }
+  const whereSql = where.length ? `WHERE ${where.join(' AND ')}` : '';
+
+  const rows = db
+    .prepare(
+      `SELECT id, title, state, needs_review, created_at, state_changed_at, vault_path
+       FROM ideas_notes ${whereSql}
+       ORDER BY state_changed_at DESC LIMIT ?`,
+    )
+    .all(...bind, limit) as IdeaListRow[];
 
   // Filter stale (markdown-missing) rows unless the caller explicitly asked
   // for them. This breaks the stale_row infinite-loop where idea.read on a
@@ -713,7 +726,7 @@ function buildTransitionNextSteps(id: string, to: IdeaState): NextStep[] {
     steps.push({
       action: 'assumption.declare',
       example: `assumption.declare({ idea_id: "${id}", context: "...", signpost_at: <unix-ms>, load_bearing: true })`,
-      why: 'For committed ideas, declare load-bearing assumptions with signposts so the system can surface them for re-evaluation later. (Tool ships in a later milestone.)',
+      why: 'For committed ideas, declare load-bearing assumptions with signposts so the system can surface them for re-evaluation later.',
     });
   }
 
@@ -721,7 +734,7 @@ function buildTransitionNextSteps(id: string, to: IdeaState): NextStep[] {
     steps.push({
       action: 'outcome.log',
       example: `outcome.log({ idea_id: "${id}", text: "...", refutes: [], validates: [] })`,
-      why: 'Record the outcome and which declared assumptions it validated or refuted — this is the compounding mechanism that flags dependent ideas. (Tool ships in a later milestone.)',
+      why: 'Record the outcome and which declared assumptions it validated or refuted — this is the compounding mechanism that flags dependent ideas.',
     });
   }
 

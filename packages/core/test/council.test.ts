@@ -109,6 +109,11 @@ async function seedSeededAssumption(id: string = 'asm-mock-1', idea_id: string =
 }
 
 beforeEach(async () => {
+  // Disable the alpha.5 model_version probe in council tests — they use
+  // mock CLI binaries that don't implement --version, and we don't want to
+  // shell out to the real claude/codex/gemini for every test. cli-version.test.ts
+  // has dedicated coverage for the probe.
+  process.env.FLYWHEEL_IDEAS_NO_VERSION_PROBE = '1';
   vault = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-ideas-council-'));
   await fsp.mkdir(path.join(vault, '.flywheel'), { recursive: true });
   db = openIdeasDb(vault);
@@ -116,6 +121,7 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
+  delete process.env.FLYWHEEL_IDEAS_NO_VERSION_PROBE;
   db.close();
   deleteIdeasDbFiles(vault);
   await fsp.rm(vault, { recursive: true, force: true });
