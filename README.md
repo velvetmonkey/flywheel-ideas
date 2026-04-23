@@ -6,9 +6,9 @@ A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea 
 
 [![npm version](https://img.shields.io/npm/v/@velvetmonkey/flywheel-ideas.svg)](https://www.npmjs.com/package/@velvetmonkey/flywheel-ideas)
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
-[![status: alpha](https://img.shields.io/badge/status-alpha-orange.svg)](#roadmap)
+[![status: stable](https://img.shields.io/badge/status-stable-blue.svg)](#roadmap)
 
-> **Status:** 0.1.0-alpha.4. v0.1 closed loop shipped across M1–M14. M13 (real `claude -p` e2e in CI) and v0.1.0 GA still upcoming.
+> **Status:** 0.1.0 GA. v0.1 closed loop shipped across M1–M14 + alpha.4 hardening + alpha.5 consolidation. M13 (real `claude -p` e2e in CI), claude-auth error classification, and the v0.2 product surface carry to v0.1.1 / v0.2.
 
 ## Who this is for
 
@@ -91,7 +91,7 @@ export FLYWHEEL_IDEAS_APPROVE=session
   "mcpServers": {
     "flywheel-ideas": {
       "command": "npx",
-      "args": ["-y", "@velvetmonkey/flywheel-ideas@alpha"],
+      "args": ["-y", "@velvetmonkey/flywheel-ideas"],
       "env": {
         "VAULT_PATH": "/path/to/your/vault",
         "FLYWHEEL_IDEAS_APPROVE": "session"
@@ -101,14 +101,15 @@ export FLYWHEEL_IDEAS_APPROVE=session
 }
 ```
 
-The `@alpha` dist-tag tracks the latest 0.1.0-alpha.* release (as of this
-writing, `0.1.0-alpha.4`). When v0.1.0 GA ships, drop the tag suffix to
-`@velvetmonkey/flywheel-ideas`. The `-y` flag auto-accepts the initial
-`npx` download prompt. After the first run the server is cached locally;
-subsequent launches are instant.
+The `-y` flag auto-accepts the initial `npx` download prompt. After the
+first run the server is cached locally; subsequent launches are instant.
 
-Prefer a global install? `npm install -g @velvetmonkey/flywheel-ideas@alpha`,
+Prefer a global install? `npm install -g @velvetmonkey/flywheel-ideas`,
 then point the MCP client at `flywheel-ideas-mcp` directly.
+
+When a v0.2 pre-release train starts, opt in via the `@alpha` dist-tag
+(e.g. `npx -y @velvetmonkey/flywheel-ideas@alpha`). The `latest` tag
+always tracks the most recent stable.
 
 See [CHANGELOG.md](./CHANGELOG.md) for what's new in each release.
 
@@ -172,11 +173,12 @@ The core product: four MCP tools forming `idea → assumption → council → ou
   - ✅ M10: gemini dispatch + full matrix (3 × 5 = 15 cells) + CLI-interleaved concurrency + strict benign-stderr filter
   - ✅ M11: evidence-aware synthesis with sentence-level Jaccard agreement/disagreement sections
 - ✅ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. Shipped at M12.
-- ✅ **memory-bridge** — flywheel-memory custom-category registration on startup (M14, alpha.3). Path-security + maxBuffer + frontmatter-sync hardening shipped in alpha.4.
+- ✅ **memory-bridge** — flywheel-memory custom-category registration on startup (M14, alpha.3). Path-security + maxBuffer + frontmatter-sync hardening shipped in alpha.4. Consolidation (`needs_review` filter, model_version capture, comment sweep) shipped in alpha.5.
 
-Still upcoming for v0.1.0 GA:
+**v0.1.0 GA shipped 2026-04-23.** What's still upcoming, carrying to v0.1.1 / v0.2:
 - ⏳ M13 — real `claude -p` end-to-end test in CI with flake-aware demotion.
-- ⏳ Re-dogfood alpha.4 across Linux + Windows installs, then cut v0.1.0.
+- ⏳ CLI-error classifier auth + rate_limit patterns (real failure samples now captured during the GA dogfood).
+- ⏳ `clis` arg passthrough on `council.run` (gap surfaced in dogfood — orchestrator dispatched all 3 CLIs even when subset was requested).
 
 ### v0.2 — depth on the loop + closing the feedback loop
 

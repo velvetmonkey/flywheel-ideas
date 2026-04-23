@@ -1,5 +1,107 @@
 # Changelog
 
+## 0.1.0 — 2026-04-23
+
+**v0.1.0 GA — first stable cut.** Cuts straight from alpha.5 after a
+re-dogfood of the published artifact, including one real `claude` + `gemini`
+council session. Full transcript + findings: [docs/dogfood-v0.1-ga.md](./docs/dogfood-v0.1-ga.md).
+
+This is the first stable release on the npm `latest` dist-tag.
+
+### What's in v0.1.0
+
+The local-first falsifiable decision ledger. Four MCP tools forming the
+closed loop `idea → assumption → council → outcome → propagation`:
+
+- **`idea`** — markdown-first idea lifecycle (8 states); atomic DB +
+  frontmatter transitions with rollback-on-failure; stale-row filtering;
+  `idea.list({needs_review: true})` filter for the compounding-mechanism
+  queue.
+- **`assumption`** — Y-statement structured input + free-text fallback;
+  OSF-style pre-registration locks; load-bearing tagging; signpost-based
+  re-evaluation surfacing.
+- **`council`** — multi-model subprocess dispatcher (claude / codex /
+  gemini); 3 × 5 = 15 cells at full depth; mandatory two-pass metacognitive
+  structure per cell; CLI-interleaved concurrency for rate-limit safety;
+  per-cell failure isolation; deterministic SYNTHESIS.md with sentence-
+  level Jaccard agreement + disagreement sections; out-of-band approval
+  gate (the LLM cannot grant or revoke its own consent).
+- **`outcome`** — log refute + validate verdicts; refutation cascades
+  through the citation graph and flags every dependent idea
+  `needs_review = 1`; reversible via `outcome.undo` with sticky-refutation
+  semantics for multi-outcome overlap; per-outcome `model_version` captured
+  from `<cli> --version` at session start.
+
+Plus a **memory-bridge** that registers `ideas_*` note types as custom
+categories with `flywheel-memory` on startup so ideas notes participate in
+the shared wikilink scorer + citation graph.
+
+### v0.1.0 = M1 → M14 + alpha.4 hardening + alpha.5 consolidation
+
+Aggregating what shipped across the alpha train:
+
+- **M1–M3**: monorepo scaffold, idea + lifecycle, schema + migrations.
+- **M4–M5**: write-path orchestration (direct-fs + planned vault-core
+  paths), assumption surface with Y-statements + signposts.
+- **M6**: out-of-band approval plane + dispatch audit log.
+- **M7**: CLI-quirks catalogue + error classifier baseline.
+- **M8–M10**: real council dispatcher (claude → codex → gemini); two-pass
+  self-critique; concurrency limiter; CLI-interleaved matrix; full
+  3 × 5 cells; strict benign-stderr filter.
+- **M11**: synthesis with agreement / disagreement via sentence-level
+  Jaccard.
+- **M12**: outcome propagation — the compounding mechanism.
+- **M14**: memory-bridge custom-category registration.
+- **alpha.4 hardening**: 3 CRITICAL + 5 HIGH (path-security symlink
+  bypass, maxBuffer SIGKILL escalation, Windows `.cmd`-shim regression
+  test, frontmatter sync for transitions + needs_review,
+  `isDirectInvocation` Windows fix, `PACKAGE_VERSION` crash hardening,
+  memory-bridge cold-start timeout).
+- **alpha.5 consolidation**: `idea.list` `needs_review` filter,
+  `model_version` capture, stale-milestone-reference sweep across
+  comments + tool descriptions.
+
+516 tests on the matrix (Linux + Windows × Node 22 + 24).
+
+### Known gaps (carry to v0.1.1 / v0.2)
+
+- M13 — real `claude -p` end-to-end test in CI with flake-aware demotion.
+- CLI-error classifier auth + rate_limit patterns. The GA dogfood captured
+  a real `claude` "Not logged in · Please run /login" failure; the
+  authentication_failed payload should be classified as `auth` not
+  `exit_nonzero`.
+- `council.run`'s `clis` arg isn't respected — the orchestrator dispatches
+  all 3 CLIs even when a subset is requested via the MCP tool args.
+- Lifecycle prerequisite enforcement (transitions are recorded but not
+  validated in v0.1; v0.2 work).
+- v0.2 product surface: LLM-based synthesis, Assumption Radar (proactive
+  semantic vault-wide signal detection), `idea.freeze`/`council.freeze`
+  (OSF snapshots), steelman council mode, lineage queries, decision_delta
+  view.
+
+### Install
+
+```bash
+npm install -g @velvetmonkey/flywheel-ideas
+```
+
+Or in `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "flywheel-ideas": {
+      "command": "npx",
+      "args": ["-y", "@velvetmonkey/flywheel-ideas"],
+      "env": { "VAULT_PATH": "/path/to/your/vault" }
+    }
+  }
+}
+```
+
+The `@alpha` dist-tag has been removed; `latest` now points at v0.1.0
+stable. The next pre-release train (v0.2 alpha) will re-create `@alpha`.
+
 ## 0.1.0-alpha.5 — 2026-04-23
 
 Consolidation milestone — last release candidate before v0.1.0 GA.
