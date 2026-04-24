@@ -222,6 +222,18 @@ export {
   splitSentences,
   tokenize,
 } from './council-overlap.js';
+
+// decision_delta — diff between two council sessions (v0.2 D6)
+export {
+  computeDecisionDelta,
+  DeltaInputError,
+} from './decision-delta.js';
+export type {
+  ComputeDeltaOptions,
+  DecisionDelta,
+  DecisionDeltaSummary,
+  DeltaCellRow,
+} from './decision-delta.js';
 export type {
   AgreementFragment,
   DisagreementBucket,
