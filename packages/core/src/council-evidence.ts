@@ -8,12 +8,15 @@
  * flywheel-memory's tools and inject the relevant vault context as a
  * markdown block in the persona prompt.
  *
- * Query plan (4 sources):
+ * Query plan (5 sources):
  *   1. `search(query: idea.title, limit: 5)` — top-5 hybrid hits ranked by score
  *   2. `memory(action:'brief', entity: idea.title)` — entity-scoped facts/decisions
  *   3. `graph(action:'backlinks', path: idea.vault_path)` — top backlinks (path-only footer)
  *   4. For first 3 load-bearing assumptions: `search(query: assumption.text, limit: 3)`
  *      — refute/validate signal scaffolding for the council to attack
+ *   5. `insights(action:'note_intelligence', path: idea.vault_path)` — quality score,
+ *      stale sections, missing links — a drift/staleness signal on the idea itself
+ *      that the council should weigh. Added in the v0.2 narrow-core-complete pass.
  *
  * Best-effort: every individual query is wrapped in try/catch. A failed
  * query drops that source; the remaining pack still renders. If the
@@ -95,25 +98,36 @@ export async function assembleEvidencePack(
   const opts = { ...DEFAULTS, ...options };
   const budgetChars = opts.max_tokens * APPROX_CHARS_PER_TOKEN;
 
-  // Run the four query types in parallel; allSettled never throws.
-  const [searchRes, memoryRes, backlinksRes, assumptionResAll] = await Promise.allSettled([
-    runIdeaSearch(reader, idea.title, opts.top_k_idea_search),
-    runMemoryBrief(reader, idea.title),
-    runBacklinks(reader, idea.vault_path, opts.top_k_backlinks),
-    runAssumptionSearches(reader, assumptions, opts.max_assumption_queries, opts.hits_per_assumption),
-  ]);
+  // Run the five query types in parallel; allSettled never throws.
+  const [searchRes, memoryRes, backlinksRes, assumptionResAll, intelligenceRes] =
+    await Promise.allSettled([
+      runIdeaSearch(reader, idea.title, opts.top_k_idea_search),
+      runMemoryBrief(reader, idea.title),
+      runBacklinks(reader, idea.vault_path, opts.top_k_backlinks),
+      runAssumptionSearches(
+        reader,
+        assumptions,
+        opts.max_assumption_queries,
+        opts.hits_per_assumption,
+      ),
+      runNoteIntelligence(reader, idea.vault_path),
+    ]);
 
   const renderedSearch = collectFulfilled(searchRes, []);
   const renderedMemory = collectFulfilled(memoryRes, []);
   const renderedBacklinks = collectFulfilled(backlinksRes, []);
   const renderedAssumptions = collectFulfilled(assumptionResAll, []);
+  const renderedIntelligence = collectFulfilled(intelligenceRes, []);
 
   // Render each source as a ### Source block. Assumption searches get a
-  // distinct "kind" but the same per-source structure.
+  // distinct "kind" but the same per-source structure. note_intelligence
+  // gets its own renderer since its payload is structured (quality score +
+  // stale sections + missing links), not an excerpt.
   const allRendered: RenderedSource[] = [
     ...renderedSearch.map((s) => renderSearchHit(s, opts.max_excerpt_chars)),
     ...renderedMemory.map((s) => renderMemoryBrief(s, opts.max_excerpt_chars)),
     ...renderedAssumptions.map((s) => renderSearchHit(s, opts.max_excerpt_chars)),
+    ...renderedIntelligence.map((s) => renderNoteIntelligence(s, opts.max_excerpt_chars)),
   ];
 
   // Sort by score desc so budget-trimming drops the weakest first. Sources
@@ -242,6 +256,94 @@ async function runBacklinks(
   }
 }
 
+/**
+ * Payload from flywheel-memory's `insights(action:'note_intelligence')`.
+ *
+ * Only the fields the evidence-pack renders are typed; the real response
+ * carries more. Any field missing from flywheel-memory's output is treated
+ * as absent — the renderer skips its line. Keeps this resilient to
+ * flywheel-memory response schema evolution.
+ */
+interface NoteIntelligencePayload {
+  path: string;
+  quality_score?: number;
+  missing_link_count?: number;
+  stale_sections?: Array<{ heading?: string; last_modified?: string }>;
+  last_modified?: string;
+  summary?: string;
+}
+
+interface NoteIntelligenceHit extends EvidenceSource {
+  excerpt: string;
+  payload: NoteIntelligencePayload;
+}
+
+async function runNoteIntelligence(
+  reader: EvidenceReader,
+  vault_path: string,
+): Promise<NoteIntelligenceHit[]> {
+  try {
+    const res = await reader.query('insights', {
+      action: 'note_intelligence',
+      path: vault_path,
+    });
+    const text = extractToolText(res);
+    if (text === null) return [];
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      return [];
+    }
+    if (!parsed || typeof parsed !== 'object') return [];
+    const obj = parsed as Record<string, unknown>;
+    // flywheel-memory may wrap the payload under `result` / `note` / at top level.
+    const body =
+      (obj.result && typeof obj.result === 'object'
+        ? (obj.result as Record<string, unknown>)
+        : undefined) ??
+      (obj.note && typeof obj.note === 'object'
+        ? (obj.note as Record<string, unknown>)
+        : undefined) ??
+      obj;
+    if ((body as { error?: unknown }).error) return [];
+    const payload: NoteIntelligencePayload = {
+      path: vault_path,
+      quality_score:
+        typeof body.quality_score === 'number' ? body.quality_score : undefined,
+      missing_link_count:
+        typeof body.missing_link_count === 'number' ? body.missing_link_count : undefined,
+      stale_sections: Array.isArray(body.stale_sections)
+        ? (body.stale_sections as NoteIntelligencePayload['stale_sections'])
+        : undefined,
+      last_modified:
+        typeof body.last_modified === 'string' ? body.last_modified : undefined,
+      summary: typeof body.summary === 'string' ? body.summary : undefined,
+    };
+    // Emit a source only when at least one signal is present. Otherwise
+    // flywheel-memory returned an empty-shaped response (stub, 404, unknown
+    // note) and adding a zero-signal card pollutes the evidence pack.
+    const hasSignal =
+      payload.quality_score !== undefined ||
+      payload.missing_link_count !== undefined ||
+      (payload.stale_sections && payload.stale_sections.length > 0) ||
+      payload.last_modified !== undefined ||
+      (payload.summary !== undefined && payload.summary.length > 0);
+    if (!hasSignal) return [];
+    return [
+      {
+        kind: 'note_intelligence',
+        path: vault_path,
+        score: payload.quality_score,
+        excerpt: payload.summary ?? '',
+        payload,
+      },
+    ];
+  } catch {
+    return [];
+  }
+}
+
 async function runAssumptionSearches(
   reader: EvidenceReader,
   assumptions: AssumptionForEvidence[],
@@ -324,6 +426,46 @@ function renderSearchHit(hit: QueryHit, maxExcerptChars: number): RenderedSource
 function renderMemoryBrief(hit: QueryHit, maxExcerptChars: number): RenderedSource {
   const excerpt = truncateAtSectionBoundary(hit.excerpt, maxExcerptChars);
   const markdown = `### Source: ${hit.path}\n\n${blockquote(excerpt)}\n`;
+  return {
+    source: { kind: hit.kind, path: hit.path, score: hit.score },
+    markdown,
+  };
+}
+
+/**
+ * Render a note_intelligence hit as a structured signals card. Doesn't use
+ * blockquoted excerpts — the payload is already structured, so we surface
+ * it as bullets. Line-by-line additive: missing fields just don't render.
+ */
+function renderNoteIntelligence(
+  hit: NoteIntelligenceHit,
+  maxExcerptChars: number,
+): RenderedSource {
+  const { payload } = hit;
+  const lines: string[] = [`### Note intelligence: ${payload.path}`, ''];
+  if (payload.quality_score !== undefined) {
+    lines.push(`- Quality score: ${payload.quality_score.toFixed(2)}`);
+  }
+  if (payload.last_modified) {
+    lines.push(`- Last modified: ${payload.last_modified}`);
+  }
+  if (payload.missing_link_count !== undefined) {
+    lines.push(`- Missing wikilinks: ${payload.missing_link_count}`);
+  }
+  if (payload.stale_sections && payload.stale_sections.length > 0) {
+    lines.push(`- Stale sections (${payload.stale_sections.length}):`);
+    for (const s of payload.stale_sections.slice(0, 5)) {
+      const heading = s.heading ?? '(unnamed)';
+      const mod = s.last_modified ? ` — last modified ${s.last_modified}` : '';
+      lines.push(`  - ${heading}${mod}`);
+    }
+  }
+  if (payload.summary) {
+    const summary = truncateAtSectionBoundary(payload.summary, maxExcerptChars);
+    lines.push('');
+    lines.push(blockquote(summary));
+  }
+  const markdown = lines.join('\n') + '\n';
   return {
     source: { kind: hit.kind, path: hit.path, score: hit.score },
     markdown,

@@ -141,6 +141,120 @@ describe('assembleEvidencePack — happy path', () => {
   });
 });
 
+describe('assembleEvidencePack — note_intelligence (temporal insights)', () => {
+  it('renders note_intelligence payload as a structured signals card', async () => {
+    const reader = stubReader({
+      search: () => textRes({ results: [] }),
+      memory: () => textRes([]),
+      graph: () => textRes({ incoming_edges: [] }),
+      insights: () =>
+        textRes({
+          path: 'ideas/eda-subsystem-x.md',
+          quality_score: 0.42,
+          missing_link_count: 3,
+          last_modified: '2026-01-15',
+          stale_sections: [
+            { heading: 'Motivation', last_modified: '2026-01-15' },
+            { heading: 'Rationale', last_modified: '2026-01-15' },
+          ],
+          summary: 'Quality is low — note has been static while surrounding topics moved.',
+        }),
+    });
+
+    const pack = await assembleEvidencePack(reader, IDEA, []);
+    expect(pack.evidence).not.toBeNull();
+    const md = pack.evidence!;
+    expect(md).toContain('### Note intelligence: ideas/eda-subsystem-x.md');
+    expect(md).toContain('- Quality score: 0.42');
+    expect(md).toContain('- Missing wikilinks: 3');
+    expect(md).toContain('- Last modified: 2026-01-15');
+    expect(md).toContain('- Stale sections (2):');
+    expect(md).toContain('  - Motivation — last modified 2026-01-15');
+    expect(md).toContain('> Quality is low — note has been static');
+
+    const intel = pack.sources.find((s) => s.kind === 'note_intelligence');
+    expect(intel).toBeDefined();
+    expect(intel!.path).toBe('ideas/eda-subsystem-x.md');
+    expect(intel!.score).toBe(0.42);
+  });
+
+  it('renders only the signals present (partial payload)', async () => {
+    const reader = stubReader({
+      search: () =>
+        textRes({
+          results: [{ path: 'a.md', section_content: 'A excerpt.', confidence_score: 0.5 }],
+        }),
+      memory: () => textRes([]),
+      graph: () => textRes({ incoming_edges: [] }),
+      insights: () =>
+        textRes({
+          path: 'ideas/eda-subsystem-x.md',
+          // Only one signal present — missing_link_count.
+          missing_link_count: 7,
+        }),
+    });
+
+    const pack = await assembleEvidencePack(reader, IDEA, []);
+    expect(pack.evidence).not.toBeNull();
+    expect(pack.evidence!).toContain('### Note intelligence: ideas/eda-subsystem-x.md');
+    expect(pack.evidence!).toContain('- Missing wikilinks: 7');
+    expect(pack.evidence!).not.toContain('- Quality score');
+    expect(pack.evidence!).not.toContain('- Stale sections');
+  });
+
+  it('suppresses the card when the payload has no signals (empty/stub response)', async () => {
+    const reader = stubReader({
+      search: () =>
+        textRes({
+          results: [{ path: 'a.md', section_content: 'A excerpt.', confidence_score: 0.5 }],
+        }),
+      memory: () => textRes([]),
+      graph: () => textRes({ incoming_edges: [] }),
+      insights: () => textRes({ path: 'ideas/eda-subsystem-x.md' }),
+    });
+
+    const pack = await assembleEvidencePack(reader, IDEA, []);
+    expect(pack.evidence).not.toBeNull();
+    expect(pack.evidence!).not.toContain('### Note intelligence');
+    expect(pack.sources.find((s) => s.kind === 'note_intelligence')).toBeUndefined();
+  });
+
+  it('skips the insights card when the tool returns an error', async () => {
+    const reader = stubReader({
+      search: () =>
+        textRes({
+          results: [{ path: 'a.md', section_content: 'A excerpt.', confidence_score: 0.5 }],
+        }),
+      memory: () => textRes([]),
+      graph: () => textRes({ incoming_edges: [] }),
+      insights: () => textRes({ error: 'note not found' }),
+    });
+
+    const pack = await assembleEvidencePack(reader, IDEA, []);
+    expect(pack.evidence).not.toBeNull();
+    expect(pack.evidence!).not.toContain('### Note intelligence');
+    expect(pack.sources.find((s) => s.kind === 'note_intelligence')).toBeUndefined();
+  });
+
+  it('one query failing (insights) does not kill the rest', async () => {
+    const reader = stubReader({
+      search: () =>
+        textRes({
+          results: [{ path: 'a.md', section_content: 'A excerpt.', confidence_score: 0.5 }],
+        }),
+      memory: () => textRes([]),
+      graph: () => textRes({ incoming_edges: [] }),
+      insights: () => {
+        throw new Error('insights tool exploded');
+      },
+    });
+    const pack = await assembleEvidencePack(reader, IDEA, []);
+    expect(pack.evidence).not.toBeNull();
+    expect(pack.evidence!).toContain('### Source: a.md');
+    expect(pack.sources.find((s) => s.kind === 'note_intelligence')).toBeUndefined();
+  });
+});
+
 describe('assembleEvidencePack — degradation', () => {
   it('returns {evidence:null, sources:[]} when all queries fail', async () => {
     const reader = stubReader({
