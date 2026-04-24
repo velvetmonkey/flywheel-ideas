@@ -16,15 +16,14 @@ import {
   activeWritePath,
   buildAssumptionNextStepsForIdea,
   createFreeze,
+  createIdea,
   filterStaleRows,
   FreezeInputError,
   FreezeIdeaNotFoundError,
-  generateIdeaId,
   getAncestry,
   getDescendants,
   getSharedAssumptions,
   IDEA_STATES,
-  INITIAL_STATE,
   isIdeaState,
   listFreezesByIdea,
   listTransitions,
@@ -35,7 +34,6 @@ import {
   type IdeasDatabase,
   type IdeaState,
   patchFrontmatter,
-  writeNote,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpText, type NextStep } from '../next_steps.js';
 
@@ -196,47 +194,32 @@ async function handleCreate(
     ]);
   }
 
-  const now = Date.now();
-  const id = generateIdeaId();
-  const relPath = buildIdeaPath(args.title, now);
-
-  const frontmatter = {
-    id,
-    type: 'idea',
-    state: INITIAL_STATE,
+  const result = await createIdea(db, vaultPath, {
     title: args.title,
-    created_at: new Date(now).toISOString(),
-  };
-  const body = args.body ?? `# ${args.title}\n\n`;
-
-  const writeResult = await writeNote(vaultPath, relPath, frontmatter, body);
-
-  db.prepare(
-    `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-  ).run(id, writeResult.vault_path, args.title, INITIAL_STATE, now, now);
+    body: args.body,
+  });
 
   const next_steps: NextStep[] = [
     {
       action: 'assumption.declare',
-      example: `assumption.declare({ idea_id: "${id}", context: "...", challenge: "...", decision: "...", tradeoff: "..." })`,
+      example: `assumption.declare({ idea_id: "${result.id}", context: "...", challenge: "...", decision: "...", tradeoff: "..." })`,
       why: 'Y-statement assumptions give the council specific claims to attack later. Declare them before running council so the stress-test is grounded.',
     },
     {
       action: 'idea.read',
-      example: `idea.read({ id: "${id}" })`,
+      example: `idea.read({ id: "${result.id}" })`,
       why: 'Verify the markdown note was written with the expected frontmatter.',
     },
   ];
 
   return mcpText({
     result: {
-      id,
-      state: INITIAL_STATE,
-      title: args.title,
-      vault_path: writeResult.vault_path,
-      write_path: writeResult.write_path,
-      created_at: now,
+      id: result.id,
+      state: result.state,
+      title: result.title,
+      vault_path: result.vault_path,
+      write_path: result.write_path,
+      created_at: result.created_at,
     },
     next_steps,
   });
@@ -1090,29 +1073,3 @@ function handleSharedAssumptions(
   });
 }
 
-// ---------- helpers ----------
-
-/**
- * Build a date-partitioned vault path for a new idea.
- *
- * Format: `ideas/YYYY/MM/<kebab-slug>-<short-id-disambiguator>.md`
- * Using a short suffix avoids collisions for same-titled ideas created in the
- * same month.
- */
-export function buildIdeaPath(title: string, nowMs: number): string {
-  const d = new Date(nowMs);
-  const yyyy = String(d.getUTCFullYear());
-  const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
-  const slug = slugify(title);
-  const disambiguator = `${nowMs}`.slice(-6);
-  return `ideas/${yyyy}/${mm}/${slug || 'idea'}-${disambiguator}.md`;
-}
-
-function slugify(input: string): string {
-  return input
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 60);
-}

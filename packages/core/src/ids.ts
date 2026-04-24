@@ -56,3 +56,5 @@ export const generateCouncilViewId = (): string => generateId('view');
 export const generateTransitionId = (): string => generateId('trans');
 export const generateDispatchId = (): string => generateId('disp');
 export const generateFreezeId = (): string => generateId('fr');
+export const generateImportSourceId = (): string => generateId('src');
+export const generateImportCandidateId = (): string => generateId('cand');

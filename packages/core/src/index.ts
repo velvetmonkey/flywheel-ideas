@@ -61,6 +61,7 @@ export {
   SCHEMA_SQL_V4,
   SCHEMA_SQL_V5,
   SCHEMA_SQL_V6,
+  SCHEMA_SQL_V7,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -116,6 +117,8 @@ export {
   generateTransitionId,
   generateDispatchId,
   generateFreezeId,
+  generateImportSourceId,
+  generateImportCandidateId,
   ID_ALPHABET,
 } from './ids.js';
 
@@ -418,6 +421,69 @@ export type {
   EvidencePack,
   IdeaForEvidence,
 } from './council-evidence.js';
+
+// Idea path helpers (shared between idea.create + import.promote)
+export { buildIdeaPath, slugifyIdeaTitle } from './idea-paths.js';
+export { createIdea } from './idea-create.js';
+export type { CreateIdeaInput, CreateIdeaResult } from './idea-create.js';
+
+// Bulk-import subsystem (v0.2 Phase 2)
+export {
+  // adapter types
+  ImportAdapterError,
+  ImportNetworkGatedError,
+  // registry
+  registerAdapter,
+  getAdapter,
+  listAdapters,
+  __resetRegistryForTests,
+  // candidates CRUD
+  createImportSource,
+  persistCandidate,
+  getCandidate,
+  getImportSource,
+  listCandidates,
+  markCandidateImported,
+  markCandidateRejected,
+  parseExtractedFields,
+  CandidateStateError,
+  // dedup
+  checkDedup,
+  buildDedupQuery,
+  candidateKindMatchesFrontmatterType,
+  DEFAULT_DEDUP_THRESHOLD,
+  // scan + promote
+  scanSource,
+  ImportScanError,
+  promoteCandidate,
+  PromoteValidationError,
+  PromoteNotFoundError,
+  // built-in adapters
+  GithubStructuredDocsAdapter,
+  GITHUB_STRUCTURED_DOCS_NAME,
+  parsePepDocument,
+  extractAssumptionSentences,
+  BUILTIN_ADAPTER_NAMES,
+} from './import/index.js';
+export type {
+  CandidateKind,
+  CandidateState,
+  ImportAdapter,
+  ImportContext,
+  RawCandidate,
+} from './import/adapter.js';
+export type {
+  ImportCandidateRow,
+  ImportSourceRow,
+  ListCandidatesOptions,
+  MarkImportedInput,
+  PersistCandidateInput,
+  CreateImportSourceInput,
+} from './import/candidates.js';
+export type { DedupDecision, DedupHit, DedupOptions } from './import/dedup.js';
+export type { ScanInput, ScanSummary, DedupStatus } from './import/scan.js';
+export type { PromoteInput, PromoteResult, PromoteDetails } from './import/promote.js';
+export type { AdapterHooks, GithubStructuredDocsConfig } from './import/adapters/github-structured-docs.js';
 
 // v3 idea-extensions sidecar (v0.2 Phase 1 D1)
 export {

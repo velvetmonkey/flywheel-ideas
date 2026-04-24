@@ -1,5 +1,105 @@
 # Changelog
 
+## 0.2.0-alpha.2 — 2026-04-24
+
+**v0.2 Phase 2 — bulk import framework + first adapter (PEPs).** Load-bearing
+for the planned Phase 3 public-corpus dogfood (SEC EDGAR filings, python/peps,
+kubernetes postmortems) — the corpus vaults cannot be hand-authored. Ships the
+import substrate + one concrete adapter so the end-to-end scan → dedup → promote
+loop is provable offline against fixtures.
+
+### New MCP tool: `import`
+
+Five actions:
+
+- `import.scan({adapter, source, ...})` — dispatches to a registered source
+  adapter, runs dedup via a one-shot `flywheel-memory` subprocess (same
+  lifecycle as the v0.2.0-alpha.1 keystone), persists one
+  `ideas_import_sources` row + N `ideas_import_candidates` rows. No vault
+  writes.
+- `import.promote({candidate_id, as, target_idea_id?})` — writes the vault
+  note via the existing v0.1 writers (`createIdea`, `declareAssumption`,
+  `logOutcome`), then flips the candidate row to `state='imported'`.
+  Imported notes are byte-indistinguishable from hand-authored ones.
+- `import.list`, `import.read`, `import.reject` — inspect + gate candidates
+  without vault side-effects.
+
+Every response carries `next_steps`. No auto-promotion — every vault write
+requires an explicit `promote` call.
+
+### First adapter: `github-structured-docs`
+
+Scans a github repo whose top level contains RFC-822-style decision docs.
+v0.2 Phase 2 targets `python/peps`; the adapter is written against PEP 1's
+shape and reuses the same header parser for any sibling repo that follows
+the convention. Per PEP, emits exactly one `idea` candidate
+(confidence keyed off Status), 0..N `assumption` candidates (sentences
+starting with `assumes` / `requires` / `depends on` / `presupposes`), and
+0..1 `outcome` candidate for resolved PEPs (Final / Rejected / Withdrawn)
+with a `Resolution` header line.
+
+HTTP only — no clone. Supports a `fixture://<dir>` source for offline
+tests.
+
+### Dedup (in-scope this release)
+
+Per candidate, flywheel-memory `search` runs inside the one-shot
+subprocess; a top hit with `score >= 0.8` AND matching frontmatter `type`
+lands the candidate as `state='duplicate'`. Still promotable via
+`override_duplicate: true`. Best-effort: bridge unavailable / timeout
+falls back to `pending` without hard-failing the scan.
+
+### Schema
+
+- New v7 migration: additive sidecars `ideas_import_sources` + `ideas_import_candidates`.
+  Strictly additive — no mutation of existing rows; candidates live in the
+  sidecar until promoted. Foreign-keyed to `ideas_notes(id)` via
+  `target_idea_id` with `ON DELETE SET NULL` so candidate-to-idea binding
+  survives idea deletion without cascading loss.
+
+### Operator knobs (new)
+
+- `FLYWHEEL_IDEAS_IMPORT_NETWORK=0|1` — adapters that require HTTP throw
+  when `0`. Off by default; tests always set `0`.
+- `FLYWHEEL_IDEAS_IMPORT_CACHE_DIR=<path>` — adapter-owned fetch cache.
+  Default `~/.cache/flywheel-ideas/imports`.
+
+Reuses:
+- `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` (dedup kill switch; shared with keystone)
+- `FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS` (dedup timeout; shared)
+
+### Refactor
+
+`idea.create` MCP handler now calls a new `createIdea()` helper in core
+(`idea-create.ts`). Path + slug helpers moved to `idea-paths.ts`. Net
+behavioural diff: zero — all existing idea-tool tests pass unchanged.
+The refactor eliminates the duplication that would otherwise arise
+between `import.promote(as:'idea')` and `idea.create`.
+
+### Why alpha
+
+Still alpha — v0.2.0 GA gate is the pre-registered 10-council cite-rate
+pilot (≥70% cell-level path citation). Phase 2 adds surface area but does
+not move that gate. Adapter set is deliberately narrow (1 of 3 locked in
+the roadmap) so Phase 3 dogfood can begin against `python/peps` while
+SEC EDGAR and github-repo adapters follow in separate PRs.
+
+### Test surface
+
+740 tests pass (+145 net for Phase 2). New coverage:
+- PEP parser: header extraction, Resolution capture, malformed-document rejection
+- Assumption cue heuristic: positive + negative matching
+- Adapter scan in fixture mode: per-PEP kind counts, confidence bands,
+  reversibility mapping, network-gate enforcement
+- Candidate CRUD: source creation, persist, list filters, state transitions
+  (pending → imported, pending → rejected, re-promote rejection)
+- Promote path: idea write, kind-mismatch rejection, duplicate override
+  semantics, assumption promotion with target idea binding
+- MCP integration: tool registration alongside the existing four, scan
+  with mock adapter, promote → vault file + list-state coherence, structured
+  error surfaces (unknown adapter, kind mismatch, reject flow), fixture-mode
+  scan end-to-end
+
 ## 0.2.0-alpha.1 — 2026-04-24
 
 **v0.2 KEYSTONE — retrieval-native council input.** Before each

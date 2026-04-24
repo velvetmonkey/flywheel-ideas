@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 6;
+export const SCHEMA_VERSION = 7;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -306,4 +306,67 @@ CREATE TABLE IF NOT EXISTS ideas_argument_maps (
   tree_json TEXT NOT NULL,
   generated_at INTEGER NOT NULL
 );
+`;
+
+/**
+ * v7 migration — bulk-import staging tables (v0.2 Phase 2).
+ *
+ * Two strictly-additive sidecars support the `import.scan` + `import.promote`
+ * tool surface. Load-bearing for Phase 3's public-corpus dogfood (SEC EDGAR
+ * filings, python/peps, kubernetes/kubernetes postmortems) — the corpus
+ * vaults cannot be hand-authored.
+ *
+ *  - `ideas_import_sources` — one row per `import.scan` call. Records the
+ *    adapter, the source URI (repo, CIK, PEP tree), and the scan config so
+ *    re-scans can attribute candidates deterministically.
+ *
+ *  - `ideas_import_candidates` — one row per extracted candidate decision.
+ *    Candidates are NOT vault notes; they live in the sidecar until the
+ *    user calls `import.promote(candidate_id, as)`, which writes the note
+ *    via the existing v0.1 writers (createIdea / declareAssumption /
+ *    logOutcome) and flips the row to `state='imported'`.
+ *
+ * Dedup via flywheel-memory `search` (via withEvidenceReader) is best-effort;
+ * when a close match exists in the vault the candidate stores the hit path
+ * and score and lands in `state='duplicate'` — still promotable via an
+ * explicit `override_duplicate: true` flag.
+ */
+export const SCHEMA_SQL_V7 = `
+CREATE TABLE IF NOT EXISTS ideas_import_sources (
+  id TEXT PRIMARY KEY,
+  adapter TEXT NOT NULL,
+  source_uri TEXT NOT NULL,
+  scan_config_json TEXT,
+  scanned_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_import_sources_adapter
+  ON ideas_import_sources(adapter, scanned_at);
+
+CREATE TABLE IF NOT EXISTS ideas_import_candidates (
+  id TEXT PRIMARY KEY,
+  source_id TEXT NOT NULL REFERENCES ideas_import_sources(id) ON DELETE CASCADE,
+  adapter TEXT NOT NULL,
+  candidate_kind TEXT NOT NULL,
+  title TEXT NOT NULL,
+  body_md TEXT NOT NULL,
+  extracted_fields_json TEXT,
+  confidence REAL NOT NULL,
+  source_uri TEXT NOT NULL,
+  dedup_match_path TEXT,
+  dedup_match_score REAL,
+  state TEXT NOT NULL DEFAULT 'pending',
+  target_idea_id TEXT REFERENCES ideas_notes(id) ON DELETE SET NULL,
+  scanned_at INTEGER NOT NULL,
+  imported_at INTEGER,
+  imported_vault_path TEXT,
+  imported_entity_id TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_import_cand_source
+  ON ideas_import_candidates(source_id);
+CREATE INDEX IF NOT EXISTS idx_ideas_import_cand_state
+  ON ideas_import_candidates(state);
+CREATE INDEX IF NOT EXISTS idx_ideas_import_cand_target
+  ON ideas_import_candidates(target_idea_id) WHERE target_idea_id IS NOT NULL;
 `;
