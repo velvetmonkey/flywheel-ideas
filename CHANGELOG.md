@@ -1,5 +1,99 @@
 # Changelog
 
+## 0.2.0-alpha.3 — 2026-04-24
+
+**v0.2 narrow-core-complete item 4 — shaping + hedging actions on
+assumptions.** Completes RAND Assumption-Based Planning's full output,
+not just the `signposts[]` subset. An assumption now carries three
+classes of declared action:
+
+- `signposts[]` (v0.1) — signals that trigger re-evaluation
+- `shaping_actions[]` (new) — proactive work to make the assumption
+  MORE likely to hold: training, tooling, process changes, vendor
+  lock-ins
+- `hedging_actions[]` (new) — insurance if it DOESN'T hold: fallback
+  plans, feature kill-switches, exit ramps, contingency budgets
+
+This materially strengthens the product thesis: the vault now records
+not just *what the bet is* and *when to re-check it*, but also *what
+we're doing to make it work* and *what we'll do if it doesn't*.
+
+### Schema v8
+
+Strictly additive — two new columns on `ideas_assumption_extensions`:
+
+```
+ALTER TABLE ideas_assumption_extensions ADD COLUMN shaping_actions_json TEXT;
+ALTER TABLE ideas_assumption_extensions ADD COLUMN hedging_actions_json TEXT;
+```
+
+`NULL` by default; existing rows untouched. Each action item shape
+(TS-enforced in `assumption-extensions.ts`):
+
+```typescript
+interface AssumptionAction {
+  description: string;       // required
+  due_at?: string;           // ISO date YYYY-MM-DD
+  owner?: string;
+  status?: 'planned' | 'in_progress' | 'done' | 'cancelled';
+  notes?: string;
+}
+```
+
+Validation throws `AssumptionActionValidationError` on empty description
+or unknown status. Defensive parsing on read — malformed JSON or
+non-array shapes return `null` rather than crashing the reader.
+
+### MCP surface
+
+New `assumption` tool actions — `extension_set` + `extension_get` —
+expose the full `ideas_assumption_extensions` row (including v0.2 Phase
+1 D1's reference-class, metric, and mapping fields that were previously
+core-only with no MCP surface):
+
+```
+assumption.extension_set({
+  id: "asm-xyz",
+  base_rate: 0.4,
+  go_threshold: 0.6,
+  predicted_metric: "activation_rate",
+  threshold_value: 0.5,
+  threshold_direction: "up",
+  mapping: { segment: "SMB SaaS", metric: "activation_rate", threshold: "50%" },
+  shaping_actions: [
+    { description: "Ship onboarding playbook", owner: "growth", status: "in_progress" },
+  ],
+  hedging_actions: [
+    { description: "Kill-switch via feature flag if activation drops 5pp" },
+  ],
+})
+
+assumption.extension_get({ id: "asm-xyz" })
+```
+
+Both actions carry `next_steps` guiding users through the RAND ABP
+completeness checklist (declare shaping + hedging + falsifiable metric)
+when fields are missing.
+
+### Test surface
+
+755 tests pass (+15 net). New coverage:
+
+- `ideas_assumption_extensions` v8 columns: shaping-only / hedging-only /
+  both / explicit `null` clears / INSERT-OR-REPLACE semantics
+- Validation: missing description + unknown status → structured errors
+- Defensive parsing: malformed JSON, non-array JSON, items missing
+  description → filtered or null
+- MCP integration: `extension_set` + `extension_get` round-trip, error
+  surfaces (missing id, unknown id, invalid action status), `null`
+  clears, next_steps guidance
+
+### Why alpha still
+
+Completes item 4 of 4 in the narrow "core feature complete" scope that
+precedes the python-2→3 cite-rate pilot. The GA gate remains the
+pre-registered ≥70% cite-rate against a public-corpus vault.
+
 ## 0.2.0-alpha.2 — 2026-04-24
 
 **v0.2 Phase 2 — bulk import framework + first adapter (PEPs).** Load-bearing

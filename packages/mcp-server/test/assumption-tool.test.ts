@@ -562,3 +562,128 @@ describe('assumption.radar (v0.2 D9)', () => {
     expect(response.result.hit_count).toBe(0);
   });
 });
+
+// ---------------------------------------------------------------------------
+// extension_set + extension_get (v0.2 RAND ABP complete — shaping + hedging)
+// ---------------------------------------------------------------------------
+
+describe('assumption.extension_set / extension_get', () => {
+  async function seedAssumption(): Promise<{ ideaId: string; asmId: string }> {
+    const ideaId = await seedIdea();
+    const declareRes = parseEnvelope(
+      await client.callTool('assumption', {
+        action: 'declare',
+        idea_id: ideaId,
+        context: 'Q3 2026',
+        challenge: 'uncertain activation',
+        decision: 'ship self-serve',
+        tradeoff: 'drops high-touch sales',
+        load_bearing: true,
+      }),
+    );
+    return { ideaId, asmId: declareRes.result.id };
+  }
+
+  it('set + get round-trip with shaping + hedging actions', async () => {
+    const { asmId } = await seedAssumption();
+    const setRes = parseEnvelope(
+      await client.callTool('assumption', {
+        action: 'extension_set',
+        id: asmId,
+        base_rate: 0.4,
+        go_threshold: 0.6,
+        kill_threshold: 0.2,
+        predicted_metric: 'activation_rate',
+        threshold_value: 0.5,
+        threshold_direction: 'up',
+        mapping: {
+          segment: 'SMB SaaS',
+          claim: 'self-serve activation works without sales touch',
+          metric: 'activation_rate',
+          threshold: '50%',
+        },
+        shaping_actions: [
+          { description: 'Ship onboarding playbook', owner: 'growth', status: 'in_progress' },
+          { description: 'Instrument activation funnel events', status: 'planned' },
+        ],
+        hedging_actions: [
+          { description: 'Kill-switch via feature flag if activation drops 5pp' },
+          { description: 'Keep sales-assist queue open 90 days', due_at: '2026-09-01' },
+        ],
+      }),
+    );
+    expect(setRes.isError).toBe(false);
+    expect(setRes.result.extension.base_rate).toBe(0.4);
+    expect(setRes.result.extension.shaping_actions).toHaveLength(2);
+    expect(setRes.result.extension.hedging_actions).toHaveLength(2);
+    expect(setRes.result.extension.mapping.segment).toBe('SMB SaaS');
+
+    const getRes = parseEnvelope(
+      await client.callTool('assumption', { action: 'extension_get', id: asmId }),
+    );
+    expect(getRes.isError).toBe(false);
+    expect(getRes.result.extension.shaping_actions[0].description).toBe(
+      'Ship onboarding playbook',
+    );
+    expect(getRes.result.extension.hedging_actions[1].due_at).toBe('2026-09-01');
+  });
+
+  it('extension_set surfaces a validation error for invalid action status', async () => {
+    const { asmId } = await seedAssumption();
+    const response = await client.callTool('assumption', {
+      action: 'extension_set',
+      id: asmId,
+      shaping_actions: [
+        // @ts-expect-error — deliberately invalid status value
+        { description: 'something', status: 'bogus' },
+      ],
+    });
+    expect(response.isError).toBe(true);
+  });
+
+  it('extension_get for a missing row returns extension=null with next_steps', async () => {
+    const { asmId } = await seedAssumption();
+    const response = parseEnvelope(
+      await client.callTool('assumption', { action: 'extension_get', id: asmId }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.extension).toBeNull();
+    expect(Array.isArray(response.next_steps)).toBe(true);
+    expect(response.next_steps.length).toBeGreaterThan(0);
+  });
+
+  it('extension_set requires `id`', async () => {
+    const response = await client.callTool('assumption', {
+      action: 'extension_set',
+      base_rate: 0.5,
+    });
+    expect(response.isError).toBe(true);
+  });
+
+  it('extension_set on unknown assumption id returns a structured error', async () => {
+    const response = await client.callTool('assumption', {
+      action: 'extension_set',
+      id: 'asm-doesnotexist',
+      base_rate: 0.5,
+    });
+    expect(response.isError).toBe(true);
+  });
+
+  it('null explicitly clears shaping_actions (INSERT OR REPLACE)', async () => {
+    const { asmId } = await seedAssumption();
+    await client.callTool('assumption', {
+      action: 'extension_set',
+      id: asmId,
+      shaping_actions: [{ description: 'initial' }],
+    });
+    const clearRes = parseEnvelope(
+      await client.callTool('assumption', {
+        action: 'extension_set',
+        id: asmId,
+        shaping_actions: null,
+      }),
+    );
+    expect(clearRes.isError).toBe(false);
+    expect(clearRes.result.extension.shaping_actions).toBeNull();
+  });
+});

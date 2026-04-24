@@ -62,6 +62,7 @@ export {
   SCHEMA_SQL_V5,
   SCHEMA_SQL_V6,
   SCHEMA_SQL_V7,
+  SCHEMA_SQL_V8,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -498,17 +499,20 @@ export type {
   Reversibility,
 } from './idea-extensions.js';
 
-// v3 assumption-extensions sidecar (v0.2 Phase 1 D1)
+// v3 assumption-extensions sidecar (v0.2 Phase 1 D1 + v0.2 narrow-core-complete item 4)
 export {
   setAssumptionExtension,
   getAssumptionExtension,
   clearAssumptionExtension,
+  AssumptionActionValidationError,
 } from './assumption-extensions.js';
 export type {
   AssumptionExtensionInput,
   AssumptionExtensionRow,
   AssumptionMapping,
   ThresholdDirection,
+  AssumptionAction,
+  AssumptionActionStatus,
 } from './assumption-extensions.js';
 
 // v4 freezes — OSF preregistration (v0.2 Phase 1 D2)

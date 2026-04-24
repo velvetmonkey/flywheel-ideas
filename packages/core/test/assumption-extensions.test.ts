@@ -150,3 +150,137 @@ describe('assumption-extensions', () => {
     expect(row?.mapping).toEqual({ segment: 'enterprise', metric: 'churn_rate' });
   });
 });
+
+describe('assumption-extensions — shaping + hedging actions (v0.2 RAND ABP complete)', () => {
+  it('persists and reads back shaping_actions with full fields', () => {
+    setAssumptionExtension(db, 'asm-1', {
+      shaping_actions: [
+        {
+          description: 'Invest in onboarding playbook for self-serve activation',
+          due_at: '2026-06-01',
+          owner: 'growth',
+          status: 'in_progress',
+          notes: 'Blocked on content template',
+        },
+        {
+          description: 'Lock in vendor discount for another 12 months',
+          status: 'planned',
+        },
+      ],
+    });
+    const row = getAssumptionExtension(db, 'asm-1');
+    expect(row?.shaping_actions).toHaveLength(2);
+    expect(row?.shaping_actions?.[0]).toEqual({
+      description: 'Invest in onboarding playbook for self-serve activation',
+      due_at: '2026-06-01',
+      owner: 'growth',
+      status: 'in_progress',
+      notes: 'Blocked on content template',
+    });
+    expect(row?.shaping_actions?.[1]).toEqual({
+      description: 'Lock in vendor discount for another 12 months',
+      status: 'planned',
+    });
+  });
+
+  it('persists and reads back hedging_actions independently of shaping', () => {
+    setAssumptionExtension(db, 'asm-1', {
+      hedging_actions: [
+        { description: 'Feature flag kills new flow if activation drops 5pp' },
+        { description: 'Keep legacy signup route open for 90 days', due_at: '2026-09-01' },
+      ],
+    });
+    const row = getAssumptionExtension(db, 'asm-1');
+    expect(row?.hedging_actions).toHaveLength(2);
+    expect(row?.shaping_actions).toBeNull();
+  });
+
+  it('stores both shaping and hedging arrays on the same row', () => {
+    setAssumptionExtension(db, 'asm-1', {
+      shaping_actions: [{ description: 'shape a' }, { description: 'shape b' }],
+      hedging_actions: [{ description: 'hedge a' }],
+    });
+    const row = getAssumptionExtension(db, 'asm-1');
+    expect(row?.shaping_actions).toHaveLength(2);
+    expect(row?.hedging_actions).toHaveLength(1);
+  });
+
+  it('null clears a previously-set actions array (INSERT OR REPLACE semantics)', () => {
+    setAssumptionExtension(db, 'asm-1', {
+      shaping_actions: [{ description: 'initial' }],
+    });
+    setAssumptionExtension(db, 'asm-1', {
+      shaping_actions: null,
+    });
+    const row = getAssumptionExtension(db, 'asm-1');
+    expect(row?.shaping_actions).toBeNull();
+  });
+
+  it('rejects actions missing description', async () => {
+    const { AssumptionActionValidationError } = await import(
+      '../src/assumption-extensions.js'
+    );
+    expect(() =>
+      setAssumptionExtension(db, 'asm-1', {
+        // @ts-expect-error — deliberately missing description for the validation test
+        shaping_actions: [{ due_at: '2026-06-01' }],
+      }),
+    ).toThrow(AssumptionActionValidationError);
+  });
+
+  it('rejects actions with unknown status', async () => {
+    const { AssumptionActionValidationError } = await import(
+      '../src/assumption-extensions.js'
+    );
+    expect(() =>
+      setAssumptionExtension(db, 'asm-1', {
+        shaping_actions: [
+          // @ts-expect-error — deliberately invalid status
+          { description: 'x', status: 'bogus' },
+        ],
+      }),
+    ).toThrow(AssumptionActionValidationError);
+  });
+
+  it('parses defensively — malformed JSON in column returns null', () => {
+    db.prepare(
+      `INSERT INTO ideas_assumption_extensions
+         (assumption_id, shaping_actions_json, updated_at)
+       VALUES (?, ?, ?)`,
+    ).run('asm-1', 'not valid json [', 1);
+    const row = getAssumptionExtension(db, 'asm-1');
+    expect(row?.shaping_actions).toBeNull();
+  });
+
+  it('parses defensively — non-array JSON returns null', () => {
+    db.prepare(
+      `INSERT INTO ideas_assumption_extensions
+         (assumption_id, shaping_actions_json, updated_at)
+       VALUES (?, ?, ?)`,
+    ).run('asm-1', '{"description":"oops"}', 1);
+    const row = getAssumptionExtension(db, 'asm-1');
+    expect(row?.shaping_actions).toBeNull();
+  });
+
+  it('filters out array items missing description', () => {
+    db.prepare(
+      `INSERT INTO ideas_assumption_extensions
+         (assumption_id, shaping_actions_json, updated_at)
+       VALUES (?, ?, ?)`,
+    ).run(
+      'asm-1',
+      JSON.stringify([
+        { description: 'keep me' },
+        { owner: 'nobody' },
+        { description: 'also keep' },
+      ]),
+      1,
+    );
+    const row = getAssumptionExtension(db, 'asm-1');
+    expect(row?.shaping_actions).toHaveLength(2);
+    expect(row?.shaping_actions?.map((a) => a.description)).toEqual([
+      'keep me',
+      'also keep',
+    ]);
+  });
+});
