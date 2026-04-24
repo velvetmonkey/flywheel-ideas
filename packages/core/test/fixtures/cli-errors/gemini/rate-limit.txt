@@ -1,0 +1,4 @@
+# SYNTHESIZED 2026-04-24 from Google API quota/rate-limit error format.
+# Real capture pending.
+Loaded cached credentials.
+Error: 429 Too Many Requests. You exceeded your current quota, please check your plan and billing details. RESOURCE_EXHAUSTED

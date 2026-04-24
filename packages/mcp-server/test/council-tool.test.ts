@@ -454,6 +454,63 @@ describe('council.approval_status', () => {
 });
 
 // ---------------------------------------------------------------------------
+// council.run — clis arg passthrough (v0.1.1 fix from GA dogfood)
+// ---------------------------------------------------------------------------
+
+describe('council.run — clis arg passthrough (v0.1.1)', () => {
+  it('clis: ["claude"] dispatches against claude only (1 CLI × 2 personas = 2 views)', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        id: ideaId,
+        confirm: true,
+        clis: ['claude'],
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.status).toBe('success');
+    expect(response.result.views).toHaveLength(2);
+    const models = new Set(response.result.views.map((v: any) => v.model));
+    expect(models).toEqual(new Set(['claude']));
+    // 1 CLI × 2 personas × 2 passes = 4 dispatch rows
+    expect(listDispatches(db)).toHaveLength(4);
+  });
+
+  it('clis: ["claude","gemini"] dispatches against claude + gemini only (2 × 2 = 4 views)', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        id: ideaId,
+        confirm: true,
+        clis: ['claude', 'gemini'],
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.views).toHaveLength(4);
+    const models = new Set(response.result.views.map((v: any) => v.model));
+    expect(models).toEqual(new Set(['claude', 'gemini']));
+    expect(listDispatches(db)).toHaveLength(8);
+  });
+
+  it('omitting clis preserves the M10 default (all 3 CLIs × 2 personas = 6 views)', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        id: ideaId,
+        confirm: true,
+      }),
+    );
+    expect(response.result.views).toHaveLength(6);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // Tool surface — explicitly no mutation exposed
 // ---------------------------------------------------------------------------
 

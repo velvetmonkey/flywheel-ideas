@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.1.1 — 2026-04-24
+
+**Dogfood-driven carry-overs from v0.1.0 GA.** All three fixes were surfaced
+by the GA dogfood ([docs/dogfood-v0.1-ga.md](./docs/dogfood-v0.1-ga.md)) —
+real-world signal turned three known-unknowns into known-knowns.
+
+### Fixed
+
+- **`council.run` now respects the `clis` arg.** Previously, passing
+  `clis: ['claude','gemini']` was silently dropped at the MCP zod schema
+  layer; the orchestrator dispatched all three CLIs anyway. The schema now
+  declares `clis: z.array(z.enum(['claude','codex','gemini'])).optional()`
+  and the handler passes it through to `runCouncil()` as `clis_override`.
+  Three new tests cover one-CLI / two-CLI / default-three-CLI paths.
+- **CLI auth + rate_limit error classification.** `auth` and `rate_limit`
+  were declared but uncatalogued through GA. v0.1.1 wires patterns for
+  both across all three CLIs:
+  - `claude-auth-not-logged-in` — real fixture from the GA dogfood
+    (`"Not logged in · Please run /login"` + `"error":"authentication_failed"`).
+  - `codex-auth-turn-failed`, `codex-rate-limit-turn-failed`,
+    `claude-rate-limit`, `gemini-auth-missing-key`, `gemini-rate-limit` —
+    synthesized from public CLI/API docs; fixture headers mark them
+    `SYNTHESIZED 2026-04-24` for swap-on-real-capture.
+  - `UNCATALOGUED_REASONS` is now empty; the test suite asserts every
+    CLI carries patterns for both `auth` and `rate_limit`.
+
+### Added
+
+- **M13 — real `claude -p` E2E test scaffold.** New
+  `packages/core/test/council.real-e2e.test.ts` runs `runCouncil()` against
+  the real `claude` CLI end-to-end. Self-skipped when
+  `RUN_REAL_COUNCIL_TESTS=1` is unset, so normal `npm test` is unaffected.
+  Vitest per-test retry (2) + cell-level isolation already in `runCouncil()`
+  give the flake-aware demotion the M13 spec called for. CI wiring
+  deferred — the workflow_dispatch + `run-e2e` PR-label gate is implemented
+  in the test scaffold's prose, but no CI job is registered until the
+  Anthropic OAuth secret is configured (intentional; opt-in when ready).
+
 ## 0.1.0 — 2026-04-23
 
 **v0.1.0 GA — first stable cut.** Cuts straight from alpha.5 after a

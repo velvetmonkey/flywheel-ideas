@@ -117,8 +117,12 @@ describe('classifyCliError — with benign-stderr filter', () => {
   it('benign-looking-but-real failure is NOT misread', () => {
     const stderr = 'Keychain initialization failed: API key not found';
     const r = classifyCliError('gemini', { exit_code: 1, stderr_tail: stderr });
-    // Would be exit_nonzero (no pattern hits); would NOT be silently swept
-    // to unknown, which would happen if we'd used a prefix filter.
-    expect(r.reason).toBe('exit_nonzero');
+    // Pre-v0.1.1: would have been exit_nonzero (no auth pattern wired).
+    // v0.1.1: gemini-auth-missing-key matches "API key not found" — correct
+    // classification. The point of this test (the benign-stderr prefix filter
+    // does NOT silently swallow the real failure to `unknown`) still holds:
+    // we get a real classified failure, not unknown.
+    expect(r.reason).toBe('auth');
+    expect(r.pattern).toBe('gemini-auth-missing-key');
   });
 });

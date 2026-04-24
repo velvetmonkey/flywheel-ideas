@@ -1,0 +1,4 @@
+# REAL — captured 2026-04-23 during v0.1.0 GA dogfood (docs/dogfood-v0.1-ga.md).
+# claude subprocess invoked without auth; payload appears on STDOUT (not stderr).
+{"type":"system","subtype":"init","session_id":"sess-abc"}
+{"type":"result","subtype":"error_during_execution","is_error":true,"result":"Not logged in · Please run /login","error":"authentication_failed"}

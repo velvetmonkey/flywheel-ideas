@@ -1,0 +1,4 @@
+# SYNTHESIZED 2026-04-24 from Google AI Studio API + gemini-cli error format.
+# Real capture pending.
+Loaded cached credentials.
+Error: API key not valid. Please pass a valid API key.

@@ -1,0 +1,4 @@
+# SYNTHESIZED 2026-04-24 — codex JSONL turn.failed with rate-limit payload.
+# Real capture pending. Format mirrors observed turn.failed shape from M7 bad-model.jsonl.
+{"type":"session.created","session_id":"sess-codex-2"}
+{"type":"turn.failed","error":{"type":"rate_limit_exceeded","message":"You have exceeded your current quota. Please slow down or check your plan and billing details."}}
