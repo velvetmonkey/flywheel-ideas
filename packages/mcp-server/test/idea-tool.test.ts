@@ -32,16 +32,17 @@ afterEach(async () => {
   await fsp.rm(vault, { recursive: true, force: true });
 });
 
-/** Extract the `{result, next_steps}` envelope from an MCP tool response. */
+/** Extract the `{result, next_steps, error?}` envelope from an MCP tool response. */
 function parseEnvelope(response: {
   content?: Array<{ type: string; text: string }>;
   isError?: boolean;
-}): { result: any; next_steps: any[]; isError: boolean } {
+}): { result: any; next_steps: any[]; error?: string; isError: boolean } {
   const text = response.content?.[0]?.text ?? '{}';
   const parsed = JSON.parse(text);
   return {
     result: parsed.result ?? parsed,
     next_steps: parsed.next_steps ?? [],
+    error: parsed.error,
     isError: response.isError === true,
   };
 }
@@ -430,9 +431,18 @@ describe('idea tool — transition', () => {
       await client.callTool('idea', { action: 'create', title: 'Multi' }),
     ).result;
 
-    await client.callTool('idea', { action: 'transition', id: create.id, to: 'explored' });
-    await client.callTool('idea', { action: 'transition', id: create.id, to: 'evaluated' });
-    await client.callTool('idea', { action: 'transition', id: create.id, to: 'committed' });
+    // v0.2 D5 — bypass_enforcement: true so this lifecycle-mechanics test
+    // doesn't have to satisfy council/lock/outcome prereqs (those are tested
+    // separately in the enforcement describe block below).
+    await client.callTool('idea', {
+      action: 'transition', id: create.id, to: 'explored', bypass_enforcement: true,
+    });
+    await client.callTool('idea', {
+      action: 'transition', id: create.id, to: 'evaluated', bypass_enforcement: true,
+    });
+    await client.callTool('idea', {
+      action: 'transition', id: create.id, to: 'committed', bypass_enforcement: true,
+    });
 
     const read = await client.callTool('idea', { action: 'read', id: create.id });
     const { result } = parseEnvelope(read);
@@ -453,13 +463,16 @@ describe('idea tool — next_steps coverage for all 8 states', () => {
         await client.callTool('idea', { action: 'create', title: `State ${state}` }),
       ).result;
 
-      // Force-transition to the target state (v0.1 unenforced allows any→any).
+      // Force-transition to the target state. v0.2 D5 added prereq
+      // enforcement (council/lock/outcome) — bypass it here so this
+      // next_steps-coverage test doesn't have to set up the full chain.
       if (state !== 'nascent') {
         await client.callTool('idea', {
           action: 'transition',
           id: create.id,
           to: state,
           reason: `test setup into ${state}`,
+          bypass_enforcement: true,
         });
       }
 
@@ -693,5 +706,123 @@ describe('idea.list_freezes (v0.2 D2)', () => {
       await client.callTool('idea', { action: 'list_freezes' }),
     );
     expect(response.isError).toBe(true);
+  });
+});
+
+// ===========================================================================
+// idea.transition — D5 enforcement
+// ===========================================================================
+
+describe('idea.transition — lifecycle prereq enforcement (v0.2 D5)', () => {
+  it('explored → evaluated WITHOUT council session is BLOCKED', async () => {
+    const ideaId = await seedIdea();
+    await client.callTool('idea', {
+      action: 'transition', id: ideaId, to: 'explored', bypass_enforcement: true,
+    });
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', id: ideaId, to: 'evaluated' }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('no_council_session');
+    // Recovery hint surfaced in the first next_step's `why` field.
+    const why = response.next_steps[0]?.why ?? '';
+    expect(why).toContain('council.run');
+    // Bypass option is the second next_step.
+    expect(response.next_steps[1]?.example).toContain('bypass_enforcement: true');
+  });
+
+  it('explored → evaluated WITH council session succeeds', async () => {
+    const ideaId = await seedIdea();
+    await client.callTool('idea', {
+      action: 'transition', id: ideaId, to: 'explored', bypass_enforcement: true,
+    });
+    // Seed a council session row directly (skip the real council dispatch).
+    db.prepare(
+      `INSERT INTO ideas_council_sessions (id, idea_id, depth, mode, started_at)
+       VALUES (?, ?, ?, ?, ?)`,
+    ).run('sess-d5-1', ideaId, 'light', 'pre_mortem', 100);
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', id: ideaId, to: 'evaluated' }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.to_state).toBe('evaluated');
+  });
+
+  it('evaluated → committed WITHOUT locked load-bearing assumption is BLOCKED', async () => {
+    const ideaId = await seedIdea();
+    await client.callTool('idea', {
+      action: 'transition', id: ideaId, to: 'evaluated', bypass_enforcement: true,
+    });
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', id: ideaId, to: 'committed' }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('no_locked_load_bearing_assumption');
+  });
+
+  it('evaluated → committed WITH locked load-bearing assumption succeeds', async () => {
+    const ideaId = await seedIdea();
+    await client.callTool('idea', {
+      action: 'transition', id: ideaId, to: 'evaluated', bypass_enforcement: true,
+    });
+    const asm = await seedAssumption(ideaId, 'Load-bearing claim', true);
+    await client.callTool('assumption', { action: 'lock', id: asm });
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', id: ideaId, to: 'committed' }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.to_state).toBe('committed');
+  });
+
+  it('committed → validated WITHOUT outcome is BLOCKED', async () => {
+    const ideaId = await seedIdea();
+    await client.callTool('idea', {
+      action: 'transition', id: ideaId, to: 'committed', bypass_enforcement: true,
+    });
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', id: ideaId, to: 'validated' }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('no_outcome_logged');
+  });
+
+  it('committed → refuted WITHOUT a refuting outcome is BLOCKED', async () => {
+    const ideaId = await seedIdea();
+    await client.callTool('idea', {
+      action: 'transition', id: ideaId, to: 'committed', bypass_enforcement: true,
+    });
+    // Logging a validating-only outcome is NOT enough.
+    const asm = await seedAssumption(ideaId, 'a');
+    await client.callTool('outcome', {
+      action: 'log', idea_id: ideaId, text: 'validates only', validates: [asm],
+    });
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', id: ideaId, to: 'refuted' }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('no_refuting_outcome');
+  });
+
+  it('bypass_enforcement: true skips all checks (matches old behaviour)', async () => {
+    const ideaId = await seedIdea();
+    const response = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'transition',
+        id: ideaId,
+        to: 'committed',
+        bypass_enforcement: true,
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.to_state).toBe('committed');
+  });
+
+  it('non-checked transitions (to parked / killed) work without prereqs', async () => {
+    const ideaId = await seedIdea();
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', id: ideaId, to: 'parked' }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.to_state).toBe('parked');
   });
 });

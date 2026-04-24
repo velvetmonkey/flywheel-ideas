@@ -118,16 +118,25 @@ export {
   ID_ALPHABET,
 } from './ids.js';
 
-// Lifecycle (M4 commit 3)
+// Lifecycle (M4 commit 3 + v0.2 D5 enforcement)
 export {
   IDEA_STATES,
   INITIAL_STATE,
   isIdeaState,
   recordTransition,
+  recordTransitionEnforced,
+  canTransition,
+  TransitionPrereqError,
   syncTransitionFrontmatter,
   listTransitions,
 } from './lifecycle.js';
-export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
+export type {
+  IdeaState,
+  TransitionRecord,
+  RecordTransitionOptions,
+  RecordTransitionEnforcedOptions,
+  CanTransitionResult,
+} from './lifecycle.js';
 
 // Concurrency limiter (M9)
 export { ConcurrencyLimiter } from './concurrency.js';

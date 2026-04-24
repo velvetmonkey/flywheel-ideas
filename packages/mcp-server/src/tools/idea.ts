@@ -27,6 +27,8 @@ import {
   listTransitions,
   readNote,
   recordTransition,
+  recordTransitionEnforced,
+  TransitionPrereqError,
   type IdeasDatabase,
   type IdeaState,
   patchFrontmatter,
@@ -109,6 +111,13 @@ export function registerIdeaTool(
         .enum(['asc', 'desc'])
         .optional()
         .describe('[list_freezes] Sort order (default desc — newest first)'),
+      // v0.2 D5 — lifecycle enforcement
+      bypass_enforcement: z
+        .boolean()
+        .optional()
+        .describe(
+          '[transition] Skip prerequisite checks (council before evaluated, locked load-bearing assumption before committed, outcome before validated/refuted). Default: false. Set true ONLY for cleanup / migration / explicit override; the discipline gate is the whole point.',
+        ),
     },
     async (args) => {
       // Top-level error boundary: unhandled exceptions from handler I/O or
@@ -624,7 +633,7 @@ function handleForget(
 async function handleTransition(
   vaultPath: string,
   db: IdeasDatabase,
-  args: { id?: string; to?: string; reason?: string },
+  args: { id?: string; to?: string; reason?: string; bypass_enforcement?: boolean },
 ): Promise<ReturnType<typeof mcpText>> {
   if (!args.id) {
     return mcpError('transition requires `id`', [
@@ -683,7 +692,42 @@ async function handleTransition(
   // would orphan the DB change. Record the transition, attempt the patch, and
   // on fs failure roll back the DB transition so the user can retry without
   // drift.
-  const transition = recordTransition(db, args.id, args.to, { reason: args.reason });
+  //
+  // v0.2 D5 — recordTransitionEnforced runs the canTransition prereq check
+  // first. Throws TransitionPrereqError when the gate fails; we catch and
+  // surface a structured mcpError with the recovery hint.
+  let transition;
+  try {
+    transition = recordTransitionEnforced(db, args.id, args.to, {
+      reason: args.reason,
+      bypass_enforcement: args.bypass_enforcement,
+    });
+  } catch (err) {
+    if (err instanceof TransitionPrereqError) {
+      const hint: NextStep[] = err.recovery_hint
+        ? [
+            {
+              action: 'idea.read',
+              example: `idea.read({ id: "${args.id}" })`,
+              why: `Prereq blocked the transition (${err.reason_code}). ${err.recovery_hint}`,
+            },
+            {
+              action: 'idea.transition',
+              example: `idea.transition({ id: "${args.id}", to: "${args.to}", reason: "<...>", bypass_enforcement: true })`,
+              why: 'Override the gate explicitly if you have a reason (cleanup, migration, manual recovery). The discipline gate exists for a reason — use bypass sparingly.',
+            },
+          ]
+        : [
+            {
+              action: 'idea.read',
+              example: `idea.read({ id: "${args.id}" })`,
+              why: 'Re-inspect the idea state — the transition was blocked.',
+            },
+          ];
+      return mcpError(`transition blocked: ${err.reason_code} — ${err.reason}`, hint);
+    }
+    throw err;
+  }
 
   let patchResult;
   try {
