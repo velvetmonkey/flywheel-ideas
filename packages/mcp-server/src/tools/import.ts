@@ -17,7 +17,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
-  activeWritePath,
+  getActiveWritePath,
   CandidateStateError,
   getCandidate,
   getImportSource,
@@ -210,7 +210,7 @@ async function handleScan(
     return mcpText({
       result: {
         ...summary,
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
       },
       next_steps,
     });
@@ -291,7 +291,7 @@ async function handlePromote(
     return mcpText({
       result: {
         ...result,
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
       },
       next_steps,
     });
@@ -433,7 +433,7 @@ function handleList(
         imported_vault_path: r.imported_vault_path,
       })),
       count: rows.length,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -511,7 +511,7 @@ function handleRead(
             scanned_at: source.scanned_at,
           }
         : null,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -538,7 +538,7 @@ function handleReject(
       result: {
         candidate_id: args.candidate_id,
         state: 'rejected' as const,
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
       },
       next_steps: [
         {

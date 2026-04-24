@@ -1,5 +1,98 @@
 # Changelog
 
+## 0.2.0-alpha.5 — 2026-04-24
+
+**v0.2 Infrastructure migration: flywheel-memory as the active write path.**
+Retires direct-fs as the default write tier. When flywheel-memory is
+installed and its `note` + `vault_update_frontmatter` tools are available,
+every vault write (idea, assumption, outcome, council view, synthesis,
+argument map, imported notes) routes through the subprocess writer.
+Direct-fs remains the fallback when the subprocess is unavailable or
+times out mid-write.
+
+Also fixes a zero-impact v0.2.0-alpha.1 bug: flywheel-memory's custom
+category names (`ideas_note`, `ideas_assumption`, etc.) had no overlap
+with the `type:` values actually emitted in note frontmatter (`idea`,
+`assumption`, `outcome`, `council_view`). The type_boost was boosting
+nothing across the entire ideas surface. Fixed in this PR so the category
+registration matches the writers.
+
+### Write path
+
+- **Startup probe** — `probeWritePath(vaultPath)` is called once at server
+  startup. Spawns flywheel-memory, calls `tools/list`, confirms `note` +
+  `vault_update_frontmatter` are advertised, closes. Sets
+  `getActiveWritePath()` for the server lifetime. Best-effort — all
+  failure modes downgrade to `direct-fs`.
+- **MCP-subprocess writer** (`packages/core/src/write/mcp-subprocess.ts`)
+  — spawns a one-shot flywheel-memory subprocess per write, calls the
+  corresponding tool, closes. Clones the `evidence-reader.ts` lifecycle
+  exactly — same env hygiene, same spawn/teardown semantics, same
+  best-effort error classification.
+- **Dispatcher** (`packages/core/src/write/index.ts`) — `writeNote` and
+  `patchFrontmatter` dispatch on the active tier. Per-call fallback to
+  direct-fs if the subprocess skips mid-call, so no write is ever lost.
+  Every response's `write_path` field reports the tier actually used.
+
+### Category alignment fix (zero-impact bug in v0.2.0-alpha.1)
+
+`IDEAS_CATEGORIES` in `packages/core/src/memory-bridge.ts` now registers
+the names actually emitted by the note writers:
+
+- `idea` (replaces `ideas_note`), `type_boost: 2`
+- `assumption` (replaces `ideas_assumption`), `type_boost: 1`
+- `council_view` (replaces `ideas_council_session`), `type_boost: 1`
+- `outcome` (replaces `ideas_outcome`), `type_boost: 1`
+
+Before: zero overlap between registered categories and emitted types, so
+flywheel-memory's wikilink scorer treated every ideas note as `unknown`
+and the type_boost was a no-op. After: ideas notes participate in the
+graph as intended.
+
+### API change (core internals)
+
+- `activeWritePath` constant removed from the public surface. Callers
+  migrate to `getActiveWritePath()` which returns the current tier at
+  call time. MCP tool handlers all call the getter for response
+  `write_path` fields.
+- `writeNote` / `patchFrontmatter` in `write/index.ts` are now dispatcher
+  functions. Direct-fs-specific callers (e.g. tests that want to bypass
+  the dispatcher) use the renamed `writeNoteDirectFs` /
+  `patchFrontmatterDirectFs`.
+
+### Operator knobs (new)
+
+- `FLYWHEEL_IDEAS_WRITE_SUBPROCESS_TIMEOUT_MS=...` — per-write subprocess
+  timeout (default 15000ms).
+- `FLYWHEEL_IDEAS_WRITE_PROBE_TIMEOUT_MS=...` — startup probe timeout
+  (default 10000ms).
+
+Reuses:
+- `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` — shared kill switch (disables
+  memory-bridge registrar, evidence-reader, and the write subprocess).
+- `FLYWHEEL_MEMORY_BIN=<path>` — binary override.
+
+### Test surface
+
++16 net tests for write-path coverage. New coverage:
+
+- Probe: defaults to `not_probed`, returns `disabled` on kill switch,
+  `binary_not_found` on missing absolute path, `tools_missing` when the
+  mock doesn't advertise write tools, `subprocess_ok` happy path.
+- Subprocess writer: happy path writes note via mock, forced tool errors
+  surface as `tool_returned_error`, missing binary classified cleanly.
+- Subprocess frontmatter patch: happy path, forced errors.
+- Dispatcher: `direct-fs` path when tier is direct-fs, per-call fallback
+  to direct-fs when the tier is `mcp-subprocess` but the subprocess
+  skips. Category alignment test updated to assert the new names.
+
+### Why alpha still
+
+v0.2.0 GA gate remains the pre-registered 10-council cite-rate pilot
+against a public-corpus vault (python 2→3 via PEPs is the chosen
+corpus). This PR adds load-bearing infrastructure for that pilot
+without changing the gate itself.
+
 ## 0.2.0-alpha.4 — 2026-04-24
 
 **v0.2 keystone — temporal insights in the evidence pack.** Completes the

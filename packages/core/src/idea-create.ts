@@ -12,7 +12,8 @@ import type { IdeasDatabase } from './db.js';
 import { generateIdeaId } from './ids.js';
 import { INITIAL_STATE } from './lifecycle.js';
 import { buildIdeaPath } from './idea-paths.js';
-import { writeNote, type WriteNoteResult } from './write/direct-fs.js';
+import { writeNote } from './write/index.js';
+import type { WriteNoteResult } from './write/direct-fs.js';
 
 export interface CreateIdeaInput {
   title: string;

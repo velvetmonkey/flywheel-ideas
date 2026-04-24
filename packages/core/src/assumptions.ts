@@ -35,6 +35,7 @@ import type { IdeasDatabase } from './db.js';
 import { generateAssumptionId } from './ids.js';
 import { filterStaleRows } from './stale-filter.js';
 import { patchFrontmatter, writeNote } from './write/index.js';
+import type { WritePathLabel } from './write/direct-fs.js';
 
 export type AssumptionStatus = 'open' | 'held' | 'refuted';
 
@@ -77,7 +78,7 @@ export interface AssumptionRow {
 
 export interface DeclareAssumptionResult {
   assumption: AssumptionRow;
-  write_path: 'direct-fs';
+  write_path: WritePathLabel;
 }
 
 export class AssumptionNotFoundError extends Error {

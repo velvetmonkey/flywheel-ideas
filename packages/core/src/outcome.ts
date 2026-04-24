@@ -20,10 +20,9 @@ import { createHash } from 'node:crypto';
 import * as fsp from 'node:fs/promises';
 import * as path from 'node:path';
 import { generateOutcomeId } from './ids.js';
-import { writeNote } from './write/direct-fs.js';
 import type { IdeasDatabase } from './db.js';
 import { filterStaleRows } from './stale-filter.js';
-import { activeWritePath, type WritePathTier } from './write/index.js';
+import { getActiveWritePath, writeNote, type WritePathTier } from './write/index.js';
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -326,7 +325,7 @@ export async function logOutcome(
       refuted: refutes,
       validated: validates,
       flagged_ideas,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     };
   } catch (err) {
     // Transaction failed → unlink orphan markdown. Best-effort; log on 2nd failure.
@@ -454,7 +453,7 @@ export async function undoOutcome(
 
   // d. Patch outcome markdown frontmatter (best-effort; DB is authoritative)
   try {
-    const { patchFrontmatter } = await import('./write/patch-frontmatter.js');
+    const { patchFrontmatter } = await import('./write/index.js');
     await patchFrontmatter(vault_path, outcome.vault_path, {
       undone_at: new Date(now).toISOString(),
     });
@@ -496,7 +495,7 @@ export async function undoOutcome(
     outcome: updated,
     status_changes,
     cleared_ideas,
-    write_path: activeWritePath,
+    write_path: getActiveWritePath(),
   };
 }
 
@@ -614,7 +613,7 @@ async function syncAssumptionFrontmatter(
   assumption_ids: string[],
 ): Promise<void> {
   if (assumption_ids.length === 0) return;
-  const { patchFrontmatter } = await import('./write/patch-frontmatter.js');
+  const { patchFrontmatter } = await import('./write/index.js');
   const placeholders = assumption_ids.map(() => '?').join(',');
   const rows = db
     .prepare(
@@ -654,7 +653,7 @@ async function syncIdeaNeedsReviewFrontmatter(
   needs_review: boolean,
 ): Promise<void> {
   if (idea_ids.length === 0) return;
-  const { patchFrontmatter } = await import('./write/patch-frontmatter.js');
+  const { patchFrontmatter } = await import('./write/index.js');
   const placeholders = idea_ids.map(() => '?').join(',');
   const rows = db
     .prepare(

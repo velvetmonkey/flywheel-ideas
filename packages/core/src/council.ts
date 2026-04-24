@@ -32,7 +32,7 @@ import {
   recordArgumentMap,
   renderArgumentMapMarkdown,
 } from './argument-map.js';
-import { writeNote as writeNoteDirect } from './write/direct-fs.js';
+import { writeNote as writeNoteDirect } from './write/index.js';
 import {
   parseClaudeStanceOutput,
   parseCodexStanceOutput,
@@ -61,7 +61,7 @@ import {
 import { classifyCliError, type FailureReason } from './cli-errors.js';
 import type { IdeasDatabase } from './db.js';
 import { readNote } from './read/notes.js';
-import { writeNote } from './write/direct-fs.js';
+import { writeNote } from './write/index.js';
 import { logDispatchFinish, logDispatchStart } from './dispatches.js';
 import type { ApprovalScope } from './approval.js';
 

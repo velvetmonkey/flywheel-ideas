@@ -108,7 +108,7 @@ describe('registerCustomCategories — merge preservation (gemini CRITICAL)', ()
     expect(setCall.args.mode).toBe('set');
     expect(setCall.args.key).toBe('custom_categories');
     expect(Object.keys(setCall.args.value).sort()).toEqual(
-      ['ideas_assumption', 'ideas_council_session', 'ideas_note', 'ideas_outcome', 'paper', 'recipe'],
+      ['assumption', 'council_view', 'idea', 'outcome', 'paper', 'recipe'],
     );
   });
 
@@ -118,7 +118,7 @@ describe('registerCustomCategories — merge preservation (gemini CRITICAL)', ()
       MOCK_FM_GET_PAYLOAD: JSON.stringify({
         vault_name: 'mock-vault',
         custom_categories: {
-          ideas_note: { type_boost: 99 },
+          idea: { type_boost: 99 },
         },
       }),
       MOCK_FM_INVOKE_LOG: invokeLog,
@@ -130,7 +130,7 @@ describe('registerCustomCategories — merge preservation (gemini CRITICAL)', ()
     const setCall = JSON.parse(lines[1]) as {
       args: { value: Record<string, { type_boost: number }> };
     };
-    expect(setCall.args.value.ideas_note).toEqual({ type_boost: 2 });
+    expect(setCall.args.value.idea).toEqual({ type_boost: 2 });
   });
 
   it('still issues set when get returns config without custom_categories key (real flywheel-memory v2.11+)', async () => {
