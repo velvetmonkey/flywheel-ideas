@@ -57,6 +57,7 @@ export {
   FLYWHEEL_DIR,
   SCHEMA_SQL_V1,
   SCHEMA_SQL_V2,
+  SCHEMA_SQL_V3,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -352,6 +353,32 @@ export type {
   EvidencePack,
   IdeaForEvidence,
 } from './council-evidence.js';
+
+// v3 idea-extensions sidecar (v0.2 Phase 1 D1)
+export {
+  setIdeaExtension,
+  getIdeaExtension,
+  clearIdeaExtension,
+} from './idea-extensions.js';
+export type {
+  AlternativeEntry,
+  IdeaExtensionInput,
+  IdeaExtensionRow,
+  Reversibility,
+} from './idea-extensions.js';
+
+// v3 assumption-extensions sidecar (v0.2 Phase 1 D1)
+export {
+  setAssumptionExtension,
+  getAssumptionExtension,
+  clearAssumptionExtension,
+} from './assumption-extensions.js';
+export type {
+  AssumptionExtensionInput,
+  AssumptionExtensionRow,
+  AssumptionMapping,
+  ThresholdDirection,
+} from './assumption-extensions.js';
 
 // CLI version probe (alpha.5 fix D) — populates ideas_council_views.model_version
 export { probeCliVersion, clearVersionCache } from './cli-version.js';

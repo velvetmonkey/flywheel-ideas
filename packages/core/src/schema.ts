@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -160,5 +160,57 @@ CREATE TABLE IF NOT EXISTS ideas_council_evidence (
   session_id TEXT PRIMARY KEY REFERENCES ideas_council_sessions(id) ON DELETE CASCADE,
   sources_json TEXT NOT NULL,
   retrieved_at INTEGER NOT NULL
+);
+`;
+
+/**
+ * v3 migration — schema enrichment for v0.2 Phase 1 (D1).
+ *
+ * Two strictly-additive sidecar tables:
+ *
+ *  - `ideas_idea_extensions` — per-idea fields surfaced from the Apr 24 2026
+ *    roadmap addition: `alternatives_json`, `reversible`, `supersedes`,
+ *    `replaced_by`, plus the `reference_class` field from the
+ *    Reference-classes-and-thresholds gap. ADR-style enrichment (alternatives
+ *    ruled out, reversibility classification, supersession chain) +
+ *    Good-Judgment base-rate identification.
+ *
+ *  - `ideas_assumption_extensions` — per-assumption fields surfaced from the
+ *    Apr 24 additions: base_rate / go_threshold / kill_threshold (Reference
+ *    classes), predicted_metric / threshold_value / threshold_direction
+ *    (Falsifiable-metric assumptions; Amplitude pattern), plus a
+ *    `mapping_json` blob carrying the seven structured-field map (segment,
+ *    context, claim, mechanism, metric, threshold, horizon_ms) from the
+ *    Cross-project assumption mapping section. mapping_json stays JSON
+ *    rather than flat columns because Phase 1 only needs to STORE the data;
+ *    rich SQL queries against the mapping fields are a Phase 4 concern.
+ *
+ * Both sidecars are 1:1 with their parent (PK = parent.id, ON DELETE CASCADE).
+ * v0.1 / v0.2.0-alpha.1 callers are unaffected — no extension row required.
+ */
+export const SCHEMA_SQL_V3 = `
+CREATE TABLE IF NOT EXISTS ideas_idea_extensions (
+  idea_id TEXT PRIMARY KEY REFERENCES ideas_notes(id) ON DELETE CASCADE,
+  alternatives_json TEXT,
+  reversible INTEGER,
+  supersedes TEXT,
+  replaced_by TEXT,
+  reference_class TEXT,
+  updated_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_idea_ext_supersedes ON ideas_idea_extensions(supersedes) WHERE supersedes IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_ideas_idea_ext_replaced_by ON ideas_idea_extensions(replaced_by) WHERE replaced_by IS NOT NULL;
+
+CREATE TABLE IF NOT EXISTS ideas_assumption_extensions (
+  assumption_id TEXT PRIMARY KEY REFERENCES ideas_assumptions(id) ON DELETE CASCADE,
+  base_rate REAL,
+  go_threshold REAL,
+  kill_threshold REAL,
+  predicted_metric TEXT,
+  threshold_value REAL,
+  threshold_direction TEXT,
+  mapping_json TEXT,
+  updated_at INTEGER NOT NULL
 );
 `;
