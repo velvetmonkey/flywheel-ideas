@@ -347,6 +347,27 @@ describe('council.run — M8 response shape', () => {
     expect(response.result.mode).toBe('standard');
   });
 
+  // v0.2 D3 — steelman mode
+  it('mode=steelman is accepted + recorded on the session row', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        id: ideaId,
+        confirm: true,
+        mode: 'steelman',
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.mode).toBe('steelman');
+    // DB session row records the mode verbatim.
+    const row = db
+      .prepare('SELECT mode FROM ideas_council_sessions WHERE id = ?')
+      .get(response.result.session_id) as { mode: string };
+    expect(row.mode).toBe('steelman');
+  });
+
   it('next_steps include reading the synthesis', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'session';

@@ -13,11 +13,12 @@ import {
   generateCouncilViewId,
 } from './ids.js';
 import type { FailureReason } from './cli-errors.js';
+import type { CouncilMode } from './council-prompts.js';
 
 export interface CreateSessionInput {
   idea_id: string;
   depth: 'light' | 'full';
-  mode: 'standard' | 'pre_mortem';
+  mode: CouncilMode;
 }
 
 export interface CouncilSessionRow {

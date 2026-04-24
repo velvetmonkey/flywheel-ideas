@@ -64,9 +64,11 @@ export function registerCouncilTool(
         .optional()
         .describe('[run] light = 2 models x 2 personas; full = 3 x 5 (default light)'),
       mode: z
-        .enum(['standard', 'pre_mortem'])
+        .enum(['standard', 'pre_mortem', 'steelman'])
         .optional()
-        .describe('[run] standard stance vs backwards-from-failure pre_mortem (default pre_mortem)'),
+        .describe(
+          '[run] standard (attack from default stance) | pre_mortem (assume failure, work backwards) | steelman (defend strongest case for; counterweight to pre_mortem). Default: pre_mortem for nascent/explored ideas, standard otherwise.',
+        ),
       confirm: z
         .boolean()
         .optional()
@@ -124,7 +126,7 @@ async function handleRun(
   args: {
     id?: string;
     depth?: 'light' | 'full';
-    mode?: 'standard' | 'pre_mortem';
+    mode?: 'standard' | 'pre_mortem' | 'steelman';
     confirm?: boolean;
     clis?: Array<'claude' | 'codex' | 'gemini'>;
     freeze?: boolean;
