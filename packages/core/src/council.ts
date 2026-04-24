@@ -21,6 +21,11 @@
 import { createHash } from 'node:crypto';
 import { assemblePrompt, M8_PERSONA_SET, PERSONAS, PERSONA_VERSION, PROMPT_VERSION } from './council-prompts.js';
 import type { CouncilMode, PersonaDef } from './council-prompts.js';
+import { assembleEvidencePack } from './council-evidence.js';
+import type { EvidencePack } from './council-evidence.js';
+import { recordEvidenceSources } from './council-evidence-store.js';
+import { withEvidenceReader } from './evidence-reader.js';
+import type { EvidenceReader } from './evidence-reader.js';
 import {
   parseClaudeStanceOutput,
   parseCodexStanceOutput,
@@ -96,6 +101,23 @@ export interface RunCouncilOptions {
   clis_override?: readonly CliName[];
   /** Override maxConcurrent (default FLYWHEEL_IDEAS_MAX_CONCURRENCY or 3). */
   max_concurrency_override?: number;
+  /**
+   * Test-injection hook for the v0.2 KEYSTONE retrieval-native council
+   * input. When provided, runCouncil skips the flywheel-memory subprocess
+   * spawn and uses this evidence pack directly. Pass `{evidence: null,
+   * sources: []}` to simulate "reader unavailable" without spawning.
+   */
+  evidence_override?: EvidencePack;
+  /**
+   * Skip evidence assembly entirely (no subprocess spawn, no DB row written).
+   * Equivalent to `evidence_override: {evidence: null, sources: []}` but
+   * skips the assembler call. Used in tests that don't care about evidence.
+   */
+  skip_evidence?: boolean;
+  /** Override evidence-reader binary path. Forwarded to withEvidenceReader. */
+  evidence_reader_binary?: string;
+  /** Override evidence-reader binary args. Forwarded to withEvidenceReader. */
+  evidence_reader_args?: string[];
 }
 
 /** Light-depth CLI roster (M10): all 3 CLIs for every council.run. */
@@ -207,7 +229,20 @@ export async function runCouncil(
     mode: input.mode,
   });
 
-  // 2. Build the interleaved matrix (persona × cli, interleaved by cli so
+  // 2. v0.2 KEYSTONE — assemble retrieval-native evidence pack ONCE per
+  //    session, share across all cells. Best-effort: if the flywheel-memory
+  //    subprocess can't spawn, the cells fall back to v0.1 prompt shape.
+  //    The pack's sources are persisted to the ideas_council_evidence
+  //    sidecar table for audit.
+  const pack = await resolveEvidencePack(vault_path, idea, normalizedAssumptions, options);
+  if (pack.sources.length > 0) {
+    recordEvidenceSources(db, session_id, pack.sources);
+    process.stderr.write(
+      `[flywheel-ideas] council.run: ${pack.sources.length} evidence source(s) injected into prompt\n`,
+    );
+  }
+
+  // 3. Build the interleaved matrix (persona × cli, interleaved by cli so
   //    consecutive cells cycle through providers).
   const personas =
     options.personas_override ?? (depth === 'full' ? FULL_PERSONA_SET : M8_PERSONA_SET);
@@ -240,6 +275,7 @@ export async function runCouncil(
           cli: cell.cli,
           approval_scope: input.approval_scope,
           options,
+          evidence: pack.evidence,
         }),
       ),
     ),
@@ -323,6 +359,8 @@ interface RunCellInput {
   cli: CliName;
   approval_scope: ApprovalScope;
   options: RunCouncilOptions;
+  /** v0.2 KEYSTONE — pre-assembled evidence pack shared across all cells in a session. */
+  evidence: string | null;
 }
 
 interface RunCellResult {
@@ -353,6 +391,7 @@ async function executePass(
     assumptions: input.assumptions,
     pass: passNum,
     pass1_stance,
+    evidence: input.evidence,
   });
   const input_hash = `sha256:${createHash('sha256').update(prompt.digest_material).digest('hex')}`;
 
@@ -632,6 +671,56 @@ function resolveTimeout(options: RunCouncilOptions): number {
   if (!raw) return DEFAULT_TIMEOUT_MS;
   const n = Number.parseInt(raw, 10);
   return Number.isFinite(n) && n > 0 ? n : DEFAULT_TIMEOUT_MS;
+}
+
+/**
+ * v0.2 KEYSTONE — resolve the evidence pack for a council session.
+ *
+ * Honors test-injection (`evidence_override`, `skip_evidence`) before
+ * spawning the flywheel-memory subprocess. Best-effort: any failure path
+ * yields `{evidence: null, sources: []}` so the council still runs.
+ */
+async function resolveEvidencePack(
+  vault_path: string,
+  idea: { title: string; vault_path: string },
+  assumptions: Array<{ id: string; text: string; load_bearing: boolean }>,
+  options: RunCouncilOptions,
+): Promise<EvidencePack> {
+  if (options.skip_evidence) return { evidence: null, sources: [] };
+  if (options.evidence_override) return options.evidence_override;
+
+  // Read body from disk for the evidence assembler — different from the
+  // body the council prompt sees (which is the idea note body); the
+  // assembler only uses the title for its main search.
+  const ideaForEvidence = {
+    title: idea.title,
+    body: '', // assembler doesn't use body today; placeholder for future expansion
+    vault_path: idea.vault_path,
+  };
+  const assumptionsForEvidence = assumptions.map((a) => ({
+    text: a.text,
+    load_bearing: a.load_bearing,
+  }));
+
+  const outcome = await withEvidenceReader(
+    vault_path,
+    async (reader: EvidenceReader) => {
+      return await assembleEvidencePack(reader, ideaForEvidence, assumptionsForEvidence);
+    },
+    {
+      binary: options.evidence_reader_binary,
+      args: options.evidence_reader_args,
+    },
+  );
+
+  if (outcome.status === 'ok') return outcome.value;
+  // Skipped (binary_not_found / disabled / timeout / spawn_failed) — graceful
+  // degradation. Surface a one-line note to stderr so users understand why
+  // their council ran without vault context.
+  process.stderr.write(
+    `[flywheel-ideas] council.run: evidence skipped (${outcome.reason}${outcome.detail ? `: ${outcome.detail}` : ''}) — proceeding without retrieval context\n`,
+  );
+  return { evidence: null, sources: [] };
 }
 
 function buildClaudeArgv(model: string, systemPrompt: string): string[] {

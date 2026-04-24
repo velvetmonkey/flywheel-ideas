@@ -56,6 +56,7 @@ export {
   IDEAS_DB_FILENAME,
   FLYWHEEL_DIR,
   SCHEMA_SQL_V1,
+  SCHEMA_SQL_V2,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -317,6 +318,40 @@ export type {
 
 // Memory bridge (M14) — best-effort flywheel-memory custom-category registration
 export { registerCustomCategories, IDEAS_CATEGORIES } from './memory-bridge.js';
+
+// Council evidence sidecar (v0.2 KEYSTONE — retrieval-native council input)
+export {
+  recordEvidenceSources,
+  getEvidenceSources,
+} from './council-evidence-store.js';
+export type {
+  EvidenceSource,
+  EvidenceRow,
+} from './council-evidence-store.js';
+
+// Evidence reader subprocess (v0.2 KEYSTONE — one-shot MCP read of flywheel-memory)
+export {
+  withEvidenceReader,
+  extractToolText,
+} from './evidence-reader.js';
+export type {
+  EvidenceReader,
+  EvidenceReaderOutcome,
+  EvidenceReaderSkipReason,
+  WithEvidenceReaderOptions,
+} from './evidence-reader.js';
+
+// Evidence pack assembler (v0.2 KEYSTONE — markdown evidence for council prompt)
+export {
+  assembleEvidencePack,
+  truncateAtSectionBoundary,
+} from './council-evidence.js';
+export type {
+  AssembleEvidenceOptions,
+  AssumptionForEvidence,
+  EvidencePack,
+  IdeaForEvidence,
+} from './council-evidence.js';
 
 // CLI version probe (alpha.5 fix D) — populates ideas_council_views.model_version
 export { probeCliVersion, clearVersionCache } from './cli-version.js';
