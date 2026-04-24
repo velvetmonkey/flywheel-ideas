@@ -31,6 +31,35 @@ import type { IdeasDatabase } from './db.js';
 export type ThresholdDirection = 'up' | 'down' | 'equal';
 
 /**
+ * RAND ABP action status. `planned` = declared but not started;
+ * `in_progress` = in flight; `done` = complete; `cancelled` = abandoned.
+ *
+ * This is separate from assumption `status` (open/held/refuted) — an action
+ * can be `done` while the parent assumption is still `open`, and vice
+ * versa. Action status drives dashboards + weekly review surfaces; it does
+ * NOT drive assumption-level status transitions.
+ */
+export type AssumptionActionStatus = 'planned' | 'in_progress' | 'done' | 'cancelled';
+
+/**
+ * One entry in `shaping_actions[]` or `hedging_actions[]`.
+ *
+ * `description` is the only required field. Everything else is optional so
+ * users can capture an action at declaration time with minimal friction
+ * and flesh it out later via `assumption.extension_set` (or equivalent).
+ *
+ * `due_at` uses ISO 8601 date strings (YYYY-MM-DD) for timezone-agnostic
+ * readability in the markdown frontmatter.
+ */
+export interface AssumptionAction {
+  description: string;
+  due_at?: string;
+  owner?: string;
+  status?: AssumptionActionStatus;
+  notes?: string;
+}
+
+/**
  * The seven structured fields per the Cross-project assumption mapping
  * section. Distinct from the v1 Y-statement fields (context, challenge,
  * decision, tradeoff) — this is a more rigorous form aimed at making
@@ -54,6 +83,16 @@ export interface AssumptionExtensionInput {
   threshold_value?: number | null;
   threshold_direction?: ThresholdDirection | null;
   mapping?: AssumptionMapping | null;
+  /**
+   * RAND ABP shaping — proactive actions to make the assumption MORE likely
+   * to hold. Pass `null` to clear; omit to leave existing rows unchanged.
+   */
+  shaping_actions?: AssumptionAction[] | null;
+  /**
+   * RAND ABP hedging — insurance actions if the assumption DOESN'T hold.
+   * Pass `null` to clear; omit to leave existing rows unchanged.
+   */
+  hedging_actions?: AssumptionAction[] | null;
 }
 
 export interface AssumptionExtensionRow {
@@ -65,6 +104,8 @@ export interface AssumptionExtensionRow {
   threshold_value: number | null;
   threshold_direction: ThresholdDirection | null;
   mapping: AssumptionMapping | null;
+  shaping_actions: AssumptionAction[] | null;
+  hedging_actions: AssumptionAction[] | null;
   updated_at: number;
 }
 
@@ -76,12 +117,14 @@ export function setAssumptionExtension(
 ): void {
   const mapping_json =
     input.mapping === undefined ? null : input.mapping === null ? null : JSON.stringify(input.mapping);
+  const shaping_json = serializeActions(input.shaping_actions, 'shaping');
+  const hedging_json = serializeActions(input.hedging_actions, 'hedging');
   db.prepare(
     `INSERT OR REPLACE INTO ideas_assumption_extensions
        (assumption_id, base_rate, go_threshold, kill_threshold,
         predicted_metric, threshold_value, threshold_direction,
-        mapping_json, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        mapping_json, shaping_actions_json, hedging_actions_json, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   ).run(
     assumption_id,
     input.base_rate ?? null,
@@ -91,8 +134,58 @@ export function setAssumptionExtension(
     input.threshold_value ?? null,
     input.threshold_direction ?? null,
     mapping_json,
+    shaping_json,
+    hedging_json,
     updated_at,
   );
+}
+
+/**
+ * Validate + serialize an action array for persistence.
+ *
+ * - `undefined` → null (clear the column)
+ * - `null`      → null (explicit clear)
+ * - `[]`        → `'[]'` (explicit empty set)
+ * - invalid item (no description) → throws AssumptionActionValidationError
+ */
+function serializeActions(
+  actions: AssumptionAction[] | null | undefined,
+  kind: 'shaping' | 'hedging',
+): string | null {
+  if (actions === undefined || actions === null) return null;
+  if (!Array.isArray(actions)) {
+    throw new AssumptionActionValidationError(
+      `${kind}_actions must be an array, got ${typeof actions}`,
+    );
+  }
+  for (const [i, a] of actions.entries()) {
+    if (!a || typeof a !== 'object') {
+      throw new AssumptionActionValidationError(
+        `${kind}_actions[${i}] must be an object with a description`,
+      );
+    }
+    if (typeof a.description !== 'string' || a.description.trim().length === 0) {
+      throw new AssumptionActionValidationError(
+        `${kind}_actions[${i}].description is required (non-empty string)`,
+      );
+    }
+    if (
+      a.status !== undefined &&
+      !['planned', 'in_progress', 'done', 'cancelled'].includes(a.status)
+    ) {
+      throw new AssumptionActionValidationError(
+        `${kind}_actions[${i}].status must be one of planned|in_progress|done|cancelled`,
+      );
+    }
+  }
+  return JSON.stringify(actions);
+}
+
+export class AssumptionActionValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'AssumptionActionValidationError';
+  }
 }
 
 export function getAssumptionExtension(
@@ -103,7 +196,7 @@ export function getAssumptionExtension(
     .prepare(
       `SELECT assumption_id, base_rate, go_threshold, kill_threshold,
               predicted_metric, threshold_value, threshold_direction,
-              mapping_json, updated_at
+              mapping_json, shaping_actions_json, hedging_actions_json, updated_at
        FROM ideas_assumption_extensions WHERE assumption_id = ?`,
     )
     .get(assumption_id) as
@@ -116,6 +209,8 @@ export function getAssumptionExtension(
         threshold_value: number | null;
         threshold_direction: string | null;
         mapping_json: string | null;
+        shaping_actions_json: string | null;
+        hedging_actions_json: string | null;
         updated_at: number;
       }
     | undefined;
@@ -145,8 +240,40 @@ export function getAssumptionExtension(
         ? row.threshold_direction
         : null,
     mapping,
+    shaping_actions: parseActions(row.shaping_actions_json),
+    hedging_actions: parseActions(row.hedging_actions_json),
     updated_at: row.updated_at,
   };
+}
+
+function parseActions(raw: string | null): AssumptionAction[] | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return null;
+    const out: AssumptionAction[] = [];
+    for (const item of parsed) {
+      if (!item || typeof item !== 'object') continue;
+      const o = item as Record<string, unknown>;
+      if (typeof o.description !== 'string') continue;
+      const action: AssumptionAction = { description: o.description };
+      if (typeof o.due_at === 'string') action.due_at = o.due_at;
+      if (typeof o.owner === 'string') action.owner = o.owner;
+      if (typeof o.notes === 'string') action.notes = o.notes;
+      if (
+        o.status === 'planned' ||
+        o.status === 'in_progress' ||
+        o.status === 'done' ||
+        o.status === 'cancelled'
+      ) {
+        action.status = o.status;
+      }
+      out.push(action);
+    }
+    return out;
+  } catch {
+    return null;
+  }
 }
 
 export function clearAssumptionExtension(

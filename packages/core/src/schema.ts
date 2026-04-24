@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 7;
+export const SCHEMA_VERSION = 8;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -369,4 +369,36 @@ CREATE INDEX IF NOT EXISTS idx_ideas_import_cand_state
   ON ideas_import_candidates(state);
 CREATE INDEX IF NOT EXISTS idx_ideas_import_cand_target
   ON ideas_import_candidates(target_idea_id) WHERE target_idea_id IS NOT NULL;
+`;
+
+/**
+ * v8 migration — shaping + hedging actions per assumption (RAND ABP complete).
+ *
+ * Per roadmap-v0-2 narrow-core-complete scope (item 4): complete RAND
+ * Assumption-Based Planning's full output, not just the `signposts[]`
+ * subset. Adds two new columns to `ideas_assumption_extensions`:
+ *
+ *   - `shaping_actions_json` — JSON array of actions we take to make the
+ *     assumption MORE likely to hold. Proactive: training, tooling,
+ *     process changes, vendor lock-ins.
+ *   - `hedging_actions_json` — JSON array of actions we take as insurance
+ *     if the assumption DOESN'T hold. Reactive: fallback plans, alerts,
+ *     exit ramps, contingency budgets.
+ *
+ * Both default NULL. Strictly additive — ALTER TABLE ADD COLUMN is safe in
+ * SQLite and leaves existing rows untouched.
+ *
+ * Each action item shape (enforced at the TS layer in
+ * `assumption-extensions.ts`):
+ *   {
+ *     description: string,        // required
+ *     due_at?: string (ISO date),
+ *     owner?: string,
+ *     status?: 'planned' | 'in_progress' | 'done' | 'cancelled',
+ *     notes?: string
+ *   }
+ */
+export const SCHEMA_SQL_V8 = `
+ALTER TABLE ideas_assumption_extensions ADD COLUMN shaping_actions_json TEXT;
+ALTER TABLE ideas_assumption_extensions ADD COLUMN hedging_actions_json TEXT;
 `;
