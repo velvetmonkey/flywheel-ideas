@@ -16,11 +16,22 @@ import type { IdeasDatabase } from './db.js';
 /**
  * One source surfaced to a council cell. `kind` identifies which
  * flywheel-memory tool produced it (search / memory_brief / graph_backlinks /
- * assumption_search). `score` is the flywheel-memory hybrid confidence_score
- * when applicable.
+ * assumption_search / note_intelligence). `score` is the flywheel-memory
+ * hybrid confidence_score when applicable (note_intelligence uses the
+ * quality score 0..1).
+ *
+ * `note_intelligence` was added when the keystone gained temporal insights
+ * per the v0.2 narrow-core-complete scope. It surfaces quality score,
+ * stale sections, and missing-link counts for the idea's own note — a
+ * drift-signal complement to the evidence-pack's other sources.
  */
 export interface EvidenceSource {
-  kind: 'search' | 'memory_brief' | 'graph_backlinks' | 'assumption_search';
+  kind:
+    | 'search'
+    | 'memory_brief'
+    | 'graph_backlinks'
+    | 'assumption_search'
+    | 'note_intelligence';
   path: string;
   score?: number;
 }

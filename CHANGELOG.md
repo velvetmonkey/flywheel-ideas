@@ -1,7 +1,61 @@
 # Changelog
 
-## 0.2.0-alpha.3 — 2026-04-24
+## 0.2.0-alpha.4 — 2026-04-24
 
+**v0.2 keystone — temporal insights in the evidence pack.** Completes the
+only remaining ⏳ bullet in the v0.2.0-alpha.1 keystone query plan: a
+fifth retrieval source that surfaces drift/staleness signals on the
+idea's own note.
+
+Before each `council.run`, flywheel-ideas now calls
+`insights(action:'note_intelligence', path: idea.vault_path)` in parallel
+with the existing four queries (search, memory.brief, graph.backlinks,
+per-assumption search). The result renders as a structured signals card
+in the evidence pack:
+
+```
+### Note intelligence: ideas/your-idea.md
+- Quality score: 0.42
+- Last modified: 2026-01-15
+- Missing wikilinks: 3
+- Stale sections (2):
+  - Motivation — last modified 2026-01-15
+  - Rationale — last modified 2026-01-15
+> Summary from flywheel-memory...
+```
+
+Personas can attack assumptions grounded in stale sections or low-quality
+notes — that's a drift signal the pre-migration evidence pack missed
+entirely. If flywheel-memory's response is empty (stub, 404, missing
+file) or carries an `error` field, the card is suppressed rather than
+rendering a zero-signal shell.
+
+### EvidenceSource surface
+
+`kind` union widens to include `'note_intelligence'` alongside the
+existing `'search' | 'memory_brief' | 'graph_backlinks' | 'assumption_search'`.
+Persisted to `ideas_council_evidence.sources_json` so the audit trail
+records which note-intelligence calls informed each session.
+
+### Test surface
+
++4 net tests for the insights addition. New coverage in
+`packages/core/test/council-evidence.test.ts`:
+
+- Full-payload rendering (quality score + missing links + stale sections
+  + last modified + summary)
+- Partial payload: only the signals present render (others skipped)
+- Empty payload suppressed (path-only response doesn't pollute the pack)
+- Error payload suppressed
+- Insights failure doesn't kill the rest of the query plan
+
+### Why alpha still
+
+v0.2.0 GA gate remains the pre-registered 10-council cite-rate pilot
+against the python-2→3 corpus. This PR completes item 3 of the narrow
+"core feature complete" scope — one item closer to dogfood readiness.
+
+## 0.2.0-alpha.3 — 2026-04-24
 **v0.2 narrow-core-complete item 4 — shaping + hedging actions on
 assumptions.** Completes RAND Assumption-Based Planning's full output,
 not just the `signposts[]` subset. An assumption now carries three
