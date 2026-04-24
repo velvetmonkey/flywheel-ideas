@@ -247,6 +247,17 @@ export type {
   SharedAssumptionMatch,
   SharedAssumptionsOptions,
 } from './lineage.js';
+
+// Assumption Radar (v0.2 D9)
+export {
+  radarAssumptions,
+  RadarInputError,
+} from './assumption-radar.js';
+export type {
+  RadarHit,
+  RadarOptions,
+  RadarResult,
+} from './assumption-radar.js';
 export type {
   AgreementFragment,
   DisagreementBucket,
