@@ -20,6 +20,9 @@ import {
   FreezeInputError,
   FreezeIdeaNotFoundError,
   generateIdeaId,
+  getAncestry,
+  getDescendants,
+  getSharedAssumptions,
   IDEA_STATES,
   INITIAL_STATE,
   isIdeaState,
@@ -55,7 +58,11 @@ export function registerIdeaTool(
     ].join(''),
     {
       action: z
-        .enum(['create', 'read', 'list', 'transition', 'forget', 'freeze', 'list_freezes'])
+        .enum([
+          'create', 'read', 'list', 'transition', 'forget',
+          'freeze', 'list_freezes',
+          'ancestry', 'descendants', 'shared_assumptions',
+        ])
         .describe('Operation to perform'),
       title: z
         .string()
@@ -118,6 +125,14 @@ export function registerIdeaTool(
         .describe(
           '[transition] Skip prerequisite checks (council before evaluated, locked load-bearing assumption before committed, outcome before validated/refuted). Default: false. Set true ONLY for cleanup / migration / explicit override; the discipline gate is the whole point.',
         ),
+      // v0.2 D7 — lineage queries
+      max_depth: z
+        .number()
+        .int()
+        .min(1)
+        .max(100)
+        .optional()
+        .describe('[ancestry|descendants] Max chain depth to walk (default 20). Caps cycles in malformed supersession data.'),
     },
     async (args) => {
       // Top-level error boundary: unhandled exceptions from handler I/O or
@@ -141,6 +156,12 @@ export function registerIdeaTool(
             return handleFreeze(getVaultPath(), getDb(), args);
           case 'list_freezes':
             return handleListFreezes(getDb(), args);
+          case 'ancestry':
+            return handleAncestry(getDb(), args);
+          case 'descendants':
+            return handleDescendants(getDb(), args);
+          case 'shared_assumptions':
+            return handleSharedAssumptions(getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -948,6 +969,121 @@ function handleListFreezes(
         idea_state: f.snapshot.idea.state,
         assumption_count: f.snapshot.assumptions.length,
       })),
+      write_path: activeWritePath,
+    },
+    next_steps,
+  });
+}
+
+// ---------- idea.ancestry / descendants / shared_assumptions (v0.2 D7) ----------
+
+function handleAncestry(
+  db: IdeasDatabase,
+  args: { id?: string; max_depth?: number },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('ancestry requires `id`', [
+      { action: 'idea.list', example: 'idea.list({})', why: 'Find the idea id whose ancestry to walk.' },
+    ]);
+  }
+  const ancestors = getAncestry(db, args.id, { max_depth: args.max_depth });
+  const next_steps: NextStep[] =
+    ancestors.length === 0
+      ? [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${args.id}" })`,
+            why: 'No ancestors — this idea is at the root of any supersession chain it participates in.',
+          },
+        ]
+      : [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${ancestors[0].id}" })`,
+            why: `Read the immediate parent (${ancestors[0].title}) for context on what this idea supersedes.`,
+          },
+        ];
+  return mcpText({
+    result: {
+      idea_id: args.id,
+      ancestors,
+      count: ancestors.length,
+      max_depth: args.max_depth ?? 20,
+      write_path: activeWritePath,
+    },
+    next_steps,
+  });
+}
+
+function handleDescendants(
+  db: IdeasDatabase,
+  args: { id?: string; max_depth?: number },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('descendants requires `id`', [
+      { action: 'idea.list', example: 'idea.list({})', why: 'Find the idea id whose descendants to walk.' },
+    ]);
+  }
+  const descendants = getDescendants(db, args.id, { max_depth: args.max_depth });
+  const next_steps: NextStep[] =
+    descendants.length === 0
+      ? [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${args.id}" })`,
+            why: 'No descendants — this idea has not been superseded.',
+          },
+        ]
+      : [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${descendants[descendants.length - 1].id}" })`,
+            why: `Read the most-recent descendant (${descendants[descendants.length - 1].title}) — the current incarnation of this lineage.`,
+          },
+        ];
+  return mcpText({
+    result: {
+      idea_id: args.id,
+      descendants,
+      count: descendants.length,
+      max_depth: args.max_depth ?? 20,
+      write_path: activeWritePath,
+    },
+    next_steps,
+  });
+}
+
+function handleSharedAssumptions(
+  db: IdeasDatabase,
+  args: { id?: string; limit?: number },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('shared_assumptions requires `id`', [
+      { action: 'idea.list', example: 'idea.list({})', why: 'Find the idea id whose shared assumptions to surface.' },
+    ]);
+  }
+  const matches = getSharedAssumptions(db, args.id, { limit: args.limit });
+  const next_steps: NextStep[] =
+    matches.length === 0
+      ? [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${args.id}" })`,
+            why: 'No other ideas cite the same assumptions yet. Cross-project propagation kicks in once you have a portfolio of related bets.',
+          },
+        ]
+      : [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${matches[0].idea_id}" })`,
+            why: `Read "${matches[0].title}" — shares ${matches[0].shared_assumption_count} assumption(s) with this idea. If you refute one of them later, both ideas will need re-review.`,
+          },
+        ];
+  return mcpText({
+    result: {
+      idea_id: args.id,
+      matches,
+      count: matches.length,
       write_path: activeWritePath,
     },
     next_steps,

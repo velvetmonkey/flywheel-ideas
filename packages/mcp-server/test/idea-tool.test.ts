@@ -826,3 +826,81 @@ describe('idea.transition — lifecycle prereq enforcement (v0.2 D5)', () => {
     expect(response.result.to_state).toBe('parked');
   });
 });
+
+// ===========================================================================
+// idea.ancestry / descendants / shared_assumptions (v0.2 D7)
+// ===========================================================================
+
+describe('idea.ancestry / descendants / shared_assumptions (v0.2 D7)', () => {
+  it('ancestry walks supersedes chain backwards', async () => {
+    const a = await seedIdea();
+    const b = await seedIdea();
+    const c = await seedIdea();
+    // b supersedes a; c supersedes b. Use raw DB so we don't need an MCP
+    // surface for setting extensions yet.
+    db.prepare(
+      `INSERT INTO ideas_idea_extensions (idea_id, supersedes, updated_at) VALUES (?, ?, ?)`,
+    ).run(b, a, 1);
+    db.prepare(
+      `INSERT INTO ideas_idea_extensions (idea_id, supersedes, updated_at) VALUES (?, ?, ?)`,
+    ).run(c, b, 2);
+
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'ancestry', id: c }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.ancestors.map((n: any) => n.id)).toEqual([b, a]);
+    expect(response.result.count).toBe(2);
+  });
+
+  it('descendants walks replaced_by chain forwards', async () => {
+    const a = await seedIdea();
+    const b = await seedIdea();
+    db.prepare(
+      `INSERT INTO ideas_idea_extensions (idea_id, replaced_by, updated_at) VALUES (?, ?, ?)`,
+    ).run(a, b, 1);
+
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'descendants', id: a }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.descendants.map((n: any) => n.id)).toEqual([b]);
+  });
+
+  it('shared_assumptions surfaces other ideas citing the same assumption', async () => {
+    const a = await seedIdea();
+    const b = await seedIdea();
+    const asm = await seedAssumption(a, 'shared belief');
+    // Manually wire a session + citation for both ideas.
+    for (const idea of [a, b]) {
+      const sess_id = `sess-${idea}`;
+      db.prepare(
+        `INSERT INTO ideas_council_sessions (id, idea_id, depth, mode, started_at) VALUES (?, ?, ?, ?, ?)`,
+      ).run(sess_id, idea, 'light', 'pre_mortem', 100);
+      const view_id = `view-${idea}`;
+      db.prepare(
+        `INSERT INTO ideas_council_views
+         (id, session_id, model, persona, prompt_version, persona_version, input_hash, content_vault_path)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      ).run(view_id, sess_id, 'claude', 'risk-pessimist', 'v1', 'v1', `h-${view_id}`, `c/${view_id}.md`);
+      db.prepare(
+        `INSERT INTO ideas_assumption_citations (view_id, assumption_id) VALUES (?, ?)`,
+      ).run(view_id, asm);
+    }
+
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'shared_assumptions', id: a }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.matches).toHaveLength(1);
+    expect(response.result.matches[0].idea_id).toBe(b);
+    expect(response.result.matches[0].shared_assumption_count).toBe(1);
+  });
+
+  it('rejects ancestry without id', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'ancestry' }),
+    );
+    expect(response.isError).toBe(true);
+  });
+});

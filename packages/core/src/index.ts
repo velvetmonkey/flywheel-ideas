@@ -234,6 +234,19 @@ export type {
   DecisionDeltaSummary,
   DeltaCellRow,
 } from './decision-delta.js';
+
+// lineage — ancestry / descendants / shared_assumptions (v0.2 D7)
+export {
+  getAncestry,
+  getDescendants,
+  getSharedAssumptions,
+} from './lineage.js';
+export type {
+  LineageNode,
+  LineageOptions,
+  SharedAssumptionMatch,
+  SharedAssumptionsOptions,
+} from './lineage.js';
 export type {
   AgreementFragment,
   DisagreementBucket,
