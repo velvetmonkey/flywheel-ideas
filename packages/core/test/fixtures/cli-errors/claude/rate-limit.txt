@@ -1,0 +1,4 @@
+# SYNTHESIZED 2026-04-24 from Anthropic API rate-limit error format.
+# Replace with real capture if/when one arrives during dogfood.
+{"type":"system","subtype":"init","session_id":"sess-abc"}
+{"type":"result","subtype":"error_during_execution","is_error":true,"error":{"type":"rate_limit_error","message":"Number of request tokens has exceeded your per-minute rate limit"}}

@@ -16,11 +16,13 @@
  *  - **gemini** uses yargs and prefixes parse errors with
  *    `Unknown arguments:`.
  *
- * Categories `auth` and `rate_limit` are declared but have no patterns
- * wired yet — capturing real failures responsibly requires either a
- * staging account or the user copying stderr from their own CLI. The
- * dispatcher falls through to `unknown` with the stderr tail preserved;
- * M8 adds patterns as real failures accumulate.
+ * Categories `auth` and `rate_limit` were declared but uncatalogued through
+ * v0.1.0 GA. v0.1.1 wires patterns for both, using a real captured
+ * `claude` auth transcript from the GA dogfood (`docs/dogfood-v0.1-ga.md`)
+ * for `claude-auth`; the other five (`codex`/`gemini` × `auth`/`rate_limit`,
+ * plus `claude-rate-limit`) are synthesized from public CLI/API docs and
+ * marked `SYNTHESIZED` in their fixture headers — replace when real
+ * failures are captured during dogfood.
  */
 
 export type CliName = 'claude' | 'codex' | 'gemini';
@@ -84,6 +86,22 @@ const PATTERNS: Record<CliName, Pattern[]> = {
       // "There's an issue with the selected model (XYZ). It may not exist..."
       regex: /There's an issue with the selected model/,
     },
+    {
+      id: 'claude-auth-not-logged-in',
+      reason: 'auth',
+      stream: 'stdout',
+      // Real GA-dogfood capture: stdout payload "Not logged in · Please run /login"
+      // and the JSON-shaped "error": "authentication_failed" both appear in the same response.
+      regex: /Not logged in[^\n]*Please run \/login|"error"\s*:\s*"authentication_failed"/,
+    },
+    {
+      id: 'claude-rate-limit',
+      reason: 'rate_limit',
+      stream: 'stdout',
+      // SYNTHESIZED 2026-04-24 from Anthropic API rate-limit error format.
+      // Replace with real capture if/when one arrives.
+      regex: /"type"\s*:\s*"rate_limit_error"|exceeded your[^\n]*rate limit/i,
+    },
   ],
   codex: [
     {
@@ -100,6 +118,22 @@ const PATTERNS: Record<CliName, Pattern[]> = {
       // JSONL event: {"type":"turn.failed","error":{"message":"... invalid_request_error ... model ... not supported ..."}}
       regex: /"type":"turn\.failed"[^\n]*invalid_request_error[^\n]*model/,
     },
+    {
+      id: 'codex-auth-turn-failed',
+      reason: 'auth',
+      stream: 'stdout',
+      // SYNTHESIZED 2026-04-24 — codex turn.failed with authentication-error payload.
+      // Real capture pending; format matches the observed turn.failed shape from M7.
+      regex: /"type"\s*:\s*"turn\.failed"[^\n]*authentication/i,
+    },
+    {
+      id: 'codex-rate-limit-turn-failed',
+      reason: 'rate_limit',
+      stream: 'stdout',
+      // SYNTHESIZED 2026-04-24 — codex turn.failed with rate-limit payload.
+      // Real capture pending.
+      regex: /"type"\s*:\s*"turn\.failed"[^\n]*rate[_-]?limit/i,
+    },
   ],
   gemini: [
     {
@@ -109,7 +143,22 @@ const PATTERNS: Record<CliName, Pattern[]> = {
       // yargs: "Unknown arguments: foo, bar"
       regex: /^Unknown arguments:/m,
     },
-    // TODO M8: bad-model probe was blocked during M7 capture.
+    {
+      id: 'gemini-auth-missing-key',
+      reason: 'auth',
+      stream: 'stderr',
+      // SYNTHESIZED 2026-04-24 from Google AI Studio API + gemini-cli docs.
+      // Real capture pending.
+      regex: /API key not (?:valid|found)|GEMINI_API_KEY[^\n]*not set|PERMISSION_DENIED/i,
+    },
+    {
+      id: 'gemini-rate-limit',
+      reason: 'rate_limit',
+      stream: 'stderr',
+      // SYNTHESIZED 2026-04-24 from Google API quota/rate-limit error format.
+      // Real capture pending.
+      regex: /^.*429[^\n]*Too Many Requests|RESOURCE_EXHAUSTED|Quota exceeded/m,
+    },
   ],
 };
 
@@ -214,8 +263,9 @@ export const CLI_ERROR_PATTERNS: Readonly<Record<CliName, readonly Pattern[]>> =
 
 /**
  * Explicit list of categories that DO NOT yet have catalogued patterns.
- * M8 must add these before the dispatcher can distinguish auth/rate-limit
- * from generic `exit_nonzero`. The test suite asserts this list so the
- * TODO is visible in CI output.
+ * Empty as of v0.1.1 — `auth` and `rate_limit` are now wired (claude-auth
+ * from real dogfood capture; the other five from public-docs synthesis,
+ * marked in fixture headers). The test suite asserts this list so any
+ * regression is visible in CI output.
  */
-export const UNCATALOGUED_REASONS: readonly FailureReason[] = ['auth', 'rate_limit'];
+export const UNCATALOGUED_REASONS: readonly FailureReason[] = [];

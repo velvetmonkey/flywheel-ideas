@@ -123,6 +123,76 @@ describe('classifyCliError — bad_model from golden fixtures', () => {
 });
 
 // ---------------------------------------------------------------------------
+// Golden fixtures — auth (v0.1.1; claude is real, codex/gemini synthesized)
+// ---------------------------------------------------------------------------
+
+describe('classifyCliError — auth from golden fixtures', () => {
+  it('claude: auth payload appears on stdout (real GA-dogfood capture) → auth', async () => {
+    const stdout = await fixture('claude', 'auth.txt');
+    const r = classifyCliError('claude', {
+      exit_code: 1,
+      stdout_tail: stdout,
+      stderr_tail: '',
+    });
+    expect(r.reason).toBe('auth');
+    expect(r.pattern).toBe('claude-auth-not-logged-in');
+  });
+
+  it('codex: turn.failed authentication_error JSONL → auth (synthesized)', async () => {
+    const stdout = await fixture('codex', 'auth.jsonl');
+    const r = classifyCliError('codex', {
+      exit_code: 1,
+      stdout_tail: stdout,
+      stderr_tail: '',
+    });
+    expect(r.reason).toBe('auth');
+    expect(r.pattern).toBe('codex-auth-turn-failed');
+  });
+
+  it('gemini: missing/invalid API key on stderr → auth (synthesized)', async () => {
+    const stderr = await fixture('gemini', 'auth.txt');
+    const r = classifyCliError('gemini', { exit_code: 1, stderr_tail: stderr });
+    expect(r.reason).toBe('auth');
+    expect(r.pattern).toBe('gemini-auth-missing-key');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Golden fixtures — rate_limit (v0.1.1; all synthesized, replace on capture)
+// ---------------------------------------------------------------------------
+
+describe('classifyCliError — rate_limit from golden fixtures', () => {
+  it('claude: rate_limit_error payload on stdout → rate_limit', async () => {
+    const stdout = await fixture('claude', 'rate-limit.txt');
+    const r = classifyCliError('claude', {
+      exit_code: 1,
+      stdout_tail: stdout,
+      stderr_tail: '',
+    });
+    expect(r.reason).toBe('rate_limit');
+    expect(r.pattern).toBe('claude-rate-limit');
+  });
+
+  it('codex: turn.failed rate_limit_exceeded JSONL → rate_limit', async () => {
+    const stdout = await fixture('codex', 'rate-limit.jsonl');
+    const r = classifyCliError('codex', {
+      exit_code: 1,
+      stdout_tail: stdout,
+      stderr_tail: '',
+    });
+    expect(r.reason).toBe('rate_limit');
+    expect(r.pattern).toBe('codex-rate-limit-turn-failed');
+  });
+
+  it('gemini: 429 Too Many Requests / RESOURCE_EXHAUSTED on stderr → rate_limit', async () => {
+    const stderr = await fixture('gemini', 'rate-limit.txt');
+    const r = classifyCliError('gemini', { exit_code: 1, stderr_tail: stderr });
+    expect(r.reason).toBe('rate_limit');
+    expect(r.pattern).toBe('gemini-rate-limit');
+  });
+});
+
+// ---------------------------------------------------------------------------
 // Fallback + exit-code handling
 // ---------------------------------------------------------------------------
 
@@ -180,12 +250,12 @@ describe('cli-errors catalogue coverage', () => {
     expect(Object.keys(CLI_ERROR_PATTERNS).sort()).toEqual(['claude', 'codex', 'gemini']);
   });
 
-  it('auth and rate_limit are explicitly UNCATALOGUED (M8 blocker)', () => {
-    expect(UNCATALOGUED_REASONS).toEqual(['auth', 'rate_limit']);
+  it('UNCATALOGUED_REASONS is empty as of v0.1.1 — auth + rate_limit wired for all 3 CLIs', () => {
+    expect(UNCATALOGUED_REASONS).toEqual([]);
     for (const cli of Object.keys(CLI_ERROR_PATTERNS) as CliName[]) {
       const reasons = CLI_ERROR_PATTERNS[cli].map((p) => p.reason);
-      expect(reasons).not.toContain('auth');
-      expect(reasons).not.toContain('rate_limit');
+      expect(reasons).toContain('auth');
+      expect(reasons).toContain('rate_limit');
     }
   });
 

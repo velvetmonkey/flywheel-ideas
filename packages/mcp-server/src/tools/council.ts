@@ -73,6 +73,12 @@ export function registerCouncilTool(
         .describe(
           '[run] Required true to acknowledge the council will spawn CLI subprocesses. Separate from the out-of-band approval gate.',
         ),
+      clis: z
+        .array(z.enum(['claude', 'codex', 'gemini']))
+        .optional()
+        .describe(
+          '[run] CLI subset to dispatch against (default: all three per depth). Useful for narrowing a session to one or two installed CLIs.',
+        ),
     },
     async (args) => {
       try {
@@ -103,7 +109,13 @@ export function registerCouncilTool(
 async function handleRun(
   vaultPath: string,
   db: IdeasDatabase,
-  args: { id?: string; depth?: 'light' | 'full'; mode?: 'standard' | 'pre_mortem'; confirm?: boolean },
+  args: {
+    id?: string;
+    depth?: 'light' | 'full';
+    mode?: 'standard' | 'pre_mortem';
+    confirm?: boolean;
+    clis?: Array<'claude' | 'codex' | 'gemini'>;
+  },
 ): Promise<ReturnType<typeof mcpText>> {
   if (!args.id) {
     return mcpError('run requires `id`', [
@@ -203,7 +215,7 @@ async function handleRun(
         mode,
         approval_scope: state.scope,
       },
-      { spawn_override, spawn_overrides },
+      { spawn_override, spawn_overrides, clis_override: args.clis },
     );
   } catch (err) {
     if (err instanceof CouncilOrchestratorError) {

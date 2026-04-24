@@ -1,0 +1,4 @@
+# SYNTHESIZED 2026-04-24 — codex JSONL turn.failed with authentication-error payload.
+# Real capture pending. Format mirrors observed turn.failed shape from M7 bad-model.jsonl.
+{"type":"session.created","session_id":"sess-codex-1"}
+{"type":"turn.failed","error":{"type":"authentication_error","message":"Missing OPENAI_API_KEY environment variable. Run codex login or set OPENAI_API_KEY."}}
