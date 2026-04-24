@@ -1,0 +1,32 @@
+PEP: 8
+Title: Style Guide for Python Code
+Author: Guido van Rossum, Barry Warsaw, Alyssa Coghlan
+Status: Active
+Type: Process
+Created: 05-Jul-2001
+Post-History: 05-Jul-2001, 01-Aug-2013
+
+Abstract
+========
+
+This document gives coding conventions for the Python code comprising
+the standard library in the main Python distribution.
+
+Motivation
+==========
+
+Readability counts. This PEP assumes that a shared style convention
+reduces cognitive load for multi-author codebases. We also assume
+most tooling can be configured to follow these rules automatically.
+
+This proposal requires ongoing maintenance as the language evolves.
+
+Rationale
+=========
+
+Consistency within a project is more important than the exact rules
+here. The plan presupposes that automated formatters will eventually
+catch up and make hand-editing unnecessary.
+
+When to use multi-line imports depends on reader context, not on
+a hard mechanical rule.

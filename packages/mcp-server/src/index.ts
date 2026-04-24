@@ -25,6 +25,7 @@ import {
 import { registerAssumptionTool } from './tools/assumption.js';
 import { registerCouncilTool } from './tools/council.js';
 import { registerIdeaTool } from './tools/idea.js';
+import { registerImportTool } from './tools/import.js';
 import { registerOutcomeTool } from './tools/outcome.js';
 
 /**
@@ -57,6 +58,11 @@ export function createConfiguredServer(
     () => db,
   );
   registerOutcomeTool(
+    server,
+    () => vaultPath,
+    () => db,
+  );
+  registerImportTool(
     server,
     () => vaultPath,
     () => db,

@@ -41,6 +41,9 @@ describe('runMigrations', () => {
       'ideas_outcome_memos',
       // v6 (v0.2 Phase 1 D8 — Argument maps)
       'ideas_argument_maps',
+      // v7 (v0.2 Phase 2 — bulk-import staging)
+      'ideas_import_sources',
+      'ideas_import_candidates',
     ];
 
     const rows = db
