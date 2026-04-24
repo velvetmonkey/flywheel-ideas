@@ -114,6 +114,12 @@ beforeEach(async () => {
   // shell out to the real claude/codex/gemini for every test. cli-version.test.ts
   // has dedicated coverage for the probe.
   process.env.FLYWHEEL_IDEAS_NO_VERSION_PROBE = '1';
+  // v0.2 KEYSTONE — disable evidence-reader subprocess in council tests.
+  // The keystone spawns flywheel-memory at council.run; if the binary is
+  // installed on the dev machine PATH, it'll attempt a real subprocess on
+  // every test (slow, polluting). council-evidence.test.ts and dedicated
+  // evidence-wiring tests cover the on-path explicitly.
+  process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
   vault = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-ideas-council-'));
   await fsp.mkdir(path.join(vault, '.flywheel'), { recursive: true });
   db = openIdeasDb(vault);
@@ -122,6 +128,7 @@ beforeEach(async () => {
 
 afterEach(async () => {
   delete process.env.FLYWHEEL_IDEAS_NO_VERSION_PROBE;
+  delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
   db.close();
   deleteIdeasDbFiles(vault);
   await fsp.rm(vault, { recursive: true, force: true });
@@ -747,3 +754,149 @@ async function runCouncilWithEnv(
     }
   }
 }
+
+// ===========================================================================
+// v0.2 KEYSTONE — retrieval-native council input wiring (B5)
+// ===========================================================================
+
+describe('runCouncil — evidence injection wiring (v0.2 KEYSTONE)', () => {
+  beforeEach(async () => {
+    await seedIdea();
+    await seedSeededAssumption();
+  });
+
+  it('evidence_override flows through to persona prompts (and persists sources)', async () => {
+    const evidenceMd = [
+      '## Evidence retrieved from your vault',
+      '',
+      '### Source: tech/flywheel/risks-and-mitigations.md (score: 0.87)',
+      '',
+      '> The compounding thesis dies if users do not log outcomes.',
+      '',
+      '### Cited vault notes',
+      '',
+      '- tech/flywheel/risks-and-mitigations.md',
+    ].join('\n');
+
+    // Capture each subprocess's received stdin so we can assert the
+    // evidence block actually reached the persona prompt.
+    const stdinCapturePath = path.join(vault, '.test-stdin-capture.txt');
+    const prevEcho = process.env.FLYWHEEL_TEST_ECHO_STDIN_TO;
+    process.env.FLYWHEEL_TEST_ECHO_STDIN_TO = stdinCapturePath;
+
+    let result;
+    try {
+      result = await runCouncil(
+        db,
+        vault,
+        { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+        {
+          ...CLAUDE_ONLY_OPTIONS,
+          evidence_override: {
+            evidence: evidenceMd,
+            sources: [
+              { kind: 'search', path: 'tech/flywheel/risks-and-mitigations.md', score: 0.87 },
+            ],
+          },
+        },
+      );
+    } finally {
+      if (prevEcho === undefined) delete process.env.FLYWHEEL_TEST_ECHO_STDIN_TO;
+      else process.env.FLYWHEEL_TEST_ECHO_STDIN_TO = prevEcho;
+    }
+
+    expect(result.status).toBe('success');
+    // mock-claude wrote its received stdin (which includes the system
+    // preamble + user message) to the capture file. Last writer wins —
+    // assert the captured content carries the evidence block.
+    const captured = await fsp.readFile(stdinCapturePath, 'utf8');
+    expect(captured).toContain('Evidence retrieved from your vault');
+    expect(captured).toContain('tech/flywheel/risks-and-mitigations.md');
+    expect(captured).toContain('Where the evidence above contradicts');
+
+    // Sidecar table populated once per session.
+    const evidenceRows = db
+      .prepare('SELECT session_id, sources_json FROM ideas_council_evidence')
+      .all() as Array<{ session_id: string; sources_json: string }>;
+    expect(evidenceRows).toHaveLength(1);
+    expect(evidenceRows[0].session_id).toBe(result.session_id);
+    const persistedSources = JSON.parse(evidenceRows[0].sources_json);
+    expect(persistedSources).toEqual([
+      { kind: 'search', path: 'tech/flywheel/risks-and-mitigations.md', score: 0.87 },
+    ]);
+  });
+
+  it('skip_evidence: true → no sidecar row + v0.1 prompt shape (no evidence header)', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      {
+        ...CLAUDE_ONLY_OPTIONS,
+        skip_evidence: true,
+      },
+    );
+
+    expect(result.status).toBe('success');
+    const viewMdAbs = path.join(vault, result.views[0].content_vault_path);
+    const viewMd = await fsp.readFile(viewMdAbs, 'utf8');
+    expect(viewMd).not.toContain('Evidence retrieved from your vault');
+
+    const evidenceRows = db.prepare('SELECT * FROM ideas_council_evidence').all();
+    expect(evidenceRows).toHaveLength(0);
+  });
+
+  it('null evidence (override with empty pack) → no sidecar row, no header', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      {
+        ...CLAUDE_ONLY_OPTIONS,
+        evidence_override: { evidence: null, sources: [] },
+      },
+    );
+
+    expect(result.status).toBe('success');
+    const viewMdAbs = path.join(vault, result.views[0].content_vault_path);
+    const viewMd = await fsp.readFile(viewMdAbs, 'utf8');
+    expect(viewMd).not.toContain('Evidence retrieved from your vault');
+
+    const evidenceRows = db.prepare('SELECT * FROM ideas_council_evidence').all();
+    expect(evidenceRows).toHaveLength(0);
+  });
+
+  it('evidence injection survives across both passes of the two-pass structure', async () => {
+    const evidenceMd = '## Evidence retrieved from your vault\n\n### Source: a.md\n\n> X.';
+    const stdinCapturePath = path.join(vault, '.test-stdin-capture.txt');
+    const prevEcho = process.env.FLYWHEEL_TEST_ECHO_STDIN_TO;
+    process.env.FLYWHEEL_TEST_ECHO_STDIN_TO = stdinCapturePath;
+
+    let result;
+    try {
+      result = await runCouncil(
+        db,
+        vault,
+        { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+        {
+          ...CLAUDE_ONLY_OPTIONS,
+          evidence_override: {
+            evidence: evidenceMd,
+            sources: [{ kind: 'search', path: 'a.md', score: 0.5 }],
+          },
+        },
+      );
+    } finally {
+      if (prevEcho === undefined) delete process.env.FLYWHEEL_TEST_ECHO_STDIN_TO;
+      else process.env.FLYWHEEL_TEST_ECHO_STDIN_TO = prevEcho;
+    }
+
+    expect(result.status).toBe('success');
+    expect(result.views).toHaveLength(2); // CLAUDE_ONLY_OPTIONS = 1 CLI × 2 personas
+    // Last subprocess to run wrote the capture file — assert its stdin
+    // (which is either pass 1 or pass 2 depending on scheduling) carried
+    // the evidence. Both passes inject the same evidence per the wiring.
+    const captured = await fsp.readFile(stdinCapturePath, 'utf8');
+    expect(captured).toContain('Evidence retrieved from your vault');
+  });
+});

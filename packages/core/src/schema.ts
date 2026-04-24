@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -142,4 +142,23 @@ CREATE TABLE IF NOT EXISTS ideas_dispatches (
 );
 
 CREATE INDEX IF NOT EXISTS idx_ideas_dispatches_session ON ideas_dispatches(session_id);
+`;
+
+/**
+ * v2 migration — sidecar table for retrieval-native council evidence (v0.2 KEYSTONE).
+ *
+ * Strictly additive: new table only, no mutation of existing rows. Avoids the
+ * "schema migration risky for experimental product" concern raised in the
+ * v0.2 brainstorm council session. Stores the evidence pack sources surfaced
+ * to each council *session* (1:1 with `ideas_council_sessions`) — every cell
+ * within a session sees the same pack, so persisting per-view would write
+ * N=6-15 identical rows per session. Keyed at session level for clean audit:
+ * "show me which vault notes informed *this* council session".
+ */
+export const SCHEMA_SQL_V2 = `
+CREATE TABLE IF NOT EXISTS ideas_council_evidence (
+  session_id TEXT PRIMARY KEY REFERENCES ideas_council_sessions(id) ON DELETE CASCADE,
+  sources_json TEXT NOT NULL,
+  retrieved_at INTEGER NOT NULL
+);
 `;

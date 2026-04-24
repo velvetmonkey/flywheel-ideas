@@ -7,7 +7,7 @@
  */
 
 import type { IdeasDatabase } from './db.js';
-import { SCHEMA_SQL_V1, SCHEMA_VERSION } from './schema.js';
+import { SCHEMA_SQL_V1, SCHEMA_SQL_V2, SCHEMA_VERSION } from './schema.js';
 
 /**
  * Migration steps keyed by the version they produce. `migrateToVN` runs when
@@ -16,6 +16,9 @@ import { SCHEMA_SQL_V1, SCHEMA_VERSION } from './schema.js';
 const MIGRATIONS: Record<number, (db: IdeasDatabase) => void> = {
   1: (db) => {
     db.exec(SCHEMA_SQL_V1);
+  },
+  2: (db) => {
+    db.exec(SCHEMA_SQL_V2);
   },
 };
 

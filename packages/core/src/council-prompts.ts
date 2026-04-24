@@ -106,6 +106,15 @@ export interface PromptInput {
    * whole response). Required when `pass` is 2.
    */
   pass1_stance?: string;
+  /**
+   * Pre-assembled markdown evidence pack from flywheel-memory (v0.2 KEYSTONE
+   * — retrieval-native council input). Injected into the user message after
+   * the declared assumptions block, before the "Attack each assumption"
+   * instruction. When undefined or null, the prompt has the v0.1 shape (no
+   * evidence section). Asssembled once per `runCouncil` and shared across
+   * cells.
+   */
+  evidence?: string | null;
 }
 
 export interface AssembledPrompt {
@@ -153,6 +162,15 @@ export function assemblePrompt(input: PromptInput): AssembledPrompt {
           .join('\n')
       : '_(no declared assumptions)_';
 
+  // v0.2 KEYSTONE: evidence pack injects between the assumptions block and
+  // the "Attack each assumption" instruction. Persona system prompt stays
+  // pure (just role + JSON contract); evidence is task input.
+  const hasEvidence = input.evidence != null && input.evidence.length > 0;
+  const evidenceBlock = hasEvidence ? `\n${input.evidence}\n` : '';
+  const attackInstruction = hasEvidence
+    ? 'Attack each assumption explicitly. Cite assumptions by id in `assumptions_cited`. Where the evidence above contradicts or supports an assumption, surface that explicitly with the source path.'
+    : 'Attack each assumption explicitly. Cite assumptions by id in `assumptions_cited`.';
+
   const userBody = [
     `Idea: ${input.idea_title}`,
     '',
@@ -160,8 +178,8 @@ export function assemblePrompt(input: PromptInput): AssembledPrompt {
     '',
     'Declared assumptions:',
     assumptionsBlock,
-    '',
-    'Attack each assumption explicitly. Cite assumptions by id in `assumptions_cited`.',
+    evidenceBlock,
+    attackInstruction,
   ].join('\n');
 
   const pass1User = input.mode === 'pre_mortem' ? `${PRE_MORTEM_PREFIX}${userBody}` : userBody;

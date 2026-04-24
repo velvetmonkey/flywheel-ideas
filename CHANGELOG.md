@@ -1,5 +1,73 @@
 # Changelog
 
+## 0.2.0-alpha.1 — 2026-04-24
+
+**v0.2 KEYSTONE — retrieval-native council input.** Before each
+`council.run` dispatches, flywheel-ideas now spawns a one-shot
+`flywheel-memory` MCP subprocess to query the user's vault (search +
+memory.brief + graph.backlinks + per-load-bearing-assumption search),
+assembles a markdown evidence pack, and injects it into every persona
+prompt. Personas are instructed to surface where evidence contradicts or
+supports declared assumptions, citing the source path explicitly.
+
+> Thesis (per `roadmap-v0-2`): *"the decision loop is strong; the next
+> gain is better context going IN, not more personas."*
+
+The council brainstorm round (claude + copilot) attacked an earlier
+"long-lived subprocess at server boot" design as over-engineered. The
+shipped pattern clones the proven `memory-bridge.ts` lifecycle exactly:
+spawn-then-close per `council.run`. No zombie processes, no MCP protocol
+state divergence, no parent-shutdown leaks.
+
+### Schema
+
+- New v2 migration: additive `ideas_council_evidence` sidecar table
+  (1:1 with `ideas_council_sessions`, ON DELETE CASCADE). No mutation
+  of existing rows. Stores `sources_json` so users can audit which
+  vault notes informed each council session.
+
+### Tools (no MCP surface change)
+
+The `council.run` MCP action is unchanged. Evidence assembly is
+transparent: cells with evidence carry richer prompts, cells without
+(reader unavailable / no vault matches) ship with the v0.1 prompt
+shape. Graceful degradation surfaces a one-line stderr note when
+flywheel-memory isn't installed or the subprocess can't spawn.
+
+### Operator knobs
+
+- `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` — kill switch (shared with the M14
+  memory-bridge registrar; disables both)
+- `FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS=...` — per-call timeout
+  (default 5000ms)
+
+### Pre-registered falsification gate
+
+Per the v0.2 plan's success metric (Copilot's counter, accepted
+verbatim by user): a 10-council pilot must show **≥70% of cells
+explicitly cite a vault path** in their critique to validate the
+keystone thesis. Below that threshold, the keystone is plumbing
+without payoff and the approach reassesses. Test helper
+`packages/core/test/helpers/cite-rate.ts` measures via path
+substring match.
+
+### Why alpha
+
+Alpha cycle exists for the dogfood signal that sets the GA gate. v0.2.0
+GA cuts only after a 10-council pilot meets the cite-rate threshold and
+the keystone changes council quality in a way the user can articulate.
+Use `npx -y @velvetmonkey/flywheel-ideas@alpha` to opt in; the `latest`
+dist-tag stays on v0.1.x stable.
+
+### Test surface
+
+564 tests pass (+38 net for v0.2). Eight new test surfaces:
+schema v2 upgrade, evidence-store CRUD, evidence-reader subprocess
+(kill switch, binary resolution, happy path, timeout, helper),
+evidence-pack assembler (query plan, degradation, budget enforcement,
+section-boundary truncation), council wiring (override, skip, null,
+two-pass survival), cite-rate measurement.
+
 ## 0.1.1 — 2026-04-24
 
 **Dogfood-driven carry-overs from v0.1.0 GA.** All three fixes were surfaced
