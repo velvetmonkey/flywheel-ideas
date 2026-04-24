@@ -15,14 +15,23 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
   activeWritePath,
   buildAssumptionNextStepsForIdea,
+  createFreeze,
   filterStaleRows,
+  FreezeInputError,
+  FreezeIdeaNotFoundError,
   generateIdeaId,
+  getAncestry,
+  getDescendants,
+  getSharedAssumptions,
   IDEA_STATES,
   INITIAL_STATE,
   isIdeaState,
+  listFreezesByIdea,
   listTransitions,
   readNote,
   recordTransition,
+  recordTransitionEnforced,
+  TransitionPrereqError,
   type IdeasDatabase,
   type IdeaState,
   patchFrontmatter,
@@ -49,7 +58,11 @@ export function registerIdeaTool(
     ].join(''),
     {
       action: z
-        .enum(['create', 'read', 'list', 'transition', 'forget'])
+        .enum([
+          'create', 'read', 'list', 'transition', 'forget',
+          'freeze', 'list_freezes',
+          'ancestry', 'descendants', 'shared_assumptions',
+        ])
         .describe('Operation to perform'),
       title: z
         .string()
@@ -92,6 +105,34 @@ export function registerIdeaTool(
         .boolean()
         .optional()
         .describe('[list] Include ideas whose markdown file is missing from the vault (default: false)'),
+      // freeze + list_freezes — OSF preregistration (v0.2 Phase 1 D2)
+      supersedes_freeze_id: z
+        .string()
+        .optional()
+        .describe('[freeze] Mark this freeze as an amendment to a prior freeze (OSF transparent-amendment chain). Requires amendment_rationale.'),
+      amendment_rationale: z
+        .string()
+        .optional()
+        .describe('[freeze] Required when supersedes_freeze_id is set; explains what changed and why.'),
+      freeze_order: z
+        .enum(['asc', 'desc'])
+        .optional()
+        .describe('[list_freezes] Sort order (default desc — newest first)'),
+      // v0.2 D5 — lifecycle enforcement
+      bypass_enforcement: z
+        .boolean()
+        .optional()
+        .describe(
+          '[transition] Skip prerequisite checks (council before evaluated, locked load-bearing assumption before committed, outcome before validated/refuted). Default: false. Set true ONLY for cleanup / migration / explicit override; the discipline gate is the whole point.',
+        ),
+      // v0.2 D7 — lineage queries
+      max_depth: z
+        .number()
+        .int()
+        .min(1)
+        .max(100)
+        .optional()
+        .describe('[ancestry|descendants] Max chain depth to walk (default 20). Caps cycles in malformed supersession data.'),
     },
     async (args) => {
       // Top-level error boundary: unhandled exceptions from handler I/O or
@@ -111,6 +152,16 @@ export function registerIdeaTool(
             return await handleTransition(getVaultPath(), getDb(), args);
           case 'forget':
             return handleForget(getDb(), args);
+          case 'freeze':
+            return handleFreeze(getVaultPath(), getDb(), args);
+          case 'list_freezes':
+            return handleListFreezes(getDb(), args);
+          case 'ancestry':
+            return handleAncestry(getDb(), args);
+          case 'descendants':
+            return handleDescendants(getDb(), args);
+          case 'shared_assumptions':
+            return handleSharedAssumptions(getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -603,7 +654,7 @@ function handleForget(
 async function handleTransition(
   vaultPath: string,
   db: IdeasDatabase,
-  args: { id?: string; to?: string; reason?: string },
+  args: { id?: string; to?: string; reason?: string; bypass_enforcement?: boolean },
 ): Promise<ReturnType<typeof mcpText>> {
   if (!args.id) {
     return mcpError('transition requires `id`', [
@@ -662,7 +713,42 @@ async function handleTransition(
   // would orphan the DB change. Record the transition, attempt the patch, and
   // on fs failure roll back the DB transition so the user can retry without
   // drift.
-  const transition = recordTransition(db, args.id, args.to, { reason: args.reason });
+  //
+  // v0.2 D5 — recordTransitionEnforced runs the canTransition prereq check
+  // first. Throws TransitionPrereqError when the gate fails; we catch and
+  // surface a structured mcpError with the recovery hint.
+  let transition;
+  try {
+    transition = recordTransitionEnforced(db, args.id, args.to, {
+      reason: args.reason,
+      bypass_enforcement: args.bypass_enforcement,
+    });
+  } catch (err) {
+    if (err instanceof TransitionPrereqError) {
+      const hint: NextStep[] = err.recovery_hint
+        ? [
+            {
+              action: 'idea.read',
+              example: `idea.read({ id: "${args.id}" })`,
+              why: `Prereq blocked the transition (${err.reason_code}). ${err.recovery_hint}`,
+            },
+            {
+              action: 'idea.transition',
+              example: `idea.transition({ id: "${args.id}", to: "${args.to}", reason: "<...>", bypass_enforcement: true })`,
+              why: 'Override the gate explicitly if you have a reason (cleanup, migration, manual recovery). The discipline gate exists for a reason — use bypass sparingly.',
+            },
+          ]
+        : [
+            {
+              action: 'idea.read',
+              example: `idea.read({ id: "${args.id}" })`,
+              why: 'Re-inspect the idea state — the transition was blocked.',
+            },
+          ];
+      return mcpError(`transition blocked: ${err.reason_code} — ${err.reason}`, hint);
+    }
+    throw err;
+  }
 
   let patchResult;
   try {
@@ -739,6 +825,269 @@ function buildTransitionNextSteps(id: string, to: IdeaState): NextStep[] {
   }
 
   return steps;
+}
+
+// ---------- idea.freeze + idea.list_freezes (v0.2 D2) ----------
+
+/**
+ * Snapshot the idea + its open assumptions for OSF-style preregistration.
+ * Optional: amendment chain via `supersedes_freeze_id` + `amendment_rationale`.
+ *
+ * The MCP surface deliberately does NOT accept `council_session_id` directly —
+ * a freeze gets bound to a council session via `council.run({freeze_id: ...})`
+ * or `council.run({freeze: true})` (auto-create). Keeps the binding flow inside
+ * the council tool where the session is created.
+ */
+function handleFreeze(
+  vaultPath: string,
+  db: IdeasDatabase,
+  args: { id?: string; supersedes_freeze_id?: string; amendment_rationale?: string },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('freeze requires `id` (the idea_id to snapshot)', [
+      {
+        action: 'idea.list',
+        example: 'idea.list({})',
+        why: 'List ideas to find the id you want to preregister.',
+      },
+    ]);
+  }
+  try {
+    const fr = createFreeze(db, vaultPath, args.id, {
+      supersedes_freeze_id: args.supersedes_freeze_id,
+      amendment_rationale: args.amendment_rationale,
+    });
+    const next_steps: NextStep[] = [
+      {
+        action: 'council.run',
+        example: `council.run({ id: "${args.id}", confirm: true, depth: "light", freeze_id: "${fr.id}" })`,
+        why: 'Bind this freeze to a council session — the council audit trail will anchor against this snapshot.',
+      },
+      {
+        action: 'idea.list_freezes',
+        example: `idea.list_freezes({ id: "${args.id}" })`,
+        why: 'List the freeze chain for this idea (newest first, including amendments).',
+      },
+    ];
+    if (!args.supersedes_freeze_id) {
+      next_steps.push({
+        action: 'idea.freeze',
+        example: `idea.freeze({ id: "${args.id}", supersedes_freeze_id: "${fr.id}", amendment_rationale: "<what changed and why>" })`,
+        why: 'If you later need to amend the preregistration (added/removed assumptions, revised metrics), file a transparent amendment that supersedes this freeze.',
+      });
+    }
+    return mcpText({
+      result: {
+        id: fr.id,
+        idea_id: fr.idea_id,
+        council_session_id: fr.council_session_id,
+        supersedes_freeze_id: fr.supersedes_freeze_id,
+        amendment_rationale: fr.amendment_rationale,
+        frozen_at: fr.frozen_at,
+        snapshot: {
+          snapshot_version: fr.snapshot.snapshot_version,
+          frozen_at_iso: fr.snapshot.frozen_at_iso,
+          idea_title: fr.snapshot.idea.title,
+          idea_state: fr.snapshot.idea.state,
+          assumption_count: fr.snapshot.assumptions.length,
+          load_bearing_count: fr.snapshot.assumptions.filter((a) => a.load_bearing).length,
+          locked_count: fr.snapshot.assumptions.filter((a) => a.locked_at !== null).length,
+        },
+        write_path: activeWritePath,
+      },
+      next_steps,
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    if (err instanceof FreezeIdeaNotFoundError) {
+      return mcpError(message, [
+        {
+          action: 'idea.list',
+          example: 'idea.list({})',
+          why: 'Idea not found — list to confirm the id.',
+        },
+      ]);
+    }
+    if (err instanceof FreezeInputError) {
+      return mcpError(message, [
+        {
+          action: 'idea.list_freezes',
+          example: `idea.list_freezes({ id: "${args.id}" })`,
+          why: 'Inspect the freeze chain for this idea to find the right supersedes_freeze_id.',
+        },
+      ]);
+    }
+    throw err;
+  }
+}
+
+function handleListFreezes(
+  db: IdeasDatabase,
+  args: { id?: string; freeze_order?: 'asc' | 'desc'; limit?: number },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('list_freezes requires `id` (the idea_id whose freezes to list)', [
+      {
+        action: 'idea.list',
+        example: 'idea.list({})',
+        why: 'List ideas to find the id whose freeze chain you want to inspect.',
+      },
+    ]);
+  }
+  const freezes = listFreezesByIdea(db, args.id, {
+    order: args.freeze_order ?? 'desc',
+    limit: args.limit,
+  });
+  const next_steps: NextStep[] =
+    freezes.length === 0
+      ? [
+          {
+            action: 'idea.freeze',
+            example: `idea.freeze({ id: "${args.id}" })`,
+            why: 'No freezes yet — create the first preregistration snapshot.',
+          },
+        ]
+      : [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${args.id}" })`,
+            why: 'Re-read the idea for current (post-freeze) state.',
+          },
+        ];
+  return mcpText({
+    result: {
+      idea_id: args.id,
+      count: freezes.length,
+      freezes: freezes.map((f: import('@velvetmonkey/flywheel-ideas-core').FreezeRow) => ({
+        id: f.id,
+        council_session_id: f.council_session_id,
+        supersedes_freeze_id: f.supersedes_freeze_id,
+        amendment_rationale: f.amendment_rationale,
+        frozen_at: f.frozen_at,
+        frozen_at_iso: f.snapshot.frozen_at_iso,
+        idea_title: f.snapshot.idea.title,
+        idea_state: f.snapshot.idea.state,
+        assumption_count: f.snapshot.assumptions.length,
+      })),
+      write_path: activeWritePath,
+    },
+    next_steps,
+  });
+}
+
+// ---------- idea.ancestry / descendants / shared_assumptions (v0.2 D7) ----------
+
+function handleAncestry(
+  db: IdeasDatabase,
+  args: { id?: string; max_depth?: number },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('ancestry requires `id`', [
+      { action: 'idea.list', example: 'idea.list({})', why: 'Find the idea id whose ancestry to walk.' },
+    ]);
+  }
+  const ancestors = getAncestry(db, args.id, { max_depth: args.max_depth });
+  const next_steps: NextStep[] =
+    ancestors.length === 0
+      ? [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${args.id}" })`,
+            why: 'No ancestors — this idea is at the root of any supersession chain it participates in.',
+          },
+        ]
+      : [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${ancestors[0].id}" })`,
+            why: `Read the immediate parent (${ancestors[0].title}) for context on what this idea supersedes.`,
+          },
+        ];
+  return mcpText({
+    result: {
+      idea_id: args.id,
+      ancestors,
+      count: ancestors.length,
+      max_depth: args.max_depth ?? 20,
+      write_path: activeWritePath,
+    },
+    next_steps,
+  });
+}
+
+function handleDescendants(
+  db: IdeasDatabase,
+  args: { id?: string; max_depth?: number },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('descendants requires `id`', [
+      { action: 'idea.list', example: 'idea.list({})', why: 'Find the idea id whose descendants to walk.' },
+    ]);
+  }
+  const descendants = getDescendants(db, args.id, { max_depth: args.max_depth });
+  const next_steps: NextStep[] =
+    descendants.length === 0
+      ? [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${args.id}" })`,
+            why: 'No descendants — this idea has not been superseded.',
+          },
+        ]
+      : [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${descendants[descendants.length - 1].id}" })`,
+            why: `Read the most-recent descendant (${descendants[descendants.length - 1].title}) — the current incarnation of this lineage.`,
+          },
+        ];
+  return mcpText({
+    result: {
+      idea_id: args.id,
+      descendants,
+      count: descendants.length,
+      max_depth: args.max_depth ?? 20,
+      write_path: activeWritePath,
+    },
+    next_steps,
+  });
+}
+
+function handleSharedAssumptions(
+  db: IdeasDatabase,
+  args: { id?: string; limit?: number },
+): ReturnType<typeof mcpText> {
+  if (!args.id) {
+    return mcpError('shared_assumptions requires `id`', [
+      { action: 'idea.list', example: 'idea.list({})', why: 'Find the idea id whose shared assumptions to surface.' },
+    ]);
+  }
+  const matches = getSharedAssumptions(db, args.id, { limit: args.limit });
+  const next_steps: NextStep[] =
+    matches.length === 0
+      ? [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${args.id}" })`,
+            why: 'No other ideas cite the same assumptions yet. Cross-project propagation kicks in once you have a portfolio of related bets.',
+          },
+        ]
+      : [
+          {
+            action: 'idea.read',
+            example: `idea.read({ id: "${matches[0].idea_id}" })`,
+            why: `Read "${matches[0].title}" — shares ${matches[0].shared_assumption_count} assumption(s) with this idea. If you refute one of them later, both ideas will need re-review.`,
+          },
+        ];
+  return mcpText({
+    result: {
+      idea_id: args.id,
+      matches,
+      count: matches.length,
+      write_path: activeWritePath,
+    },
+    next_steps,
+  });
 }
 
 // ---------- helpers ----------

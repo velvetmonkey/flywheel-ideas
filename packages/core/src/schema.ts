@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 6;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -160,5 +160,150 @@ CREATE TABLE IF NOT EXISTS ideas_council_evidence (
   session_id TEXT PRIMARY KEY REFERENCES ideas_council_sessions(id) ON DELETE CASCADE,
   sources_json TEXT NOT NULL,
   retrieved_at INTEGER NOT NULL
+);
+`;
+
+/**
+ * v3 migration — schema enrichment for v0.2 Phase 1 (D1).
+ *
+ * Two strictly-additive sidecar tables:
+ *
+ *  - `ideas_idea_extensions` — per-idea fields surfaced from the Apr 24 2026
+ *    roadmap addition: `alternatives_json`, `reversible`, `supersedes`,
+ *    `replaced_by`, plus the `reference_class` field from the
+ *    Reference-classes-and-thresholds gap. ADR-style enrichment (alternatives
+ *    ruled out, reversibility classification, supersession chain) +
+ *    Good-Judgment base-rate identification.
+ *
+ *  - `ideas_assumption_extensions` — per-assumption fields surfaced from the
+ *    Apr 24 additions: base_rate / go_threshold / kill_threshold (Reference
+ *    classes), predicted_metric / threshold_value / threshold_direction
+ *    (Falsifiable-metric assumptions; Amplitude pattern), plus a
+ *    `mapping_json` blob carrying the seven structured-field map (segment,
+ *    context, claim, mechanism, metric, threshold, horizon_ms) from the
+ *    Cross-project assumption mapping section. mapping_json stays JSON
+ *    rather than flat columns because Phase 1 only needs to STORE the data;
+ *    rich SQL queries against the mapping fields are a Phase 4 concern.
+ *
+ * Both sidecars are 1:1 with their parent (PK = parent.id, ON DELETE CASCADE).
+ * v0.1 / v0.2.0-alpha.1 callers are unaffected — no extension row required.
+ */
+export const SCHEMA_SQL_V3 = `
+CREATE TABLE IF NOT EXISTS ideas_idea_extensions (
+  idea_id TEXT PRIMARY KEY REFERENCES ideas_notes(id) ON DELETE CASCADE,
+  alternatives_json TEXT,
+  reversible INTEGER,
+  supersedes TEXT,
+  replaced_by TEXT,
+  reference_class TEXT,
+  updated_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_idea_ext_supersedes ON ideas_idea_extensions(supersedes) WHERE supersedes IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_ideas_idea_ext_replaced_by ON ideas_idea_extensions(replaced_by) WHERE replaced_by IS NOT NULL;
+
+CREATE TABLE IF NOT EXISTS ideas_assumption_extensions (
+  assumption_id TEXT PRIMARY KEY REFERENCES ideas_assumptions(id) ON DELETE CASCADE,
+  base_rate REAL,
+  go_threshold REAL,
+  kill_threshold REAL,
+  predicted_metric TEXT,
+  threshold_value REAL,
+  threshold_direction TEXT,
+  mapping_json TEXT,
+  updated_at INTEGER NOT NULL
+);
+`;
+
+/**
+ * v4 migration — Freeze / preregister table for v0.2 Phase 1 (D2).
+ *
+ * OSF-style pre-registration: capture a timestamp + read-only snapshot of
+ * the idea text + declared assumptions + locked statuses + idea/assumption
+ * extensions BEFORE the council runs. Later outcome verdicts evaluate
+ * against the frozen set, preventing goalpost-shift.
+ *
+ * Amendments allowed via the supersession chain (OSF pattern): a new freeze
+ * with `supersedes_freeze_id` pointing at the prior + a required
+ * `amendment_rationale`. The prior freeze remains immutable on disk.
+ *
+ * `council_session_id` is optional — set when the freeze is bound to a
+ * specific council session (auto-bound by `council.run({freeze: true})` or
+ * `council.run({freeze_id: ...})`). NULL when the freeze stands alone as
+ * pure preregistration without an immediate council binding.
+ *
+ * Snapshot stored as JSON blob — `snapshot_json` carries the full
+ * point-in-time state. Read back via JSON.parse + light shape validation.
+ */
+export const SCHEMA_SQL_V4 = `
+CREATE TABLE IF NOT EXISTS ideas_freezes (
+  id TEXT PRIMARY KEY,
+  idea_id TEXT NOT NULL REFERENCES ideas_notes(id) ON DELETE CASCADE,
+  council_session_id TEXT REFERENCES ideas_council_sessions(id) ON DELETE SET NULL,
+  snapshot_json TEXT NOT NULL,
+  supersedes_freeze_id TEXT,
+  amendment_rationale TEXT,
+  frozen_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_freezes_idea ON ideas_freezes(idea_id);
+CREATE INDEX IF NOT EXISTS idx_ideas_freezes_council
+  ON ideas_freezes(council_session_id) WHERE council_session_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_ideas_freezes_supersedes
+  ON ideas_freezes(supersedes_freeze_id) WHERE supersedes_freeze_id IS NOT NULL;
+`;
+
+/**
+ * v5 migration — Anti-Portfolio outcome memo sidecar (v0.2 Phase 1 D4).
+ *
+ * Per the Bessemer Anti-Portfolio pattern: when an outcome refutes any
+ * assumption, the team writes a structured "which assumption failed and
+ * why" memo. This is the post-mortem layer that turns one-off failures
+ * into propagated learning across future ideas.
+ *
+ * 1:1 with `ideas_outcomes` (PK = outcome_id). The memo is OPTIONAL by
+ * default — outcome.log will succeed without one — but the MCP surface
+ * surfaces a strong nudge in `next_steps` when a refuting outcome is
+ * logged without a memo. Hard enforcement (rejecting refuting outcomes
+ * without memos) is too brittle for v0.2 alpha; users may want to log
+ * the outcome immediately and write the memo later.
+ *
+ * `memo_json` shape (deserialised by the helper):
+ *   {
+ *     refuted_assumption_id?: string,    // optional pointer at the most-load-bearing failed assumption
+ *     root_cause: string,                // what actually broke
+ *     what_we_thought: string,           // the original assumption / belief
+ *     what_actually_happened: string,    // the observed reality
+ *     lesson: string                     // the durable takeaway
+ *   }
+ */
+export const SCHEMA_SQL_V5 = `
+CREATE TABLE IF NOT EXISTS ideas_outcome_memos (
+  outcome_id TEXT PRIMARY KEY REFERENCES ideas_outcomes(id) ON DELETE CASCADE,
+  memo_json TEXT NOT NULL,
+  written_at INTEGER NOT NULL
+);
+`;
+
+/**
+ * v6 migration — Argument map sidecar (v0.2 Phase 1 D8).
+ *
+ * Per the Apr 24 roadmap addition: "Flat synthesis is enough for v0.1 — not
+ * enough for reuse. A claim → pro → con → evidence tree is a better reuse
+ * surface than prose-only dissent notes." Reference: Kialo argument-mapping
+ * research; Loomio decision-with-context pattern.
+ *
+ * 1:1 with `ideas_council_sessions` (PK = session_id, ON DELETE CASCADE).
+ * Generated AFTER the synthesis renders — uses the same per-cell stance +
+ * key_risks + fragile_insights + evidence already parsed for synthesis,
+ * deterministically restructured into a claim tree. No LLM extraction in
+ * v0.2; a future revision may add LLM-driven claim grouping for tighter
+ * cross-persona consolidation.
+ */
+export const SCHEMA_SQL_V6 = `
+CREATE TABLE IF NOT EXISTS ideas_argument_maps (
+  session_id TEXT PRIMARY KEY REFERENCES ideas_council_sessions(id) ON DELETE CASCADE,
+  tree_json TEXT NOT NULL,
+  generated_at INTEGER NOT NULL
 );
 `;

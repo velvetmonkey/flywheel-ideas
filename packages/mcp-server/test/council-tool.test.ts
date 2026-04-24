@@ -347,6 +347,27 @@ describe('council.run — M8 response shape', () => {
     expect(response.result.mode).toBe('standard');
   });
 
+  // v0.2 D3 — steelman mode
+  it('mode=steelman is accepted + recorded on the session row', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        id: ideaId,
+        confirm: true,
+        mode: 'steelman',
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.mode).toBe('steelman');
+    // DB session row records the mode verbatim.
+    const row = db
+      .prepare('SELECT mode FROM ideas_council_sessions WHERE id = ?')
+      .get(response.result.session_id) as { mode: string };
+    expect(row.mode).toBe('steelman');
+  });
+
   it('next_steps include reading the synthesis', async () => {
     const ideaId = await seedIdea();
     process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
@@ -523,13 +544,75 @@ describe('council.run — clis arg passthrough (v0.1.1)', () => {
 
 describe('council tool — immutable surface (MCP consent invariant)', () => {
   it('does not expose approval_grant / approval_reset actions', async () => {
-    // The zod schema restricts action to ['run', 'approval_status']; unknown
-    // actions should produce an error at the SDK layer OR fall through to the
-    // handler's default mcpError.
+    // The zod schema restricts action to ['run', 'approval_status', 'delta'];
+    // unknown actions should produce an error at the SDK layer OR fall through
+    // to the handler's default mcpError.
     const response = await client.callTool('council', { action: 'approval_reset' }).catch(
       (err: unknown) => ({
         content: [{ type: 'text', text: JSON.stringify({ error: String(err) }) }],
         isError: true,
+      }),
+    );
+    expect(response.isError).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// council.delta (v0.2 D6)
+// ---------------------------------------------------------------------------
+
+describe('council.delta (v0.2 D6)', () => {
+  it('returns structured diff between two sessions of the same idea', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    // Run two councils so we have two sessions to diff.
+    const r1 = parseEnvelope(
+      await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
+    );
+    const r2 = parseEnvelope(
+      await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
+    );
+    expect(r1.result.session_id).not.toBe(r2.result.session_id);
+
+    const delta = parseEnvelope(
+      await client.callTool('council', {
+        action: 'delta',
+        idea_id: ideaId,
+        from_session_id: r1.result.session_id,
+        to_session_id: r2.result.session_id,
+      }),
+    );
+    expect(delta.isError).toBe(false);
+    expect(delta.result.idea_id).toBe(ideaId);
+    expect(delta.result.from_session_id).toBe(r1.result.session_id);
+    expect(delta.result.to_session_id).toBe(r2.result.session_id);
+    // Mocked councils all dispatch the same matrix → cells should be paired (no side_only).
+    for (const cell of delta.result.cells) {
+      expect(cell.side_only).toBeUndefined();
+    }
+    expect(delta.next_steps.length).toBeGreaterThan(0);
+  });
+
+  it('rejects missing required args', async () => {
+    const ideaId = await seedIdea();
+    const response = parseEnvelope(
+      await client.callTool('council', { action: 'delta', idea_id: ideaId }),
+    );
+    expect(response.isError).toBe(true);
+  });
+
+  it('rejects same from/to session id', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const r1 = parseEnvelope(
+      await client.callTool('council', { action: 'run', id: ideaId, confirm: true }),
+    );
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'delta',
+        idea_id: ideaId,
+        from_session_id: r1.result.session_id,
+        to_session_id: r1.result.session_id,
       }),
     );
     expect(response.isError).toBe(true);

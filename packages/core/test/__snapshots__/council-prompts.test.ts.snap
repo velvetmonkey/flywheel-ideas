@@ -64,3 +64,19 @@ Declared assumptions:
 
 Attack each assumption explicitly. Cite assumptions by id in \`assumptions_cited\`."
 `;
+
+exports[`assemblePrompt — user message > snapshot: steelman user message 1`] = `
+"Assume this idea succeeded 12 months from now. Work backwards — why? Argue the strongest possible affirmative case. For every declared assumption, articulate the best version of why it held and what evidence supports that conclusion. Your persona's default skepticism is suspended for this run; channel it into finding the most compelling defense, not the most compelling attack.
+
+---
+
+Idea: Switch pricing from seat to usage
+
+Current seat-based pricing underserves low-volume teams and overcharges high-volume. Hypothesis: usage-based converts better at the top.
+
+Declared assumptions:
+- [asm-a1, load-bearing] Top-tier teams will tolerate variable bills
+- [asm-a2] Cost-to-serve scales sub-linearly with usage
+
+Defend each assumption with the strongest case for why it holds. Cite assumptions by id in \`assumptions_cited\`."
+`;

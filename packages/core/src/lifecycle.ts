@@ -120,6 +120,190 @@ export function recordTransition(
   return run();
 }
 
+// ---------------------------------------------------------------------------
+// v0.2 D5 — Lifecycle prerequisite enforcement
+// ---------------------------------------------------------------------------
+
+/**
+ * Outcome of a `canTransition` check. `{ok: true}` means the transition is
+ * allowed; `{ok: false}` carries a structured reason for the MCP layer to
+ * surface as next_steps.
+ */
+export type CanTransitionResult =
+  | { ok: true }
+  | {
+      ok: false;
+      /** Stable machine-key for the failed prereq, e.g. 'no_council_session'. */
+      reason_code: string;
+      /** Human-readable explanation, surfaced via MCP next_steps. */
+      reason: string;
+      /** Concrete recovery hint — e.g. "Run a council first via council.run({...})". */
+      recovery_hint?: string;
+    };
+
+/**
+ * Domain prerequisite checks for v0.2 lifecycle enforcement.
+ *
+ * Rules (per roadmap-v0-2 D5):
+ *  - explored → evaluated  : requires ≥1 council session for the idea
+ *  - evaluated → committed : requires ≥1 locked load-bearing assumption
+ *  - committed → validated : requires ≥1 outcome (non-undone) for the idea
+ *  - committed → refuted   : requires ≥1 outcome with at least one refute verdict
+ *
+ * All other transitions (parked, killed, backwards moves, etc.) are
+ * unchecked — these are user-driven recovery / housekeeping moves that
+ * shouldn't block on data prereqs.
+ *
+ * Pure read function — does not mutate. Wrap with `recordTransitionEnforced`
+ * for the throw-on-failure flow.
+ */
+export function canTransition(
+  db: IdeasDatabase,
+  ideaId: string,
+  toState: IdeaState,
+): CanTransitionResult {
+  // Pull the current state up front; some prereqs depend on the from-state.
+  const row = db
+    .prepare('SELECT state FROM ideas_notes WHERE id = ?')
+    .get(ideaId) as { state: string } | undefined;
+  if (!row) {
+    return {
+      ok: false,
+      reason_code: 'idea_not_found',
+      reason: `idea "${ideaId}" not found`,
+    };
+  }
+  const fromState = row.state as IdeaState;
+
+  // Fast-path: no prereqs apply to non-checked targets.
+  if (toState !== 'evaluated' && toState !== 'committed' && toState !== 'validated' && toState !== 'refuted') {
+    return { ok: true };
+  }
+
+  // explored → evaluated : ≥1 council session
+  if (fromState === 'explored' && toState === 'evaluated') {
+    const sessionCount = (db
+      .prepare('SELECT COUNT(*) as c FROM ideas_council_sessions WHERE idea_id = ?')
+      .get(ideaId) as { c: number }).c;
+    if (sessionCount === 0) {
+      return {
+        ok: false,
+        reason_code: 'no_council_session',
+        reason: 'evaluated requires at least one council session — the council\'s job is to surface dissent before evaluation',
+        recovery_hint: `Run a council first: council.run({ id: "${ideaId}", confirm: true, depth: "light", mode: "pre_mortem" })`,
+      };
+    }
+  }
+
+  // evaluated → committed : ≥1 locked load-bearing assumption (OSF preregistration discipline)
+  if (fromState === 'evaluated' && toState === 'committed') {
+    const lockedLoadBearing = (db
+      .prepare(
+        `SELECT COUNT(*) as c FROM ideas_assumptions
+         WHERE idea_id = ? AND load_bearing = 1 AND locked_at IS NOT NULL AND status != 'refuted'`,
+      )
+      .get(ideaId) as { c: number }).c;
+    if (lockedLoadBearing === 0) {
+      return {
+        ok: false,
+        reason_code: 'no_locked_load_bearing_assumption',
+        reason: 'committed requires at least one LOCKED load-bearing assumption — committing without preregistering a load-bearing claim makes later outcome adjudication unfalsifiable',
+        recovery_hint: `Lock a load-bearing assumption: assumption.lock({ id: "<load-bearing assumption id>" }). Use assumption.list({ idea_id: "${ideaId}" }) to find one.`,
+      };
+    }
+  }
+
+  // committed → validated : ≥1 non-undone outcome
+  if (fromState === 'committed' && toState === 'validated') {
+    const outcomeCount = (db
+      .prepare(
+        `SELECT COUNT(*) as c FROM ideas_outcomes
+         WHERE idea_id = ? AND undone_at IS NULL`,
+      )
+      .get(ideaId) as { c: number }).c;
+    if (outcomeCount === 0) {
+      return {
+        ok: false,
+        reason_code: 'no_outcome_logged',
+        reason: 'validated requires at least one logged outcome — moving committed→validated without outcome data skips the compounding mechanism',
+        recovery_hint: `Log an outcome first: outcome.log({ idea_id: "${ideaId}", text: "<what happened>", validates: ["<assumption ids>"] })`,
+      };
+    }
+  }
+
+  // committed → refuted : ≥1 outcome with at least one refute verdict
+  if (fromState === 'committed' && toState === 'refuted') {
+    const refutingOutcomes = (db
+      .prepare(
+        `SELECT COUNT(DISTINCT o.id) as c
+         FROM ideas_outcomes o
+         JOIN ideas_outcome_verdicts v ON v.outcome_id = o.id
+         WHERE o.idea_id = ? AND o.undone_at IS NULL AND v.verdict = 'refuted'`,
+      )
+      .get(ideaId) as { c: number }).c;
+    if (refutingOutcomes === 0) {
+      return {
+        ok: false,
+        reason_code: 'no_refuting_outcome',
+        reason: 'refuted requires an outcome with at least one refute verdict — refuting without an outcome row leaves the cascade un-cited',
+        recovery_hint: `Log a refuting outcome first: outcome.log({ idea_id: "${ideaId}", text: "<what broke>", refutes: ["<assumption ids>"] })`,
+      };
+    }
+  }
+
+  return { ok: true };
+}
+
+/** Structured error thrown by `recordTransitionEnforced` when canTransition fails. */
+export class TransitionPrereqError extends Error {
+  readonly reason_code: string;
+  readonly reason: string;
+  readonly recovery_hint?: string;
+  constructor(check: Exclude<CanTransitionResult, { ok: true }>) {
+    super(`transition blocked: ${check.reason_code} — ${check.reason}`);
+    this.name = 'TransitionPrereqError';
+    this.reason_code = check.reason_code;
+    this.reason = check.reason;
+    this.recovery_hint = check.recovery_hint;
+  }
+}
+
+export interface RecordTransitionEnforcedOptions extends RecordTransitionOptions {
+  /**
+   * When true, skip the `canTransition` prereq check. Used by tests + library
+   * code that want raw transitions for setup. NEVER expose this to MCP
+   * arguments without explicit user consent — the whole point of enforcement
+   * is the discipline gate.
+   */
+  bypass_enforcement?: boolean;
+}
+
+/**
+ * Wraps `recordTransition` with a prereq check (`canTransition`). Throws
+ * `TransitionPrereqError` when the check fails, unless
+ * `options.bypass_enforcement` is true.
+ *
+ * Recommended for MCP-layer callers; library consumers can use the raw
+ * `recordTransition` (no checks) for setup or migration scenarios.
+ */
+export function recordTransitionEnforced(
+  db: IdeasDatabase,
+  ideaId: string,
+  toState: IdeaState,
+  options: RecordTransitionEnforcedOptions = {},
+): TransitionRecord {
+  if (!options.bypass_enforcement) {
+    const check = canTransition(db, ideaId, toState);
+    if (!check.ok) {
+      throw new TransitionPrereqError(check);
+    }
+  }
+  return recordTransition(db, ideaId, toState, {
+    at: options.at,
+    reason: options.reason,
+  });
+}
+
 /**
  * Best-effort sync of an idea's `state` + `state_changed_at` into its
  * markdown frontmatter. Mirrors the existing `outcome.log` /

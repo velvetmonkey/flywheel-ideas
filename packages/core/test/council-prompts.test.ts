@@ -150,6 +150,58 @@ describe('assemblePrompt — user message', () => {
     });
     expect(user).toMatchSnapshot();
   });
+
+  // v0.2 D3 — steelman mode flips polarity from attack to defend.
+  it('steelman mode prepends the success-backwards prefix', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'steelman',
+      ...sampleIdea,
+    });
+    expect(user).toMatch(/^Assume this idea succeeded 12 months from now/);
+    expect(user).toContain('strongest possible affirmative case');
+  });
+
+  it('steelman mode swaps the task instruction to "Defend each assumption"', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'steelman',
+      ...sampleIdea,
+    });
+    expect(user).toContain('Defend each assumption with the strongest case');
+    expect(user).not.toContain('Attack each assumption');
+  });
+
+  it('standard mode keeps the attack instruction (regression guard)', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'standard',
+      ...sampleIdea,
+    });
+    expect(user).toContain('Attack each assumption');
+    expect(user).not.toContain('Defend each assumption');
+  });
+
+  it('steelman + evidence: defend instruction includes "supports" phrasing', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'steelman',
+      ...sampleIdea,
+      evidence: '## Evidence retrieved from your vault\n\n### Source: x.md\n\n> Y',
+    });
+    expect(user).toContain('Defend each assumption');
+    expect(user).toContain('Where the evidence above supports an assumption');
+    expect(user).not.toContain('Where the evidence above contradicts');
+  });
+
+  it('snapshot: steelman user message', () => {
+    const { user } = assemblePrompt({
+      persona: PERSONAS[0],
+      mode: 'steelman',
+      ...sampleIdea,
+    });
+    expect(user).toMatchSnapshot();
+  });
 });
 
 // ---------------------------------------------------------------------------

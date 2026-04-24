@@ -25,7 +25,9 @@ import {
   activeWritePath,
   approvalStatusForResponse,
   approvalsFilePath,
+  computeDecisionDelta,
   CouncilOrchestratorError,
+  DeltaInputError,
   resolveApproval,
   runCouncil,
   type CouncilMode,
@@ -56,7 +58,9 @@ export function registerCouncilTool(
       'revoke, or reset approval. Every response includes next_steps.',
     ].join(''),
     {
-      action: z.enum(['run', 'approval_status']).describe('Operation to perform'),
+      action: z
+        .enum(['run', 'approval_status', 'delta'])
+        .describe('Operation to perform'),
       // run
       id: z.string().optional().describe('[run] The idea id to dispatch the council against'),
       depth: z
@@ -64,9 +68,11 @@ export function registerCouncilTool(
         .optional()
         .describe('[run] light = 2 models x 2 personas; full = 3 x 5 (default light)'),
       mode: z
-        .enum(['standard', 'pre_mortem'])
+        .enum(['standard', 'pre_mortem', 'steelman'])
         .optional()
-        .describe('[run] standard stance vs backwards-from-failure pre_mortem (default pre_mortem)'),
+        .describe(
+          '[run] standard (attack from default stance) | pre_mortem (assume failure, work backwards) | steelman (defend strongest case for; counterweight to pre_mortem). Default: pre_mortem for nascent/explored ideas, standard otherwise.',
+        ),
       confirm: z
         .boolean()
         .optional()
@@ -79,6 +85,35 @@ export function registerCouncilTool(
         .describe(
           '[run] CLI subset to dispatch against (default: all three per depth). Useful for narrowing a session to one or two installed CLIs.',
         ),
+      freeze: z
+        .boolean()
+        .optional()
+        .describe(
+          '[run] v0.2 OSF preregistration — create a fresh freeze snapshotting the idea + open assumptions AT dispatch time, bind to this council session. Mutually exclusive with freeze_id.',
+        ),
+      freeze_id: z
+        .string()
+        .optional()
+        .describe(
+          '[run] v0.2 OSF preregistration — bind a pre-existing freeze (from `idea.freeze`) to this council session. Mutually exclusive with `freeze: true`.',
+        ),
+      // v0.2 D6 — decision_delta read-side
+      idea_id: z
+        .string()
+        .optional()
+        .describe('[delta] Idea whose two sessions to compare'),
+      from_session_id: z
+        .string()
+        .optional()
+        .describe('[delta] Earlier session id'),
+      to_session_id: z
+        .string()
+        .optional()
+        .describe('[delta] Later session id'),
+      significant_shift_threshold: z
+        .number()
+        .optional()
+        .describe('[delta] |Δconfidence| above this counts as a significant persona shift (default 0.3)'),
     },
     async (args) => {
       try {
@@ -87,6 +122,8 @@ export function registerCouncilTool(
             return await handleRun(getVaultPath(), getDb(), args);
           case 'approval_status':
             return await handleApprovalStatus(getVaultPath());
+          case 'delta':
+            return handleDelta(getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -112,9 +149,11 @@ async function handleRun(
   args: {
     id?: string;
     depth?: 'light' | 'full';
-    mode?: 'standard' | 'pre_mortem';
+    mode?: 'standard' | 'pre_mortem' | 'steelman';
     confirm?: boolean;
     clis?: Array<'claude' | 'codex' | 'gemini'>;
+    freeze?: boolean;
+    freeze_id?: string;
   },
 ): Promise<ReturnType<typeof mcpText>> {
   if (!args.id) {
@@ -215,7 +254,13 @@ async function handleRun(
         mode,
         approval_scope: state.scope,
       },
-      { spawn_override, spawn_overrides, clis_override: args.clis },
+      {
+        spawn_override,
+        spawn_overrides,
+        clis_override: args.clis,
+        freeze: args.freeze,
+        freeze_id: args.freeze_id,
+      },
     );
   } catch (err) {
     if (err instanceof CouncilOrchestratorError) {
@@ -273,6 +318,7 @@ async function handleRun(
       failed_any: outcome.failed_any,
       approval_source: state.source,
       approval_scope: state.scope,
+      freeze_id: outcome.freeze_id,
       write_path: activeWritePath,
     },
     next_steps,
@@ -363,4 +409,74 @@ async function handleApprovalStatus(
     },
     next_steps,
   });
+}
+
+// ---------- council.delta (v0.2 D6) ----------
+
+/**
+ * Compute the structured diff between two council sessions for the same
+ * idea. Read-only over existing tables. Useful for "what changed since the
+ * last council run?" — the question the external reviewer flagged as more
+ * useful than abstract disagreement metrics.
+ */
+function handleDelta(
+  db: IdeasDatabase,
+  args: {
+    idea_id?: string;
+    from_session_id?: string;
+    to_session_id?: string;
+    significant_shift_threshold?: number;
+  },
+): ReturnType<typeof mcpText> {
+  if (!args.idea_id || !args.from_session_id || !args.to_session_id) {
+    return mcpError(
+      'delta requires `idea_id`, `from_session_id`, and `to_session_id`',
+      [
+        {
+          action: 'idea.read',
+          example: 'idea.read({ id: "<idea_id>" })',
+          why: 'Inspect the idea to find candidate session ids in its council history.',
+        },
+      ],
+    );
+  }
+  try {
+    const delta = computeDecisionDelta(db, args.idea_id, args.from_session_id, args.to_session_id, {
+      significant_shift_threshold: args.significant_shift_threshold,
+    });
+    const next_steps: NextStep[] = [];
+    if (delta.summary.personas_with_significant_shift.length > 0) {
+      next_steps.push({
+        action: 'read_file',
+        example: '<vault path of the to_session SYNTHESIS.md>',
+        why: `${delta.summary.personas_with_significant_shift.length} persona(s) shifted significantly (|Δconfidence| > ${args.significant_shift_threshold ?? 0.3}). Read the new synthesis for the revised reasoning.`,
+      });
+    }
+    if (delta.summary.new_risks_count > 0) {
+      next_steps.push({
+        action: 'idea.read',
+        example: `idea.read({ id: "${args.idea_id}" })`,
+        why: `${delta.summary.new_risks_count} new risk(s) surfaced in the second session. Review the idea for whether those risks now require new assumptions.`,
+      });
+    }
+    if (next_steps.length === 0) {
+      next_steps.push({
+        action: 'idea.read',
+        example: `idea.read({ id: "${args.idea_id}" })`,
+        why: 'No significant shifts. Re-read the idea for context on what stayed stable.',
+      });
+    }
+    return mcpText({ result: { ...delta, write_path: activeWritePath }, next_steps });
+  } catch (err) {
+    if (err instanceof DeltaInputError) {
+      return mcpError(err.message, [
+        {
+          action: 'idea.read',
+          example: `idea.read({ id: "${args.idea_id}" })`,
+          why: 'Verify the idea + session ids before retrying.',
+        },
+      ]);
+    }
+    throw err;
+  }
 }

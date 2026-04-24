@@ -57,6 +57,10 @@ export {
   FLYWHEEL_DIR,
   SCHEMA_SQL_V1,
   SCHEMA_SQL_V2,
+  SCHEMA_SQL_V3,
+  SCHEMA_SQL_V4,
+  SCHEMA_SQL_V5,
+  SCHEMA_SQL_V6,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -111,19 +115,29 @@ export {
   generateCouncilViewId,
   generateTransitionId,
   generateDispatchId,
+  generateFreezeId,
   ID_ALPHABET,
 } from './ids.js';
 
-// Lifecycle (M4 commit 3)
+// Lifecycle (M4 commit 3 + v0.2 D5 enforcement)
 export {
   IDEA_STATES,
   INITIAL_STATE,
   isIdeaState,
   recordTransition,
+  recordTransitionEnforced,
+  canTransition,
+  TransitionPrereqError,
   syncTransitionFrontmatter,
   listTransitions,
 } from './lifecycle.js';
-export type { IdeaState, TransitionRecord, RecordTransitionOptions } from './lifecycle.js';
+export type {
+  IdeaState,
+  TransitionRecord,
+  RecordTransitionOptions,
+  RecordTransitionEnforcedOptions,
+  CanTransitionResult,
+} from './lifecycle.js';
 
 // Concurrency limiter (M9)
 export { ConcurrencyLimiter } from './concurrency.js';
@@ -209,6 +223,58 @@ export {
   splitSentences,
   tokenize,
 } from './council-overlap.js';
+
+// decision_delta — diff between two council sessions (v0.2 D6)
+export {
+  computeDecisionDelta,
+  DeltaInputError,
+} from './decision-delta.js';
+export type {
+  ComputeDeltaOptions,
+  DecisionDelta,
+  DecisionDeltaSummary,
+  DeltaCellRow,
+} from './decision-delta.js';
+
+// lineage — ancestry / descendants / shared_assumptions (v0.2 D7)
+export {
+  getAncestry,
+  getDescendants,
+  getSharedAssumptions,
+} from './lineage.js';
+export type {
+  LineageNode,
+  LineageOptions,
+  SharedAssumptionMatch,
+  SharedAssumptionsOptions,
+} from './lineage.js';
+
+// Assumption Radar (v0.2 D9)
+export {
+  radarAssumptions,
+  RadarInputError,
+} from './assumption-radar.js';
+export type {
+  RadarHit,
+  RadarOptions,
+  RadarResult,
+} from './assumption-radar.js';
+
+// Argument maps (v0.2 D8)
+export {
+  extractArgumentTree,
+  renderArgumentMapMarkdown,
+  recordArgumentMap,
+  getArgumentMap,
+} from './argument-map.js';
+export type {
+  ArgumentClaim,
+  ArgumentEvidence,
+  ArgumentMapRow,
+  ArgumentNode,
+  ArgumentTree,
+  ExtractArgumentTreeInput,
+} from './argument-map.js';
 export type {
   AgreementFragment,
   DisagreementBucket,
@@ -352,6 +418,62 @@ export type {
   EvidencePack,
   IdeaForEvidence,
 } from './council-evidence.js';
+
+// v3 idea-extensions sidecar (v0.2 Phase 1 D1)
+export {
+  setIdeaExtension,
+  getIdeaExtension,
+  clearIdeaExtension,
+} from './idea-extensions.js';
+export type {
+  AlternativeEntry,
+  IdeaExtensionInput,
+  IdeaExtensionRow,
+  Reversibility,
+} from './idea-extensions.js';
+
+// v3 assumption-extensions sidecar (v0.2 Phase 1 D1)
+export {
+  setAssumptionExtension,
+  getAssumptionExtension,
+  clearAssumptionExtension,
+} from './assumption-extensions.js';
+export type {
+  AssumptionExtensionInput,
+  AssumptionExtensionRow,
+  AssumptionMapping,
+  ThresholdDirection,
+} from './assumption-extensions.js';
+
+// v4 freezes — OSF preregistration (v0.2 Phase 1 D2)
+export {
+  createFreeze,
+  getFreeze,
+  listFreezesByIdea,
+  bindFreezeToCouncilSession,
+  FreezeInputError,
+  FreezeNotFoundError,
+  IdeaNotFoundError as FreezeIdeaNotFoundError,
+} from './freezes.js';
+export type {
+  CreateFreezeOptions,
+  FreezeRow,
+  FreezeSnapshot,
+  ListFreezesOptions as ListFreezesByIdeaOptions,
+} from './freezes.js';
+
+// v5 outcome memos — Anti-Portfolio post-mortem (v0.2 Phase 1 D4)
+export {
+  recordOutcomeMemo,
+  getOutcomeMemo,
+  clearOutcomeMemo,
+  findRefutingOutcomesWithoutMemos,
+  OutcomeMemoInputError,
+} from './outcome-memos.js';
+export type {
+  OutcomeMemo,
+  OutcomeMemoRow,
+} from './outcome-memos.js';
 
 // CLI version probe (alpha.5 fix D) — populates ideas_council_views.model_version
 export { probeCliVersion, clearVersionCache } from './cli-version.js';

@@ -32,6 +32,15 @@ describe('runMigrations', () => {
       'ideas_dispatches',
       // v2 (v0.2 KEYSTONE — retrieval-native council evidence sidecar)
       'ideas_council_evidence',
+      // v3 (v0.2 Phase 1 D1 — schema enrichment sidecars)
+      'ideas_idea_extensions',
+      'ideas_assumption_extensions',
+      // v4 (v0.2 Phase 1 D2 — OSF preregistration freezes)
+      'ideas_freezes',
+      // v5 (v0.2 Phase 1 D4 — Anti-Portfolio outcome memos)
+      'ideas_outcome_memos',
+      // v6 (v0.2 Phase 1 D8 — Argument maps)
+      'ideas_argument_maps',
     ];
 
     const rows = db
@@ -51,7 +60,9 @@ describe('runMigrations', () => {
     const rows = db
       .prepare('SELECT version FROM schema_version ORDER BY version')
       .all() as Array<{ version: number }>;
-    expect(rows.map((r) => r.version)).toEqual([1, 2]);
+    // Auto-adapts to SCHEMA_VERSION bumps so future migrations don't trip this.
+    const expected = Array.from({ length: SCHEMA_VERSION }, (_, i) => i + 1);
+    expect(rows.map((r) => r.version)).toEqual(expected);
     db.close();
   });
 

@@ -55,3 +55,4 @@ export const generateCouncilSessionId = (): string => generateId('sess');
 export const generateCouncilViewId = (): string => generateId('view');
 export const generateTransitionId = (): string => generateId('trans');
 export const generateDispatchId = (): string => generateId('disp');
+export const generateFreezeId = (): string => generateId('fr');

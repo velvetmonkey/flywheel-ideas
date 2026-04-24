@@ -23,8 +23,11 @@ import {
   IdeaNotFoundError,
   listAssumptions,
   lockAssumption,
+  radarAssumptions,
+  RadarInputError,
   unlockAssumption,
   type IdeasDatabase,
+  type RadarHit,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpText, type NextStep } from '../next_steps.js';
 
@@ -45,7 +48,7 @@ export function registerAssumptionTool(
     ].join(''),
     {
       action: z
-        .enum(['declare', 'list', 'lock', 'unlock', 'signposts_due', 'forget'])
+        .enum(['declare', 'list', 'lock', 'unlock', 'signposts_due', 'forget', 'radar'])
         .describe('Operation to perform'),
       // declare + list + signposts_due
       idea_id: z
@@ -110,6 +113,27 @@ export function registerAssumptionTool(
         .min(0)
         .optional()
         .describe('[signposts_due] Extend the horizon N ms into the future (default 0)'),
+      // v0.2 D9 — Assumption Radar
+      all_load_bearing: z
+        .boolean()
+        .optional()
+        .describe(
+          '[radar] Sweep all load-bearing open assumptions across the vault. Mutually exclusive with idea_id.',
+        ),
+      limit_per_assumption: z
+        .number()
+        .int()
+        .min(1)
+        .max(20)
+        .optional()
+        .describe('[radar] Max vault hits per assumption (default 5)'),
+      max_assumptions: z
+        .number()
+        .int()
+        .min(1)
+        .max(200)
+        .optional()
+        .describe('[radar] Max assumptions to scan in one sweep (default 20)'),
     },
     async (args) => {
       try {
@@ -126,6 +150,8 @@ export function registerAssumptionTool(
             return handleSignpostsDue(getDb(), args);
           case 'forget':
             return handleForget(getDb(), args);
+          case 'radar':
+            return await handleRadar(getVaultPath(), getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -523,4 +549,110 @@ function handleForget(
       },
     ],
   });
+}
+
+// ---------- assumption.radar (v0.2 D9) ----------
+
+/**
+ * Surface vault hits that *might* validate or refute open assumptions.
+ *
+ * Per the v0.2 brainstorm council verdict: surfaces `related_mention` hits
+ * ONLY — no keyword classification (the brainstorm attacked auto-classification
+ * as the same fuzzy heuristic that breaks falsifiability). The user reads the
+ * excerpt and decides whether each hit is a refute / validate signal. The
+ * outcome.log call stays human-driven; Radar provides the surface, never the
+ * verdict.
+ */
+async function handleRadar(
+  vaultPath: string,
+  db: IdeasDatabase,
+  args: {
+    idea_id?: string;
+    all_load_bearing?: boolean;
+    limit_per_assumption?: number;
+    max_assumptions?: number;
+  },
+): Promise<ReturnType<typeof mcpText>> {
+  try {
+    const result = await radarAssumptions(db, vaultPath, {
+      idea_id: args.idea_id,
+      all_load_bearing: args.all_load_bearing,
+      limit_per_assumption: args.limit_per_assumption,
+      max_assumptions: args.max_assumptions,
+    });
+
+    const next_steps: NextStep[] = [];
+
+    if (!result.reader_available) {
+      next_steps.push({
+        action: 'install_flywheel_memory',
+        example: 'npm install -g @velvetmonkey/flywheel-memory',
+        why: `Radar needs flywheel-memory for vault search; subprocess unavailable (${result.reader_skip_reason ?? 'unknown'}). Install + retry, or set FLYWHEEL_IDEAS_MEMORY_BRIDGE=0 if intentional.`,
+      });
+    } else if (result.hits.length === 0 && result.assumptions_scanned === 0) {
+      next_steps.push({
+        action: 'assumption.declare',
+        example: 'assumption.declare({ idea_id: "<idea>", text: "..." })',
+        why: 'No open assumptions in scope to scan. Declare assumptions first; Radar surfaces vault signals once you have load-bearing claims.',
+      });
+    } else if (result.hits.length === 0) {
+      next_steps.push({
+        action: 'assumption.list',
+        example: args.idea_id
+          ? `assumption.list({ idea_id: "${args.idea_id}" })`
+          : 'idea.list({ state: "committed" })',
+        why: `Scanned ${result.assumptions_scanned} assumption(s); no related vault notes surfaced. Either the vault hasn't accumulated relevant signals yet, or the assumption text needs sharper keywords.`,
+      });
+    } else {
+      // For the top hit, propose outcome.log WITHOUT pre-filled refutes/validates
+      // (per the falsifiability discipline — user reads + decides).
+      const top = result.hits[0];
+      // Surface the assumption's parent idea so outcome.log has the right idea_id.
+      const parent = db
+        .prepare('SELECT idea_id FROM ideas_assumptions WHERE id = ?')
+        .get(top.assumption_id) as { idea_id: string } | undefined;
+      next_steps.push({
+        action: 'outcome.log',
+        example: `outcome.log({ idea_id: "${parent?.idea_id ?? '<idea>'}", text: ${JSON.stringify(top.excerpt.slice(0, 200))} })`,
+        why: `Radar surfaced "${top.vault_path}" as related to assumption ${top.assumption_id}. Read the excerpt — if it validates or refutes the assumption, log an outcome with the appropriate refutes/validates array. Radar deliberately does NOT pre-fill the verdict (falsifiability discipline).`,
+      });
+      // If multiple hits, add a "list all" hint.
+      if (result.hits.length > 1) {
+        next_steps.push({
+          action: 'idea.read',
+          example: `idea.read({ id: "${parent?.idea_id ?? '<idea>'}" })`,
+          why: `${result.hits.length} total hits across ${result.assumptions_scanned} assumption(s). Re-read the parent idea(s) for context before classifying each hit.`,
+        });
+      }
+    }
+
+    return mcpText({
+      result: {
+        assumptions_scanned: result.assumptions_scanned,
+        reader_available: result.reader_available,
+        reader_skip_reason: result.reader_skip_reason ?? null,
+        hits: result.hits.map((h: RadarHit) => ({
+          assumption_id: h.assumption_id,
+          assumption_text: h.assumption_text,
+          vault_path: h.vault_path,
+          excerpt: h.excerpt.slice(0, 500), // cap for prompt-budget hygiene
+          score: h.score,
+        })),
+        hit_count: result.hits.length,
+        write_path: activeWritePath,
+      },
+      next_steps,
+    });
+  } catch (err) {
+    if (err instanceof RadarInputError) {
+      return mcpError(err.message, [
+        {
+          action: 'assumption.radar',
+          example: 'assumption.radar({ all_load_bearing: true })',
+          why: 'Sweep all load-bearing open assumptions across the vault — the most common Radar shape.',
+        },
+      ]);
+    }
+    throw err;
+  }
 }

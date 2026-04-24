@@ -504,3 +504,61 @@ describe('idea.read cross-linking with assumptions', () => {
     expect(listWithElapsedHint).toBeUndefined();
   });
 });
+
+// ===========================================================================
+// assumption.radar (v0.2 D9)
+// ===========================================================================
+
+describe('assumption.radar (v0.2 D9)', () => {
+  const savedMemoryBridge = process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+
+  afterEach(() => {
+    if (savedMemoryBridge === undefined) delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+    else process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = savedMemoryBridge;
+  });
+
+  it('returns reader_available=false + install hint when subprocess disabled', async () => {
+    const ideaId = await seedIdea();
+    await client.callTool('assumption', {
+      action: 'declare', idea_id: ideaId, text: 'Some load-bearing assumption', load_bearing: true,
+    });
+    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    const response = parseEnvelope(
+      await client.callTool('assumption', { action: 'radar', idea_id: ideaId }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.reader_available).toBe(false);
+    expect(response.result.hits).toEqual([]);
+    const installHint = response.next_steps.find(
+      (s: any) => s.action === 'install_flywheel_memory',
+    );
+    expect(installHint).toBeDefined();
+  });
+
+  it('rejects both idea_id + all_load_bearing supplied', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    const r = await client.callTool('assumption', {
+      action: 'radar', idea_id: ideaId, all_load_bearing: true,
+    });
+    expect(r.isError).toBe(true);
+  });
+
+  it('rejects neither idea_id nor all_load_bearing', async () => {
+    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    const r = await client.callTool('assumption', { action: 'radar' });
+    expect(r.isError).toBe(true);
+  });
+
+  it('returns empty result + declare hint when no in-scope assumptions', async () => {
+    const ideaId = await seedIdea();
+    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    const response = parseEnvelope(
+      await client.callTool('assumption', { action: 'radar', idea_id: ideaId }),
+    );
+    expect(response.isError).toBe(false);
+    // assumptions_scanned=0 because no assumptions exist OR reader_available=false
+    // depending on order — both paths surface 0 hits + an actionable hint.
+    expect(response.result.hit_count).toBe(0);
+  });
+});

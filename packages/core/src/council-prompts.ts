@@ -2,9 +2,13 @@
  * Council prompt assembly.
  *
  * Light-depth runs use 2 personas: Risk Pessimist + Growth Optimist. Full
- * depth adds 3 more (the M10 5-persona set). Two modes: `standard` (attack
- * assumptions from persona's default stance) and `pre_mortem` (assume the
- * idea failed 12 months out, work backwards).
+ * depth adds 3 more (the M10 5-persona set). Three modes:
+ *  - `standard` — attack assumptions from persona's default stance
+ *  - `pre_mortem` — assume the idea failed 12 months out, work backwards
+ *  - `steelman` — argue the strongest possible case FOR the idea; defend
+ *    each assumption with the best version of why it holds. Counterweight
+ *    to pre_mortem; prevents users training into permanent pessimism.
+ *    (v0.2 D3, per the rigor-imports section of roadmap-v0-2.)
  *
  * Each cell runs the mandatory two-pass metacognitive structure — Pass 1
  * `initial_stance`, Pass 2 `self_critique` + revised `stance` — both
@@ -14,10 +18,11 @@
  * so `ideas_council_views.prompt_version` is comparable across time.
  */
 
-export const PROMPT_VERSION = '1.0.0';
+// v1.1.0 — added steelman mode prefix + steelman task instruction (D3).
+export const PROMPT_VERSION = '1.1.0';
 export const PERSONA_VERSION = '1.0.0';
 
-export type CouncilMode = 'standard' | 'pre_mortem';
+export type CouncilMode = 'standard' | 'pre_mortem' | 'steelman';
 
 export interface PersonaDef {
   /** Stable machine-key used in file paths + DB rows: `risk-pessimist` */
@@ -81,6 +86,15 @@ const JSON_ENVELOPE_CONTRACT = `Respond with EXACTLY this JSON envelope and noth
 }`;
 
 const PRE_MORTEM_PREFIX = `Assume this idea has failed 12 months from now. Work backwards — what went wrong? Attack every declared assumption as a candidate cause.
+
+---
+
+`;
+
+// v0.2 D3 — counterweight to pre_mortem. Forces personas to surface the
+// strongest possible affirmative case so the user isn't trained into
+// permanent pessimism by repeated pre_mortem dispatches.
+const STEELMAN_PREFIX = `Assume this idea succeeded 12 months from now. Work backwards — why? Argue the strongest possible affirmative case. For every declared assumption, articulate the best version of why it held and what evidence supports that conclusion. Your persona's default skepticism is suspended for this run; channel it into finding the most compelling defense, not the most compelling attack.
 
 ---
 
@@ -167,9 +181,8 @@ export function assemblePrompt(input: PromptInput): AssembledPrompt {
   // pure (just role + JSON contract); evidence is task input.
   const hasEvidence = input.evidence != null && input.evidence.length > 0;
   const evidenceBlock = hasEvidence ? `\n${input.evidence}\n` : '';
-  const attackInstruction = hasEvidence
-    ? 'Attack each assumption explicitly. Cite assumptions by id in `assumptions_cited`. Where the evidence above contradicts or supports an assumption, surface that explicitly with the source path.'
-    : 'Attack each assumption explicitly. Cite assumptions by id in `assumptions_cited`.';
+  // v0.2 D3 — instruction flips under steelman to defend rather than attack.
+  const taskInstruction = buildTaskInstruction(input.mode, hasEvidence);
 
   const userBody = [
     `Idea: ${input.idea_title}`,
@@ -179,10 +192,15 @@ export function assemblePrompt(input: PromptInput): AssembledPrompt {
     'Declared assumptions:',
     assumptionsBlock,
     evidenceBlock,
-    attackInstruction,
+    taskInstruction,
   ].join('\n');
 
-  const pass1User = input.mode === 'pre_mortem' ? `${PRE_MORTEM_PREFIX}${userBody}` : userBody;
+  const pass1User =
+    input.mode === 'pre_mortem'
+      ? `${PRE_MORTEM_PREFIX}${userBody}`
+      : input.mode === 'steelman'
+        ? `${STEELMAN_PREFIX}${userBody}`
+        : userBody;
 
   let user: string;
   const pass = input.pass ?? 1;
@@ -202,4 +220,21 @@ export function assemblePrompt(input: PromptInput): AssembledPrompt {
   const digest_material = `${system}\n\n---\n\n${user}`;
 
   return { system, user, digest_material };
+}
+
+/**
+ * Mode-aware task instruction. Steelman flips polarity (defend vs attack);
+ * standard + pre_mortem keep the attack-each-assumption framing.
+ */
+function buildTaskInstruction(mode: CouncilMode, hasEvidence: boolean): string {
+  if (mode === 'steelman') {
+    const evidenceClause = hasEvidence
+      ? ' Where the evidence above supports an assumption, cite it with the source path; where it might contradict, account for the contradiction in the strongest defense.'
+      : '';
+    return `Defend each assumption with the strongest case for why it holds. Cite assumptions by id in \`assumptions_cited\`.${evidenceClause}`;
+  }
+  const evidenceClause = hasEvidence
+    ? ' Where the evidence above contradicts or supports an assumption, surface that explicitly with the source path.'
+    : '';
+  return `Attack each assumption explicitly. Cite assumptions by id in \`assumptions_cited\`.${evidenceClause}`;
 }
