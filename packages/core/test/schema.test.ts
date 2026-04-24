@@ -35,6 +35,10 @@ describe('runMigrations', () => {
       // v3 (v0.2 Phase 1 D1 — schema enrichment sidecars)
       'ideas_idea_extensions',
       'ideas_assumption_extensions',
+      // v4 (v0.2 Phase 1 D2 — OSF preregistration freezes)
+      'ideas_freezes',
+      // v5 (v0.2 Phase 1 D4 — Anti-Portfolio outcome memos)
+      'ideas_outcome_memos',
     ];
 
     const rows = db

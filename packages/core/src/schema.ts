@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 4;
+export const SCHEMA_VERSION = 5;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -251,4 +251,36 @@ CREATE INDEX IF NOT EXISTS idx_ideas_freezes_council
   ON ideas_freezes(council_session_id) WHERE council_session_id IS NOT NULL;
 CREATE INDEX IF NOT EXISTS idx_ideas_freezes_supersedes
   ON ideas_freezes(supersedes_freeze_id) WHERE supersedes_freeze_id IS NOT NULL;
+`;
+
+/**
+ * v5 migration — Anti-Portfolio outcome memo sidecar (v0.2 Phase 1 D4).
+ *
+ * Per the Bessemer Anti-Portfolio pattern: when an outcome refutes any
+ * assumption, the team writes a structured "which assumption failed and
+ * why" memo. This is the post-mortem layer that turns one-off failures
+ * into propagated learning across future ideas.
+ *
+ * 1:1 with `ideas_outcomes` (PK = outcome_id). The memo is OPTIONAL by
+ * default — outcome.log will succeed without one — but the MCP surface
+ * surfaces a strong nudge in `next_steps` when a refuting outcome is
+ * logged without a memo. Hard enforcement (rejecting refuting outcomes
+ * without memos) is too brittle for v0.2 alpha; users may want to log
+ * the outcome immediately and write the memo later.
+ *
+ * `memo_json` shape (deserialised by the helper):
+ *   {
+ *     refuted_assumption_id?: string,    // optional pointer at the most-load-bearing failed assumption
+ *     root_cause: string,                // what actually broke
+ *     what_we_thought: string,           // the original assumption / belief
+ *     what_actually_happened: string,    // the observed reality
+ *     lesson: string                     // the durable takeaway
+ *   }
+ */
+export const SCHEMA_SQL_V5 = `
+CREATE TABLE IF NOT EXISTS ideas_outcome_memos (
+  outcome_id TEXT PRIMARY KEY REFERENCES ideas_outcomes(id) ON DELETE CASCADE,
+  memo_json TEXT NOT NULL,
+  written_at INTEGER NOT NULL
+);
 `;

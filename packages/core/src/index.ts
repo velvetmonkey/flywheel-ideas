@@ -59,6 +59,7 @@ export {
   SCHEMA_SQL_V2,
   SCHEMA_SQL_V3,
   SCHEMA_SQL_V4,
+  SCHEMA_SQL_V5,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -398,6 +399,19 @@ export type {
   FreezeSnapshot,
   ListFreezesOptions as ListFreezesByIdeaOptions,
 } from './freezes.js';
+
+// v5 outcome memos — Anti-Portfolio post-mortem (v0.2 Phase 1 D4)
+export {
+  recordOutcomeMemo,
+  getOutcomeMemo,
+  clearOutcomeMemo,
+  findRefutingOutcomesWithoutMemos,
+  OutcomeMemoInputError,
+} from './outcome-memos.js';
+export type {
+  OutcomeMemo,
+  OutcomeMemoRow,
+} from './outcome-memos.js';
 
 // CLI version probe (alpha.5 fix D) — populates ideas_council_views.model_version
 export { probeCliVersion, clearVersionCache } from './cli-version.js';

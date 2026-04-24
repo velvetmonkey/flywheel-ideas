@@ -382,3 +382,102 @@ describe('outcome.list / outcome.read', () => {
     expect(response.error).toContain('outcome not found');
   });
 });
+
+// ===========================================================================
+// outcome.log — Anti-Portfolio memo (v0.2 D4)
+// ===========================================================================
+
+describe('outcome.log — Anti-Portfolio memo (v0.2 D4)', () => {
+  const validMemo = {
+    root_cause: 'Pricing anchored on a competitor that exited the market',
+    what_we_thought: 'Customers would tolerate $X/seat',
+    what_actually_happened: 'Churn spiked at $X-2; market reset lower',
+    lesson: 'Anchor pricing on willingness-to-pay survey before comp scan',
+  };
+
+  it('refuting outcome WITHOUT memo: result.memo_recorded=false + nudge in next_steps', async () => {
+    const ideaA = await seedIdea();
+    const asmA = await seedAssumption(ideaA);
+    const response = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaA,
+        text: 'X happened',
+        refutes: [asmA],
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.memo_recorded).toBe(false);
+    // First next_step should be the memo nudge.
+    expect(response.next_steps[0].action).toBe('outcome.log');
+    expect(response.next_steps[0].why).toContain('Anti-Portfolio');
+    expect(response.next_steps[0].example).toContain('memo:');
+  });
+
+  it('refuting outcome WITH memo: result.memo_recorded=true + no memo nudge', async () => {
+    const ideaA = await seedIdea();
+    const asmA = await seedAssumption(ideaA);
+    const response = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaA,
+        text: 'X happened',
+        refutes: [asmA],
+        memo: validMemo,
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.memo_recorded).toBe(true);
+    const memoNudge = response.next_steps.find(
+      (s: any) => s.action === 'outcome.log' && s.why?.includes('Anti-Portfolio'),
+    );
+    expect(memoNudge).toBeUndefined();
+    // Memo persisted in DB.
+    const row = db
+      .prepare('SELECT memo_json FROM ideas_outcome_memos WHERE outcome_id = ?')
+      .get(response.result.id) as { memo_json: string } | undefined;
+    expect(row).toBeDefined();
+    const parsed = JSON.parse(row!.memo_json);
+    expect(parsed.lesson).toContain('Anchor pricing');
+  });
+
+  it('validating-only outcome (no refutes) does NOT nudge for memo', async () => {
+    const ideaA = await seedIdea();
+    const asmA = await seedAssumption(ideaA);
+    const response = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaA,
+        text: 'It worked',
+        validates: [asmA],
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.memo_recorded).toBe(false);
+    const memoNudge = response.next_steps.find((s: any) =>
+      s.why?.includes('Anti-Portfolio'),
+    );
+    expect(memoNudge).toBeUndefined();
+  });
+
+  it('memo with missing required field is rejected at the schema boundary', async () => {
+    const ideaA = await seedIdea();
+    const asmA = await seedAssumption(ideaA);
+    const r = await client.callTool('outcome', {
+      action: 'log',
+      idea_id: ideaA,
+      text: 'X happened',
+      refutes: [asmA],
+      memo: { root_cause: 'x', what_we_thought: 'y', what_actually_happened: 'z' /* lesson missing */ },
+    });
+    // MCP SDK validates against the zod schema BEFORE our handler runs and
+    // returns isError=true with a non-JSON "MCP error: ..." text. Either
+    // shape (structured envelope or raw error text) counts as rejection.
+    expect(r.isError).toBe(true);
+    const text = r.content?.[0]?.text ?? '';
+    expect(text).toMatch(/lesson|error|invalid|min(?:imum)?|required/i);
+    // Verify no outcome was persisted.
+    const count = db.prepare('SELECT COUNT(*) as c FROM ideas_outcomes').get() as { c: number };
+    expect(count.c).toBe(0);
+  });
+});

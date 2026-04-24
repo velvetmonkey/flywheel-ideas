@@ -18,13 +18,17 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
   activeWritePath,
   getOutcome,
+  getOutcomeMemo,
   listOutcomes,
   logOutcome,
   OutcomeAlreadyUndoneError,
   OutcomeInputError,
+  OutcomeMemoInputError,
   OutcomeNotFoundError,
+  recordOutcomeMemo,
   undoOutcome,
   type IdeasDatabase,
+  type OutcomeMemo,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpText, type NextStep } from '../next_steps.js';
 
@@ -63,6 +67,19 @@ export function registerOutcomeTool(
         .array(z.string())
         .optional()
         .describe('[log] Assumption ids that reality confirmed'),
+      // v0.2 D4 — Anti-Portfolio post-mortem memo
+      memo: z
+        .object({
+          refuted_assumption_id: z.string().optional(),
+          root_cause: z.string().min(1),
+          what_we_thought: z.string().min(1),
+          what_actually_happened: z.string().min(1),
+          lesson: z.string().min(1),
+        })
+        .optional()
+        .describe(
+          '[log] Anti-Portfolio post-mortem memo. Strongly recommended when the outcome refutes any assumption — the lesson field is the durable layer that propagates across future ideas. Optional, but next_steps will nudge for it on refuting outcomes.',
+        ),
       // undo / read
       id: z
         .string()
@@ -121,6 +138,7 @@ async function handleLog(
     text?: string;
     refutes?: string[];
     validates?: string[];
+    memo?: OutcomeMemo;
   },
 ): Promise<ReturnType<typeof mcpText>> {
   if (!args.idea_id) {
@@ -150,7 +168,40 @@ async function handleLog(
       validates: args.validates,
     });
 
+    // v0.2 D4 — persist Anti-Portfolio memo if supplied. Validation throws
+    // OutcomeMemoInputError, which we surface with a structured next_step.
+    let memo_recorded = false;
+    if (args.memo) {
+      try {
+        recordOutcomeMemo(db, result.outcome.id, args.memo);
+        memo_recorded = true;
+      } catch (err) {
+        if (err instanceof OutcomeMemoInputError) {
+          // Don't roll back the outcome — the user logged the bet; just nudge
+          // for a fixed memo via next_steps.
+          process.stderr.write(
+            `[flywheel-ideas] outcome.log: memo validation failed (${err.message}); outcome persisted without memo\n`,
+          );
+        } else {
+          throw err;
+        }
+      }
+    }
+
     const next_steps: NextStep[] = [];
+
+    // v0.2 D4 — strong nudge when the outcome refuted assumptions but no memo
+    // was supplied (or the memo failed validation). Goes FIRST in next_steps
+    // so the calling agent surfaces it before the cascade hints.
+    const refutes_any = result.refuted.length > 0;
+    if (refutes_any && !memo_recorded) {
+      next_steps.push({
+        action: 'outcome.log',
+        example: `outcome.log({ idea_id: "${args.idea_id}", id_alias: "${result.outcome.id}", memo: { root_cause: "<what broke>", what_we_thought: "<original belief>", what_actually_happened: "<observed reality>", lesson: "<durable takeaway>" } })`,
+        why: `Anti-Portfolio: this outcome refuted ${result.refuted.length} assumption(s). The Bessemer pattern says: write a structured memo capturing root_cause / what_we_thought / what_actually_happened / lesson. The lesson field is the durable layer that propagates across future ideas. Re-call outcome.log with a memo arg, OR write one now via a follow-up call.`,
+      });
+    }
+
     if (result.flagged_ideas.length > 0) {
       next_steps.push({
         action: 'idea.read',
@@ -181,6 +232,7 @@ async function handleLog(
         validated: result.validated,
         flagged_ideas: result.flagged_ideas,
         flagged_count: result.flagged_ideas.length,
+        memo_recorded,
         write_path: result.write_path,
       },
       next_steps,
