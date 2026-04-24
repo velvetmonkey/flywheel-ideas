@@ -28,6 +28,12 @@ import { withEvidenceReader } from './evidence-reader.js';
 import type { EvidenceReader } from './evidence-reader.js';
 import { bindFreezeToCouncilSession, createFreeze, getFreeze } from './freezes.js';
 import {
+  extractArgumentTree,
+  recordArgumentMap,
+  renderArgumentMapMarkdown,
+} from './argument-map.js';
+import { writeNote as writeNoteDirect } from './write/direct-fs.js';
+import {
   parseClaudeStanceOutput,
   parseCodexStanceOutput,
   parseGeminiStanceOutput,
@@ -352,7 +358,33 @@ export async function runCouncil(
     content: synthesisBody,
   });
 
-  // 4. Complete session
+  // 4. v0.2 D8 — extract + persist + render the argument map alongside the synthesis.
+  //    Best-effort: failure to write the sidecar / file does not abort the session.
+  try {
+    const tree = extractArgumentTree({
+      session_id,
+      views: viewsForSynthesis,
+      stances: parsedStances,
+    });
+    recordArgumentMap(db, tree);
+    const argumentMd = renderArgumentMapMarkdown(tree, idea.title);
+    const synth_dir = synthesis.relative_path.replace(/\/SYNTHESIS\.md$/, '');
+    if (synth_dir !== synthesis.relative_path) {
+      // Write ARGUMENT_MAP.md as a sibling to SYNTHESIS.md.
+      await writeNoteDirect(
+        vault_path,
+        `${synth_dir}/ARGUMENT_MAP.md`,
+        { type: 'argument_map', session_id, generated_at: tree.generated_at_iso },
+        argumentMd,
+      );
+    }
+  } catch (err) {
+    process.stderr.write(
+      `[flywheel-ideas] council.run: argument-map generation failed (${(err as Error).message}); session continues without it\n`,
+    );
+  }
+
+  // 5. Complete session
   completeCouncilSession(db, session_id, {
     synthesis_vault_path: synthesis.relative_path,
   });

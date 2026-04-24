@@ -60,6 +60,7 @@ export {
   SCHEMA_SQL_V3,
   SCHEMA_SQL_V4,
   SCHEMA_SQL_V5,
+  SCHEMA_SQL_V6,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -258,6 +259,22 @@ export type {
   RadarOptions,
   RadarResult,
 } from './assumption-radar.js';
+
+// Argument maps (v0.2 D8)
+export {
+  extractArgumentTree,
+  renderArgumentMapMarkdown,
+  recordArgumentMap,
+  getArgumentMap,
+} from './argument-map.js';
+export type {
+  ArgumentClaim,
+  ArgumentEvidence,
+  ArgumentMapRow,
+  ArgumentNode,
+  ArgumentTree,
+  ExtractArgumentTreeInput,
+} from './argument-map.js';
 export type {
   AgreementFragment,
   DisagreementBucket,

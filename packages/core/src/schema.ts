@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 5;
+export const SCHEMA_VERSION = 6;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -282,5 +282,28 @@ CREATE TABLE IF NOT EXISTS ideas_outcome_memos (
   outcome_id TEXT PRIMARY KEY REFERENCES ideas_outcomes(id) ON DELETE CASCADE,
   memo_json TEXT NOT NULL,
   written_at INTEGER NOT NULL
+);
+`;
+
+/**
+ * v6 migration — Argument map sidecar (v0.2 Phase 1 D8).
+ *
+ * Per the Apr 24 roadmap addition: "Flat synthesis is enough for v0.1 — not
+ * enough for reuse. A claim → pro → con → evidence tree is a better reuse
+ * surface than prose-only dissent notes." Reference: Kialo argument-mapping
+ * research; Loomio decision-with-context pattern.
+ *
+ * 1:1 with `ideas_council_sessions` (PK = session_id, ON DELETE CASCADE).
+ * Generated AFTER the synthesis renders — uses the same per-cell stance +
+ * key_risks + fragile_insights + evidence already parsed for synthesis,
+ * deterministically restructured into a claim tree. No LLM extraction in
+ * v0.2; a future revision may add LLM-driven claim grouping for tighter
+ * cross-persona consolidation.
+ */
+export const SCHEMA_SQL_V6 = `
+CREATE TABLE IF NOT EXISTS ideas_argument_maps (
+  session_id TEXT PRIMARY KEY REFERENCES ideas_council_sessions(id) ON DELETE CASCADE,
+  tree_json TEXT NOT NULL,
+  generated_at INTEGER NOT NULL
 );
 `;

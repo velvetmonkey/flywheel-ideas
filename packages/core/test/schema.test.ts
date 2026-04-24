@@ -39,6 +39,8 @@ describe('runMigrations', () => {
       'ideas_freezes',
       // v5 (v0.2 Phase 1 D4 — Anti-Portfolio outcome memos)
       'ideas_outcome_memos',
+      // v6 (v0.2 Phase 1 D8 — Argument maps)
+      'ideas_argument_maps',
     ];
 
     const rows = db
