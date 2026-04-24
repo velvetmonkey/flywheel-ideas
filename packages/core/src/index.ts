@@ -58,6 +58,7 @@ export {
   SCHEMA_SQL_V1,
   SCHEMA_SQL_V2,
   SCHEMA_SQL_V3,
+  SCHEMA_SQL_V4,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -112,6 +113,7 @@ export {
   generateCouncilViewId,
   generateTransitionId,
   generateDispatchId,
+  generateFreezeId,
   ID_ALPHABET,
 } from './ids.js';
 
@@ -379,6 +381,23 @@ export type {
   AssumptionMapping,
   ThresholdDirection,
 } from './assumption-extensions.js';
+
+// v4 freezes — OSF preregistration (v0.2 Phase 1 D2)
+export {
+  createFreeze,
+  getFreeze,
+  listFreezesByIdea,
+  bindFreezeToCouncilSession,
+  FreezeInputError,
+  FreezeNotFoundError,
+  IdeaNotFoundError as FreezeIdeaNotFoundError,
+} from './freezes.js';
+export type {
+  CreateFreezeOptions,
+  FreezeRow,
+  FreezeSnapshot,
+  ListFreezesOptions as ListFreezesByIdeaOptions,
+} from './freezes.js';
 
 // CLI version probe (alpha.5 fix D) — populates ideas_council_views.model_version
 export { probeCliVersion, clearVersionCache } from './cli-version.js';

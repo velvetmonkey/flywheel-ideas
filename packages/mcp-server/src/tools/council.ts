@@ -79,6 +79,18 @@ export function registerCouncilTool(
         .describe(
           '[run] CLI subset to dispatch against (default: all three per depth). Useful for narrowing a session to one or two installed CLIs.',
         ),
+      freeze: z
+        .boolean()
+        .optional()
+        .describe(
+          '[run] v0.2 OSF preregistration — create a fresh freeze snapshotting the idea + open assumptions AT dispatch time, bind to this council session. Mutually exclusive with freeze_id.',
+        ),
+      freeze_id: z
+        .string()
+        .optional()
+        .describe(
+          '[run] v0.2 OSF preregistration — bind a pre-existing freeze (from `idea.freeze`) to this council session. Mutually exclusive with `freeze: true`.',
+        ),
     },
     async (args) => {
       try {
@@ -115,6 +127,8 @@ async function handleRun(
     mode?: 'standard' | 'pre_mortem';
     confirm?: boolean;
     clis?: Array<'claude' | 'codex' | 'gemini'>;
+    freeze?: boolean;
+    freeze_id?: string;
   },
 ): Promise<ReturnType<typeof mcpText>> {
   if (!args.id) {
@@ -215,7 +229,13 @@ async function handleRun(
         mode,
         approval_scope: state.scope,
       },
-      { spawn_override, spawn_overrides, clis_override: args.clis },
+      {
+        spawn_override,
+        spawn_overrides,
+        clis_override: args.clis,
+        freeze: args.freeze,
+        freeze_id: args.freeze_id,
+      },
     );
   } catch (err) {
     if (err instanceof CouncilOrchestratorError) {
@@ -273,6 +293,7 @@ async function handleRun(
       failed_any: outcome.failed_any,
       approval_source: state.source,
       approval_scope: state.scope,
+      freeze_id: outcome.freeze_id,
       write_path: activeWritePath,
     },
     next_steps,

@@ -5,9 +5,11 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 import {
+  createFreeze,
   declareAssumption,
   deleteIdeasDbFiles,
   getCouncilSession,
+  getFreeze,
   listDispatches,
   listViewsBySession,
   openIdeasDb,
@@ -898,5 +900,112 @@ describe('runCouncil — evidence injection wiring (v0.2 KEYSTONE)', () => {
     // the evidence. Both passes inject the same evidence per the wiring.
     const captured = await fsp.readFile(stdinCapturePath, 'utf8');
     expect(captured).toContain('Evidence retrieved from your vault');
+  });
+});
+
+// ===========================================================================
+// v0.2 D2 — runCouncil freeze binding wiring
+// ===========================================================================
+
+describe('runCouncil — freeze binding (v0.2 D2)', () => {
+  beforeEach(async () => {
+    await seedIdea();
+    await seedSeededAssumption();
+  });
+
+  it('freeze: true auto-creates a freeze and binds to the new session', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { ...CLAUDE_ONLY_OPTIONS, freeze: true },
+    );
+    expect(result.status).toBe('success');
+    expect(result.freeze_id).toMatch(/^fr-/);
+
+    // The freeze row exists, points at the session, snapshot includes asm-mock-1.
+    const row = db
+      .prepare(
+        'SELECT council_session_id, snapshot_json FROM ideas_freezes WHERE id = ?',
+      )
+      .get(result.freeze_id) as { council_session_id: string; snapshot_json: string };
+    expect(row.council_session_id).toBe(result.session_id);
+    const snap = JSON.parse(row.snapshot_json) as { assumptions: Array<{ id: string }> };
+    expect(snap.assumptions.map((a) => a.id)).toContain('asm-mock-1');
+  });
+
+  it('freeze_id binds an existing freeze to the new session', async () => {
+    // Create freeze BEFORE running the council; freeze.council_session_id starts null.
+    const fr = createFreeze(db, vault, 'idea-a');
+    expect(fr.council_session_id).toBeNull();
+
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { ...CLAUDE_ONLY_OPTIONS, freeze_id: fr.id },
+    );
+    expect(result.freeze_id).toBe(fr.id);
+    const re_read = getFreeze(db, fr.id);
+    expect(re_read?.council_session_id).toBe(result.session_id);
+  });
+
+  it('rejects both freeze and freeze_id passed simultaneously', async () => {
+    const fr = createFreeze(db, vault, 'idea-a');
+    await expect(
+      runCouncil(
+        db,
+        vault,
+        { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+        { ...CLAUDE_ONLY_OPTIONS, freeze: true, freeze_id: fr.id },
+      ),
+    ).rejects.toThrow(/either .freeze: true.*or .freeze_id/);
+  });
+
+  it('rejects freeze_id pointing at unknown freeze', async () => {
+    await expect(
+      runCouncil(
+        db,
+        vault,
+        { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+        { ...CLAUDE_ONLY_OPTIONS, freeze_id: 'fr-doesnotexist' },
+      ),
+    ).rejects.toThrow(/freeze_id not found/);
+  });
+
+  it('rejects freeze_id from a different idea', async () => {
+    // Seed a second idea + freeze it.
+    db.prepare(
+      `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+    ).run('idea-other', 'ideas/other.md', 'Other', 'nascent', 1, 1);
+    await fsp.mkdir(path.join(vault, 'ideas'), { recursive: true });
+    await fsp.writeFile(
+      path.join(vault, 'ideas/other.md'),
+      `---\ntitle: Other\n---\n\nbody\n`,
+      'utf8',
+    );
+    const fr_other = createFreeze(db, vault, 'idea-other');
+
+    await expect(
+      runCouncil(
+        db,
+        vault,
+        { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+        { ...CLAUDE_ONLY_OPTIONS, freeze_id: fr_other.id },
+      ),
+    ).rejects.toThrow(/belongs to idea idea-other/);
+  });
+
+  it('omitting both leaves freeze_id null in result (v0.1 / v0.2-alpha.1 behavior)', async () => {
+    const result = await runCouncil(
+      db,
+      vault,
+      { idea_id: 'idea-a', mode: 'standard', approval_scope: 'session' },
+      { ...CLAUDE_ONLY_OPTIONS },
+    );
+    expect(result.freeze_id).toBeNull();
+    const freezes = db.prepare('SELECT COUNT(*) as c FROM ideas_freezes').get() as { c: number };
+    expect(freezes.c).toBe(0);
   });
 });

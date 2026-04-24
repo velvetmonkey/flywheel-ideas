@@ -26,6 +26,7 @@ import type { EvidencePack } from './council-evidence.js';
 import { recordEvidenceSources } from './council-evidence-store.js';
 import { withEvidenceReader } from './evidence-reader.js';
 import type { EvidenceReader } from './evidence-reader.js';
+import { bindFreezeToCouncilSession, createFreeze, getFreeze } from './freezes.js';
 import {
   parseClaudeStanceOutput,
   parseCodexStanceOutput,
@@ -118,6 +119,18 @@ export interface RunCouncilOptions {
   evidence_reader_binary?: string;
   /** Override evidence-reader binary args. Forwarded to withEvidenceReader. */
   evidence_reader_args?: string[];
+  /**
+   * v0.2 D2 — OSF preregistration binding. When `true`, runCouncil creates
+   * a fresh freeze for the idea AT dispatch time and binds it to the new
+   * council session. Mutually exclusive with `freeze_id`.
+   */
+  freeze?: boolean;
+  /**
+   * v0.2 D2 — Bind an existing freeze to the council session about to
+   * dispatch. The freeze must already exist and reference the same idea.
+   * Mutually exclusive with `freeze: true`.
+   */
+  freeze_id?: string;
 }
 
 /** Light-depth CLI roster (M10): all 3 CLIs for every council.run. */
@@ -172,6 +185,8 @@ export interface RunCouncilResult {
   views: CouncilViewResult[];
   failed_any: boolean;
   status: 'success' | 'failed';
+  /** v0.2 D2 — set when the session was bound to (or auto-created) a freeze. */
+  freeze_id: string | null;
 }
 
 export class CouncilOrchestratorError extends Error {
@@ -228,6 +243,12 @@ export async function runCouncil(
     depth,
     mode: input.mode,
   });
+
+  // 1.5 v0.2 D2 — OSF preregistration binding. Mutually exclusive options:
+  //     - `freeze: true` → snapshot the idea right now, bind to this session
+  //     - `freeze_id: <id>` → validate + bind a pre-existing freeze
+  //     - neither → no binding (v0.1 / v0.2-alpha.1 behaviour preserved)
+  const freeze_id = await resolveFreezeBinding(db, vault_path, input.idea_id, session_id, options);
 
   // 2. v0.2 KEYSTONE — assemble retrieval-native evidence pack ONCE per
   //    session, share across all cells. Best-effort: if the flywheel-memory
@@ -344,6 +365,7 @@ export async function runCouncil(
     views: viewResults,
     failed_any,
     status: failed_any ? 'failed' : 'success',
+    freeze_id,
   };
 }
 
@@ -671,6 +693,53 @@ function resolveTimeout(options: RunCouncilOptions): number {
   if (!raw) return DEFAULT_TIMEOUT_MS;
   const n = Number.parseInt(raw, 10);
   return Number.isFinite(n) && n > 0 ? n : DEFAULT_TIMEOUT_MS;
+}
+
+/**
+ * v0.2 D2 — resolve the OSF freeze binding for a council session.
+ *
+ * Three paths:
+ *   - `freeze: true` → create a fresh freeze snapshotting the idea + open
+ *     assumptions right now, bind it to this council session. Returns the
+ *     new freeze_id.
+ *   - `freeze_id: <id>` → look up the existing freeze, validate it
+ *     references this idea, bind it to the session. Returns the same id.
+ *   - neither → return null (v0.1 / v0.2-alpha.1 behaviour preserved).
+ *
+ * Throws CouncilOrchestratorError on conflicts (both options set; freeze_id
+ * doesn't exist; freeze_id belongs to a different idea; freeze already
+ * bound to a different session).
+ */
+async function resolveFreezeBinding(
+  db: IdeasDatabase,
+  vault_path: string,
+  idea_id: string,
+  session_id: string,
+  options: RunCouncilOptions,
+): Promise<string | null> {
+  if (options.freeze && options.freeze_id) {
+    throw new CouncilOrchestratorError(
+      'council.run accepts either `freeze: true` (auto-create) or `freeze_id` (bind existing) — not both',
+    );
+  }
+  if (options.freeze) {
+    const fr = createFreeze(db, vault_path, idea_id, { council_session_id: session_id });
+    return fr.id;
+  }
+  if (options.freeze_id) {
+    const existing = getFreeze(db, options.freeze_id);
+    if (!existing) {
+      throw new CouncilOrchestratorError(`freeze_id not found: ${options.freeze_id}`);
+    }
+    if (existing.idea_id !== idea_id) {
+      throw new CouncilOrchestratorError(
+        `freeze_id ${options.freeze_id} belongs to idea ${existing.idea_id}, not ${idea_id}`,
+      );
+    }
+    bindFreezeToCouncilSession(db, options.freeze_id, session_id);
+    return options.freeze_id;
+  }
+  return null;
 }
 
 /**

@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -213,4 +213,42 @@ CREATE TABLE IF NOT EXISTS ideas_assumption_extensions (
   mapping_json TEXT,
   updated_at INTEGER NOT NULL
 );
+`;
+
+/**
+ * v4 migration — Freeze / preregister table for v0.2 Phase 1 (D2).
+ *
+ * OSF-style pre-registration: capture a timestamp + read-only snapshot of
+ * the idea text + declared assumptions + locked statuses + idea/assumption
+ * extensions BEFORE the council runs. Later outcome verdicts evaluate
+ * against the frozen set, preventing goalpost-shift.
+ *
+ * Amendments allowed via the supersession chain (OSF pattern): a new freeze
+ * with `supersedes_freeze_id` pointing at the prior + a required
+ * `amendment_rationale`. The prior freeze remains immutable on disk.
+ *
+ * `council_session_id` is optional — set when the freeze is bound to a
+ * specific council session (auto-bound by `council.run({freeze: true})` or
+ * `council.run({freeze_id: ...})`). NULL when the freeze stands alone as
+ * pure preregistration without an immediate council binding.
+ *
+ * Snapshot stored as JSON blob — `snapshot_json` carries the full
+ * point-in-time state. Read back via JSON.parse + light shape validation.
+ */
+export const SCHEMA_SQL_V4 = `
+CREATE TABLE IF NOT EXISTS ideas_freezes (
+  id TEXT PRIMARY KEY,
+  idea_id TEXT NOT NULL REFERENCES ideas_notes(id) ON DELETE CASCADE,
+  council_session_id TEXT REFERENCES ideas_council_sessions(id) ON DELETE SET NULL,
+  snapshot_json TEXT NOT NULL,
+  supersedes_freeze_id TEXT,
+  amendment_rationale TEXT,
+  frozen_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_freezes_idea ON ideas_freezes(idea_id);
+CREATE INDEX IF NOT EXISTS idx_ideas_freezes_council
+  ON ideas_freezes(council_session_id) WHERE council_session_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_ideas_freezes_supersedes
+  ON ideas_freezes(supersedes_freeze_id) WHERE supersedes_freeze_id IS NOT NULL;
 `;

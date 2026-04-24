@@ -546,3 +546,152 @@ describe('idea tool — error envelope hardening', () => {
     expect(parsed.next_steps).toBeDefined();
   });
 });
+
+// ===========================================================================
+// idea.freeze + idea.list_freezes (v0.2 D2)
+// ===========================================================================
+
+async function seedIdea(): Promise<string> {
+  const response = await client.callTool('idea', { action: 'create', title: 'Freeze test idea' });
+  return parseEnvelope(response).result.id;
+}
+
+async function seedAssumption(idea_id: string, text: string, load_bearing = false): Promise<string> {
+  const r = await client.callTool('assumption', {
+    action: 'declare',
+    idea_id,
+    text,
+    load_bearing,
+  });
+  return parseEnvelope(r).result.id;
+}
+
+describe('idea.freeze (v0.2 D2)', () => {
+  it('snapshots idea + assumptions; returns metadata + next_steps', async () => {
+    const ideaId = await seedIdea();
+    await seedAssumption(ideaId, 'Load-bearing one', true);
+    await seedAssumption(ideaId, 'Non-load-bearing one', false);
+
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'freeze', id: ideaId }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.id).toMatch(/^fr-[A-Za-z0-9]{8}$/);
+    expect(response.result.idea_id).toBe(ideaId);
+    expect(response.result.council_session_id).toBeNull();
+    expect(response.result.supersedes_freeze_id).toBeNull();
+    expect(response.result.snapshot.assumption_count).toBe(2);
+    expect(response.result.snapshot.load_bearing_count).toBe(1);
+
+    // next_steps should propose binding to council.run + listing freezes + amendment
+    const actions = response.next_steps.map((s: any) => s.action);
+    expect(actions).toContain('council.run');
+    expect(actions).toContain('idea.list_freezes');
+    expect(actions).toContain('idea.freeze'); // amendment hint
+    const councilStep = response.next_steps.find((s: any) => s.action === 'council.run');
+    expect(councilStep.example).toContain(`freeze_id: "${response.result.id}"`);
+  });
+
+  it('rejects freeze without id', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'freeze' }),
+    );
+    expect(response.isError).toBe(true);
+    const text = (await client.callTool('idea', { action: 'freeze' })).content?.[0]?.text ?? '{}';
+    expect(JSON.parse(text).error).toContain('idea_id');
+  });
+
+  it('rejects freeze for unknown idea', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'freeze', id: 'idea-doesnotexist' }),
+    );
+    expect(response.isError).toBe(true);
+    const text = (await client.callTool('idea', { action: 'freeze', id: 'idea-doesnotexist' }))
+      .content?.[0]?.text ?? '{}';
+    expect(JSON.parse(text).error).toContain('idea not found');
+  });
+
+  it('amendment chain: supersedes_freeze_id without rationale errors; with rationale succeeds', async () => {
+    const ideaId = await seedIdea();
+    await seedAssumption(ideaId, 'v1 assumption');
+    const fr1 = parseEnvelope(
+      await client.callTool('idea', { action: 'freeze', id: ideaId }),
+    ).result;
+
+    // Missing rationale → error
+    const noRationale = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'freeze',
+        id: ideaId,
+        supersedes_freeze_id: fr1.id,
+      }),
+    );
+    expect(noRationale.isError).toBe(true);
+
+    // Add a new assumption + amend
+    await seedAssumption(ideaId, 'v2 added assumption', true);
+    const fr2 = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'freeze',
+        id: ideaId,
+        supersedes_freeze_id: fr1.id,
+        amendment_rationale: 'Added load-bearing assumption discovered during dogfood',
+      }),
+    );
+    expect(fr2.isError).toBe(false);
+    expect(fr2.result.supersedes_freeze_id).toBe(fr1.id);
+    expect(fr2.result.snapshot.assumption_count).toBe(2);
+  });
+});
+
+describe('idea.list_freezes (v0.2 D2)', () => {
+  it('returns empty list + create hint when no freezes', async () => {
+    const ideaId = await seedIdea();
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'list_freezes', id: ideaId }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.count).toBe(0);
+    expect(response.result.freezes).toEqual([]);
+    const actions = response.next_steps.map((s: any) => s.action);
+    expect(actions).toContain('idea.freeze');
+  });
+
+  it('returns freezes newest-first by default', async () => {
+    const ideaId = await seedIdea();
+    await seedAssumption(ideaId, 'Asm A');
+    const fr1 = parseEnvelope(
+      await client.callTool('idea', { action: 'freeze', id: ideaId }),
+    ).result;
+    // Brief delay so frozen_at differs (Date.now resolution).
+    await new Promise((r) => setTimeout(r, 5));
+    const fr2 = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'freeze',
+        id: ideaId,
+        supersedes_freeze_id: fr1.id,
+        amendment_rationale: 'r2',
+      }),
+    ).result;
+
+    const desc = parseEnvelope(
+      await client.callTool('idea', { action: 'list_freezes', id: ideaId }),
+    );
+    expect(desc.result.count).toBe(2);
+    expect(desc.result.freezes[0].id).toBe(fr2.id);
+    expect(desc.result.freezes[1].id).toBe(fr1.id);
+
+    const asc = parseEnvelope(
+      await client.callTool('idea', { action: 'list_freezes', id: ideaId, freeze_order: 'asc' }),
+    );
+    expect(asc.result.freezes[0].id).toBe(fr1.id);
+    expect(asc.result.freezes[1].id).toBe(fr2.id);
+  });
+
+  it('rejects list_freezes without id', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'list_freezes' }),
+    );
+    expect(response.isError).toBe(true);
+  });
+});
