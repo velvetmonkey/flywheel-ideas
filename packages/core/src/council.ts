@@ -824,17 +824,23 @@ async function resolveEvidencePack(
   return { evidence: null, sources: [] };
 }
 
-function buildClaudeArgv(model: string, systemPrompt: string): string[] {
+export function buildClaudeArgv(model: string, systemPrompt: string): string[] {
   // M7 recommended invocation. System prompt on argv is the persona+rules
   // (no idea text); user message (which holds idea text) goes via stdin.
-  return [
-    '--bare',
-    '-p',
-    '--output-format=json',
-    `--model=${model}`,
-    '--no-session-persistence',
-    `--system-prompt=${systemPrompt}`,
-  ];
+  //
+  // `--bare` keeps the dispatch hermetic (no MCP servers, no plugins, no
+  // session bleed) but routes auth through ANTHROPIC_API_KEY only — it
+  // bypasses the Claude Code subscription. Operators who want councils
+  // billed against their subscription can set
+  // FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION=1 to drop `--bare` and let
+  // claude inherit the logged-in CLI auth. Trade-off: subscription mode
+  // means each spawn loads the user's MCP/plugin config.
+  const argv = ['-p', '--output-format=json', `--model=${model}`, '--no-session-persistence'];
+  if (process.env.FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION !== '1') {
+    argv.unshift('--bare');
+  }
+  argv.push(`--system-prompt=${systemPrompt}`);
+  return argv;
 }
 
 function buildCodexArgv(model: string, _systemPrompt: string): string[] {

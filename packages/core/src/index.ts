@@ -161,6 +161,7 @@ export { ConcurrencyLimiter } from './concurrency.js';
 export {
   CouncilOrchestratorError,
   runCouncil,
+  buildClaudeArgv,
 } from './council.js';
 export type {
   CouncilViewResult,
