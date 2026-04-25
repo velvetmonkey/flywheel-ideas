@@ -76,3 +76,8 @@ roadmap/
 demos/hotpotqa/vault/
 demos/hotpotqa/results/*/raw/
 demos/hotpotqa/ground-truth.json
+
+# Pilot run artifacts
+pilot/last-scan.json
+pilot/last-scan.stderr.log
+pilot/last-seed.json
