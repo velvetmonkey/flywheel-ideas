@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.2.0-alpha.6 — 2026-04-24
+
+**README + design-principles truth-up.** No code changes. Aligns the
+public-facing docs with what the v0.2 alpha train actually shipped:
+
+- Status banner reflects the alpha train + cite-rate-pilot GA gate
+  instead of "0.1.0 GA shipped" alone.
+- "How it works" describes the actual flywheel-memory subprocess write
+  path (alpha.5) instead of the mythical vault-core orchestration.
+- flywheel-memory promoted from "recommended" to "preferred / active
+  write path when installed" in the Quickstart prerequisites.
+- Tool surface enumerates all five MCP tools — `idea`, `assumption`,
+  `council`, `outcome`, `import` — including the v0.2 actions
+  (`freeze`, `ancestry`, `radar`, `extension_set/get`, `delta`,
+  `import.scan/promote`).
+- v0.2 roadmap section lists each shipped alpha by number and what's
+  still outstanding (cite-rate pilot + this truth-up PR).
+- Design principles + ecosystem section corrected: the active write
+  path is flywheel-memory's MCP, not vault-core; M13 real `claude -p`
+  e2e in CI is still pending.
+- Memory-bridge hardening lines disambiguated as `v0.1 alpha.3/4/5`
+  (pre-GA), not the v0.2 alpha train.
+
 ## 0.2.0-alpha.5 — 2026-04-24
 
 **v0.2 Infrastructure migration: flywheel-memory as the active write path.**

@@ -8,7 +8,7 @@ A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea 
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![status: stable](https://img.shields.io/badge/status-stable-blue.svg)](#roadmap)
 
-> **Status:** 0.1.0 GA. v0.1 closed loop shipped across M1–M14 + alpha.4 hardening + alpha.5 consolidation. M13 (real `claude -p` e2e in CI), claude-auth error classification, and the v0.2 product surface carry to v0.1.1 / v0.2.
+> **Status:** 0.1.0 GA on `latest`. v0.2 alpha train on `@alpha` (most recent: 0.2.0-alpha.5 — flywheel-memory is the active write path when available). v0.2 GA is gated on a pre-registered cite-rate pilot (≥70% across 10 councils on a real corpus). M13 real `claude -p` e2e in CI is still pending.
 
 ## Who this is for
 
@@ -52,7 +52,7 @@ The gap nobody fills: **a local, vault-native, human-readable decision ledger wi
 
 **Ideas are markdown notes.** Frontmatter tracks id, state, declared assumptions, lineage. The vault is source of truth; `ideas.db` is an index.
 
-**Writes go through flywheel's shared orchestration.** Artifacts are indexed immediately — visible in flywheel-memory's search with no watcher delay. If the preferred write path isn't available, we fall back cleanly (MCP-subprocess to flywheel-memory; direct fs with a warning).
+**Writes go through flywheel-memory when available.** On startup, the server probes for a flywheel-memory MCP subprocess. If found, every idea / assumption / outcome / council artifact lands via flywheel-memory's `note` + `vault_update_frontmatter` tools — indexed the moment it's written, no watcher delay. If flywheel-memory is unreachable, the server falls back to direct filesystem writes with `gray-matter`; every response's `write_path` field reports the active tier (`mcp-subprocess` or `direct-fs`).
 
 **The council is a subprocess dispatcher.** `council.run(idea_id, depth, mode)` spawns parallel child processes — one per `(model, persona)` cell — shelling out to your installed CLIs with explicit consent. Concurrency capped. Failures classified (timeout / auth / rate-limit / parse / exit-nonzero); one cell failing never aborts the session. Each cell runs a mandatory two-pass self-critique. Views persist as markdown; template synthesis distills them with evidence citations.
 
@@ -65,7 +65,7 @@ The gap nobody fills: **a local, vault-native, human-readable decision ledger wi
 **Prerequisites**
 
 - Node.js 22+
-- Obsidian vault with [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) initialized *(recommended — degrades gracefully without it, but the compounding mechanism works best when writes are fully indexed)*
+- Obsidian vault with [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) initialized *(preferred — when present, it becomes the active write path so notes are indexed instantly. Without it, the server falls back to direct filesystem writes; the compounding loop still works but indexing is on flywheel-memory's normal cadence.)*
 - One or more of `claude`, `codex`, `gemini` CLIs on `$PATH`
 - `VAULT_PATH` env var pointing at your vault (no hardcoded paths)
 
@@ -137,29 +137,42 @@ See [CHANGELOG.md](./CHANGELOG.md) for what's new in each release.
 # → automatically flags 3 other ideas in the vault that cited asm-2.
 ```
 
-## Tool surface (v0.1)
+## Tool surface
 
-### `idea`
+Five MCP tools, action-dispatched. Every response carries `{result, next_steps, write_path}`.
 
-- `create({title, body?})` / `read(id)` / `list({state?, limit?})` / `transition({id, to, reason?})`
+### `idea` (v0.1 + v0.2 lineage)
 
-### `assumption`
+- `create({title, body?})` / `read(id)` / `list({state?, limit?})` / `transition({id, to, reason?})` / `forget(id)`
+- `freeze({id})` / `list_freezes({id})` — OSF-style snapshot of an idea + its locked assumptions
+- `ancestry({id})` / `descendants({id})` / `shared_assumptions({ids})` — lineage queries
 
-- `declare({idea_id, text? | structured, signpost_at?, signpost_reason?, load_bearing?})` / `list({idea_id})`
+### `assumption` (v0.1 + v0.2 RAND ABP)
+
+- `declare({idea_id, text? | structured, signpost_at?, signpost_reason?, load_bearing?})` / `list({idea_id})` / `forget(id)`
 - `lock({idea_id})` / `unlock({idea_id})` — OSF-style pre-registration
 - `signposts_due({window?})` — sweep for elapsed signposts (fed into `next_steps`)
+- `radar({query | idea_id})` — semantic vault-wide scan for unstated load-bearing claims
+- `extension_set({id, shaping_actions?, hedging_actions?})` / `extension_get({id})` — RAND Assumption-Based Planning shaping + hedging actions
 
-### `council`
+### `council` (v0.1 + v0.2 delta)
 
-- `run({id, depth: "light"|"full", mode: "standard"|"pre_mortem", confirm})` / `view(view_id)` / `list({idea_id})`
+- `run({id, depth: "light"|"full", mode: "standard"|"pre_mortem"|"steelman", confirm})` / `view(view_id)` / `list({idea_id})`
+- `delta({id})` — what's changed across council sessions for the same idea
+- `approval_status` — read-only inspection of the out-of-band consent state
 
 ### `outcome`
 
-- `log({idea_id, text, refutes?: [asm_ids], validates?: [asm_ids]})` / `list({idea_id?})` / `undo(outcome_id)`
+- `log({idea_id, text, refutes?: [asm_ids], validates?: [asm_ids]})` / `read(id)` / `list({idea_id?})` / `undo(outcome_id)`
+
+### `import` (v0.2 — bulk corpus ingestion)
+
+- `scan({adapter, source, idea_id?, filter?})` — adapter scans a corpus, persists candidates with dedup against the vault. First adapter: `github-structured-docs` (Python PEPs).
+- `promote({candidate_id, as: 'idea'|'assumption'|'outcome', target_idea_id?, override_duplicate?})` / `list({source_id?, state?})` / `read(id)` / `reject(id)`
 
 ## Roadmap
 
-### v0.1 — the closed loop *(in progress)*
+### v0.1 — the closed loop *(shipped 2026-04-23)*
 
 The core product: four MCP tools forming `idea → assumption → council → outcome → propagation`.
 
@@ -173,16 +186,24 @@ The core product: four MCP tools forming `idea → assumption → council → ou
   - ✅ M10: gemini dispatch + full matrix (3 × 5 = 15 cells) + CLI-interleaved concurrency + strict benign-stderr filter
   - ✅ M11: evidence-aware synthesis with sentence-level Jaccard agreement/disagreement sections
 - ✅ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. Shipped at M12.
-- ✅ **memory-bridge** — flywheel-memory custom-category registration on startup (M14, alpha.3). Path-security + maxBuffer + frontmatter-sync hardening shipped in alpha.4. Consolidation (`needs_review` filter, model_version capture, comment sweep) shipped in alpha.5.
+- ✅ **memory-bridge** — flywheel-memory custom-category registration on startup (M14, v0.1 alpha.3). Path-security + maxBuffer + frontmatter-sync hardening shipped in v0.1 alpha.4. Consolidation (`needs_review` filter, model_version capture, comment sweep) shipped in v0.1 alpha.5.
 
 **v0.1.0 GA shipped 2026-04-23.** What's still upcoming, carrying to v0.1.1 / v0.2:
 - ⏳ M13 — real `claude -p` end-to-end test in CI with flake-aware demotion.
 - ⏳ CLI-error classifier auth + rate_limit patterns (real failure samples now captured during the GA dogfood).
 - ⏳ `clis` arg passthrough on `council.run` (gap surfaced in dogfood — orchestrator dispatched all 3 CLIs even when subset was requested).
 
-### v0.2 — depth on the loop + closing the feedback loop
+### v0.2 — depth on the loop + closing the feedback loop *(alpha train shipping — `@alpha` dist-tag)*
 
-`idea.freeze` / `council.freeze` (OSF snapshot) · metric & guardrail fields on assumptions · RAND ABP shaping + hedging actions · **Assumption Radar** (semantic vault-wide signal detection) · daily-note outcome capture · automated signpost surfacing · agent-driven outcome detection · lifecycle enforcement · `decision_delta` view · digest · lineage queries · steelman council mode · Anti-Portfolio pass memos · Ollama / LM Studio local models
+- ✅ **Keystone — retrieval-native council input** (alpha.1). Council now opens with an evidence pack: backlinks, related ideas, refuted-assumption pattern hits, citation graph context.
+- ✅ **Phase 1 core engineering** (alpha.1, schema v2→v6). `idea.freeze` / `list_freezes` (OSF snapshot), lineage queries (`ancestry`, `descendants`, `shared_assumptions`), `assumption.radar`, `council.delta`, steelman mode.
+- ✅ **Phase 2 bulk import** (alpha.2, schema v7). `import.scan` / `promote` framework + `github-structured-docs` adapter (Python PEPs). SEC EDGAR + github-repo adapters follow.
+- ✅ **RAND ABP — shaping + hedging actions** (alpha.3, schema v8). `assumption.extension_set` / `extension_get` for explicit actions per assumption.
+- ✅ **Temporal insights in evidence pack** (alpha.4). Council sees a note's history (revisions, recent edits) alongside its current state.
+- ✅ **flywheel-memory as the active write path** (alpha.5). Subprocess probe at startup; writes route through flywheel-memory when present, fall back cleanly.
+- ⏳ Doc/code drift truth-up *(this PR)*.
+- ⏳ Pre-registered cite-rate pilot on a public corpus (Python 2→3 migration, where outcomes are already known) — v0.2 GA gate.
+- ⏳ Anti-Portfolio pass memos · Ollama / LM Studio local models · daily-note outcome capture · agent-driven outcome detection.
 
 ### v0.3+ — operator calibration
 
@@ -199,16 +220,16 @@ Your vault becomes an empirical record of your predictions. Personal calibration
 - **No auto-transitions, no auto-decisions.** User writes the final rationale; council provides dissent, never verdict.
 - **Explicit consent per MCP spec.** Subprocess spawns + vault writes require approval; dispatches are audited.
 - **Reversibility.** Outcomes can be undone; refutation propagation unwinds.
-- **Single write path across the flywheel family** — writes go through `vault-core` orchestration when available.
-- **Graceful degradation.** If the preferred write path isn't available, we fall back cleanly.
+- **Single write path when flywheel-memory is present** — writes route through flywheel-memory's MCP tools so artifacts are indexed instantly.
+- **Graceful degradation.** Without flywheel-memory, the server falls back to direct filesystem writes; `write_path` on every response surfaces the active tier.
 - **No LLM SDK lock-in.** Uses whatever CLIs you have on `$PATH`.
 - **Apache 2.0.** No viral reach.
-- **Tested hard.** Unit · property-based · integration · real `claude -p` e2e in CI with flake-aware demotion.
+- **Tested hard.** Unit · property-based · integration. (Real `claude -p` e2e in CI is M13 — still pending.)
 
 ## Ecosystem
 
-- **[vault-core](https://github.com/velvetmonkey/vault-core)** — shared core library (authoritative vault-write orchestration)
-- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — vault indexing MCP
+- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — vault indexing MCP. When installed, becomes the active write path (alpha.5+) so flywheel-ideas artifacts are indexed instantly.
+- **[vault-core](https://github.com/velvetmonkey/vault-core)** — shared core library used by flywheel-memory. Library-level reuse from flywheel-ideas (Option B) is on the long-term roadmap; for now flywheel-ideas ships its own writer + the MCP-subprocess bridge.
 - **flywheel-ideas** *(this repo)* — decision ledger
 
 ## Packages
