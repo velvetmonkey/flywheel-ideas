@@ -6,11 +6,22 @@ the user's real Obsidian vault.
 
 ## Layout
 
-- `scan-peps.mjs` — drives `import.scan` against a real GitHub PEP corpus.
-  Spawns the published binary, JSON-RPC over stdio, captures candidates.
-- `pilot-corpus.python-2-3.json` — registry of PEPs to import + the
-  ground-truth outcome for each (refuted / validated). Read by the pilot
-  protocol; written by hand from Python history.
+- `pilot-corpus.python-2-3.json` — registry of decision PEPs + their
+  load-bearing assumptions, each annotated with the historical outcome
+  (refuted / validated / partially_*). Hand-curated ground truth.
+- `scan-peps.mjs` — drives `import.scan` against the fixture PEP set
+  via the published binary. Confirms the import pipeline works.
+- `seed-corpus.mjs` — `idea.create` + `assumption.declare` for every
+  corpus entry into an isolated pilot vault. Writes the
+  `corpus_id → db_id` map to `last-seed.json`.
+- `run-councils.mjs` — fires `council.run` × 10 per seeded idea, mode
+  rotation per protocol (4 pre_mortem + 3 standard + 3 steelman).
+  Real CLI dispatches. Resumable via `last-councils.json`.
+- `score-cites.mjs` — interactive hand-scorer. For each
+  (idea, refuted-assumption, session) triple, prints the assumption
+  text + synthesis side-by-side and takes y/n. Writes `last-scores.json`.
+- `fixtures/python-2-3-peps/` — frozen RST snapshots so scans are
+  deterministic without network.
 
 ## Pilot vault
 
@@ -31,12 +42,27 @@ real vault.
 
 ## Running pilot stages
 
-1. **Scan** — `node pilot/scan-peps.mjs` populates the candidate sidecars.
-2. **Promote** — selected candidates become ideas + load-bearing
-   assumptions in the pilot vault.
-3. **Mark outcomes** — known refutations from `pilot-corpus.python-2-3.json`
-   land via `outcome.log` BEFORE councils run (this is what makes it a
-   cite-rate pilot — we know what the council should be paying attention to).
-4. **Council** — `council.run` per idea. **Real API calls.** User-driven.
-5. **Score** — count cites of the load-bearing assumptions that history
-   refuted. ≥70% = v0.2 GA gate passes.
+```bash
+# 1. Sanity-check the import pipeline (writes last-scan.json)
+node pilot/scan-peps.mjs
+
+# 2. Seed the pilot vault — 5 ideas + 6 load-bearing assumptions
+node pilot/seed-corpus.mjs
+
+# 3. Run all 50 councils (5 ideas × 10 sessions). REAL API CALLS.
+#    Pre-flight: SESSIONS_PER_IDEA=2 node pilot/run-councils.mjs --dry-run
+#    Resume after interruption: just rerun (skips completed sessions).
+node pilot/run-councils.mjs
+
+# 4. Score each (idea, refuted-assumption, session) by hand
+node pilot/score-cites.mjs
+
+# Re-print the aggregate without re-prompting:
+node pilot/score-cites.mjs --report-only
+```
+
+Outcomes from `pilot-corpus.python-2-3.json` are NOT logged on the seeded
+ideas — they're the post-hoc scoring key. Logging them up front would tip
+the council prompt.
+
+≥70% cite rate across the scorable pairs = v0.2 GA gate passes.
