@@ -16,7 +16,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
-  activeWritePath,
+  getActiveWritePath,
   getOutcome,
   getOutcomeMemo,
   listOutcomes,
@@ -360,7 +360,7 @@ function handleList(
       })),
       count,
       stale_hidden,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -417,7 +417,7 @@ function handleRead(
       undone_at: row.undone_at,
       refuted,
       validated,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });

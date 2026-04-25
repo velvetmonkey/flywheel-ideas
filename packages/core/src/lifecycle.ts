@@ -21,7 +21,7 @@
 
 import type { IdeasDatabase } from './db.js';
 import { generateTransitionId } from './ids.js';
-import { patchFrontmatter } from './write/patch-frontmatter.js';
+import { patchFrontmatter } from './write/index.js';
 
 export type IdeaState =
   | 'nascent'

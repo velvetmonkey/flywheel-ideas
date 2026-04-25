@@ -36,11 +36,31 @@ import { isAbsolute } from 'node:path';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 
+/**
+ * Category names MUST match the `type:` frontmatter emitted by the note
+ * writers — otherwise flywheel-memory's scorer treats every ideas note as
+ * `unknown` and the type_boost does nothing.
+ *
+ * Emitted types (verified 2026-04-24):
+ *   - `idea`          (packages/core/src/idea-create.ts:50)
+ *   - `assumption`    (packages/core/src/assumptions.ts:195)
+ *   - `outcome`       (packages/core/src/outcome.ts:229)
+ *   - `council_view`  (packages/core/src/council.ts:666)
+ *
+ * Prior alpha.x shipped names prefixed with `ideas_` (ideas_note,
+ * ideas_assumption, ideas_council_session, ideas_outcome). None of those
+ * matched any emitted `type` value, so the boost was zero across the
+ * entire ideas surface. Fixed in the v0.2 write-path migration.
+ *
+ * SYNTHESIS.md + ARGUMENT_MAP.md write via council.ts:666 with
+ * `type: 'council_view'`; the synthesis is one council_view among N and
+ * doesn't need a separate category.
+ */
 export const IDEAS_CATEGORIES: Record<string, { type_boost: number }> = {
-  ideas_note: { type_boost: 2 },
-  ideas_assumption: { type_boost: 1 },
-  ideas_council_session: { type_boost: 1 },
-  ideas_outcome: { type_boost: 1 },
+  idea: { type_boost: 2 },
+  assumption: { type_boost: 1 },
+  council_view: { type_boost: 1 },
+  outcome: { type_boost: 1 },
 };
 
 export type MemoryBridgeSkipReason =

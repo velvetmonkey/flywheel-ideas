@@ -26,7 +26,7 @@ import * as fsp from 'node:fs/promises';
 import * as path from 'node:path';
 import { randomBytes } from 'node:crypto';
 import { validatePathSecure } from './path-security.js';
-import { WriteNotePathError } from './direct-fs.js';
+import { WriteNotePathError, type WritePathLabel } from './direct-fs.js';
 
 export type ScalarValue = string | number | boolean | null;
 
@@ -36,7 +36,7 @@ export interface FrontmatterPatch {
 
 export interface PatchFrontmatterResult {
   vault_path: string;
-  write_path: 'direct-fs';
+  write_path: WritePathLabel;
   keys_changed: string[];
   keys_appended: string[];
 }
@@ -50,7 +50,7 @@ export class PatchFrontmatterError extends Error {
 
 const FRONTMATTER_DELIMITER = '---';
 
-export async function patchFrontmatter(
+export async function patchFrontmatterDirectFs(
   vaultPath: string,
   relPath: string,
   patch: FrontmatterPatch,

@@ -71,15 +71,23 @@ export { runMigrations, getCurrentVersion } from './migrations.js';
 export { resolveVaultPath, VaultPathError } from './vault-path.js';
 export type { VaultResolution } from './vault-path.js';
 
-// Writer interface (M4 commits 1-2)
+// Writer interface (M4 commits 1-2; v0.2 write-path migration)
 export {
   writeNote,
+  writeNoteDirectFs,
+  writeNoteViaSubprocess,
   WriteNotePathError,
   patchFrontmatter,
+  patchFrontmatterDirectFs,
+  patchFrontmatterViaSubprocess,
   applyPatch,
   serializeScalar,
   PatchFrontmatterError,
-  activeWritePath,
+  probeWritePath,
+  getActiveWritePath,
+  getProbeOutcome,
+  __resetWritePathForTests,
+  __setWritePathForTests,
   validatePath,
   validatePathSecure,
   isSensitivePath,
@@ -93,6 +101,9 @@ export type {
   FrontmatterPatch,
   PatchFrontmatterResult,
   ScalarValue,
+  ProbeOptions,
+  ProbeOutcome,
+  WriteSubprocessOptions,
 } from './write/index.js';
 
 // Reader

@@ -22,7 +22,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
-  activeWritePath,
+  getActiveWritePath,
   approvalStatusForResponse,
   approvalsFilePath,
   computeDecisionDelta,
@@ -319,7 +319,7 @@ async function handleRun(
       approval_source: state.source,
       approval_scope: state.scope,
       freeze_id: outcome.freeze_id,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -405,7 +405,7 @@ async function handleApprovalStatus(
   return mcpText({
     result: {
       ...payload,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -466,7 +466,7 @@ function handleDelta(
         why: 'No significant shifts. Re-read the idea for context on what stayed stable.',
       });
     }
-    return mcpText({ result: { ...delta, write_path: activeWritePath }, next_steps });
+    return mcpText({ result: { ...delta, write_path: getActiveWritePath() }, next_steps });
   } catch (err) {
     if (err instanceof DeltaInputError) {
       return mcpError(err.message, [

@@ -20,7 +20,8 @@ import * as path from 'node:path';
 import matter from 'gray-matter';
 import type { CouncilSessionRow, CouncilViewRow } from './council-sessions.js';
 import type { CouncilStance } from './council-parsers.js';
-import { writeNote, type WriteNoteResult } from './write/direct-fs.js';
+import { writeNote } from './write/index.js';
+import type { WriteNoteResult } from './write/direct-fs.js';
 import { extractOverlap, type ViewStanceInput } from './council-overlap.js';
 
 export interface SynthesisInput {

@@ -14,8 +14,10 @@ import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
+  getProbeOutcome,
   openIdeasDb,
   PACKAGE_VERSION,
+  probeWritePath,
   registerCustomCategories,
   resolveVaultPath,
   runMigrations,
@@ -96,6 +98,25 @@ async function main(): Promise<void> {
       `flywheel-ideas: memory-bridge skipped (${reg.reason}${detail}). ` +
         `Ideas notes will not be boosted in flywheel-memory wikilink scoring. ` +
         `Install @velvetmonkey/flywheel-memory or set FLYWHEEL_MEMORY_BIN to enable.\n`,
+    );
+  }
+
+  // v0.2 write-path migration — probe for flywheel-memory's write tools
+  // (`note` + `vault_update_frontmatter`). If present, all vault I/O routes
+  // through the subprocess writer; if not, direct-fs is the fallback. Probe
+  // is best-effort and never fatal. Per-write fallback to direct-fs still
+  // runs if the subprocess fails mid-call.
+  await probeWritePath(vaultPath);
+  const probe = getProbeOutcome();
+  if (probe.active === 'mcp-subprocess') {
+    process.stderr.write(
+      `flywheel-ideas: write-path = mcp-subprocess (flywheel-memory detected).\n`,
+    );
+  } else {
+    const detail = probe.detail ? `: ${probe.detail}` : '';
+    process.stderr.write(
+      `flywheel-ideas: write-path = direct-fs (${probe.reason}${detail}). ` +
+        `Install @velvetmonkey/flywheel-memory or set FLYWHEEL_MEMORY_BIN to route writes through the graph index.\n`,
     );
   }
 

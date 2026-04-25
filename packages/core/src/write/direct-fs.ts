@@ -36,9 +36,11 @@ export interface WriteNoteOptions {
   overwrite?: boolean;
 }
 
+export type WritePathLabel = 'direct-fs' | 'mcp-subprocess' | 'vault-core';
+
 export interface WriteNoteResult {
   vault_path: string;
-  write_path: 'direct-fs';
+  write_path: WritePathLabel;
 }
 
 /**
@@ -53,12 +55,16 @@ function tmpSuffix(): string {
 }
 
 /**
- * Write a new markdown note to the vault.
+ * Write a new markdown note to the vault via direct filesystem I/O.
+ *
+ * This is the Option D tier — the public `writeNote` in ../index.ts
+ * dispatches to this when `activeWritePath === 'direct-fs'` or falls back
+ * here when the mcp-subprocess tier fails mid-write.
  *
  * @throws WriteNotePathError when the relative path fails security validation
  *         OR when the target file already exists and `overwrite` is false.
  */
-export async function writeNote(
+export async function writeNoteDirectFs(
   vaultPath: string,
   relPath: string,
   frontmatter: Record<string, unknown>,

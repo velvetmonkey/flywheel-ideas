@@ -13,8 +13,8 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
-  activeWritePath,
   AssumptionActionValidationError,
+  getActiveWritePath,
   AssumptionInputError,
   AssumptionNotFoundError,
   declareAssumption,
@@ -467,7 +467,7 @@ function handleList(
       })),
       count: assumptions.length,
       stale_hidden,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -497,7 +497,7 @@ async function handleLock(
         idea_id: updated.idea_id,
         locked_at: updated.locked_at,
         vault_path: updated.vault_path,
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
       },
       next_steps: [
         {
@@ -542,7 +542,7 @@ async function handleUnlock(
         idea_id: updated.idea_id,
         locked_at: null,
         vault_path: updated.vault_path,
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
       },
       next_steps: [
         {
@@ -608,7 +608,7 @@ function handleSignpostsDue(
       count: due.length,
       checked_at: Date.now(),
       window_ms: args.window_ms ?? 0,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -640,7 +640,7 @@ function handleForget(
       idea_id: forgotten.idea_id,
       forgotten_from_status: forgotten.status,
       vault_path: forgotten.vault_path,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
       note: 'Database row removed. The markdown file was not touched — delete it separately if you want it gone.',
     },
     next_steps: [
@@ -741,7 +741,7 @@ async function handleRadar(
           score: h.score,
         })),
         hit_count: result.hits.length,
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
       },
       next_steps,
     });
@@ -826,7 +826,7 @@ function handleExtensionSet(
     result: {
       id: args.id,
       extension: extensionToResponse(updated),
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps: nextStepsForExtension(args.id, updated),
   });
@@ -854,7 +854,7 @@ function handleExtensionGet(
     result: {
       id: args.id,
       extension: extensionToResponse(ext),
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps: nextStepsForExtension(args.id, ext),
   });

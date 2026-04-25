@@ -13,7 +13,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
-  activeWritePath,
+  getActiveWritePath,
   buildAssumptionNextStepsForIdea,
   createFreeze,
   createIdea,
@@ -281,7 +281,7 @@ function handleRead(
         state: row.state,
         title: row.title,
         vault_path: row.vault_path,
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
         stale_row: true,
         note: 'Markdown file missing from vault — database row kept. The note may have been renamed or deleted outside flywheel-ideas.',
       },
@@ -314,7 +314,7 @@ function handleRead(
       state: row.state,
       title: row.title,
       vault_path: row.vault_path,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
       needs_review: Boolean(row.needs_review),
       created_at: row.created_at,
       state_changed_at: row.state_changed_at,
@@ -568,7 +568,7 @@ function handleList(
         limit,
         include_stale: includeStale,
       },
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -619,7 +619,7 @@ function handleForget(
       id: args.id,
       forgotten_from_state: row.state,
       title: row.title,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
       note: 'Database row removed. The markdown file on disk (if any) was not touched — delete it separately if you want it gone.',
     },
     next_steps: [
@@ -876,7 +876,7 @@ function handleFreeze(
           load_bearing_count: fr.snapshot.assumptions.filter((a) => a.load_bearing).length,
           locked_count: fr.snapshot.assumptions.filter((a) => a.locked_at !== null).length,
         },
-        write_path: activeWritePath,
+        write_path: getActiveWritePath(),
       },
       next_steps,
     });
@@ -952,7 +952,7 @@ function handleListFreezes(
         idea_state: f.snapshot.idea.state,
         assumption_count: f.snapshot.assumptions.length,
       })),
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -992,7 +992,7 @@ function handleAncestry(
       ancestors,
       count: ancestors.length,
       max_depth: args.max_depth ?? 20,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -1030,7 +1030,7 @@ function handleDescendants(
       descendants,
       count: descendants.length,
       max_depth: args.max_depth ?? 20,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
@@ -1067,7 +1067,7 @@ function handleSharedAssumptions(
       idea_id: args.id,
       matches,
       count: matches.length,
-      write_path: activeWritePath,
+      write_path: getActiveWritePath(),
     },
     next_steps,
   });
