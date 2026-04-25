@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.2.0-alpha.7 — 2026-04-25
+
+**Fix: `import.scan` honours `scan_config`.** The alpha.6 dispatcher accepted
+`scan_config` on the tool surface, persisted it on the
+`ideas_import_sources` row, but did not pass it to the adapter — so
+`scan_config.filter` was silently ignored on the live `python/peps`
+scan path. A filtered network scan still walked all ~770 PEPs through
+the 50ms-stagger loop. Surfaced while building the v0.2 cite-rate
+pilot in `pilot/`.
+
+The fix is small and additive:
+
+- `ImportContext` gains an optional `scanConfig: Record<string, unknown>`
+  field. Adapters that need scope can read it; existing adapters that
+  ignore it are unchanged.
+- `scanSource` plumbs `input.scan_config` through `collectCandidates`
+  into the context.
+- `github-structured-docs` adapter merges `scanConfig` over the
+  URI-parsed defaults — caller's `filter`, `limit`, `pathPrefix`,
+  `ref`, `repo`, `fixtureDir` win. Unknown keys are ignored.
+
+Tests added at both layers:
+- `packages/core/test/import-pep-adapter.test.ts` — adapter-level
+  filter + limit pass-through.
+- `packages/mcp-server/test/import-tool.test.ts` — end-to-end
+  `import.scan({scan_config: {filter}})` returns a single matching
+  candidate.
+
+Schema unchanged. No new env vars.
+
 ## 0.2.0-alpha.6 — 2026-04-24
 
 **README + design-principles truth-up.** No code changes. Aligns the

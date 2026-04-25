@@ -137,6 +137,29 @@ describe('import MCP tool', () => {
     }
   });
 
+  it('scan_config.filter passes through to the adapter', async () => {
+    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    try {
+      const resp = await client.callTool('import', {
+        action: 'scan',
+        adapter: 'github-structured-docs',
+        source: `fixture://${FIXTURE_DIR}`,
+        scan_config: { filter: '^pep-0008\\.rst$' },
+      });
+      const body = parseResp(resp) as {
+        result: {
+          scanned_count: number;
+          candidates: Array<{ candidate_kind: string; title: string }>;
+        };
+      };
+      const ideas = body.result.candidates.filter((c) => c.candidate_kind === 'idea');
+      expect(ideas.length).toBe(1);
+      expect(ideas[0].title).toMatch(/Style Guide/);
+    } finally {
+      delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+    }
+  });
+
   it('scan error surfaces unknown adapter in a structured error', async () => {
     const resp = await client.callTool('import', {
       action: 'scan',

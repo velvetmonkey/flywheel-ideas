@@ -97,6 +97,7 @@ export async function scanSource(
     vaultPath,
     cacheDir,
     network,
+    scanConfig: input.scan_config,
   });
 
   // 2. Persist source row FIRST so candidates FK resolves.
