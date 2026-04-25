@@ -81,3 +81,5 @@ demos/hotpotqa/ground-truth.json
 pilot/last-scan.json
 pilot/last-scan.stderr.log
 pilot/last-seed.json
+pilot/last-councils.json
+pilot/last-scores.json
