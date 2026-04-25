@@ -44,6 +44,14 @@ const SEED_PATH = resolve(__dirname, 'last-seed.json');
 const SESSIONS_PATH = resolve(__dirname, 'last-councils.json');
 const SESSIONS_PER_IDEA = Number(process.env.SESSIONS_PER_IDEA ?? 10);
 
+// PILOT_CLIS=claude,gemini narrows the dispatcher to a CLI subset
+// (matches council.run({clis: [...]} ). Useful when one CLI in the env
+// is broken (auth, rate limit, MCP-loading hang) — the protocol's
+// 3-CLI ideal becomes a documented partial in last-councils.json.
+const PILOT_CLIS = process.env.PILOT_CLIS
+  ? process.env.PILOT_CLIS.split(',').map((s) => s.trim()).filter(Boolean)
+  : null;
+
 // 4 pre_mortem + 3 standard + 3 steelman, deterministic order so that
 // the n-th session of each idea uses the same mode (eases scoring).
 const MODE_PLAN = [
@@ -95,6 +103,7 @@ for (const entry of seed.entries) {
 console.error(`[pilot] vault: ${VAULT}`);
 console.error(`[pilot] ideas: ${seed.entries.length}, sessions/idea: ${SESSIONS_PER_IDEA}`);
 console.error(`[pilot] planned: ${planned.length}, already complete: ${sessions.runs.length}`);
+if (PILOT_CLIS) console.error(`[pilot] clis filter: ${PILOT_CLIS.join(', ')}`);
 if (flagDryRun) {
   for (const p of planned) console.error(`  ${p.decision_pep} #${p.index} (${p.mode})`);
   process.exit(0);
@@ -198,6 +207,7 @@ try {
           mode: p.mode,
           depth: 'light',
           confirm: true,
+          ...(PILOT_CLIS ? { clis: PILOT_CLIS } : {}),
         },
       });
       runResult = unwrap(resp, 'council.run');
