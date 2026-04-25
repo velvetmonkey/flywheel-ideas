@@ -1,6 +1,6 @@
 {
   "name": "@velvetmonkey/flywheel-ideas",
-  "version": "0.2.0-alpha.1",
+  "version": "0.2.0-alpha.6",
   "description": "The local-first falsifiable decision ledger — MCP server that turns an Obsidian vault into a compounding decision system with multi-model AI council dissent and outcome-driven refutation propagation.",
   "type": "module",
   "main": "dist/index.js",
@@ -47,7 +47,7 @@
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.26.0",
-    "@velvetmonkey/flywheel-ideas-core": "0.2.0-alpha.1",
+    "@velvetmonkey/flywheel-ideas-core": "0.2.0-alpha.6",
     "better-sqlite3": "^12.0.0",
     "gray-matter": "^4.0.3",
     "zod": "^3.22.4"
