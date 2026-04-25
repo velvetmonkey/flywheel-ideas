@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.2.0-alpha.8 — 2026-04-26
+
+**`FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION` — opt-in subscription auth for
+the council's `claude` cells.** Surfaced during the v0.2 cite-rate pilot:
+the dispatcher's `--bare` flag is the only thing forcing claude to look
+for `ANTHROPIC_API_KEY`; without it, claude inherits the logged-in
+Claude Code CLI subscription auth.
+
+Default behavior is unchanged — `--bare` stays on, dispatch is hermetic
+(no MCP servers, no plugins, no session bleed) and routes through the
+API key. Operators on the Claude Code subscription who want councils
+billed against that subscription can now set:
+
+```
+FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION=1
+```
+
+This drops `--bare` from the spawned argv. `-p`,
+`--no-session-persistence`, and the other hermeticity flags stay; only
+the API-key-required gate flips.
+
+Trade-off: subscription mode means each spawn loads the user's MCP /
+plugin config. For a 50-council pilot that's a noticeable perf hit
+(plugin discovery on cold start). API-key mode remains the default for
+production deployments.
+
+Test added at `packages/core/test/claude-argv.test.ts`.
+
 ## 0.2.0-alpha.7 — 2026-04-25
 
 **Fix: `import.scan` honours `scan_config`.** The alpha.6 dispatcher accepted
