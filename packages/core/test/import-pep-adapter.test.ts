@@ -150,4 +150,20 @@ describe('GithubStructuredDocsAdapter (fixture mode)', () => {
       name: 'ImportNetworkGatedError',
     });
   });
+
+  it('honours scan_config.filter from the import context', async () => {
+    const adapter = new GithubStructuredDocsAdapter();
+    const ctx: ImportContext = { ...makeCtx(), scanConfig: { filter: '^pep-3000\\.rst$' } };
+    const all = await collectAll(adapter, `fixture://${FIXTURE_DIR}`, ctx);
+    const ideas = all.filter((c) => c.kind === 'idea');
+    expect(ideas.length).toBe(1);
+    expect(ideas[0].extractedFields?.pep_number).toBe('3000');
+  });
+
+  it('honours scan_config.limit from the import context', async () => {
+    const adapter = new GithubStructuredDocsAdapter();
+    const ctx: ImportContext = { ...makeCtx(), scanConfig: { limit: 1 } };
+    const all = await collectAll(adapter, `fixture://${FIXTURE_DIR}`, ctx);
+    expect(all.filter((c) => c.kind === 'idea').length).toBe(1);
+  });
 });

@@ -75,7 +75,7 @@ export class GithubStructuredDocsAdapter implements ImportAdapter {
     source: string,
     ctx: ImportContext,
   ): AsyncGenerator<RawCandidate> {
-    const config = parseSource(source);
+    const config = mergeScanConfig(parseSource(source), ctx.scanConfig);
 
     // Fixture-directory mode — read PEP-formatted files off disk. Used in
     // unit tests and for replaying cached scans. Doesn't need the network
@@ -438,6 +438,28 @@ function parseSource(source: string): GithubStructuredDocsConfig {
   }
   if (rest) config.repo = rest;
   return config;
+}
+
+/**
+ * Layer caller-supplied `scan_config` over the URI-parsed defaults. Caller
+ * keys win — `import.scan({source: "python/peps", scan_config: {filter: "..."}})`
+ * is the canonical way to scope a scan.
+ */
+function mergeScanConfig(
+  base: GithubStructuredDocsConfig,
+  scanConfig: Record<string, unknown> | undefined,
+): GithubStructuredDocsConfig {
+  if (!scanConfig) return base;
+  const out: GithubStructuredDocsConfig = { ...base };
+  if (typeof scanConfig.repo === 'string') out.repo = scanConfig.repo;
+  if (typeof scanConfig.ref === 'string') out.ref = scanConfig.ref;
+  if (typeof scanConfig.pathPrefix === 'string') out.pathPrefix = scanConfig.pathPrefix;
+  if (typeof scanConfig.filter === 'string') out.filter = scanConfig.filter;
+  if (typeof scanConfig.limit === 'number' && Number.isFinite(scanConfig.limit)) {
+    out.limit = scanConfig.limit;
+  }
+  if (typeof scanConfig.fixtureDir === 'string') out.fixtureDir = scanConfig.fixtureDir;
+  return out;
 }
 
 function filterTree(tree: string[], config: GithubStructuredDocsConfig): string[] {

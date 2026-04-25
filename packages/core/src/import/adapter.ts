@@ -67,6 +67,12 @@ export interface ImportContext {
    * false. Tests run with `network=false` and supply fixture fixtures.
    */
   network: boolean;
+  /**
+   * Free-form per-call config the caller passed via `import.scan({scan_config})`.
+   * Adapter-specific keys; the adapter is responsible for validation.
+   * Persisted on the `ideas_import_sources` row for replay/audit.
+   */
+  scanConfig?: Record<string, unknown>;
 }
 
 /**
