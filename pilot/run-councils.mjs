@@ -93,7 +93,7 @@ for (const entry of seed.entries) {
     if (alreadyRun(entry.idea_id, i)) continue;
     planned.push({
       idea_id: entry.idea_id,
-      decision_pep: entry.decision_pep,
+      decision_id: entry.decision_id,
       index: i,
       mode: MODE_PLAN[i],
     });
@@ -105,7 +105,7 @@ console.error(`[pilot] ideas: ${seed.entries.length}, sessions/idea: ${SESSIONS_
 console.error(`[pilot] planned: ${planned.length}, already complete: ${sessions.runs.length}`);
 if (PILOT_CLIS) console.error(`[pilot] clis filter: ${PILOT_CLIS.join(', ')}`);
 if (flagDryRun) {
-  for (const p of planned) console.error(`  ${p.decision_pep} #${p.index} (${p.mode})`);
+  for (const p of planned) console.error(`  ${p.decision_id} #${p.index} (${p.mode})`);
   process.exit(0);
 }
 if (planned.length === 0) {
@@ -194,7 +194,7 @@ try {
     const p = planned[i];
     const t0 = Date.now();
     console.error(
-      `[pilot] [${i + 1}/${planned.length}] ${p.decision_pep} #${p.index} (${p.mode}) → council.run...`,
+      `[pilot] [${i + 1}/${planned.length}] ${p.decision_id} #${p.index} (${p.mode}) → council.run...`,
     );
 
     let runResult;
@@ -216,7 +216,7 @@ try {
       console.error(`  ! failed in ${Date.now() - t0}ms: ${msg}`);
       sessions.runs.push({
         idea_id: p.idea_id,
-        decision_pep: p.decision_pep,
+        decision_id: p.decision_id,
         index: p.index,
         mode: p.mode,
         ran_at: new Date().toISOString(),
@@ -233,7 +233,7 @@ try {
     );
     sessions.runs.push({
       idea_id: p.idea_id,
-      decision_pep: p.decision_pep,
+      decision_id: p.decision_id,
       index: p.index,
       mode: p.mode,
       ran_at: new Date().toISOString(),

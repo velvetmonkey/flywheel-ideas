@@ -33,7 +33,21 @@ import * as readline from 'node:readline/promises';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const VAULT = process.env.PILOT_VAULT || '/tmp/flywheel-pilot-python23';
 
-const CORPUS_PATH = resolve(__dirname, 'pilot-corpus.python-2-3.json');
+function parseCorpusFlag(argv, defaultPath) {
+  const idx = argv.indexOf('--corpus');
+  if (idx === -1) return defaultPath;
+  const v = argv[idx + 1];
+  if (!v) {
+    console.error('[pilot] --corpus requires a path argument');
+    process.exit(2);
+  }
+  return resolve(process.cwd(), v);
+}
+
+const CORPUS_PATH = parseCorpusFlag(
+  process.argv,
+  resolve(__dirname, 'pilot-corpus.python-2-3.json'),
+);
 const SEED_PATH = resolve(__dirname, 'last-seed.json');
 const SESSIONS_PATH = resolve(__dirname, 'last-councils.json');
 const SCORES_PATH = resolve(__dirname, 'last-scores.json');
@@ -65,7 +79,7 @@ const corpus = loadJson(CORPUS_PATH, 'corpus');
 const seed = loadJson(SEED_PATH, 'seed map');
 const sessions = loadJson(SESSIONS_PATH, 'council sessions');
 
-const seedByPep = new Map(seed.entries.map((e) => [e.decision_pep, e]));
+const seedByDecisionId = new Map(seed.entries.map((e) => [e.decision_id, e]));
 const sessionsByIdea = new Map();
 for (const r of sessions.runs ?? []) {
   if (!r.session_id) continue;
@@ -77,7 +91,7 @@ const SCORABLE_OUTCOMES = new Set(['refuted', 'partially_refuted']);
 
 const pairs = [];
 for (const entry of corpus.entries) {
-  const seedEntry = seedByPep.get(entry.decision_pep);
+  const seedEntry = seedByDecisionId.get(entry.decision_id);
   if (!seedEntry) continue;
   const ideaSessions = sessionsByIdea.get(seedEntry.idea_id) ?? [];
   if (ideaSessions.length === 0) continue;
@@ -85,7 +99,7 @@ for (const entry of corpus.entries) {
     if (!SCORABLE_OUTCOMES.has(asm.outcome)) continue;
     for (const s of ideaSessions) {
       pairs.push({
-        decision_pep: entry.decision_pep,
+        decision_id: entry.decision_id,
         idea_title: entry.title,
         idea_id: seedEntry.idea_id,
         session_id: s.session_id,
@@ -135,7 +149,7 @@ try {
   for (let i = 0; i < queue.length; i++) {
     const p = queue[i];
     console.log('\n' + '='.repeat(78));
-    console.log(`[${i + 1}/${queue.length}] ${p.decision_pep} session #${p.session_index} (${p.session_mode})`);
+    console.log(`[${i + 1}/${queue.length}] ${p.decision_id} session #${p.session_index} (${p.session_mode})`);
     console.log(`Idea: ${p.idea_title}`);
     console.log(`Assumption to look for (corpus_id=${p.assumption_corpus_id}):`);
     console.log(`  "${p.assumption_text}"`);
@@ -183,7 +197,7 @@ try {
     const decision = {
       session_id: p.session_id,
       assumption_corpus_id: p.assumption_corpus_id,
-      decision_pep: p.decision_pep,
+      decision_id: p.decision_id,
       session_mode: p.session_mode,
       session_index: p.session_index,
       cited: answer === 'y',

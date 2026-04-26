@@ -476,6 +476,8 @@ export {
   GITHUB_STRUCTURED_DOCS_NAME,
   parsePepDocument,
   extractAssumptionSentences,
+  CsvCorpusAdapter,
+  CSV_CORPUS_NAME,
   BUILTIN_ADAPTER_NAMES,
 } from './import/index.js';
 export type {
