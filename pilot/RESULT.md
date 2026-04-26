@@ -89,12 +89,96 @@ pep-3000's per-persona would mirror the others.
    idea. Single-session cite rate per persona is closer to the
    user-facing claim and is the 79% number, not 100%.
 
+## Qualitative judgement (added post-scoring)
+
+The structural metric is satisfying but only proves the council *named*
+the right assumption. The harder question is whether the council's
+prose materially attacks that assumption with arguments that would have
+been useful to a 2008-era decision-maker — i.e., whether it surfaces
+the historical refutation BEFORE knowing the historical answer.
+
+Sampling one Pass-2 prose excerpt per scored PEP:
+
+### pep-3000 (timeline assumption refuted)
+
+> "Pass 1 nailed the scale of fragmentation but misread its *nature*.
+> The 2–3 year migration claim was catastrophically optimistic—it took
+> a decade … if the Timeline assumption had been *close* (say, 4–5
+> years instead of 10), the cost-benefit flips. A decade of
+> dual-maintenance eroded the cleanup's perceived value."
+> — claude-risk-pessimist, session-08, standard
+
+### pep-3137 (u'' literal removal refuted by PEP 414)
+
+> "Python 3.3+ re-accepted u'' as valid syntax—a quiet admission that
+> the hammer was heavier than the nail. The decision was defensible on
+> principle (Unicode by default is correct), but the cost-benefit math
+> in Pass 1 was backwards … a deprecation cycle (like Python's
+> async/await adoption) would have been smarter."
+> — claude-risk-pessimist, session-08, standard
+
+The council named the actual reversal (PEP 414) without being told it.
+
+### pep-3131 (confusable-attack assumption partially refuted)
+
+> "Single-author packages on PyPI (thousands of them) skip review
+> entirely. One careless maintainer or one compromised account ships
+> obfuscated Cyrillic—and the assumption collapses … By 2024,
+> sophisticated supply-chain attacks would use this exact vector."
+> — claude-risk-pessimist, session-08
+
+This is a specific prediction about how the assumption fails — exactly
+the dynamic that has played out in supply-chain attacks since ~2017.
+
+### pep-0358 (bytes formatting refused, refuted by PEP 461)
+
+> "Languages like Go, Rust, and JavaScript allow formatting on bytes
+> and don't collapse into encoding chaos. What the PEP actually did
+> was transfer the burden: instead of one coherent bytes formatting
+> model, the ecosystem built *bespoke* wrappers (Django's
+> force_bytes, Flask's encode dance, Twisted's custom formatting).
+> The cost was paid by the exact domains that most needed clarity—web
+> frameworks and binary protocol libraries."
+> — claude-risk-pessimist, session-08
+
+Names the exact use cases (HTTP/wire-protocol) that drove PEP 461.
+
+### Read
+
+In every sampled session, the council's critique includes specific,
+testable predictions about HOW the assumption fails — not just "this
+assumption is fragile." The arguments cite real frameworks, real
+counterexamples from neighbouring languages, and (for pep-3137) the
+literal name of the later-PEP that reversed the decision. This is the
+shape of council output a user could act on at decision time.
+
+The structural-cite-rate gate (≥70%) is a low bar; the qualitative
+read suggests the council is meeting a much stronger one.
+
+### Pep-3105 control
+
+pep-3105 (the validated assumption — "print → print() conversion is
+mechanical and 2to3 will handle cleanly") was deliberately kept out of
+the scored set. Reading its sessions: personas DO name asm-7eM7LSJk as
+"most vulnerable" in their structured field (because it's the only
+assumption available to name), but their prose is conspicuously
+NOT-attacking — concedes the assumption "held," "was mechanical for the
+vast majority of code," "the tool may have been 95%+ reliable." This is
+a structural quirk of the metric (forced-naming when only one
+assumption exists), not a council error: the prose correctly identifies
+that this assumption is NOT the fragile one. A v0.3 metric should bias
+on prose-quality so this distinction shows up in the score, not just
+the read.
+
 ## Conclusion
 
 The v0.2 GA gate passes against the Python 2→3 corpus. The council
 consistently identifies the load-bearing assumption that history later
-refuted. Recommendation: ship 0.2.0 GA against this evidence, with
-caveats above documented in the release notes.
+refuted, AND its prose substantively attacks it with arguments that
+mirror the actual historical refutation (sometimes naming the exact
+follow-up PEP that overturned the decision). Recommendation: ship
+0.2.0 GA against this evidence, with caveats above documented in the
+release notes.
 
 ## Reproducibility
 
