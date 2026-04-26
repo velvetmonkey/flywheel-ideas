@@ -1,5 +1,57 @@
 # Changelog
 
+## 0.2.0 — 2026-04-26
+
+**v0.2.0 GA — depth on the loop, retrieval-native council, refutation-driven import.**
+
+The headline: an empirical pre-registered cite-rate pilot on the Python 2→3 corpus (5 decision PEPs × 10 councils each) hit **40/40 sessions = 100% session cite rate** and **136/172 = 79.1% per-persona cite rate** against a ≥70% pre-registered gate. Full write-up: [`pilot/RESULT.md`](./pilot/RESULT.md). The council reliably identifies the load-bearing assumption that history later refuted, and its prose surfaces the actual historical refutation (sometimes naming the exact follow-up PEP that overturned the decision).
+
+What's new since v0.1.1:
+
+### New tools / actions
+
+- **`import` tool** (Phase 2) — `import.scan` / `import.promote` / `import.list` / `import.read` / `import.reject`. First adapter: `github-structured-docs` (Python PEPs). Schema v7. Bulk-imports decision corpora as candidates, dedupes against the vault, promotes selected candidates to ideas / assumptions / outcomes via the existing v0.1 writers.
+- **`idea.freeze` / `idea.list_freezes`** (D2 — OSF preregistration). Snapshots an idea + its locked assumptions at council-dispatch time so the council critiques what was actually preregistered, not the post-edit state.
+- **`idea.ancestry` / `idea.descendants` / `idea.shared_assumptions`** (D5 — lineage queries). Walks parent / fork / supersession edges; surfaces shared load-bearing assumptions across decisions.
+- **`assumption.radar`** (D7 — Assumption Radar). Semantic vault-wide scan for unstated load-bearing claims. Finds candidates the user hasn't declared yet.
+- **`assumption.extension_set` / `extension_get`** (RAND ABP). Shaping + hedging actions per assumption (description / due_at / owner / status / notes). Schema v8.
+- **`council.delta`** (D6 — decision_delta). Compares two council sessions for the same idea; surfaces persona stance shifts above a configurable confidence-delta threshold.
+- **steelman mode** on `council.run` — defends the strongest case for the decision; counterweight to pre_mortem.
+
+### Council depth
+
+- **Retrieval-native council input** (alpha.1 keystone). Council opens with an evidence pack: backlinks from the vault, related ideas, refuted-assumption pattern hits, citation graph context. Required `flywheel-memory` subprocess; degrades gracefully when absent.
+- **Temporal insights** (alpha.4). The evidence pack now includes a note's revision history (when, what, by whom) alongside its current state. Councils see the trajectory of an idea, not just its current snapshot.
+- **`metacognitive_reflection.most_vulnerable_assumption`** field on every persona view — the persona explicitly names the one assumption it judges most fragile. Powers the cite-rate metric.
+
+### Write path
+
+- **flywheel-memory as the active write path** (alpha.5). Subprocess probe at startup. When flywheel-memory is installed, every idea / assumption / outcome / council artifact lands via flywheel-memory's `note` + `vault_update_frontmatter` tools — indexed instantly. `direct-fs` is the fallback. Every response surfaces `write_path` (`mcp-subprocess` or `direct-fs`).
+- **`FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION=1`** (alpha.8). Drops `--bare` from the dispatcher's claude argv so it inherits the Claude Code CLI subscription auth instead of requiring `ANTHROPIC_API_KEY`. Default unchanged (hermetic, API-key-billed).
+
+### Bug fixes / hardening
+
+- `import.scan` honours `scan_config` (alpha.7). Caller's `filter` / `limit` / `pathPrefix` etc. now reach the adapter — a filtered network scan no longer walks all ~770 PEPs through the 50ms-stagger loop.
+- Memory-bridge category names match the type values writers actually emit (`idea`, `assumption`, `outcome`, `council_view`). The alpha.1 names (`ideas_note`, …) had zero overlap — type_boost was a no-op across the entire ideas surface.
+
+### Schema
+
+Migrations v2 → v8 applied automatically on first run with each version. Idempotent + transactional.
+
+### Pilot infrastructure (`pilot/`)
+
+Reproducible scripts so anyone can re-run the cite-rate pilot:
+
+- `pilot/pilot-corpus.python-2-3.json` — ground truth: 5 decision PEPs × 6 load-bearing assumptions, each annotated with the historical outcome.
+- `pilot/seed-corpus.mjs` — `idea.create` + `assumption.declare` for the whole corpus into an isolated `/tmp` vault (never touches the user's real vault).
+- `pilot/run-councils.mjs` — fires `council.run` × 10 per idea, mode rotation per protocol (4 pre_mortem + 3 standard + 3 steelman). Resumable. `PILOT_CLIS=…` to narrow.
+- `pilot/score-cites-auto.mjs` — deterministic scorer matching each persona's `most_vulnerable_assumption` against the corpus's refuted db_id.
+- `pilot/RESULT.md` — full write-up: top-line, per-mode, per-PEP, qualitative judgement of the prose, caveats, reproducibility.
+
+### Caveats (in pilot/RESULT.md)
+
+The headline result has a 2-CLI dispatch caveat (codex hung on MCP autoload in the dev env, so the pilot ran claude+gemini × 2 personas instead of pre-registered 3 CLIs × 2 personas), one corpus, structural-not-prose match for the metric. The qualitative read of the prose is strong: in every sampled session the council substantively attacks the refuted assumption with arguments that mirror the actual historical refutation.
+
 ## 0.2.0-alpha.8 — 2026-04-26
 
 **`FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION` — opt-in subscription auth for
