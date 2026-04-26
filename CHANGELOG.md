@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.2.1 — Unreleased
+
+**Pilot generalization + the `csv-corpus` wedge-test adapter.**
+
+The v0.2 widening plan is gated on three wedge tests (train-data leakage probe, domain readability spot-checks, ADR census) before any new dedicated adapter ships. This release lands the cheap infrastructure those wedges run on top of.
+
+### Pilot generalization
+
+- `pilot/seed-corpus.mjs`, `pilot/score-cites-auto.mjs`, `pilot/score-cites.mjs` accept `--corpus <path>` to point at any corpus JSON. Default unchanged (`pilot/pilot-corpus.python-2-3.json`).
+- `decision_pep` → `decision_id` and `outcome_pep_refs` → `outcome_refs` across the corpus schema and pilot scripts. Drops blanket `.toUpperCase()` and PEP-shape UI strings — the scoring is now domain-agnostic. Re-scoring the v0.2.0 GA artifacts produces a byte-identical decision list (modulo timestamps).
+- `pilot/corpus-schema.md` — new schema doc for authoring custom corpora.
+
+### New adapter — `csv-corpus`
+
+The wedge-test tool. Reads a JSONL file (one decision-shaped object per line) and emits one idea + N assumptions + 0|1 outcome per row. Lets you run a council against any pasted corpus without writing a dedicated adapter for the source domain.
+
+- Format: JSONL, not CSV (CSV cell-encoded JSON is a foot-gun).
+- Source: absolute path or `file://` URL pointing at the `.jsonl`.
+- Per-line shape: `{decision_id, title, body?, status?, assumptions: [...], outcome?: {...}}`.
+- Source URIs include the row index for replay (`csv-corpus://<path>#row=<i>`).
+- Malformed lines log to stderr and skip — a single bad row does not kill the batch.
+- Synthetic 3-row test fixture (`packages/core/test/fixtures/csv-corpus/synthetic-3.jsonl`); no famous decisions in the fixture, keeping it leakage-clean.
+
+Adapter registry now lists `csv-corpus` alongside `github-structured-docs`. No schema migrations.
+
 ## 0.2.0 — 2026-04-26
 
 **v0.2.0 GA — depth on the loop, retrieval-native council, refutation-driven import.**

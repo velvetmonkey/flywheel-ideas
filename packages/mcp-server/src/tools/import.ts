@@ -38,7 +38,7 @@ import {
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpText, type NextStep } from '../next_steps.js';
 
-// Side-effect: registers the built-in github-structured-docs adapter.
+// Side-effect: registers the built-in adapters (github-structured-docs, csv-corpus).
 import '@velvetmonkey/flywheel-ideas-core';
 
 export function registerImportTool(
@@ -61,8 +61,8 @@ export function registerImportTool(
     {
       action: z.enum(['scan', 'promote', 'list', 'read', 'reject']).describe('Operation'),
       // scan
-      adapter: z.string().optional().describe('[scan] Adapter name, e.g. "github-structured-docs"'),
-      source: z.string().optional().describe('[scan] Source identifier (adapter-specific; for github-structured-docs: "owner/repo", "owner/repo@ref", "owner/repo:path/", or "fixture://<dir>")'),
+      adapter: z.string().optional().describe('[scan] Adapter name, e.g. "github-structured-docs" or "csv-corpus"'),
+      source: z.string().optional().describe('[scan] Source identifier (adapter-specific; github-structured-docs: "owner/repo", "owner/repo@ref", "owner/repo:path/", or "fixture://<dir>"; csv-corpus: absolute path or file:// URL to a .jsonl corpus)'),
       scan_config: z
         .record(z.unknown())
         .optional()
