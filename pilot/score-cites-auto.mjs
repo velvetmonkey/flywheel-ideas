@@ -41,6 +41,53 @@ function parseCorpusFlag(argv, defaultPath) {
   return resolve(process.cwd(), v);
 }
 
+/**
+ * Mirror of seed-corpus.mjs's loadCorpus — accepts python-2-3 JSON and
+ * csv-corpus-shaped JSONL. Returns `{entries: [{decision_id,
+ * load_bearing_assumptions: [{id, text, outcome}]}]}`.
+ */
+function loadCorpus(p) {
+  const raw = readFileSync(p, 'utf8');
+  const isJsonl = p.endsWith('.jsonl') || looksLikeJsonl(raw);
+  if (!isJsonl) return JSON.parse(raw);
+  const entries = [];
+  const lines = raw.split('\n');
+  let rowIndex = -1;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    rowIndex++;
+    let obj;
+    try {
+      obj = JSON.parse(line);
+    } catch {
+      continue;
+    }
+    if (!obj.decision_id || !obj.title) continue;
+    const lba = Array.isArray(obj.load_bearing_assumptions)
+      ? obj.load_bearing_assumptions
+      : Array.isArray(obj.assumptions)
+        ? obj.assumptions.filter((a) => a && a.load_bearing !== false)
+        : [];
+    entries.push({
+      decision_id: obj.decision_id,
+      title: obj.title,
+      load_bearing_assumptions: lba.map((a) => ({
+        id: a.id,
+        text: a.text,
+        outcome: a.outcome,
+        outcome_evidence: a.outcome_evidence,
+      })),
+    });
+  }
+  return { entries };
+}
+
+function looksLikeJsonl(raw) {
+  const lines = raw.split('\n').map((l) => l.trim()).filter(Boolean);
+  return lines.length >= 2 && lines.every((l) => l.startsWith('{'));
+}
+
 const CORPUS_PATH = parseCorpusFlag(
   process.argv,
   resolve(__dirname, 'pilot-corpus.python-2-3.json'),
@@ -49,7 +96,7 @@ const SEED_PATH = resolve(__dirname, 'last-seed.json');
 const SESSIONS_PATH = resolve(__dirname, 'last-councils.json');
 const SCORES_PATH = resolve(__dirname, 'last-scores.json');
 
-const corpus = JSON.parse(readFileSync(CORPUS_PATH, 'utf8'));
+const corpus = loadCorpus(CORPUS_PATH);
 const seed = JSON.parse(readFileSync(SEED_PATH, 'utf8'));
 const sessions = JSON.parse(readFileSync(SESSIONS_PATH, 'utf8'));
 
