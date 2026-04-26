@@ -1,4 +1,4 @@
-# Outcome + propagation (M12)
+# Outcome + propagation
 
 `outcome.log` closes the compounding loop. When you refute an assumption that
 turned out wrong, every idea whose council cited that assumption gets flagged
@@ -129,7 +129,7 @@ failure. Pinning the contract so future readers don't second-guess:
 | `outcome.log` `needs_review` cascade (alpha.4 fix 5) | Best-effort + stderr warn | One outcome can flag N ideas; rolling back a 10-idea cascade because idea #8's markdown was locked would elevate the read-only mirror to an authoritative constraint. |
 | `outcome.undo` `needs_review` clearance | Best-effort + stderr warn | Symmetric with log path. |
 
-**`needs_review` is exclusively written by M12 + alpha.4 in v0.1.** Verified
+**`needs_review` is written exclusively by the `outcome.log` / `outcome.undo` paths.** Verified
 via grep — schema declares the column, only the outcome.log/undo paths
 touch it. Any future source (signpost sweep, agent-driven detection, etc.)
 must coordinate with the outcome-clearing path so `undo` doesn't wipe flags
@@ -137,8 +137,8 @@ set by the other source.
 
 ## Testing
 
-M12 has heavy property-based coverage because silent bugs here corrupt
-the compounding mechanism invisibly:
+Outcome + propagation has heavy property-based coverage because silent bugs
+here corrupt the compounding mechanism invisibly:
 
 - **Round-trip**: log + undo = pre-log DB state (bytewise on statuses +
   needs_review flags)
@@ -176,15 +176,19 @@ sqlite3 $VAULT_PATH/.flywheel/ideas.db \
     WHERE c.assumption_id = 'asm-XYZ';"
 ```
 
-## What's NOT in M12
+## What landed since v0.1
 
-| Feature | Lands in |
-|---|---|
-| Automated outcome detection (vault scanning for outcome-shaped notes) | v0.2 "Agent-driven outcome detection" |
-| `decision_delta` view (what changed between council runs) | v0.2 |
-| Assumption Radar (proactive surfacing) | v0.2 |
-| Lineage queries | v0.2 |
-| Steelman mode | v0.2 |
-| `outcome.forget` (cleanup) | probably never — audit trail matters |
-| Real `claude -p` closed-loop e2e in CI | M13 |
-| Custom-categories registration with flywheel-memory | M14 |
+See [CHANGELOG.md](../CHANGELOG.md) for the full release history. The v0.2 GA
+notes cover `decision_delta`, `assumption.radar`, lineage queries (`ancestry`
+/ `descendants` / `shared_assumptions`), and steelman mode. Memory-bridge
+custom-category registration shipped in v0.1 alpha.3 — see
+[`memory-bridge.md`](./memory-bridge.md).
+
+Still NOT shipped, intentionally:
+- **`outcome.forget`** — audit trail matters; outcomes can only be undone, never deleted.
+- **Real `claude -p` E2E in continuous CI** — explicitly not pursued. Live-CLI coverage runs as the v0.1 GA dogfood + the v0.2 cite-rate pilot.
+- **Automated outcome detection** (vault-scanning for outcome-shaped notes) — still on the roadmap; the user logs outcomes by hand for now.
+
+---
+
+*Last updated: 2026-04-26.*

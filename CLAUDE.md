@@ -49,13 +49,13 @@ npm run lint     # tsc --noEmit
 npm run dev      # watch mode
 ```
 
-## The closed loop (v0.1 scope — this is the product)
+## The closed loop (the product)
 
 ```
 idea.create → assumption.declare → council.run(pre_mortem) → idea.transition → outcome.log(refutes) → propagation
 ```
 
-Four MCP tools, ~15 actions total. Everything else in the roadmap supports this.
+Five MCP tools (idea, assumption, council, outcome, import), ~20 actions total. v0.2 GA shipped 2026-04-26 — the closed loop is feature-complete and the pre-registered cite-rate pilot landed at 100% session / 79% per-persona on a Python 2→3 corpus. Everything else in the roadmap supports the loop.
 
 ## Hard product rules
 
@@ -114,10 +114,8 @@ without mutation.
 ### Audit
 
 `ideas_dispatches` is the audit trail — `cli`, `argv`, `approval_scope`,
-`started_at`, `finished_at`. M6 ships the helper primitives but does **not**
-write rows; the real council dispatcher in M8 is the first caller. The argv
-column will carry flags only (prompts route via stdin) to keep user idea
-text out of the audit log.
+`started_at`, `finished_at`. The argv column carries flags only (prompts
+route via stdin) to keep user idea text out of the audit log.
 
 ## Testing
 
@@ -135,15 +133,17 @@ text out of the audit log.
 
 Detection at startup via `packages/core/src/write/writer.ts`. `result.write_path` field on every tool response reports active tier.
 
-## Running the council (M8)
+## Running the council
 
-`council.run({id, confirm: true})` spawns claude subprocesses (one per
-persona, sequentially) and writes a `SYNTHESIS.md` + per-view markdown
-notes under `<vault>/councils/<idea_id>/session-NN/`. M8 ships two
-personas (Risk Pessimist, Growth Optimist); M9 adds concurrency + full
-model matrix. Full operator guide: [docs/council.md](./docs/council.md).
+`council.run({id, confirm: true})` spawns CLI subprocesses (claude / codex /
+gemini × up to 5 personas × 2 passes) under a 3-cell concurrency limiter,
+and writes a `SYNTHESIS.md` + per-view markdown notes under
+`<vault>/councils/<idea_id>/session-NN/`. Default `depth: "light"` runs
+6 cells (3 CLIs × 2 personas). Three modes — `pre_mortem` (default for
+nascent/explored), `standard` (balanced), `steelman` (defends strongest
+version). Full operator guide: [docs/council.md](./docs/council.md).
 
-## Outcome + propagation (M12 — the compounding mechanism)
+## Outcome + propagation (the compounding mechanism)
 
 `outcome.log({id, text, refutes?, validates?})` records what reality showed
 after an idea landed. Refutation cascades: every idea whose council cited
@@ -152,24 +152,48 @@ the refuted assumption gets `needs_review=1`. Reversible via `outcome.undo`
 
 Full operator guide: [docs/outcome.md](./docs/outcome.md).
 
-## Memory bridge (M14 — flywheel-memory category registration)
+## Bulk import
+
+`import.scan` + `import.promote` seed the vault from external decision
+corpora. Two-step flow: scan reads candidates and writes them to
+`<vault>/imports/`, never touching the canonical vault; promote requires
+explicit per-candidate consent before vault writes. Two adapters shipped:
+
+- `github-structured-docs` (v0.2 GA) — RFC-822-headered markdown trees
+  (PEPs, RFCs). Source: `owner/repo` or `owner/repo@ref:path/`.
+- `csv-corpus` (v0.2.1) — JSONL wedge tool. Source: absolute path or
+  `file://` URL to a `.jsonl` file. One decision per line; the "paste any
+  corpus, run a council" path used during the wedge tests.
+
+Every adapter emits `confidence: 0..1` and dedups against the existing
+vault via flywheel-memory's search; matches above threshold are flagged
+`state: 'duplicate'` and require `override_duplicate: true` to promote.
+
+## Memory bridge (flywheel-memory integration)
 
 On server startup, flywheel-ideas spawns `flywheel-memory` as an MCP
-subprocess (best-effort, 15s timeout) and registers four custom categories:
-`ideas_note`, `ideas_assumption`, `ideas_council_session`, `ideas_outcome`.
-This makes ideas notes participate in flywheel-memory's wikilink scorer
-and citation graph instead of being treated as unknown noise.
+subprocess (best-effort, 30s timeout in alpha.4+) and plays two roles:
+
+1. **Custom-category registration** — registers four `ideas_*` types so
+   ideas notes participate in flywheel-memory's wikilink scorer and
+   citation graph instead of being treated as unknown noise.
+2. **Active write-path transport** (alpha.5+) — when the bridge is up,
+   every flywheel-ideas write routes through flywheel-memory's `note` +
+   `vault_update_frontmatter` tools instead of direct fs. Reads
+   (evidence-pack lookups, dedup queries) similarly route through
+   flywheel-memory's search/read tools.
 
 Failure is non-fatal — if `flywheel-memory` isn't installed or times out,
-the server boots normally with a one-line stderr warning. Disable entirely
-with `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`. Cold-start `init_semantic` may need
+the server boots normally with a one-line stderr warning and falls back
+to direct gray-matter file writes. Disable entirely with
+`FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`. Cold-start `init_semantic` may need
 `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=60000` on first launch.
 
 User-defined custom categories (`recipe`, `paper`, etc.) survive: the
 bridge does GET → MERGE → SET, not plain SET. Full guide:
 [docs/memory-bridge.md](./docs/memory-bridge.md).
 
-## CLI dispatch targets (M8)
+## CLI dispatch targets
 
 Council dispatcher spawns `claude`, `codex`, `gemini` with explicit flags.
 Per-CLI quirks — prompt-input mechanisms, stdout JSON schemas, stdin
@@ -178,9 +202,9 @@ termination requirements, error-stream surfaces — are catalogued in
 in `packages/core/src/cli-errors.ts` and is backed by golden fixtures at
 `packages/core/test/fixtures/cli-errors/`.
 
-M7 shipped `parse` + `bad_model` + `timeout` + `exit_nonzero` classes.
-`auth` and `rate_limit` are explicitly TODO for M8 (captured during real
-dispatch).
+Catalogue covers `parse`, `bad_model`, `timeout`, `auth` (claude captured
+during the v0.1 GA dogfood), and `exit_nonzero` classes. `rate_limit`
+remains opportunistic — capture during pilot runs when quotas trip.
 
 ## Dependencies
 

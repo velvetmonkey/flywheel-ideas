@@ -1,4 +1,12 @@
-# Memory bridge (M14)
+# Memory bridge
+
+The memory bridge spawns `flywheel-memory` as an MCP subprocess at
+flywheel-ideas server startup. It plays **two roles** that users need to
+keep distinct when debugging:
+
+## Two roles
+
+### 1. Custom-category registration
 
 flywheel-ideas writes notes with `type: ideas_note`, `ideas_assumption`,
 `ideas_council_session`, and `ideas_outcome` into the same vault that
@@ -6,11 +14,34 @@ flywheel-memory indexes. Without registration, those four kinds are unknown
 entity types from flywheel-memory's POV — they don't get type-boost in the
 wikilink scorer and they're invisible to the citation graph.
 
-The memory bridge fixes this by spawning `flywheel-memory` as an MCP
-subprocess at flywheel-ideas server startup and registering the four kinds
-as custom categories.
+The bridge fixes this by registering the four kinds as custom categories in
+flywheel-memory's `custom_categories` config. This is the original M14 purpose
+of the bridge.
 
-## What gets registered
+### 2. Active write-path transport (alpha.5+)
+
+When the bridge is up and the probe succeeds, **every flywheel-ideas write
+routes through flywheel-memory's `note` + `vault_update_frontmatter` tools
+instead of direct filesystem operations.** Reads (evidence-pack lookups,
+import-dedup queries) similarly route through flywheel-memory's `search` /
+`read` tools.
+
+The practical effect: ideas / assumptions / outcomes / council artifacts
+are indexed instantly when they land, instead of waiting for flywheel-memory's
+watcher cadence. Every flywheel-ideas tool response surfaces `write_path`
+(`mcp-subprocess` when the bridge is up; `direct-fs` when it's not) so the
+caller knows which tier was active.
+
+If the bridge is unavailable, flywheel-ideas falls back to direct gray-matter
+file writes — the closed loop still works, but the freshly-written notes
+won't be indexed until flywheel-memory next walks the vault.
+
+This means: if you're debugging "why didn't my new idea show up in
+flywheel-memory's search?", check `write_path` on the response. If it's
+`direct-fs`, the bridge skipped at startup and the write went straight to
+disk. The cold-start gotcha section below covers the most common reasons.
+
+## Categories registered (role 1 detail)
 
 | Category               | type_boost | Why |
 |------------------------|-----------:|-----|
@@ -134,3 +165,7 @@ we'd clobber that write. In practice this doesn't happen — flywheel-memory
 servers are single-process per vault and the only realistic concurrent writer
 is the user via the same server, sequentially. Documented as acceptable for
 v0.1.
+
+---
+
+*Last updated: 2026-04-26.*

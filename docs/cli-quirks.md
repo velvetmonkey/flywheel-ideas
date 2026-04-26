@@ -1,17 +1,17 @@
-# CLI Quirks (M7 spike output)
+# CLI dispatch quirks
 
 One-page characterization of the three council-dispatch targets — `claude`,
-`codex`, `gemini`. Captured on a Linux/WSL2 workstation against current
-CLI versions (see table) with responsibly-bounded probes (success calls,
-parse errors, bad-model errors, synthetic SIGTERM timeout). Auth and
-rate-limit fixtures are intentionally omitted — safely inducing them
-requires either staging-account credentials or the user's own capture
-(see "Gaps" at the bottom).
+`codex`, `gemini`. Originally captured during the M7 spike on a Linux/WSL2
+workstation; revised as `auth` patterns landed during the v0.1 GA dogfood.
+
+Probes covered: success calls, parse errors, bad-model errors, synthetic
+SIGTERM timeout, real `auth` failure (claude). `rate_limit` fixtures still
+require an opportunistic capture — safely inducing them burns budget.
 
 Patterns live in `packages/core/src/cli-errors.ts`. Golden fixtures are
 at `packages/core/test/fixtures/cli-{characterization,errors}/`.
 
-## Versions (pinned during M7 capture)
+## Versions (pinned during initial capture)
 
 | CLI | Version | Invocation |
 |---|---|---|
@@ -19,8 +19,8 @@ at `packages/core/test/fixtures/cli-{characterization,errors}/`.
 | codex | codex-cli 0.121.0 | `codex exec --json [--skip-git-repo-check] [prompt]` |
 | gemini | 0.36.0 | `gemini -p [prompt] -o json -m <model>` |
 
-M8 dispatcher should pin min-versions (e.g. claude ≥ 2.1.x) and log
-`<cli> --version` into `ideas_council_views.model_version` on each run.
+The dispatcher logs `<cli> --version` into `ideas_council_views.model_version`
+on each run; min-version pinning is on the v0.3+ roadmap.
 
 ## Prompt-input mechanism
 
@@ -39,7 +39,7 @@ text. All three CLIs accept stdin-only prompts cleanly.
 
 **Codex reads stdin even when the prompt is on argv** and will hang until
 stdin is closed. Observed stderr note: `"Reading additional input from
-stdin..."`. M8 dispatcher must:
+stdin..."`. The dispatcher must:
 
 ```ts
 child.stdin.end();   // always, even if no prompt written
@@ -72,9 +72,9 @@ Parser: `JSON.parse(stdout)`, `.response`.
 
 | CLI | Parse errors | Bad-model | Auth errors |
 |---|---|---|---|
-| claude | **stderr** (`error: unknown option`) | **stdout** (`There's an issue with the selected model...`) | TODO M8 — not captured |
-| codex | **stderr** (`error: unexpected argument`) | **stdout** JSONL (`turn.failed` + nested `invalid_request_error`) | TODO M8 |
-| gemini | **stderr** (`Unknown arguments:`) | TODO M8 (probe blocked) | TODO M8 |
+| claude | **stderr** (`error: unknown option`) | **stdout** (`There's an issue with the selected model...`) | **stdout** (`"Not logged in · Please run /login"`, `"error": "authentication_failed"`) — captured during v0.1 GA dogfood ([`docs/dogfood-v0.1-ga.md`](./dogfood-v0.1-ga.md)) |
+| codex | **stderr** (`error: unexpected argument`) | **stdout** JSONL (`turn.failed` + nested `invalid_request_error`) | not yet captured |
+| gemini | **stderr** (`Unknown arguments:`) | not yet captured | not yet captured |
 
 **Observation:** claude emits user-facing runtime errors to **stdout** where
 stderr is empty (exit 1 but nothing on stderr). The classifier in
@@ -100,7 +100,8 @@ All three use credentials out-of-band — not argv, not env-var-first:
 
 Flywheel-ideas does **not** manage credentials — each CLI's existing auth
 is the source of truth. If auth fails, that's the user's problem surfaced
-via the `auth` FailureReason (catalogued in M8).
+via the `auth` FailureReason (captured during the v0.1 GA dogfood for
+claude; codex / gemini patterns still pending).
 
 ## Benign stderr noise to ignore
 
@@ -111,12 +112,13 @@ via the `auth` FailureReason (catalogued in M8).
 - `"Using FileKeychain fallback for secure storage."` — gemini benign
 - `"Loaded cached credentials."` — gemini benign
 
-M8's stderr-tail capture should strip these before matching the pattern
-catalogue, or the catalogue should be tolerant.
+The dispatcher's stderr-tail capture strips these before matching the
+pattern catalogue (`BENIGN_STDERR_PATTERNS` in `cli-errors.ts`); raw
+stderr is preserved in `ideas_council_views.stderr_tail` for audit.
 
-## Flag choices for council cells (M8)
+## Flag choices for council cells
 
-Recommended invocations for M8 dispatcher:
+Dispatcher invocations:
 
 ```
 claude --bare -p --output-format=json --model=<model> --no-session-persistence
@@ -134,23 +136,38 @@ Rationale:
 - **gemini `-o json`**: structured output. `-y`/`--yolo` (auto-approve all)
   MUST NOT be set — council cells should not execute tool calls.
 
-## Gaps (M8 must close)
+### Subscription auth opt-in (alpha.8)
 
-1. **Auth failure regex** for all three CLIs. Capture by revoking/expiring
-   credentials on a staging account, or by user-provided fixtures.
+`FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION=1` flips the claude argv: drops
+`--bare` so claude inherits the user's Claude Code CLI subscription auth
+instead of requiring `ANTHROPIC_API_KEY`. Trade-off:
+
+- **Default (unset / `0`)**: hermetic. `--bare` strips hooks, plugins,
+  CLAUDE.md, MCP autoload. Fast cold start, billed against the API key.
+- **`=1`**: subscription-billed. Each spawn loads the user's MCP / plugin
+  config, so cold-start gets noticeably slower (plugin discovery on each
+  cell). Useful when running large pilots without burning API budget.
+
+Used during the v0.2 cite-rate pilot (50 sessions × 4 cells × 2 passes ≈
+400 dispatches) so the spend went against the operator's existing Claude
+Code subscription.
+
+## Known gaps
+
+1. **codex / gemini auth regex** — claude's `auth` pattern landed during
+   the v0.1 GA dogfood; codex and gemini still need real-failure capture.
 2. **Rate-limit failure regex** — all three surface these when quota is
    exhausted, but probing from within the normal dispatch path burns
-   budget. Capture opportunistically during M8 dogfooding; catalogue grows.
-3. **Gemini bad-model fixture** — blocked at M7 capture. Fill during M8.
+   budget. Capture opportunistically during pilot runs.
+3. **Gemini bad-model fixture** — never captured. Add when a real failure
+   surfaces.
 4. **Stdout-buffering max for claude** — claude's success JSON is ~5KB
    for a trivial prompt (mostly cache-creation telemetry). A 15-min cell
-   with longer output could exceed expected buffer sizes. M8 should set
-   explicit maxBuffer on the spawn.
+   with longer output could exceed expected buffer sizes. The dispatcher
+   already sets `FLYWHEEL_IDEAS_MAX_BUFFER_BYTES` (default 4 MB).
 5. **Version-drift tests** — CI should fail if any CLI's stderr format
-   changes in a way that breaks the catalogue. Consider a manual
-   integration test job (not in default CI — needs credentials) that
-   runs `<cli> --help` against the live binary and asserts known flags
-   still exist.
+   changes in a way that breaks the catalogue. Currently no automated
+   detection — relies on dogfood / pilot runs to surface drift.
 
 ## References
 
@@ -158,3 +175,7 @@ Rationale:
   (matrix, two-pass metacognitive structure, failure taxonomy)
 - Code: `packages/core/src/cli-errors.ts` + tests
 - Fixtures: `packages/core/test/fixtures/cli-{characterization,errors}/`
+
+---
+
+*Last updated: 2026-04-26.*

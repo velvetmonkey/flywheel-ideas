@@ -1,10 +1,18 @@
-# Running the council (M10)
+# Running the council
 
-`council.run` is a real multi-model subprocess dispatcher. M10 ships the full
-matrix: **claude + codex + gemini × 5 personas = up to 15 cells × 2 passes
+`council.run` is a real multi-model subprocess dispatcher. The full matrix:
+**claude + codex + gemini × 5 personas = up to 15 cells × 2 passes
 = 30 CLI invocations at `depth: "full"`**. Default `depth: "light"` runs
-6 cells (3 CLIs × 2 personas). See `docs/cli-quirks.md` for per-CLI spawn
-details and `packages/core/src/council*.ts` for implementation.
+6 cells (3 CLIs × 2 personas). See [`docs/cli-quirks.md`](./cli-quirks.md) for
+per-CLI spawn details and `packages/core/src/council*.ts` for implementation.
+
+## Modes
+
+`council.run({mode})` accepts three modes:
+
+- `pre_mortem` — *default for nascent / explored ideas.* Personas imagine the decision has already failed and reason backwards from the failure to the assumption that broke. Used to surface fragility before commit.
+- `standard` — balanced critique. Personas weigh the decision on its merits, no failure-imagination prompt.
+- `steelman` — defends the strongest version of the decision. Counterweight to `pre_mortem`. Useful before logging an outcome that refutes the idea — forces a final, honest "best case" before letting reality close the loop.
 
 ## Prerequisites
 
@@ -128,6 +136,7 @@ row, `failure_reason` set, everything else null. If Pass 2 fails,
 | `FLYWHEEL_IDEAS_MAX_CONCURRENCY` | `3` | Max in-flight cells |
 | `FLYWHEEL_IDEAS_SPAWN_PREFIX` | _(unset)_ | Legacy JSON-array test hook |
 | `FLYWHEEL_IDEAS_SPAWN_PREFIXES` | _(unset)_ | JSON-object keyed by CLI (test-only hook) |
+| `FLYWHEEL_IDEAS_CLAUDE_USE_SUBSCRIPTION` | _(unset)_ | When `1`, drops `--bare` from claude argv so it inherits Claude Code subscription auth instead of requiring `ANTHROPIC_API_KEY`. Trade-off: subscription mode loads the user's MCP / plugin config on each spawn (slower cold start, less hermetic) but bills against the Claude Code subscription. Default unchanged — hermetic API-key mode. See [`docs/cli-quirks.md`](./cli-quirks.md#flag-choices-for-council-cells). |
 
 ## Debugging a failed run
 
@@ -147,7 +156,7 @@ sqlite3 $VAULT_PATH/.flywheel/ideas.db \
 cat $VAULT_PATH/councils/<idea_id>/session-NN/SYNTHESIS.md
 ```
 
-## Benign stderr filtering (M10)
+## Benign stderr filtering
 
 Gemini on Linux without libsecret emits the warnings:
 ```
@@ -165,16 +174,13 @@ NOT match the benign pattern and passes through to classification as normal.
 The raw stderr is still preserved in `ideas_council_views.stderr_tail` for
 audit — only the classifier view of stderr is filtered.
 
-## What's NOT in M10
+## What landed since v0.1
 
-| Feature | Lands in |
-|---|---|
-| Evidence-aware synthesis refinements (agreement/disagreement sections) | M11 |
-| Outcome log + propagation (the compounding mechanism) | M12 |
-| Real `claude -p` e2e in CI | M13 |
-| Custom-categories / vault-memory integration | M14 |
-| Steelman mode · freeze/preregister · Assumption Radar · LLM synthesis | v0.2 |
-| Dry-run cost preview | v0.2 |
+See [CHANGELOG.md](../CHANGELOG.md) for the full release history. The v0.2
+GA notes cover the major additions: retrieval-native council input
+(evidence pack), steelman mode, two-pass metacognitive structure,
+`council.delta`, lineage queries, and the `assumption.radar` /
+`idea.freeze` surface that wraps council usage.
 
 ## Failure classification
 
@@ -182,9 +188,14 @@ Classification lives in `packages/core/src/cli-errors.ts`. Current catalogue:
 - `parse` — per-CLI arg-parser stderr (clap, commander, yargs)
 - `bad_model` — claude stdout + codex turn.failed JSONL
 - `timeout` — dispatcher-kill flag + SIGTERM/SIGKILL signals
+- `auth` — captured during the v0.1 GA dogfood (claude `"Not logged in"` / `authentication_failed`); see [`docs/dogfood-v0.1-ga.md`](./dogfood-v0.1-ga.md).
 - `exit_nonzero` — generic fallback
 - `unknown` — zero exit with no matching pattern
 
-`auth` and `rate_limit` are declared but uncatalogued — add patterns + a
-golden fixture under `packages/core/test/fixtures/cli-errors/` when a real
-failure surfaces during dogfooding.
+`rate_limit` is still declared-but-uncatalogued — add patterns + a golden
+fixture under `packages/core/test/fixtures/cli-errors/` when a real failure
+surfaces during dogfooding or pilot runs.
+
+---
+
+*Last updated: 2026-04-26.*

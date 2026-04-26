@@ -8,7 +8,7 @@ A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea 
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![status: stable](https://img.shields.io/badge/status-stable-blue.svg)](#roadmap)
 
-> **Status:** 0.1.0 GA on `latest`. v0.2 alpha train on `@alpha` (most recent: 0.2.0-alpha.5 — flywheel-memory is the active write path when available). v0.2 GA is gated on a pre-registered cite-rate pilot (≥70% across 10 councils on a real corpus). M13 real `claude -p` e2e in CI is still pending.
+> **Status:** v0.2.0 GA on `latest` (the pre-registered cite-rate pilot on Python 2→3 hit 100% session / 79% per-persona — see [pilot/RESULT.md](./pilot/RESULT.md)). v0.2.1 (csv-corpus import adapter) staged on `main`. CI runs lint, npm-audit, build, core + mcp-server tests, and a Node 22/24 × ubuntu/windows matrix; live `claude -p` E2E ran as the v0.1 GA dogfood + v0.2 cite-rate pilot, not as continuous CI.
 
 ## Who this is for
 
@@ -167,8 +167,11 @@ Five MCP tools, action-dispatched. Every response carries `{result, next_steps, 
 
 ### `import` (v0.2 — bulk corpus ingestion)
 
-- `scan({adapter, source, idea_id?, filter?})` — adapter scans a corpus, persists candidates with dedup against the vault. First adapter: `github-structured-docs` (Python PEPs).
+- `scan({adapter, source, idea_id?, filter?})` — adapter scans a corpus, persists candidates with dedup against the vault.
 - `promote({candidate_id, as: 'idea'|'assumption'|'outcome', target_idea_id?, override_duplicate?})` / `list({source_id?, state?})` / `read(id)` / `reject(id)`
+- Adapters:
+  - `github-structured-docs` (v0.2 GA) — RFC-822-headered markdown trees like Python PEPs. Source: `owner/repo`, `owner/repo@ref`, or `owner/repo:path/`.
+  - `csv-corpus` (v0.2.1) — JSONL. Paste any decision corpus into a `.jsonl` file (one decision per line, `{decision_id, title, body, assumptions: [...]}`) and run a council against it. Source: absolute path or `file://` URL.
 
 ## Roadmap
 
@@ -188,21 +191,26 @@ The core product: four MCP tools forming `idea → assumption → council → ou
 - ✅ **`outcome`** — refutation propagation (the compounding mechanism), reversible via undo. Shipped at M12.
 - ✅ **memory-bridge** — flywheel-memory custom-category registration on startup (M14, v0.1 alpha.3). Path-security + maxBuffer + frontmatter-sync hardening shipped in v0.1 alpha.4. Consolidation (`needs_review` filter, model_version capture, comment sweep) shipped in v0.1 alpha.5.
 
-**v0.1.0 GA shipped 2026-04-23.** What's still upcoming, carrying to v0.1.1 / v0.2:
-- ⏳ M13 — real `claude -p` end-to-end test in CI with flake-aware demotion.
-- ⏳ CLI-error classifier auth + rate_limit patterns (real failure samples now captured during the GA dogfood).
-- ⏳ `clis` arg passthrough on `council.run` (gap surfaced in dogfood — orchestrator dispatched all 3 CLIs even when subset was requested).
+**v0.1.0 GA shipped 2026-04-23.** Items that were carrying out of v0.1 GA, resolved or deferred:
+- ✅ **`clis` arg passthrough on `council.run`** — shipped; the v0.2 pilot uses `PILOT_CLIS=claude,gemini` to drop codex, and `council.run({clis: [...]})` honours the subset.
+- ◐ **CLI-error classifier `auth` pattern** — captured during the v0.1 GA dogfood ([docs/dogfood-v0.1-ga.md](./docs/dogfood-v0.1-ga.md)); `rate_limit` still TODO until a real failure sample shows up.
+- ⛔ **Real `claude -p` E2E in CI with flake-aware demotion** — explicitly *not* pursued as continuous CI. The hermeticity / cost / flake trade-off is unfavourable for a per-PR job. Live-CLI coverage instead lives in the v0.1 GA dogfood + the v0.2 cite-rate pilot — see "Tested hard" in [Design principles](#design-principles).
 
-### v0.2 — depth on the loop + closing the feedback loop *(alpha train shipping — `@alpha` dist-tag)*
+### v0.2 — depth on the loop + closing the feedback loop *(GA shipped 2026-04-26)*
 
-- ✅ **Keystone — retrieval-native council input** (alpha.1). Council now opens with an evidence pack: backlinks, related ideas, refuted-assumption pattern hits, citation graph context.
-- ✅ **Phase 1 core engineering** (alpha.1, schema v2→v6). `idea.freeze` / `list_freezes` (OSF snapshot), lineage queries (`ancestry`, `descendants`, `shared_assumptions`), `assumption.radar`, `council.delta`, steelman mode.
-- ✅ **Phase 2 bulk import** (alpha.2, schema v7). `import.scan` / `promote` framework + `github-structured-docs` adapter (Python PEPs). SEC EDGAR + github-repo adapters follow.
-- ✅ **RAND ABP — shaping + hedging actions** (alpha.3, schema v8). `assumption.extension_set` / `extension_get` for explicit actions per assumption.
-- ✅ **Temporal insights in evidence pack** (alpha.4). Council sees a note's history (revisions, recent edits) alongside its current state.
-- ✅ **flywheel-memory as the active write path** (alpha.5). Subprocess probe at startup; writes route through flywheel-memory when present, fall back cleanly.
-- ⏳ Doc/code drift truth-up *(this PR)*.
-- ⏳ Pre-registered cite-rate pilot on a public corpus (Python 2→3 migration, where outcomes are already known) — v0.2 GA gate.
+Retrieval-native council input, lineage queries (`ancestry` / `descendants` / `shared_assumptions`), `idea.freeze` (OSF snapshot), `assumption.radar`, `council.delta`, steelman mode, RAND-style shaping/hedging actions, bulk import (`import.scan` / `promote`), temporal insights in the evidence pack, flywheel-memory as the active write path. Schema v2 → v8. Pre-registered cite-rate pilot on Python 2→3 passed with 100% session / 79% per-persona (see [pilot/RESULT.md](./pilot/RESULT.md)). Full release notes: [CHANGELOG.md](./CHANGELOG.md).
+
+### v0.2.1 — staged on `main`
+
+- ✅ Pilot generalization — `decision_pep` → `decision_id` rename + `--corpus <path>` flag on the pilot scripts (corpus shape no longer assumes PEP).
+- ✅ `csv-corpus` import adapter — JSONL wedge-test tool. Paste any corpus into a `.jsonl` and run a council against it.
+
+### Next gate — wedge tests
+
+Three falsification probes designed before any further widening claims: train-data leakage probe (synthetic-vs-famous corpora, ±10pp pre-registered threshold), domain readability spot-checks (SEC 10-K Item 1A + ADR markdown), ADR superseded-by census across 12 OSS repos. Design + reproducibility: [pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md). Verdicts pending council runs.
+
+### Carry-over from v0.2 GA
+
 - ⏳ Anti-Portfolio pass memos · Ollama / LM Studio local models · daily-note outcome capture · agent-driven outcome detection.
 
 ### v0.3+ — operator calibration
@@ -224,7 +232,7 @@ Your vault becomes an empirical record of your predictions. Personal calibration
 - **Graceful degradation.** Without flywheel-memory, the server falls back to direct filesystem writes; `write_path` on every response surfaces the active tier.
 - **No LLM SDK lock-in.** Uses whatever CLIs you have on `$PATH`.
 - **Apache 2.0.** No viral reach.
-- **Tested hard.** Unit · property-based · integration. (Real `claude -p` e2e in CI is M13 — still pending.)
+- **Tested hard.** Unit · property-based · integration via vitest. CI runs lint, npm-audit, build, core + mcp-server suites, and a Node 22/24 × ubuntu/windows full matrix. Live `claude -p` end-to-end ran during the v0.1 GA dogfood ([docs/dogfood-v0.1-ga.md](./docs/dogfood-v0.1-ga.md)) and the v0.2 cite-rate pilot ([pilot/RESULT.md](./pilot/RESULT.md)) — not as continuous CI.
 
 ## Ecosystem
 
