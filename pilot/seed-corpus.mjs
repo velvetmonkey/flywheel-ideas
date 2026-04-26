@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
- * seed-corpus.mjs — create the pilot corpus in an isolated vault.
+ * seed-corpus.mjs — create a pilot corpus in an isolated vault.
  *
- * For each entry in `pilot-corpus.python-2-3.json`:
+ * For each entry in the corpus JSON (default
+ * `pilot/pilot-corpus.python-2-3.json`, override with `--corpus <path>`):
  *   1. idea.create — title from corpus entry
  *   2. assumption.declare — one per load_bearing_assumption
  *      (load_bearing: true; text uses the history-grounded wording)
@@ -29,12 +30,27 @@ const BIN =
   process.env.PILOT_BIN ||
   resolve(__dirname, '..', 'packages/mcp-server/dist/index.js');
 
-const corpusPath = resolve(__dirname, 'pilot-corpus.python-2-3.json');
+function parseCorpusFlag(argv, defaultPath) {
+  const idx = argv.indexOf('--corpus');
+  if (idx === -1) return defaultPath;
+  const v = argv[idx + 1];
+  if (!v) {
+    console.error('[pilot] --corpus requires a path argument');
+    process.exit(2);
+  }
+  return resolve(process.cwd(), v);
+}
+
+const corpusPath = parseCorpusFlag(
+  process.argv,
+  resolve(__dirname, 'pilot-corpus.python-2-3.json'),
+);
 const corpus = JSON.parse(readFileSync(corpusPath, 'utf8'));
 
 mkdirSync(`${VAULT}/.flywheel`, { recursive: true });
 
 console.error(`[pilot] vault: ${VAULT}`);
+console.error(`[pilot] corpus: ${corpusPath}${corpus.$domain ? ` (domain: ${corpus.$domain})` : ''}`);
 console.error(`[pilot] entries to seed: ${corpus.entries.length}`);
 
 const child = spawn('node', [BIN], {
@@ -110,21 +126,21 @@ try {
   for (const entry of corpus.entries) {
     const ideaResult = await callTool('idea', {
       action: 'create',
-      title: `${entry.decision_pep.toUpperCase()} — ${entry.title}`,
+      title: `${entry.decision_id} — ${entry.title}`,
       body: [
-        `Decision-PEP: ${entry.decision_pep}`,
-        `Status (at decision time): ${entry.status}`,
+        `Decision-ID: ${entry.decision_id}`,
+        `Status (at decision time): ${entry.status ?? '(unknown)'}`,
         '',
-        `This idea represents the historical decision in ${entry.decision_pep}.`,
-        'Load-bearing assumptions are declared separately and reflect the wording',
-        'of the original PEP rationale. Outcomes are stored in',
-        '`pilot/pilot-corpus.python-2-3.json` (NOT logged on the idea), to be',
-        'used as ground truth when scoring council cite rate.',
+        `This idea represents the historical decision in ${entry.decision_id}.`,
+        'Load-bearing assumptions are declared separately and reflect the',
+        `wording from the corpus. Outcomes are stored in the corpus file`,
+        `(NOT logged on the idea), to be used as ground truth when scoring`,
+        'council cite rate.',
       ].join('\n'),
     });
     const ideaId = ideaResult.result?.id;
     if (!ideaId) throw new Error(`no idea id from create: ${JSON.stringify(ideaResult)}`);
-    console.error(`[pilot] created ${entry.decision_pep}: ${ideaId}`);
+    console.error(`[pilot] created ${entry.decision_id}: ${ideaId}`);
 
     const assumptionMap = [];
     for (const asm of entry.load_bearing_assumptions) {
@@ -146,7 +162,7 @@ try {
     }
 
     seedResults.push({
-      decision_pep: entry.decision_pep,
+      decision_id: entry.decision_id,
       idea_id: ideaId,
       assumptions: assumptionMap,
     });
@@ -155,10 +171,20 @@ try {
   const outPath = resolve(__dirname, 'last-seed.json');
   writeFileSync(
     outPath,
-    JSON.stringify({ vault: VAULT, seeded_at: new Date().toISOString(), entries: seedResults }, null, 2),
+    JSON.stringify(
+      {
+        vault: VAULT,
+        corpus: corpusPath,
+        domain: corpus.$domain ?? null,
+        seeded_at: new Date().toISOString(),
+        entries: seedResults,
+      },
+      null,
+      2,
+    ),
   );
   console.error(`[pilot] seed map → ${outPath}`);
-  console.log(JSON.stringify({ ok: true, count: seedResults.length, vault: VAULT }, null, 2));
+  console.log(JSON.stringify({ ok: true, count: seedResults.length, vault: VAULT, corpus: corpusPath }, null, 2));
 } finally {
   child.kill('SIGTERM');
 }

@@ -1,9 +1,10 @@
 {
   "$comment": "Ground-truth registry for the v0.2 cite-rate pilot. Each entry is a Py3K-era decision (an Accepted/Final PEP) paired with its load-bearing assumption(s) and the historical outcome that refuted or validated each. The cite-rate pilot asks: when the council critiques the decision PEP, does it cite the assumption that history later refuted? ≥70% = pass.",
   "$schema_version": 1,
+  "$domain": "python-2-3",
   "entries": [
     {
-      "decision_pep": "pep-3000",
+      "decision_id": "pep-3000",
       "title": "Python 3000 — backward-incompatible release plan",
       "status": "Final",
       "load_bearing_assumptions": [
@@ -12,7 +13,7 @@
           "text": "The Python community will migrate to Python 3 within a 2–3 year window after release.",
           "outcome": "refuted",
           "outcome_evidence": "Migration tail extended >8 years; Python 2.7 EOL was extended from 2015 to 2020 due to ecosystem inertia. PEP 466 (security backport policy) and the Py2.7 LTS extensions are direct evidence of the timeline assumption breaking.",
-          "outcome_pep_refs": ["pep-0466", "pep-0373"]
+          "outcome_refs": ["pep-0466", "pep-0373"]
         },
         {
           "id": "asm-3000-cleanup-worth-pain",
@@ -23,7 +24,7 @@
       ]
     },
     {
-      "decision_pep": "pep-3137",
+      "decision_id": "pep-3137",
       "title": "Immutable bytes and mutable buffer types",
       "status": "Final",
       "load_bearing_assumptions": [
@@ -32,12 +33,12 @@
           "text": "Removing the u'' string literal prefix in Python 3 is safe because all strings are unicode by default — the prefix is redundant.",
           "outcome": "refuted",
           "outcome_evidence": "PEP 414 (2012) explicitly reinstated u'' literals to ease porting from Python 2. The reasoning in PEP 414's Motivation section is the direct refutation: 'lack of support for the u prefix produces issues for Python 2 compatibility'. The original assumption that u'' could simply go away ignored the cost of writing single-source 2/3 compatible code.",
-          "outcome_pep_refs": ["pep-0414"]
+          "outcome_refs": ["pep-0414"]
         }
       ]
     },
     {
-      "decision_pep": "pep-3105",
+      "decision_id": "pep-3105",
       "title": "Make print a function",
       "status": "Final",
       "load_bearing_assumptions": [
@@ -50,7 +51,7 @@
       ]
     },
     {
-      "decision_pep": "pep-3131",
+      "decision_id": "pep-3131",
       "title": "Supporting Non-ASCII Identifiers",
       "status": "Final",
       "load_bearing_assumptions": [
@@ -63,7 +64,7 @@
       ]
     },
     {
-      "decision_pep": "pep-0358",
+      "decision_id": "pep-0358",
       "title": "The 'bytes' Object",
       "status": "Final",
       "load_bearing_assumptions": [
@@ -72,7 +73,7 @@
           "text": "Bytes don't need %-formatting or .format() — text-formatting belongs on str only.",
           "outcome": "refuted",
           "outcome_evidence": "PEP 461 (2014) reinstated %-formatting on bytes specifically because real-world wire-protocol code (HTTP, FTP, Email) needs to interpolate into byte strings without a str round-trip. PEP 461's Rationale cites direct user pain.",
-          "outcome_pep_refs": ["pep-0461"]
+          "outcome_refs": ["pep-0461"]
         }
       ]
     }

@@ -20,7 +20,7 @@
  *
  * Outputs:
  *   - pilot/last-scores.json — compatible with the interactive scorer.
- *   - stdout — per-mode + per-pep breakdown + miss list.
+ *   - stdout — per-mode + per-decision-id breakdown + miss list.
  */
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -30,7 +30,21 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const VAULT = process.env.PILOT_VAULT || '/tmp/flywheel-pilot-python23';
 
-const CORPUS_PATH = resolve(__dirname, 'pilot-corpus.python-2-3.json');
+function parseCorpusFlag(argv, defaultPath) {
+  const idx = argv.indexOf('--corpus');
+  if (idx === -1) return defaultPath;
+  const v = argv[idx + 1];
+  if (!v) {
+    console.error('[pilot] --corpus requires a path argument');
+    process.exit(2);
+  }
+  return resolve(process.cwd(), v);
+}
+
+const CORPUS_PATH = parseCorpusFlag(
+  process.argv,
+  resolve(__dirname, 'pilot-corpus.python-2-3.json'),
+);
 const SEED_PATH = resolve(__dirname, 'last-seed.json');
 const SESSIONS_PATH = resolve(__dirname, 'last-councils.json');
 const SCORES_PATH = resolve(__dirname, 'last-scores.json');
@@ -41,7 +55,7 @@ const sessions = JSON.parse(readFileSync(SESSIONS_PATH, 'utf8'));
 
 const SCORABLE_OUTCOMES = new Set(['refuted', 'partially_refuted']);
 
-const seedByPep = new Map(seed.entries.map((e) => [e.decision_pep, e]));
+const seedByDecisionId = new Map(seed.entries.map((e) => [e.decision_id, e]));
 const sessionsByIdea = new Map();
 for (const r of sessions.runs ?? []) {
   if (!r.session_id) continue;
@@ -61,7 +75,7 @@ function readNote(vaultRelPath) {
 
 const decisions = [];
 for (const entry of corpus.entries) {
-  const seedEntry = seedByPep.get(entry.decision_pep);
+  const seedEntry = seedByDecisionId.get(entry.decision_id);
   if (!seedEntry) continue;
   const ideaSessions = sessionsByIdea.get(seedEntry.idea_id) ?? [];
   for (const asm of entry.load_bearing_assumptions) {
@@ -98,7 +112,7 @@ for (const entry of corpus.entries) {
         session_id: s.session_id,
         assumption_corpus_id: asm.id,
         assumption_db_id: dbId,
-        decision_pep: entry.decision_pep,
+        decision_id: entry.decision_id,
         session_mode: s.mode,
         session_index: s.index,
         cited: sessionCited,
@@ -138,7 +152,7 @@ console.log(`Per-persona  (each persona's most_vulnerable_assumption pick):`);
 console.log(`  ${personaCited}/${personaTotal} personas = ${(personaRate * 100).toFixed(1)}%`);
 
 const byMode = {};
-const byPep = {};
+const byDecisionId = {};
 for (const d of decisions) {
   byMode[d.session_mode] ??= { sessions: 0, cited: 0, ph: 0, pt: 0 };
   byMode[d.session_mode].sessions += 1;
@@ -146,11 +160,11 @@ for (const d of decisions) {
   byMode[d.session_mode].pt += d.persona_total;
   if (d.cited) byMode[d.session_mode].cited += 1;
 
-  byPep[d.decision_pep] ??= { sessions: 0, cited: 0, ph: 0, pt: 0 };
-  byPep[d.decision_pep].sessions += 1;
-  byPep[d.decision_pep].ph += d.persona_hits;
-  byPep[d.decision_pep].pt += d.persona_total;
-  if (d.cited) byPep[d.decision_pep].cited += 1;
+  byDecisionId[d.decision_id] ??= { sessions: 0, cited: 0, ph: 0, pt: 0 };
+  byDecisionId[d.decision_id].sessions += 1;
+  byDecisionId[d.decision_id].ph += d.persona_hits;
+  byDecisionId[d.decision_id].pt += d.persona_total;
+  if (d.cited) byDecisionId[d.decision_id].cited += 1;
 }
 
 console.log('\nPer-mode (session / persona):');
@@ -161,9 +175,9 @@ for (const m of Object.keys(byMode).sort()) {
       `persona ${b.ph}/${b.pt} (${((b.ph / b.pt) * 100).toFixed(1)}%)`,
   );
 }
-console.log('\nPer-decision-PEP (session / persona):');
-for (const p of Object.keys(byPep).sort()) {
-  const b = byPep[p];
+console.log('\nPer-decision-id (session / persona):');
+for (const p of Object.keys(byDecisionId).sort()) {
+  const b = byDecisionId[p];
   console.log(
     `  ${p.padEnd(12)} session ${b.cited}/${b.sessions} (${((b.cited / b.sessions) * 100).toFixed(1)}%)  ` +
       `persona ${b.ph}/${b.pt} (${((b.ph / b.pt) * 100).toFixed(1)}%)`,
@@ -174,7 +188,7 @@ if (misses.length > 0) {
   console.log('\nSession misses (zero personas named refuted asm as most vulnerable):');
   for (const d of misses) {
     const named = d.persona_lines.map((p) => p.named ?? 'null').join(', ');
-    console.log(`  ${d.decision_pep} #${d.session_index} (${d.session_mode}) — expected ${d.assumption_db_id}; personas named: ${named}`);
+    console.log(`  ${d.decision_id} #${d.session_index} (${d.session_mode}) — expected ${d.assumption_db_id}; personas named: ${named}`);
   }
 }
 console.log(`\nFull decisions saved to: ${SCORES_PATH}`);
