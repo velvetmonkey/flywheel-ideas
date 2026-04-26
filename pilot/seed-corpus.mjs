@@ -41,11 +41,82 @@ function parseCorpusFlag(argv, defaultPath) {
   return resolve(process.cwd(), v);
 }
 
+/**
+ * Load a corpus file. Returns `{$domain?, entries}` regardless of source format.
+ *
+ * Two formats accepted:
+ *   - JSON (python-2-3 corpus shape): {entries: [{decision_id, load_bearing_assumptions: [...]}]}
+ *   - JSONL (csv-corpus adapter shape): one {decision_id, assumptions: [...]} per line
+ *
+ * The JSONL line shape uses `assumptions` (not `load_bearing_assumptions`) and
+ * `load_bearing` per-assumption (defaults to true). It is normalized here so
+ * downstream code only sees the canonical shape.
+ *
+ * Detection: file extension first (`.jsonl` → JSONL), fall back to peeking
+ * at the first non-blank line.
+ */
+function loadCorpus(p) {
+  const raw = readFileSync(p, 'utf8');
+  const isJsonl = p.endsWith('.jsonl') || looksLikeJsonl(raw);
+  if (isJsonl) {
+    return loadJsonl(raw, p);
+  }
+  return JSON.parse(raw);
+}
+
+function looksLikeJsonl(raw) {
+  const lines = raw.split('\n').map((l) => l.trim()).filter(Boolean);
+  return lines.length >= 2 && lines.every((l) => l.startsWith('{'));
+}
+
+function loadJsonl(raw, source) {
+  const entries = [];
+  const lines = raw.split('\n');
+  let rowIndex = -1;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    rowIndex++;
+    let obj;
+    try {
+      obj = JSON.parse(line);
+    } catch (err) {
+      console.error(
+        `[pilot] ${source}: skipped row ${rowIndex} (line ${i + 1}): parse error: ${err.message}`,
+      );
+      continue;
+    }
+    if (!obj.decision_id || !obj.title) {
+      console.error(`[pilot] ${source}: skipped row ${rowIndex}: missing decision_id or title`);
+      continue;
+    }
+    const lba = Array.isArray(obj.load_bearing_assumptions)
+      ? obj.load_bearing_assumptions
+      : Array.isArray(obj.assumptions)
+        ? obj.assumptions.filter((a) => a && a.load_bearing !== false)
+        : [];
+    entries.push({
+      decision_id: obj.decision_id,
+      title: obj.title,
+      status: obj.status,
+      body: obj.body,
+      load_bearing_assumptions: lba.map((a) => ({
+        id: a.id,
+        text: a.text,
+        outcome: a.outcome,
+        outcome_evidence: a.outcome_evidence,
+        outcome_refs: a.outcome_refs,
+      })),
+    });
+  }
+  return { $domain: undefined, entries };
+}
+
 const corpusPath = parseCorpusFlag(
   process.argv,
   resolve(__dirname, 'pilot-corpus.python-2-3.json'),
 );
-const corpus = JSON.parse(readFileSync(corpusPath, 'utf8'));
+const corpus = loadCorpus(corpusPath);
 
 mkdirSync(`${VAULT}/.flywheel`, { recursive: true });
 
@@ -124,19 +195,25 @@ try {
   const seedResults = [];
 
   for (const entry of corpus.entries) {
+    const bodyLines = [
+      `Decision-ID: ${entry.decision_id}`,
+      `Status (at decision time): ${entry.status ?? '(unknown)'}`,
+      '',
+    ];
+    if (entry.body && entry.body.trim()) {
+      bodyLines.push(entry.body.trim(), '');
+    }
+    bodyLines.push(
+      `This idea represents the historical decision in ${entry.decision_id}.`,
+      'Load-bearing assumptions are declared separately and reflect the',
+      'wording from the corpus. Outcomes are stored in the corpus file',
+      '(NOT logged on the idea), to be used as ground truth when scoring',
+      'council cite rate.',
+    );
     const ideaResult = await callTool('idea', {
       action: 'create',
       title: `${entry.decision_id} — ${entry.title}`,
-      body: [
-        `Decision-ID: ${entry.decision_id}`,
-        `Status (at decision time): ${entry.status ?? '(unknown)'}`,
-        '',
-        `This idea represents the historical decision in ${entry.decision_id}.`,
-        'Load-bearing assumptions are declared separately and reflect the',
-        `wording from the corpus. Outcomes are stored in the corpus file`,
-        `(NOT logged on the idea), to be used as ground truth when scoring`,
-        'council cite rate.',
-      ].join('\n'),
+      body: bodyLines.join('\n'),
     });
     const ideaId = ideaResult.result?.id;
     if (!ideaId) throw new Error(`no idea id from create: ${JSON.stringify(ideaResult)}`);
