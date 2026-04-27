@@ -130,6 +130,22 @@ describe('parseAdr', () => {
     const doc = '---\ntitle: "missing-close-quote\nstatus: Accepted\n---\n\nbody';
     expect(parseAdr(doc)).toBeNull();
   });
+
+  it('handles CRLF line endings (Windows checkout regression)', () => {
+    // Windows git checkouts deliver CRLF; previously the section-extraction
+    // regex used `.*$` which doesn't match `\r` and silently dropped every
+    // section detection, producing 0 assumptions per ADR. Adapter now
+    // normalises line endings at parse time.
+    const doc = [
+      '---', 'title: "CRLF Test"', 'status: Accepted', '---', '',
+      '## Decision', '', 'we decided to do X', '',
+      '## Consequences', '', 'thing happens',
+    ].join('\r\n');
+    const parsed = parseAdr(doc);
+    expect(parsed).not.toBeNull();
+    expect(parsed!.decision).toBe('we decided to do X');
+    expect(parsed!.consequences).toBe('thing happens');
+  });
 });
 
 describe('extractMarkdownSection', () => {

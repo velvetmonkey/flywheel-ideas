@@ -431,9 +431,15 @@ function renderOutcomeBody(parsed: ParsedAdr): string {
 // ---------------------------------------------------------------------------
 
 export function parseAdr(content: string): ParsedAdr | null {
+  // Normalise line endings up-front. Windows checkouts deliver CRLF; our
+  // section-extraction regex uses `.*$` which JS treats as not matching \r
+  // (line terminators), so leftover \r breaks the section detector. Mirror
+  // what github-structured-docs.ts does at parse time.
+  const normalisedContent = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
   let parsed: ReturnType<typeof matter>;
   try {
-    parsed = matter(content);
+    parsed = matter(normalisedContent);
   } catch {
     // gray-matter threw on YAML parse — frontmatter unsalvageable
     return null;
