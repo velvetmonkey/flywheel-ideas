@@ -318,6 +318,27 @@ Retrieval-native council input, lineage queries (`ancestry` / `descendants` / `s
 - ✅ Pilot generalization — `decision_pep` → `decision_id` rename + `--corpus <path>` flag on the pilot scripts (corpus shape no longer assumes PEP).
 - ✅ `csv-corpus` import adapter — JSONL wedge-test tool. Paste any corpus into a `.jsonl` and run a council against it.
 
+### v0.3.0 — staged on `main` *(rolled into v0.4.0)*
+
+The v0.3.0 staging never published — its breaking-change cousin (v0.4.0 below) shipped over the top before npm publish landed.
+
+- ✅ **`github-repo-adr` import adapter (konflux-format scope).** PR #37, merged 2026-04-26. Per-file skip on malformed frontmatter (not per-source rejection), `GITHUB_TOKEN` auth, 403/429 retry-after handling. Source URI: `github-repo-adr://owner/repo[@ref][:custom-path/]`. A `status: superseded` + `superseded_by:` frontmatter pair becomes an `outcome.log({refutes: [...]})` candidate at promote time. Live-validated against `konflux-ci/architecture` (37/63 ADRs parsed, 26 per-file skips, no source-level rejection — see [examples/portfolio-konflux-adrs.md](./examples/portfolio-konflux-adrs.md)).
+- ✅ **`idea.export` action.** PR #39, merged 2026-04-27. Markdown-first decision portfolio renderer (idea + assumptions + outcomes + council excerpts + lineage). Bodies redacted by default, lineage on by default, JSON output deferred to v0.3.1 per roundtable verdict. Two dogfood artifacts committed.
+
+### v0.4.0 — staged on `main` *(BREAKING; ships when Trigger 1 lands)*
+
+The bundled-product cut: cite-rate gains depend on flywheel-memory's evidence reader, so flywheel-memory is now a required peer dependency rather than an optional sidecar.
+
+- ✅ **Hard-fail at boot when bridge unreachable.** PR #40, merged 2026-04-27. Server throws `FlywheelMemoryRequiredError` with failure-mode-branched messages (binary missing → install command, timeout → bump env var, version mismatch → `>=0.6.0` hint, etc.).
+- ✅ **`FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` kill switch removed.** Test bypass uses purpose-built `FLYWHEEL_IDEAS_TEST_MODE=1` (centralized in vitest setup files; production envs cannot inherit from CI runners or dev shells — Claude-mitigation #1).
+- ✅ **Direct-fs production fallback removed.** Survives only behind `FLYWHEEL_IDEAS_TEST_MODE=1` for hermetic test runs. Production write path is always `mcp-subprocess`.
+- ✅ **Mid-session subprocess crashes throw, no silent degrade.** New `WriteSubprocessFailedError` (writes), `EvidenceReaderUnavailableError` (radar reads). Loud failure beats silent vault divergence (Claude-mitigation #7).
+- ✅ **Default bridge timeout 30s → 60s.** Cold-start `init_semantic` routinely exceeded 30s; with the probe now fatal, the bump prevents false-positive boot failures.
+- ✅ **`peerDependencies` block declared with `optional: false`** on `@velvetmonkey/flywheel-ideas` package.json. npm warns at install time when flywheel-memory isn't present.
+- ✅ **Test refactor.** ~15 affected files migrated; 2 new tests (`required-bridge.test.ts` for the error class, server-startup hard-fail assertions); new wrapper fixture `mock-flywheel-memory-full.mjs` exposes the write tools the v0.4.0 probe requires.
+
+Roundtable: Claude PROCEED WITH MODIFICATIONS (8 mitigations all folded in); Gemini HOLD until Trigger 1 (overridden on time-pressure — Trigger 1 dogfood weeks out, complete-product posture wanted ahead of measurement). Plan archived in operator's plan-file history.
+
 ### Phase 3 wedges *(complete 2026-04-27)*
 
 Three falsification probes — train-data leakage GAP, SEC + ADR readability spot-checks, ADR superseded-by census — all cleared their pre-registered gates. Headline: **reasoning, not recall** (synthetic obscure corpus marginally outperformed famous post-mortems). Cross-domain readability holds for SEC 10-K Item 1A and konflux-ci ADRs. Full verdicts and reproducibility: [pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md).
@@ -326,7 +347,7 @@ Three falsification probes — train-data leakage GAP, SEC + ADR readability spo
 
 Branch A was confirmed by the wedges; a roundtable critique on the implementation plan reduced the v0.3.0 scope from "ship both adapters" to "ship one, gate the second behind external validation." The revised plan:
 
-- ◐ **v0.3.0 — `github-repo-adr` adapter, scoped to konflux-format.** Code merged on `main` (PR #37); npm publish held. Hardened against per-file frontmatter drift (per-file skip, not per-source rejection), `GITHUB_TOKEN` auth, 403 / 429 retry-after handling. Per the Phase 3c census, scoped specifically to repos following the konflux-ci convention; a general "scan any repo for ADRs" framing was rejected as over-promising. Source URI: `github-repo-adr://owner/repo@ref:adr/0028.md`. A frontmatter `status: superseded` + `superseded_by: 0032` becomes an `outcome.log({refutes: [...]})` candidate, gated on user consent at `import.promote`. Full guide: [`docs/import.md`](./docs/import.md).
+- ✅ **v0.3.0 — `github-repo-adr` adapter, scoped to konflux-format.** Code merged on `main` (PR #37); npm publish held. Live-validated against `konflux-ci/architecture` (see [examples/portfolio-konflux-adrs.md](./examples/portfolio-konflux-adrs.md)). Hardened against per-file frontmatter drift, `GITHUB_TOKEN` auth, 403/429 retry-after handling. Source URI: `github-repo-adr://owner/repo@ref:adr/0028.md`. Full guide: [`docs/import.md`](./docs/import.md).
 - ⏸️ **Validation gate before any sec-edgar work** ([#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)). At least one of: a named user with written feedback against `github-repo-adr` for a real decision context (Trigger 1), OR a public post generating ≥1 GitHub star / ≥1 specific user request (Trigger 2). Trigger 2 is **on hold** while publish + announce are held; only Trigger 1 can currently fire. No fixed clock — the gate stays open until the user dogfoods with a specific human or reverses the publish hold.
 - ⏳ **`sec-edgar` adapter (gated, deferred).** Specifications kept in the Phase 4 plan; implementation does not begin until the gate clears. Will pull Item 1A risk factors from EDGAR with a global rate-limit singleton (SEC's 2 req/sec policy) and a fallback whole-section parser when paragraph-splitting heuristics underperform.
 
@@ -367,9 +388,9 @@ The active engineering work, ranked. Items 1–12 are the live queue; the parked
 
 The mechanism story is now in. The empirical questions that remain — and that the v0.3+ work is partly aimed at answering:
 
-1. **Does this change real decisions?** Currently unmeasured. v0.3's calibration dashboard lets the user see whether Brier scores on locked assumptions improve over time as they use the loop.
+1. **Does this change real decisions?** Currently unmeasured. The Trigger 1 dogfood (one named human running flywheel-ideas against a real decision context, written feedback captured against [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)) is the operative experiment for this question. Brier-scoring infrastructure (P2.7) is HOLD until that feedback names calibration as a felt need.
 2. **Do users come back six months later because the system caught the assumption that failed?** The propagation mechanism works (unit + property tested). Whether real-world users actually log real-world refutations against real prior councils is an entirely separate hypothesis.
-3. **Does broad market demand exist?** 0 stars, 0 forks, 0 issues today. Cite-rate evidence ≠ adoption evidence. v0.3's exportable decision portfolios + Obsidian plugin lower the friction-to-share, which is the cheapest experiment we can run on (3).
+3. **Does broad market demand exist?** 0 stars, 0 forks, 0 issues today. Cite-rate evidence ≠ adoption evidence. The v0.3.0 `idea.export` portfolios are the friction-to-share experiment — handed to a specific human (Trigger 1) before any public-post motion (Trigger 2, on hold).
 
 ### Long-term
 
@@ -390,7 +411,7 @@ Your vault becomes an empirical record of your predictions. Personal calibration
 
 ## Ecosystem
 
-- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — vault indexing MCP. When installed, becomes the active write path (alpha.5+) so flywheel-ideas artifacts are indexed instantly.
+- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — vault indexing MCP. **Required peer dependency in v0.4.0+** — the active write path for every artifact, plus the source of evidence-pack lookups, dedup queries, and the assumption radar.
 - **[vault-core](https://github.com/velvetmonkey/vault-core)** — shared core library used by flywheel-memory. Library-level reuse from flywheel-ideas (Option B) is on the long-term roadmap; for now flywheel-ideas ships its own writer + the MCP-subprocess bridge.
 - **flywheel-ideas** *(this repo)* — decision ledger
 
