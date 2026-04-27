@@ -283,6 +283,14 @@ If you read your team's existing ADRs and think "the call I made would be more u
 
 ## Roadmap
 
+### Current state *(as of 2026-04-27)*
+
+- v0.2.0 on npm `latest`. v0.3.0 staged on `main` (PR #37 merged) but **npm publish + external announcement explicitly held** — the project is in a quiet-development posture by author choice.
+- README front-page reframed 2026-04-27 — 30-second pitch + PEP 3000 hero example, "bets" → "decisions" terminology migration.
+- Phase 3 wedges cleared all gates (reasoning not recall · 3/3 SEC · 3/3 ADR · konflux-only census).
+- Phase 4 PR 1 (`github-repo-adr` adapter) merged. Phase 4.5 validation-gate clock is **not running** — without a public post, Trigger 2 (≥1 star / ≥1 issue from a Show HN-style post) cannot fire; Trigger 1 (named-user feedback from dogfooding with a specific human) remains open. See [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
+- No new feature work is queued. Next motion is either (a) the user reverses the publish hold, or (b) the user dogfoods the tool with a specific colleague and Trigger 1 fires, or (c) the project sits in this state until either of (a)/(b) happens.
+
 ### v0.1 — the closed loop *(shipped 2026-04-23)*
 
 The core product: four MCP tools forming `idea → assumption → council → outcome → propagation`.
@@ -321,8 +329,8 @@ Three falsification probes — train-data leakage GAP, SEC + ADR readability spo
 
 Branch A was confirmed by the wedges; a roundtable critique on the implementation plan reduced the v0.3.0 scope from "ship both adapters" to "ship one, gate the second behind external validation." The revised plan:
 
-- ✅ **v0.3.0 — `github-repo-adr` adapter, scoped to konflux-format.** Hardened against per-file frontmatter drift (per-file skip, not per-source rejection), `GITHUB_TOKEN` auth, 403 / 429 retry-after handling. Per the Phase 3c census, scoped specifically to repos following the konflux-ci convention; a general "scan any repo for ADRs" framing was rejected as over-promising. Source URI: `github-repo-adr://owner/repo@ref:adr/0028.md`. A frontmatter `status: superseded` + `superseded_by: 0032` becomes an `outcome.log({refutes: [...]})` candidate, gated on user consent at `import.promote`. Full guide: [`docs/import.md`](./docs/import.md).
-- ⏸️ **Validation gate before any sec-edgar work.** At least one of: a named user with written feedback against v0.3.0 + `github-repo-adr` for a real decision context, OR a public post (Show HN, r/programming, etc.) generating ≥1 GitHub star or ≥1 specific user request within ~3 weeks of v0.3.0 publish. If neither triggers, Phase 4 halts; the project pivots to GTM-only motion.
+- ◐ **v0.3.0 — `github-repo-adr` adapter, scoped to konflux-format.** Code merged on `main` (PR #37); npm publish held. Hardened against per-file frontmatter drift (per-file skip, not per-source rejection), `GITHUB_TOKEN` auth, 403 / 429 retry-after handling. Per the Phase 3c census, scoped specifically to repos following the konflux-ci convention; a general "scan any repo for ADRs" framing was rejected as over-promising. Source URI: `github-repo-adr://owner/repo@ref:adr/0028.md`. A frontmatter `status: superseded` + `superseded_by: 0032` becomes an `outcome.log({refutes: [...]})` candidate, gated on user consent at `import.promote`. Full guide: [`docs/import.md`](./docs/import.md).
+- ⏸️ **Validation gate before any sec-edgar work** ([#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)). At least one of: a named user with written feedback against `github-repo-adr` for a real decision context (Trigger 1), OR a public post generating ≥1 GitHub star / ≥1 specific user request (Trigger 2). Trigger 2 is **on hold** while publish + announce are held; only Trigger 1 can currently fire. No fixed clock — the gate stays open until the user dogfoods with a specific human or reverses the publish hold.
 - ⏳ **`sec-edgar` adapter (gated, deferred).** Specifications kept in the Phase 4 plan; implementation does not begin until the gate clears. Will pull Item 1A risk factors from EDGAR with a global rate-limit singleton (SEC's 2 req/sec policy) and a fallback whole-section parser when paragraph-splitting heuristics underperform.
 
 ### Carry-over from v0.2 GA *(still queued)*
