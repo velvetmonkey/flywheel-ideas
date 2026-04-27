@@ -339,7 +339,7 @@ The active engineering work, ranked. Items 1–12 are the live queue; the parked
 
 **P0 — bugs + testing hygiene (hit first)**
 
-1. **Steelman-mode 600s timeout audit.** One full-session timeout in the wedge runs landed on a steelman session — investigate whether steelman produces longer output that hits the `tools/call#N` JSON-RPC layer timeout. Reproduce, instrument, fix. Only known live bug surfaced by the wedge runs.
+1. ✅ **Pilot-harness 600s deadline → 1800s + timing logs + retry-once** *(resolved 2026-04-27)*. The wedge-run timeout that the roadmap originally labelled a "steelman-mode 600s timeout audit" was diagnosed: the 600s deadline lived in `pilot/run-councils.mjs:148` (the harness's `rpc()` helper), not in product code, and steelman is not intrinsically slower (sibling steelman sessions on the same idea ran 354s / 362s vs. the 620s outlier). Harness deadline raised to 1800s, per-`tools/call#N` timing logs added, retry-once on transient hang. Structural session-level timeout in `packages/core/src/council.ts` deferred per roundtable verdict — revisit only if a non-author user hits a runaway session. Full audit notes in [pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md).
 2. **`rate_limit` failure-classifier pattern.** Gap in `packages/core/src/cli-errors.ts`; until a real failure sample lands, the classifier silently mis-bins rate-limit hits as `exit_nonzero`. Opportunistic capture during any future live-CLI run.
 
 **P1 — closing feature loops (queued, code-ready)**

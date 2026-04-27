@@ -184,6 +184,8 @@ Recorded for reference; none of these affected verdicts.
 
 Net failure rate: 1 full timeout + 5 single-view `parse` failures out of 130 sessions = 4.6% session-level dispatch noise. All single-view failures fell on `gemini` (matches the historical pattern noted in the python-2-3 baseline). No claude or codex failures during the wedge runs. Codex on `gpt-5.4` (override required because the default `gpt-5-codex` is blocked for ChatGPT-account auth in codex 0.125+) ran clean across all 130 × 2 = 260 dispatches.
 
+**P0.1 audit (2026-04-27):** the google-plus #7 steelman timeout was the only known live bug from the wedge runs and the roadmap labelled it a "steelman-mode 600s timeout audit." Diagnosed it: the 600s deadline lived in the **pilot harness** (`pilot/run-councils.mjs:148`, the `rpc()` helper's default `timeoutMs`), not in any product code. Internal council timeouts are per-pass per-cell at 15min default. Sibling steelman sessions on the same google-plus idea ran in 354s (#8) and 362s (#9) — steelman is not intrinsically slower. The 620s outlier is most consistent with transient model contention or rate-limit slowdown on the 10th MCP dispatch. Resolution: harness deadline raised to 1800s, per-`tools/call#N` timing logs added, and a retry-once guard wraps the council.run dispatch. A structural session-level timeout in `packages/core/src/council.ts` was deferred per roundtable verdict — revisit only if a non-author user hits a runaway session. Wedge verdicts (3a +1.1pp, 3b SEC 3/3, 3b ADR 3/3, 3c konflux-only) are unaffected.
+
 ## Reproducibility (preserved artifacts)
 
 All wedge artifacts are checked into `pilot/wedge-runs/`:

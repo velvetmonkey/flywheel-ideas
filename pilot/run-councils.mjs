@@ -145,10 +145,20 @@ child.stdout.on('data', (chunk) => {
 });
 
 let nextId = 1;
-function rpc(method, params, timeoutMs = 600_000) {
+function rpc(method, params, timeoutMs = 1_800_000) {
   const id = nextId++;
+  const t0 = Date.now();
   const promise = new Promise((resolve, reject) => {
-    pending.set(id, { resolve, reject });
+    pending.set(id, {
+      resolve: (msg) => {
+        console.error(`[harness] ${method}#${id} elapsed=${Date.now() - t0}ms ok`);
+        resolve(msg);
+      },
+      reject: (err) => {
+        console.error(`[harness] ${method}#${id} elapsed=${Date.now() - t0}ms err=${err.message}`);
+        reject(err);
+      },
+    });
     setTimeout(() => {
       if (pending.has(id)) {
         pending.get(id).reject(new Error(`timeout: ${method}#${id}`));
@@ -199,7 +209,7 @@ try {
 
     let runResult;
     try {
-      const resp = await rpc('tools/call', {
+      const callArgs = {
         name: 'council',
         arguments: {
           action: 'run',
@@ -209,7 +219,16 @@ try {
           confirm: true,
           ...(PILOT_CLIS ? { clis: PILOT_CLIS } : {}),
         },
-      });
+      };
+      let resp;
+      try {
+        resp = await rpc('tools/call', callArgs);
+      } catch (firstErr) {
+        const firstMsg = firstErr instanceof Error ? firstErr.message : String(firstErr);
+        if (!firstMsg.startsWith('timeout: tools/call#')) throw firstErr;
+        console.error(`  ! ${firstMsg} — retrying once (transient hang)`);
+        resp = await rpc('tools/call', callArgs);
+      }
       runResult = unwrap(resp, 'council.run');
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
