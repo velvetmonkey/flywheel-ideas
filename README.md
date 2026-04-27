@@ -333,15 +333,38 @@ Branch A was confirmed by the wedges; a roundtable critique on the implementatio
 - ⏸️ **Validation gate before any sec-edgar work** ([#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)). At least one of: a named user with written feedback against `github-repo-adr` for a real decision context (Trigger 1), OR a public post generating ≥1 GitHub star / ≥1 specific user request (Trigger 2). Trigger 2 is **on hold** while publish + announce are held; only Trigger 1 can currently fire. No fixed clock — the gate stays open until the user dogfoods with a specific human or reverses the publish hold.
 - ⏳ **`sec-edgar` adapter (gated, deferred).** Specifications kept in the Phase 4 plan; implementation does not begin until the gate clears. Will pull Item 1A risk factors from EDGAR with a global rate-limit singleton (SEC's 2 req/sec policy) and a fallback whole-section parser when paragraph-splitting heuristics underperform.
 
-### Carry-over from v0.2 GA *(still queued)*
+### Engineering priority queue *(2026-04-27)*
 
-- ⏳ Anti-Portfolio pass memos · Ollama / LM Studio local models · daily-note outcome capture · agent-driven outcome detection
-- ⏳ `rate_limit` failure-classifier pattern (opportunistic capture during Phase 4 pilots)
-- ⏳ Steelman-mode `tools/call#10` 600s deadline audit (one full-session timeout in the wedge runs landed on a steelman session — investigate whether steelman produces longer output that hits the JSON-RPC layer timeout)
+The active engineering work, ranked. Items 1–12 are the live queue; the parked items live in the [Backlog](#backlog-parked) subsection below.
 
-### v0.3 — operator calibration
+**P0 — bugs + testing hygiene (hit first)**
 
-Obsidian plugin · personal calibration dashboard (Brier trend) · persona effectiveness A/B · exportable decision portfolios · state-of-mind context capture (Farnam Street) · Brier-scored assumption updating.
+1. **Steelman-mode 600s timeout audit.** One full-session timeout in the wedge runs landed on a steelman session — investigate whether steelman produces longer output that hits the `tools/call#N` JSON-RPC layer timeout. Reproduce, instrument, fix. Only known live bug surfaced by the wedge runs.
+2. **`rate_limit` failure-classifier pattern.** Gap in `packages/core/src/cli-errors.ts`; until a real failure sample lands, the classifier silently mis-bins rate-limit hits as `exit_nonzero`. Opportunistic capture during any future live-CLI run.
+
+**P1 — closing feature loops (queued, code-ready)**
+
+3. **Ollama / LM Studio local-model dispatch.** Extends council fan-out without API costs; fits cleanly into the existing CLI dispatcher; broadens the test matrix with local-only run paths.
+4. **Daily-note outcome capture.** Outcomes pile up in daily notes; the propagation mechanism sweeps them into `outcome.log` candidates without a manual call.
+5. **Agent-driven outcome detection.** Pattern-match on retro / post-mortem prose to surface candidate outcomes; lower friction for refutation logging.
+6. **Anti-Portfolio pass memos.** Council mode extension; complements `pre_mortem` / `standard` / `steelman`.
+
+**P2 — v0.3 calibration engineering**
+
+7. **Brier-scored assumption updating** — core mechanism for the calibration story. Schema + scoring math + UI plumbing.
+8. **Personal calibration dashboard** — visualises Brier trend over time. Targets the existing user (author) directly.
+9. **Exportable decision portfolios** — JSON / markdown export. Cheap to ship; biggest leverage for the Trigger 1 dogfood path because it makes the ledger something the user can actually share with one specific human.
+10. **Persona effectiveness A/B** — instrumentation for which personas surface load-bearing dissent. Needs council-output telemetry.
+11. **State-of-mind context capture** (Farnam Street) — append decision-time emotional / situational metadata to `idea.create`.
+
+**P3 — engineering tracked, gated**
+
+12. **`sec-edgar` adapter** — full specifications preserved in the Phase 4 plan. Gated behind Phase 4.5 ([#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)); active in the queue, but implementation begins only when Trigger 1 (named-user feedback) fires.
+
+### Backlog *(parked)*
+
+- **Obsidian plugin.** UI surface; orthogonal to the engine. Revisit after P2 calibration work lands and the dashboard has something to render.
+- **Dogfood with one named human (Trigger 1 path).** Strategic, not engineering. Surfaced here so it isn't lost — a human using the merged-on-`main` v0.3.0 against a real decision is the only currently-live route to firing the Phase 4.5 gate.
 
 ### What's next to prove (not "more features")
 
