@@ -2,6 +2,21 @@
 
 ## 0.3.0 — Unreleased
 
+### `idea.export` — exportable decision portfolios (P2.9, 2026-04-27)
+
+New action on the `idea` tool. Renders a markdown decision portfolio (idea + assumptions + outcomes + council excerpts + lineage) the operator can hand to one specific human — directly enables Trigger 1 of the Phase 4.5 sec-edgar gate.
+
+```
+idea.export({ idea_ids?: string[], all?: boolean, include_lineage?: boolean, redact_bodies?: boolean, output_path?: string })
+```
+
+- Markdown is the product. JSON output deferred to v0.3.1 per roundtable verdict ("JSON is a debug dump, markdown IS the product"). The renderer invests in human-readable structure: state badges, assumption tables (3-column with load-bearing star), outcome timelines with refute/validate verdicts, council session excerpts (YAML frontmatter stripped, 800-char cap with link to full SYNTHESIS.md), inline lineage block.
+- **`redact_bodies: true` by default** (paranoid default) — assumptions / outcomes / council excerpts always render but idea body prose is hidden behind a redaction notice. Run with `redact_bodies: false` to include bodies.
+- **`include_lineage: true` by default** — lineage is the value-add over a single freeze.
+- Read-only: no DB writes, no vault writes outside the export file. Reuses `buildSnapshot()` (extracted from `createFreeze`) so the snapshot logic doesn't drift.
+- Two dogfood artifacts committed: `examples/portfolio-pep-3000.md` (cite-rate pilot data) and `examples/portfolio-konflux-adrs.md` (Phase 3 wedge data + a live-validation note for the `github-repo-adr` adapter against the real `konflux-ci/architecture` repo: 37/63 ADRs parsed, 26 per-file drift skips, no source-level rejection — confirms the per-file-skip design works on real-world frontmatter drift).
+- New core surface re-exported from main package: `exportIdea`, `exportPortfolio`, `listAllIdeaIds`, `renderPortfolioMarkdown`, `buildSnapshot`. Companion types: `ExportPortfolio`, `ExportedIdea`, `ExportedOutcome`, `ExportedOutcomeVerdict`, `ExportedCouncilSession`, `ExportedLineage`.
+
 **Phase 4 (revised after roundtable) — narrow, harden, validate.**
 
 Phase 3 wedges resolved positively on 2026-04-27 ([pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md)): GAP +1.1pp on the leakage probe (reasoning, not recall), 3/3 SEC and 3/3 konflux-ci ADR readability passes, only konflux-ci/architecture has a coherent supersession arc among 12 surveyed OSS repos.

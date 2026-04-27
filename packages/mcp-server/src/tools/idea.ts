@@ -10,6 +10,8 @@
  * Every response is `{result, next_steps}` — see `next_steps.ts`.
  */
 
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
@@ -17,6 +19,7 @@ import {
   buildAssumptionNextStepsForIdea,
   createFreeze,
   createIdea,
+  exportPortfolio,
   filterStaleRows,
   FreezeInputError,
   FreezeIdeaNotFoundError,
@@ -25,11 +28,13 @@ import {
   getSharedAssumptions,
   IDEA_STATES,
   isIdeaState,
+  listAllIdeaIds,
   listFreezesByIdea,
   listTransitions,
   readNote,
   recordTransition,
   recordTransitionEnforced,
+  renderPortfolioMarkdown,
   TransitionPrereqError,
   type IdeasDatabase,
   type IdeaState,
@@ -60,6 +65,7 @@ export function registerIdeaTool(
           'create', 'read', 'list', 'transition', 'forget',
           'freeze', 'list_freezes',
           'ancestry', 'descendants', 'shared_assumptions',
+          'export',
         ])
         .describe('Operation to perform'),
       title: z
@@ -131,6 +137,27 @@ export function registerIdeaTool(
         .max(100)
         .optional()
         .describe('[ancestry|descendants] Max chain depth to walk (default 20). Caps cycles in malformed supersession data.'),
+      // P2.9 — exportable decision portfolios
+      idea_ids: z
+        .array(z.string())
+        .optional()
+        .describe('[export] Explicit list of idea ids to export. Mutex with `all`.'),
+      all: z
+        .boolean()
+        .optional()
+        .describe('[export] Export every idea in the vault. Mutex with `idea_ids`. Use deliberately — large vaults produce large bundles.'),
+      include_lineage: z
+        .boolean()
+        .optional()
+        .describe('[export] Include ancestry + descendants lineage block per idea. Default true (lineage is the value-add over a single freeze).'),
+      redact_bodies: z
+        .boolean()
+        .optional()
+        .describe('[export] Hide idea body prose in the rendered markdown. Default true (paranoid default — assumptions / outcomes / council excerpts always render).'),
+      output_path: z
+        .string()
+        .optional()
+        .describe('[export] Override the default output path. Relative paths resolve under the vault. Default: `exports/portfolio-<timestamp>.md`.'),
     },
     async (args) => {
       // Top-level error boundary: unhandled exceptions from handler I/O or
@@ -160,6 +187,8 @@ export function registerIdeaTool(
             return handleDescendants(getDb(), args);
           case 'shared_assumptions':
             return handleSharedAssumptions(getDb(), args);
+          case 'export':
+            return handleExport(getVaultPath(), getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -1067,6 +1096,146 @@ function handleSharedAssumptions(
       idea_id: args.id,
       matches,
       count: matches.length,
+      write_path: getActiveWritePath(),
+    },
+    next_steps,
+  });
+}
+
+// ---------- idea.export (P2.9) ----------
+
+function handleExport(
+  vaultPath: string,
+  db: IdeasDatabase,
+  args: {
+    idea_ids?: string[];
+    all?: boolean;
+    include_lineage?: boolean;
+    redact_bodies?: boolean;
+    output_path?: string;
+  },
+): ReturnType<typeof mcpText> {
+  // Validation: idea_ids XOR all (exactly one must be provided)
+  const hasIds = Array.isArray(args.idea_ids) && args.idea_ids.length > 0;
+  const hasAll = args.all === true;
+  if (hasIds && hasAll) {
+    return mcpError('export takes either `idea_ids` OR `all: true`, not both', [
+      {
+        action: 'idea.export',
+        example: 'idea.export({ idea_ids: ["idea-py3k"] })',
+        why: 'Pick one explicit list. `all` is for whole-vault exports; `idea_ids` is for selected.',
+      },
+    ]);
+  }
+  if (!hasIds && !hasAll) {
+    return mcpError('export requires either `idea_ids` (non-empty) or `all: true`', [
+      {
+        action: 'idea.list',
+        example: 'idea.list({})',
+        why: 'List ideas to find ids to export, then call idea.export({ idea_ids: [...] }).',
+      },
+    ]);
+  }
+
+  // Resolve target ids
+  const idea_ids = hasAll ? listAllIdeaIds(db) : (args.idea_ids ?? []);
+  if (idea_ids.length === 0) {
+    return mcpError('vault contains zero ideas — nothing to export', [
+      {
+        action: 'idea.create',
+        example: 'idea.create({ title: "Your first idea" })',
+        why: 'Create an idea before exporting.',
+      },
+    ]);
+  }
+
+  const include_lineage = args.include_lineage ?? true;
+  const redact_bodies = args.redact_bodies ?? true;
+
+  // Build the portfolio + render.
+  let portfolio;
+  try {
+    portfolio = exportPortfolio(db, vaultPath, idea_ids, { include_lineage });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return mcpError(`export failed: ${message}`, [
+      {
+        action: 'idea.list',
+        example: 'idea.list({})',
+        why: 'Verify all idea_ids are present in the vault.',
+      },
+    ]);
+  }
+
+  const markdown = renderPortfolioMarkdown(portfolio, { redact_bodies });
+
+  // Resolve output path. Default: <vault>/exports/portfolio-<timestamp>.md.
+  const ts = new Date(portfolio.exported_at)
+    .toISOString()
+    .replace(/[:.]/g, '-')
+    .replace(/Z$/, '');
+  const defaultRelPath = `exports/portfolio-${ts}.md`;
+  const relPath = args.output_path ?? defaultRelPath;
+  const absPath = path.isAbsolute(relPath) ? relPath : path.join(vaultPath, relPath);
+
+  try {
+    fs.mkdirSync(path.dirname(absPath), { recursive: true });
+    fs.writeFileSync(absPath, markdown, 'utf8');
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return mcpError(`export rendering succeeded but write failed: ${message}`, [
+      {
+        action: 'idea.export',
+        example: `idea.export({ idea_ids: ${JSON.stringify(idea_ids.slice(0, 1))}, output_path: "/tmp/portfolio.md" })`,
+        why: 'Try a different output_path that the process can write to.',
+      },
+    ]);
+  }
+
+  // Aggregate counts for the response.
+  const total_assumptions = portfolio.ideas.reduce(
+    (sum, idea) => sum + idea.snapshot.assumptions.length,
+    0,
+  );
+  const total_outcomes = portfolio.ideas.reduce(
+    (sum, idea) => sum + idea.outcomes.length,
+    0,
+  );
+  const total_council_sessions = portfolio.ideas.reduce(
+    (sum, idea) => sum + idea.council_sessions.length,
+    0,
+  );
+
+  const next_steps: NextStep[] = [
+    {
+      action: 'review-export',
+      example: `cat ${absPath}`,
+      why: 'Cold-read the markdown bundle. The point of P2.9 is producing a shareable artifact — if it doesn\'t read cleanly, iterate.',
+    },
+    {
+      action: 'idea.export',
+      example: `idea.export({ idea_ids: ${JSON.stringify(idea_ids.slice(0, 1))}, redact_bodies: false })`,
+      why: 'Re-export with bodies INCLUDED if you trust the recipient. Default redacts body prose for paranoia.',
+    },
+    {
+      action: 'phase-4.5-trigger-1',
+      example: 'Hand the markdown file to one specific human and capture their feedback as a comment on https://github.com/velvetmonkey/flywheel-ideas/issues/38',
+      why: 'A real human reading the export and giving written feedback fires Trigger 1 of the Phase 4.5 sec-edgar gate. Currently the only live route to unblock Phase 4 PR 2.',
+    },
+  ];
+
+  return mcpText({
+    result: {
+      vault_path: absPath,
+      ideas_count: portfolio.ideas.length,
+      total_assumptions,
+      total_outcomes,
+      total_council_sessions,
+      bytes_written: Buffer.byteLength(markdown, 'utf8'),
+      redacted: redact_bodies,
+      include_lineage,
+      schema_version: portfolio.schema_version,
+      exported_at: portfolio.exported_at_iso,
       write_path: getActiveWritePath(),
     },
     next_steps,
