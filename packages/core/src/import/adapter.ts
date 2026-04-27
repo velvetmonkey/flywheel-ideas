@@ -53,11 +53,12 @@ export interface ImportContext {
   /** Absolute vault path (only used by adapters that inspect local files). */
   vaultPath: string;
   /**
-   * Best-effort flywheel-memory reader for dedup queries. Absent when
-   * `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` or the binary is unavailable.
-   * Adapters may use it to short-circuit fetching when a vault match already
-   * exists. The persister also runs dedup centrally — adapters SHOULD NOT
-   * re-implement dedup logic, just opt to skip cheap known-duplicates.
+   * flywheel-memory reader for dedup queries. v0.4.0 — flywheel-memory is
+   * required at boot, so this is normally present. May be absent under
+   * test mode (`FLYWHEEL_IDEAS_TEST_MODE=1`). Adapters may use it to
+   * short-circuit fetching when a vault match already exists. The persister
+   * also runs dedup centrally — adapters SHOULD NOT re-implement dedup
+   * logic, just opt to skip cheap known-duplicates.
    */
   reader?: EvidenceReader;
   /** Absolute directory for adapter-owned fetch caches. */

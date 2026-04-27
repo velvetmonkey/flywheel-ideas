@@ -116,12 +116,11 @@ beforeEach(async () => {
   // shell out to the real claude/codex/gemini for every test. cli-version.test.ts
   // has dedicated coverage for the probe.
   process.env.FLYWHEEL_IDEAS_NO_VERSION_PROBE = '1';
-  // v0.2 KEYSTONE — disable evidence-reader subprocess in council tests.
-  // The keystone spawns flywheel-memory at council.run; if the binary is
-  // installed on the dev machine PATH, it'll attempt a real subprocess on
-  // every test (slow, polluting). council-evidence.test.ts and dedicated
-  // evidence-wiring tests cover the on-path explicitly.
-  process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+  // v0.2 KEYSTONE — point evidence-reader at a non-existent absolute path
+  // so the per-call spawn returns binary_not_found instantly without
+  // attempting an actual subprocess. council-evidence.test.ts and dedicated
+  // evidence-wiring tests cover the real-spawn path explicitly.
+  process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
   vault = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-ideas-council-'));
   await fsp.mkdir(path.join(vault, '.flywheel'), { recursive: true });
   db = openIdeasDb(vault);
@@ -130,7 +129,7 @@ beforeEach(async () => {
 
 afterEach(async () => {
   delete process.env.FLYWHEEL_IDEAS_NO_VERSION_PROBE;
-  delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+  delete process.env.FLYWHEEL_MEMORY_BIN;
   db.close();
   deleteIdeasDbFiles(vault);
   await fsp.rm(vault, { recursive: true, force: true });

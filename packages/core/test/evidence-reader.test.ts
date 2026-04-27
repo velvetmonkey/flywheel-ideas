@@ -21,30 +21,15 @@ const MOCK = path.join(
 );
 const VAULT = '/tmp/flywheel-ideas-evidence-reader-test'; // arbitrary; mock doesn't read it
 
-const savedKill = process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
 const savedTimeout = process.env.FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS;
 
 afterEach(() => {
-  if (savedKill === undefined) delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
-  else process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = savedKill;
   if (savedTimeout === undefined) delete process.env.FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS;
   else process.env.FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS = savedTimeout;
 });
 
-describe('withEvidenceReader — kill switch + binary resolution', () => {
-  it('FLYWHEEL_IDEAS_MEMORY_BRIDGE=0 → skipped:disabled, fn never called', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
-    let called = false;
-    const result = await withEvidenceReader(VAULT, async () => {
-      called = true;
-      return 'never';
-    });
-    expect(result).toEqual({ status: 'skipped', reason: 'disabled' });
-    expect(called).toBe(false);
-  });
-
+describe('withEvidenceReader — binary resolution', () => {
   it('absolute binary path that does not exist → skipped:binary_not_found', async () => {
-    delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
     const result = await withEvidenceReader(
       VAULT,
       async () => 'never',
@@ -60,7 +45,6 @@ describe('withEvidenceReader — kill switch + binary resolution', () => {
 
 describe('withEvidenceReader — happy path against mock', () => {
   it('spawns mock, runs query, returns {status:"ok", value}', async () => {
-    delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
     const result = await withEvidenceReader(
       VAULT,
       async (reader) => {
@@ -81,7 +65,6 @@ describe('withEvidenceReader — happy path against mock', () => {
   });
 
   it('multiple queries within one subprocess lifetime', async () => {
-    delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
     const result = await withEvidenceReader(
       VAULT,
       async (reader) => {
@@ -98,7 +81,6 @@ describe('withEvidenceReader — happy path against mock', () => {
 
 describe('withEvidenceReader — timeout', () => {
   it('inner fn exceeding timeout → skipped:timeout', async () => {
-    delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
     const result = await withEvidenceReader(
       VAULT,
       async (_reader) => {
@@ -115,7 +97,6 @@ describe('withEvidenceReader — timeout', () => {
   }, 10_000);
 
   it('FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS env knob respected', async () => {
-    delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
     process.env.FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS = '150';
     const result = await withEvidenceReader(
       VAULT,

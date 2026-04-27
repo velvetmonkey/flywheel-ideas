@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.4.0 — Unreleased
+
+**Breaking change: `@velvetmonkey/flywheel-memory` is now a required peer dependency.**
+
+The optional-bridge posture that shipped through v0.3 made flywheel-memory a "best-effort" sidecar — present with the kill switch off, absent with the kill switch on, the server booted either way and downgraded silently. v0.4.0 retires that posture: cite-rate gains depend on flywheel-memory's evidence reader, and the optional split was YAGNI infrastructure built for hypothetical users that never arrived.
+
+### Behaviour changes
+
+- **Hard-fail at boot when the bridge is unreachable.** Server throws `FlywheelMemoryRequiredError` (new export from `@velvetmonkey/flywheel-ideas-core`). The error message branches by failure mode (`binary_not_found`, `timeout`, `spawn_failed`, `tools_missing`, `invalid_response`, `tool_returned_error`) so the operator gets a concrete next step — install command, timeout-bump env var, or version-upgrade hint. No silent direct-fs degrade.
+- **`FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` kill switch removed.** Any boot script setting this will have it ignored. Tests use the purpose-built `FLYWHEEL_IDEAS_TEST_MODE=1` gate (see below) — production environments cannot inherit the bypass from CI runners or dev shells.
+- **Direct-fs production fallback removed.** Production write path is always `mcp-subprocess`. The direct-fs writer survives only behind `FLYWHEEL_IDEAS_TEST_MODE=1` so unit/integration tests stay hermetic without requiring a real flywheel-memory binary.
+- **Mid-session subprocess crash → hard error.** If the bridge dies mid-session (subprocess crash, OS fork failure under load), the next write/read throws `WriteSubprocessFailedError` (new export) or `EvidenceReaderUnavailableError` rather than silently falling back. Loud failure beats silent vault divergence (mitigation #7 from the v0.4.0 roundtable).
+- **Default bridge timeout 30s → 60s.** Cold-start `init_semantic` routinely exceeded 30s on first launch; with the probe now fatal, a false-positive timeout becomes a fatal boot error. The `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS` override still works for pathological cases.
+- **`peerDependencies` block added** to `@velvetmonkey/flywheel-ideas` package.json (`"@velvetmonkey/flywheel-memory": ">=0.6.0"`, `optional: false`). npm warns at install time when flywheel-memory isn't already installed.
+
+### New surface
+
+- `FlywheelMemoryRequiredError` (`packages/core/src/errors.ts`) — thrown by the server startup when the boot gate fails. Carries the failure kind, resolved binary path, and timeout (when relevant) so the message can be inspected programmatically.
+- `WriteSubprocessFailedError` (`packages/core/src/write/index.ts`) — thrown by `writeNote` / `patchFrontmatter` when the mcp-subprocess tier is active but the per-call subprocess fails.
+- `EvidenceReaderUnavailableError` (`packages/core/src/assumption-radar.ts`) — thrown by `radarAssumptions` when the per-call evidence-reader subprocess fails.
+- `isTestMode()` + `TEST_MODE_ENV_VAR` (`packages/core/src/test-mode.ts`) — single source of truth for the test-mode gate.
+
+### Testing
+
+- New `vitest.setup.ts` in both `packages/core` and `packages/mcp-server` that sets `FLYWHEEL_IDEAS_TEST_MODE=1` for every test run.
+- New `required-bridge.test.ts` asserts the failure-mode branching of `FlywheelMemoryRequiredError`.
+- `server-startup.test.ts` updated to assert hard-fail (exit 1) when no bridge is reachable; mock now uses a wrapper fixture (`mock-flywheel-memory-full.mjs`) that exposes both `doctor` and the write tools the v0.4.0 probe requires.
+- Test refactor sweep across ~15 files migrated `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` setups to either the centralized test-mode gate (most tests) or `FLYWHEEL_MEMORY_BIN=/nonexistent/...` (council + import-tool tests that need the spawn to fail fast without actually spawning).
+
+### Roundtable provenance
+
+Claude (Risk Pessimist) returned PROCEED WITH MODIFICATIONS — 8 risks, all folded into this PR (purpose-built test-mode env var, error-message disambiguation, default-timeout bump, hard-fail on mid-session crash, etc.). Gemini (Strategic Skeptic) returned HOLD until Trigger 1 — bundled-product framing unvalidated; user overrode based on time-pressure (Trigger 1 dogfood weeks out, complete-product posture wanted ahead of measurement).
+
+### Schema
+
+No schema migrations. v0.4.0 still on schema v8. Brier-score schema (v9) remains deferred — see roadmap.
+
 ## 0.3.0 — Unreleased
 
 ### `idea.export` — exportable decision portfolios (P2.9, 2026-04-27)

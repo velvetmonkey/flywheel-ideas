@@ -125,13 +125,13 @@ route via stdin) to keep user idea text out of the audit log.
 - **Real `claude -p` e2e in CI from day one**, PR-gated with flake-aware demotion
 - Temp vault per test via `fs.mkdtempSync`; real better-sqlite3 file; cleanup in `afterEach`
 
-## Write-path architecture (runtime feature-detection)
+## Write-path architecture (v0.4.0 — flywheel-memory required)
 
-- **Option B (preferred):** library import from vault-core once `core/write/*` orchestration lifts there
-- **Option C (fallback):** spawn flywheel-memory MCP as child, call note/frontmatter tools over stdio
-- **Option D (degraded):** direct fs + gray-matter with warning in every `next_steps`
+- **Option C (canonical, required):** spawn flywheel-memory MCP as child, call `note` + `vault_update_frontmatter` tools over stdio. Active write path in production.
+- **Option D (test-only):** direct fs + gray-matter. Survives only behind `FLYWHEEL_IDEAS_TEST_MODE=1` so unit/integration tests don't need a real flywheel-memory binary.
+- **Option B (long-term):** library import from vault-core once `core/write/*` orchestration lifts there. Deferred.
 
-Detection at startup via `packages/core/src/write/writer.ts`. `result.write_path` field on every tool response reports active tier.
+If the bridge is unreachable in production, the server hard-fails at boot via `FlywheelMemoryRequiredError` (defined in `packages/core/src/errors.ts`) — no silent direct-fs fallback. Mid-session subprocess failures throw `WriteSubprocessFailedError` rather than degrading silently. `result.write_path` on every tool response reports the active tier (always `mcp-subprocess` in production).
 
 ## Running the council
 
@@ -169,25 +169,26 @@ Every adapter emits `confidence: 0..1` and dedups against the existing
 vault via flywheel-memory's search; matches above threshold are flagged
 `state: 'duplicate'` and require `override_duplicate: true` to promote.
 
-## Memory bridge (flywheel-memory integration)
+## Memory bridge (flywheel-memory integration — required peer)
 
 On server startup, flywheel-ideas spawns `flywheel-memory` as an MCP
-subprocess (best-effort, 30s timeout in alpha.4+) and plays two roles:
+subprocess (60s default timeout in v0.4.0) and plays two roles:
 
 1. **Custom-category registration** — registers four `ideas_*` types so
    ideas notes participate in flywheel-memory's wikilink scorer and
    citation graph instead of being treated as unknown noise.
-2. **Active write-path transport** (alpha.5+) — when the bridge is up,
-   every flywheel-ideas write routes through flywheel-memory's `note` +
-   `vault_update_frontmatter` tools instead of direct fs. Reads
-   (evidence-pack lookups, dedup queries) similarly route through
+2. **Active write-path transport** — every flywheel-ideas write routes
+   through flywheel-memory's `note` + `vault_update_frontmatter` tools.
+   Reads (evidence-pack lookups, dedup queries) similarly route through
    flywheel-memory's search/read tools.
 
-Failure is non-fatal — if `flywheel-memory` isn't installed or times out,
-the server boots normally with a one-line stderr warning and falls back
-to direct gray-matter file writes. Disable entirely with
-`FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`. Cold-start `init_semantic` may need
-`FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=60000` on first launch.
+**Required peer dependency** in v0.4.0+. If the bridge isn't reachable
+the server hard-fails at boot with `FlywheelMemoryRequiredError` (named
+binary, install command, link to docs/memory-bridge.md). The legacy
+`FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` kill switch was removed. Tests bypass
+the gate via `FLYWHEEL_IDEAS_TEST_MODE=1` (centralized in each package's
+`vitest.setup.ts`). Cold-start `init_semantic` may need
+`FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=120000` on first launch.
 
 User-defined custom categories (`recipe`, `paper`, etc.) survive: the
 bridge does GET → MERGE → SET, not plain SET. Full guide:

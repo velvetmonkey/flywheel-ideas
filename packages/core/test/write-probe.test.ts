@@ -21,7 +21,6 @@ let tmp: string;
 
 beforeEach(async () => {
   tmp = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-write-probe-'));
-  delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
   delete process.env.FLYWHEEL_MEMORY_BIN;
   delete process.env.FLYWHEEL_IDEAS_WRITE_PROBE_TIMEOUT_MS;
   __resetWritePathForTests();
@@ -36,14 +35,6 @@ describe('probeWritePath', () => {
   it('defaults to direct-fs when never probed', () => {
     expect(getActiveWritePath()).toBe('direct-fs');
     expect(getProbeOutcome().reason).toBe('not_probed');
-  });
-
-  it('returns disabled when kill switch is set', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
-    const outcome = await probeWritePath(tmp);
-    expect(outcome.active).toBe('direct-fs');
-    expect(outcome.reason).toBe('disabled');
-    expect(getActiveWritePath()).toBe('direct-fs');
   });
 
   it('returns binary_not_found for a missing absolute binary', async () => {
@@ -75,7 +66,7 @@ describe('probeWritePath', () => {
   });
 
   it('__setWritePathForTests lets tests force the tier', () => {
-    __setWritePathForTests({ active: 'mcp-subprocess', reason: 'subprocess_ok' });
+    __setWritePathForTests({ active: 'mcp-subprocess', reason: 'subprocess_ok', binary: 'flywheel-memory' });
     expect(getActiveWritePath()).toBe('mcp-subprocess');
     __resetWritePathForTests();
     expect(getActiveWritePath()).toBe('direct-fs');

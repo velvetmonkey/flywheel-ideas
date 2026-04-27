@@ -1,13 +1,15 @@
 /**
- * Server-startup integration tests (M14).
+ * Server-startup integration tests (v0.4.0 — flywheel-memory required).
  *
  * Spawn the bundled `dist/index.js` with various env knobs and assert:
- *   - the memory-bridge stderr warning lands when expected
- *   - the MCP server still answers `initialize` after the bridge attempt
+ *   - Production boot (no FLYWHEEL_IDEAS_TEST_MODE) hard-fails when the
+ *     bridge is unreachable.
+ *   - Boot succeeds when the bridge mock is supplied.
+ *   - Test-mode boot (FLYWHEEL_IDEAS_TEST_MODE=1) skips the bridge entirely
+ *     so unit/integration tests don't need a real flywheel-memory binary.
  *
  * These are e2e against the bundled binary, not unit tests, so they require
- * `npm run build` to have run. Vitest's globalSetup or just CI ordering
- * handles that.
+ * `npm run build` to have run.
  */
 
 import { describe, it, expect, beforeAll, beforeEach, afterEach } from 'vitest';
@@ -24,6 +26,10 @@ const SERVER_BIN = path.resolve(
   'index.js',
 );
 
+// Wrapper that exposes both `doctor` (memory-bridge) and the write tools
+// (`note`, `vault_update_frontmatter`) the v0.4.0 probe requires. Plain
+// mock-flywheel-memory.mjs only registers `doctor` by default, which would
+// trip the hard-fail probe in production-mode tests.
 const MOCK_FM = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   '..',
@@ -31,7 +37,7 @@ const MOCK_FM = path.resolve(
   'core',
   'test',
   'fixtures',
-  'mock-flywheel-memory.mjs',
+  'mock-flywheel-memory-full.mjs',
 );
 
 let vaultPath: string;
@@ -84,9 +90,12 @@ afterEach(async () => {
 interface SpawnResult {
   stderr: string;
   initResponse: string | null;
+  exitCode: number | null;
 }
 
 async function spawnAndInit(env: Record<string, string>): Promise<SpawnResult> {
+  // Important: do NOT pass FLYWHEEL_IDEAS_TEST_MODE here unless the test
+  // explicitly opts in — these tests exercise the production startup path.
   child = spawn('node', [SERVER_BIN], {
     env: {
       PATH: process.env.PATH ?? '',
@@ -115,19 +124,22 @@ async function spawnAndInit(env: Record<string, string>): Promise<SpawnResult> {
   };
   child.stdin.write(JSON.stringify(initReq) + '\n');
 
-  // Wait for initialize response (or up to 25s — bridge can hold us up to 15s)
-  const initResponse = await waitForLine(
+  // Wait for initialize response OR exit (hard-fail path) — up to 30s
+  // (bridge probe can hold us up to 60s default but boot tests bump down).
+  const initResponse = await waitForLineOrExit(
     () => stdout,
     (line) => line.includes('"id":1'),
-    25_000,
+    () => child!.exitCode,
+    30_000,
   );
 
-  return { stderr, initResponse };
+  return { stderr, initResponse, exitCode: child.exitCode };
 }
 
-async function waitForLine(
+async function waitForLineOrExit(
   getBuf: () => string,
   predicate: (line: string) => boolean,
+  getExit: () => number | null,
   timeoutMs: number,
 ): Promise<string | null> {
   const start = Date.now();
@@ -136,41 +148,41 @@ async function waitForLine(
     for (const line of buf.split('\n')) {
       if (predicate(line)) return line;
     }
+    if (getExit() !== null) return null;
     await new Promise((r) => setTimeout(r, 50));
   }
   return null;
 }
 
-describe('server startup — memory-bridge', () => {
-  it('boots + warns on stderr when flywheel-memory binary is missing', async () => {
-    const { stderr, initResponse } = await spawnAndInit({
+describe('server startup — v0.4.0 required-bridge', () => {
+  it('hard-fails (exit 1) when flywheel-memory binary is missing in production', async () => {
+    const { stderr, initResponse, exitCode } = await spawnAndInit({
       FLYWHEEL_MEMORY_BIN: '/nonexistent/path/flywheel-memory',
       FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS: '500',
     });
-    expect(initResponse).not.toBeNull();
-    expect(initResponse).toContain('"id":1');
-    expect(stderr).toContain('memory-bridge skipped (binary_not_found');
-    expect(stderr).toContain('Install @velvetmonkey/flywheel-memory');
+    expect(initResponse).toBeNull();
+    expect(exitCode).not.toBe(0);
+    expect(stderr).toContain('FlywheelMemoryRequiredError');
+    expect(stderr).toContain('@velvetmonkey/flywheel-memory');
   }, 30_000);
 
-  it('boots silently (no memory-bridge warning) when registration succeeds via mock', async () => {
+  it('boots successfully when the mock bridge is on PATH', async () => {
     const { stderr, initResponse } = await spawnAndInit({
       FLYWHEEL_MEMORY_BIN: MOCK_FM,
       FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS: '8000',
     });
     expect(initResponse).not.toBeNull();
-    expect(stderr).not.toContain('memory-bridge skipped');
+    expect(stderr).not.toContain('FlywheelMemoryRequiredError');
   }, 30_000);
 
-  it('boots fast with no spawn attempt when FLYWHEEL_IDEAS_MEMORY_BRIDGE=0', async () => {
+  it('boots fast in test mode (FLYWHEEL_IDEAS_TEST_MODE=1) without spawning the bridge', async () => {
     const start = Date.now();
-    const { stderr, initResponse } = await spawnAndInit({
-      FLYWHEEL_IDEAS_MEMORY_BRIDGE: '0',
+    const { initResponse } = await spawnAndInit({
+      FLYWHEEL_IDEAS_TEST_MODE: '1',
     });
     const elapsed = Date.now() - start;
     expect(initResponse).not.toBeNull();
-    expect(stderr).toContain('memory-bridge skipped (disabled)');
-    // Fast path — no subprocess spawn should mean <2s start (allow CI overhead)
+    // No bridge spawn — should be <2s start (allow CI overhead)
     expect(elapsed).toBeLessThan(2000);
   }, 10_000);
 
@@ -179,10 +191,6 @@ describe('server startup — memory-bridge', () => {
   // even use symlinks for global bins — it generates `.cmd` shims, which
   // the next test exercises.
   it.skipIf(process.platform === 'win32')('boots when invoked through a PATH-style symlink (alpha.2 dogfood regression, POSIX path)', async () => {
-    // alpha.2 silently no-op'd when invoked via the bin symlink npm install
-    // -g creates on POSIX. Mirror that: symlink the dist binary into tmpdir
-    // and spawn via the symlink. The fixed isDirectInvocation must resolve
-    // realpath.
     const symlinkPath = path.join(vaultPath, 'flywheel-ideas-mcp-symlink');
     await fsp.symlink(SERVER_BIN, symlinkPath);
     await fsp.chmod(symlinkPath, 0o755).catch(() => {});
@@ -192,7 +200,7 @@ describe('server startup — memory-bridge', () => {
         PATH: process.env.PATH ?? '',
         HOME: process.env.HOME ?? '',
         VAULT_PATH: vaultPath,
-        FLYWHEEL_IDEAS_MEMORY_BRIDGE: '0', // skip the bridge to keep this fast
+        FLYWHEEL_IDEAS_TEST_MODE: '1', // skip bridge to keep this fast
       },
       stdio: ['pipe', 'pipe', 'pipe'],
     }) as ChildProcessWithoutNullStreams;
@@ -213,9 +221,10 @@ describe('server startup — memory-bridge', () => {
       }) + '\n',
     );
 
-    const initResponse = await waitForLine(
+    const initResponse = await waitForLineOrExit(
       () => stdout,
       (line) => line.includes('"id":1'),
+      () => child!.exitCode,
       5_000,
     );
     expect(initResponse).not.toBeNull();
@@ -224,9 +233,6 @@ describe('server startup — memory-bridge', () => {
 
   // The Windows analogue of the symlink test. npm install -g on Windows
   // generates a `.cmd` shim that does `node "<full path to dist/index.js>" %*`.
-  // The shim makes argv[1] an absolute path to the .js file (no symlink
-  // realpath dance), which exercises the simpler equality branch of
-  // isDirectInvocation. Alpha.4 fix 3.
   it.skipIf(process.platform !== 'win32')('boots when invoked through a Windows .cmd shim (Windows install path)', async () => {
     const cmdShim = path.join(vaultPath, 'flywheel-ideas-mcp.cmd');
     await fsp.writeFile(cmdShim, `@node "${SERVER_BIN}" %*\r\n`);
@@ -237,7 +243,7 @@ describe('server startup — memory-bridge', () => {
         USERPROFILE: process.env.USERPROFILE ?? '',
         APPDATA: process.env.APPDATA ?? '',
         VAULT_PATH: vaultPath,
-        FLYWHEEL_IDEAS_MEMORY_BRIDGE: '0',
+        FLYWHEEL_IDEAS_TEST_MODE: '1',
       },
       stdio: ['pipe', 'pipe', 'pipe'],
     }) as ChildProcessWithoutNullStreams;
@@ -258,9 +264,10 @@ describe('server startup — memory-bridge', () => {
       }) + '\n',
     );
 
-    const initResponse = await waitForLine(
+    const initResponse = await waitForLineOrExit(
       () => stdout,
       (line) => line.includes('"id":1'),
+      () => child!.exitCode,
       5_000,
     );
     expect(initResponse).not.toBeNull();

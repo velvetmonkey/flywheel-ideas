@@ -1,25 +1,23 @@
 /**
- * MCP-subprocess write path — Option C of the write-path plan.
+ * MCP-subprocess write path — the production write path in v0.4.0.
  *
  * Spawns `flywheel-memory` as a one-shot MCP subprocess per write, calls the
  * `note` or `vault_update_frontmatter` tool, closes. Routes all vault I/O
  * through flywheel-memory so imported + hand-authored + council notes share
- * one write path. Retires direct-fs as the default; direct-fs remains the
- * fallback when the subprocess is unavailable.
+ * one write path.
+ *
+ * v0.4.0 — flywheel-memory is required at boot, so a per-call write failure
+ * is a transient mid-session error. The dispatcher (`write/index.ts`) now
+ * throws `WriteSubprocessFailedError` on a skipped outcome rather than
+ * silently falling back to direct-fs (mitigation #7: loud failure beats
+ * silent vault divergence).
  *
  * Clones the spawn-then-close lifecycle from `evidence-reader.ts` exactly.
- * Single call per write is fine for single-note tools (idea.create,
- * assumption.declare, outcome.log); spawn cost is ~hundreds of ms and tools
- * are user-facing single-shot calls, not tight inner loops.
  *
- * Best-effort: never throws. If the subprocess fails for any reason, returns
- * an outcome-shaped result so the caller can fall back to direct-fs without
- * losing the write.
+ * Returns a structured outcome `{status: 'ok'|'skipped', ...}` rather than
+ * throwing — the dispatcher unwraps to either a result or a thrown error.
  *
  * Env knobs:
- *  - `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`                — kill switch shared with
- *                                                       memory-bridge +
- *                                                       evidence-reader
  *  - `FLYWHEEL_MEMORY_BIN=/path/to/flywheel-memory`  — override binary
  *  - `FLYWHEEL_IDEAS_WRITE_SUBPROCESS_TIMEOUT_MS=...` — override 15000ms default
  *  - `FLYWHEEL_IDEAS_DEBUG=1`                        — surface transport teardown
@@ -38,8 +36,7 @@ export type WriteSubprocessSkipReason =
   | 'spawn_failed'
   | 'timeout'
   | 'tool_returned_error'
-  | 'invalid_response'
-  | 'disabled';
+  | 'invalid_response';
 
 export type WriteSubprocessOutcome<T> =
   | { status: 'ok'; value: T }
@@ -122,10 +119,6 @@ async function withMemoryWriter<T>(
   fn: (client: Client) => Promise<T>,
   options: WriteSubprocessOptions = {},
 ): Promise<WriteSubprocessOutcome<T>> {
-  if (process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE === '0') {
-    return { status: 'skipped', reason: 'disabled' };
-  }
-
   const binary = options.binary ?? process.env.FLYWHEEL_MEMORY_BIN ?? 'flywheel-memory';
   const args = options.args ?? [];
   const timeoutMs = resolveTimeout(options.timeoutMs);

@@ -23,7 +23,6 @@ beforeEach(async () => {
   await fsp.mkdir(path.join(vaultPath, '.flywheel'), { recursive: true });
 
   // Reset env knobs that may leak between tests
-  delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
   delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS;
   delete process.env.FLYWHEEL_MEMORY_BIN;
 });
@@ -214,16 +213,6 @@ describe('registerCustomCategories — failure modes', () => {
 });
 
 describe('registerCustomCategories — env handling', () => {
-  it('returns disabled (no spawn) when FLYWHEEL_IDEAS_MEMORY_BRIDGE=0', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
-    const result = await registerCustomCategories(vaultPath, {
-      binary: '/this/path/does/not/exist',
-    });
-    expect(result.status).toBe('skipped');
-    if (result.status !== 'skipped') return;
-    expect(result.reason).toBe('disabled');
-  });
-
   it('respects FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS env override', async () => {
     process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS = '300';
     const result = await registerCustomCategories(vaultPath, asMock({ MOCK_FM_HANG_MS: '5000' }));

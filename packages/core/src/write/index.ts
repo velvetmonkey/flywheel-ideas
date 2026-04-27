@@ -2,21 +2,20 @@
  * Writer interface — the single boundary tool handlers cross to write vault
  * artifacts.
  *
- * v0.2 write-path migration: `writeNote` and `patchFrontmatter` dispatch on
- * the server's active write path (resolved once at startup via
- * `probeWritePath`).
+ * `writeNote` and `patchFrontmatter` dispatch on the server's active write
+ * path (resolved once at startup via `probeWritePath`).
  *
- *   - `mcp-subprocess` (preferred): all I/O through flywheel-memory's `note`
- *     + `vault_update_frontmatter` tools. Unifies the write path with memory's
- *     wikilink scorer, citation graph, and frontmatter conventions.
- *   - `direct-fs` (fallback): gray-matter + `fsp` locally. Used when
- *     flywheel-memory is unavailable (not installed, subprocess skipped, or
- *     `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`).
+ * v0.4.0 — flywheel-memory is a required peer dependency. Production always
+ * runs the `mcp-subprocess` tier; if the bridge is unreachable, the server
+ * hard-fails at boot via `FlywheelMemoryRequiredError`. The `direct-fs`
+ * tier survives only behind the `FLYWHEEL_IDEAS_TEST_MODE=1` gate, where
+ * tests inject a tier via `__setWritePathForTests()`.
  *
- * Per-call resilience: even after startup probe selects `mcp-subprocess`, a
- * mid-run subprocess failure (spawn race, transient timeout) falls back to
- * direct-fs for THAT call so the write still lands. The response's
- * `write_path` field reports the tier actually used.
+ * Per-call mid-run subprocess failure now surfaces as a hard error rather
+ * than a silent direct-fs degrade (Claude-mitigation #7): silent vault
+ * divergence is worse than a loud failure. Operators restart the server.
+ * The `write_path` field reports the tier actually used (always
+ * `mcp-subprocess` in production; `direct-fs` only in test mode).
  */
 
 import { writeNoteDirectFs, WriteNotePathError } from './direct-fs.js';
@@ -74,8 +73,32 @@ export {
 export type { WriteSubprocessOptions } from './mcp-subprocess.js';
 
 /**
- * Write a new markdown note to the vault. Dispatches on active write path;
- * falls back to direct-fs if the mcp-subprocess tier skips mid-call.
+ * Mid-run subprocess failure — hard error rather than silent direct-fs degrade.
+ *
+ * v0.4.0 (Claude-mitigation #7): silent vault divergence between the bridge
+ * and direct-fs paths is worse than a loud failure. If the subprocess crashes
+ * mid-session, the operator gets a clear error on the failing tool call and
+ * restarts the server.
+ */
+export class WriteSubprocessFailedError extends Error {
+  readonly reason: string;
+  readonly detail?: string;
+  constructor(reason: string, detail?: string) {
+    super(
+      `flywheel-memory bridge write failed (${reason}${detail ? `: ${detail}` : ''}). ` +
+        'Restart the server; if the bridge is genuinely unreachable, the next boot will surface the install hint.',
+    );
+    this.name = 'WriteSubprocessFailedError';
+    this.reason = reason;
+    this.detail = detail;
+  }
+}
+
+/**
+ * Write a new markdown note to the vault. In production the mcp-subprocess
+ * tier is required; failure throws `WriteSubprocessFailedError`. In test mode
+ * the active tier is whatever `__setWritePathForTests` injected (usually
+ * `direct-fs`).
  */
 export async function writeNote(
   vaultPath: string,
@@ -95,21 +118,13 @@ export async function writeNote(
     if (outcome.status === 'ok') {
       return outcome.value;
     }
-    // Per-call fallback. Log once and continue with direct-fs so the write
-    // still lands. Prefer info-level on stderr so operators see the
-    // degraded mode without noisy per-call warnings in normal use.
-    process.stderr.write(
-      `flywheel-ideas: mcp-subprocess write skipped (${outcome.reason}${
-        outcome.detail ? `: ${outcome.detail}` : ''
-      }) — falling back to direct-fs for ${relPath}\n`,
-    );
+    throw new WriteSubprocessFailedError(outcome.reason, outcome.detail);
   }
   return await writeNoteDirectFs(vaultPath, relPath, frontmatter, body, options);
 }
 
 /**
- * Patch scalar frontmatter on an existing note. Dispatches on active write
- * path; falls back to direct-fs if the subprocess tier skips mid-call.
+ * Patch scalar frontmatter. Same dispatch + hard-fail semantics as `writeNote`.
  */
 export async function patchFrontmatter(
   vaultPath: string,
@@ -127,11 +142,7 @@ export async function patchFrontmatter(
     if (outcome.status === 'ok') {
       return outcome.value;
     }
-    process.stderr.write(
-      `flywheel-ideas: mcp-subprocess patch skipped (${outcome.reason}${
-        outcome.detail ? `: ${outcome.detail}` : ''
-      }) — falling back to direct-fs for ${relPath}\n`,
-    );
+    throw new WriteSubprocessFailedError(outcome.reason, outcome.detail);
   }
   return await patchFrontmatterDirectFs(vaultPath, relPath, patch);
 }

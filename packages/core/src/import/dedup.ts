@@ -69,13 +69,11 @@ export async function checkDedup(
 
   if (outcome.status === 'skipped') {
     const reason =
-      outcome.reason === 'disabled'
-        ? 'bridge_disabled'
-        : outcome.reason === 'timeout'
-          ? 'bridge_timeout'
-          : outcome.reason === 'binary_not_found' || outcome.reason === 'spawn_failed'
-            ? 'bridge_unavailable'
-            : 'bridge_error';
+      outcome.reason === 'timeout'
+        ? 'bridge_timeout'
+        : outcome.reason === 'binary_not_found' || outcome.reason === 'spawn_failed'
+          ? 'bridge_unavailable'
+          : 'bridge_error';
     return { matched: false, reason };
   }
 

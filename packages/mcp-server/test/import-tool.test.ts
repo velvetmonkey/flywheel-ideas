@@ -109,8 +109,8 @@ describe('import MCP tool', () => {
     expect(names).toContain('outcome');
   });
 
-  it('scan → persists source + candidates; dedup skipped when bridge disabled', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+  it('scan → persists source + candidates; dedup skipped when bridge unreachable', async () => {
+    process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
     try {
       const resp = await client.callTool('import', {
         action: 'scan',
@@ -130,15 +130,15 @@ describe('import MCP tool', () => {
       expect(body.result.scanned_count).toBe(3);
       expect(body.result.pending_count).toBe(3);
       expect(body.result.duplicate_count).toBe(0);
-      expect(['disabled', 'bridge_unavailable']).toContain(body.result.dedup_status);
+      expect(body.result.dedup_status).toBe('bridge_unavailable');
       expect(body.result.candidates.every((c) => c.state === 'pending')).toBe(true);
     } finally {
-      delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+      delete process.env.FLYWHEEL_MEMORY_BIN;
     }
   });
 
   it('scan_config.filter passes through to the adapter', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
     try {
       const resp = await client.callTool('import', {
         action: 'scan',
@@ -156,7 +156,7 @@ describe('import MCP tool', () => {
       expect(ideas.length).toBe(1);
       expect(ideas[0].title).toMatch(/Style Guide/);
     } finally {
-      delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+      delete process.env.FLYWHEEL_MEMORY_BIN;
     }
   });
 
@@ -172,7 +172,7 @@ describe('import MCP tool', () => {
   });
 
   it('promote creates the vault note + flips candidate state', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
     try {
       const scan = parseResp(
         await client.callTool('import', {
@@ -212,12 +212,12 @@ describe('import MCP tool', () => {
         'imported',
       );
     } finally {
-      delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+      delete process.env.FLYWHEEL_MEMORY_BIN;
     }
   });
 
   it('promote rejects kind mismatch with structured next_steps', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
     try {
       const scan = parseResp(
         await client.callTool('import', {
@@ -241,12 +241,12 @@ describe('import MCP tool', () => {
       expect(body.error).toMatch(/candidate kind/);
       expect(Array.isArray(body.next_steps)).toBe(true);
     } finally {
-      delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+      delete process.env.FLYWHEEL_MEMORY_BIN;
     }
   });
 
   it('reject flips a pending candidate', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
     try {
       const scan = parseResp(
         await client.callTool('import', {
@@ -263,12 +263,12 @@ describe('import MCP tool', () => {
       const body = parseResp(resp) as { result: { state: string } };
       expect(body.result.state).toBe('rejected');
     } finally {
-      delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+      delete process.env.FLYWHEEL_MEMORY_BIN;
     }
   });
 
   it('scan with github-structured-docs fixture mode produces PEP candidates', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+    process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
     try {
       const resp = await client.callTool('import', {
         action: 'scan',
@@ -285,7 +285,7 @@ describe('import MCP tool', () => {
       const kinds = new Set(body.result.candidates.map((c) => c.candidate_kind));
       expect(kinds.has('idea')).toBe(true);
     } finally {
-      delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+      delete process.env.FLYWHEEL_MEMORY_BIN;
     }
   });
 });
