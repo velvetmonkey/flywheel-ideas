@@ -83,3 +83,6 @@ pilot/last-scan.stderr.log
 pilot/last-seed.json
 pilot/last-councils.json
 pilot/last-scores.json
+
+# Codex CLI session marker
+.codex

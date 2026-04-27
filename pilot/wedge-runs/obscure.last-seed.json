@@ -1,0 +1,68 @@
+{
+  "vault": "/tmp/flywheel-pilot-wedge-obscure",
+  "corpus": "/home/ben/src/flywheel-ideas/pilot/wedge-corpus.obscure.jsonl",
+  "domain": null,
+  "seeded_at": "2026-04-26T17:54:54.162Z",
+  "entries": [
+    {
+      "decision_id": "obs-001-shape-predictor",
+      "idea_id": "idea-RKj5kwwY",
+      "assumptions": [
+        {
+          "corpus_id": "asm-001-five-shapes-cover-variation",
+          "db_id": "asm-YGZAiyoc",
+          "outcome": "refuted",
+          "text": "Five workload shapes capture more than 90% of tenant compute-pattern variation; the residual 10% can be hand-tuned without operational drag."
+        }
+      ]
+    },
+    {
+      "decision_id": "obs-002-shadow-throttle",
+      "idea_id": "idea-8Pp2pvbX",
+      "assumptions": [
+        {
+          "corpus_id": "asm-002-clients-adapt-silently",
+          "db_id": "asm-V7j16Vjo",
+          "outcome": "refuted",
+          "text": "Customers experiencing shadow throttle will adapt their request rate downward without escalating to support, because their integration appears to be working (just slower)."
+        }
+      ]
+    },
+    {
+      "decision_id": "obs-003-multi-currency",
+      "idea_id": "idea-fFBmkB8n",
+      "assumptions": [
+        {
+          "corpus_id": "asm-003-display-only-currency",
+          "db_id": "asm-JCY5PVZk",
+          "outcome": "refuted",
+          "text": "Hardcoded currency assumptions in the legacy invoicing system are concentrated in the display / formatting layer; the data, tax, and reconciliation layers are currency-agnostic and require no schema or logic changes for EUR."
+        }
+      ]
+    },
+    {
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "idea_id": "idea-xdCTDmou",
+      "assumptions": [
+        {
+          "corpus_id": "asm-004-entropy-distinguishes",
+          "db_id": "asm-ATByByb1",
+          "outcome": "refuted",
+          "text": "200ms of mouse-movement observation is enough to distinguish human users from automated bots at p<0.05; sub-threshold signups are reliably automated."
+        }
+      ]
+    },
+    {
+      "decision_id": "obs-005-auto-tune-sampling",
+      "idea_id": "idea-6pt2joKw",
+      "assumptions": [
+        {
+          "corpus_id": "asm-005-seven-days-sufficient",
+          "db_id": "asm-vHpCg3bu",
+          "outcome": "refuted",
+          "text": "Seven days of prior telemetry is statistically sufficient for the optimizer to converge on a stable per-service sampling rate; weekly variation is small enough that the resulting rate generalizes forward."
+        }
+      ]
+    }
+  ]
+}

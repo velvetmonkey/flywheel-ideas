@@ -1,0 +1,68 @@
+{
+  "vault": "/tmp/flywheel-pilot-wedge-famous",
+  "corpus": "/home/ben/src/flywheel-ideas/pilot/wedge-corpus.famous.jsonl",
+  "domain": null,
+  "seeded_at": "2026-04-26T12:53:37.211Z",
+  "entries": [
+    {
+      "decision_id": "google-plus",
+      "idea_id": "idea-q1kmC8sU",
+      "assumptions": [
+        {
+          "corpus_id": "asm-gplus-cross-product-pull",
+          "db_id": "asm-JW4vpGK5",
+          "outcome": "refuted",
+          "text": "Forcing Google+ identity across Gmail / YouTube / Search will pull existing Google users into active social use of Google+ at sufficient rate to bootstrap network effects against Facebook."
+        }
+      ]
+    },
+    {
+      "decision_id": "quibi",
+      "idea_id": "idea-Lj7hNnMG",
+      "assumptions": [
+        {
+          "corpus_id": "asm-quibi-mobile-only-demand",
+          "db_id": "asm-pvzvWzNB",
+          "outcome": "refuted",
+          "text": "Premium short-form video viewing happens primarily on mobile during in-between moments (commute, queues, breaks) and a mobile-only product fits that demand."
+        }
+      ]
+    },
+    {
+      "decision_id": "microsoft-bob",
+      "idea_id": "idea-wcXZockj",
+      "assumptions": [
+        {
+          "corpus_id": "asm-bob-novice-metaphor-helps",
+          "db_id": "asm-nz1E7L7B",
+          "outcome": "refuted",
+          "text": "A residential-house metaphor maps cleanly enough onto computer functions (rooms = applications, drawers = folders) that novice users will perform tasks faster than they would with the existing Program Manager UI."
+        }
+      ]
+    },
+    {
+      "decision_id": "amazon-fire-phone",
+      "idea_id": "idea-in24qpnG",
+      "assumptions": [
+        {
+          "corpus_id": "asm-firephone-ecosystem-pull",
+          "db_id": "asm-vzVqu9d6",
+          "outcome": "refuted",
+          "text": "Tight Amazon Prime / shopping integration plus a Prime-bundled subsidy is enough to pull existing Prime users to switch from iOS or Android to Fire OS as a primary phone."
+        }
+      ]
+    },
+    {
+      "decision_id": "new-coke",
+      "idea_id": "idea-ZqJ7Kqpa",
+      "assumptions": [
+        {
+          "corpus_id": "asm-newcoke-blind-taste-translates",
+          "db_id": "asm-fCadm4Cw",
+          "outcome": "refuted",
+          "text": "Blind-taste-test preference for the sweeter formula translates to actual purchasing behavior — consumers who prefer the taste in a blind comparison will buy and continue buying the new formula in the open market."
+        }
+      ]
+    }
+  ]
+}

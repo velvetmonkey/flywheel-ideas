@@ -1,0 +1,2211 @@
+{
+  "vault": "/tmp/flywheel-pilot-wedge-famous",
+  "scored_at": "2026-04-26T17:54:40.331Z",
+  "decisions": [
+    {
+      "session_id": "sess-Y7syLp2R",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "pre_mortem",
+      "session_index": 0,
+      "cited": true,
+      "persona_hits": 5,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-01/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-01/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-01/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-01/claude-growth-optimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-01/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-01/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.299Z"
+    },
+    {
+      "session_id": "sess-ytzRQjUN",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "pre_mortem",
+      "session_index": 1,
+      "cited": true,
+      "persona_hits": 5,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-02/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-02/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-02/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-02/claude-growth-optimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-02/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-02/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.301Z"
+    },
+    {
+      "session_id": "sess-MJJGckNP",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "pre_mortem",
+      "session_index": 2,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-03/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-03/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-03/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-03/claude-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-03/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-03/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.302Z"
+    },
+    {
+      "session_id": "sess-aCfAVVcW",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "pre_mortem",
+      "session_index": 3,
+      "cited": true,
+      "persona_hits": 5,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-04/claude-risk-pessimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-04/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-04/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-04/claude-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-04/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-04/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.304Z"
+    },
+    {
+      "session_id": "sess-SjZtz4iy",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "standard",
+      "session_index": 4,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-05/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-05/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-05/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-05/claude-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-05/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-05/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.305Z"
+    },
+    {
+      "session_id": "sess-Y26av8Zf",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "standard",
+      "session_index": 5,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-06/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-06/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-06/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-06/claude-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-06/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-06/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.306Z"
+    },
+    {
+      "session_id": "sess-TSZAgPtw",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "standard",
+      "session_index": 6,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-07/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-07/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-07/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-07/claude-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-07/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-07/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.307Z"
+    },
+    {
+      "session_id": "sess-w1QmmXwP",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "steelman",
+      "session_index": 8,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-09/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-09/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-09/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-09/claude-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-09/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-09/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.308Z"
+    },
+    {
+      "session_id": "sess-khzUBMUF",
+      "assumption_corpus_id": "asm-gplus-cross-product-pull",
+      "assumption_db_id": "asm-JW4vpGK5",
+      "decision_id": "google-plus",
+      "session_mode": "steelman",
+      "session_index": 9,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-q1kmC8sU/session-10/claude-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-10/codex-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-10/gemini-risk-pessimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-10/claude-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-10/codex-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-q1kmC8sU/session-10/gemini-growth-optimist.md",
+          "named": "asm-JW4vpGK5",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.310Z"
+    },
+    {
+      "session_id": "sess-kQA5yQCq",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "pre_mortem",
+      "session_index": 0,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-01/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-01/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-01/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-01/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-01/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-01/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.312Z"
+    },
+    {
+      "session_id": "sess-dYwNZYHQ",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "pre_mortem",
+      "session_index": 1,
+      "cited": true,
+      "persona_hits": 5,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-02/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-02/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-02/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-02/claude-growth-optimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-02/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-02/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.312Z"
+    },
+    {
+      "session_id": "sess-GZ1o5RgF",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "pre_mortem",
+      "session_index": 2,
+      "cited": true,
+      "persona_hits": 4,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-03/claude-risk-pessimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-03/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-03/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-03/claude-growth-optimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-03/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-03/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.313Z"
+    },
+    {
+      "session_id": "sess-s6MnN4VL",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "pre_mortem",
+      "session_index": 3,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-04/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-04/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-04/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-04/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-04/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-04/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.313Z"
+    },
+    {
+      "session_id": "sess-5MWe3kXw",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "standard",
+      "session_index": 4,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-05/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-05/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-05/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-05/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-05/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-05/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.314Z"
+    },
+    {
+      "session_id": "sess-8obiKkUc",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "standard",
+      "session_index": 5,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-06/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-06/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-06/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-06/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-06/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-06/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.315Z"
+    },
+    {
+      "session_id": "sess-pEHTwduU",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "standard",
+      "session_index": 6,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-07/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-07/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-07/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-07/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-07/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-07/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.315Z"
+    },
+    {
+      "session_id": "sess-toQUeDRg",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "steelman",
+      "session_index": 7,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-08/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-08/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-08/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-08/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-08/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-08/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.316Z"
+    },
+    {
+      "session_id": "sess-jZeMgMDR",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "steelman",
+      "session_index": 8,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-09/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-09/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-09/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-09/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-09/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-09/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.317Z"
+    },
+    {
+      "session_id": "sess-Zmhbs81Y",
+      "assumption_corpus_id": "asm-quibi-mobile-only-demand",
+      "assumption_db_id": "asm-pvzvWzNB",
+      "decision_id": "quibi",
+      "session_mode": "steelman",
+      "session_index": 9,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-Lj7hNnMG/session-10/claude-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-10/codex-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-10/gemini-risk-pessimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-10/claude-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-10/codex-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-Lj7hNnMG/session-10/gemini-growth-optimist.md",
+          "named": "asm-pvzvWzNB",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.318Z"
+    },
+    {
+      "session_id": "sess-w3JZZS7X",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "pre_mortem",
+      "session_index": 0,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-01/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-01/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-01/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-01/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-01/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-01/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.319Z"
+    },
+    {
+      "session_id": "sess-9aYx75MA",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "pre_mortem",
+      "session_index": 1,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-02/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-02/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-02/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-02/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-02/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-02/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.320Z"
+    },
+    {
+      "session_id": "sess-RYnZ6vt8",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "pre_mortem",
+      "session_index": 2,
+      "cited": true,
+      "persona_hits": 5,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-03/claude-risk-pessimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-03/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-03/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-03/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-03/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-03/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.320Z"
+    },
+    {
+      "session_id": "sess-e74r2zJA",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "pre_mortem",
+      "session_index": 3,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-04/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-04/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-04/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-04/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-04/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-04/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.321Z"
+    },
+    {
+      "session_id": "sess-6FZYvf9R",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "standard",
+      "session_index": 4,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-05/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-05/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-05/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-05/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-05/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-05/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.321Z"
+    },
+    {
+      "session_id": "sess-gZYREsCc",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "standard",
+      "session_index": 5,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-06/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-06/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-06/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-06/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-06/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-06/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.322Z"
+    },
+    {
+      "session_id": "sess-5vSVNEa5",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "standard",
+      "session_index": 6,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-07/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-07/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-07/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-07/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-07/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-07/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.322Z"
+    },
+    {
+      "session_id": "sess-G2624gRu",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "steelman",
+      "session_index": 7,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-08/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-08/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-08/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-08/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-08/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-08/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.323Z"
+    },
+    {
+      "session_id": "sess-SCE3bULV",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "steelman",
+      "session_index": 8,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-09/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-09/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-09/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-09/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-09/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-09/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.324Z"
+    },
+    {
+      "session_id": "sess-e9VM8DWb",
+      "assumption_corpus_id": "asm-bob-novice-metaphor-helps",
+      "assumption_db_id": "asm-nz1E7L7B",
+      "decision_id": "microsoft-bob",
+      "session_mode": "steelman",
+      "session_index": 9,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-wcXZockj/session-10/claude-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-10/codex-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-10/gemini-risk-pessimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-10/claude-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-10/codex-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-wcXZockj/session-10/gemini-growth-optimist.md",
+          "named": "asm-nz1E7L7B",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.325Z"
+    },
+    {
+      "session_id": "sess-BiPjQAFY",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "pre_mortem",
+      "session_index": 0,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-01/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-01/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-01/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-01/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-01/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-01/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.325Z"
+    },
+    {
+      "session_id": "sess-GuethKjK",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "pre_mortem",
+      "session_index": 1,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-02/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-02/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-02/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-02/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-02/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-02/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.326Z"
+    },
+    {
+      "session_id": "sess-VypospHf",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "pre_mortem",
+      "session_index": 2,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-03/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-03/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-03/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-03/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-03/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-03/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.326Z"
+    },
+    {
+      "session_id": "sess-ywDbbxXH",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "pre_mortem",
+      "session_index": 3,
+      "cited": true,
+      "persona_hits": 5,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-04/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-04/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-04/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-04/claude-growth-optimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-04/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-04/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.326Z"
+    },
+    {
+      "session_id": "sess-zWqz7KwG",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "standard",
+      "session_index": 4,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-05/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-05/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-05/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-05/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-05/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-05/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.326Z"
+    },
+    {
+      "session_id": "sess-3mvV67dg",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "standard",
+      "session_index": 5,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-06/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-06/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-06/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-06/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-06/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-06/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.327Z"
+    },
+    {
+      "session_id": "sess-wQpLz7Js",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "standard",
+      "session_index": 6,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-07/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-07/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-07/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-07/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-07/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-07/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.327Z"
+    },
+    {
+      "session_id": "sess-GBoy4p2v",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "steelman",
+      "session_index": 7,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-08/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-08/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-08/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-08/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-08/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-08/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.327Z"
+    },
+    {
+      "session_id": "sess-GvPJx55Y",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "steelman",
+      "session_index": 8,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-09/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-09/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-09/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-09/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-09/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-09/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.327Z"
+    },
+    {
+      "session_id": "sess-MxqixuCs",
+      "assumption_corpus_id": "asm-firephone-ecosystem-pull",
+      "assumption_db_id": "asm-vzVqu9d6",
+      "decision_id": "amazon-fire-phone",
+      "session_mode": "steelman",
+      "session_index": 9,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-in24qpnG/session-10/claude-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-10/codex-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-10/gemini-risk-pessimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-10/claude-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-10/codex-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-in24qpnG/session-10/gemini-growth-optimist.md",
+          "named": "asm-vzVqu9d6",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.328Z"
+    },
+    {
+      "session_id": "sess-1Wh1mDXT",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "pre_mortem",
+      "session_index": 0,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-01/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-01/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-01/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-01/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-01/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-01/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.328Z"
+    },
+    {
+      "session_id": "sess-SHkptVTx",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "pre_mortem",
+      "session_index": 1,
+      "cited": true,
+      "persona_hits": 5,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-02/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-02/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-02/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-02/claude-growth-optimist.md",
+          "named": null,
+          "cited": false
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-02/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-02/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.329Z"
+    },
+    {
+      "session_id": "sess-iJspUEqL",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "pre_mortem",
+      "session_index": 2,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-03/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-03/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-03/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-03/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-03/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-03/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.329Z"
+    },
+    {
+      "session_id": "sess-E4o2nGHE",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "pre_mortem",
+      "session_index": 3,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-04/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-04/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-04/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-04/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-04/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-04/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.329Z"
+    },
+    {
+      "session_id": "sess-yCcfDi5m",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "standard",
+      "session_index": 4,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-05/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-05/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-05/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-05/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-05/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-05/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.330Z"
+    },
+    {
+      "session_id": "sess-2EfgzG5T",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "standard",
+      "session_index": 5,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-06/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-06/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-06/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-06/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-06/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-06/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.330Z"
+    },
+    {
+      "session_id": "sess-Fw6UeYoA",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "standard",
+      "session_index": 6,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-07/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-07/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-07/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-07/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-07/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-07/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.330Z"
+    },
+    {
+      "session_id": "sess-ZLPVUtSN",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "steelman",
+      "session_index": 7,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-08/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-08/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-08/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-08/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-08/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-08/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.331Z"
+    },
+    {
+      "session_id": "sess-Da3kc8Ey",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "steelman",
+      "session_index": 8,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-09/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-09/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-09/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-09/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-09/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-09/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.331Z"
+    },
+    {
+      "session_id": "sess-Cig6iZHV",
+      "assumption_corpus_id": "asm-newcoke-blind-taste-translates",
+      "assumption_db_id": "asm-fCadm4Cw",
+      "decision_id": "new-coke",
+      "session_mode": "steelman",
+      "session_index": 9,
+      "cited": true,
+      "persona_hits": 6,
+      "persona_total": 6,
+      "persona_lines": [
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-10/claude-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-10/codex-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-10/gemini-risk-pessimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-10/claude-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-10/codex-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        },
+        {
+          "path": "councils/idea-ZqJ7Kqpa/session-10/gemini-growth-optimist.md",
+          "named": "asm-fCadm4Cw",
+          "cited": true
+        }
+      ],
+      "method": "deterministic-most-vulnerable-match",
+      "scored_at": "2026-04-26T17:54:40.331Z"
+    }
+  ]
+}

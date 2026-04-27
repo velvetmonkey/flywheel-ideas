@@ -1,0 +1,2757 @@
+{
+  "vault": "/tmp/flywheel-pilot-python23",
+  "started_at": "2026-04-25T22:39:31.622Z",
+  "runs": [
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T22:42:40.893Z",
+      "session_id": "sess-YSNe4Rdt",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-01/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-01/codex-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-01/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-01/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-01/codex-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 188975
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T22:47:08.193Z",
+      "session_id": "sess-DW3UikUW",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-02/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-02/codex-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-02/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-02/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-02/codex-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 267299
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T22:48:22.720Z",
+      "session_id": "sess-VCbLfTNL",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-03/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-03/codex-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-03/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-03/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-03/codex-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 74526
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T22:49:21.771Z",
+      "session_id": "sess-XDxS8PVb",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-04/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-04/codex-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-04/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-04/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-04/codex-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 59050
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-25T22:51:51.228Z",
+      "session_id": "sess-wiNAqy3N",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-05/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-05/codex-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-05/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-05/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-05/codex-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 149457
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-25T22:54:20.214Z",
+      "session_id": "sess-fTciX3j1",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-06/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-06/codex-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-06/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-06/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-06/codex-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 148985
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-25T23:20:07.569Z",
+      "session_id": "sess-LQ9SfDMy",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-09/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-09/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-09/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 107468
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-25T23:23:47.990Z",
+      "session_id": "sess-jof1fZbQ",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-10/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-10/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-10/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 220420
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-25T23:28:03.296Z",
+      "session_id": "sess-ejd9JTfQ",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-11/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-11/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-11/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-11/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-11/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 255306
+    },
+    {
+      "idea_id": "idea-4CYyKH62",
+      "decision_id": "pep-3000",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-25T23:32:23.065Z",
+      "session_id": "sess-ErK2CVFS",
+      "synthesis_vault_path": "councils/idea-4CYyKH62/session-12/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-4CYyKH62/session-12/claude-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-12/gemini-risk-pessimist.md",
+        "councils/idea-4CYyKH62/session-12/claude-growth-optimist.md",
+        "councils/idea-4CYyKH62/session-12/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 259768
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T23:33:48.900Z",
+      "session_id": "sess-VVTpoe5R",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-01/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-01/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-01/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 85834
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T23:35:26.010Z",
+      "session_id": "sess-i1T7LRD6",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-02/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-02/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-02/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 97110
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T23:38:28.049Z",
+      "session_id": "sess-Lk6GUKr4",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-03/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-03/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-03/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 182038
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-25T23:40:50.728Z",
+      "session_id": "sess-zbTBa6pF",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-04/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-04/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-04/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 142677
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-25T23:44:49.163Z",
+      "session_id": "sess-2DBN5Ecs",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-05/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-05/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-05/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 238435
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-25T23:49:42.871Z",
+      "session_id": "sess-LEFRD9yZ",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-06/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-06/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-06/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 293707
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-25T23:53:51.005Z",
+      "session_id": "sess-G7qEBZCU",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-07/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-07/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-07/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 248133
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-25T23:55:38.084Z",
+      "session_id": "sess-TLyYoiGY",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-08/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-08/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-08/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 107078
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-25T23:56:55.349Z",
+      "session_id": "sess-hS5RB3An",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-09/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-09/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-09/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 77264
+    },
+    {
+      "idea_id": "idea-mw2BL7H1",
+      "decision_id": "pep-3137",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T00:00:36.157Z",
+      "session_id": "sess-AUQDH91h",
+      "synthesis_vault_path": "councils/idea-mw2BL7H1/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-mw2BL7H1/session-10/claude-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-10/gemini-risk-pessimist.md",
+        "councils/idea-mw2BL7H1/session-10/claude-growth-optimist.md",
+        "councils/idea-mw2BL7H1/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 220806
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:03:00.876Z",
+      "session_id": "sess-4h36p3ti",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-01/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-01/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-01/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 144718
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:05:25.329Z",
+      "session_id": "sess-GZ93ZsMp",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-02/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-02/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-02/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 144452
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:06:45.620Z",
+      "session_id": "sess-DdVBYCgE",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-03/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-03/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-03/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 80290
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:09:30.893Z",
+      "session_id": "sess-r75vFqQA",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-04/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-04/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-04/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 165271
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T00:13:06.055Z",
+      "session_id": "sess-ZJD4Jshe",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-05/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-05/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-05/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 215161
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T00:14:19.037Z",
+      "session_id": "sess-9NgTGr4W",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-06/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-06/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-06/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 72980
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T00:17:21.716Z",
+      "session_id": "sess-hVR2QnDc",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-07/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-07/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-07/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 182678
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T00:21:16.705Z",
+      "session_id": "sess-Xeh6mgtA",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-08/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-08/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-08/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 234987
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T00:23:23.389Z",
+      "session_id": "sess-taQLoFok",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-09/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-09/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-09/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 126683
+    },
+    {
+      "idea_id": "idea-3h7GeEbp",
+      "decision_id": "pep-3105",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T00:25:09.603Z",
+      "session_id": "sess-kXXduevN",
+      "synthesis_vault_path": "councils/idea-3h7GeEbp/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-3h7GeEbp/session-10/claude-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-10/gemini-risk-pessimist.md",
+        "councils/idea-3h7GeEbp/session-10/claude-growth-optimist.md",
+        "councils/idea-3h7GeEbp/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 106214
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:27:49.993Z",
+      "session_id": "sess-r2MitpEk",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-01/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-01/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-01/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 160388
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:31:51.476Z",
+      "session_id": "sess-N5EFDUEG",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-02/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-02/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-02/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 241482
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:33:54.476Z",
+      "session_id": "sess-eQhHnuMk",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-03/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-03/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-03/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 122998
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:36:51.099Z",
+      "session_id": "sess-LQ2Yxixu",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-04/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-04/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-04/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 176623
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T00:39:16.017Z",
+      "session_id": "sess-LafD4kj1",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-05/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-05/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-05/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 144916
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T00:41:50.174Z",
+      "session_id": "sess-jviPSTqA",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-06/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-06/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-06/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 154156
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T00:45:38.270Z",
+      "session_id": "sess-A6iGRzib",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-07/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-07/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-07/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 228094
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T00:47:37.749Z",
+      "session_id": "sess-EkuzBPfe",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-08/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-08/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-08/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 119477
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T00:49:28.850Z",
+      "session_id": "sess-ytbUNc67",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-09/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-09/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-09/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 111099
+    },
+    {
+      "idea_id": "idea-8GDZdmXL",
+      "decision_id": "pep-3131",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T00:52:49.293Z",
+      "session_id": "sess-fdDdCJNN",
+      "synthesis_vault_path": "councils/idea-8GDZdmXL/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8GDZdmXL/session-10/claude-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-10/gemini-risk-pessimist.md",
+        "councils/idea-8GDZdmXL/session-10/claude-growth-optimist.md",
+        "councils/idea-8GDZdmXL/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 200441
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:54:22.662Z",
+      "session_id": "sess-Dq8NouCV",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-01/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-01/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-01/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 93367
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:57:23.376Z",
+      "session_id": "sess-eHueniwU",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-02/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-02/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-02/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 180712
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T00:58:47.723Z",
+      "session_id": "sess-6v7eypJY",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-03/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-03/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-03/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 84347
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T01:00:17.619Z",
+      "session_id": "sess-8WHrVeYZ",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-04/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-04/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-04/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 89895
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T01:05:08.303Z",
+      "session_id": "sess-UqicB7rF",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-05/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-05/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-05/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 290683
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T01:06:24.264Z",
+      "session_id": "sess-3kyqtrZf",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-06/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-06/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-06/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 75960
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T01:12:22.201Z",
+      "session_id": "sess-HHBGiXmE",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-07/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-07/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-07/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 357936
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T01:14:20.876Z",
+      "session_id": "sess-JonpgttP",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-08/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-08/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-08/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 118674
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T01:17:48.065Z",
+      "session_id": "sess-znTbchET",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-09/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-09/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-09/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 207188
+    },
+    {
+      "idea_id": "idea-WpXXeC1U",
+      "decision_id": "pep-0358",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T01:20:26.136Z",
+      "session_id": "sess-gwAxwhCW",
+      "synthesis_vault_path": "councils/idea-WpXXeC1U/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-WpXXeC1U/session-10/claude-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-10/gemini-risk-pessimist.md",
+        "councils/idea-WpXXeC1U/session-10/claude-growth-optimist.md",
+        "councils/idea-WpXXeC1U/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 158069
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T12:59:27.072Z",
+      "session_id": "sess-Y7syLp2R",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-01/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-01/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-01/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-01/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-01/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 313654
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T13:06:51.615Z",
+      "session_id": "sess-ytzRQjUN",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-02/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-02/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-02/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-02/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-02/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 444542
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T13:10:34.965Z",
+      "session_id": "sess-MJJGckNP",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-03/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-03/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-03/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-03/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-03/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 223349
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T13:17:04.059Z",
+      "session_id": "sess-aCfAVVcW",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-04/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-04/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-04/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-04/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-04/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 389092
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T13:23:31.489Z",
+      "session_id": "sess-SjZtz4iy",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-05/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-05/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-05/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-05/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-05/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 387429
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T13:30:29.646Z",
+      "session_id": "sess-Y26av8Zf",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-06/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-06/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-06/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-06/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-06/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 418154
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T13:36:06.034Z",
+      "session_id": "sess-TSZAgPtw",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-07/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-07/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-07/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-07/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-07/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 336386
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T13:46:26.271Z",
+      "error": "timeout: tools/call#10"
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T13:52:12.191Z",
+      "session_id": "sess-w1QmmXwP",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-09/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-09/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-09/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-09/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-09/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 345918
+    },
+    {
+      "idea_id": "idea-q1kmC8sU",
+      "decision_id": "google-plus",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T13:58:14.308Z",
+      "session_id": "sess-khzUBMUF",
+      "synthesis_vault_path": "councils/idea-q1kmC8sU/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-q1kmC8sU/session-10/claude-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-10/codex-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-10/gemini-risk-pessimist.md",
+        "councils/idea-q1kmC8sU/session-10/claude-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-10/codex-growth-optimist.md",
+        "councils/idea-q1kmC8sU/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 362116
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T14:05:06.100Z",
+      "session_id": "sess-kQA5yQCq",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-01/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-01/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-01/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-01/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-01/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 411789
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T14:11:56.790Z",
+      "session_id": "sess-dYwNZYHQ",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-02/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-02/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-02/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-02/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-02/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 410688
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T14:18:27.302Z",
+      "session_id": "sess-GZ1o5RgF",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-03/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-03/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-03/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-03/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-03/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 390510
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T14:23:10.398Z",
+      "session_id": "sess-s6MnN4VL",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-04/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-04/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-04/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-04/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-04/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 283095
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T14:26:22.091Z",
+      "session_id": "sess-5MWe3kXw",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-05/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-05/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-05/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-05/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-05/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 191692
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T14:31:01.970Z",
+      "session_id": "sess-8obiKkUc",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-06/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-06/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-06/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-06/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-06/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 279877
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T14:35:12.970Z",
+      "session_id": "sess-pEHTwduU",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-07/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-07/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-07/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-07/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-07/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 250999
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T14:43:33.838Z",
+      "session_id": "sess-toQUeDRg",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-08/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-08/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-08/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-08/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-08/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 500866
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T14:52:35.882Z",
+      "session_id": "sess-jZeMgMDR",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-09/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-09/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-09/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-09/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-09/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 542042
+    },
+    {
+      "idea_id": "idea-Lj7hNnMG",
+      "decision_id": "quibi",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T14:59:53.083Z",
+      "session_id": "sess-Zmhbs81Y",
+      "synthesis_vault_path": "councils/idea-Lj7hNnMG/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-Lj7hNnMG/session-10/claude-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-10/codex-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-10/gemini-risk-pessimist.md",
+        "councils/idea-Lj7hNnMG/session-10/claude-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-10/codex-growth-optimist.md",
+        "councils/idea-Lj7hNnMG/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 437200
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T15:04:49.210Z",
+      "session_id": "sess-w3JZZS7X",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-01/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-01/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-01/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-01/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-01/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 296124
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T15:09:21.078Z",
+      "session_id": "sess-9aYx75MA",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-02/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-02/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-02/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-02/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-02/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 271866
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T15:15:30.504Z",
+      "session_id": "sess-RYnZ6vt8",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-03/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-03/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-03/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-03/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-03/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 369424
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T15:20:58.771Z",
+      "session_id": "sess-e74r2zJA",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-04/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-04/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-04/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-04/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-04/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 328267
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T15:26:02.796Z",
+      "session_id": "sess-6FZYvf9R",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-05/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-05/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-05/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-05/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-05/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 304024
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T15:29:45.606Z",
+      "session_id": "sess-gZYREsCc",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-06/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-06/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-06/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-06/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-06/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 222808
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T15:34:17.337Z",
+      "session_id": "sess-5vSVNEa5",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-07/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-07/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-07/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-07/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-07/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 271729
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T15:40:16.966Z",
+      "session_id": "sess-G2624gRu",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-08/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-08/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-08/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-08/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-08/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 359628
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T15:47:22.852Z",
+      "session_id": "sess-SCE3bULV",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-09/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-09/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-09/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-09/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-09/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 425884
+    },
+    {
+      "idea_id": "idea-wcXZockj",
+      "decision_id": "microsoft-bob",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T15:54:26.336Z",
+      "session_id": "sess-e9VM8DWb",
+      "synthesis_vault_path": "councils/idea-wcXZockj/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-wcXZockj/session-10/claude-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-10/codex-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-10/gemini-risk-pessimist.md",
+        "councils/idea-wcXZockj/session-10/claude-growth-optimist.md",
+        "councils/idea-wcXZockj/session-10/codex-growth-optimist.md",
+        "councils/idea-wcXZockj/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 423482
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T15:59:55.696Z",
+      "session_id": "sess-BiPjQAFY",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-01/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-01/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-01/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-01/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-01/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 329358
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T16:03:55.385Z",
+      "session_id": "sess-GuethKjK",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-02/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-02/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-02/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-02/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-02/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 239687
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T16:07:50.496Z",
+      "session_id": "sess-VypospHf",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-03/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-03/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-03/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-03/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-03/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 235108
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T16:12:10.081Z",
+      "session_id": "sess-ywDbbxXH",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-04/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-04/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-04/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-04/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-04/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 259582
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T16:17:33.201Z",
+      "session_id": "sess-zWqz7KwG",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-05/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-05/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-05/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-05/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-05/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 323119
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T16:23:09.386Z",
+      "session_id": "sess-3mvV67dg",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-06/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-06/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-06/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-06/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-06/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 336182
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T16:28:12.162Z",
+      "session_id": "sess-wQpLz7Js",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-07/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-07/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-07/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-07/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-07/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 302775
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T16:36:03.060Z",
+      "session_id": "sess-GBoy4p2v",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-08/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-08/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-08/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-08/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-08/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 470896
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T16:44:50.097Z",
+      "session_id": "sess-GvPJx55Y",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-09/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-09/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-09/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-09/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-09/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 527034
+    },
+    {
+      "idea_id": "idea-in24qpnG",
+      "decision_id": "amazon-fire-phone",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T16:53:16.419Z",
+      "session_id": "sess-MxqixuCs",
+      "synthesis_vault_path": "councils/idea-in24qpnG/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-in24qpnG/session-10/claude-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-10/codex-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-10/gemini-risk-pessimist.md",
+        "councils/idea-in24qpnG/session-10/claude-growth-optimist.md",
+        "councils/idea-in24qpnG/session-10/codex-growth-optimist.md",
+        "councils/idea-in24qpnG/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 506321
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T16:58:19.447Z",
+      "session_id": "sess-1Wh1mDXT",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-01/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-01/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-01/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-01/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-01/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 303025
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T17:04:32.389Z",
+      "session_id": "sess-SHkptVTx",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-02/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-02/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-02/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-02/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-02/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 372941
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T17:09:21.557Z",
+      "session_id": "sess-iJspUEqL",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-03/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-03/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-03/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-03/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-03/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 289165
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T17:14:25.753Z",
+      "session_id": "sess-E4o2nGHE",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-04/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-04/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-04/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-04/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-04/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 304194
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T17:19:33.408Z",
+      "session_id": "sess-yCcfDi5m",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-05/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-05/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-05/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-05/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-05/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 307653
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T17:24:35.409Z",
+      "session_id": "sess-2EfgzG5T",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-06/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-06/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-06/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-06/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-06/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 301998
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T17:29:49.317Z",
+      "session_id": "sess-Fw6UeYoA",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-07/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-07/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-07/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-07/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-07/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 313907
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T17:36:28.089Z",
+      "session_id": "sess-ZLPVUtSN",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-08/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-08/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-08/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-08/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-08/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 398770
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T17:43:41.950Z",
+      "session_id": "sess-Da3kc8Ey",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-09/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-09/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-09/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-09/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-09/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 433858
+    },
+    {
+      "idea_id": "idea-ZqJ7Kqpa",
+      "decision_id": "new-coke",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T17:50:01.740Z",
+      "session_id": "sess-Cig6iZHV",
+      "synthesis_vault_path": "councils/idea-ZqJ7Kqpa/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-ZqJ7Kqpa/session-10/claude-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-10/codex-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-10/gemini-risk-pessimist.md",
+        "councils/idea-ZqJ7Kqpa/session-10/claude-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-10/codex-growth-optimist.md",
+        "councils/idea-ZqJ7Kqpa/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 379788
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:00:23.292Z",
+      "session_id": "sess-U8ZmNcD7",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-01/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-01/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-01/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-01/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-01/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 291554
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:07:41.407Z",
+      "session_id": "sess-wQByhtxw",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-02/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-02/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-02/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-02/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-02/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 438111
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:11:04.889Z",
+      "session_id": "sess-C7xQV7PZ",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-03/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-03/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-03/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-03/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-03/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 203480
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:14:14.296Z",
+      "session_id": "sess-M6zb35e3",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-04/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-04/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-04/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-04/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-04/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 189406
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T18:17:33.703Z",
+      "session_id": "sess-Uazm6Cff",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-05/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-05/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-05/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-05/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-05/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 199405
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T18:20:19.393Z",
+      "session_id": "sess-pPSgB1rE",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-06/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-06/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-06/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-06/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-06/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 165685
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T18:23:40.692Z",
+      "session_id": "sess-GsCekwrZ",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-07/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-07/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-07/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-07/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-07/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 201295
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T18:28:10.697Z",
+      "session_id": "sess-oFqSpfmC",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-08/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-08/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-08/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-08/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-08/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 270002
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T18:33:33.281Z",
+      "session_id": "sess-6WbZfeTp",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-09/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-09/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-09/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-09/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-09/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 322581
+    },
+    {
+      "idea_id": "idea-RKj5kwwY",
+      "decision_id": "obs-001-shape-predictor",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T18:39:05.694Z",
+      "session_id": "sess-vqpJqfPJ",
+      "synthesis_vault_path": "councils/idea-RKj5kwwY/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-RKj5kwwY/session-10/claude-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-10/codex-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-10/gemini-risk-pessimist.md",
+        "councils/idea-RKj5kwwY/session-10/claude-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-10/codex-growth-optimist.md",
+        "councils/idea-RKj5kwwY/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 332410
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:44:05.612Z",
+      "session_id": "sess-DZ8JQUFC",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-01/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-01/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-01/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-01/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-01/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 299916
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:47:47.513Z",
+      "session_id": "sess-ZxxgJbyH",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-02/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-02/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-02/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-02/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-02/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 221898
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:54:49.085Z",
+      "session_id": "sess-9zcRXhNT",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-03/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-03/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-03/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-03/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-03/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 421566
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T18:57:58.504Z",
+      "session_id": "sess-GcqUnF9t",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-04/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-04/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-04/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-04/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-04/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 189415
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T19:04:51.111Z",
+      "session_id": "sess-emBmSL5Y",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-05/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-05/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-05/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-05/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-05/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 412603
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T19:09:38.429Z",
+      "session_id": "sess-9KjJrNo8",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-06/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-06/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-06/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-06/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-06/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 287316
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T19:14:56.088Z",
+      "session_id": "sess-WvdxwsA7",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-07/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-07/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-07/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-07/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-07/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 317657
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T19:19:08.264Z",
+      "session_id": "sess-ZCJxWnX7",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-08/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-08/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-08/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-08/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-08/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 252173
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T19:24:08.413Z",
+      "session_id": "sess-pnxuwpmV",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-09/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-09/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-09/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-09/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-09/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 300148
+    },
+    {
+      "idea_id": "idea-8Pp2pvbX",
+      "decision_id": "obs-002-shadow-throttle",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T19:31:02.868Z",
+      "session_id": "sess-5GoqLmpm",
+      "synthesis_vault_path": "councils/idea-8Pp2pvbX/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-8Pp2pvbX/session-10/claude-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-10/codex-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-10/gemini-risk-pessimist.md",
+        "councils/idea-8Pp2pvbX/session-10/claude-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-10/codex-growth-optimist.md",
+        "councils/idea-8Pp2pvbX/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 414453
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T19:35:34.886Z",
+      "session_id": "sess-YjpMoTPk",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-01/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-01/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-01/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-01/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-01/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 272015
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T19:41:05.935Z",
+      "session_id": "sess-XfVAkUi4",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-02/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-02/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-02/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-02/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-02/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 331047
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T19:44:10.474Z",
+      "session_id": "sess-fJfkPe4J",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-03/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-03/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-03/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-03/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-03/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 184537
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T19:48:10.233Z",
+      "session_id": "sess-xBiiUzai",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-04/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-04/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-04/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-04/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-04/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 239757
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T19:53:59.118Z",
+      "session_id": "sess-NJhqHbzQ",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-05/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-05/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-05/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-05/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-05/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 348882
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T19:58:59.667Z",
+      "session_id": "sess-rhZ3zBnx",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-06/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-06/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-06/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-06/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-06/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 300547
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T20:02:21.713Z",
+      "session_id": "sess-mUDgbZPZ",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-07/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-07/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-07/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-07/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-07/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 202045
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T20:10:12.134Z",
+      "session_id": "sess-MbWiCC39",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-08/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-08/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-08/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-08/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-08/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 470419
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T20:15:27.813Z",
+      "session_id": "sess-EGg1M5Bb",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-09/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-09/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-09/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-09/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-09/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 315677
+    },
+    {
+      "idea_id": "idea-fFBmkB8n",
+      "decision_id": "obs-003-multi-currency",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T20:21:56.103Z",
+      "session_id": "sess-kuPkX63U",
+      "synthesis_vault_path": "councils/idea-fFBmkB8n/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-fFBmkB8n/session-10/claude-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-10/codex-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-10/gemini-risk-pessimist.md",
+        "councils/idea-fFBmkB8n/session-10/claude-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-10/codex-growth-optimist.md",
+        "councils/idea-fFBmkB8n/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 388288
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T20:25:20.727Z",
+      "session_id": "sess-o2smXsym",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-01/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-01/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-01/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-01/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-01/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 204623
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T20:30:31.549Z",
+      "session_id": "sess-s6VpdXye",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-02/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-02/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-02/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-02/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-02/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 310819
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T20:37:58.948Z",
+      "session_id": "sess-sc3z1wtH",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-03/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-03/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-03/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-03/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-03/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 447397
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T20:43:06.352Z",
+      "session_id": "sess-tkACCeFU",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-04/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-04/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-04/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-04/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-04/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 307401
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T20:48:02.403Z",
+      "session_id": "sess-C4RSskiV",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-05/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-05/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-05/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-05/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-05/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 296048
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T20:51:46.762Z",
+      "session_id": "sess-3dSXUDwM",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-06/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-06/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-06/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-06/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-06/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 224356
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T20:58:00.860Z",
+      "session_id": "sess-D2H1RyYW",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-07/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-07/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-07/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-07/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-07/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 374095
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T21:05:07.158Z",
+      "session_id": "sess-oqyoiSoE",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-08/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-08/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-08/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-08/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-08/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 426297
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T21:09:16.697Z",
+      "session_id": "sess-FZggNkmK",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-09/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-09/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-09/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-09/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-09/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 249536
+    },
+    {
+      "idea_id": "idea-xdCTDmou",
+      "decision_id": "obs-004-mouse-entropy-bot",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T21:15:35.288Z",
+      "session_id": "sess-g9b6y3ob",
+      "synthesis_vault_path": "councils/idea-xdCTDmou/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-xdCTDmou/session-10/claude-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-10/codex-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-10/gemini-risk-pessimist.md",
+        "councils/idea-xdCTDmou/session-10/claude-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-10/codex-growth-optimist.md",
+        "councils/idea-xdCTDmou/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": true,
+      "elapsed_ms": 378588
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 0,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T21:19:24.932Z",
+      "session_id": "sess-PDtPv8hg",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-01/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-01/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-01/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-01/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-01/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-01/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-01/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 229641
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 1,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T21:24:52.018Z",
+      "session_id": "sess-rNKKV8Yj",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-02/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-02/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-02/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-02/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-02/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-02/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-02/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 327084
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 2,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T21:30:10.865Z",
+      "session_id": "sess-iE54Ffvc",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-03/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-03/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-03/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-03/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-03/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-03/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-03/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 318844
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 3,
+      "mode": "pre_mortem",
+      "ran_at": "2026-04-26T21:32:57.820Z",
+      "session_id": "sess-3mXMpBL1",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-04/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-04/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-04/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-04/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-04/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-04/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-04/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 166952
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 4,
+      "mode": "standard",
+      "ran_at": "2026-04-26T21:37:55.225Z",
+      "session_id": "sess-dsgCQVS1",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-05/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-05/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-05/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-05/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-05/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-05/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-05/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 297402
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 5,
+      "mode": "standard",
+      "ran_at": "2026-04-26T21:41:21.737Z",
+      "session_id": "sess-9iCoWtHx",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-06/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-06/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-06/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-06/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-06/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-06/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-06/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 206509
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 6,
+      "mode": "standard",
+      "ran_at": "2026-04-26T21:46:15.839Z",
+      "session_id": "sess-AKZw8mXX",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-07/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-07/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-07/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-07/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-07/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-07/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-07/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 294100
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 7,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T21:52:42.861Z",
+      "session_id": "sess-SFBbjjEN",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-08/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-08/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-08/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-08/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-08/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-08/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-08/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 387020
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 8,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T21:59:36.805Z",
+      "session_id": "sess-Be2XCf4v",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-09/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-09/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-09/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-09/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-09/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-09/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-09/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 413941
+    },
+    {
+      "idea_id": "idea-6pt2joKw",
+      "decision_id": "obs-005-auto-tune-sampling",
+      "index": 9,
+      "mode": "steelman",
+      "ran_at": "2026-04-26T22:05:06.235Z",
+      "session_id": "sess-zpwodXc7",
+      "synthesis_vault_path": "councils/idea-6pt2joKw/session-10/SYNTHESIS.md",
+      "view_paths": [
+        "councils/idea-6pt2joKw/session-10/claude-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-10/codex-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-10/gemini-risk-pessimist.md",
+        "councils/idea-6pt2joKw/session-10/claude-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-10/codex-growth-optimist.md",
+        "councils/idea-6pt2joKw/session-10/gemini-growth-optimist.md"
+      ],
+      "failed_any": false,
+      "elapsed_ms": 329429
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "vault": "/tmp/flywheel-pilot-wedge-sec",
+  "corpus": "/home/ben/src/flywheel-ideas/pilot/wedge-corpus.sec-readable.jsonl",
+  "domain": null,
+  "seeded_at": "2026-04-26T22:10:41.829Z",
+  "entries": [
+    {
+      "decision_id": "apple-2024-supply-chain-geopolitics",
+      "idea_id": "idea-EG9Xny3i",
+      "assumptions": [
+        {
+          "corpus_id": "asm-aapl-supply-chain-resilience",
+          "db_id": "asm-5esVzf6i",
+          "outcome": "validated",
+          "text": "Apple's mitigation strategies (geographic diversification, multi-sourcing, dual-supplier programs) are sufficient to absorb the disclosed political/trade/disaster risks without material disruption to product availability or margins."
+        }
+      ]
+    },
+    {
+      "decision_id": "apple-2024-competition-rd",
+      "idea_id": "idea-37Mz4Auj",
+      "assumptions": [
+        {
+          "corpus_id": "asm-aapl-rd-pace-sustains",
+          "db_id": "asm-eijc2JDz",
+          "outcome": "validated",
+          "text": "Apple's R&D investment cadence and integrated hardware-software stack will continue to deliver differentiated products at a rate that sustains premium pricing against fast-following competitors."
+        }
+      ]
+    },
+    {
+      "decision_id": "apple-2024-macroeconomic",
+      "idea_id": "idea-dejhAcGi",
+      "assumptions": [
+        {
+          "corpus_id": "asm-aapl-macro-resilience",
+          "db_id": "asm-w49L1oF8",
+          "outcome": "validated",
+          "text": "Apple's premium positioning and high-income customer base insulate revenue against macroeconomic downturns to a degree that limits material risk to financial results."
+        }
+      ]
+    }
+  ]
+}

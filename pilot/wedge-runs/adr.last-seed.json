@@ -1,0 +1,44 @@
+{
+  "vault": "/tmp/flywheel-pilot-wedge-adr",
+  "corpus": "/home/ben/src/flywheel-ideas/pilot/wedge-corpus.adr-readable.jsonl",
+  "domain": null,
+  "seeded_at": "2026-04-26T23:19:50.923Z",
+  "entries": [
+    {
+      "decision_id": "konflux-adr-0001",
+      "idea_id": "idea-4c223nf9",
+      "assumptions": [
+        {
+          "corpus_id": "asm-konflux-0001-kcp-binding-model",
+          "db_id": "asm-7JioVbM6",
+          "outcome": "validated",
+          "text": "kcp's APIBinding/APIExport model is the right substrate for offering Tekton-as-a-service across multiple workload clusters at the scale this team plans to grow into."
+        }
+      ]
+    },
+    {
+      "decision_id": "konflux-adr-0014",
+      "idea_id": "idea-JyT5oyhs",
+      "assumptions": [
+        {
+          "corpus_id": "asm-konflux-0014-succeed-with-findings",
+          "db_id": "asm-aZfkCJC6",
+          "outcome": "validated",
+          "text": "Scanning/linting tasks succeeding even when they find problems (with results exposed via TEST_OUTPUT convention) communicates issues clearly without misleading users about pass/fail semantics in their CI dashboard."
+        }
+      ]
+    },
+    {
+      "decision_id": "konflux-adr-0028",
+      "idea_id": "idea-PyA57uSK",
+      "assumptions": [
+        {
+          "corpus_id": "asm-konflux-0028-five-min-timeout",
+          "db_id": "asm-pWDNprSX",
+          "outcome": "validated",
+          "text": "A 5-minute timeout on SnapshotEnvironmentBindings with an unresolved ErrorOccurred condition is the right heuristic to balance cluster-overload prevention against false-positive cleanup of slow-provisioning environments."
+        }
+      ]
+    }
+  ]
+}
