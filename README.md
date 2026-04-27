@@ -1,8 +1,12 @@
 # flywheel-ideas
 
-**Track why you believed a bet, challenge it, and learn if it was right.**
+**Track why you made a decision worth revisiting, challenge it, and learn if it was right.**
 
-A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea becomes a tracked object with a lifecycle state machine, a declared-assumption ledger, a multi-model AI council that stress-tests the assumptions, and an outcome log that refutes broken assumptions and automatically flags every dependent idea for re-review. The vault compounds. Six months from now, it catches the assumption that failed.
+flywheel-ideas is a local-first decision ledger that runs in your Obsidian vault. You log a decision, declare the assumptions it rests on, run a multi-CLI AI council against them, and later — when reality arrives — log an outcome. Every idea in the vault that cited a refuted assumption is automatically flagged for re-review.
+
+What it adds over a static ADR tool: assumptions are first-class, *falsifiable* objects, not prose buried inside a Decision section; the council is real subprocess dispatch to `claude` / `codex` / `gemini`, not a single-model sycophant; refutations propagate. What it adds over a chat agent: structure persists across years. The vault is the record.
+
+Built for consequential decisions — architecture choices, pricing model rewrites, platform migrations, strategic hires, research direction. Not for routine product backlog. Six months from now, you should be able to articulate which assumption broke and which other decisions depended on it.
 
 [![npm version](https://img.shields.io/npm/v/@velvetmonkey/flywheel-ideas.svg)](https://www.npmjs.com/package/@velvetmonkey/flywheel-ideas)
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
@@ -16,103 +20,50 @@ A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea 
 >
 > CI runs lint, npm-audit, build, core + mcp-server tests, and a Node 22/24 × ubuntu/windows matrix. Live `claude -p` end-to-end happens during dogfood + pilot runs, not as continuous CI.
 
+## Hero example: a decision and the assumption that broke
+
+The pre-registered cite-rate pilot ran flywheel-ideas blind against five Python 2→3 decisions whose outcomes are public history. Walking one of them — **the decision to release Python 3 as a backward-incompatible break with Python 2** — through the loop:
+
+**The decision.** *Python 3000.* Made 2008. Logged as an `idea` with the original [PEP body](https://peps.python.org/pep-3000/) as `body_md`.
+
+**The declared assumptions.** Two were marked `load_bearing: true`:
+
+- `asm-3000-quick-migration` — *"The Python community will migrate to Python 3 within a 2–3 year window after release."*
+- `asm-3000-cleanup-worth-pain` — *"Cleaning up Python's design warts justifies a one-time backward-incompatibility cost."*
+
+**The council, run blind.** `council.run({id: "idea-py3k", mode: "standard"})` spawned `claude` / `codex` / `gemini` × two personas × two passes (light depth). The council was given the decision body and the declared assumptions. It was *not* told the historical outcome.
+
+`claude-risk-pessimist`, Pass 2 self-critique:
+
+> Pass 1 nailed the scale of fragmentation but misread its *nature*. The 2–3 year migration claim was catastrophically optimistic — it took a decade … if the Timeline assumption had been *close* (say, 4–5 years instead of 10), the cost-benefit flips. A decade of dual-maintenance eroded the cleanup's perceived value.
+
+The persona's structured `most_vulnerable_assumption` field came back as `asm-3000-quick-migration` — a structural match against the assumption history actually refuted. That match is what the cite-rate pilot measured. **100% per-session; 79% per-persona, across all five PEPs.** In a sibling session for `pep-3137`, the council named PEP 414 by name — *the actual historical reversal mechanism* — without that PEP being in its prompt context.
+
+**The outcome — logged once reality arrived.**
+
+```
+> outcome.log({
+    idea_id: "idea-py3k",
+    text: "Migration tail ran >8 years; PEP 466 (security backports) and Py2.7 EOL extension to 2020 are evidence the timeline assumption broke.",
+    refutes: ["asm-3000-quick-migration"]
+  })
+```
+
+Every other idea in the vault that cited `asm-3000-quick-migration` as load-bearing is now flagged for re-review (`needs_review: 1`). That propagation is the compounding mechanism — one logged refutation, fan-out across the ledger.
+
+Full pilot data: [`pilot/RESULT.md`](./pilot/RESULT.md). Reproducibility scripts: [`pilot/seed-corpus.mjs`](./pilot/seed-corpus.mjs), [`pilot/run-councils.mjs`](./pilot/run-councils.mjs), [`pilot/score-cites-auto.mjs`](./pilot/score-cites-auto.mjs).
+
 ## Who this is for
 
-**Built for *consequential bets* — the decisions you'd want to revisit a year later.** Architecture choices. Pricing model rewrites. Platform migrations. Strategic hiring. Research-direction calls. The kind of decision where "I knew it might fail because of X" is a story you wish you could replay.
+**Built for *consequential decisions* — the calls you'd want to revisit a year later.** Architecture choices. Pricing model rewrites. Platform migrations. Strategic hiring. Research-direction calls. The kind of decision where "I knew it might fail because of X" is a story you wish you could replay.
 
-- Solo founders making product, pricing, GTM, and hiring bets
-- Staff+ / principal engineers making architecture and platform bets
+- Solo founders making product, pricing, GTM, and hiring decisions
+- Staff+ / principal engineers making architecture and platform decisions
 - Consultants, investors, and researchers who revisit *why* they believed something
 
 **It is *not* for routine product backlog or casual brainstorming.** Jira Product Discovery, Notion, and the like already cover that territory; adding a council step to a low-stakes ticket is friction without payoff. The compounding mechanism only earns its keep when the cited assumption matters six months later.
 
 If you've ever made a consequential decision and six months later couldn't articulate the assumption that turned out wrong — this is for you.
-
-## The loop
-
-```
-idea.create                          # "Should we switch to event-driven architecture?"
-   ↓
-assumption.declare                   # "In the context of X, facing Y, we assume Z, accepting W"
-   ↓
-council.run(pre_mortem)              # Real multi-model dissent attacks the assumptions
-   ↓
-idea.transition → committed          # You made the call
-   ↓
-outcome.log(refutes: [A1, A3])       # Later: reality arrived
-   ↓
-Every idea in your vault that relied on A1 or A3 is flagged for re-review.
-```
-
-That's the product. Everything else supports this loop.
-
-## What makes it different
-
-| | What it really does | The actual gap we fill |
-|---|---|---|
-| Notion / Jira Product Discovery | Manual idea capture + AI features | Cloud-only; no dissent; no outcome loop |
-| Log4brains / adr-tools | ADRs in git | Post-hoc records; no live dissent |
-| LangGraph / CrewAI | Stateful agent orchestration frameworks (with memory) | Developer libraries, not products; no vault-native decision ontology |
-| autodecision | Persona deliberation + persistent runs in `~/.autodecision/` | Siloed from your knowledge graph; single-model; no outcome loop into the runs |
-| obsidian-agent-client / EchoVault / PKM Assistant | AI agents in Obsidian | Plumbing; no decision ledger |
-
-The gap nobody fills: **a local, vault-native, human-readable decision ledger with falsifiable assumptions and outcome-driven refutation propagation.**
-
-## How it works
-
-**Ideas are markdown notes.** Frontmatter tracks id, state, declared assumptions, lineage. The vault is source of truth; `ideas.db` is an index.
-
-**Writes go through flywheel-memory when available.** On startup, the server probes for a flywheel-memory MCP subprocess. If found, every idea / assumption / outcome / council artifact lands via flywheel-memory's `note` + `vault_update_frontmatter` tools — indexed the moment it's written, no watcher delay. If flywheel-memory is unreachable, the server falls back to direct filesystem writes with `gray-matter`; every response's `write_path` field reports the active tier (`mcp-subprocess` or `direct-fs`).
-
-**The council is a subprocess dispatcher.** `council.run(idea_id, depth, mode)` spawns parallel child processes — one per `(model, persona)` cell — shelling out to your installed CLIs with explicit consent. Concurrency capped. Failures classified (timeout / auth / rate-limit / parse / exit-nonzero); one cell failing never aborts the session. Each cell runs a mandatory two-pass self-critique. Views persist as markdown; template synthesis distills them with evidence citations.
-
-**Outcomes refute assumptions.** `outcome.log(refutes: [...])` marks assumptions refuted and flags every dependent idea. `outcome.log.undo` reverses if you logged by mistake. This is the compounding mechanism.
-
-**Every response teaches you the next move.** `{result, next_steps}` — the tool surface is the onboarding flow.
-
-## How we know it works
-
-Two pre-registered evaluations, both with their reproducibility scripts checked in.
-
-### v0.2 cite-rate pilot — Python 2→3
-
-**Setup.** Five Python 2→3 decisions whose outcomes are public history (PEP 3000 timeline, PEP 3137 `u''` literals, PEP 0358 bytes formatting, PEP 3131 non-ASCII identifiers, PEP 3105 print function as a control). Each entry declares the load-bearing assumptions historians would later attack. The council is run *blind* (outcomes are not seeded).
-
-**Metric.** Did the council, when asked to critique each decision, name the assumption that history later refuted as the most-vulnerable one? Pre-registered ≥70% session cite rate.
-
-**Result.** 100% per-session, 79% per-persona (49/50 sessions hit; 1 timeout). In sampled prose, the council names PEP 414 explicitly as the historical reversal mechanism *without being told that PEP 414 exists in its prompt context*. Reproducibility: [`pilot/RESULT.md`](./pilot/RESULT.md), reproducibility scripts at [`pilot/seed-corpus.mjs`](./pilot/seed-corpus.mjs) + [`pilot/score-cites-auto.mjs`](./pilot/score-cites-auto.mjs).
-
-### Phase 3 wedges — falsification probes
-
-The python-2-3 result is a real signal, but it's also the kind of signal where the model has read every PEP. Three pre-registered probes were designed to falsify the strongest interpretations *before* widening to additional adapter domains:
-
-| Probe | Question | Pre-registered rule | Result |
-|---|---|---|---|
-| **3a — leakage** | Is the cite rate measuring *reasoning*, or *training-data recall*? | famous-vs-synthetic GAP ≥ −10pp → reasoning | famous 96.9% per-persona; obscure synthetic 98.0% — GAP **+1.1pp** (obscure marginally *higher* than famous; recall hypothesis rejected) |
-| **3b SEC** | Can the council parse SEC 10-K Item 1A risk-factor prose? | ≥2/3 entries cite a specific operational detail | **3/3** — TSMC capacity reallocation 18-24mo; Greater China ~20% revenue; AppleCare+ / iCloud+ as first cuts in credit events |
-| **3b ADR** | Can the council parse ADR markdown? | ≥2/3 entries cite the architectural mechanism | **3/3** — kcp APIBinding/APIExport, `TaskRun` sync semantics, the named ADR-0028 5-minute timeout as the load-bearing parameter |
-| **3c — ADR census** | Which OSS repos have a coherent supersession arc worth adapter scope? | qualitative survey | konflux-ci/architecture is the only one (12 surveyed) — future github-repo-adr adapter must scope to konflux-format only |
-
-Reproducibility: [`pilot/RESULT.wedges.md`](./pilot/RESULT.wedges.md), corpora at [`pilot/wedge-corpus.*.jsonl`](./pilot/), full council prose preserved in [`pilot/wedge-runs/`](./pilot/wedge-runs/).
-
-### Caveats — what the evaluations honestly don't establish
-
-Trust friction matters more than usual when the product is asking users to trust a decision system. Naming the gaps:
-
-- **Single-rater scoring.** The `most_vulnerable_assumption` cite-rate match is structural (the persona's chosen `asm-ID` against the corpus-tagged `refuted` assumption), not prose-level. A persona that names the right `asm-ID` but for the wrong reason still counts as a hit.
-- **Two-of-three CLIs in some sessions.** The python-2-3 baseline ran with `claude + gemini` (codex hung partway through). The wedges ran with all three after the codex `gpt-5.4` env override; reproducibility instructions reflect this.
-- **Wedge-corpora structure inflates per-persona scores.** The wedge corpora declare 1 LBA per entry; the python-2-3 baseline declared multiple. The 96–98% wedge per-persona scores are *not* directly comparable to the 79% python-2-3 baseline — they're testing different things (leakage / readability vs. multi-LBA scoring).
-- **Cite-rate ≥70% was the GA gate, not a guarantee.** A model that always mistakes which assumption broke would still cite *some* assumption, and a corpus author choosing what to mark `load_bearing` makes the target. We pre-registered the threshold *before* the GA run; it's a published commitment, not a calibration.
-- **6 partial-session failures across 130 sessions** in the wedge runs (1 full timeout in steelman + 5 single-view gemini `parse` errors). Recorded transparently in the run results; none affected verdict signs.
-
-### What's NOT proved
-
-These claims would require evidence the project does not yet have. Naming them so users can decide whether the product earns the trust it's asking for:
-
-- **Real-world decision improvement.** The council surfaces dissent, but the user writes the final rationale. Whether that dissent shifts what the user actually decides — and whether that shift is for the better — is unmeasured. The product is *out-of-scope by design* for the "did this council make the call right" question.
-- **Six-month retention.** The compounding thesis requires that an outcome logged six months from now finds and flags the assumption that broke. The propagation mechanism is tested unit-level + property-based, but no real user has logged a real refutation against a real prior council yet.
-- **Market demand.** 0 stars, 0 forks, 0 issues today. Cite-rate evidence does not translate to "people want this in production" — that's a separate hypothesis, untested.
-- **Generalization beyond the wedge domains.** Python migration history (in training), SEC Item 1A boilerplate (in training), and konflux-ci ADRs (open-source markdown) all skew toward "the model has read material in this register." A private decision corpus (Confluence pages, internal RFCs, regulated-industry wiki) might or might not behave like the public test set.
 
 ## Quickstart
 
@@ -193,29 +144,91 @@ always tracks the most recent stable.
 
 See [CHANGELOG.md](./CHANGELOG.md) for what's new in each release.
 
-### First flow
+## How we know it works
+
+Two pre-registered evaluations, both with their reproducibility scripts checked in.
+
+### v0.2 cite-rate pilot — Python 2→3
+
+**Setup.** Five Python 2→3 decisions whose outcomes are public history (PEP 3000 timeline, PEP 3137 `u''` literals, PEP 0358 bytes formatting, PEP 3131 non-ASCII identifiers, PEP 3105 print function as a control). Each entry declares the load-bearing assumptions historians would later attack. The council is run *blind* (outcomes are not seeded).
+
+**Metric.** Did the council, when asked to critique each decision, name the assumption that history later refuted as the most-vulnerable one? Pre-registered ≥70% session cite rate.
+
+**Result.** 100% per-session, 79% per-persona (49/50 sessions hit; 1 timeout). In sampled prose, the council names PEP 414 explicitly as the historical reversal mechanism *without being told that PEP 414 exists in its prompt context*. Reproducibility: [`pilot/RESULT.md`](./pilot/RESULT.md), reproducibility scripts at [`pilot/seed-corpus.mjs`](./pilot/seed-corpus.mjs) + [`pilot/score-cites-auto.mjs`](./pilot/score-cites-auto.mjs).
+
+### Phase 3 wedges — falsification probes
+
+The python-2-3 result is a real signal, but it's also the kind of signal where the model has read every PEP. Three pre-registered probes were designed to falsify the strongest interpretations *before* widening to additional adapter domains:
+
+| Probe | Question | Pre-registered rule | Result |
+|---|---|---|---|
+| **3a — leakage** | Is the cite rate measuring *reasoning*, or *training-data recall*? | famous-vs-synthetic GAP ≥ −10pp → reasoning | famous 96.9% per-persona; obscure synthetic 98.0% — GAP **+1.1pp** (obscure marginally *higher* than famous; recall hypothesis rejected) |
+| **3b SEC** | Can the council parse SEC 10-K Item 1A risk-factor prose? | ≥2/3 entries cite a specific operational detail | **3/3** — TSMC capacity reallocation 18-24mo; Greater China ~20% revenue; AppleCare+ / iCloud+ as first cuts in credit events |
+| **3b ADR** | Can the council parse ADR markdown? | ≥2/3 entries cite the architectural mechanism | **3/3** — kcp APIBinding/APIExport, `TaskRun` sync semantics, the named ADR-0028 5-minute timeout as the load-bearing parameter |
+| **3c — ADR census** | Which OSS repos have a coherent supersession arc worth adapter scope? | qualitative survey | konflux-ci/architecture is the only one (12 surveyed) — future github-repo-adr adapter must scope to konflux-format only |
+
+Reproducibility: [`pilot/RESULT.wedges.md`](./pilot/RESULT.wedges.md), corpora at [`pilot/wedge-corpus.*.jsonl`](./pilot/), full council prose preserved in [`pilot/wedge-runs/`](./pilot/wedge-runs/).
+
+### Caveats — what the evaluations honestly don't establish
+
+Trust friction matters more than usual when the product is asking users to trust a decision system. Naming the gaps:
+
+- **Single-rater scoring.** The `most_vulnerable_assumption` cite-rate match is structural (the persona's chosen `asm-ID` against the corpus-tagged `refuted` assumption), not prose-level. A persona that names the right `asm-ID` but for the wrong reason still counts as a hit.
+- **Two-of-three CLIs in some sessions.** The python-2-3 baseline ran with `claude + gemini` (codex hung partway through). The wedges ran with all three after the codex `gpt-5.4` env override; reproducibility instructions reflect this.
+- **Wedge-corpora structure inflates per-persona scores.** The wedge corpora declare 1 LBA per entry; the python-2-3 baseline declared multiple. The 96–98% wedge per-persona scores are *not* directly comparable to the 79% python-2-3 baseline — they're testing different things (leakage / readability vs. multi-LBA scoring).
+- **Cite-rate ≥70% was the GA gate, not a guarantee.** A model that always mistakes which assumption broke would still cite *some* assumption, and a corpus author choosing what to mark `load_bearing` makes the target. We pre-registered the threshold *before* the GA run; it's a published commitment, not a calibration.
+- **6 partial-session failures across 130 sessions** in the wedge runs (1 full timeout in steelman + 5 single-view gemini `parse` errors). Recorded transparently in the run results; none affected verdict signs.
+
+### What's NOT proved
+
+These claims would require evidence the project does not yet have. Naming them so users can decide whether the product earns the trust it's asking for:
+
+- **Real-world decision improvement.** The council surfaces dissent, but the user writes the final rationale. Whether that dissent shifts what the user actually decides — and whether that shift is for the better — is unmeasured. The product is *out-of-scope by design* for the "did this council make the call right" question.
+- **Six-month retention.** The compounding thesis requires that an outcome logged six months from now finds and flags the assumption that broke. The propagation mechanism is tested unit-level + property-based, but no real user has logged a real refutation against a real prior council yet.
+- **Market demand.** 0 stars, 0 forks, 0 issues today. Cite-rate evidence does not translate to "people want this in production" — that's a separate hypothesis, untested.
+- **Generalization beyond the wedge domains.** Python migration history (in training), SEC Item 1A boilerplate (in training), and konflux-ci ADRs (open-source markdown) all skew toward "the model has read material in this register." A private decision corpus (Confluence pages, internal RFCs, regulated-industry wiki) might or might not behave like the public test set.
+
+## The loop
 
 ```
-> idea.create({title: "Move subsystem X to event-driven architecture"})
-> assumption.declare({
-    idea_id: "idea-abc",
-    context: "current synchronous design",
-    challenge: "ops burden of cross-service debugging",
-    decision: "events worth the tradeoff",
-    tradeoff: "observability cost",
-    load_bearing: true
-  })
-> council.run({id: "idea-abc", mode: "pre_mortem", confirm: true})
-> idea.transition({id: "idea-abc", to: "committed", reason: "council confirmed; A1 still load-bearing"})
-
-# ... 9 months later ...
-> outcome.log({
-    idea_id: "idea-abc",
-    text: "Migration completed. Observability cost was 3x forecast; debugging time dropped 40%. A2 refuted — cost model was wrong. A1 validated.",
-    refutes: ["asm-2"], validates: ["asm-1"]
-  })
-# → automatically flags 3 other ideas in the vault that cited asm-2.
+idea.create                          # "Should we switch to event-driven architecture?"
+   ↓
+assumption.declare                   # "In the context of X, facing Y, we assume Z, accepting W"
+   ↓
+council.run(pre_mortem)              # Real multi-model dissent attacks the assumptions
+   ↓
+idea.transition → committed          # You made the call
+   ↓
+outcome.log(refutes: [A1, A3])       # Later: reality arrived
+   ↓
+Every idea in your vault that relied on A1 or A3 is flagged for re-review.
 ```
+
+That's the product. Everything else supports this loop.
+
+## What makes it different
+
+| | What it really does | The actual gap we fill |
+|---|---|---|
+| Notion / Jira Product Discovery | Manual idea capture + AI features | Cloud-only; no dissent; no outcome loop |
+| Log4brains / adr-tools | ADRs in git | Post-hoc records; no live dissent |
+| LangGraph / CrewAI | Stateful agent orchestration frameworks (with memory) | Developer libraries, not products; no vault-native decision ontology |
+| autodecision | Persona deliberation + persistent runs in `~/.autodecision/` | Siloed from your knowledge graph; single-model; no outcome loop into the runs |
+| obsidian-agent-client / EchoVault / PKM Assistant | AI agents in Obsidian | Plumbing; no decision ledger |
+
+The gap nobody fills: **a local, vault-native, human-readable decision ledger with falsifiable assumptions and outcome-driven refutation propagation.**
+
+## How it works
+
+**Ideas are markdown notes.** Frontmatter tracks id, state, declared assumptions, lineage. The vault is source of truth; `ideas.db` is an index.
+
+**Writes go through flywheel-memory when available.** On startup, the server probes for a flywheel-memory MCP subprocess. If found, every idea / assumption / outcome / council artifact lands via flywheel-memory's `note` + `vault_update_frontmatter` tools — indexed the moment it's written, no watcher delay. If flywheel-memory is unreachable, the server falls back to direct filesystem writes with `gray-matter`; every response's `write_path` field reports the active tier (`mcp-subprocess` or `direct-fs`).
+
+**The council is a subprocess dispatcher.** `council.run(idea_id, depth, mode)` spawns parallel child processes — one per `(model, persona)` cell — shelling out to your installed CLIs with explicit consent. Concurrency capped. Failures classified (timeout / auth / rate-limit / parse / exit-nonzero); one cell failing never aborts the session. Each cell runs a mandatory two-pass self-critique. Views persist as markdown; template synthesis distills them with evidence citations.
+
+**Outcomes refute assumptions.** `outcome.log(refutes: [...])` marks assumptions refuted and flags every dependent idea. `outcome.log.undo` reverses if you logged by mistake. This is the compounding mechanism.
+
+**Every response teaches you the next move.** `{result, next_steps}` — the tool surface is the onboarding flow.
 
 ## Tool surface
 
@@ -258,7 +271,7 @@ Full operator guide for the import flow: [`docs/import.md`](./docs/import.md).
 
 ## Lineage — Architecture Decision Records, extended
 
-The shape flywheel-ideas writes — *context · challenge · decision · tradeoff · status · assumptions · outcome* — is the [Architecture Decision Record](https://adr.github.io) convention that's been in industry use since Michael Nygard's 2011 essay. The structured form is the same one [Microsoft's Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/architect-role/architectural-decisions) and [AWS Prescriptive Guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html) recommend for capturing decisions worth revisiting.
+The shape flywheel-ideas writes — *context · challenge · decision · tradeoff · status · assumptions · outcome* — is the [Architecture Decision Record](https://adr.github.io) convention that's been in industry use since Michael Nygard's 2011 essay. The structured form is the same one [Microsoft's Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/architect-role/architectural-decisions) and [AWS Prescriptive Guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html) recommend for capturing decisions worth revisiting. The ADR convention has always been about decisions one would *bet* against rotting — the artifact you write so a future maintainer (or future-you) can recover the call's reasoning when the world has moved.
 
 What flywheel-ideas adds on top of that convention:
 
