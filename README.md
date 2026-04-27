@@ -289,8 +289,9 @@ If you read your team's existing ADRs and think "the call I made would be more u
 - README front-page reframed 2026-04-27 — 30-second pitch + PEP 3000 hero example, "bets" → "decisions" terminology migration.
 - Phase 3 wedges cleared all gates (reasoning not recall · 3/3 SEC · 3/3 ADR · konflux-only census).
 - Phase 4 PR 1 (`github-repo-adr` adapter) merged. Phase 4.5 validation-gate clock is **not running** — without a public post, Trigger 2 (≥1 star / ≥1 issue from a Show HN-style post) cannot fire; Trigger 1 (named-user feedback from dogfooding with a specific human) remains open. See [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
-- **P0 closed.** P0.1 (pilot-harness 600s timeout) resolved 2026-04-27 — harness deadline raised to 1800s + per-`tools/call#N` timing logs + retry-once. P0.2 (`rate_limit` classifier) audit-resolved same day — patterns already shipped synthesised in v0.1.1; real-sample validation remains opportunistic.
-- **Active queue advances to P1.3 — Ollama / LM Studio local-model dispatch.** Local inference architecturally bypasses cloud rate-limits (Strategic Skeptic's reframe during the P0.2 roundtable), broadens the test matrix with a zero-cost dispatch path, and adds a no-API-credentials onboarding tier. Plan + roundtable next.
+- **P0 closed.** P0.1 (pilot-harness 600s timeout) and P0.2 (`rate_limit` classifier audit) both resolved 2026-04-27.
+- **P1.3 + P1.4 deferred-on-roundtable 2026-04-27.** Three consecutive HALT verdicts on infrastructure work pushed the project away from inward-facing tooling. P1.5 (agent-driven outcome detection) reframed as dependent on a P1.4 reversal — speculative until then.
+- **Active queue advances to P2.9 — exportable decision portfolios.** Cheap (~1–2 hr; dumps DB + frontmatter to JSON / markdown). Produces a concrete artifact the operator can hand to one specific human — directly enables Trigger 1 (named-user feedback), the only currently-live route to firing the Phase 4.5 sec-edgar gate. Plan + roundtable next.
 - Strategic posture (publish + announce held; Phase 4.5 gate Trigger 2 on hold) unchanged.
 
 ### v0.1 — the closed loop *(shipped 2026-04-23)*
@@ -346,9 +347,9 @@ The active engineering work, ranked. Items 1–12 are the live queue; the parked
 
 **P1 — closing feature loops (queued, code-ready)**
 
-3. **Ollama / LM Studio local-model dispatch.** Extends council fan-out without API costs; fits cleanly into the existing CLI dispatcher; broadens the test matrix with local-only run paths.
-4. **Daily-note outcome capture.** Outcomes pile up in daily notes; the propagation mechanism sweeps them into `outcome.log` candidates without a manual call.
-5. **Agent-driven outcome detection.** Pattern-match on retro / post-mortem prose to surface candidate outcomes; lower friction for refutation logging.
+3. ⏸️ **Ollama / LM Studio local-model dispatch** *(deferred-on-roundtable 2026-04-27)*. Original framing: extend council fan-out without API costs; broaden the test matrix. Roundtable HALT: parser/memory/concurrency surgery far beyond the 120–180 LOC estimate (llama3.1:8b output won't reliably emit the structured `most_vulnerable_assumption` JSON the cite-rate scorer depends on; 3 concurrent local cells = ~24 GB RAM; existing concurrency limiter doesn't know cells are CPU-bound). No shareable artifact. Revisit when a real user actually hits cloud-CLI rate-limits or asks for local-only operation.
+4. ⏸️ **Daily-note outcome capture** *(deferred-on-roundtable 2026-04-27)*. Original framing: outcomes pile up in daily notes; sweep them into candidates. Roundtable HALT (two rounds): without LLM-based assumption-id inference (P1.5), promote requires manual asm-id assignment — same friction as `outcome.log`, time-shifted. Strategic Skeptic: "Building frictionless ingestion for a system that hasn't proven its output is valuable is like building a multi-lane highway to an empty dirt lot." The MVP fallback (a file-scanner) was rejected as a Node.js wrapper around `grep -l '\[\[idea-' ~/obsidian/Ben/daily/*.md`. Revisit only if P1.5's LLM-based variant clears its own roundtable when assumption-inference becomes feasible.
+5. ⏸️ **Agent-driven outcome detection** *(reframed 2026-04-27, depends on P1.4 reversal)*. Original framing: LLM pattern-match on retro / post-mortem prose to surface outcome candidates. Now coupled to P1.4 — revisit only if an actual outcome-not-being-logged friction emerges in dogfood AND a real user signals interest in the automation. Speculative until then.
 6. **Anti-Portfolio pass memos.** Council mode extension; complements `pre_mortem` / `standard` / `steelman`.
 
 **P2 — v0.3 calibration engineering**
