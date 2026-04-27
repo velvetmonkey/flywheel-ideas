@@ -289,7 +289,9 @@ If you read your team's existing ADRs and think "the call I made would be more u
 - README front-page reframed 2026-04-27 — 30-second pitch + PEP 3000 hero example, "bets" → "decisions" terminology migration.
 - Phase 3 wedges cleared all gates (reasoning not recall · 3/3 SEC · 3/3 ADR · konflux-only census).
 - Phase 4 PR 1 (`github-repo-adr` adapter) merged. Phase 4.5 validation-gate clock is **not running** — without a public post, Trigger 2 (≥1 star / ≥1 issue from a Show HN-style post) cannot fire; Trigger 1 (named-user feedback from dogfooding with a specific human) remains open. See [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
-- No new feature work is queued. Next motion is either (a) the user reverses the publish hold, or (b) the user dogfoods the tool with a specific colleague and Trigger 1 fires, or (c) the project sits in this state until either of (a)/(b) happens.
+- **P0 closed.** P0.1 (pilot-harness 600s timeout) resolved 2026-04-27 — harness deadline raised to 1800s + per-`tools/call#N` timing logs + retry-once. P0.2 (`rate_limit` classifier) audit-resolved same day — patterns already shipped synthesised in v0.1.1; real-sample validation remains opportunistic.
+- **Active queue advances to P1.3 — Ollama / LM Studio local-model dispatch.** Local inference architecturally bypasses cloud rate-limits (Strategic Skeptic's reframe during the P0.2 roundtable), broadens the test matrix with a zero-cost dispatch path, and adds a no-API-credentials onboarding tier. Plan + roundtable next.
+- Strategic posture (publish + announce held; Phase 4.5 gate Trigger 2 on hold) unchanged.
 
 ### v0.1 — the closed loop *(shipped 2026-04-23)*
 
@@ -309,7 +311,7 @@ The core product: four MCP tools forming `idea → assumption → council → ou
 
 **v0.1.0 GA shipped 2026-04-23.** Items that were carrying out of v0.1 GA, resolved or deferred:
 - ✅ **`clis` arg passthrough on `council.run`** — shipped; the v0.2 pilot uses `PILOT_CLIS=claude,gemini` to drop codex, and `council.run({clis: [...]})` honours the subset.
-- ◐ **CLI-error classifier `auth` pattern** — captured during the v0.1 GA dogfood ([docs/dogfood-v0.1-ga.md](./docs/dogfood-v0.1-ga.md)); `rate_limit` still TODO until a real failure sample shows up.
+- ◐ **CLI-error classifier `auth` + `rate_limit` patterns** — `auth` captured during the v0.1 GA dogfood ([docs/dogfood-v0.1-ga.md](./docs/dogfood-v0.1-ga.md)); `rate_limit` patterns shipped synthesised in v0.1.1 (`packages/core/src/cli-errors.ts:98–161`) — real-sample validation remains opportunistic.
 - ⛔ **Real `claude -p` E2E in CI with flake-aware demotion** — explicitly *not* pursued as continuous CI. The hermeticity / cost / flake trade-off is unfavourable for a per-PR job. Live-CLI coverage instead lives in the v0.1 GA dogfood + the v0.2 cite-rate pilot — see "Tested hard" in [Design principles](#design-principles).
 
 ### v0.2 — depth on the loop + closing the feedback loop *(GA shipped 2026-04-26)*
@@ -340,7 +342,7 @@ The active engineering work, ranked. Items 1–12 are the live queue; the parked
 **P0 — bugs + testing hygiene (hit first)**
 
 1. ✅ **Pilot-harness 600s deadline → 1800s + timing logs + retry-once** *(resolved 2026-04-27)*. The wedge-run timeout that the roadmap originally labelled a "steelman-mode 600s timeout audit" was diagnosed: the 600s deadline lived in `pilot/run-councils.mjs:148` (the harness's `rpc()` helper), not in product code, and steelman is not intrinsically slower (sibling steelman sessions on the same idea ran 354s / 362s vs. the 620s outlier). Harness deadline raised to 1800s, per-`tools/call#N` timing logs added, retry-once on transient hang. Structural session-level timeout in `packages/core/src/council.ts` deferred per roundtable verdict — revisit only if a non-author user hits a runaway session. Full audit notes in [pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md).
-2. **`rate_limit` failure-classifier pattern.** Gap in `packages/core/src/cli-errors.ts`; until a real failure sample lands, the classifier silently mis-bins rate-limit hits as `exit_nonzero`. Opportunistic capture during any future live-CLI run.
+2. ✅ **`rate_limit` failure-classifier pattern** *(audit-resolved 2026-04-27 — already shipped)*. Roadmap entry was stale: the patterns ship in `packages/core/src/cli-errors.ts` lines 98–161 for all 3 CLIs, marked `SYNTHESIZED 2026-04-24` (claude `"type":"rate_limit_error"` JSON shape, codex `turn.failed` rate-limit payload, gemini `429 / RESOURCE_EXHAUSTED / Quota exceeded`) with golden fixtures. The remaining open item is **real-sample validation** — confirm the synthesised regexes match a live failure when one surfaces — not a code gap. Roundtable on this entry returned HALT: do not synthesise further patterns; capture opportunistically.
 
 **P1 — closing feature loops (queued, code-ready)**
 
