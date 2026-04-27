@@ -32,7 +32,7 @@ The `imports/` directory acts as a staging tier. Candidates carry a `state` (`'n
 
 Reads (`import.list`, `import.read`) and rejects (`import.reject`) are lightweight; only `promote` produces vault writes.
 
-## The two adapters shipped today
+## The three adapters shipped today
 
 ### `github-structured-docs` (v0.2 GA)
 
@@ -82,6 +82,63 @@ Source URI shape on the resulting candidate's frontmatter: `csv-corpus://abs/pat
 
 The full schema (with all optional fields and the `outcome_tag` allowlist) is in [`pilot/corpus-schema.md`](../pilot/corpus-schema.md).
 
+### `github-repo-adr` (v0.3.0, scoped to konflux-format)
+
+Pulls Architecture Decision Records from a GitHub repo. Per the Phase 3c census ([`pilot/wedge-research.adr-availability.md`](../pilot/wedge-research.adr-availability.md)), the adapter is **scoped to the konflux-ci/architecture frontmatter convention** — a general "scan any GitHub repo" framing was rejected during planning as over-promising. Repos following the konflux convention can use it; others can't, and the adapter rejects the source up front rather than silently emit garbage candidates.
+
+```
+import.scan({
+  adapter: "github-repo-adr",
+  source: "konflux-ci/architecture"               // → ref=main, path=ADR/
+  // or "konflux-ci/architecture@v1.2.3"          // explicit ref
+  // or "konflux-ci/architecture@main:docs/adr/"  // custom path
+})
+```
+
+The required konflux frontmatter shape:
+
+```yaml
+---
+title: "28. Handling SEB Errors"
+status: Superseded                          # Accepted | Replaced | Superseded | Deprecated
+superseded_by: ["0032"]                     # also accepts string, number, comma-separated string
+topics:                                     # optional
+  - integration-tests
+applies_to:                                 # optional
+  - snapshot-environment-binding
+---
+```
+
+Per ADR, the adapter emits:
+
+- **One `idea` candidate** — the ADR itself, body assembled from Context + Decision + Consequences sections
+- **One `assumption` candidate** when a `## Decision` section is present and substantive (≥30 chars). Linked to the idea via `extractedFields.parent_idea_source_uri`.
+- **One `outcome` candidate** when:
+  - `status: Replaced` or `Superseded` *and* `superseded_by:` is set → outcome refers to the superseder ADR, refutes the assumption (confidence 0.95)
+  - `status: Deprecated` → outcome refutes the assumption with no superseder reference (confidence 0.85)
+  - `status: Accepted` → no outcome (assumption stays declared)
+
+Source URIs:
+
+- Idea: `github-repo-adr://owner/repo@ref:ADR/NNNN-title.md#idea`
+- Assumption: `github-repo-adr://owner/repo@ref:ADR/NNNN-title.md#assumption`
+- Outcome: `github-repo-adr://owner/repo@ref:ADR/NNNN-title.md#outcome`
+
+#### Hardening
+
+The adapter applies four hardening choices that diverge from a naïve implementation:
+
+1. **Per-file skip, not per-source rejection.** A single malformed ADR mid-stream (typo, missing field, bad status value) logs a stderr warning and the scan continues. Only if the *first 3 ADRs* all fail validation does the adapter reject the source — at that point the user is clearly running it against a non-konflux-format repo, not encountering one bad file in a good repo.
+2. **Frontmatter validation strict on field names but permissive on shape.** `superseded_by` accepts string, string[], number, comma-separated string. `status` normalises case-insensitively (`accepted` → `Accepted`). Capitalised field names (`Title:`, `Status:`) auto-normalise. Candidates that needed any normalisation carry `extractedFields.normalised: true` and confidence drops to 0.8 — a signal to the reviewer that the source isn't pristine.
+3. **`GITHUB_TOKEN` auth.** Set `GITHUB_TOKEN` in the env to upgrade from 60 req/hour (unauthenticated) to 5000 req/hour. The adapter emits a one-shot stderr hint when running unauthenticated.
+4. **Rate-limit responses parse the `X-RateLimit-Remaining` and `X-RateLimit-Reset` headers** and surface a clear retry-after error rather than throwing a generic 403.
+
+#### What's not in scope
+
+- ADR formats other than konflux's frontmatter convention — see [`pilot/wedge-research.adr-availability.md`](../pilot/wedge-research.adr-availability.md). Repos using `# Status: ` body-section conventions, MADR templates, or arc42's variant won't parse and the source will be rejected.
+- Auto-promotion. Even with high-confidence Replaced/Superseded outcomes, every promotion goes through `import.promote` with explicit user consent.
+
+
 ## Per-candidate confidence + dedup
 
 Every adapter emits `confidence: 0..1` per candidate. The persister runs a dedup check at scan time using flywheel-memory's semantic search (when the bridge is up) — candidates whose title or body match an existing vault note above a similarity threshold are flagged `state: 'duplicate'` with the matched note's id.
@@ -119,7 +176,14 @@ PILOT_VAULT=/tmp/flywheel-pilot-wedge \
 
 ## What's not yet shipped
 
-A planned `sec-edgar` adapter (Item 1A risk factors → assumption candidates) and a planned `github-repo-adr` adapter scoped to konflux-format ADRs are on the Phase 4 roadmap. Both passed their wedge readability gates ([`docs/pilot.md`](./pilot.md#wedge-3b--domain-readability-spot-check)) and are queued for build.
+A planned `sec-edgar` adapter (Item 1A risk factors → assumption candidates) is fully specified in the Phase 4 plan but **not implemented in v0.3.0**. Per the post-roundtable revision of the plan, sec-edgar work is gated on at least one of:
+
+1. A named user (not "an ADR enthusiast") using v0.2.0 + `github-repo-adr` against a real decision context with written feedback, OR
+2. A public post (Show HN, r/programming, Obsidian community thread, technical blog post) generating ≥1 GitHub star or ≥1 specific user request within ~3 weeks of v0.3.0 publish.
+
+The gate is recorded in a tracking GitHub issue. If neither triggers, Phase 4 halts and the project pivots to GTM-only motion.
+
+`sec-edgar`'s readability was confirmed by Wedge 3b ([`docs/pilot.md`](./pilot.md#wedge-3b--domain-readability-spot-check) — 3/3 Apple FY2024 Item 1A entries surfaced specific operational detail), so the technical case for the adapter holds. The post-wedge question is whether anyone actually wants it.
 
 ---
 
