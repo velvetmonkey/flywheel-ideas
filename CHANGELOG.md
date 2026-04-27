@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.3.0 — Unreleased
+
+**Phase 4 (revised after roundtable) — narrow, harden, validate.**
+
+Phase 3 wedges resolved positively on 2026-04-27 ([pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md)): GAP +1.1pp on the leakage probe (reasoning, not recall), 3/3 SEC and 3/3 konflux-ci ADR readability passes, only konflux-ci/architecture has a coherent supersession arc among 12 surveyed OSS repos.
+
+The pre-registered Phase 4 plan (Branch A) was to ship both `sec-edgar` and `github-repo-adr` adapters. A roundtable critique on the implementation plan converged on (a) ship one at a time, (b) insert a validation gate (≥1 named user OR ≥1 GitHub star within ~3 weeks of v0.3.0) before sec-edgar work begins, (c) harden the konflux adapter against per-file frontmatter drift and the GitHub rate-limit cliff. This release implements (a) and (c). Full plan: `~/.claude/plans/resum-fkllywheel-ideas-roadmap-breezy-reef.md`.
+
+### New adapter — `github-repo-adr` (scoped to konflux-format)
+
+Pulls Architecture Decision Records from a GitHub repo following the konflux-ci/architecture frontmatter convention (`title`, `status`, optional `superseded_by`). Per the Phase 3c census, scoped specifically to repos following this format — a "scan any GitHub repo for ADRs" framing was rejected as over-promising.
+
+- Source spec: `github-repo-adr://owner/repo[@ref][:custom-path/]`. Default path `ADR/`.
+- Per ADR: emits one `idea` candidate; one `assumption` candidate when a `## Decision` section is present; one `outcome` candidate when `status: Replaced`/`Superseded` with `superseded_by:` set, OR when `status: Deprecated`.
+- Confidence: `Replaced`/`Superseded` 0.95, `Accepted` 0.9, `Deprecated` 0.85, normalised-from-typo 0.8.
+
+#### Hardening (per the roundtable critique)
+
+- **Per-file skip, not per-source rejection.** Single malformed ADR mid-stream logs a stderr warning and continues. Source rejected only if the *first 3 ADRs* all fail validation (clear "wrong-format-source" signal).
+- **Frontmatter validation strict on field names but permissive on shape.** `superseded_by` accepts string, comma-separated string, single number (zero-padded to 4 digits), or array. `status` normalises case-insensitively against the konflux allowlist. Capitalised field names (`Title:`, `Status:`) auto-normalise. Normalised candidates carry `extractedFields.normalised: true` and confidence drops to 0.8 to flag the rescue.
+- **`GITHUB_TOKEN` auth.** Adapter reads `process.env.GITHUB_TOKEN` if present and adds `Authorization: Bearer`. Unauthenticated fetch still works (60 req/hour) but emits a one-shot stderr hint about upgrading to 5000/hour. No silent rate-limit bombs.
+- **403 / 429 responses parse `X-RateLimit-Remaining` and `X-RateLimit-Reset`** and surface a clear retry-after error rather than a generic 403.
+
+#### Test fixtures
+
+10 ADR fixtures exercising every status value, every `superseded_by` shape, every malformed-frontmatter rejection path, and a 50-ADR synthetic scan with 3 mid-stream malformed entries. 36 test cases, all green.
+
+### Phase 4 validation gate
+
+`sec-edgar` adapter is fully specified in the Phase 4 plan but **not implemented** in v0.3.0. Implementation is gated on at least one of:
+
+1. A named person (not "an ADR enthusiast") using v0.2.0 + `github-repo-adr` against a real decision context with written feedback, OR
+2. A public post (Show HN, r/programming, Obsidian community thread, technical blog post) generating ≥1 GitHub star or ≥1 specific user request within ~3 weeks of v0.3.0 publish.
+
+If neither triggers, Phase 4 halts and the project pivots to GTM-only motion. The gate is recorded in a tracking GitHub issue.
+
+### CHANGELOG follow-on items
+
+- Codex 0.125 ChatGPT-account model gotcha: the dispatcher's default `gpt-5-codex` is rejected; users must set `FLYWHEEL_IDEAS_CODEX_MODEL=gpt-5.4` (or whatever `~/.codex/config.toml` lists). Documented in [`docs/cli-quirks.md`](./docs/cli-quirks.md#codex-model-gotcha-codex-0125).
+
+### Schema
+
+No schema migrations. v3.0 still on schema v8.
+
 ## 0.2.1 — Unreleased
 
 **Pilot generalization + the `csv-corpus` wedge-test adapter.**

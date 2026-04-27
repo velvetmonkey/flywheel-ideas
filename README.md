@@ -8,7 +8,7 @@ A local-first *falsifiable* decision ledger for your Obsidian vault. Every idea 
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![status: stable](https://img.shields.io/badge/status-stable-blue.svg)](#roadmap)
 
-> **Status:** v0.2.0 GA on `latest`. v0.2.1 (csv-corpus import adapter) staged on `main`.
+> **Status:** v0.2.0 GA on `latest`. v0.3.0 (`github-repo-adr` adapter, scoped to konflux-format) staged on `main`.
 >
 > Two pre-registered evaluations have completed:
 > - **v0.2 cite-rate pilot (Python 2→3):** 100% per-session, 79% per-persona ([pilot/RESULT.md](./pilot/RESULT.md))
@@ -252,6 +252,7 @@ Five MCP tools, action-dispatched. Every response carries `{result, next_steps, 
 - Adapters:
   - `github-structured-docs` (v0.2 GA) — RFC-822-headered markdown trees like Python PEPs. Source: `owner/repo`, `owner/repo@ref`, or `owner/repo:path/`.
   - `csv-corpus` (v0.2.1) — JSONL. Paste any decision corpus into a `.jsonl` file (one decision per line, `{decision_id, title, body, assumptions: [...]}`) and run a council against it. Source: absolute path or `file://` URL.
+  - `github-repo-adr` (v0.3.0) — Architecture Decision Records following the konflux-ci/architecture frontmatter convention (`title`, `status`, optional `superseded_by`). Per the Phase 3c census, scoped to repos following this format; the adapter rejects the source up front for any other convention. Source: `owner/repo[@ref][:custom-path/]`.
 
 Full operator guide for the import flow: [`docs/import.md`](./docs/import.md).
 
@@ -303,12 +304,13 @@ Retrieval-native council input, lineage queries (`ancestry` / `descendants` / `s
 
 Three falsification probes — train-data leakage GAP, SEC + ADR readability spot-checks, ADR superseded-by census — all cleared their pre-registered gates. Headline: **reasoning, not recall** (synthetic obscure corpus marginally outperformed famous post-mortems). Cross-domain readability holds for SEC 10-K Item 1A and konflux-ci ADRs. Full verdicts and reproducibility: [pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md).
 
-### Phase 4 — multi-domain adapters *(in flight)*
+### Phase 4 — multi-domain adapters *(in flight, post-roundtable revision)*
 
-Branch A confirmed by the wedges. Build the two adapters the wedge probes vetted:
+Branch A was confirmed by the wedges; a roundtable critique on the implementation plan reduced the v0.3.0 scope from "ship both adapters" to "ship one, gate the second behind external validation." The revised plan:
 
-- **`sec-edgar` adapter** — pull Item 1A risk factors from EDGAR. Map each declared risk → one `assumption.declare`. Source URI: `sec-edgar://CIK/filing-accession#item-1A-section-N`. Confidence keyed off issuer emphasis.
-- **`github-repo-adr` adapter, scoped to konflux-format** — markdown ADRs with `title:`, `status:`, optional `superseded_by:` frontmatter. Per the Phase 3c census, scoped specifically to repos following the konflux-ci convention (general "scan any repo for ADRs" framing rejected — the census shows it would over-promise across the surveyed sample). Source URI: `github-repo-adr://owner/repo@ref:adr/0028.md`. A frontmatter `status: superseded` + `superseded_by: 0032` becomes an `outcome.log({refutes: [...]})` candidate, gated on user consent at `import.promote`.
+- ✅ **v0.3.0 — `github-repo-adr` adapter, scoped to konflux-format.** Hardened against per-file frontmatter drift (per-file skip, not per-source rejection), `GITHUB_TOKEN` auth, 403 / 429 retry-after handling. Per the Phase 3c census, scoped specifically to repos following the konflux-ci convention; a general "scan any repo for ADRs" framing was rejected as over-promising. Source URI: `github-repo-adr://owner/repo@ref:adr/0028.md`. A frontmatter `status: superseded` + `superseded_by: 0032` becomes an `outcome.log({refutes: [...]})` candidate, gated on user consent at `import.promote`. Full guide: [`docs/import.md`](./docs/import.md).
+- ⏸️ **Validation gate before any sec-edgar work.** At least one of: a named user with written feedback against v0.3.0 + `github-repo-adr` for a real decision context, OR a public post (Show HN, r/programming, etc.) generating ≥1 GitHub star or ≥1 specific user request within ~3 weeks of v0.3.0 publish. If neither triggers, Phase 4 halts; the project pivots to GTM-only motion.
+- ⏳ **`sec-edgar` adapter (gated, deferred).** Specifications kept in the Phase 4 plan; implementation does not begin until the gate clears. Will pull Item 1A risk factors from EDGAR with a global rate-limit singleton (SEC's 2 req/sec policy) and a fallback whole-section parser when paragraph-splitting heuristics underperform.
 
 ### Carry-over from v0.2 GA *(still queued)*
 

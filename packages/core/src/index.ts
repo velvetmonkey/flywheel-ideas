@@ -478,6 +478,11 @@ export {
   extractAssumptionSentences,
   CsvCorpusAdapter,
   CSV_CORPUS_NAME,
+  GithubRepoAdrAdapter,
+  GITHUB_REPO_ADR_NAME,
+  parseAdr,
+  extractMarkdownSection,
+  __resetStderrOnceForTests,
   BUILTIN_ADAPTER_NAMES,
 } from './import/index.js';
 export type {
