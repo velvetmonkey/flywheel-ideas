@@ -536,6 +536,7 @@ export type {
 
 // v4 freezes — OSF preregistration (v0.2 Phase 1 D2)
 export {
+  buildSnapshot,
   createFreeze,
   getFreeze,
   listFreezesByIdea,
@@ -550,6 +551,25 @@ export type {
   FreezeSnapshot,
   ListFreezesOptions as ListFreezesByIdeaOptions,
 } from './freezes.js';
+
+// P2.9 — exportable decision portfolios
+export {
+  exportIdea,
+  exportPortfolio,
+  listAllIdeaIds,
+} from './export.js';
+export type {
+  ExportPortfolio,
+  ExportedIdea,
+  ExportedOutcome,
+  ExportedOutcomeVerdict,
+  ExportedCouncilSession,
+  ExportedLineage,
+  ExportIdeaOptions,
+  ExportPortfolioOptions,
+} from './export.js';
+export { renderPortfolioMarkdown } from './export-markdown.js';
+export type { RenderPortfolioOptions } from './export-markdown.js';
 
 // v5 outcome memos — Anti-Portfolio post-mortem (v0.2 Phase 1 D4)
 export {

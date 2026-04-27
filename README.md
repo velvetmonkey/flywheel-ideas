@@ -234,11 +234,12 @@ The gap nobody fills: **a local, vault-native, human-readable decision ledger wi
 
 Five MCP tools, action-dispatched. Every response carries `{result, next_steps, write_path}`.
 
-### `idea` (v0.1 + v0.2 lineage)
+### `idea` (v0.1 + v0.2 lineage + v0.3 export)
 
 - `create({title, body?})` / `read(id)` / `list({state?, limit?})` / `transition({id, to, reason?})` / `forget(id)`
 - `freeze({id})` / `list_freezes({id})` — OSF-style snapshot of an idea + its locked assumptions
 - `ancestry({id})` / `descendants({id})` / `shared_assumptions({ids})` — lineage queries
+- `export({idea_ids? | all?, include_lineage?, redact_bodies?, output_path?})` — render a markdown decision portfolio (idea + assumptions + outcomes + council excerpts + lineage) the operator can hand to a colleague. Bodies redacted by default. Examples: [`examples/portfolio-pep-3000.md`](./examples/portfolio-pep-3000.md), [`examples/portfolio-konflux-adrs.md`](./examples/portfolio-konflux-adrs.md).
 
 ### `assumption` (v0.1 + v0.2 RAND ABP)
 
@@ -290,9 +291,10 @@ If you read your team's existing ADRs and think "the call I made would be more u
 - Phase 3 wedges cleared all gates (reasoning not recall · 3/3 SEC · 3/3 ADR · konflux-only census).
 - Phase 4 PR 1 (`github-repo-adr` adapter) merged. Phase 4.5 validation-gate clock is **not running** — without a public post, Trigger 2 (≥1 star / ≥1 issue from a Show HN-style post) cannot fire; Trigger 1 (named-user feedback from dogfooding with a specific human) remains open. See [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
 - **P0 closed.** P0.1 (pilot-harness 600s timeout) and P0.2 (`rate_limit` classifier audit) both resolved 2026-04-27.
-- **P1.3 + P1.4 deferred-on-roundtable 2026-04-27.** Three consecutive HALT verdicts on infrastructure work pushed the project away from inward-facing tooling. P1.5 (agent-driven outcome detection) reframed as dependent on a P1.4 reversal — speculative until then.
-- **Active queue advances to P2.9 — exportable decision portfolios.** Cheap (~1–2 hr; dumps DB + frontmatter to JSON / markdown). Produces a concrete artifact the operator can hand to one specific human — directly enables Trigger 1 (named-user feedback), the only currently-live route to firing the Phase 4.5 sec-edgar gate. Plan + roundtable next.
-- Strategic posture (publish + announce held; Phase 4.5 gate Trigger 2 on hold) unchanged.
+- **P1.3 + P1.4 deferred-on-roundtable 2026-04-27.** Three consecutive HALT verdicts on infrastructure work. P1.5 reframed as dependent on a P1.4 reversal.
+- **P2.9 shipped 2026-04-27 (markdown-first per roundtable).** New `idea.export` action; two dogfood artifacts committed ([pep-3000](./examples/portfolio-pep-3000.md) and [konflux-adrs](./examples/portfolio-konflux-adrs.md)); the konflux artifact also serves as live-validation of the v0.3.0 `github-repo-adr` adapter against the real public repo (37/63 ADRs parsed, 26 per-file drift skips, no source-level rejection).
+- **Active queue advances to P2.7 — Brier-scored assumption updating.** Brier scoring is the calibration mechanism — it makes the operator's predictions falsifiable over time, which is the empirical claim the project still owes. With portfolios now shareable, the next leverage is showing the operator (and any colleague reading an export) whether the operator's prior predictions were actually well-calibrated.
+- Strategic posture (publish + announce held; Phase 4.5 gate Trigger 2 on hold) unchanged. Trigger 1 is now actionable — the operator can hand `examples/portfolio-pep-3000.md` or `examples/portfolio-konflux-adrs.md` to a specific human and capture feedback against [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
 
 ### v0.1 — the closed loop *(shipped 2026-04-23)*
 
@@ -356,7 +358,7 @@ The active engineering work, ranked. Items 1–12 are the live queue; the parked
 
 7. **Brier-scored assumption updating** — core mechanism for the calibration story. Schema + scoring math + UI plumbing.
 8. **Personal calibration dashboard** — visualises Brier trend over time. Targets the existing user (author) directly.
-9. **Exportable decision portfolios** — JSON / markdown export. Cheap to ship; biggest leverage for the Trigger 1 dogfood path because it makes the ledger something the user can actually share with one specific human.
+9. ✅ **Exportable decision portfolios** *(shipped 2026-04-27, markdown-first per roundtable)*. New `idea.export` action renders a markdown decision portfolio (idea + assumptions + outcomes + council excerpts + lineage) to `<vault>/exports/portfolio-<timestamp>.md`. Bodies redacted by default (`redact_bodies: true`). Lineage on by default. JSON output deferred to v0.3.1 per roundtable verdict ("JSON is a debug dump, markdown IS the product"). Two dogfood artifacts committed: [`examples/portfolio-pep-3000.md`](./examples/portfolio-pep-3000.md) (cite-rate pilot data) and [`examples/portfolio-konflux-adrs.md`](./examples/portfolio-konflux-adrs.md) (Phase 3 wedge data + live-validation note for `github-repo-adr`). The latter doubles as real-public-repo validation of the v0.3.0 `github-repo-adr` adapter — live scan of `konflux-ci/architecture` succeeded with 37/63 ADRs parsed and 26 skipped per-file due to frontmatter drift (no source-level rejection — graceful degrade).
 10. **Persona effectiveness A/B** — instrumentation for which personas surface load-bearing dissent. Needs council-output telemetry.
 11. **State-of-mind context capture** (Farnam Street) — append decision-time emotional / situational metadata to `idea.create`.
 

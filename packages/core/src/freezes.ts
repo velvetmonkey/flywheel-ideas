@@ -121,20 +121,20 @@ export class IdeaNotFoundError extends Error {
 }
 
 /**
- * Snapshot the current idea + open assumptions and persist as a freeze row.
- * Reads body from disk; reads extensions if present. Returns the freeze.
+ * Build a transient snapshot of the current idea + open assumptions WITHOUT
+ * persisting anything. Reused by `createFreeze` (which persists) and by
+ * `idea.export` (which doesn't — exports are read-only by design).
  *
- * Validation:
- * - `supersedes_freeze_id` requires `amendment_rationale` (OSF discipline).
- * - The supersedes freeze must exist and reference the same `idea_id`.
+ * Reads body from disk; reads extensions if present. Returns the snapshot.
+ *
+ * Throws `IdeaNotFoundError` when the idea row is missing.
  */
-export function createFreeze(
+export function buildSnapshot(
   db: IdeasDatabase,
   vaultPath: string,
   idea_id: string,
-  options: CreateFreezeOptions = {},
   now: number = Date.now(),
-): FreezeRow {
+): FreezeSnapshot {
   const idea = db
     .prepare('SELECT id, title, vault_path, state FROM ideas_notes WHERE id = ?')
     .get(idea_id) as { id: string; title: string; vault_path: string; state: string } | undefined;
@@ -142,27 +142,8 @@ export function createFreeze(
     throw new IdeaNotFoundError(idea_id);
   }
 
-  if (options.supersedes_freeze_id) {
-    if (!options.amendment_rationale || options.amendment_rationale.trim() === '') {
-      throw new FreezeInputError(
-        'supersedes_freeze_id requires a non-empty amendment_rationale (OSF transparent-amendment discipline)',
-      );
-    }
-    const prior = getFreeze(db, options.supersedes_freeze_id);
-    if (!prior) {
-      throw new FreezeInputError(
-        `supersedes_freeze_id references unknown freeze: ${options.supersedes_freeze_id}`,
-      );
-    }
-    if (prior.idea_id !== idea_id) {
-      throw new FreezeInputError(
-        `supersedes_freeze_id ${options.supersedes_freeze_id} belongs to idea ${prior.idea_id}, not ${idea_id}`,
-      );
-    }
-  }
-
-  // Read body from disk; if the markdown is gone, freeze with empty body
-  // rather than throwing — a freeze of a missing-body idea is still useful.
+  // Read body from disk; if the markdown is gone, snapshot with empty body
+  // rather than throwing — a snapshot of a missing-body idea is still useful.
   let body = '';
   try {
     const note = readNote(vaultPath, idea.vault_path);
@@ -199,7 +180,7 @@ export function createFreeze(
     declared_at: number;
   }>;
 
-  const snapshot: FreezeSnapshot = {
+  return {
     snapshot_version: 1,
     idea: {
       id: idea.id,
@@ -227,6 +208,53 @@ export function createFreeze(
     })),
     frozen_at_iso: new Date(now).toISOString(),
   };
+}
+
+/**
+ * Snapshot the current idea + open assumptions and persist as a freeze row.
+ * Reads body from disk; reads extensions if present. Returns the freeze.
+ *
+ * Validation:
+ * - `supersedes_freeze_id` requires `amendment_rationale` (OSF discipline).
+ * - The supersedes freeze must exist and reference the same `idea_id`.
+ */
+export function createFreeze(
+  db: IdeasDatabase,
+  vaultPath: string,
+  idea_id: string,
+  options: CreateFreezeOptions = {},
+  now: number = Date.now(),
+): FreezeRow {
+  // Idea-existence check first, before supersedes-validation, to preserve
+  // pre-refactor error precedence. buildSnapshot below also checks, but the
+  // explicit early check matches the original error ordering.
+  const ideaExists = db
+    .prepare('SELECT 1 FROM ideas_notes WHERE id = ?')
+    .get(idea_id) as { 1: number } | undefined;
+  if (!ideaExists) {
+    throw new IdeaNotFoundError(idea_id);
+  }
+
+  if (options.supersedes_freeze_id) {
+    if (!options.amendment_rationale || options.amendment_rationale.trim() === '') {
+      throw new FreezeInputError(
+        'supersedes_freeze_id requires a non-empty amendment_rationale (OSF transparent-amendment discipline)',
+      );
+    }
+    const prior = getFreeze(db, options.supersedes_freeze_id);
+    if (!prior) {
+      throw new FreezeInputError(
+        `supersedes_freeze_id references unknown freeze: ${options.supersedes_freeze_id}`,
+      );
+    }
+    if (prior.idea_id !== idea_id) {
+      throw new FreezeInputError(
+        `supersedes_freeze_id ${options.supersedes_freeze_id} belongs to idea ${prior.idea_id}, not ${idea_id}`,
+      );
+    }
+  }
+
+  const snapshot = buildSnapshot(db, vaultPath, idea_id, now);
 
   const id = generateFreezeId();
   db.prepare(
