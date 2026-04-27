@@ -209,13 +209,11 @@ async function decideDedupForBatch(
   }
 
   const dedupStatus: DedupStatus =
-    outcome.reason === 'disabled'
-      ? 'bridge_unavailable'
-      : outcome.reason === 'timeout'
-        ? 'bridge_timeout'
-        : outcome.reason === 'binary_not_found' || outcome.reason === 'spawn_failed'
-          ? 'bridge_unavailable'
-          : 'bridge_error';
+    outcome.reason === 'timeout'
+      ? 'bridge_timeout'
+      : outcome.reason === 'binary_not_found' || outcome.reason === 'spawn_failed'
+        ? 'bridge_unavailable'
+        : 'bridge_error';
   const skipReason =
     dedupStatus === 'bridge_timeout'
       ? 'bridge_timeout'

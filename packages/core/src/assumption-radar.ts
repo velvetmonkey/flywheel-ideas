@@ -18,10 +18,15 @@
  * whether it's a refute / validate signal. The outcome.log call stays
  * human-driven; Radar provides the surface, never the verdict.
  *
- * Reuses the v0.2.0-alpha.1 evidence-reader subprocess
- * (`withEvidenceReader`) — one-shot per `radar` call. No new subprocess
- * lifecycle; same kill switch (`FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`); same
- * timeout knob (`FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS`).
+ * Reuses the evidence-reader subprocess (`withEvidenceReader`) — one-shot
+ * per `radar` call.
+ *
+ * v0.4.0 — flywheel-memory is required at boot, so a per-call reader spawn
+ * failure is a transient mid-session error rather than a missing dependency.
+ * Radar now throws `EvidenceReaderUnavailableError` (mitigation #7: surface
+ * loud failures, not silent vault divergence) instead of degrading silently.
+ * Timeout knob (`FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS`) still tunes the
+ * per-call ceiling.
  */
 
 import type { IdeasDatabase } from './db.js';
@@ -63,16 +68,34 @@ export interface RadarOptions {
 export interface RadarResult {
   hits: RadarHit[];
   assumptions_scanned: number;
-  /** False when the subprocess couldn't spawn (binary missing, timeout, kill switch). */
-  reader_available: boolean;
-  /** Reason set when reader_available is false. */
-  reader_skip_reason?: string;
 }
 
 export class RadarInputError extends Error {
   constructor(message: string) {
     super(message);
     this.name = 'RadarInputError';
+  }
+}
+
+/**
+ * Thrown when the evidence-reader subprocess fails to spawn for a Radar
+ * call. v0.4.0 — flywheel-memory was required at boot, so this represents
+ * a transient mid-session failure (subprocess crash, OS fork failure under
+ * load) rather than a missing dependency. Operators retry, restart, or
+ * inspect logs; no silent degrade.
+ */
+export class EvidenceReaderUnavailableError extends Error {
+  readonly reason: string;
+  readonly detail?: string;
+  constructor(reason: string, detail?: string) {
+    super(
+      `assumption.radar: evidence-reader subprocess failed (${reason}${detail ? `: ${detail}` : ''}). ` +
+        'flywheel-memory was reachable at boot but the per-call spawn failed. ' +
+        'Retry; if reproducible, run `flywheel-memory --help` directly to inspect.',
+    );
+    this.name = 'EvidenceReaderUnavailableError';
+    this.reason = reason;
+    this.detail = detail;
   }
 }
 
@@ -134,14 +157,14 @@ export async function radarAssumptions(
   }
 
   if (assumptions.length === 0) {
-    return { hits: [], assumptions_scanned: 0, reader_available: true };
+    return { hits: [], assumptions_scanned: 0 };
   }
 
   // Test-injection path — skip the subprocess spawn entirely.
   if (options.reader_override) {
     const reader = options.reader_override;
     const hits = await runRadarQueries(reader, assumptions, limit_per_assumption);
-    return { hits, assumptions_scanned: assumptions.length, reader_available: true };
+    return { hits, assumptions_scanned: assumptions.length };
   }
 
   const outcome = await withEvidenceReader(
@@ -160,17 +183,9 @@ export async function radarAssumptions(
     return {
       hits: outcome.value,
       assumptions_scanned: assumptions.length,
-      reader_available: true,
     };
   }
-  return {
-    hits: [],
-    assumptions_scanned: 0,
-    reader_available: false,
-    reader_skip_reason: outcome.detail
-      ? `${outcome.reason}: ${outcome.detail}`
-      : outcome.reason,
-  };
+  throw new EvidenceReaderUnavailableError(outcome.reason, outcome.detail);
 }
 
 /**

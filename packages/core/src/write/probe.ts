@@ -4,14 +4,19 @@
  * Called once at server startup (see packages/mcp-server/src/index.ts). Tries
  * to spawn flywheel-memory + issue a trivial tools/list to confirm the binary
  * is present and speaks MCP. If yes, write I/O routes through the
- * mcp-subprocess writer; else it falls back to direct-fs.
+ * mcp-subprocess writer.
+ *
+ * v0.4.0 — flywheel-memory is a required peer dependency. A failed probe is
+ * a fatal boot error in production (server hard-fails via
+ * `FlywheelMemoryRequiredError`); the `direct-fs` outcome only surfaces
+ * under test mode (`FLYWHEEL_IDEAS_TEST_MODE=1`), where tests inject a tier
+ * via `__setWritePathForTests()` instead of spawning.
  *
  * Design note: the probe's only job is TIER SELECTION. It is not responsible
- * for the first real write — that happens per-tool-call through `writeNote`,
- * which also handles per-call subprocess failures with direct-fs fallback.
+ * for the first real write — that happens per-tool-call through `writeNote`.
  * Kept deliberately cheap: one spawn, one tools/list call, close.
  *
- * Module-level state: `resolvedWritePath` is mutable so the probe can set it
+ * Module-level state: `resolvedOutcome` is mutable so the probe can set it
  * once at startup and every subsequent `getActiveWritePath()` call is O(1).
  * Tests reset via `__resetWritePathForTests` to avoid cross-test leakage.
  */
@@ -30,13 +35,17 @@ export type ProbeOutcome = {
   active: WritePathLabel;
   reason:
     | 'subprocess_ok'
-    | 'disabled'
     | 'binary_not_found'
     | 'spawn_failed'
     | 'timeout'
     | 'tools_missing'
+    | 'invalid_response'
     | 'not_probed';
   detail?: string;
+  /** Resolved binary path used by the probe. Always set after probeWritePath runs. */
+  binary?: string;
+  /** Probe timeout ceiling (ms). Set when reason === 'timeout'. */
+  timeoutMs?: number;
 };
 
 // Module-level state — written once by probe, read by getActiveWritePath.
@@ -81,11 +90,6 @@ export async function probeWritePath(
   vaultPath: string,
   options: ProbeOptions = {},
 ): Promise<ProbeOutcome> {
-  if (process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE === '0') {
-    resolvedOutcome = { active: 'direct-fs', reason: 'disabled' };
-    return resolvedOutcome;
-  }
-
   const binary = options.binary ?? process.env.FLYWHEEL_MEMORY_BIN ?? 'flywheel-memory';
   const args = options.args ?? [];
   const timeoutMs = resolveProbeTimeout(options.timeoutMs);
@@ -95,6 +99,8 @@ export async function probeWritePath(
       active: 'direct-fs',
       reason: 'binary_not_found',
       detail: binary,
+      binary,
+      timeoutMs,
     };
     return resolvedOutcome;
   }
@@ -131,15 +137,17 @@ export async function probeWritePath(
     );
     const hasWriteTools = names.has('note') && names.has('vault_update_frontmatter');
     resolvedOutcome = hasWriteTools
-      ? { active: 'mcp-subprocess', reason: 'subprocess_ok' }
+      ? { active: 'mcp-subprocess', reason: 'subprocess_ok', binary, timeoutMs }
       : {
           active: 'direct-fs',
           reason: 'tools_missing',
           detail: `expected note + vault_update_frontmatter; got ${Array.from(names).sort().join(',') || '(none)'}`,
+          binary,
+          timeoutMs,
         };
     return resolvedOutcome;
   } catch (err) {
-    resolvedOutcome = classifyProbeError(err, binary, timeoutMs);
+    resolvedOutcome = { ...classifyProbeError(err, binary, timeoutMs), binary, timeoutMs };
     return resolvedOutcome;
   } finally {
     try {

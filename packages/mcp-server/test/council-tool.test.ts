@@ -54,7 +54,7 @@ let client: McpTestClient;
 const savedApprove = process.env.FLYWHEEL_IDEAS_APPROVE;
 const savedSpawn = process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX;
 const savedSpawnPrefixes = process.env.FLYWHEEL_IDEAS_SPAWN_PREFIXES;
-const savedMemoryBridge = process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
+const savedMemoryBin = process.env.FLYWHEEL_MEMORY_BIN;
 
 beforeEach(async () => {
   vault = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-ideas-council-'));
@@ -70,10 +70,10 @@ beforeEach(async () => {
     gemini: ['node', MOCK_GEMINI],
   });
   delete process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX;
-  // v0.2 KEYSTONE — disable evidence-reader subprocess so the MCP-tool
-  // tests don't attempt to spawn flywheel-memory on every council.run.
+  // v0.2 KEYSTONE — point evidence-reader at a missing absolute path so the
+  // per-call spawn returns binary_not_found instantly (no real subprocess).
   // Dedicated evidence-wiring tests live in packages/core/test.
-  process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
+  process.env.FLYWHEEL_MEMORY_BIN = '/nonexistent/flywheel-memory-test';
   const server = createConfiguredServer(vault, db);
   client = await connectMcpTestClient(server);
 });
@@ -89,8 +89,8 @@ afterEach(async () => {
   else process.env.FLYWHEEL_IDEAS_SPAWN_PREFIX = savedSpawn;
   if (savedSpawnPrefixes === undefined) delete process.env.FLYWHEEL_IDEAS_SPAWN_PREFIXES;
   else process.env.FLYWHEEL_IDEAS_SPAWN_PREFIXES = savedSpawnPrefixes;
-  if (savedMemoryBridge === undefined) delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
-  else process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = savedMemoryBridge;
+  if (savedMemoryBin === undefined) delete process.env.FLYWHEEL_MEMORY_BIN;
+  else process.env.FLYWHEEL_MEMORY_BIN = savedMemoryBin;
 });
 
 function parseEnvelope(response: {

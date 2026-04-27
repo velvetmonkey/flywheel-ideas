@@ -2,11 +2,17 @@
 /**
  * flywheel-ideas — MCP server entrypoint.
  *
- * The local-first falsifiable decision ledger. v0.1 ships four tools —
- * `idea`, `assumption`, `council`, `outcome` — plus a memory-bridge that
- * registers ideas_* note types as custom categories with flywheel-memory
- * on startup. See ~/obsidian/Ben/tech/flywheel/flywheel-ideas/ for the
- * full plan.
+ * The local-first falsifiable decision ledger. Five tools — `idea`,
+ * `assumption`, `council`, `outcome`, `import` — backed by a required
+ * flywheel-memory peer that handles vault writes, retrieval, and the
+ * `ideas_*` custom-category registration.
+ *
+ * v0.4.0 — flywheel-memory is a required peer dependency. The server
+ * hard-fails at boot via `FlywheelMemoryRequiredError` when the bridge
+ * isn't reachable. Tests bypass the gate via `FLYWHEEL_IDEAS_TEST_MODE=1`
+ * and inject a write tier with `__setWritePathForTests()`.
+ *
+ * See ~/obsidian/Ben/tech/flywheel/flywheel-ideas/ for the full plan.
  */
 
 import { realpathSync } from 'node:fs';
@@ -14,7 +20,9 @@ import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
+  FlywheelMemoryRequiredError,
   getProbeOutcome,
+  isTestMode,
   openIdeasDb,
   PACKAGE_VERSION,
   probeWritePath,
@@ -23,6 +31,7 @@ import {
   runMigrations,
   VaultPathError,
   type IdeasDatabase,
+  type RequiredBridgeFailure,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { registerAssumptionTool } from './tools/assumption.js';
 import { registerCouncilTool } from './tools/council.js';
@@ -88,36 +97,37 @@ async function main(): Promise<void> {
   const db = openIdeasDb(vaultPath);
   runMigrations(db);
 
-  // M14 — best-effort flywheel-memory custom-category registration. Bounded
-  // by a 15s default timeout; failure is non-fatal and surfaces a one-line
-  // stderr warning so users notice the missing-binary case.
-  const reg = await registerCustomCategories(vaultPath);
-  if (reg.status === 'skipped') {
-    const detail = reg.detail ? `: ${reg.detail}` : '';
-    process.stderr.write(
-      `flywheel-ideas: memory-bridge skipped (${reg.reason}${detail}). ` +
-        `Ideas notes will not be boosted in flywheel-memory wikilink scoring. ` +
-        `Install @velvetmonkey/flywheel-memory or set FLYWHEEL_MEMORY_BIN to enable.\n`,
-    );
-  }
+  // v0.4.0 — flywheel-memory is required. Bridge probes hard-fail unless
+  // FLYWHEEL_IDEAS_TEST_MODE=1 is set, in which case tests inject a tier
+  // via `__setWritePathForTests()` and skip the spawn path entirely.
+  if (!isTestMode()) {
+    const reg = await registerCustomCategories(vaultPath);
+    if (reg.status === 'skipped') {
+      throw new FlywheelMemoryRequiredError({
+        kind: reg.reason,
+        binary: reg.binary,
+        timeoutMs: reg.timeoutMs,
+        detail: reg.detail,
+      });
+    }
 
-  // v0.2 write-path migration — probe for flywheel-memory's write tools
-  // (`note` + `vault_update_frontmatter`). If present, all vault I/O routes
-  // through the subprocess writer; if not, direct-fs is the fallback. Probe
-  // is best-effort and never fatal. Per-write fallback to direct-fs still
-  // runs if the subprocess fails mid-call.
-  await probeWritePath(vaultPath);
-  const probe = getProbeOutcome();
-  if (probe.active === 'mcp-subprocess') {
-    process.stderr.write(
-      `flywheel-ideas: write-path = mcp-subprocess (flywheel-memory detected).\n`,
-    );
-  } else {
-    const detail = probe.detail ? `: ${probe.detail}` : '';
-    process.stderr.write(
-      `flywheel-ideas: write-path = direct-fs (${probe.reason}${detail}). ` +
-        `Install @velvetmonkey/flywheel-memory or set FLYWHEEL_MEMORY_BIN to route writes through the graph index.\n`,
-    );
+    await probeWritePath(vaultPath);
+    const probe = getProbeOutcome();
+    if (probe.active !== 'mcp-subprocess') {
+      // Probe always sets binary + timeoutMs after running; subprocess_ok /
+      // not_probed cannot reach this branch (active === 'mcp-subprocess' or
+      // probe didn't run, both excluded).
+      const failure: RequiredBridgeFailure = {
+        kind:
+          probe.reason === 'subprocess_ok' || probe.reason === 'not_probed'
+            ? 'spawn_failed'
+            : probe.reason,
+        binary: probe.binary ?? 'flywheel-memory',
+        timeoutMs: probe.timeoutMs,
+        detail: probe.detail,
+      };
+      throw new FlywheelMemoryRequiredError(failure);
+    }
   }
 
   const server = createConfiguredServer(vaultPath, db);

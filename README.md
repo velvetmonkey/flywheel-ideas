@@ -12,7 +12,7 @@ Built for consequential decisions — architecture choices, pricing model rewrit
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![status: stable](https://img.shields.io/badge/status-stable-blue.svg)](#roadmap)
 
-> **Status:** v0.2.0 GA on `latest`. v0.3.0 (`github-repo-adr` adapter, scoped to konflux-format) staged on `main`.
+> **Status:** v0.2.0 GA on `latest`. v0.4.0 staged on `main` — same closed loop as v0.2 + the v0.3 `github-repo-adr` adapter + the v0.3 `idea.export` action; **plus the breaking change that promoted [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) from optional sidecar to required peer dependency.** npm publish + announcement remain held; v0.4.0 ships when Trigger 1 dogfood feedback lands.
 >
 > Two pre-registered evaluations have completed:
 > - **v0.2 cite-rate pilot (Python 2→3):** 100% per-session, 79% per-persona ([pilot/RESULT.md](./pilot/RESULT.md))
@@ -67,27 +67,17 @@ If you've ever made a consequential decision and six months later couldn't artic
 
 ## Quickstart
 
-The setup has real prerequisites. Three tiers, in order of completeness:
-
-### Minimum viable (single-CLI, no flywheel-memory)
-
-What you actually need for the closed loop to work end-to-end:
-
-- Node.js 22+
-- An MCP-aware client (Claude Desktop, Claude Code, Cursor, etc.)
-- *One* of `claude`, `codex`, or `gemini` CLI on `$PATH`, authenticated
-- `VAULT_PATH` env var pointing at any directory you want to use as the vault (it doesn't have to be an existing Obsidian vault — `.flywheel/ideas.db` will be created on first run)
-
-Trade-off vs. full setup: council fan-out drops to 1 CLI × 2 personas (no cross-model dissent), notes write via `direct-fs` and aren't indexed until you point flywheel-memory at the directory later.
+The setup has real prerequisites. Two tiers, in order of completeness:
 
 ### Recommended (Obsidian vault + flywheel-memory + 2 CLIs)
 
-For real council dissent + instant indexing:
+The minimum to run the closed loop end-to-end. **flywheel-memory is required** — without it, the server hard-fails at boot with a named error pointing at the install command.
 
-- The minimum-viable list above
-- An Obsidian vault you actually use
-- [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) installed and initialized against the same vault — when present, becomes the active write path so flywheel-ideas notes are indexed the moment they're written
-- A *second* CLI on `$PATH` (the council disagreement signal needs at least two models to have a "delta")
+- Node.js 22+
+- An MCP-aware client (Claude Desktop, Claude Code, Cursor, etc.)
+- An Obsidian vault you actually use, plus a `VAULT_PATH` env var pointing at it (the directory doesn't have to be an existing Obsidian vault — `.flywheel/ideas.db` will be created on first run)
+- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) installed and initialized against the same vault.** Required peer dependency; flywheel-ideas writes every artifact through flywheel-memory's MCP tools so the citation graph stays consistent.
+- *Two* of `claude`, `codex`, `gemini` CLI on `$PATH`, authenticated (the council disagreement signal needs at least two models to have a "delta")
 
 ### Full (all three CLIs, council at full matrix)
 
@@ -222,7 +212,7 @@ The gap nobody fills: **a local, vault-native, human-readable decision ledger wi
 
 **Ideas are markdown notes.** Frontmatter tracks id, state, declared assumptions, lineage. The vault is source of truth; `ideas.db` is an index.
 
-**Writes go through flywheel-memory when available.** On startup, the server probes for a flywheel-memory MCP subprocess. If found, every idea / assumption / outcome / council artifact lands via flywheel-memory's `note` + `vault_update_frontmatter` tools — indexed the moment it's written, no watcher delay. If flywheel-memory is unreachable, the server falls back to direct filesystem writes with `gray-matter`; every response's `write_path` field reports the active tier (`mcp-subprocess` or `direct-fs`).
+**Writes go through flywheel-memory.** On startup, the server probes for a flywheel-memory MCP subprocess. Every idea / assumption / outcome / council artifact lands via flywheel-memory's `note` + `vault_update_frontmatter` tools — indexed the moment it's written, no watcher delay. If the bridge is unreachable, the server hard-fails at boot with a `FlywheelMemoryRequiredError` naming the install command. (The legacy `direct-fs` fallback survives only behind `FLYWHEEL_IDEAS_TEST_MODE=1` so the test suite stays hermetic.)
 
 **The council is a subprocess dispatcher.** `council.run(idea_id, depth, mode)` spawns parallel child processes — one per `(model, persona)` cell — shelling out to your installed CLIs with explicit consent. Concurrency capped. Failures classified (timeout / auth / rate-limit / parse / exit-nonzero); one cell failing never aborts the session. Each cell runs a mandatory two-pass self-critique. Views persist as markdown; template synthesis distills them with evidence citations.
 
@@ -286,7 +276,8 @@ If you read your team's existing ADRs and think "the call I made would be more u
 
 ### Current state *(as of 2026-04-27)*
 
-- v0.2.0 on npm `latest`. v0.3.0 staged on `main` (PR #37 merged) but **npm publish + external announcement explicitly held** — the project is in a quiet-development posture by author choice.
+- v0.2.0 on npm `latest`. v0.4.0 staged on `main` but **npm publish + external announcement explicitly held** — the project is in a quiet-development posture by author choice.
+- **v0.4.0 — flywheel-memory promoted to required peer dependency.** Breaking change. Drops the `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` kill switch, drops direct-fs as a production fallback, hard-fails at boot if the bridge is unreachable. `peerDependencies` block declared with `optional: false`. The legacy direct-fs path survives only behind `FLYWHEEL_IDEAS_TEST_MODE=1` for hermetic test runs. Rationale: cite-rate gains depend on flywheel-memory's evidence reader, and the optional split was YAGNI infrastructure built for hypothetical users that never arrived. Roundtable: Claude PROCEED WITH MODIFICATIONS (8 mitigations folded in — purpose-built test-mode env var, error-message disambiguation, 30s→60s default timeout, hard-fail on mid-session subprocess crash); Gemini HOLD until Trigger 1 (overridden after user accepted the bundled-product framing on time-pressure grounds).
 - README front-page reframed 2026-04-27 — 30-second pitch + PEP 3000 hero example, "bets" → "decisions" terminology migration.
 - Phase 3 wedges cleared all gates (reasoning not recall · 3/3 SEC · 3/3 ADR · konflux-only census).
 - Phase 4 PR 1 (`github-repo-adr` adapter) merged. Phase 4.5 validation-gate clock is **not running** — without a public post, Trigger 2 (≥1 star / ≥1 issue from a Show HN-style post) cannot fire; Trigger 1 (named-user feedback from dogfooding with a specific human) remains open. See [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
@@ -294,8 +285,8 @@ If you read your team's existing ADRs and think "the call I made would be more u
 - **P1.3 + P1.4 deferred-on-roundtable 2026-04-27.** Three consecutive HALT verdicts on infrastructure work. P1.5 reframed as dependent on a P1.4 reversal.
 - **P2.9 shipped 2026-04-27 (markdown-first per roundtable).** New `idea.export` action; two dogfood artifacts committed ([pep-3000](./examples/portfolio-pep-3000.md) and [konflux-adrs](./examples/portfolio-konflux-adrs.md)); the konflux artifact also serves as live-validation of the v0.3.0 `github-repo-adr` adapter against the real public repo (37/63 ADRs parsed, 26 per-file drift skips, no source-level rejection).
 - **P2.7 deferred-on-roundtable 2026-04-27 (HOLD verdict).** Strategic Skeptic: "Zero outcomes against zero priors. You are building a sophisticated calibration engine for a ghost town. Best case: 6 months dogfood to get baseline signal. PR #39 sits unmerged. Stop guessing. Merge it. Publish the dogfood artifacts. Let a real human's feedback dictate what's next." Risk Pessimist returned PROCEED WITH MODIFICATIONS (transaction coupling, undo cascade, schema NULL handling) but those concerns are moot if we don't ship.
-- **Next move is no longer engineering — it is Trigger 1 dogfood.** (1) Merge [PR #39](https://github.com/velvetmonkey/flywheel-ideas/pull/39); (2) hand `examples/portfolio-pep-3000.md` or `examples/portfolio-konflux-adrs.md` to one specific human; (3) capture their written feedback against [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38). The next plan opens against whatever they actually say. Until then, every infrastructure item is shadow-boxing.
-- Strategic posture (publish + announce held; Phase 4.5 gate Trigger 2 on hold) unchanged. Trigger 1 is now actionable — the operator can hand `examples/portfolio-pep-3000.md` or `examples/portfolio-konflux-adrs.md` to a specific human and capture feedback against [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
+- **Next move is Trigger 1 dogfood.** (1) Hand `examples/portfolio-pep-3000.md` or `examples/portfolio-konflux-adrs.md` to one specific human; (2) capture their written feedback against [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38). The next plan opens against whatever they actually say. Until then, every infrastructure item is shadow-boxing.
+- Strategic posture (publish + announce held; Phase 4.5 gate Trigger 2 on hold) unchanged.
 
 ### v0.1 — the closed loop *(shipped 2026-04-23)*
 
@@ -391,8 +382,7 @@ Your vault becomes an empirical record of your predictions. Personal calibration
 - **No auto-transitions, no auto-decisions.** User writes the final rationale; council provides dissent, never verdict.
 - **Explicit consent per MCP spec.** Subprocess spawns + vault writes require approval; dispatches are audited.
 - **Reversibility.** Outcomes can be undone; refutation propagation unwinds.
-- **Single write path when flywheel-memory is present** — writes route through flywheel-memory's MCP tools so artifacts are indexed instantly.
-- **Graceful degradation.** Without flywheel-memory, the server falls back to direct filesystem writes; `write_path` on every response surfaces the active tier.
+- **Single, required write path through flywheel-memory** (v0.4.0+). Every artifact lands via flywheel-memory's MCP tools so the citation graph + wikilink scorer stay consistent. If the bridge is unreachable, the server hard-fails at boot rather than silently degrading the index.
 - **No LLM SDK lock-in.** Uses whatever CLIs you have on `$PATH`.
 - **Apache 2.0.** No viral reach.
 - **Tested hard.** Unit · property-based · integration via vitest. CI runs lint, npm-audit, build, core + mcp-server suites, and a Node 22/24 × ubuntu/windows full matrix. Live `claude -p` end-to-end ran during the v0.1 GA dogfood ([docs/dogfood-v0.1-ga.md](./docs/dogfood-v0.1-ga.md)), the v0.2 cite-rate pilot ([pilot/RESULT.md](./pilot/RESULT.md)), and the Phase 3 wedges ([pilot/RESULT.wedges.md](./pilot/RESULT.wedges.md)) — not as continuous CI.

@@ -18,7 +18,6 @@ let tmp: string;
 
 beforeEach(async () => {
   tmp = await fsp.mkdtemp(path.join(os.tmpdir(), 'flywheel-write-sub-'));
-  delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
   delete process.env.FLYWHEEL_MEMORY_BIN;
 });
 
@@ -46,20 +45,6 @@ describe('writeNoteViaSubprocess', () => {
     const file = path.join(tmp, 'ideas/2026/04/sample-abc.md');
     const stat = await fsp.stat(file);
     expect(stat.isFile()).toBe(true);
-  });
-
-  it('returns skipped when kill switch set', async () => {
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
-    const outcome = await writeNoteViaSubprocess(
-      tmp,
-      'x.md',
-      { type: 'idea' },
-      'body',
-      mockOpts({ MOCK_FM_SUPPORTS_NOTE: '1' }),
-    );
-    expect(outcome.status).toBe('skipped');
-    if (outcome.status !== 'skipped') return;
-    expect(outcome.reason).toBe('disabled');
   });
 
   it('returns skipped tool_returned_error when tool reports failure', async () => {

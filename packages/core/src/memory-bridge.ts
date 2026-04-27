@@ -1,8 +1,8 @@
 /**
- * memory-bridge — best-effort registration of `ideas_*` custom categories with
- * flywheel-memory on flywheel-ideas server startup (M14).
+ * memory-bridge — registration of `ideas_*` custom categories with
+ * flywheel-memory on flywheel-ideas server startup.
  *
- * Why this exists: flywheel-ideas writes notes with `type: ideas_note` etc. into
+ * Why this exists: flywheel-ideas writes notes with `type: idea` etc. into
  * the same vault flywheel-memory indexes. Without registering them as custom
  * categories, flywheel-memory's wikilink scorer treats them as unknown noise.
  * Registering them lets the four note kinds participate in the graph.
@@ -13,13 +13,19 @@
  *    so a user's pre-existing custom categories (e.g. `recipe`, `paper`) are
  *    preserved. (The standalone `flywheel_config` tool was retired in
  *    flywheel-memory T43+ and folded into `doctor(action:'config')`.)
- *  - Best-effort: never throw. Returns `{status:'skipped', reason:...}` if the
- *    binary is missing, the call times out, or the response is malformed.
+ *  - Returns `{status:'registered'|'skipped', ...}`. The caller (server startup)
+ *    converts a `'skipped'` result into a hard-fail `FlywheelMemoryRequiredError`
+ *    in production; tests run under `FLYWHEEL_IDEAS_TEST_MODE=1` and bypass
+ *    the gate via `__setWritePathForTests()` instead.
+ *
+ * v0.4.0 — flywheel-memory is a required peer dependency. The legacy
+ * `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` kill switch was removed; production
+ * boots fail-loud when the bridge isn't reachable. Tests use the
+ * purpose-built `FLYWHEEL_IDEAS_TEST_MODE=1` gate (see `test-mode.ts`).
  *
  * Env knobs:
- *  - `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`              — kill switch (no spawn)
  *  - `FLYWHEEL_MEMORY_BIN=/path/to/flywheel-memory`— override binary resolution
- *  - `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=...` — override 15000ms default
+ *  - `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS=...` — override 60000ms default
  *  - `FLYWHEEL_IDEAS_DEBUG=1`                      — surface transport teardown
  *                                                    errors on stderr
  *
@@ -68,30 +74,29 @@ export type MemoryBridgeSkipReason =
   | 'spawn_failed'
   | 'timeout'
   | 'tool_returned_error'
-  | 'invalid_response'
-  | 'disabled';
+  | 'invalid_response';
 
 export type MemoryBridgeResult =
-  | { status: 'registered'; categories: string[]; preserved: string[] }
-  | { status: 'skipped'; reason: MemoryBridgeSkipReason; detail?: string };
+  | { status: 'registered'; categories: string[]; preserved: string[]; binary: string }
+  | { status: 'skipped'; reason: MemoryBridgeSkipReason; detail?: string; binary: string; timeoutMs?: number };
 
 export interface RegisterOptions {
   /** Override binary path. Defaults to `FLYWHEEL_MEMORY_BIN` env, then `flywheel-memory`. */
   binary?: string;
   /** Args passed to the binary. Defaults to `[]`. Tests may pass `['--shim', path]`. */
   args?: string[];
-  /** Hard timeout. Defaults to `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS` env, then 15000ms. */
+  /** Hard timeout. Defaults to `FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS` env, then 60000ms. */
   timeoutMs?: number;
   /** Extra env overlaid before our pinned VAULT_PATH/FLYWHEEL_TRANSPORT. */
   env?: Record<string, string>;
 }
 
-// 30s default — was 15s in alpha.3 but a cold flywheel-memory doing
-// init_semantic (model download, schema migration) routinely exceeded that
-// and tripped a SIGKILL during state.db work. The 30s ceiling covers most
-// cold starts; pathological cases use FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS.
-// Surfaced by the alpha.3 codebase roundtable.
-const DEFAULT_TIMEOUT_MS = 30_000;
+// 60s default — bumped from 30s in v0.4.0 (Claude-mitigation #3): cold
+// init_semantic routinely exceeds 30s on first launch, and now that the
+// bridge is required, a probe timeout becomes a fatal boot error rather
+// than a stderr warning. Pathological cases override via
+// FLYWHEEL_IDEAS_MEMORY_BRIDGE_TIMEOUT_MS.
+const DEFAULT_TIMEOUT_MS = 60_000;
 const REGISTRAR_NAME = 'flywheel-ideas-registrar';
 const REGISTRAR_VERSION = '0.1.x';
 
@@ -99,10 +104,6 @@ export async function registerCustomCategories(
   vaultPath: string,
   opts: RegisterOptions = {},
 ): Promise<MemoryBridgeResult> {
-  if (process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE === '0') {
-    return { status: 'skipped', reason: 'disabled' };
-  }
-
   const binary = opts.binary ?? process.env.FLYWHEEL_MEMORY_BIN ?? 'flywheel-memory';
   const args = opts.args ?? [];
   const timeoutMs = resolveTimeout(opts.timeoutMs);
@@ -112,7 +113,7 @@ export async function registerCustomCategories(
   // failure as a generic Error without an ENOENT code, so we can't rely on
   // post-hoc classification. (Caught by Windows CI in M14 dogfood PR.)
   if (isAbsolute(binary) && !existsSync(binary)) {
-    return { status: 'skipped', reason: 'binary_not_found', detail: binary };
+    return { status: 'skipped', reason: 'binary_not_found', detail: binary, binary, timeoutMs };
   }
 
   const env: Record<string, string> = {
@@ -133,9 +134,10 @@ export async function registerCustomCategories(
   );
 
   try {
-    return await raceWithTimeout(runRegistration(client, transport), timeoutMs);
+    const inner = await raceWithTimeout(runRegistration(client, transport), timeoutMs);
+    return attachContext(inner, binary, timeoutMs);
   } catch (err) {
-    return classifyError(err, binary, timeoutMs);
+    return attachContext(classifyError(err, binary, timeoutMs), binary, timeoutMs);
   } finally {
     // SDK's StdioClientTransport.close() does stdin.end() → 2s grace →
     // SIGTERM → 2s grace → SIGKILL. We previously had our own PID-level
@@ -155,10 +157,25 @@ export async function registerCustomCategories(
   }
 }
 
+type InnerResult =
+  | { status: 'registered'; categories: string[]; preserved: string[] }
+  | { status: 'skipped'; reason: MemoryBridgeSkipReason; detail?: string };
+
+function attachContext(
+  inner: InnerResult,
+  binary: string,
+  timeoutMs: number,
+): MemoryBridgeResult {
+  if (inner.status === 'registered') {
+    return { ...inner, binary };
+  }
+  return { ...inner, binary, timeoutMs };
+}
+
 async function runRegistration(
   client: Client,
   transport: StdioClientTransport,
-): Promise<MemoryBridgeResult> {
+): Promise<InnerResult> {
   await client.connect(transport);
 
   const getRes = await client.callTool({
@@ -229,7 +246,7 @@ async function runRegistration(
   };
 }
 
-function classifyError(err: unknown, binary: string, timeoutMs: number): MemoryBridgeResult {
+function classifyError(err: unknown, binary: string, timeoutMs: number): InnerResult {
   if (err instanceof Error && err.message === 'TIMEOUT') {
     return { status: 'skipped', reason: 'timeout', detail: `${timeoutMs}ms` };
   }

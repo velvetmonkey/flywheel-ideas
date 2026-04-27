@@ -2,25 +2,21 @@
  * evidence-reader — one-shot MCP subprocess for retrieval-native council
  * input (v0.2 KEYSTONE).
  *
- * The keystone needs to query flywheel-memory's `search`, `memory.brief`,
- * and `graph.backlinks` tools BEFORE each `council.run` dispatch, then
- * inject the results as evidence into persona prompts.
+ * The keystone queries flywheel-memory's `search`, `memory.brief`, and
+ * `graph.backlinks` tools BEFORE each `council.run` dispatch, then injects
+ * the results as evidence into persona prompts.
  *
  * Pattern: clones the spawn-then-close lifecycle from memory-bridge.ts. A
  * fresh subprocess per `council.run` (not long-lived). Inside the
  * subprocess lifetime, the caller can issue N queries via `reader.query()`.
  *
- * The v0.2 brainstorm council (claude + copilot) attacked an earlier
- * "long-lived subprocess at server boot" design as over-engineered: zombie
- * processes, MCP protocol state divergence, parent-shutdown leaks. One-shot
- * per `council.run` matches the proven memory-bridge pattern and the
- * spawn cost is dwarfed by the 6–30 CLI subprocesses council itself spawns.
+ * v0.4.0 — flywheel-memory is required at server boot, so by the time a
+ * council session runs we know the bridge is reachable. A reader spawn
+ * failure therefore indicates a transient mid-session problem (subprocess
+ * crash, OS-level fork failure), not a missing dependency. The legacy
+ * `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` kill switch was removed.
  *
  * Env knobs:
- *  - `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0`                — shared kill switch
- *                                                       (disables both
- *                                                       memory-bridge AND
- *                                                       evidence-reader)
  *  - `FLYWHEEL_MEMORY_BIN=/path/to/flywheel-memory`  — override binary
  *  - `FLYWHEEL_IDEAS_EVIDENCE_READER_TIMEOUT_MS=...` — override 5000ms default
  *  - `FLYWHEEL_IDEAS_DEBUG=1`                        — surface transport teardown errors
@@ -38,8 +34,7 @@ export type EvidenceReaderSkipReason =
   | 'binary_not_found'
   | 'spawn_failed'
   | 'timeout'
-  | 'invalid_response'
-  | 'disabled';
+  | 'invalid_response';
 
 export type EvidenceReaderOutcome<T> =
   | { status: 'ok'; value: T }
@@ -87,10 +82,6 @@ export async function withEvidenceReader<T>(
   fn: (reader: EvidenceReader) => Promise<T>,
   opts: WithEvidenceReaderOptions = {},
 ): Promise<EvidenceReaderOutcome<T>> {
-  if (process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE === '0') {
-    return { status: 'skipped', reason: 'disabled' };
-  }
-
   const binary = opts.binary ?? process.env.FLYWHEEL_MEMORY_BIN ?? 'flywheel-memory';
   const args = opts.args ?? [];
   const timeoutMs = resolveTimeout(opts.timeoutMs);

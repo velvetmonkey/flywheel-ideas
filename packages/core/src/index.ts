@@ -71,12 +71,13 @@ export { runMigrations, getCurrentVersion } from './migrations.js';
 export { resolveVaultPath, VaultPathError } from './vault-path.js';
 export type { VaultResolution } from './vault-path.js';
 
-// Writer interface (M4 commits 1-2; v0.2 write-path migration)
+// Writer interface (M4 commits 1-2; v0.2 write-path migration; v0.4.0 hard-fail)
 export {
   writeNote,
   writeNoteDirectFs,
   writeNoteViaSubprocess,
   WriteNotePathError,
+  WriteSubprocessFailedError,
   patchFrontmatter,
   patchFrontmatterDirectFs,
   patchFrontmatterViaSubprocess,
@@ -269,6 +270,7 @@ export type {
 export {
   radarAssumptions,
   RadarInputError,
+  EvidenceReaderUnavailableError,
 } from './assumption-radar.js';
 export type {
   RadarHit,
@@ -398,8 +400,20 @@ export type {
   AssumptionNextStepHint,
 } from './assumptions.js';
 
-// Memory bridge (M14) — best-effort flywheel-memory custom-category registration
+// Memory bridge (M14) — flywheel-memory custom-category registration. Required
+// in production (v0.4.0+); optional posture survives only behind the test-mode
+// gate. See docs/memory-bridge.md.
 export { registerCustomCategories, IDEAS_CATEGORIES } from './memory-bridge.js';
+
+// Hard-fail error + test-mode gate (v0.4.0 — flywheel-memory required)
+export {
+  FlywheelMemoryRequiredError,
+} from './errors.js';
+export type {
+  RequiredBridgeFailure,
+  RequiredBridgeFailureKind,
+} from './errors.js';
+export { isTestMode, TEST_MODE_ENV_VAR } from './test-mode.js';
 
 // Council evidence sidecar (v0.2 KEYSTONE — retrieval-native council input)
 export {

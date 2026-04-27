@@ -102,7 +102,6 @@ describe('radarAssumptions — happy path', () => {
       idea_id: 'idea-a',
       reader_override: reader,
     });
-    expect(result.reader_available).toBe(true);
     expect(result.assumptions_scanned).toBe(1);
     expect(result.hits).toHaveLength(2);
     expect(result.hits[0].assumption_id).toBe(asm);
@@ -187,20 +186,18 @@ describe('radarAssumptions — happy path', () => {
   });
 });
 
-describe('radarAssumptions — degradation', () => {
-  it('FLYWHEEL_IDEAS_MEMORY_BRIDGE=0 → reader_available=false', async () => {
+describe('radarAssumptions — failure modes', () => {
+  it('throws EvidenceReaderUnavailableError when subprocess spawn fails (v0.4.0 — no silent degrade)', async () => {
     await seedAsm('asm', true);
-    const saved = process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
-    process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = '0';
-    try {
-      const result = await radarAssumptions(db, vault, { idea_id: 'idea-a' });
-      expect(result.reader_available).toBe(false);
-      expect(result.hits).toEqual([]);
-      expect(result.reader_skip_reason).toMatch(/disabled/);
-    } finally {
-      if (saved === undefined) delete process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE;
-      else process.env.FLYWHEEL_IDEAS_MEMORY_BRIDGE = saved;
-    }
+    // Force a binary_not_found from the per-call spawn — flywheel-memory was
+    // assumed reachable at boot, but a transient mid-session failure now
+    // surfaces as a hard error instead of returning reader_available:false.
+    await expect(
+      radarAssumptions(db, vault, {
+        idea_id: 'idea-a',
+        evidence_reader_binary: '/nonexistent/flywheel-memory',
+      }),
+    ).rejects.toThrow(/EvidenceReaderUnavailableError|evidence-reader subprocess failed/);
   });
 
   it('returns empty when no in-scope assumptions', async () => {
@@ -208,7 +205,6 @@ describe('radarAssumptions — degradation', () => {
     const result = await radarAssumptions(db, vault, { idea_id: 'idea-a' });
     expect(result.hits).toEqual([]);
     expect(result.assumptions_scanned).toBe(0);
-    expect(result.reader_available).toBe(true);
   });
 
   it('respects max_assumptions cap', async () => {

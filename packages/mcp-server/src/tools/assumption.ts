@@ -18,6 +18,7 @@ import {
   AssumptionInputError,
   AssumptionNotFoundError,
   declareAssumption,
+  EvidenceReaderUnavailableError,
   findDueSignposts,
   forgetAssumption,
   getAssumption,
@@ -685,13 +686,7 @@ async function handleRadar(
 
     const next_steps: NextStep[] = [];
 
-    if (!result.reader_available) {
-      next_steps.push({
-        action: 'install_flywheel_memory',
-        example: 'npm install -g @velvetmonkey/flywheel-memory',
-        why: `Radar needs flywheel-memory for vault search; subprocess unavailable (${result.reader_skip_reason ?? 'unknown'}). Install + retry, or set FLYWHEEL_IDEAS_MEMORY_BRIDGE=0 if intentional.`,
-      });
-    } else if (result.hits.length === 0 && result.assumptions_scanned === 0) {
+    if (result.hits.length === 0 && result.assumptions_scanned === 0) {
       next_steps.push({
         action: 'assumption.declare',
         example: 'assumption.declare({ idea_id: "<idea>", text: "..." })',
@@ -731,8 +726,6 @@ async function handleRadar(
     return mcpText({
       result: {
         assumptions_scanned: result.assumptions_scanned,
-        reader_available: result.reader_available,
-        reader_skip_reason: result.reader_skip_reason ?? null,
         hits: result.hits.map((h: RadarHit) => ({
           assumption_id: h.assumption_id,
           assumption_text: h.assumption_text,
@@ -752,6 +745,15 @@ async function handleRadar(
           action: 'assumption.radar',
           example: 'assumption.radar({ all_load_bearing: true })',
           why: 'Sweep all load-bearing open assumptions across the vault — the most common Radar shape.',
+        },
+      ]);
+    }
+    if (err instanceof EvidenceReaderUnavailableError) {
+      return mcpError(err.message, [
+        {
+          action: 'assumption.radar',
+          example: 'assumption.radar({ all_load_bearing: true })',
+          why: 'Retry the radar — the per-call subprocess spawn is independent and a transient failure may not recur.',
         },
       ]);
     }
