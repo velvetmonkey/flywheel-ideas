@@ -128,7 +128,7 @@ row, `failure_reason` set, everything else null. If Pass 2 fails,
 | Env var | Default | Purpose |
 |---|---|---|
 | `FLYWHEEL_IDEAS_CLAUDE_MODEL` | `claude-haiku-4-5-20251001` | Per-CLI model |
-| `FLYWHEEL_IDEAS_CODEX_MODEL` | `gpt-5-codex` | Per-CLI model |
+| `FLYWHEEL_IDEAS_CODEX_MODEL` | `gpt-5-codex` | Per-CLI model. **Note (codex 0.125+):** `gpt-5-codex` is rejected on ChatGPT-account auth — set this to `gpt-5.4` (or whatever `~/.codex/config.toml` `model` specifies) to override. See [`docs/cli-quirks.md`](./cli-quirks.md#codex-model-gotcha-codex-0125). |
 | `FLYWHEEL_IDEAS_GEMINI_MODEL` | `gemini-2.5-flash-lite` | Per-CLI model |
 | `FLYWHEEL_IDEAS_CELL_MODEL` | _(claude legacy)_ | Legacy — prefer per-CLI |
 | `FLYWHEEL_IDEAS_CELL_TIMEOUT_MS` | `900000` (15 min) | Per-cell timeout |

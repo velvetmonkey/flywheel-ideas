@@ -16,7 +16,7 @@ at `packages/core/test/fixtures/cli-{characterization,errors}/`.
 | CLI | Version | Invocation |
 |---|---|---|
 | claude | 2.1.117 (Claude Code) | `claude -p --output-format=json --model=... [prompt]` |
-| codex | codex-cli 0.121.0 | `codex exec --json [--skip-git-repo-check] [prompt]` |
+| codex | codex-cli 0.121–0.125 | `codex exec --json [--skip-git-repo-check] [prompt]` |
 | gemini | 0.36.0 | `gemini -p [prompt] -o json -m <model>` |
 
 The dispatcher logs `<cli> --version` into `ideas_council_views.model_version`
@@ -135,6 +135,37 @@ Rationale:
   outside a git repo (the vault isn't one).
 - **gemini `-o json`**: structured output. `-y`/`--yolo` (auto-approve all)
   MUST NOT be set — council cells should not execute tool calls.
+
+### Codex model gotcha (codex 0.125+)
+
+**Codex 0.125 added a server-side allowlist on ChatGPT-account auth.** The
+dispatcher's default model (`gpt-5-codex`, set via `FLYWHEEL_IDEAS_CODEX_MODEL`)
+is rejected with:
+
+```
+{"type":"error","status":400,"error":{"type":"invalid_request_error",
+ "message":"The 'gpt-5-codex' model is not supported when using Codex with
+ a ChatGPT account."}}
+```
+
+Probed during the Phase 3 wedge runs (2026-04-27): `gpt-5-codex`, `gpt-5`,
+`gpt-5-mini`, `gpt-4o`, `gpt-4o-mini`, `o4-mini`, `codex-mini` are all
+rejected. **`gpt-5.4` works** (it's the model the user's `~/.codex/config.toml`
+specifies as the interactive default; the server-side allowlist permits the
+account's negotiated model).
+
+Workaround for council runs:
+
+```bash
+FLYWHEEL_IDEAS_CODEX_MODEL=gpt-5.4 \
+  npx -y @velvetmonkey/flywheel-ideas
+```
+
+Or inspect your codex config to find the model your account is paired with:
+`grep ^model ~/.codex/config.toml`.
+
+For API-key-auth users (paid OpenAI API), the original `gpt-5-codex` default
+should still work — the allowlist only applies to ChatGPT-account-auth.
 
 ### Subscription auth opt-in (alpha.8)
 
