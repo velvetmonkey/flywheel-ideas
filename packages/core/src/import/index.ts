@@ -10,6 +10,10 @@ import {
   GITHUB_STRUCTURED_DOCS_NAME,
 } from './adapters/github-structured-docs.js';
 import { CsvCorpusAdapter, CSV_CORPUS_NAME } from './adapters/csv-corpus.js';
+import {
+  GithubRepoAdrAdapter,
+  GITHUB_REPO_ADR_NAME,
+} from './adapters/github-repo-adr.js';
 import { registerAdapter } from './registry.js';
 
 export * from './adapter.js';
@@ -25,6 +29,13 @@ export {
   extractAssumptionSentences,
 } from './adapters/github-structured-docs.js';
 export { CsvCorpusAdapter, CSV_CORPUS_NAME } from './adapters/csv-corpus.js';
+export {
+  GithubRepoAdrAdapter,
+  GITHUB_REPO_ADR_NAME,
+  parseAdr,
+  extractMarkdownSection,
+  __resetStderrOnceForTests,
+} from './adapters/github-repo-adr.js';
 
 // Register built-in adapters once per process. `registerAdapter` guards
 // against double-registration at the same name — safe to import this module
@@ -42,5 +53,10 @@ function safeRegister(factory: () => Parameters<typeof registerAdapter>[0]) {
 
 safeRegister(() => new GithubStructuredDocsAdapter());
 safeRegister(() => new CsvCorpusAdapter());
+safeRegister(() => new GithubRepoAdrAdapter());
 
-export const BUILTIN_ADAPTER_NAMES = [GITHUB_STRUCTURED_DOCS_NAME, CSV_CORPUS_NAME];
+export const BUILTIN_ADAPTER_NAMES = [
+  GITHUB_STRUCTURED_DOCS_NAME,
+  CSV_CORPUS_NAME,
+  GITHUB_REPO_ADR_NAME,
+];
