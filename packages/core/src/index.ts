@@ -63,6 +63,9 @@ export {
   SCHEMA_SQL_V6,
   SCHEMA_SQL_V7,
   SCHEMA_SQL_V8,
+  SCHEMA_SQL_V9,
+  SCHEMA_SQL_V10,
+  SCHEMA_SQL_V11,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -216,11 +219,21 @@ export {
   persistCouncilView,
 } from './council-sessions.js';
 export type {
+  CouncilSessionPurpose,
   CouncilSessionRow,
   CouncilViewRow,
   CreateSessionInput,
   PersistCouncilViewInput,
 } from './council-sessions.js';
+
+export { buildCouncilEffectivenessReport } from './council-effectiveness.js';
+export type {
+  EffectivenessReport,
+  EffectivenessReportInput,
+  EffectivenessReportRow,
+  EffectivenessCliRow,
+  EffectivenessPersonaRow,
+} from './council-effectiveness.js';
 
 export {
   buildViewNotePath,
@@ -521,12 +534,15 @@ export type { AdapterHooks, GithubStructuredDocsConfig } from './import/adapters
 
 // v3 idea-extensions sidecar (v0.2 Phase 1 D1)
 export {
+  getIdeaContext,
   setIdeaExtension,
   getIdeaExtension,
   clearIdeaExtension,
 } from './idea-extensions.js';
 export type {
   AlternativeEntry,
+  IdeaContext,
+  IdeaContextInput,
   IdeaExtensionInput,
   IdeaExtensionRow,
   Reversibility,

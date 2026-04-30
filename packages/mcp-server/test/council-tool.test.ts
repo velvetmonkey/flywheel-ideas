@@ -5,6 +5,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   approvalsFilePath,
+  declareAssumption,
   deleteIdeasDbFiles,
   grantApprovalFile,
   listDispatches,
@@ -110,6 +111,56 @@ function parseEnvelope(response: {
 async function seedIdea(): Promise<string> {
   const response = await client.callTool('idea', { action: 'create', title: 'Test idea' });
   return parseEnvelope(response).result.id;
+}
+
+async function seedAssumption(idea_id: string, text: string = 'load-bearing assumption'): Promise<string> {
+  const { assumption } = await declareAssumption(db, vault, {
+    idea_id,
+    text,
+    load_bearing: true,
+  });
+  return assumption.id;
+}
+
+function insertPredictiveSession(
+  idea_id: string,
+  opts: {
+    session_id: string;
+    completed_at: number;
+    persona?: string;
+    cli?: string;
+    cited_assumption_ids?: string[];
+    most_vulnerable_assumption_id?: string | null;
+  },
+): void {
+  const persona = opts.persona ?? 'risk-pessimist';
+  const cli = opts.cli ?? 'claude';
+  const view_id = `view-${opts.session_id}-${persona}-${cli}`;
+  db.prepare(
+    `INSERT INTO ideas_council_sessions
+       (id, idea_id, depth, mode, purpose, outcome_id, started_at, completed_at, synthesis_vault_path)
+     VALUES (?, ?, 'light', 'standard', 'predictive', NULL, ?, ?, ?)`,
+  ).run(opts.session_id, idea_id, opts.completed_at - 1, opts.completed_at, `councils/${opts.session_id}/SYNTHESIS.md`);
+  db.prepare(
+    `INSERT INTO ideas_council_views
+       (id, session_id, model, persona, prompt_version, persona_version, model_version, input_hash,
+        initial_stance, stance, self_critique, confidence, most_vulnerable_assumption_id,
+        content_vault_path, failure_reason, stderr_tail)
+     VALUES (?, ?, ?, ?, '1', '1', NULL, ?, 'initial', 'final stance', 'critique', 0.8, ?, ?, NULL, NULL)`,
+  ).run(
+    view_id,
+    opts.session_id,
+    cli,
+    persona,
+    `hash-${view_id}`,
+    opts.most_vulnerable_assumption_id ?? null,
+    `councils/${opts.session_id}/${view_id}.md`,
+  );
+  for (const assumption_id of opts.cited_assumption_ids ?? []) {
+    db.prepare(
+      `INSERT INTO ideas_assumption_citations (view_id, assumption_id) VALUES (?, ?)`,
+    ).run(view_id, assumption_id);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -535,6 +586,267 @@ describe('council.run — clis arg passthrough (v0.1.1)', () => {
       }),
     );
     expect(response.result.views).toHaveLength(6);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// council.run — retrospective anti_portfolio mode
+// ---------------------------------------------------------------------------
+
+describe('council.run — anti_portfolio retrospective mode', () => {
+  it('rejects missing outcome_id', async () => {
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', { action: 'run', mode: 'anti_portfolio', confirm: true }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('requires `outcome_id`');
+  });
+
+  it('rejects supplied id and persists no retrospective session rows', async () => {
+    const ideaId = await seedIdea();
+    const before = db.prepare(`SELECT COUNT(*) as c FROM ideas_council_sessions`).get() as { c: number };
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        mode: 'anti_portfolio',
+        id: ideaId,
+        outcome_id: 'out-x',
+        confirm: true,
+      }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('forbids `id`');
+    const after = db.prepare(`SELECT COUNT(*) as c FROM ideas_council_sessions`).get() as { c: number };
+    expect(after.c).toBe(before.c);
+  });
+
+  it('rejects zero-refutation outcomes', async () => {
+    const ideaId = await seedIdea();
+    const asm = await seedAssumption(ideaId);
+    const log = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaId,
+        text: 'Validated outcome',
+        validates: [asm],
+      }),
+    );
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        mode: 'anti_portfolio',
+        outcome_id: log.result.id,
+        confirm: true,
+      }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('refuted at least one assumption');
+  });
+
+  it('rejects multi-refutation outcomes without focus_assumption_id', async () => {
+    const ideaId = await seedIdea();
+    const asm1 = await seedAssumption(ideaId, 'A');
+    const asm2 = await seedAssumption(ideaId, 'B');
+    const log = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaId,
+        text: 'Two assumptions broke',
+        refutes: [asm1, asm2],
+      }),
+    );
+    const before = db.prepare(`SELECT COUNT(*) as c FROM ideas_council_sessions`).get() as { c: number };
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        mode: 'anti_portfolio',
+        outcome_id: log.result.id,
+        confirm: true,
+      }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('requires `focus_assumption_id`');
+    const after = db.prepare(`SELECT COUNT(*) as c FROM ideas_council_sessions`).get() as { c: number };
+    expect(after.c).toBe(before.c);
+  });
+
+  it('rejects invalid focus_assumption_id', async () => {
+    const ideaId = await seedIdea();
+    const asm1 = await seedAssumption(ideaId, 'A');
+    const asm2 = await seedAssumption(ideaId, 'B');
+    const log = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaId,
+        text: 'Two assumptions broke',
+        refutes: [asm1, asm2],
+      }),
+    );
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        mode: 'anti_portfolio',
+        outcome_id: log.result.id,
+        focus_assumption_id: 'asm-missing',
+        confirm: true,
+      }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toContain('is not among this outcome');
+  });
+
+  it('returns a retrospective draft without mutating the canonical memo', async () => {
+    const ideaId = await seedIdea();
+    const asm = await seedAssumption(ideaId, 'Core assumption');
+    const log = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaId,
+        text: 'Reality refuted the core assumption',
+        refutes: [asm],
+      }),
+    );
+    await client.callTool('outcome', {
+      action: 'memo_upsert',
+      outcome_id: log.result.id,
+      memo: {
+        root_cause: 'Original root cause',
+        what_we_thought: 'Original belief',
+        what_actually_happened: 'Original observed reality',
+        lesson: 'Original lesson',
+      },
+    });
+
+    process.env.FLYWHEEL_IDEAS_APPROVE = 'session';
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'run',
+        mode: 'anti_portfolio',
+        outcome_id: log.result.id,
+        confirm: true,
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.purpose).toBe('retrospective');
+    expect(response.result.outcome_id).toBe(log.result.id);
+    expect(response.result.memo_operation).toBe('revise');
+    expect(response.result.proposed_memo.root_cause).toBeTruthy();
+
+    const session = db
+      .prepare(`SELECT purpose, outcome_id FROM ideas_council_sessions WHERE id = ?`)
+      .get(response.result.session_id) as { purpose: string; outcome_id: string | null };
+    expect(session.purpose).toBe('retrospective');
+    expect(session.outcome_id).toBe(log.result.id);
+
+    const read = parseEnvelope(
+      await client.callTool('outcome', { action: 'read', id: log.result.id }),
+    );
+    expect(read.result.memo.lesson).toBe('Original lesson');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// council.effectiveness_report
+// ---------------------------------------------------------------------------
+
+describe('council.effectiveness_report', () => {
+  it('returns zero-sample rows with explicit persona and cli filters', async () => {
+    const response = parseEnvelope(
+      await client.callTool('council', {
+        action: 'effectiveness_report',
+        from_ms: 0,
+        to_ms: 10,
+        persona_ids: ['risk-pessimist'],
+        cli_ids: ['claude'],
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.qualifying_outcome_count).toBe(0);
+    expect(response.result.successful_view_count).toBe(0);
+    expect(response.result.personas).toEqual([
+      {
+        persona_id: 'risk-pessimist',
+        sample_size: 0,
+        refuted_assumption_citation_rate: null,
+        most_vulnerable_match_rate: null,
+        load_bearing_denominator: 0,
+        load_bearing_refuted_citation_rate: null,
+        cli_breakdown: [
+          {
+            cli_id: 'claude',
+            sample_size: 0,
+            refuted_assumption_citation_rate: null,
+            most_vulnerable_match_rate: null,
+            load_bearing_denominator: 0,
+            load_bearing_refuted_citation_rate: null,
+          },
+        ],
+      },
+    ]);
+  });
+
+  it('uses the latest predictive pre-outcome session and excludes retrospective sessions', async () => {
+    const ideaId = await seedIdea();
+    const asm = await seedAssumption(ideaId, 'Ground truth assumption');
+    insertPredictiveSession(ideaId, {
+      session_id: 'sess-old',
+      completed_at: 100,
+      cited_assumption_ids: [],
+      most_vulnerable_assumption_id: null,
+    });
+    insertPredictiveSession(ideaId, {
+      session_id: 'sess-latest',
+      completed_at: 200,
+      cited_assumption_ids: [asm],
+      most_vulnerable_assumption_id: asm,
+    });
+    db.prepare(
+      `INSERT INTO ideas_council_sessions
+         (id, idea_id, depth, mode, purpose, outcome_id, started_at, completed_at, synthesis_vault_path)
+       VALUES (?, ?, 'light', 'anti_portfolio', 'retrospective', NULL, 250, 250, 'retro.md')`,
+    ).run('sess-retro', ideaId);
+    db.prepare(
+      `INSERT INTO ideas_council_views
+         (id, session_id, model, persona, prompt_version, persona_version, model_version, input_hash,
+          initial_stance, stance, self_critique, confidence, most_vulnerable_assumption_id,
+          content_vault_path, failure_reason, stderr_tail)
+       VALUES (?, ?, 'claude', 'risk-pessimist', '1', '1', NULL, 'h-retro',
+               'initial', 'retro stance', 'retro critique', 0.9, ?, 'retro-view.md', NULL, NULL)`,
+    ).run('view-retro', 'sess-retro', asm);
+    db.prepare(
+      `INSERT INTO ideas_assumption_citations (view_id, assumption_id) VALUES (?, ?)`,
+    ).run('view-retro', asm);
+
+    const log = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaId,
+        text: 'Outcome refuted the assumption',
+        refutes: [asm],
+      }),
+    );
+
+    const report = parseEnvelope(
+      await client.callTool('council', {
+        action: 'effectiveness_report',
+        from_ms: log.result.landed_at - 1,
+        to_ms: log.result.landed_at + 1,
+      }),
+    );
+    expect(report.isError).toBe(false);
+    expect(report.result.qualifying_outcome_count).toBe(1);
+    expect(report.result.successful_view_count).toBe(1);
+    expect(report.result.personas).toHaveLength(1);
+    expect(report.result.personas[0].persona_id).toBe('risk-pessimist');
+    expect(report.result.personas[0].sample_size).toBe(1);
+    expect(report.result.personas[0].refuted_assumption_citation_rate).toBe(1);
+    expect(report.result.personas[0].most_vulnerable_match_rate).toBe(1);
+    expect(report.result.personas[0].cli_breakdown[0].cli_id).toBe('claude');
   });
 });
 

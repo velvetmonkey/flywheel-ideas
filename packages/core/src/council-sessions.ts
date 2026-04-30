@@ -15,10 +15,14 @@ import {
 import type { FailureReason } from './cli-errors.js';
 import type { CouncilMode } from './council-prompts.js';
 
+export type CouncilSessionPurpose = 'predictive' | 'retrospective';
+
 export interface CreateSessionInput {
   idea_id: string;
   depth: 'light' | 'full';
   mode: CouncilMode;
+  purpose?: CouncilSessionPurpose;
+  outcome_id?: string | null;
 }
 
 export interface CouncilSessionRow {
@@ -26,6 +30,8 @@ export interface CouncilSessionRow {
   idea_id: string;
   depth: string;
   mode: string;
+  purpose: CouncilSessionPurpose;
+  outcome_id: string | null;
   started_at: number;
   completed_at: number | null;
   synthesis_vault_path: string | null;
@@ -44,6 +50,7 @@ export interface CouncilViewRow {
   stance: string | null;
   self_critique: string | null;
   confidence: number | null;
+  most_vulnerable_assumption_id: string | null;
   content_vault_path: string;
   failure_reason: FailureReason | null;
   stderr_tail: string | null;
@@ -55,10 +62,11 @@ export function createCouncilSession(
 ): { id: string; started_at: number } {
   const id = generateCouncilSessionId();
   const started_at = Date.now();
+  const purpose = input.purpose ?? 'predictive';
   db.prepare(
-    `INSERT INTO ideas_council_sessions (id, idea_id, depth, mode, started_at, completed_at, synthesis_vault_path)
-     VALUES (?, ?, ?, ?, ?, NULL, NULL)`,
-  ).run(id, input.idea_id, input.depth, input.mode, started_at);
+    `INSERT INTO ideas_council_sessions (id, idea_id, depth, mode, purpose, outcome_id, started_at, completed_at, synthesis_vault_path)
+     VALUES (?, ?, ?, ?, ?, ?, ?, NULL, NULL)`,
+  ).run(id, input.idea_id, input.depth, input.mode, purpose, input.outcome_id ?? null, started_at);
   return { id, started_at };
 }
 
@@ -82,7 +90,7 @@ export function getCouncilSession(
 ): CouncilSessionRow | null {
   const row = db
     .prepare(
-      `SELECT id, idea_id, depth, mode, started_at, completed_at, synthesis_vault_path
+      `SELECT id, idea_id, depth, mode, purpose, outcome_id, started_at, completed_at, synthesis_vault_path
          FROM ideas_council_sessions WHERE id = ?`,
     )
     .get(id) as CouncilSessionRow | undefined;
@@ -97,7 +105,7 @@ export function listSessionsByIdea(
   const limit = options.limit ?? 50;
   return db
     .prepare(
-      `SELECT id, idea_id, depth, mode, started_at, completed_at, synthesis_vault_path
+      `SELECT id, idea_id, depth, mode, purpose, outcome_id, started_at, completed_at, synthesis_vault_path
          FROM ideas_council_sessions
         WHERE idea_id = ?
         ORDER BY started_at DESC, id DESC
@@ -118,6 +126,7 @@ export interface PersistCouncilViewInput {
   stance: string | null;
   self_critique: string | null;
   confidence: number | null;
+  most_vulnerable_assumption_id: string | null;
   content_vault_path: string;
   failure_reason: FailureReason | null;
   stderr_tail: string | null;
@@ -134,10 +143,10 @@ export function persistCouncilView(
        prompt_version, persona_version, model_version,
        input_hash,
        initial_stance, stance, self_critique,
-       confidence,
+       confidence, most_vulnerable_assumption_id,
        content_vault_path,
        failure_reason, stderr_tail
-     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   ).run(
     id,
     input.session_id,
@@ -151,6 +160,7 @@ export function persistCouncilView(
     input.stance,
     input.self_critique,
     input.confidence,
+    input.most_vulnerable_assumption_id,
     input.content_vault_path,
     input.failure_reason,
     input.stderr_tail,
@@ -168,7 +178,7 @@ export function listViewsBySession(
               prompt_version, persona_version, model_version,
               input_hash,
               initial_stance, stance, self_critique,
-              confidence,
+              confidence, most_vulnerable_assumption_id,
               content_vault_path,
               failure_reason, stderr_tail
          FROM ideas_council_views

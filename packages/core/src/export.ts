@@ -65,7 +65,7 @@ export interface ExportedIdea {
 }
 
 export interface ExportPortfolio {
-  schema_version: 1;
+  schema_version: 2;
   exported_at: number;
   exported_at_iso: string;
   vault_path: string;
@@ -75,6 +75,24 @@ export interface ExportPortfolio {
 export interface ExportIdeaOptions {
   /** Include ancestry + descendants lineage block. Default true. */
   include_lineage?: boolean;
+  /** Include private idea context in the exported artifact. Default false. */
+  include_private_context?: boolean;
+}
+
+function stripPrivateContext(snapshot: FreezeSnapshot): FreezeSnapshot {
+  return {
+    ...snapshot,
+    idea: {
+      ...snapshot.idea,
+      context: null,
+      extension: snapshot.idea.extension
+        ? {
+            ...snapshot.idea.extension,
+            context: null,
+          }
+        : null,
+    },
+  };
 }
 
 /**
@@ -105,6 +123,9 @@ export function exportIdea(
     freeze_id = freezes[0].id;
   } else {
     snapshot = buildSnapshot(db, vaultPath, idea_id);
+  }
+  if (options.include_private_context !== true) {
+    snapshot = stripPrivateContext(snapshot);
   }
 
   // Outcomes + verdicts join. assumption text resolved from ideas_assumptions
@@ -231,7 +252,7 @@ export function exportPortfolio(
 ): ExportPortfolio {
   const ideas = idea_ids.map((id) => exportIdea(db, vaultPath, id, options));
   return {
-    schema_version: 1,
+    schema_version: 2,
     exported_at: now,
     exported_at_iso: new Date(now).toISOString(),
     vault_path: vaultPath,

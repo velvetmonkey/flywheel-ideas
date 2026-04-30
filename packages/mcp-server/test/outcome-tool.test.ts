@@ -409,7 +409,7 @@ describe('outcome.log — Anti-Portfolio memo (v0.2 D4)', () => {
     expect(response.isError).toBe(false);
     expect(response.result.memo_recorded).toBe(false);
     // First next_step should be the memo nudge.
-    expect(response.next_steps[0].action).toBe('outcome.log');
+    expect(response.next_steps[0].action).toBe('outcome.memo_upsert');
     expect(response.next_steps[0].why).toContain('Anti-Portfolio');
     expect(response.next_steps[0].example).toContain('memo:');
   });
@@ -429,7 +429,7 @@ describe('outcome.log — Anti-Portfolio memo (v0.2 D4)', () => {
     expect(response.isError).toBe(false);
     expect(response.result.memo_recorded).toBe(true);
     const memoNudge = response.next_steps.find(
-      (s: any) => s.action === 'outcome.log' && s.why?.includes('Anti-Portfolio'),
+      (s: any) => s.action === 'outcome.memo_upsert' && s.why?.includes('Anti-Portfolio'),
     );
     expect(memoNudge).toBeUndefined();
     // Memo persisted in DB.
@@ -479,5 +479,52 @@ describe('outcome.log — Anti-Portfolio memo (v0.2 D4)', () => {
     // Verify no outcome was persisted.
     const count = db.prepare('SELECT COUNT(*) as c FROM ideas_outcomes').get() as { c: number };
     expect(count.c).toBe(0);
+  });
+
+  it('outcome.memo_upsert creates then replaces the canonical memo, and outcome.read exposes it', async () => {
+    const ideaA = await seedIdea();
+    const asmA = await seedAssumption(ideaA);
+    const log = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'log',
+        idea_id: ideaA,
+        text: 'Reality broke the assumption',
+        refutes: [asmA],
+      }),
+    );
+
+    const createMemo = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'memo_upsert',
+        outcome_id: log.result.id,
+        memo: validMemo,
+      }),
+    );
+    expect(createMemo.isError).toBe(false);
+    expect(createMemo.result.operation).toBe('created');
+
+    const replacement = {
+      ...validMemo,
+      lesson: 'Replaced lesson',
+    };
+    const replaceMemo = parseEnvelope(
+      await client.callTool('outcome', {
+        action: 'memo_upsert',
+        outcome_id: log.result.id,
+        memo: replacement,
+      }),
+    );
+    expect(replaceMemo.isError).toBe(false);
+    expect(replaceMemo.result.operation).toBe('replaced');
+    expect(replaceMemo.result.memo.lesson).toBe('Replaced lesson');
+    expect(replaceMemo.result.memo_written_at).toBeGreaterThanOrEqual(
+      createMemo.result.memo_written_at,
+    );
+
+    const read = parseEnvelope(
+      await client.callTool('outcome', { action: 'read', id: log.result.id }),
+    );
+    expect(read.result.memo.lesson).toBe('Replaced lesson');
+    expect(typeof read.result.memo_written_at).toBe('number');
   });
 });

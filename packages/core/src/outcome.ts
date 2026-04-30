@@ -568,6 +568,7 @@ function queryCitingIdeas(db: IdeasDatabase, assumption_ids: string[]): FlaggedI
          JOIN ideas_council_views v ON v.session_id = s.id
          JOIN ideas_assumption_citations c ON c.view_id = v.id
         WHERE c.assumption_id IN (${placeholders})
+          AND s.purpose = 'predictive'
         ORDER BY n.id ASC`,
     )
     .all(...assumption_ids) as FlaggedIdea[];
@@ -590,6 +591,7 @@ function queryStillFlagged(db: IdeasDatabase, candidate_idea_ids: string[]): Set
          JOIN ideas_assumption_citations c ON c.view_id = v.id
          JOIN ideas_assumptions a ON a.id = c.assumption_id
         WHERE a.status = 'refuted'
+          AND s.purpose = 'predictive'
           AND n.id IN (${placeholders})`,
     )
     .all(...candidate_idea_ids) as Array<{ id: string }>;

@@ -23,6 +23,7 @@ import {
   filterStaleRows,
   FreezeInputError,
   FreezeIdeaNotFoundError,
+  getIdeaContext,
   getAncestry,
   getDescendants,
   getSharedAssumptions,
@@ -35,9 +36,11 @@ import {
   recordTransition,
   recordTransitionEnforced,
   renderPortfolioMarkdown,
+  setIdeaExtension,
   TransitionPrereqError,
   type IdeasDatabase,
   type IdeaState,
+  type IdeaContextInput,
   patchFrontmatter,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpText, type NextStep } from '../next_steps.js';
@@ -78,6 +81,23 @@ export function registerIdeaTool(
         .string()
         .optional()
         .describe('[create] Markdown body (omit for an empty scaffold)'),
+      context: z
+        .object({
+          situational_context: z.string().optional(),
+          mental_or_physical_state: z.string().optional(),
+          expected_outcome: z.string().optional(),
+          review_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+          alternatives_considered: z
+            .array(
+              z.object({
+                title: z.string().min(1),
+                why_rejected: z.string().min(1),
+              }),
+            )
+            .optional(),
+        })
+        .optional()
+        .describe('[create] Optional private decision-journal context. Stored canonically in the DB sidecar, not in markdown, not exported by default.'),
       id: z
         .string()
         .optional()
@@ -158,6 +178,10 @@ export function registerIdeaTool(
         .string()
         .optional()
         .describe('[export] Override the default output path. Relative paths resolve under the vault. Default: `exports/portfolio-<timestamp>.md`.'),
+      include_private_context: z
+        .boolean()
+        .optional()
+        .describe('[export] Include private idea context in the export artifact. Default false.'),
     },
     async (args) => {
       // Top-level error boundary: unhandled exceptions from handler I/O or
@@ -211,7 +235,7 @@ export function registerIdeaTool(
 async function handleCreate(
   vaultPath: string,
   db: IdeasDatabase,
-  args: { title?: string; body?: string },
+  args: { title?: string; body?: string; context?: IdeaContextInput & { alternatives_considered?: Array<{ title: string; why_rejected: string }> } },
 ): Promise<ReturnType<typeof mcpText>> {
   if (!args.title) {
     return mcpError('create requires `title`', [
@@ -227,6 +251,18 @@ async function handleCreate(
     title: args.title,
     body: args.body,
   });
+
+  if (args.context) {
+    setIdeaExtension(db, result.id, {
+      context: {
+        situational_context: args.context.situational_context,
+        mental_or_physical_state: args.context.mental_or_physical_state,
+        expected_outcome: args.context.expected_outcome,
+        review_date: args.context.review_date,
+      },
+      alternatives: args.context.alternatives_considered,
+    });
+  }
 
   const next_steps: NextStep[] = [
     {
@@ -249,6 +285,7 @@ async function handleCreate(
       vault_path: result.vault_path,
       write_path: result.write_path,
       created_at: result.created_at,
+      context_recorded: args.context ? true : false,
     },
     next_steps,
   });
@@ -349,6 +386,7 @@ function handleRead(
       state_changed_at: row.state_changed_at,
       frontmatter: note.frontmatter,
       body: note.body,
+      context: getIdeaContext(db, row.id),
       transition_count: history.length,
     },
     next_steps,
@@ -1113,6 +1151,7 @@ function handleExport(
     include_lineage?: boolean;
     redact_bodies?: boolean;
     output_path?: string;
+    include_private_context?: boolean;
   },
 ): ReturnType<typeof mcpText> {
   // Validation: idea_ids XOR all (exactly one must be provided)
@@ -1155,7 +1194,10 @@ function handleExport(
   // Build the portfolio + render.
   let portfolio;
   try {
-    portfolio = exportPortfolio(db, vaultPath, idea_ids, { include_lineage });
+    portfolio = exportPortfolio(db, vaultPath, idea_ids, {
+      include_lineage,
+      include_private_context: args.include_private_context,
+    });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     return mcpError(`export failed: ${message}`, [
@@ -1234,6 +1276,7 @@ function handleExport(
       bytes_written: Buffer.byteLength(markdown, 'utf8'),
       redacted: redact_bodies,
       include_lineage,
+      include_private_context: args.include_private_context === true,
       schema_version: portfolio.schema_version,
       exported_at: portfolio.exported_at_iso,
       write_path: getActiveWritePath(),
@@ -1241,4 +1284,3 @@ function handleExport(
     next_steps,
   });
 }
-

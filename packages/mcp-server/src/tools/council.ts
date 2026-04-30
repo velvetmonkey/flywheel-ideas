@@ -25,9 +25,11 @@ import {
   getActiveWritePath,
   approvalStatusForResponse,
   approvalsFilePath,
+  buildCouncilEffectivenessReport,
   computeDecisionDelta,
   CouncilOrchestratorError,
   DeltaInputError,
+  getOutcomeMemo,
   resolveApproval,
   runCouncil,
   type CouncilMode,
@@ -59,7 +61,7 @@ export function registerCouncilTool(
     ].join(''),
     {
       action: z
-        .enum(['run', 'approval_status', 'delta'])
+        .enum(['run', 'approval_status', 'delta', 'effectiveness_report'])
         .describe('Operation to perform'),
       // run
       id: z.string().optional().describe('[run] The idea id to dispatch the council against'),
@@ -68,10 +70,10 @@ export function registerCouncilTool(
         .optional()
         .describe('[run] light = 2 models x 2 personas; full = 3 x 5 (default light)'),
       mode: z
-        .enum(['standard', 'pre_mortem', 'steelman'])
+        .enum(['standard', 'pre_mortem', 'steelman', 'anti_portfolio'])
         .optional()
         .describe(
-          '[run] standard (attack from default stance) | pre_mortem (assume failure, work backwards) | steelman (defend strongest case for; counterweight to pre_mortem). Default: pre_mortem for nascent/explored ideas, standard otherwise.',
+          '[run] standard (attack from default stance) | pre_mortem (assume failure, work backwards) | steelman (defend strongest case for; counterweight to pre_mortem) | anti_portfolio (retrospective failure analysis after a refuting outcome). Default: pre_mortem for nascent/explored ideas, standard otherwise.',
         ),
       confirm: z
         .boolean()
@@ -97,6 +99,14 @@ export function registerCouncilTool(
         .describe(
           '[run] v0.2 OSF preregistration — bind a pre-existing freeze (from `idea.freeze`) to this council session. Mutually exclusive with `freeze: true`.',
         ),
+      outcome_id: z
+        .string()
+        .optional()
+        .describe('[run] Required for anti_portfolio mode. Outcome whose refutation the retrospective council should analyze.'),
+      focus_assumption_id: z
+        .string()
+        .optional()
+        .describe('[run] Optional for anti_portfolio mode when exactly one assumption was refuted; required when multiple assumptions were refuted.'),
       // v0.2 D6 — decision_delta read-side
       idea_id: z
         .string()
@@ -114,6 +124,10 @@ export function registerCouncilTool(
         .number()
         .optional()
         .describe('[delta] |Δconfidence| above this counts as a significant persona shift (default 0.3)'),
+      from_ms: z.number().optional().describe('[effectiveness_report] Inclusive lower bound on outcome.landed_at (unix ms)'),
+      to_ms: z.number().optional().describe('[effectiveness_report] Inclusive upper bound on outcome.landed_at (unix ms)'),
+      persona_ids: z.array(z.string()).optional().describe('[effectiveness_report] Optional persona subset'),
+      cli_ids: z.array(z.enum(['claude', 'codex', 'gemini'])).optional().describe('[effectiveness_report] Optional CLI/provider subset'),
     },
     async (args) => {
       try {
@@ -124,6 +138,8 @@ export function registerCouncilTool(
             return await handleApprovalStatus(getVaultPath());
           case 'delta':
             return handleDelta(getDb(), args);
+          case 'effectiveness_report':
+            return handleEffectivenessReport(getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -149,13 +165,18 @@ async function handleRun(
   args: {
     id?: string;
     depth?: 'light' | 'full';
-    mode?: 'standard' | 'pre_mortem' | 'steelman';
+    mode?: 'standard' | 'pre_mortem' | 'steelman' | 'anti_portfolio';
     confirm?: boolean;
     clis?: Array<'claude' | 'codex' | 'gemini'>;
     freeze?: boolean;
     freeze_id?: string;
+    outcome_id?: string;
+    focus_assumption_id?: string;
   },
 ): Promise<ReturnType<typeof mcpText>> {
+  if (args.mode === 'anti_portfolio') {
+    return await handleAntiPortfolioRun(vaultPath, db, args);
+  }
   if (!args.id) {
     return mcpError('run requires `id`', [
       {
@@ -315,6 +336,8 @@ async function handleRun(
         content_vault_path: v.content_vault_path,
       })),
       mode: outcome.mode,
+      purpose: outcome.purpose,
+      outcome_id: outcome.outcome_id,
       failed_any: outcome.failed_any,
       approval_source: state.source,
       approval_scope: state.scope,
@@ -323,6 +346,198 @@ async function handleRun(
     },
     next_steps,
   });
+}
+
+async function handleAntiPortfolioRun(
+  vaultPath: string,
+  db: IdeasDatabase,
+  args: {
+    id?: string;
+    depth?: 'light' | 'full';
+    confirm?: boolean;
+    clis?: Array<'claude' | 'codex' | 'gemini'>;
+    outcome_id?: string;
+    focus_assumption_id?: string;
+  },
+): Promise<ReturnType<typeof mcpText>> {
+  if (args.id) {
+    return mcpError('anti_portfolio mode forbids `id`; idea is derived from `outcome_id`');
+  }
+  if (!args.outcome_id) {
+    return mcpError('anti_portfolio mode requires `outcome_id`');
+  }
+  if (args.confirm !== true) {
+    return mcpError(
+      'council.run anti_portfolio requires confirm: true. This retrospective mode still spawns CLI subprocesses.',
+      [
+        {
+          action: 'council.run',
+          example: `council.run({ mode: "anti_portfolio", outcome_id: "${args.outcome_id}", confirm: true })`,
+          why: 'Re-call with confirm: true to acknowledge subprocess spawn.',
+        },
+      ],
+    );
+  }
+
+  const outcomeRow = db
+    .prepare(`SELECT id, idea_id, text, landed_at, undone_at FROM ideas_outcomes WHERE id = ?`)
+    .get(args.outcome_id) as
+    | { id: string; idea_id: string; text: string; landed_at: number; undone_at: number | null }
+    | undefined;
+  if (!outcomeRow) return mcpError(`outcome not found: ${args.outcome_id}`);
+  if (outcomeRow.undone_at !== null) {
+    return mcpError(`anti_portfolio requires an active outcome; ${args.outcome_id} was undone`);
+  }
+
+  const refuted = db
+    .prepare(
+      `SELECT v.assumption_id, a.text
+         FROM ideas_outcome_verdicts v
+         JOIN ideas_assumptions a ON a.id = v.assumption_id
+        WHERE v.outcome_id = ? AND v.verdict = 'refuted'
+        ORDER BY v.assumption_id ASC`,
+    )
+    .all(args.outcome_id) as Array<{ assumption_id: string; text: string }>;
+  if (refuted.length === 0) {
+    return mcpError('anti_portfolio requires an outcome that refuted at least one assumption');
+  }
+
+  let focus_assumption_id = args.focus_assumption_id;
+  if (refuted.length === 1 && !focus_assumption_id) {
+    focus_assumption_id = refuted[0].assumption_id;
+  }
+  if (refuted.length > 1 && !focus_assumption_id) {
+    return mcpError('anti_portfolio requires `focus_assumption_id` when the outcome refuted multiple assumptions');
+  }
+  if (focus_assumption_id && !refuted.some((row) => row.assumption_id === focus_assumption_id)) {
+    return mcpError(`focus_assumption_id ${focus_assumption_id} is not among this outcome's refuted assumptions`);
+  }
+
+  const state = await resolveApproval(vaultPath);
+  if (!state.granted) {
+    const file = approvalsFilePath(vaultPath);
+    return mcpError(
+      `No council-dispatch approval on record. Approve via env var ${APPROVAL_ENV_VAR}=session|always at server launch, or create ${file} with {schema:1, approvals:[{feature:"council_dispatch", scope:"always", granted_at:<unix_ms>, binaries:["claude","codex","gemini"]}]}. Approval cannot be granted from this tool — the user must set it out-of-band.`,
+      [
+        {
+          action: 'council.approval_status',
+          example: 'council.approval_status({})',
+          why: 'Inspect the current approval state before retrying the retrospective council run.',
+        },
+      ],
+    );
+  }
+
+  const memo = getOutcomeMemo(db, args.outcome_id);
+  const retrospectiveContext = [
+    '## Retrospective context',
+    `Outcome landed at: ${new Date(outcomeRow.landed_at).toISOString()}`,
+    `Outcome: ${outcomeRow.text}`,
+    '',
+    'Refuted assumptions:',
+    ...refuted.map((row) =>
+      `- [${row.assumption_id}${row.assumption_id === focus_assumption_id ? ', focus' : ''}] ${row.text}`,
+    ),
+    '',
+    memo
+      ? [
+          'Existing anti-portfolio memo:',
+          `- root_cause: ${memo.memo.root_cause}`,
+          `- what_we_thought: ${memo.memo.what_we_thought}`,
+          `- what_actually_happened: ${memo.memo.what_actually_happened}`,
+          `- lesson: ${memo.memo.lesson}`,
+        ].join('\n')
+      : 'Existing anti-portfolio memo: none',
+  ].join('\n');
+
+  const spawn_override = resolveSpawnOverride();
+  const spawn_overrides = resolveSpawnOverrides();
+  const outcome = await runCouncil(
+    db,
+    vaultPath,
+    {
+      idea_id: outcomeRow.idea_id,
+      depth: args.depth ?? 'light',
+      mode: 'anti_portfolio',
+      purpose: 'retrospective',
+      outcome_id: args.outcome_id,
+      approval_scope: state.scope,
+    },
+    {
+      spawn_override,
+      spawn_overrides,
+      clis_override: args.clis,
+      evidence_override: {
+        evidence: retrospectiveContext,
+        sources: [],
+      },
+    },
+  );
+
+  const proposed_memo = buildProposedMemoFromOutcome(
+    db,
+    outcome.session_id,
+    focus_assumption_id ?? null,
+  );
+
+  return mcpText({
+    result: {
+      status: outcome.status,
+      session_id: outcome.session_id,
+      synthesis_vault_path: outcome.synthesis_vault_path,
+      views: outcome.views,
+      mode: outcome.mode,
+      purpose: outcome.purpose,
+      outcome_id: outcome.outcome_id,
+      memo_operation: memo ? 'revise' : 'create',
+      proposed_memo,
+      failed_any: outcome.failed_any,
+      approval_source: state.source,
+      approval_scope: state.scope,
+      freeze_id: outcome.freeze_id,
+      write_path: getActiveWritePath(),
+    },
+    next_steps: [
+      {
+        action: 'outcome.memo_upsert',
+        example: `outcome.memo_upsert({ outcome_id: "${args.outcome_id}", memo: ${JSON.stringify(proposed_memo)} })`,
+        why: 'The retrospective council drafts a memo but never mutates the canonical outcome memo automatically.',
+      },
+    ],
+  });
+}
+
+function buildProposedMemoFromOutcome(
+  db: IdeasDatabase,
+  session_id: string,
+  focus_assumption_id: string | null,
+): {
+  root_cause: string;
+  what_we_thought: string;
+  what_actually_happened: string;
+  lesson: string;
+  refuted_assumption_id?: string;
+} {
+  const best = db
+    .prepare(
+      `SELECT stance
+         FROM ideas_council_views
+        WHERE session_id = ?
+          AND failure_reason IS NULL
+          AND stance IS NOT NULL
+        ORDER BY confidence DESC, rowid ASC
+        LIMIT 1`,
+    )
+    .get(session_id) as { stance: string } | undefined;
+  const stance = best?.stance?.trim() ?? '';
+  const summary = stance.length > 600 ? `${stance.slice(0, 597)}...` : stance;
+  return {
+    root_cause: summary || 'Review the retrospective synthesis and replace this placeholder.',
+    what_we_thought: 'See the original idea and declared assumptions for the pre-outcome belief state.',
+    what_actually_happened: summary || 'The logged outcome contradicted the original decision frame.',
+    lesson: summary || 'Capture the durable takeaway after reviewing the synthesis.',
+    ...(focus_assumption_id ? { refuted_assumption_id: focus_assumption_id } : {}),
+  };
 }
 
 function resolveSpawnOverride(): string[] | undefined {
@@ -479,4 +694,37 @@ function handleDelta(
     }
     throw err;
   }
+}
+
+function handleEffectivenessReport(
+  db: IdeasDatabase,
+  args: {
+    from_ms?: number;
+    to_ms?: number;
+    persona_ids?: string[];
+    cli_ids?: Array<'claude' | 'codex' | 'gemini'>;
+  },
+): ReturnType<typeof mcpText> {
+  if (typeof args.from_ms !== 'number' || typeof args.to_ms !== 'number') {
+    return mcpError('effectiveness_report requires `from_ms` and `to_ms`');
+  }
+  const report = buildCouncilEffectivenessReport(db, {
+    from_ms: args.from_ms,
+    to_ms: args.to_ms,
+    persona_ids: args.persona_ids,
+    cli_ids: args.cli_ids,
+  });
+  return mcpText({
+    result: {
+      ...report,
+      write_path: getActiveWritePath(),
+    },
+    next_steps: [
+      {
+        action: 'council.effectiveness_report',
+        example: `council.effectiveness_report({ from_ms: ${args.from_ms}, to_ms: ${args.to_ms}, persona_ids: ["risk-pessimist"] })`,
+        why: 'Narrow the report to one persona if you want to inspect that voice in isolation.',
+      },
+    ],
+  });
 }

@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 8;
+export const SCHEMA_VERSION = 11;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -401,4 +401,45 @@ CREATE INDEX IF NOT EXISTS idx_ideas_import_cand_target
 export const SCHEMA_SQL_V8 = `
 ALTER TABLE ideas_assumption_extensions ADD COLUMN shaping_actions_json TEXT;
 ALTER TABLE ideas_assumption_extensions ADD COLUMN hedging_actions_json TEXT;
+`;
+
+/**
+ * v9 migration — private idea context sidecar enrichment (P2.11).
+ *
+ * Adds `context_json` to `ideas_idea_extensions`. This is canonical storage
+ * for private, write-once decision-journal context captured at `idea.create`
+ * time. Structured alternatives remain in `alternatives_json` so we do not
+ * duplicate them inside the private context blob.
+ */
+export const SCHEMA_SQL_V9 = `
+ALTER TABLE ideas_idea_extensions ADD COLUMN context_json TEXT;
+`;
+
+/**
+ * v10 migration — council session purpose scoping + retrospective linkage (P1.6).
+ *
+ * `purpose` distinguishes normal predictive sessions from retrospective
+ * anti-portfolio runs. `outcome_id` links retrospective sessions to the
+ * outcome they are analyzing.
+ */
+export const SCHEMA_SQL_V10 = `
+ALTER TABLE ideas_council_sessions ADD COLUMN purpose TEXT NOT NULL DEFAULT 'predictive';
+ALTER TABLE ideas_council_sessions ADD COLUMN outcome_id TEXT REFERENCES ideas_outcomes(id) ON DELETE SET NULL;
+CREATE INDEX IF NOT EXISTS idx_ideas_council_sessions_purpose ON ideas_council_sessions(purpose);
+CREATE INDEX IF NOT EXISTS idx_ideas_council_sessions_idea_completed
+  ON ideas_council_sessions(idea_id, purpose, completed_at DESC, id DESC);
+CREATE INDEX IF NOT EXISTS idx_ideas_council_sessions_outcome
+  ON ideas_council_sessions(outcome_id) WHERE outcome_id IS NOT NULL;
+`;
+
+/**
+ * v11 migration — persist the persona's named most-vulnerable assumption (P2.10).
+ *
+ * This lets effectiveness reporting compare what a view called out most
+ * strongly against the later ground-truth failed assumption.
+ */
+export const SCHEMA_SQL_V11 = `
+ALTER TABLE ideas_council_views ADD COLUMN most_vulnerable_assumption_id TEXT REFERENCES ideas_assumptions(id) ON DELETE SET NULL;
+CREATE INDEX IF NOT EXISTS idx_ideas_council_views_most_vulnerable
+  ON ideas_council_views(most_vulnerable_assumption_id) WHERE most_vulnerable_assumption_id IS NOT NULL;
 `;
