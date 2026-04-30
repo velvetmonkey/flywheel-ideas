@@ -79,7 +79,7 @@ describe('createFreeze — happy path', () => {
     expect(fr.id).toMatch(/^fr-/);
     expect(fr.idea_id).toBe('idea-a');
     expect(fr.frozen_at).toBe(5000);
-    expect(fr.snapshot.snapshot_version).toBe(1);
+    expect(fr.snapshot.snapshot_version).toBe(2);
     expect(fr.snapshot.idea.title).toBe('Migrate to event-driven');
     expect(fr.snapshot.idea.body).toContain('Body about EDA');
     expect(fr.snapshot.idea.state).toBe('evaluated');
@@ -211,6 +211,37 @@ describe('getFreeze + listFreezesByIdea', () => {
     expect(re_read).not.toBeNull();
     expect(re_read?.snapshot.assumptions).toEqual([]);
     expect(re_read?.snapshot.idea.title).toBe(''); // bare-minimum shape
+  });
+
+  it('normalizes legacy snapshot_version=1 rows when reading old freezes', async () => {
+    await seedIdea('idea-a', 'Legacy idea', 'Legacy body');
+    db.prepare(
+      `INSERT INTO ideas_freezes
+         (id, idea_id, council_session_id, snapshot_json, supersedes_freeze_id, amendment_rationale, frozen_at)
+       VALUES (?, ?, NULL, ?, NULL, NULL, ?)`,
+    ).run(
+      'fr-legacy',
+      'idea-a',
+      JSON.stringify({
+        snapshot_version: 1,
+        idea: {
+          id: 'idea-a',
+          title: 'Legacy idea',
+          vault_path: 'ideas/idea-a.md',
+          state: 'evaluated',
+          body: 'Legacy body',
+          extension: null,
+        },
+        assumptions: [],
+        frozen_at_iso: '2026-04-30T00:00:00.000Z',
+      }),
+      1,
+    );
+
+    const fr = getFreeze(db, 'fr-legacy');
+    expect(fr?.snapshot.snapshot_version).toBe(2);
+    expect(fr?.snapshot.idea.context).toBeNull();
+    expect(fr?.snapshot.idea.title).toBe('Legacy idea');
   });
 
   it('listFreezesByIdea returns newest-first by default; respects limit + asc', async () => {

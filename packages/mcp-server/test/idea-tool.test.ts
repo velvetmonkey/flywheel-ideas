@@ -109,6 +109,43 @@ describe('idea tool — create', () => {
     const { isError } = parseEnvelope(response);
     expect(isError).toBe(true);
   });
+
+  it('accepts private context without writing it into markdown frontmatter/body', async () => {
+    const response = await client.callTool('idea', {
+      action: 'create',
+      title: 'Contextful idea',
+      body: '# Public body\n\nVisible prose.\n',
+      context: {
+        situational_context: 'Quarter-end planning',
+        expected_outcome: 'Decide before Friday',
+        alternatives_considered: [
+          { title: 'Wait a month', why_rejected: 'Misses the current planning window' },
+        ],
+      },
+    });
+    const { result, isError } = parseEnvelope(response);
+    expect(isError).toBe(false);
+    expect(result.context_recorded).toBe(true);
+
+    const raw = await fsp.readFile(path.join(vault, result.vault_path), 'utf8');
+    const parsed = matter(raw);
+    expect(parsed.data.situational_context).toBeUndefined();
+    expect(parsed.data.expected_outcome).toBeUndefined();
+    expect(raw).not.toContain('Quarter-end planning');
+    expect(raw).not.toContain('Decide before Friday');
+    expect(raw).not.toContain('Wait a month');
+  });
+
+  it('rejects invalid review_date at the schema boundary', async () => {
+    const response = await client.callTool('idea', {
+      action: 'create',
+      title: 'Bad date',
+      context: {
+        review_date: '2026/05/01',
+      },
+    });
+    expect(response.isError).toBe(true);
+  });
 });
 
 describe('idea tool — read', () => {
@@ -147,6 +184,39 @@ describe('idea tool — read', () => {
     const read = await client.callTool('idea', { action: 'read', id: createResult.id });
     const { result } = parseEnvelope(read);
     expect(result.stale_row).toBe(true);
+  });
+
+  it('returns context: null when an idea has no private context', async () => {
+    const create = await client.callTool('idea', { action: 'create', title: 'No context' });
+    const { result: createResult } = parseEnvelope(create);
+    const read = await client.callTool('idea', { action: 'read', id: createResult.id });
+    const { result } = parseEnvelope(read);
+    expect(result.context).toBeNull();
+  });
+
+  it('returns a partial private context shape with nulls for absent fields', async () => {
+    const create = await client.callTool('idea', {
+      action: 'create',
+      title: 'Private context',
+      context: {
+        situational_context: 'On-call week',
+        alternatives_considered: [
+          { title: 'Delay', why_rejected: 'Incident load is already understood' },
+        ],
+      },
+    });
+    const { result: createResult } = parseEnvelope(create);
+    const read = await client.callTool('idea', { action: 'read', id: createResult.id });
+    const { result } = parseEnvelope(read);
+    expect(result.context).toEqual({
+      situational_context: 'On-call week',
+      mental_or_physical_state: null,
+      expected_outcome: null,
+      review_date: null,
+      alternatives_considered: [
+        { title: 'Delay', why_rejected: 'Incident load is already understood' },
+      ],
+    });
   });
 });
 
@@ -824,6 +894,68 @@ describe('idea.transition — lifecycle prereq enforcement (v0.2 D5)', () => {
     );
     expect(response.isError).toBe(false);
     expect(response.result.to_state).toBe('parked');
+  });
+});
+
+// ===========================================================================
+// idea.export — private context behavior
+// ===========================================================================
+
+describe('idea.export — private context behavior', () => {
+  it('default export omits private context from the artifact', async () => {
+    const create = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'create',
+        title: 'Export me',
+        context: {
+          situational_context: 'Stealth planning',
+          expected_outcome: 'Keep this out of the default artifact',
+        },
+      }),
+    ).result;
+
+    const exported = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'export',
+        idea_ids: [create.id],
+        output_path: 'exports/default.md',
+      }),
+    );
+    expect(exported.isError).toBe(false);
+
+    const artifact = await fsp.readFile(path.join(vault, 'exports/default.md'), 'utf8');
+    expect(artifact).not.toContain('Stealth planning');
+    expect(artifact).not.toContain('Keep this out of the default artifact');
+  });
+
+  it('include_private_context: true exports private context explicitly', async () => {
+    const create = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'create',
+        title: 'Export me privately',
+        context: {
+          situational_context: 'Board prep',
+          mental_or_physical_state: 'Tired but decisive',
+          expected_outcome: 'Ship the internal version',
+        },
+      }),
+    ).result;
+
+    const exported = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'export',
+        idea_ids: [create.id],
+        output_path: 'exports/private.md',
+        include_private_context: true,
+      }),
+    );
+    expect(exported.isError).toBe(false);
+    expect(exported.result.include_private_context).toBe(true);
+
+    const artifact = await fsp.readFile(path.join(vault, 'exports/private.md'), 'utf8');
+    expect(artifact).toContain('Board prep');
+    expect(artifact).toContain('Tired but decisive');
+    expect(artifact).toContain('Ship the internal version');
   });
 });
 

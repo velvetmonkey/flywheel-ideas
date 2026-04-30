@@ -34,7 +34,12 @@ import * as path from 'node:path';
 import { generateFreezeId } from './ids.js';
 import type { IdeasDatabase } from './db.js';
 import { readNote } from './read/notes.js';
-import { getIdeaExtension, type IdeaExtensionRow } from './idea-extensions.js';
+import {
+  getIdeaContext,
+  getIdeaExtension,
+  type IdeaContext,
+  type IdeaExtensionRow,
+} from './idea-extensions.js';
 import { getAssumptionExtension, type AssumptionExtensionRow } from './assumption-extensions.js';
 
 /**
@@ -45,7 +50,7 @@ import { getAssumptionExtension, type AssumptionExtensionRow } from './assumptio
  */
 export interface FreezeSnapshot {
   /** Snapshot shape version — bump on breaking changes to the JSON shape. */
-  snapshot_version: 1;
+  snapshot_version: 2;
   /** Frozen idea state (DB row + body from disk + extension if present). */
   idea: {
     id: string;
@@ -53,6 +58,7 @@ export interface FreezeSnapshot {
     vault_path: string;
     state: string;
     body: string;
+    context: IdeaContext | null;
     extension: IdeaExtensionRow | null;
   };
   /**
@@ -88,6 +94,20 @@ export interface FreezeRow {
   supersedes_freeze_id: string | null;
   amendment_rationale: string | null;
   frozen_at: number;
+}
+
+interface LegacyFreezeSnapshot {
+  snapshot_version: 1;
+  idea: {
+    id: string;
+    title: string;
+    vault_path: string;
+    state: string;
+    body: string;
+    extension: IdeaExtensionRow | null;
+  };
+  assumptions: FreezeSnapshot['assumptions'];
+  frozen_at_iso: string;
 }
 
 export interface CreateFreezeOptions {
@@ -181,13 +201,14 @@ export function buildSnapshot(
   }>;
 
   return {
-    snapshot_version: 1,
+    snapshot_version: 2,
     idea: {
       id: idea.id,
       title: idea.title,
       vault_path: idea.vault_path,
       state: idea.state,
       body,
+      context: getIdeaContext(db, idea_id),
       extension: ideaExtension,
     },
     assumptions: assumptionRows.map((a) => ({
@@ -320,24 +341,14 @@ export function getFreeze(db: IdeasDatabase, freeze_id: string): FreezeRow | nul
       parsed.idea &&
       Array.isArray(parsed.assumptions)
     ) {
-      snapshot = parsed as FreezeSnapshot;
+      snapshot = normalizeSnapshot(parsed as FreezeSnapshot | LegacyFreezeSnapshot);
     } else {
       // Fallback shape if the row was hand-edited; surface as malformed by
       // returning the bare-minimum shape so callers can still see metadata.
-      snapshot = {
-        snapshot_version: 1,
-        idea: { id: row.idea_id, title: '', vault_path: '', state: 'unknown', body: '', extension: null },
-        assumptions: [],
-        frozen_at_iso: new Date(row.frozen_at).toISOString(),
-      };
+      snapshot = malformedSnapshot(row.idea_id, row.frozen_at);
     }
   } catch {
-    snapshot = {
-      snapshot_version: 1,
-      idea: { id: row.idea_id, title: '', vault_path: '', state: 'unknown', body: '', extension: null },
-      assumptions: [],
-      frozen_at_iso: new Date(row.frozen_at).toISOString(),
-    };
+    snapshot = malformedSnapshot(row.idea_id, row.frozen_at);
   }
 
   return {
@@ -348,6 +359,36 @@ export function getFreeze(db: IdeasDatabase, freeze_id: string): FreezeRow | nul
     supersedes_freeze_id: row.supersedes_freeze_id,
     amendment_rationale: row.amendment_rationale,
     frozen_at: row.frozen_at,
+  };
+}
+
+function normalizeSnapshot(snapshot: FreezeSnapshot | LegacyFreezeSnapshot): FreezeSnapshot {
+  if (snapshot.snapshot_version === 2) return snapshot;
+  return {
+    snapshot_version: 2,
+    idea: {
+      ...snapshot.idea,
+      context: snapshot.idea.extension?.context ?? null,
+    },
+    assumptions: snapshot.assumptions,
+    frozen_at_iso: snapshot.frozen_at_iso,
+  };
+}
+
+function malformedSnapshot(idea_id: string, frozen_at: number): FreezeSnapshot {
+  return {
+    snapshot_version: 2,
+    idea: {
+      id: idea_id,
+      title: '',
+      vault_path: '',
+      state: 'unknown',
+      body: '',
+      context: null,
+      extension: null,
+    },
+    assumptions: [],
+    frozen_at_iso: new Date(frozen_at).toISOString(),
   };
 }
 

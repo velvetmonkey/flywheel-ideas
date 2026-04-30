@@ -18,11 +18,11 @@
  * so `ideas_council_views.prompt_version` is comparable across time.
  */
 
-// v1.1.0 — added steelman mode prefix + steelman task instruction (D3).
-export const PROMPT_VERSION = '1.1.0';
+// v1.2.0 — added anti_portfolio retrospective mode.
+export const PROMPT_VERSION = '1.2.0';
 export const PERSONA_VERSION = '1.0.0';
 
-export type CouncilMode = 'standard' | 'pre_mortem' | 'steelman';
+export type CouncilMode = 'standard' | 'pre_mortem' | 'steelman' | 'anti_portfolio';
 
 export interface PersonaDef {
   /** Stable machine-key used in file paths + DB rows: `risk-pessimist` */
@@ -95,6 +95,12 @@ const PRE_MORTEM_PREFIX = `Assume this idea has failed 12 months from now. Work 
 // strongest possible affirmative case so the user isn't trained into
 // permanent pessimism by repeated pre_mortem dispatches.
 const STEELMAN_PREFIX = `Assume this idea succeeded 12 months from now. Work backwards — why? Argue the strongest possible affirmative case. For every declared assumption, articulate the best version of why it held and what evidence supports that conclusion. Your persona's default skepticism is suspended for this run; channel it into finding the most compelling defense, not the most compelling attack.
+
+---
+
+`;
+
+const ANTI_PORTFOLIO_PREFIX = `This is a retrospective anti-portfolio review. Reality has already refuted one or more assumptions behind the idea. Your job is not to decide whether the bet is good now; your job is to diagnose what was wrong, which assumption failed, and how the lesson should be stated so future decisions improve.
 
 ---
 
@@ -200,6 +206,8 @@ export function assemblePrompt(input: PromptInput): AssembledPrompt {
       ? `${PRE_MORTEM_PREFIX}${userBody}`
       : input.mode === 'steelman'
         ? `${STEELMAN_PREFIX}${userBody}`
+        : input.mode === 'anti_portfolio'
+          ? `${ANTI_PORTFOLIO_PREFIX}${userBody}`
         : userBody;
 
   let user: string;
@@ -232,6 +240,12 @@ function buildTaskInstruction(mode: CouncilMode, hasEvidence: boolean): string {
       ? ' Where the evidence above supports an assumption, cite it with the source path; where it might contradict, account for the contradiction in the strongest defense.'
       : '';
     return `Defend each assumption with the strongest case for why it holds. Cite assumptions by id in \`assumptions_cited\`.${evidenceClause}`;
+  }
+  if (mode === 'anti_portfolio') {
+    const evidenceClause = hasEvidence
+      ? ' Use the retrospective context and any evidence above to identify which assumption actually failed, not just which one was easiest to attack.'
+      : '';
+    return `Diagnose the failure retrospectively. Identify the assumption most responsible, explain what the decision-makers got wrong, and state the durable lesson. Cite assumptions by id in \`assumptions_cited\`.${evidenceClause}`;
   }
   const evidenceClause = hasEvidence
     ? ' Where the evidence above contradicts or supports an assumption, surface that explicitly with the source path.'

@@ -17,6 +17,7 @@ import {
   openIdeasDb,
   renderPortfolioMarkdown,
   runMigrations,
+  setIdeaExtension,
   type IdeasDatabase,
 } from '../src/index.js';
 
@@ -107,6 +108,45 @@ describe('exportIdea', () => {
     expect(exported.snapshot.frozen_at_iso).toBe(fr.snapshot.frozen_at_iso);
   });
 
+  it('strips private context from export by default, even when reusing a persisted freeze', async () => {
+    await seedIdea('idea-a', 'Migrate to event-driven', 'Body about EDA.');
+    setIdeaExtension(db, 'idea-a', {
+      context: {
+        situational_context: 'Quiet planning cycle',
+        expected_outcome: 'Keep this private by default',
+      },
+    });
+    createFreeze(db, vault, 'idea-a', {}, 5000);
+
+    const exported = exportIdea(db, vault, 'idea-a');
+
+    expect(exported.snapshot.idea.context).toBeNull();
+    expect(exported.snapshot.idea.extension?.context).toBeNull();
+  });
+
+  it('includes private context when explicitly requested', async () => {
+    await seedIdea('idea-a', 'Migrate to event-driven', 'Body about EDA.');
+    setIdeaExtension(db, 'idea-a', {
+      context: {
+        situational_context: 'Quiet planning cycle',
+        mental_or_physical_state: 'Low-energy',
+        expected_outcome: 'Use the explicit opt-in path',
+        review_date: '2026-05-05',
+      },
+      alternatives: [{ title: 'Wait', why_rejected: 'Decision needed now' }],
+    });
+
+    const exported = exportIdea(db, vault, 'idea-a', { include_private_context: true });
+
+    expect(exported.snapshot.idea.context).toEqual({
+      situational_context: 'Quiet planning cycle',
+      mental_or_physical_state: 'Low-energy',
+      expected_outcome: 'Use the explicit opt-in path',
+      review_date: '2026-05-05',
+      alternatives_considered: [{ title: 'Wait', why_rejected: 'Decision needed now' }],
+    });
+  });
+
   it('surfaces outcomes with refute/validate verdicts and resolved assumption text', async () => {
     await seedIdea('idea-a', 'Test', 'body');
     const a1 = await seedAssumption('idea-a', 'Throughput holds at 5x', true);
@@ -163,7 +203,7 @@ describe('exportPortfolio', () => {
 
     const portfolio = exportPortfolio(db, vault, ['idea-b', 'idea-a'], {}, 9999);
 
-    expect(portfolio.schema_version).toBe(1);
+    expect(portfolio.schema_version).toBe(2);
     expect(portfolio.exported_at).toBe(9999);
     expect(portfolio.ideas).toHaveLength(2);
     expect(portfolio.ideas[0].snapshot.idea.id).toBe('idea-b'); // input order preserved
@@ -196,6 +236,26 @@ describe('renderPortfolioMarkdown', () => {
     const open = renderPortfolioMarkdown(portfolio, { redact_bodies: false });
     expect(open).toContain('SECRET BODY CONTENT');
     expect(open).not.toContain('Body redacted');
+  });
+
+  it('renders private context only when the exported snapshot carries it', async () => {
+    await seedIdea('idea-a', 'Test idea', 'SECRET BODY CONTENT');
+    setIdeaExtension(db, 'idea-a', {
+      context: {
+        situational_context: 'Internal review',
+        expected_outcome: 'Visible only on opt-in export',
+      },
+    });
+
+    const redacted = renderPortfolioMarkdown(exportPortfolio(db, vault, ['idea-a'], {}, 1000));
+    expect(redacted).not.toContain('Internal review');
+
+    const withContext = renderPortfolioMarkdown(
+      exportPortfolio(db, vault, ['idea-a'], { include_private_context: true }, 1000),
+    );
+    expect(withContext).toContain('Private context');
+    expect(withContext).toContain('Internal review');
+    expect(withContext).toContain('Visible only on opt-in export');
   });
 
   it('renders assumptions table with load-bearing star', async () => {

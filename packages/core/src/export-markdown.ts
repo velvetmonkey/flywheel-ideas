@@ -117,6 +117,33 @@ function renderIdea(
   }
   lines.push('');
 
+  if (snapshot.idea.context) {
+    lines.push('### Private context');
+    lines.push('');
+    if (snapshot.idea.context.situational_context) {
+      lines.push(`- **Situational context:** ${snapshot.idea.context.situational_context}`);
+    }
+    if (snapshot.idea.context.mental_or_physical_state) {
+      lines.push(`- **Mental or physical state:** ${snapshot.idea.context.mental_or_physical_state}`);
+    }
+    if (snapshot.idea.context.expected_outcome) {
+      lines.push(`- **Expected outcome:** ${snapshot.idea.context.expected_outcome}`);
+    }
+    if (snapshot.idea.context.review_date) {
+      lines.push(`- **Review date:** ${snapshot.idea.context.review_date}`);
+    }
+    if (
+      snapshot.idea.context.alternatives_considered &&
+      snapshot.idea.context.alternatives_considered.length > 0
+    ) {
+      lines.push('- **Alternatives considered:**');
+      for (const alternative of snapshot.idea.context.alternatives_considered) {
+        lines.push(`  - ${alternative.title}: ${alternative.why_rejected}`);
+      }
+    }
+    lines.push('');
+  }
+
   // Body (or redaction notice)
   lines.push('### Body');
   lines.push('');

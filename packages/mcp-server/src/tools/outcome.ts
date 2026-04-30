@@ -49,7 +49,7 @@ export function registerOutcomeTool(
       'Every response includes next_steps; reversible via outcome.undo.',
     ].join(''),
     {
-      action: z.enum(['log', 'undo', 'list', 'read']).describe('Operation to perform'),
+      action: z.enum(['log', 'undo', 'list', 'read', 'memo_upsert']).describe('Operation to perform'),
       // log
       idea_id: z
         .string()
@@ -85,6 +85,10 @@ export function registerOutcomeTool(
         .string()
         .optional()
         .describe('[undo|read] Outcome id'),
+      outcome_id: z
+        .string()
+        .optional()
+        .describe('[memo_upsert] Outcome id whose canonical memo should be created or replaced'),
       // list
       include_stale: z
         .boolean()
@@ -109,6 +113,8 @@ export function registerOutcomeTool(
             return handleList(getVaultPath(), getDb(), args);
           case 'read':
             return handleRead(getDb(), args);
+          case 'memo_upsert':
+            return handleMemoUpsert(getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -196,9 +202,9 @@ async function handleLog(
     const refutes_any = result.refuted.length > 0;
     if (refutes_any && !memo_recorded) {
       next_steps.push({
-        action: 'outcome.log',
-        example: `outcome.log({ idea_id: "${args.idea_id}", id_alias: "${result.outcome.id}", memo: { root_cause: "<what broke>", what_we_thought: "<original belief>", what_actually_happened: "<observed reality>", lesson: "<durable takeaway>" } })`,
-        why: `Anti-Portfolio: this outcome refuted ${result.refuted.length} assumption(s). The Bessemer pattern says: write a structured memo capturing root_cause / what_we_thought / what_actually_happened / lesson. The lesson field is the durable layer that propagates across future ideas. Re-call outcome.log with a memo arg, OR write one now via a follow-up call.`,
+        action: 'outcome.memo_upsert',
+        example: `outcome.memo_upsert({ outcome_id: "${result.outcome.id}", memo: { root_cause: "<what broke>", what_we_thought: "<original belief>", what_actually_happened: "<observed reality>", lesson: "<durable takeaway>" } })`,
+        why: `Anti-Portfolio: this outcome refuted ${result.refuted.length} assumption(s). The Bessemer pattern says: write a structured memo capturing root_cause / what_we_thought / what_actually_happened / lesson. The lesson field is the durable layer that propagates across future ideas. Use outcome.memo_upsert to attach the canonical memo.`,
       });
     }
 
@@ -391,6 +397,7 @@ function handleRead(
     .all(args.id) as Array<{ assumption_id: string; verdict: string }>;
   const refuted = verdicts.filter((v) => v.verdict === 'refuted').map((v) => v.assumption_id);
   const validated = verdicts.filter((v) => v.verdict === 'validated').map((v) => v.assumption_id);
+  const memo = getOutcomeMemo(db, row.id);
 
   const next_steps: NextStep[] = [];
   if (row.undone_at === null) {
@@ -417,8 +424,69 @@ function handleRead(
       undone_at: row.undone_at,
       refuted,
       validated,
+      memo: memo?.memo ?? null,
+      memo_written_at: memo?.written_at ?? null,
       write_path: getActiveWritePath(),
     },
     next_steps,
   });
+}
+
+function handleMemoUpsert(
+  db: IdeasDatabase,
+  args: { outcome_id?: string; memo?: OutcomeMemo },
+): ReturnType<typeof mcpText> {
+  if (!args.outcome_id) {
+    return mcpError('memo_upsert requires `outcome_id`', [
+      {
+        action: 'outcome.list',
+        example: 'outcome.list({})',
+        why: 'Find the outcome whose anti-portfolio memo you want to write.',
+      },
+    ]);
+  }
+  if (!args.memo) {
+    return mcpError('memo_upsert requires `memo`', [
+      {
+        action: 'outcome.memo_upsert',
+        example: `outcome.memo_upsert({ outcome_id: "${args.outcome_id}", memo: { root_cause: "<what broke>", what_we_thought: "<original belief>", what_actually_happened: "<observed reality>", lesson: "<durable takeaway>" } })`,
+        why: 'The memo is the canonical structured post-mortem for a refuting outcome.',
+      },
+    ]);
+  }
+  const row = getOutcome(db, args.outcome_id);
+  if (!row) return mcpError(`outcome not found: ${args.outcome_id}`);
+
+  try {
+    const existing = getOutcomeMemo(db, args.outcome_id);
+    recordOutcomeMemo(db, args.outcome_id, args.memo);
+    const memo = getOutcomeMemo(db, args.outcome_id);
+    return mcpText({
+      result: {
+        outcome_id: args.outcome_id,
+        operation: existing ? 'replaced' : 'created',
+        memo: memo?.memo ?? null,
+        memo_written_at: memo?.written_at ?? null,
+        write_path: getActiveWritePath(),
+      },
+      next_steps: [
+        {
+          action: 'outcome.read',
+          example: `outcome.read({ id: "${args.outcome_id}" })`,
+          why: 'Re-read the outcome and verify the canonical memo now sits alongside the verdicts.',
+        },
+      ],
+    });
+  } catch (err) {
+    if (err instanceof OutcomeMemoInputError) {
+      return mcpError(err.message, [
+        {
+          action: 'outcome.memo_upsert',
+          example: `outcome.memo_upsert({ outcome_id: "${args.outcome_id}", memo: { root_cause: "<what broke>", what_we_thought: "<original belief>", what_actually_happened: "<observed reality>", lesson: "<durable takeaway>" } })`,
+          why: 'Fix the missing or empty memo field and retry.',
+        },
+      ]);
+    }
+    throw err;
+  }
 }

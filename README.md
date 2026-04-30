@@ -226,10 +226,19 @@ Five MCP tools, action-dispatched. Every response carries `{result, next_steps, 
 
 ### `idea` (v0.1 + v0.2 lineage + v0.3 export)
 
-- `create({title, body?})` / `read(id)` / `list({state?, limit?})` / `transition({id, to, reason?})` / `forget(id)`
+- `create({title, body?, context?})` / `read(id)` / `list({state?, limit?})` / `transition({id, to, reason?})` / `forget(id)`
 - `freeze({id})` / `list_freezes({id})` — OSF-style snapshot of an idea + its locked assumptions
 - `ancestry({id})` / `descendants({id})` / `shared_assumptions({ids})` — lineage queries
-- `export({idea_ids? | all?, include_lineage?, redact_bodies?, output_path?})` — render a markdown decision portfolio (idea + assumptions + outcomes + council excerpts + lineage) the operator can hand to a colleague. Bodies redacted by default. Examples: [`examples/portfolio-pep-3000.md`](./examples/portfolio-pep-3000.md), [`examples/portfolio-konflux-adrs.md`](./examples/portfolio-konflux-adrs.md).
+- `export({idea_ids? | all?, include_lineage?, redact_bodies?, include_private_context?, output_path?})` — render a markdown decision portfolio (idea + assumptions + outcomes + council excerpts + lineage) the operator can hand to a colleague. Bodies redacted by default. Private `context` is excluded by default and only rendered when `include_private_context: true`. Examples: [`examples/portfolio-pep-3000.md`](./examples/portfolio-pep-3000.md), [`examples/portfolio-konflux-adrs.md`](./examples/portfolio-konflux-adrs.md).
+
+`context` is private decision-journal metadata captured at `idea.create` time:
+- `situational_context`
+- `mental_or_physical_state`
+- `expected_outcome`
+- `review_date`
+- `alternatives_considered[]`
+
+It is stored in the DB sidecar, returned by `idea.read`, carried through freezes, omitted from note frontmatter/body, and excluded from exports unless explicitly opted in.
 
 ### `assumption` (v0.1 + v0.2 RAND ABP)
 
@@ -239,15 +248,18 @@ Five MCP tools, action-dispatched. Every response carries `{result, next_steps, 
 - `radar({query | idea_id})` — semantic vault-wide scan for unstated load-bearing claims
 - `extension_set({id, shaping_actions?, hedging_actions?})` / `extension_get({id})` — RAND Assumption-Based Planning shaping + hedging actions
 
-### `council` (v0.1 + v0.2 delta)
+### `council` (v0.1 + v0.2 delta + retrospective/telemetry)
 
-- `run({id, depth: "light"|"full", mode: "standard"|"pre_mortem"|"steelman", confirm})` / `view(view_id)` / `list({idea_id})`
-- `delta({id})` — what's changed across council sessions for the same idea
+- `run({id, depth: "light"|"full", mode: "standard"|"pre_mortem"|"steelman", confirm})`
+- `run({mode: "anti_portfolio", outcome_id, focus_assumption_id?, depth?, confirm})` — retrospective council pass over a refuting outcome. Returns a `proposed_memo` draft but does not mutate the canonical memo.
+- `delta({idea_id, from_session_id, to_session_id})` — what's changed across council sessions for the same idea
+- `effectiveness_report({from_ms, to_ms, persona_ids?, cli_ids?})` — read-only persona/CLI effectiveness rollup over predictive sessions only
 - `approval_status` — read-only inspection of the out-of-band consent state
 
 ### `outcome`
 
-- `log({idea_id, text, refutes?: [asm_ids], validates?: [asm_ids]})` / `read(id)` / `list({idea_id?})` / `undo(outcome_id)`
+- `log({idea_id, text, refutes?: [asm_ids], validates?: [asm_ids], memo?})` / `read(id)` / `list({idea_id?})` / `undo(outcome_id)`
+- `memo_upsert({outcome_id, memo})` — create or replace the canonical Anti-Portfolio memo for an outcome. `outcome.read` returns `memo` + `memo_written_at`.
 
 ### `import` (v0.2 — bulk corpus ingestion)
 
@@ -259,6 +271,7 @@ Five MCP tools, action-dispatched. Every response carries `{result, next_steps, 
   - `github-repo-adr` (v0.3.0) — Architecture Decision Records following the konflux-ci/architecture frontmatter convention (`title`, `status`, optional `superseded_by`). Per the Phase 3c census, scoped to repos following this format; the adapter rejects the source up front for any other convention. Source: `owner/repo[@ref][:custom-path/]`.
 
 Full operator guide for the import flow: [`docs/import.md`](./docs/import.md).
+Trigger 1 dogfood path for the new queue: [`docs/trigger-1-workflow.md`](./docs/trigger-1-workflow.md).
 
 ## Lineage — Architecture Decision Records, extended
 

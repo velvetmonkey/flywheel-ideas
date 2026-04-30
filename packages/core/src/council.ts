@@ -50,6 +50,7 @@ import {
   listSessionsByIdea,
   listViewsBySession,
   persistCouncilView,
+  type CouncilSessionPurpose,
   type CouncilSessionRow,
   type CouncilViewRow,
 } from './council-sessions.js';
@@ -81,6 +82,8 @@ export interface RunCouncilInput {
   idea_id: string;
   depth?: 'light' | 'full';
   mode: CouncilMode;
+  purpose?: CouncilSessionPurpose;
+  outcome_id?: string | null;
   /** Session-level approval scope, for persistence into the dispatch log. */
   approval_scope: ApprovalScope;
 }
@@ -187,6 +190,8 @@ export interface CouncilViewResult {
 export interface RunCouncilResult {
   session_id: string;
   mode: CouncilMode;
+  purpose: CouncilSessionPurpose;
+  outcome_id: string | null;
   synthesis_vault_path: string;
   views: CouncilViewResult[];
   failed_any: boolean;
@@ -209,6 +214,7 @@ export async function runCouncil(
   options: RunCouncilOptions = {},
 ): Promise<RunCouncilResult> {
   const depth: 'light' | 'full' = input.depth ?? 'light';
+  const purpose: CouncilSessionPurpose = input.purpose ?? 'predictive';
 
   const idea = db
     .prepare(`SELECT id, vault_path, title FROM ideas_notes WHERE id = ?`)
@@ -248,6 +254,8 @@ export async function runCouncil(
     idea_id: input.idea_id,
     depth,
     mode: input.mode,
+    purpose,
+    outcome_id: input.outcome_id ?? null,
   });
 
   // 1.5 v0.2 D2 — OSF preregistration binding. Mutually exclusive options:
@@ -329,6 +337,8 @@ export async function runCouncil(
     idea_id: input.idea_id,
     depth,
     mode: input.mode,
+    purpose,
+    outcome_id: input.outcome_id ?? null,
     started_at: existingSessions[0]?.started_at ?? Date.now(),
     completed_at: null,
     synthesis_vault_path: null,
@@ -337,6 +347,7 @@ export async function runCouncil(
   const freshSession = db
     .prepare(
       `SELECT id, idea_id, depth, mode, started_at, completed_at, synthesis_vault_path
+               , purpose, outcome_id
          FROM ideas_council_sessions WHERE id = ?`,
     )
     .get(session_id) as CouncilSessionRow | undefined;
@@ -393,6 +404,8 @@ export async function runCouncil(
   return {
     session_id,
     mode: input.mode,
+    purpose,
+    outcome_id: input.outcome_id ?? null,
     synthesis_vault_path: synthesis.relative_path,
     views: viewResults,
     failed_any,
@@ -561,6 +574,7 @@ async function runCouncilCell(
       stance: null,
       self_critique: null,
       confidence: null,
+      most_vulnerable_assumption_id: null,
       content_vault_path,
       failure_reason: pass1.failure_reason,
       stderr_tail: pass1.stderrForLog || null,
@@ -628,6 +642,12 @@ async function runCouncilCell(
     stance: combinedStance,
     self_critique: combinedSelfCritique,
     confidence: combinedConfidence,
+    most_vulnerable_assumption_id: normalizeMostVulnerableAssumptionId(
+      input.assumptions,
+      pass2.parsed?.metacognitive_reflection.most_vulnerable_assumption ??
+        pass1.parsed.metacognitive_reflection.most_vulnerable_assumption ??
+        null,
+    ),
     content_vault_path,
     failure_reason: combinedFailureReason,
     stderr_tail: combinedStderr || null,
@@ -654,6 +674,14 @@ async function runCouncilCell(
     // the synthesis can render the authoritative revision.
     stance: pass2.parsed ?? pass1.parsed,
   };
+}
+
+function normalizeMostVulnerableAssumptionId(
+  assumptions: Array<{ id: string }>,
+  value: string | null,
+): string | null {
+  if (!value || value.trim() === '') return null;
+  return assumptions.some((assumption) => assumption.id === value) ? value : null;
 }
 
 function baseNoteFrontmatter(
