@@ -14,6 +14,10 @@ import {
   GithubRepoAdrAdapter,
   GITHUB_REPO_ADR_NAME,
 } from './adapters/github-repo-adr.js';
+import {
+  SecCompanyAdapter,
+  SEC_COMPANY_NAME,
+} from './adapters/sec-company.js';
 import { registerAdapter } from './registry.js';
 
 export * from './adapter.js';
@@ -36,6 +40,12 @@ export {
   extractMarkdownSection,
   __resetStderrOnceForTests,
 } from './adapters/github-repo-adr.js';
+export {
+  SecCompanyAdapter,
+  SEC_COMPANY_NAME,
+  extractEligibleSections,
+  extractThemeHits,
+} from './adapters/sec-company.js';
 
 // Register built-in adapters once per process. `registerAdapter` guards
 // against double-registration at the same name — safe to import this module
@@ -54,9 +64,11 @@ function safeRegister(factory: () => Parameters<typeof registerAdapter>[0]) {
 safeRegister(() => new GithubStructuredDocsAdapter());
 safeRegister(() => new CsvCorpusAdapter());
 safeRegister(() => new GithubRepoAdrAdapter());
+safeRegister(() => new SecCompanyAdapter());
 
 export const BUILTIN_ADAPTER_NAMES = [
   GITHUB_STRUCTURED_DOCS_NAME,
   CSV_CORPUS_NAME,
   GITHUB_REPO_ADR_NAME,
+  SEC_COMPANY_NAME,
 ];

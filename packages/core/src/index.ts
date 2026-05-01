@@ -66,6 +66,7 @@ export {
   SCHEMA_SQL_V9,
   SCHEMA_SQL_V10,
   SCHEMA_SQL_V11,
+  SCHEMA_SQL_V12,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -135,6 +136,11 @@ export {
   generateFreezeId,
   generateImportSourceId,
   generateImportCandidateId,
+  generateCompanyRunId,
+  generateCompanyFilingId,
+  generateCompanyThemeId,
+  generateCompanyObservationId,
+  generateCompanyOutcomeCandidateId,
   ID_ALPHABET,
 } from './ids.js';
 
@@ -510,6 +516,10 @@ export {
   parseAdr,
   extractMarkdownSection,
   __resetStderrOnceForTests,
+  SecCompanyAdapter,
+  SEC_COMPANY_NAME,
+  extractEligibleSections,
+  extractThemeHits,
   BUILTIN_ADAPTER_NAMES,
 } from './import/index.js';
 export type {
@@ -531,6 +541,22 @@ export type { DedupDecision, DedupHit, DedupOptions } from './import/dedup.js';
 export type { ScanInput, ScanSummary, DedupStatus } from './import/scan.js';
 export type { PromoteInput, PromoteResult, PromoteDetails } from './import/promote.js';
 export type { AdapterHooks, GithubStructuredDocsConfig } from './import/adapters/github-structured-docs.js';
+
+// Company tracker (Company Adapter v1)
+export {
+  applyCompanyOutcomes,
+  readCompanyRun,
+  trackCompanies,
+  writeCompanyReports,
+  CompanyInputError,
+} from './company.js';
+export type {
+  CompanyApplyOutcomesInput,
+  CompanyApplyOutcomesResult,
+  CompanyReportOptions,
+  CompanyTrackInput,
+  CompanyTrackResult,
+} from './company.js';
 
 // v3 idea-extensions sidecar (v0.2 Phase 1 D1)
 export {

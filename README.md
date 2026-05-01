@@ -12,7 +12,7 @@ Built for consequential decisions — architecture choices, pricing model rewrit
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![status: stable](https://img.shields.io/badge/status-stable-blue.svg)](#roadmap)
 
-> **Status:** v0.2.0 GA on `latest`. v0.4.0 staged on `main` — same closed loop as v0.2 + the v0.3 `github-repo-adr` adapter + the v0.3 `idea.export` action; **plus the breaking change that promoted [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) from optional sidecar to required peer dependency.** npm publish + announcement remain held; v0.4.0 ships when Trigger 1 dogfood feedback lands.
+> **Status:** v0.2.0 GA on `latest`. v0.4.0 staged on `main` — same closed loop as v0.2 + the v0.3 `github-repo-adr` adapter + the v0.3 `idea.export` action; **plus the breaking change that promoted [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) from optional sidecar to required peer dependency.** v0.5.0 company-tracker work is staged locally: 10-year SEC 10-K/10-Q assumption ledgers with staged realized-risk outcomes.
 >
 > Two pre-registered evaluations have completed:
 > - **v0.2 cite-rate pilot (Python 2→3):** 100% per-session, 79% per-persona ([pilot/RESULT.md](./pilot/RESULT.md))
@@ -269,9 +269,16 @@ It is stored in the DB sidecar, returned by `idea.read`, carried through freezes
   - `github-structured-docs` (v0.2 GA) — RFC-822-headered markdown trees like Python PEPs. Source: `owner/repo`, `owner/repo@ref`, or `owner/repo:path/`.
   - `csv-corpus` (v0.2.1) — JSONL. Paste any decision corpus into a `.jsonl` file (one decision per line, `{decision_id, title, body, assumptions: [...]}`) and run a council against it. Source: absolute path or `file://` URL.
   - `github-repo-adr` (v0.3.0) — Architecture Decision Records following the konflux-ci/architecture frontmatter convention (`title`, `status`, optional `superseded_by`). Per the Phase 3c census, scoped to repos following this format; the adapter rejects the source up front for any other convention. Source: `owner/repo[@ref][:custom-path/]`.
+  - `sec-company` (v0.5.0 staged) — SEC company tracker primitive. Scans 10-K/10-Q filings for recurring risk themes and realized-risk outcome candidates. Source: `ticker:AAPL`, `AAPL`, `cik:0000320193`, or `fixture://<dir>`.
+
+### `company` (v0.5.0 staged — SEC company tracker)
+
+- `track({companies: ["AAPL", "MSFT", "NVDA"], years: 10, forms: ["10-K", "10-Q"], confirm: true})` — build a 10-year company assumption ledger for up to three companies.
+- `read({run_id?})` / `report({run_id, format: "markdown"|"json"|"both"})` — inspect company timelines, recurring themes, staged outcomes, and report artifacts.
+- `apply_outcomes({run_id, outcome_candidate_ids?, min_confidence?, confirm: true})` — explicitly apply staged high-confidence realized-risk candidates through `outcome.log`.
 
 Full operator guide for the import flow: [`docs/import.md`](./docs/import.md).
-Trigger 1 dogfood path for the new queue: [`docs/trigger-1-workflow.md`](./docs/trigger-1-workflow.md).
+Trigger 1 dogfood path for the previous queue: [`docs/trigger-1-workflow.md`](./docs/trigger-1-workflow.md). The current engineering wedge is now the company tracker.
 
 ## Lineage — Architecture Decision Records, extended
 
@@ -293,12 +300,12 @@ If you read your team's existing ADRs and think "the call I made would be more u
 - **v0.4.0 — flywheel-memory promoted to required peer dependency.** Breaking change. Drops the `FLYWHEEL_IDEAS_MEMORY_BRIDGE=0` kill switch, drops direct-fs as a production fallback, hard-fails at boot if the bridge is unreachable. `peerDependencies` block declared with `optional: false`. The legacy direct-fs path survives only behind `FLYWHEEL_IDEAS_TEST_MODE=1` for hermetic test runs. Rationale: cite-rate gains depend on flywheel-memory's evidence reader, and the optional split was YAGNI infrastructure built for hypothetical users that never arrived. Roundtable: Claude PROCEED WITH MODIFICATIONS (8 mitigations folded in — purpose-built test-mode env var, error-message disambiguation, 30s→60s default timeout, hard-fail on mid-session subprocess crash); Gemini HOLD until Trigger 1 (overridden after user accepted the bundled-product framing on time-pressure grounds).
 - README front-page reframed 2026-04-27 — 30-second pitch + PEP 3000 hero example, "bets" → "decisions" terminology migration.
 - Phase 3 wedges cleared all gates (reasoning not recall · 3/3 SEC · 3/3 ADR · konflux-only census).
-- Phase 4 PR 1 (`github-repo-adr` adapter) merged. Phase 4.5 validation-gate clock is **not running** — without a public post, Trigger 2 (≥1 star / ≥1 issue from a Show HN-style post) cannot fire; Trigger 1 (named-user feedback from dogfooding with a specific human) remains open. See [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38).
+- Phase 4 PR 1 (`github-repo-adr` adapter) merged. The former Phase 4.5 `sec-edgar` validation gate is superseded by an operator decision to build the company-over-time tracker as the product wedge.
 - **P0 closed.** P0.1 (pilot-harness 600s timeout) and P0.2 (`rate_limit` classifier audit) both resolved 2026-04-27.
 - **P1.3 + P1.4 deferred-on-roundtable 2026-04-27.** Three consecutive HALT verdicts on infrastructure work. P1.5 reframed as dependent on a P1.4 reversal.
 - **P2.9 shipped 2026-04-27 (markdown-first per roundtable).** New `idea.export` action; two dogfood artifacts committed ([pep-3000](./examples/portfolio-pep-3000.md) and [konflux-adrs](./examples/portfolio-konflux-adrs.md)); the konflux artifact also serves as live-validation of the v0.3.0 `github-repo-adr` adapter against the real public repo (37/63 ADRs parsed, 26 per-file drift skips, no source-level rejection).
 - **P2.7 deferred-on-roundtable 2026-04-27 (HOLD verdict).** Strategic Skeptic: "Zero outcomes against zero priors. You are building a sophisticated calibration engine for a ghost town. Best case: 6 months dogfood to get baseline signal. PR #39 sits unmerged. Stop guessing. Merge it. Publish the dogfood artifacts. Let a real human's feedback dictate what's next." Risk Pessimist returned PROCEED WITH MODIFICATIONS (transaction coupling, undo cascade, schema NULL handling) but those concerns are moot if we don't ship.
-- **Next move is Trigger 1 dogfood.** (1) Hand `examples/portfolio-pep-3000.md` or `examples/portfolio-konflux-adrs.md` to one specific human; (2) capture their written feedback against [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38). The next plan opens against whatever they actually say. Until then, every infrastructure item is shadow-boxing.
+- **Next move is company tracking.** Build and dogfood a 10-year SEC assumption ledger across three user-provided companies, with realized-risk outcomes staged first and applied only after explicit confirmation.
 - Strategic posture (publish + announce held; Phase 4.5 gate Trigger 2 on hold) unchanged.
 
 ### v0.1 — the closed loop *(shipped 2026-04-23)*
@@ -338,7 +345,7 @@ The v0.3.0 staging never published — its breaking-change cousin (v0.4.0 below)
 - ✅ **`github-repo-adr` import adapter (konflux-format scope).** PR #37, merged 2026-04-26. Per-file skip on malformed frontmatter (not per-source rejection), `GITHUB_TOKEN` auth, 403/429 retry-after handling. Source URI: `github-repo-adr://owner/repo[@ref][:custom-path/]`. A `status: superseded` + `superseded_by:` frontmatter pair becomes an `outcome.log({refutes: [...]})` candidate at promote time. Live-validated against `konflux-ci/architecture` (37/63 ADRs parsed, 26 per-file skips, no source-level rejection — see [examples/portfolio-konflux-adrs.md](./examples/portfolio-konflux-adrs.md)).
 - ✅ **`idea.export` action.** PR #39, merged 2026-04-27. Markdown-first decision portfolio renderer (idea + assumptions + outcomes + council excerpts + lineage). Bodies redacted by default, lineage on by default, JSON output deferred to v0.3.1 per roundtable verdict. Two dogfood artifacts committed.
 
-### v0.4.0 — staged on `main` *(BREAKING; ships when Trigger 1 lands)*
+### v0.4.0 — staged on `main` *(BREAKING)*
 
 The bundled-product cut: cite-rate gains depend on flywheel-memory's evidence reader, so flywheel-memory is now a required peer dependency rather than an optional sidecar.
 
@@ -361,8 +368,7 @@ Three falsification probes — train-data leakage GAP, SEC + ADR readability spo
 Branch A was confirmed by the wedges; a roundtable critique on the implementation plan reduced the v0.3.0 scope from "ship both adapters" to "ship one, gate the second behind external validation." The revised plan:
 
 - ✅ **v0.3.0 — `github-repo-adr` adapter, scoped to konflux-format.** Code merged on `main` (PR #37); npm publish held. Live-validated against `konflux-ci/architecture` (see [examples/portfolio-konflux-adrs.md](./examples/portfolio-konflux-adrs.md)). Hardened against per-file frontmatter drift, `GITHUB_TOKEN` auth, 403/429 retry-after handling. Source URI: `github-repo-adr://owner/repo@ref:adr/0028.md`. Full guide: [`docs/import.md`](./docs/import.md).
-- ⏸️ **Validation gate before any sec-edgar work** ([#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)). At least one of: a named user with written feedback against `github-repo-adr` for a real decision context (Trigger 1), OR a public post generating ≥1 GitHub star / ≥1 specific user request (Trigger 2). Trigger 2 is **on hold** while publish + announce are held; only Trigger 1 can currently fire. No fixed clock — the gate stays open until the user dogfoods with a specific human or reverses the publish hold.
-- ⏳ **`sec-edgar` adapter (gated, deferred).** Specifications kept in the Phase 4 plan; implementation does not begin until the gate clears. Will pull Item 1A risk factors from EDGAR with a global rate-limit singleton (SEC's 2 req/sec policy) and a fallback whole-section parser when paragraph-splitting heuristics underperform.
+- ✅ **Company tracker wedge.** `company.track` wraps the lower-level `sec-company` adapter to build a 10-year 10-K/10-Q assumption ledger for up to three companies. Realized-risk detection stages outcomes; `company.apply_outcomes` is the explicit mutation point.
 
 ### Engineering priority queue *(2026-04-27)*
 
@@ -389,22 +395,22 @@ The active engineering work, ranked. Items 1–13 are the live queue; the parked
 11. **Persona effectiveness A/B** — instrumentation for which personas surface load-bearing dissent. Needs council-output telemetry.
 12. **State-of-mind context capture** (Farnam Street) — append decision-time emotional / situational metadata to `idea.create`.
 
-**P3 — engineering tracked, gated**
+**P3 — company tracking**
 
-13. **`sec-edgar` adapter** — full specifications preserved in the Phase 4 plan. Gated behind Phase 4.5 ([#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)); active in the queue, but implementation begins only when Trigger 1 (named-user feedback) fires.
+13. ✅ **Company SEC adapter** — `sec-company` + `company.track` create a longitudinal public-company assumption ledger from 10-K/10-Q filings. Outcome detection is staged first; explicit `company.apply_outcomes` calls the existing `outcome.log` path.
 
 ### Backlog *(parked)*
 
 - **Obsidian plugin.** UI surface; orthogonal to the engine. Revisit after P2 calibration work lands and the dashboard has something to render.
-- **Dogfood with one named human (Trigger 1 path)** *(promoted to active 2026-04-27 — see Current state above)*. Strategic, not engineering. Surfaced here originally so it wouldn't get lost; after the P2.7 HOLD roundtable, this is now the load-bearing next move — every infrastructure item is gated on whether a real human's feedback validates the direction.
+- **Dogfood with one named human.** Still useful, but no longer a hard engineering gate. The current dogfood path is the company tracker: build a longitudinal public-company corpus, then see whether staged realized-risk outcomes improve the decision loop.
 
 ### What's next to prove (not "more features")
 
 The mechanism story is now in. The empirical questions that remain — and that the v0.3+ work is partly aimed at answering:
 
-1. **Does this change real decisions?** Currently unmeasured. The Trigger 1 dogfood (one named human running flywheel-ideas against a real decision context, written feedback captured against [#38](https://github.com/velvetmonkey/flywheel-ideas/issues/38)) is the operative experiment for this question. Brier-scoring infrastructure (P2.7) is HOLD until that feedback names calibration as a felt need.
+1. **Does this change real decisions?** Currently unmeasured. The operative experiment is now the company tracker: use a 10-year 10-K/10-Q assumption ledger to see whether the system surfaces risks and realized outcomes worth acting on.
 2. **Do users come back six months later because the system caught the assumption that failed?** The propagation mechanism works (unit + property tested). Whether real-world users actually log real-world refutations against real prior councils is an entirely separate hypothesis.
-3. **Does broad market demand exist?** 0 stars, 0 forks, 0 issues today. Cite-rate evidence ≠ adoption evidence. The v0.3.0 `idea.export` portfolios are the friction-to-share experiment — handed to a specific human (Trigger 1) before any public-post motion (Trigger 2, on hold).
+3. **Does broad market demand exist?** 0 stars, 0 forks, 0 issues today. Cite-rate evidence ≠ adoption evidence. The company tracker is the current sharper demo path; public-post motion remains held.
 
 ### Long-term
 
