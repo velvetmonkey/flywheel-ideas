@@ -223,7 +223,7 @@ async function* emitCandidatesForFiling(
           structured: {
             context: `${companyLabel} disclosed ${theme.title.toLowerCase()} risk in ${filing.form} ${filing.filedAt}.`,
             challenge: theme.excerpt,
-            decision: `${companyLabel} can manage this recurring risk without material disruption.`,
+            decision: `${companyLabel} can manage ${theme.title.toLowerCase()} risk without material disruption.`,
             tradeoff: 'The filing language is company-authored risk disclosure, not an independent forecast.',
           },
         },
@@ -351,23 +351,32 @@ function scoreSection(body: string): number {
 }
 
 export function extractThemeHits(text: string): ThemeHit[] {
-  const paragraphs = text.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+  const paragraphs = normalizeEvidenceText(text).split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
   const hits = new Map<string, ThemeHit>();
   for (const p of paragraphs) {
-    const lower = p.toLowerCase();
-    const theme = classifyTheme(lower);
-    if (!theme) continue;
-    if (hits.has(theme.key)) continue;
-    const realized = isExplicitRealization(lower);
-    hits.set(theme.key, {
-      ...theme,
-      excerpt: p.slice(0, 1600),
-      realized,
-      confidence: realized ? 0.92 : 0.78,
-      rationale: realized
-        ? 'Later filing language explicitly states the risk affected operations or results.'
-        : 'Risk theme disclosed without explicit realization language.',
-    });
+    const sentences = splitSentences(p);
+    for (let i = 0; i < sentences.length; i++) {
+      const sentence = sentences[i];
+      const lower = sentence.toLowerCase();
+      const themes = classifyThemes(lower);
+      if (themes.length === 0) continue;
+      const realized = isExplicitRealization(lower);
+      const excerpt = evidenceWindow(sentences, i);
+      for (const theme of themes) {
+        const current = hits.get(theme.key);
+        if (current?.realized) continue;
+        if (current && !realized) continue;
+        hits.set(theme.key, {
+          ...theme,
+          excerpt,
+          realized,
+          confidence: realized ? 0.92 : 0.78,
+          rationale: realized
+            ? 'Filing language states this risk had an actual effect on operations, results, costs, or supply.'
+            : 'Risk theme disclosed without strict realized-outcome language.',
+        });
+      }
+    }
   }
   return [...hits.values()];
 }
@@ -387,17 +396,44 @@ const THEME_CATALOG: Array<Pick<ThemeHit, 'key' | 'title'> & { pattern: RegExp }
   { key: 'macro-fx', title: 'Macro and foreign exchange', pattern: /(macroeconomic|inflation|recession|foreign currency|currency exchange|fx|interest rates|economic conditions)/ },
 ];
 
-function classifyTheme(lower: string): Pick<ThemeHit, 'key' | 'title'> | null {
-  return THEME_CATALOG.find((theme) => theme.pattern.test(lower)) ?? null;
+function classifyThemes(lower: string): Array<Pick<ThemeHit, 'key' | 'title'>> {
+  return THEME_CATALOG.filter((theme) => theme.pattern.test(lower));
 }
 
 function isExplicitRealization(lower: string): boolean {
-  return [
-    /\b(resulted in|caused|led to|we experienced|we incurred|we recorded|we recognized|we suffered)\b.{0,120}\b(shortage|delay|decline|decrease|disruption|loss|impairment|charge|expense|cost|outage|breach|penalty|fine|constraint|reduction)\b/,
-    /\b(shortage|delay|decline|decrease|disruption|loss|impairment|charge|expense|outage|breach|penalty|fine|constraint|reduction)\b.{0,120}\b(adversely affected|materially affected|reduced|increased costs|lowered|limited|constrained)\b/,
-    /\bdecline was due to\b|\badversely affected\b|\bmaterially affected\b|\blitigation resulted\b|\bregulatory action resulted\b/,
-    /\b\d+(?:\.\d+)?\s?%\b.{0,120}\b(decline|decrease|increase in costs|reduction|adverse impact|headwind)\b/,
+  if (hasNegatedImpact(lower)) return false;
+  const hasActualTrigger = [
+    /\b(resulted in|resulting in|caused|led to|has led to|have led to|has resulted in|have resulted in)\b.{0,140}\b(shortages?|delays?|declines?|decreases?|disruptions?|loss(?:es)?|impairments?|charges?|expenses?|costs?|outages?|breaches?|penalties|fines?|constraints?|reductions?|reduced sales|harmed|limited|constrained|remediation)\b/,
+    /\b(we experienced|we incurred|we recorded|we recognized|we suffered|we wrote down|we wrote off)\b.{0,140}\b(shortages?|delays?|declines?|decreases?|disruptions?|loss(?:es)?|impairments?|charges?|expenses?|costs?|outages?|breaches?|penalties|fines?|constraints?|reductions?|inventory provisions?|remediation)\b/,
+    /\b(shortages?|delays?|declines?|decreases?|disruptions?|loss(?:es)?|impairments?|charges?|expenses?|outages?|breaches?|penalties|fines?|constraints?|reductions?|incidents?)\b.{0,140}\b(adversely affected|materially affected|reduced|increased costs|lowered|limited|constrained|harmed|negatively impacted)\b/,
+    /\b\d+(?:\.\d+)?\s?%\b.{0,140}\b(decline|decrease|increase in costs|reduction|adverse impact|headwind)\b/,
+    /\$\s?\d+(?:\.\d+)?\s?(?:million|billion)\b.{0,140}\b(charge|cost|expense|loss|impairment|penalty|fine|provision)\b/,
   ].some((pattern) => pattern.test(lower));
+  if (!hasActualTrigger) return false;
+  return !isPurelyConditional(lower);
+}
+
+function hasNegatedImpact(lower: string): boolean {
+  return /\b(has not|have not|did not|does not|do not|not expected to|not materially|no material|without material)\b.{0,80}\b(affected|impact|resulted|caused|led to|loss|charge|expense|cost|disruption|delay|decline)\b/.test(lower);
+}
+
+function isPurelyConditional(lower: string): boolean {
+  const actualMarkers = /\b(resulted in|resulting in|caused|led to|has led|have led|has resulted|have resulted|we experienced|we incurred|we recorded|we recognized|we suffered|adversely affected|materially affected|was due to|were due to)\b/;
+  if (actualMarkers.test(lower)) return false;
+  return /\b(could|may|might|would|can|potential|future|if|not expected to)\b/.test(lower);
+}
+
+function splitSentences(text: string): string[] {
+  return text
+    .replace(/\s+/g, ' ')
+    .split(/(?<=[.!?])\s+(?=[A-Z0-9"$])/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+function evidenceWindow(sentences: string[], index: number): string {
+  const parts = sentences.slice(Math.max(0, index - 1), Math.min(sentences.length, index + 2));
+  return parts.join(' ').slice(0, 900).trim();
 }
 
 function renderIdeaBody(filing: FilingRecord, section: SectionSlice): string {
@@ -492,16 +528,52 @@ function padCik(cik: string): string {
 }
 
 function htmlToText(input: string): string {
-  return input
+  return normalizeEvidenceText(input
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<[^>]+>/g, '\n')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
+    .replace(/\r/g, ''));
+}
+
+function normalizeEvidenceText(input: string): string {
+  return decodeHtmlEntities(input)
     .replace(/\r/g, '')
+    .replace(/[\u00a0\u202f]/g, ' ')
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
     .replace(/[ \t]+/g, ' ')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+}
+
+function decodeHtmlEntities(input: string): string {
+  const named: Record<string, string> = {
+    amp: '&',
+    apos: "'",
+    gt: '>',
+    ldquo: '"',
+    lsquo: "'",
+    nbsp: ' ',
+    quot: '"',
+    rdquo: '"',
+    rsquo: "'",
+    lt: '<',
+  };
+  return input.replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (match, entity: string) => {
+    const key = entity.toLowerCase();
+    if (key.startsWith('#x')) return codePointToString(Number.parseInt(key.slice(2), 16), match);
+    if (key.startsWith('#')) return codePointToString(Number.parseInt(key.slice(1), 10), match);
+    return named[key] ?? match;
+  });
+}
+
+function codePointToString(value: number, fallback: string): string {
+  if (!Number.isFinite(value)) return fallback;
+  try {
+    return String.fromCodePoint(value);
+  } catch {
+    return fallback;
+  }
 }
 
 function hashText(text: string): string {

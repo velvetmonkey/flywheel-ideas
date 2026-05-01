@@ -1,18 +1,36 @@
 # flywheel-ideas
 
-**A local-first decision ledger for tracking assumptions over time.**
+**A local-first assumption ledger for tracking decisions, evidence, and outcomes over time.**
 
-flywheel-ideas runs as an MCP server against your Obsidian vault. It helps you capture a decision, name the assumptions behind it, challenge those assumptions with multiple AI CLIs, and later log what actually happened. When an assumption is refuted, every dependent idea is flagged for review.
+flywheel-ideas runs as an MCP server against your Obsidian vault. It helps you capture a decision, name the assumptions behind it, attach dated evidence, challenge the decision with multiple AI CLIs, and later log what actually happened. When an assumption is refuted, every dependent idea is flagged for review.
 
-The current product wedge is **company tracking**: build a 10-year assumption ledger from SEC 10-K and 10-Q filings, stage realized-risk outcomes, and apply the ones you accept through the same outcome loop.
+The current product wedge is **company tracking**. It turns public SEC 10-K and 10-Q filings into a dated assumption ledger: recurring issuer-disclosed risks become tracked assumptions, each later mention becomes an observation, and only strict realized-risk language is staged for human review. Nothing changes assumption status until you accept a staged candidate through `company.apply_outcomes`, which uses the same `outcome.log` path as manual decisions.
 
 ## What It Does
 
 - **Decision ledger:** `idea.create`, `assumption.declare`, `council.run`, `outcome.log`.
 - **Company tracker:** `company.track` scans public-company filings and turns recurring risks into tracked assumptions.
-- **Outcome loop:** realized-risk detections are staged first; `company.apply_outcomes` explicitly logs accepted outcomes.
+- **Observation ledger:** dated SEC evidence accumulates around each company/theme assumption.
+- **Outcome loop:** strict realized-risk detections are staged first; `company.apply_outcomes` explicitly logs accepted outcomes.
 - **Vault-native storage:** notes stay as Markdown in your vault, with `ideas.db` as the local index.
 - **Multi-model dissent:** council runs can dispatch to `claude`, `codex`, and `gemini` CLIs.
+
+## Where The Value Exists
+
+Company tracking is not a stock picker and it does not independently prove that a risk happened. SEC filings are issuer-authored evidence. The value is that the tool compresses a large filing corpus into an auditable lifecycle:
+
+```text
+SEC filings -> dated observations -> recurring assumptions -> evidence report -> reviewed outcomes -> outcome.log
+```
+
+A live AAPL/MSFT/NVDA dogfood run showed the scale of the workflow: 123 filings over 10 years compressed into 36 tracked assumptions, 1,793 dated observations, and 12 cross-company theme rows. The current outcome filter is intentionally stricter: reports show only realized-risk candidates that need review before they can affect the ledger.
+
+Example lifecycle:
+
+- A filing discloses a recurring theme such as NVIDIA supply/demand risk.
+- Later filings add dated observations to the same assumption instead of creating disconnected notes.
+- If a later filing says NVIDIA incurred a charge because demand diminished, that excerpt is staged as a realized-risk candidate with its SEC source URI.
+- If you accept it, `company.apply_outcomes` calls `outcome.log`, refutes the linked assumption, and flags dependent ideas for review.
 
 ## The Main Workflow
 
@@ -36,7 +54,8 @@ This creates a company tracker run:
 - extracts eligible Risk Factors and MD&A sections
 - groups recurring themes such as supply chain, competition, demand, liquidity, and regulation
 - creates idea and assumption records
-- stages explicit realized-risk outcome candidates
+- records dated observations for each recurring theme
+- stages strict realized-risk outcome candidates
 - writes Markdown and JSON reports under `reports/`
 
 Review the result:

@@ -286,6 +286,8 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const outcomes = db.prepare(`SELECT * FROM ideas_company_outcome_candidates WHERE run_id = ? ORDER BY confidence DESC`).all(runId);
   const companySummaries = buildCompanySummaries(filings, themes, observations, outcomes);
   const themeMatrix = buildThemeMatrix(themes, observations);
+  const lifecycleSummary = buildLifecycleSummary(filings, themes, observations, outcomes);
+  const observationExamples = buildObservationExamples(themes, observations, filings);
   const highConfidenceOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) >= 0.9);
   const reviewOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) < 0.9);
   return {
@@ -294,6 +296,13 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
     themes,
     observations,
     outcomes,
+    lifecycle_summary: lifecycleSummary,
+    value_summary: {
+      primary_value: 'Auditable recurring-risk observations across dated SEC filings.',
+      outcome_policy: 'Only strict realized-risk language is staged; canonical outcomes require company.apply_outcomes.',
+      limitation: 'SEC disclosures are issuer-authored evidence, not independent truth or investment advice.',
+    },
+    observation_examples: observationExamples,
     company_summaries: companySummaries,
     theme_matrix: themeMatrix,
     high_confidence_outcomes: highConfidenceOutcomes,
@@ -308,6 +317,8 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
   const outcomes = data.outcomes as Array<Record<string, unknown>>;
   const summaries = data.company_summaries as Array<Record<string, unknown>>;
   const matrix = data.theme_matrix as Array<Record<string, unknown>>;
+  const lifecycle = data.lifecycle_summary as Record<string, unknown>;
+  const examples = data.observation_examples as Array<Record<string, unknown>>;
   const lines = [
     `# Company Tracker ${run.id}`,
     '',
@@ -318,6 +329,14 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
     `- Themes tracked: ${themes.length}`,
     `- Staged outcomes: ${outcomes.filter((o) => o.state === 'staged').length}`,
     `- Applied outcomes: ${outcomes.filter((o) => o.state === 'applied').length}`,
+    '',
+    '## Lifecycle Summary',
+    '',
+    `- Corpus: ${lifecycle.filings_scanned} SEC filing(s) scanned.`,
+    `- Observation ledger: ${lifecycle.observations} dated observation(s) grouped into ${lifecycle.themes_tracked} tracked assumption theme(s).`,
+    `- Cross-company comparison: ${lifecycle.cross_company_themes} theme(s) appeared in more than one company.`,
+    `- Realized outcome candidates: ${lifecycle.staged_outcomes} staged, ${lifecycle.applied_outcomes} applied.`,
+    `- Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.`,
     '',
     '## Company Summaries',
     '',
@@ -347,9 +366,17 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
     const companies = row.companies as string[];
     lines.push(`| ${row.title ?? row.theme_key} | ${companies.join(', ')} | ${row.observation_count} | ${row.latest_seen_at ?? 'n/a'} |`);
   }
+  lines.push('', '## Observation Evidence Examples', '');
+  for (const example of examples) {
+    lines.push(`- **${example.company} / ${example.theme_title}** (${example.observed_at}, ${example.section_key})`);
+    lines.push(`  - Source: ${example.source_uri}`);
+    lines.push(`  - ${String(example.excerpt ?? '').replace(/\s+/g, ' ').slice(0, 300)}`);
+  }
   lines.push(
     '',
-    '## Staged Outcome Review Queue',
+    '## Realized Outcome Candidates',
+    '',
+    'These candidates are staged for human review. Applying them requires company.apply_outcomes.',
     '',
   );
   for (const outcome of outcomes.filter((o) => o.state === 'staged')) {
@@ -424,6 +451,70 @@ function buildCompanySummaries(
         .slice(0, 8),
     };
   });
+}
+
+function buildLifecycleSummary(
+  filings: unknown[],
+  themes: unknown[],
+  observations: unknown[],
+  outcomes: unknown[],
+): Record<string, unknown> {
+  const themeRows = themes as Array<Record<string, unknown>>;
+  const outcomeRows = outcomes as Array<Record<string, unknown>>;
+  const companiesByTheme = new Map<string, Set<string>>();
+  for (const theme of themeRows) {
+    const key = stringish(theme.theme_key) || 'unknown';
+    const companies = companiesByTheme.get(key) ?? new Set<string>();
+    companies.add(stringish(theme.ticker) || stringish(theme.cik) || 'unknown');
+    companiesByTheme.set(key, companies);
+  }
+  return {
+    filings_scanned: filings.length,
+    themes_tracked: themes.length,
+    observations: observations.length,
+    cross_company_themes: [...companiesByTheme.values()].filter((companies) => companies.size > 1).length,
+    staged_outcomes: outcomeRows.filter((o) => o.state === 'staged').length,
+    applied_outcomes: outcomeRows.filter((o) => o.state === 'applied').length,
+  };
+}
+
+function buildObservationExamples(
+  themes: unknown[],
+  observations: unknown[],
+  filings: unknown[],
+): Array<Record<string, unknown>> {
+  const themeRows = themes as Array<Record<string, unknown>>;
+  const observationRows = observations as Array<Record<string, unknown>>;
+  const filingRows = filings as Array<Record<string, unknown>>;
+  const filingById = new Map(filingRows.map((filing) => [String(filing.id), filing]));
+  const sortedThemes = themeRows
+    .map((theme) => ({
+      theme,
+      count: observationRows.filter((o) => o.theme_id === theme.id).length,
+    }))
+    .sort((a, b) => b.count - a.count || String(a.theme.title).localeCompare(String(b.theme.title)));
+  const picked = new Set<string>();
+  const examples: Array<Record<string, unknown>> = [];
+  for (const { theme } of sortedThemes) {
+    const company = stringish(theme.ticker) || stringish(theme.cik) || 'unknown';
+    if (picked.has(company) && examples.length >= 3) continue;
+    const observation = observationRows.find((o) => o.theme_id === theme.id);
+    if (!observation) continue;
+    const filing = filingById.get(String(observation.filing_id));
+    examples.push({
+      company,
+      theme_key: theme.theme_key,
+      theme_title: theme.title,
+      observed_at: observation.observed_at,
+      section_key: observation.section_key,
+      source_uri: observation.source_uri,
+      filing_url: filing?.filing_url,
+      excerpt: observation.excerpt,
+    });
+    picked.add(company);
+    if (examples.length >= 6) break;
+  }
+  return examples;
 }
 
 function buildThemeMatrix(themes: unknown[], observations: unknown[]): Array<Record<string, unknown>> {

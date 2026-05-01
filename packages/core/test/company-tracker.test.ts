@@ -53,9 +53,13 @@ describe('company tracker', () => {
     await expect(fsp.stat(path.join(vault, result.report_json_path))).resolves.toBeDefined();
 
     const markdown = await fsp.readFile(path.join(vault, result.report_md_path), 'utf8');
+    expect(markdown).toContain('## Lifecycle Summary');
     expect(markdown).toContain('## Company Summaries');
     expect(markdown).toContain('## Cross-Company Theme Matrix');
-    expect(markdown).toContain('## Staged Outcome Review Queue');
+    expect(markdown).toContain('## Observation Evidence Examples');
+    expect(markdown).toContain('## Realized Outcome Candidates');
+    expect(markdown).toContain('Value signal: recurring issuer-authored evidence');
+    expect(markdown).not.toMatch(/&#(?:x?[0-9a-f]+|[a-z]+);/i);
     expect(markdown).toContain('AAPL');
     expect(markdown).toContain('MSFT');
     expect(markdown).toContain('NVDA');
@@ -64,25 +68,48 @@ describe('company tracker', () => {
       filings: unknown[];
       company_summaries: unknown[];
       theme_matrix: unknown[];
+      lifecycle_summary: {
+        filings_scanned: number;
+        themes_tracked: number;
+        observations: number;
+        cross_company_themes: number;
+        staged_outcomes: number;
+        applied_outcomes: number;
+      };
+      observation_examples: Array<{ excerpt: string; source_uri: string }>;
       outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
     };
     expect(data.filings).toHaveLength(9);
     expect(data.company_summaries).toHaveLength(3);
     expect(data.theme_matrix.length).toBeGreaterThanOrEqual(3);
+    expect(data.lifecycle_summary.filings_scanned).toBe(9);
+    expect(data.lifecycle_summary.observations).toBeGreaterThan(0);
+    expect(data.lifecycle_summary.staged_outcomes).toBe(result.staged_outcomes);
+    expect(data.observation_examples.length).toBeGreaterThan(0);
+    expect(data.observation_examples[0].source_uri).toContain('sec-company://');
+    expect(data.observation_examples.every((e) => e.excerpt.length <= 900)).toBe(true);
+    expect(data.observation_examples.map((e) => e.excerpt).join('\n')).not.toMatch(/&#(?:x?[0-9a-f]+|[a-z]+);/i);
     expect(data.outcomes).toHaveLength(result.staged_outcomes);
     expect(data.outcomes[0].state).toBe('staged');
     expect(data.outcomes[0].applied_outcome_id).toBeNull();
 
     const refuted = db.prepare(`SELECT COUNT(*) as n FROM ideas_outcome_verdicts`).get() as { n: number };
     expect(refuted.n).toBe(0);
+
+    const assumptionPaths = db.prepare(
+      `SELECT vault_path FROM ideas_assumptions ORDER BY vault_path`,
+    ).all() as Array<{ vault_path: string }>;
+    expect(new Set(assumptionPaths.map((row) => row.vault_path)).size).toBe(assumptionPaths.length);
   });
 
   it('bulk applies reviewed staged outcomes through outcome.log', async () => {
     const result = await trackCompanies(db, vault, {
-      companies: ['MSFT'],
+      companies: ['NVDA'],
       confirm: true,
       fixture_dir: FIXTURE_DIR,
     });
+
+    expect(result.staged_outcomes).toBeGreaterThanOrEqual(1);
 
     const applied = await applyCompanyOutcomes(db, vault, {
       run_id: result.run_id,
