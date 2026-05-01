@@ -1,0 +1,695 @@
+Item 1A Risk Factors
+
+
+
+Risk Factors
+
+5
+
+Item 1B.
+
+Unresolved Staff Comments
+
+17
+
+Item 2.
+
+Properties
+
+17
+
+Item 3.
+
+Legal Proceedings
+
+17
+
+Item 4.
+
+Mine Safety Disclosures
+
+17
+
+Part II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+18
+
+Item 6.
+
+[Reserved]
+
+19
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+20
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+26
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+28
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+53
+
+Item 9A.
+
+Controls and Procedures
+
+53
+
+Item 9B.
+
+Other Information
+
+54
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+54
+
+Part III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+54
+
+Item 11.
+
+Executive Compensation
+
+54
+
+Item 12
+
+.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+54
+
+Item 13
+
+.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+54
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+54
+
+Part IV
+
+Item 15.
+
+Exhibit and Financial Statement Schedules
+
+55
+
+Item 16.
+
+Form 10-K Summary
+
+57
+
+This Annual Report on Form 10-K ("Form 10-K") contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Many of the forward-looking statements are located in Part I, Item 1 of this Form 10-K under the heading "Business" and Part II, Item 7 of this Form 10-K under the heading "Management's Discussion and Analysis of Financial Condition and Results of Operations." Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. For example, statements in this Form 10-K regarding the potential future impact of the COVID-19 pandemic on the Company's business and results of operations are forward-looking statements. Forward-looking statements can also be identified by words such as "future," "anticipates," "believes," "estimates," "expects," "intends," "plans," "predicts," "will," "would," "could," "can," "may," and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors." The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+
+Unless otherwise stated, all information presented herein is based on the Company's fiscal calendar, and references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.
+
+PART I
+
+Item 1.&#160;&#160;&#160;&#160;Business
+
+Company Background
+
+The Company designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services. The Company's fiscal year is the 52- or 53-week period that ends on the last Saturday of September.
+
+Products
+
+iPhone
+
+iPhone
+
+&#174;
+
+is the Company's line of smartphones based on its iOS operating system. The iPhone line includes iPhone 14 Pro, iPhone 14, iPhone 13, iPhone SE
+
+&#174;
+
+, iPhone 12 and iPhone 11.
+
+Mac
+
+Mac
+
+&#174;
+
+is the Company's line of personal computers based on its macOS
+
+&#174;
+
+operating system. The Mac line includes laptops MacBook Air
+
+&#174;
+
+and MacBook Pro
+
+&#174;
+
+, as well as desktops iMac
+
+&#174;
+
+, Mac mini
+
+&#174;
+
+, Mac Studio&#8482; and Mac Pro
+
+&#174;
+
+.
+
+iPad
+
+iPad
+
+&#174;
+
+is the Company's line of multipurpose tablets based on its iPadOS
+
+&#174;
+
+operating system. The iPad line includes iPad Pro
+
+&#174;
+
+, iPad Air
+
+&#174;
+
+, iPad and iPad mini
+
+&#174;
+
+.
+
+Wearables, Home and Accessories
+
+Wearables, Home and Accessories includes:
+
+&#8226;
+
+AirPods
+
+&#174;
+
+, the Company's wireless headphones, including AirPods, AirPods Pro
+
+&#174;
+
+and AirPods Max&#8482;;
+
+&#8226;
+
+Apple TV
+
+&#174;
+
+, the Company's media streaming and gaming device based on its tvOS
+
+&#174;
+
+operating system, including Apple TV 4K and Apple TV HD;
+
+&#8226;
+
+Apple Watch
+
+&#174;
+
+, the Company's line of smartwatches based on its watchOS
+
+&#174;
+
+operating system, including Apple Watch Ultra&#8482;, Apple Watch Series 8 and Apple Watch SE
+
+&#174;
+
+; and
+
+&#8226;
+
+Beats
+
+&#174;
+
+products, HomePod mini
+
+&#174;
+
+and accessories.
+
+Apple Inc. | 2022 Form 10-K | 1
+
+Services
+
+Advertising
+
+The Company's advertising services include various third-party licensing arrangements and the Company's own advertising platforms.
+
+AppleCare
+
+The Company offers a portfolio of fee-based service and support products under the AppleCare
+
+&#174;
+
+brand. The offerings provide priority access to Apple technical support, access to the global Apple authorized service network for repair and replacement services, and in many cases additional coverage for instances of accidental damage and/or theft and loss, depending on the country and type of product.
+
+Cloud Services
+
+The Company's cloud services store and keep customers' content up-to-date and available across multiple Apple devices and Windows personal computers.
+
+Digital Content
+
+The Company operates various platforms, including the App Store
+
+&#174;
+
+,
+
+that allow customers to discover and download applications and digital content, such as books, music, video, games and podcasts.
+
+The Company also offers digital content through subscription-based services, including Apple Arcade
+
+&#174;
+
+, a game subscription service; Apple Fitness+
+
+SM
+
+, a personalized fitness service; Apple Music
+
+&#174;
+
+, which offers users a curated listening experience with on-demand radio stations; Apple News+
+
+&#174;
+
+, a subscription news and magazine service; and Apple TV+
+
+&#174;
+
+, which offers exclusive original content and live sports.
+
+Payment Services
+
+The Company offers payment services, including Apple Card
+
+&#174;
+
+, a co-branded credit card, and Apple Pay
+
+&#174;
+
+, a cashless payment service.
+
+Markets and Distribution
+
+The Company's customers are primarily in the consumer, small and mid-sized business, education, enterprise and government markets. The Company sells its products and resells third-party products in most of its major markets directly to consumers, small and mid-sized businesses, and education, enterprise and government customers through its retail and online stores and its direct sales force. The Company also employs a variety of indirect distribution channels, such as third-party cellular network carriers, wholesalers, retailers and resellers. During 2022, the Company's net sales through its direct and indirect distribution channels accounted for 38% and 62%, respectively, of total net sales.
+
+Competition
+
+The markets for the Company's products and services are highly competitive, and are characterized by aggressive price competition and resulting downward pressure on gross margins, frequent introduction of new products and services, short product life cycles, evolving industry standards, continual improvement in product price and performance characteristics, rapid adoption of technological advancements by competitors, and price sensitivity on the part of consumers and businesses. Many of the Company's competitors seek to compete primarily through aggressive pricing and very low cost structures, and by imitating the Company's products and infringing on its intellectual property.
+
+The Company's ability to compete successfully depends heavily on ensuring the continuing and timely introduction of innovative new products, services and technologies to the marketplace. The Company designs and develops nearly the entire solution for its products, including the hardware, operating system, numerous software applications and related services. Principal competitive factors important to the Company include price, product and service features (including security features), relative price and performance, product and service quality and reliability, design innovation, a strong third-party software and accessories ecosystem, marketing and distribution capability, service and support, and corporate reputation.
+
+Apple Inc. | 2022 Form 10-K | 2
+
+The Company is focused on expanding its market opportunities related to smartphones, personal computers, tablets, wearables and accessories, and services. The Company faces substantial competition in these markets from companies that have significant technical, marketing, distribution and other resources, as well as established hardware, software, and service offerings with large customer bases. In addition, some of the Company's competitors have broader product lines, lower-priced products and a larger installed base of active devices. Competition has been particularly intense as competitors have aggressively cut prices and lowered product margins. Certain competitors have the resources, experience or cost structures to provide products at little or no profit or even at a loss. The Company's services compete with business models that provide content to users for free and use illegitimate means to obtain third-party digital content and applications. The Company faces significant competition as competitors imitate the Company's product features and applications within their products, or collaborate to offer integrated solutions that are more competitive than those they currently offer.
+
+Supply of Components
+
+Although most components essential to the Company's business are generally available from multiple sources, certain components are currently obtained from single or limited sources. The Company also competes for various components with other participants in the markets for smartphones, personal computers, tablets, wearables and accessories. Therefore, many components used by the Company, including those that are available from multiple sources, are at times subject to industry-wide shortage and significant commodity pricing fluctuations.
+
+The Company uses some custom components that are not commonly used by its competitors, and new products introduced by the Company often utilize custom components available from only one source. When a component or product uses new technologies, initial capacity constraints may exist until the suppliers' yields have matured or their manufacturing capacities have increased. The continued availability of these components at acceptable prices, or at all, may be affected if suppliers decide to concentrate on the production of common components instead of components customized to meet the Company's requirements.
+
+The Company has entered into agreements for the supply of many components; however, there can be no guarantee that the Company will be able to extend or renew these agreements on similar terms, or at all.
+
+Substantially all of the Company's hardware products are manufactured by outsourcing partners that are located primarily in Asia, with some Mac computers manufactured in the U.S. and Ireland.
+
+Research and Development
+
+Because the industries in which the Company competes are characterized by rapid technological advances, the Company's ability to compete successfully depends heavily upon its ability to ensure a continual and timely flow of competitive products, services and technologies to the marketplace. The Company continues to develop new technologies to enhance existing products and services, and to expand the range of its offerings through research and develo
+
+Item 7 MD&A
+
+
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+20
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+26
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+28
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+53
+
+Item 9A.
+
+Controls and Procedures
+
+53
+
+Item 9B.
+
+Other Information
+
+54
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+54
+
+Part III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+54
+
+Item 11.
+
+Executive Compensation
+
+54
+
+Item 12
+
+.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+54
+
+Item 13
+
+.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+54
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+54
+
+Part IV
+
+Item 15.
+
+Exhibit and Financial Statement Schedules
+
+55
+
+Item 16.
+
+Form 10-K Summary
+
+57
+
+This Annual Report on Form 10-K ("Form 10-K") contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Many of the forward-looking statements are located in Part I, Item 1 of this Form 10-K under the heading "Business" and Part II, Item 7 of this Form 10-K under the heading "Management's Discussion and Analysis of Financial Condition and Results of Operations." Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. For example, statements in this Form 10-K regarding the potential future impact of the COVID-19 pandemic on the Company's business and results of operations are forward-looking statements. Forward-looking statements can also be identified by words such as "future," "anticipates," "believes," "estimates," "expects," "intends," "plans," "predicts," "will," "would," "could," "can," "may," and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors." The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+
+Unless otherwise stated, all information presented herein is based on the Company's fiscal calendar, and references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.
+
+PART I
+
+Item 1.&#160;&#160;&#160;&#160;Business
+
+Company Background
+
+The Company designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services. The Company's fiscal year is the 52- or 53-week period that ends on the last Saturday of September.
+
+Products
+
+iPhone
+
+iPhone
+
+&#174;
+
+is the Company's line of smartphones based on its iOS operating system. The iPhone line includes iPhone 14 Pro, iPhone 14, iPhone 13, iPhone SE
+
+&#174;
+
+, iPhone 12 and iPhone 11.
+
+Mac
+
+Mac
+
+&#174;
+
+is the Company's line of personal computers based on its macOS
+
+&#174;
+
+operating system. The Mac line includes laptops MacBook Air
+
+&#174;
+
+and MacBook Pro
+
+&#174;
+
+, as well as desktops iMac
+
+&#174;
+
+, Mac mini
+
+&#174;
+
+, Mac Studio&#8482; and Mac Pro
+
+&#174;
+
+.
+
+iPad
+
+iPad
+
+&#174;
+
+is the Company's line of multipurpose tablets based on its iPadOS
+
+&#174;
+
+operating system. The iPad line includes iPad Pro
+
+&#174;
+
+, iPad Air
+
+&#174;
+
+, iPad and iPad mini
+
+&#174;
+
+.
+
+Wearables, Home and Accessories
+
+Wearables, Home and Accessories includes:
+
+&#8226;
+
+AirPods
+
+&#174;
+
+, the Company's wireless headphones, including AirPods, AirPods Pro
+
+&#174;
+
+and AirPods Max&#8482;;
+
+&#8226;
+
+Apple TV
+
+&#174;
+
+, the Company's media streaming and gaming device based on its tvOS
+
+&#174;
+
+operating system, including Apple TV 4K and Apple TV HD;
+
+&#8226;
+
+Apple Watch
+
+&#174;
+
+, the Company's line of smartwatches based on its watchOS
+
+&#174;
+
+operating system, including Apple Watch Ultra&#8482;, Apple Watch Series 8 and Apple Watch SE
+
+&#174;
+
+; and
+
+&#8226;
+
+Beats
+
+&#174;
+
+products, HomePod mini
+
+&#174;
+
+and accessories.
+
+Apple Inc. | 2022 Form 10-K | 1
+
+Services
+
+Advertising
+
+The Company's advertising services include various third-party licensing arrangements and the Company's own advertising platforms.
+
+AppleCare
+
+The Company offers a portfolio of fee-based service and support products under the AppleCare
+
+&#174;
+
+brand. The offerings provide priority access to Apple technical support, access to the global Apple authorized service network for repair and replacement services, and in many cases additional coverage for instances of accidental damage and/or theft and loss, depending on the country and type of product.
+
+Cloud Services
+
+The Company's cloud services store and keep customers' content up-to-date and available across multiple Apple devices and Windows personal computers.
+
+Digital Content
+
+The Company operates various platforms, including the App Store
+
+&#174;
+
+,
+
+that allow customers to discover and download applications and digital content, such as books, music, video, games and podcasts.
+
+The Company also offers digital content through subscription-based services, including Apple Arcade
+
+&#174;
+
+, a game subscription service; Apple Fitness+
+
+SM
+
+, a personalized fitness service; Apple Music
+
+&#174;
+
+, which offers users a curated listening experience with on-demand radio stations; Apple News+
+
+&#174;
+
+, a subscription news and magazine service; and Apple TV+
+
+&#174;
+
+, which offers exclusive original content and live sports.
+
+Payment Services
+
+The Company offers payment services, including Apple Card
+
+&#174;
+
+, a co-branded credit card, and Apple Pay
+
+&#174;
+
+, a cashless payment service.
+
+Markets and Distribution
+
+The Company's customers are primarily in the consumer, small and mid-sized business, education, enterprise and government markets. The Company sells its products and resells third-party products in most of its major markets directly to consumers, small and mid-sized businesses, and education, enterprise and government customers through its retail and online stores and its direct sales force. The Company also employs a variety of indirect distribution channels, such as third-party cellular network carriers, wholesalers, retailers and resellers. During 2022, the Company's net sales through its direct and indirect distribution channels accounted for 38% and 62%, respectively, of total net sales.
+
+Competition
+
+The markets for the Company's products and services are highly competitive, and are characterized by aggressive price competition and resulting downward pressure on gross margins, frequent introduction of new products and services, short product life cycles, evolving industry standards, continual improvement in product price and performance characteristics, rapid adoption of technological advancements by competitors, and price sensitivity on the part of consumers and businesses. Many of the Company's competitors seek to compete primarily through aggressive pricing and very low cost structures, and by imitating the Company's products and infringing on its intellectual property.
+
+The Company's ability to compete successfully depends heavily on ensuring the continuing and timely introduction of innovative new products, services and technologies to the marketplace. The Company designs and develops nearly the entire solution for its products, including the hardware, operating system, numerous software applications and related services. Principal competitive factors important to the Company include price, product and service features (including security features), relative price and performance, product and service quality and reliability, design innovation, a strong third-party software and accessories ecosystem, marketing and distribution capability, service and support, and corporate reputation.
+
+Apple Inc. | 2022 Form 10-K | 2
+
+The Company is focused on expanding its market opportunities related to smartphones, personal computers, tablets, wearables and accessories, and services. The Company faces substantial competition in these markets from companies that have significant technical, marketing, distribution and other resources, as well as established hardware, software, and service offerings with large customer bases. In addition, some of the Company's competitors have broader product lines, lower-priced products and a larger installed base of active devices. Competition has been particularly intense as competitors have aggressively cut prices and lowered product margins. Certain competitors have the resources, experience or cost structures to provide products at little or no profit or even at a loss. The Company's services compete with business models that provide content to users for free and use illegitimate means to obtain third-party digital content and applications. The Company faces significant competition as competitors imitate the Company's product features and applications within their products, or collaborate to offer integrated solutions that are more competitive than those they currently offer.
+
+Supply of Components
+
+Although most components essential to the Company's business are generally available from multiple sources, certain components are currently obtained from single or limited sources. The Company also competes for various components with other participants in the markets for smartphones, personal computers, tablets, wearables and accessories. Therefore, many components used by the Company, including those that are available from multiple sources, are at times subject to industry-wide shortage and significant commodity pricing fluctuations.
+
+The Company uses some custom components that are not commonly used by its competitors, and new products introduced by the Company often utilize custom components available from only one source. When a component or product uses new technologies, initial capacity constraints may exist until the suppliers' yields have matured or their manufacturing capacities have increased. The continued availability of these components at acceptable prices, or at all, may be affected if suppliers decide to concentrate on the production of common components instead of components customized to meet the Company's requirements.
+
+The Company has entered into agreements for the supply of many components; however, there can be no guarantee that the Company will be able to extend or renew these agreements on similar terms, or at all.
+
+Substantially all of the Company's hardware products are manufactured by outsourcing partners that are located primarily in Asia, with some Mac computers manufactured in the U.S. and Ireland.
+
+Research and Development
+
+Because the industries in which the Company competes are characterized by rapid technological advances, the Company's ability to compete successfully depends heavily upon its ability to ensure a continual and timely flow of competitive products, services and technologies to the marketplace. The Company continues to develop new technologies to enhance existing products and services, and to expand the range of its offerings through research and development ("R&D"), licensing of intellectual property and acquisition of third-party businesses and technology.
+
+Intellectual Property
+
+The Company currently holds a broad collection of intellectual property rights relating to certain aspects of its hardware devices, accessories, software and services. This includes paten

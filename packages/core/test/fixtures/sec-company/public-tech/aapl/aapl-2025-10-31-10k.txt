@@ -1,0 +1,695 @@
+Item 1A Risk Factors
+
+
+
+Risk Factors
+
+5
+
+Item 1B.
+
+Unresolved Staff Comments
+
+17
+
+Item 1C.
+
+Cybersecurity
+
+17
+
+Item 2.
+
+Properties
+
+17
+
+Item 3.
+
+Legal Proceedings
+
+18
+
+Item 4.
+
+Mine Safety Disclosures
+
+18
+
+Part II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+19
+
+Item 6.
+
+[Reserved]
+
+20
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+21
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+27
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+28
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+52
+
+Item 9A.
+
+Controls and Procedures
+
+52
+
+Item 9B.
+
+Other Information
+
+53
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+53
+
+Part III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+53
+
+Item 11.
+
+Executive Compensation
+
+53
+
+Item 12
+
+.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+53
+
+Item 13
+
+.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+53
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+53
+
+Part IV
+
+Item 15.
+
+Exhibit and Financial Statement Schedules
+
+54
+
+Item 16.
+
+Form 10-K Summary
+
+57
+
+This Annual Report on Form 10-K ("Form 10-K") contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Many of the forward-looking statements are located in Part I, Item 1 of this Form 10-K under the heading "Business" and Part II, Item 7 of this Form 10-K under the heading "Management's Discussion and Analysis of Financial Condition and Results of Operations." Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. For example, statements in this Form 10-K regarding the potential future impact of macroeconomic conditions and tariffs and other measures on the Company's business and results of operations are forward-looking statements. Forward-looking statements can also be identified by words such as "future," "anticipates," "believes," "estimates," "expects," "intends," "plans," "predicts," "will," "would," "could," "can," "may," and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors." The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+
+Unless otherwise stated, all information presented herein is based on the Company's fiscal calendar, and references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.
+
+PART I
+
+Item 1.&#160;&#160;&#160;&#160;Business
+
+Company Background
+
+The Company designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services. The Company's fiscal year is the 52- or 53-week period that ends on the last Saturday of September.
+
+Products
+
+iPhone
+
+iPhone
+
+&#174;
+
+is the Company's line of smartphones based on its iOS operating system. The iPhone line includes iPhone 17 Pro, iPhone Air&#8482;, iPhone 17, iPhone 16 and iPhone 16e.
+
+Mac
+
+Mac
+
+&#174;
+
+is the Company's line of personal computers based on its macOS
+
+&#174;
+
+operating system. The Mac line includes laptops MacBook Air
+
+&#174;
+
+and MacBook Pro
+
+&#174;
+
+, as well as desktops iMac
+
+&#174;
+
+, Mac mini
+
+&#174;
+
+, Mac Studio
+
+&#174;
+
+and Mac Pro
+
+&#174;
+
+.
+
+iPad
+
+iPad
+
+&#174;
+
+is the Company's line of multipurpose tablets based on its iPadOS
+
+&#174;
+
+operating system. The iPad line includes iPad Pro
+
+&#174;
+
+, iPad Air
+
+&#174;
+
+, iPad and iPad mini
+
+&#174;
+
+.
+
+Wearables, Home and Accessories
+
+Wearables includes smartwatches, wireless headphones and spatial computers. The Company's line of smartwatches, based on its watchOS
+
+&#174;
+
+operating system, includes Apple Watch
+
+&#174;
+
+Series 11, Apple Watch SE
+
+&#174;
+
+3 and Apple Watch Ultra
+
+&#174;
+
+3. The Company's line of wireless headphones includes AirPods
+
+&#174;
+
+, AirPods Pro
+
+&#174;
+
+, AirPods Max
+
+&#174;
+
+and Beats
+
+&#174;
+
+products. Apple Vision Pro&#8482; is the Company's spatial computer based on its visionOS
+
+&#174;
+
+operating system.
+
+Home includes Apple TV 4K
+
+&#174;
+
+, the Company's media streaming and gaming device based on its tvOS
+
+&#174;
+
+operating system, and HomePod
+
+&#174;
+
+and HomePod mini
+
+&#174;
+
+, high-fidelity wireless smart speakers.
+
+Accessories includes Apple-branded and third-party accessories.
+
+Apple Inc. | 2025 Form 10-K | 1
+
+Services
+
+Advertising
+
+The Company's advertising services include third-party licensing arrangements and the Company's own advertising platforms.
+
+AppleCare
+
+The Company offers a portfolio of fee-based service and support products under the AppleCare
+
+&#174;
+
+brand. The offerings provide priority access to Apple technical support, access to the global Apple authorized service network for repair and replacement services, and in many cases additional coverage for instances of accidental damage or theft and loss, depending on the country and type of product.
+
+Cloud Services
+
+The Company's cloud services store and keep customers' content up-to-date and available across multiple Apple devices and Windows personal computers.
+
+Digital Content
+
+The Company operates various platforms, including the App Store
+
+&#174;
+
+,
+
+that allow customers to discover and download applications and digital content, such as books, music, video, games and podcasts.
+
+The Company also offers digital content through subscription-based services, including Apple Arcade
+
+&#174;
+
+, a game service; Apple Fitness+
+
+&#174;
+
+, a personalized fitness service; Apple Music
+
+&#174;
+
+, which offers users a curated listening experience with on-demand radio stations; Apple News+
+
+&#174;
+
+, a news and magazine service; and Apple TV
+
+&#174;
+
+, which offers exclusive original content and live sports.
+
+Payment Services
+
+The Company offers payment services, including Apple Card
+
+&#174;
+
+, a co-branded credit card, and Apple Pay
+
+&#174;
+
+, a cashless payment service.
+
+Segments
+
+The Company manages its business primarily on a geographic basis. The Company's reportable segments consist of the Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe includes European countries, as well as India, the Middle East and Africa. Greater China includes China mainland, Hong Kong and Taiwan. Rest of Asia Pacific includes Australia, New Zealand and those Asian countries not included in the Company's other reportable segments. Although the reportable segments provide similar hardware and software products and similar services, each one is managed separately to better align with the location of the Company's customers and distribution partners and the unique market dynamics of each geographic region.
+
+Markets and Distribution
+
+The Company's customers are primarily in the consumer, small and mid-sized business, education, enterprise and government markets. The Company sells its products and resells third-party products in most of its major markets directly to customers through its retail and online stores and its direct sales force. The Company sells its services in the same markets through its various service platforms. The Company also employs a variety of indirect distribution channels, such as third-party cellular network carriers and other resellers, for the sale of its products and certain of its services. During 2025, the Company's net sales through its direct and indirect distribution channels accounted for 40% and 60%, respectively, of total net sales.
+
+Competition
+
+The markets for the Company's products and services are highly competitive and are characterized by aggressive price competition, downward pressure on gross margins, continual improvement in product performance, and price sensitivity on the part of consumers and businesses. The markets in which the Company competes are further defined by frequent introduction of new products and services, short product life cycles, evolving industry standards, and rapid adoption of technological advancements by competitors. Many of the Company's competitors seek to compete primarily through aggressive pricing and very low cost structures, and by imitating the Company's products and infringing on its intellectual property.
+
+Apple Inc. | 2025 Form 10-K | 2
+
+The Company's ability to compete successfully depends heavily on ensuring the continuing and timely introduction of innovative new products, services and technologies to the marketplace. The Company designs and develops nearly the entire solution for its products, including the hardware, operating system, numerous software applications and related services. Principal competitive factors important to the Company include price, product and service features (including security features), relative price and performance, product and service quality and reliability, design and technology innovation, a strong third-party software and accessories ecosystem, marketing and distribution capability, service and support, corporate reputation, and the ability to effectively protect and enforce the Company's intellectual property rights.
+
+The Company is focused on expanding its market opportunities related to smartphones, personal computers, tablets, wearables and accessories, and services. The Company's products and services face substantial competition from companies that have significant technical, marketing, distribution and other resources, as well as established hardware, software, and service offerings with large customer bases. In addition, the Company faces significant competition as competitors imitate the Company's product features and applications within their products to offer more competitive solutions. The Company also expects competition to intensify as competitors imitate the Company's approach to providing components seamlessly within their offerings or work collaboratively to offer integrated solutions. Some of the Company's competitors have broad product lines, low-priced products, large installed bases of active devices, and large customer bases. Competition has been particularly intense as competitors have aggressively cut prices and lowered product margins. Certain competitors have the resources, experience or cost structures to provide products and services at little or no profit or even at a loss. The Company has a minority market share in the global smartphone, personal computer, tablet and wearables markets, and some of the markets in which the Company competes have from time to time experienced little to no growth or contracted overall.
+
+Supply of Components
+
+Although most components essential to the Company's business are generally available from multiple sources, certain components are currently obtained from single or limited sources. The Company also competes for various components with other participants in the markets for smartphones, personal computers, tablets, wearables and accessories. Therefore, many components used by the Company, including those that are available from multiple sources, are at times subject to industry-wide shortage and significant commodity pricing fluctuations. Restrictions on international trade can increase the cost or limit 
+
+Item 7 MD&A
+
+
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+21
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+27
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+28
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+52
+
+Item 9A.
+
+Controls and Procedures
+
+52
+
+Item 9B.
+
+Other Information
+
+53
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+53
+
+Part III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+53
+
+Item 11.
+
+Executive Compensation
+
+53
+
+Item 12
+
+.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+53
+
+Item 13
+
+.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+53
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+53
+
+Part IV
+
+Item 15.
+
+Exhibit and Financial Statement Schedules
+
+54
+
+Item 16.
+
+Form 10-K Summary
+
+57
+
+This Annual Report on Form 10-K ("Form 10-K") contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Many of the forward-looking statements are located in Part I, Item 1 of this Form 10-K under the heading "Business" and Part II, Item 7 of this Form 10-K under the heading "Management's Discussion and Analysis of Financial Condition and Results of Operations." Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. For example, statements in this Form 10-K regarding the potential future impact of macroeconomic conditions and tariffs and other measures on the Company's business and results of operations are forward-looking statements. Forward-looking statements can also be identified by words such as "future," "anticipates," "believes," "estimates," "expects," "intends," "plans," "predicts," "will," "would," "could," "can," "may," and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors." The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+
+Unless otherwise stated, all information presented herein is based on the Company's fiscal calendar, and references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.
+
+PART I
+
+Item 1.&#160;&#160;&#160;&#160;Business
+
+Company Background
+
+The Company designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services. The Company's fiscal year is the 52- or 53-week period that ends on the last Saturday of September.
+
+Products
+
+iPhone
+
+iPhone
+
+&#174;
+
+is the Company's line of smartphones based on its iOS operating system. The iPhone line includes iPhone 17 Pro, iPhone Air&#8482;, iPhone 17, iPhone 16 and iPhone 16e.
+
+Mac
+
+Mac
+
+&#174;
+
+is the Company's line of personal computers based on its macOS
+
+&#174;
+
+operating system. The Mac line includes laptops MacBook Air
+
+&#174;
+
+and MacBook Pro
+
+&#174;
+
+, as well as desktops iMac
+
+&#174;
+
+, Mac mini
+
+&#174;
+
+, Mac Studio
+
+&#174;
+
+and Mac Pro
+
+&#174;
+
+.
+
+iPad
+
+iPad
+
+&#174;
+
+is the Company's line of multipurpose tablets based on its iPadOS
+
+&#174;
+
+operating system. The iPad line includes iPad Pro
+
+&#174;
+
+, iPad Air
+
+&#174;
+
+, iPad and iPad mini
+
+&#174;
+
+.
+
+Wearables, Home and Accessories
+
+Wearables includes smartwatches, wireless headphones and spatial computers. The Company's line of smartwatches, based on its watchOS
+
+&#174;
+
+operating system, includes Apple Watch
+
+&#174;
+
+Series 11, Apple Watch SE
+
+&#174;
+
+3 and Apple Watch Ultra
+
+&#174;
+
+3. The Company's line of wireless headphones includes AirPods
+
+&#174;
+
+, AirPods Pro
+
+&#174;
+
+, AirPods Max
+
+&#174;
+
+and Beats
+
+&#174;
+
+products. Apple Vision Pro&#8482; is the Company's spatial computer based on its visionOS
+
+&#174;
+
+operating system.
+
+Home includes Apple TV 4K
+
+&#174;
+
+, the Company's media streaming and gaming device based on its tvOS
+
+&#174;
+
+operating system, and HomePod
+
+&#174;
+
+and HomePod mini
+
+&#174;
+
+, high-fidelity wireless smart speakers.
+
+Accessories includes Apple-branded and third-party accessories.
+
+Apple Inc. | 2025 Form 10-K | 1
+
+Services
+
+Advertising
+
+The Company's advertising services include third-party licensing arrangements and the Company's own advertising platforms.
+
+AppleCare
+
+The Company offers a portfolio of fee-based service and support products under the AppleCare
+
+&#174;
+
+brand. The offerings provide priority access to Apple technical support, access to the global Apple authorized service network for repair and replacement services, and in many cases additional coverage for instances of accidental damage or theft and loss, depending on the country and type of product.
+
+Cloud Services
+
+The Company's cloud services store and keep customers' content up-to-date and available across multiple Apple devices and Windows personal computers.
+
+Digital Content
+
+The Company operates various platforms, including the App Store
+
+&#174;
+
+,
+
+that allow customers to discover and download applications and digital content, such as books, music, video, games and podcasts.
+
+The Company also offers digital content through subscription-based services, including Apple Arcade
+
+&#174;
+
+, a game service; Apple Fitness+
+
+&#174;
+
+, a personalized fitness service; Apple Music
+
+&#174;
+
+, which offers users a curated listening experience with on-demand radio stations; Apple News+
+
+&#174;
+
+, a news and magazine service; and Apple TV
+
+&#174;
+
+, which offers exclusive original content and live sports.
+
+Payment Services
+
+The Company offers payment services, including Apple Card
+
+&#174;
+
+, a co-branded credit card, and Apple Pay
+
+&#174;
+
+, a cashless payment service.
+
+Segments
+
+The Company manages its business primarily on a geographic basis. The Company's reportable segments consist of the Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe includes European countries, as well as India, the Middle East and Africa. Greater China includes China mainland, Hong Kong and Taiwan. Rest of Asia Pacific includes Australia, New Zealand and those Asian countries not included in the Company's other reportable segments. Although the reportable segments provide similar hardware and software products and similar services, each one is managed separately to better align with the location of the Company's customers and distribution partners and the unique market dynamics of each geographic region.
+
+Markets and Distribution
+
+The Company's customers are primarily in the consumer, small and mid-sized business, education, enterprise and government markets. The Company sells its products and resells third-party products in most of its major markets directly to customers through its retail and online stores and its direct sales force. The Company sells its services in the same markets through its various service platforms. The Company also employs a variety of indirect distribution channels, such as third-party cellular network carriers and other resellers, for the sale of its products and certain of its services. During 2025, the Company's net sales through its direct and indirect distribution channels accounted for 40% and 60%, respectively, of total net sales.
+
+Competition
+
+The markets for the Company's products and services are highly competitive and are characterized by aggressive price competition, downward pressure on gross margins, continual improvement in product performance, and price sensitivity on the part of consumers and businesses. The markets in which the Company competes are further defined by frequent introduction of new products and services, short product life cycles, evolving industry standards, and rapid adoption of technological advancements by competitors. Many of the Company's competitors seek to compete primarily through aggressive pricing and very low cost structures, and by imitating the Company's products and infringing on its intellectual property.
+
+Apple Inc. | 2025 Form 10-K | 2
+
+The Company's ability to compete successfully depends heavily on ensuring the continuing and timely introduction of innovative new products, services and technologies to the marketplace. The Company designs and develops nearly the entire solution for its products, including the hardware, operating system, numerous software applications and related services. Principal competitive factors important to the Company include price, product and service features (including security features), relative price and performance, product and service quality and reliability, design and technology innovation, a strong third-party software and accessories ecosystem, marketing and distribution capability, service and support, corporate reputation, and the ability to effectively protect and enforce the Company's intellectual property rights.
+
+The Company is focused on expanding its market opportunities related to smartphones, personal computers, tablets, wearables and accessories, and services. The Company's products and services face substantial competition from companies that have significant technical, marketing, distribution and other resources, as well as established hardware, software, and service offerings with large customer bases. In addition, the Company faces significant competition as competitors imitate the Company's product features and applications within their products to offer more competitive solutions. The Company also expects competition to intensify as competitors imitate the Company's approach to providing components seamlessly within their offerings or work collaboratively to offer integrated solutions. Some of the Company's competitors have broad product lines, low-priced products, large installed bases of active devices, and large customer bases. Competition has been particularly intense as competitors have aggressively cut prices and lowered product margins. Certain competitors have the resources, experience or cost structures to provide products and services at little or no profit or even at a loss. The Company has a minority market share in the global smartphone, personal computer, tablet and wearables markets, and some of the markets in which the Company competes have from time to time experienced little to no growth or contracted overall.
+
+Supply of Components
+
+Although most components essential to the Company's business are generally available from multiple sources, certain components are currently obtained from single or limited sources. The Company also competes for various components with other participants in the markets for smartphones, personal computers, tablets, wearables and accessories. Therefore, many components used by the Company, including those that are available from multiple sources, are at times subject to industry-wide shortage and significant commodity pricing fluctuations. Restrictions on international trade can increase the cost or limit the availability of the Company's products and the components and rare earths and other raw materials that go into them.
+
+The Company uses some custom components that are not commonly used by its competitors, and new products introduced by the Company often utilize custom components available from only one source. When a component or product uses

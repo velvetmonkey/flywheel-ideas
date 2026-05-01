@@ -1,0 +1,615 @@
+Item 1A Risk Factors
+
+
+
+&#160;
+
+Our AI systems offer users powerful tools and capabilities. However, there may be instances where these systems are used in ways that are unintended or inappropriate. In addition, some users may also engage in fraudulent or abusive activities through our cloud-based and AI services, such as unauthorized account access, payment fraud, or terms of service violations including cryptocurrency mining or launching cyberattacks. While we are committed to detecting and controlling such misuse of our cloud-based and AI services, our efforts may not be effective, and we may incur reputational damage or experience adverse impacts to our business and results of operations.
+
+RISKS RELATING TO THE EVOLUTION OF OUR BUSINESS
+
+We make significant investments in products and services that may not achieve expected returns.
+
+We will continue to make significant investments in research, development, and marketing for existing products, services, and technologies, including AI-based products and services. We also invest in the development and acquisition of a variety of hardware for productivity, communication, and entertainment, including PCs, tablets, and gaming devices. Investments in new technology are speculative. Commercial success depends on many factors, including innovation, developer support, and effective distribution and marketing. If customers do not perceive our latest offerings as providing significant new functionality or other value, they may reduce their purchases of new software and hardware products or upgrades, unfavorably affecting revenue. We may not achieve significant revenue from new product, service, and distribution channel investments for several years, if at all. New products and services may not be profitable or may not achieve operating margins as high as we have experienced historically. We may not get engagement in certain features that drive post-sale monetization opportunities. Our data-handling practices across our products and services will continue to be under scrutiny. Perceptions of mismanagement, driven by regulatory activity or negative public reaction to our practices or product experiences, could negatively impact product and feature adoption. Developing new technologies is complex. It can require long development and testing periods. We could experience significant delays in new releases or significant problems in creating new products or services. These factors could adversely affect our business, financial condition, and results of operations.
+
+Acquisitions, joint ventures, and strategic alliances could have an adverse effect on our business.
+
+We expect to continue making acquisitions and entering into joint ventures and strategic alliances as part of our long-term business strategy. For example, in
+
+October 2023 we completed our acquisition of
+
+Activision Blizzard
+
+, Inc. ("Activision Blizzard"). In January 2023 we announced the third phase of our OpenAI strategic partnership. Acquisitions and other transactions and arrangements involve significant challenges and risks, including that they do not advance our business strategy, that we get an unsatisfactory return on our investment, that they raise new compliance-related obligations and challenges, that we have difficulty integrating and retaining new employees, business systems, and technology, that they distract management from our other businesses, or that announced transactions may not be completed. If an arrangement fails to adequately anticipate changing circumstances and interests of a party, it may result in early termination or renegotiation of the arrangement. We also have limited ability to control or influence third parties with whom we have arrangements, which may impact our ability to realize the anticipated benefits. The success of these transactions and arrangements depend in part on our ability to leverage them to enhance our existing products and services or develop compelling new ones, as well as the acquired companies' ability to meet our policies and processes in areas such as data governance, privacy, digital safety, responsible AI, and cybersecurity. It may take longer than expected to realize the full economic benefits from these transactions and arrangements, such as increased revenue or enhanced efficiencies, or the benefits may ultimately be smaller than we expected, which could cause an impairment of goodwill or intangibles. We have recorded, and may in the future be required to record, a significant charge in our consolidated financial statements during the period in which any impairment of our goodwill or amortizable intangible assets is determined, negatively affecting our results of operations. In addition, an acquisition may be subject to challenge even after it has been completed. These events could adversely affect our business, operations, financial condition, and results of operations.
+
+18
+
+PART I
+
+Item 1A
+
+&#160;
+
+CYBERSECURITY, DATA PRIVACY, AND PLATFORM ABUSE RISKS
+
+Cyberattacks and security vulnerabilities could lead to reduced revenue, increased costs, liability claims, or harm to our reputation or competitive position.
+
+Security of our information technology
+
+Threats to security can take a variety of forms. Threat actors, including individual and groups of hackers and sophisticated organizations, including nation-states, state-sponsored organizations, or cybercriminal groups, continuously undertake attacks that pose threats to our customers and our internal infrastructure, and we have experienced cybersecurity incidents in which such actors have gained unauthorized access to our systems and data, including customer systems and data. These actors use a wide variety of methods, which include developing and deploying malicious software; exploiting known and potential vulnerabilities or intentionally designed processes in our or third-party hardware, software, or other infrastructure to attack our products and services or gain access to our networks and datacenters; using social engineering techniques to induce our employees, users, partners, or customers to disclose sensitive information, such as passwords, or take other actions to gain access to our data or our users' or customers' data; or acting in a coordinated manner or conducting coordinated attacks. For example, as previously disclosed in our Form 8-K filed with the Securities and Exchange Commission on January 19, 2024 and amended on March 8, 2024, beginning in late November 2023, a nation-state associated threat actor used a password spray attack to compromise a legacy test account and, in turn, gain access to Microsoft email accounts. The threat actor used information it obtained to gain unauthorized access to some of our source code repositories and internal systems, and the threat actor could continue to utilize this and other information to attempt to gain access to our systems or otherwise adversely affect our business and results of operations. This incident has and may continue to result in harm to our reputation and customer relationships. Nation-state and state-sponsored actors can sustain malicious activities for extended periods and deploy significant resources to plan and carry out attacks. Nation-state attacks against us, our customers, or our partners have and may continue to intensify due to our transparency to our customers, other stakeholders, and the public about cyberattacks, and during elections or periods of intense diplomatic or armed conflict. Challenges or failures in applying security patches to all hardware and devices connected to our systems, including end-of-life and end-of-support equipment, have and may continue to result in unauthorized access to our systems and data in the future. Cyber incidents and attacks, individually or in the aggregate, could adversely affect our financial condition, results of operations, competitive position, and reputation, or expose us to legal or regulatory risk.
+
+Inadequate account security or organizational security practices, including those of companies we have acquired or those of the third parties we utilize, have resulted and may result in unauthorized access to our systems and data, including customer systems and data. For example, passwords may not be rotated and employee access may not be updated or removed on a timely basis. Employees or third parties may intentionally compromise our or our users' security or systems or reveal confidential information, and laws in foreign jurisdictions may compel actions by such parties against our interests and could limit our recourse. Malicious actors may employ the supply chain to introduce malware through software updates or compromised supplier accounts or hardware.
+
+Cyberthreats are constantly evolving and becoming increasingly sophisticated and complex, increasing the difficulty of detecting and successfully defending against them. Threat actors may also utilize emerging technologies, such as AI and machine learning. Our current capabilities may not detect certain vulnerabilities or new attack methods, which may allow them to persist in the environment over long periods of time. It may be difficult to determine the best way to investigate, mitigate, contain, and remediate the harm caused by a cyber incident. Such efforts may not be successful, and we may make errors or fail to take necessary actions. It is possible that threat actors may gain undetected access to other networks and systems after establishing a foothold on an internal system. Cyber incidents and attacks can have cascading impacts that unfold with increasing speed across our internal networks and systems, as well as those of our partners and customers. In addition, it may take considerable time for us to investigate and evaluate the full impact of incidents, particularly for sophisticated attacks. As a result of these and other factors, we may not be able to provide prompt, full, and reliable information about the incident to our customers, partners, regulators, and the public. Breaches of our facilities, network, or data security can disrupt the security of our systems and business applications, impair our ability to provide services to our customers and protect the privacy of their data, result in product development delays, compromise confidential or technical business information, result in theft or misuse of our intellectual property or other assets, subject us to ransomware attacks, require us to allocate more resources to improve technologies or remediate the impacts of attacks, or otherwise adversely affect our business. In addition, actions taken to remediate an incident could result in outages, data losses, and disruptions of our services.
+
+19
+
+PART I
+
+Item 1A
+
+&#160;
+
+Our internal environment continues to evolve. Often, we are early adopters of new devices and technologies. We embrace new ways of sharing data and communicating internally and with partners and customers using methods such as social networking and other consumer-oriented technologies. Increasing use of generative AI models in our internal systems may create new attack surfaces or methods for adversaries. Our business policies and internal security controls may not keep pace with these changes as new threats emerge or the emerging cybersecurity regulations in jurisdictions worldwide.
+
+Security of our products, services, devices, and customers' data
+
+The security of our products and services is important in our customers' decisions to purchase or use our products or services across cloud and on-premises environments. Security threats are a significant challenge to companies like us, whose business is providing technology products and services to others. Threats to or attacks on our own infrastructure, such as the nation-state attack described in the prior risk factor, have also affected our customers and may do so in the future. The reliability of our cloud-based services and the protection of customer data depend on the security of our i
+
+Item 7 MD&A
+
+
+
+&#160;
+
+Intelligent Cloud
+
+Revenue increased $18.8 billion or 21%.
+
+&#8226;
+
+Server products and cloud services revenue increased $18.6 billion or 23% driven by Azure and other cloud services. Azure and other cloud services revenue grew 34% driven by demand for our portfolio of services. Server products revenue decreased 3% driven by a decrease in transactional purchasing with continued customer shift to cloud offerings.
+
+&#8226;
+
+Enterprise and partner services revenue increased $166 million or 2% driven by growth in Enterprise Support Services, offset in part by a decline in Industry Solutions.
+
+Operating income increased $6.8 billion or 18%.
+
+&#8226;
+
+Cost of revenue increased $10.6 billion or 36% driven by growth in Azure.
+
+&#8226;
+
+Gross margin increased $8.2 billion or 14% driven by growth in Azure. Gross margin percentage decreased driven by the impact of scaling our AI infrastructure, offset in part by efficiency gains in Azure.
+
+&#8226;
+
+Operating expenses increased $1.5 billion or 7% driven by investments in cloud and AI engineering.
+
+More Personal Computing
+
+Revenue increased $3.8 billion or 7%.
+
+&#8226;
+
+Windows and Devices revenue increased $288 million or 2%. Windows OEM and Devices revenue increased 3% driven by growth in Windows OEM, offset in part by a decline in Devices.
+
+&#8226;
+
+Gaming revenue increased $2.0 billion or 9% driven by growth in Xbox content and services, offset in part by a decline in Xbox hardware. Xbox content and services revenue increased 16% driven by the impact of the Activision Blizzard acquisition and Xbox Game Pass. Xbox hardware revenue decreased 25% driven by lower volume of consoles sold.
+
+&#8226;
+
+Search and news advertising revenue increased $1.6 billion or 13%. Search and news advertising revenue excluding traffic acquisition costs increased 20% driven by higher search volume and higher revenue per search.
+
+Operating income increased $2.2 billion or 18%.
+
+&#8226;
+
+Cost of revenue increased $346 million or 1% driven by growth in Search and news advertising.
+
+&#8226;
+
+Gross margin increased $3.5 billion or 13% with growth across all businesses. Gross margin percentage increased with improvement across all businesses.
+
+&#8226;
+
+Operating expenses increased $1.3 billion or 9% driven by Gaming, including the impact of the Activision Blizzard acquisition.
+
+OPERATING EXPENSES
+
+Research and Development
+
+&#160;
+
+(In millions, except percentages)
+
+2025
+
+2024
+
+Percentage
+
+Change
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Research and development
+
+$
+
+32,488
+
+$
+
+29,510
+
+&#160;
+
+10%
+
+As a percent of revenue
+
+12%
+
+12%
+
+0ppt
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Research and development expenses include payroll, employee benefits, stock-based compensation expense, and other headcount-related expenses associated with product development. Research and development expenses also include technology development costs, including AI training and other infrastructure costs, third-party development and programming costs, and the amortization of purchased software code and services content.
+
+40
+
+PART II
+
+Item 7
+
+&#160;
+
+Fiscal Year 2025 Compared with Fiscal Year 2024
+
+Research and development expenses increased $3.0 billion or 10% driven by investments in cloud and AI engineering and Gaming, including the impact of the Activision Blizzard acquisition.
+
+Sales and Marketing
+
+&#160;
+
+(In millions, except percentages)
+
+2025
+
+2024
+
+Percentage
+
+Change
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Sales and marketing
+
+$
+
+25,654
+
+$
+
+24,456
+
+&#160;
+
+5%
+
+&#160;
+
+As a percent of revenue
+
+9%
+
+10%
+
+(1)ppt
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Sales and marketing expenses include payroll, employee benefits, stock-based compensation expense, and other headcount-related expenses associated with sales and marketing personnel, and the costs of advertising, promotions, trade shows, seminars, and other programs.
+
+Fiscal Year 2025 Compared with Fiscal Year 2024
+
+Sales and marketing expenses increased $1.2 billion or 5% driven by investments in commercial sales and Gaming, including the impact of the Activision Blizzard acquisition.
+
+General and Administrative
+
+&#160;
+
+(In millions, except percentages)
+
+2025
+
+2024
+
+Percentage
+
+Change
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+General and administrative
+
+$
+
+7,223
+
+$
+
+7,609
+
+&#160;
+
+(5)%
+
+As a percent of revenue
+
+3%
+
+3%
+
+0ppt
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+General and administrative expenses include payroll, employee benefits, stock-based compensation expense, employee severance expense incurred as part of a corporate program, and other headcount-related expenses associated with finance, legal, facilities, certain human resources and other administrative personnel, certain taxes, and legal and other administrative fees.
+
+Fiscal Year 2025 Compared with Fiscal Year 2024
+
+General and administrative expenses decreased $386 million or 5% driven by Gaming, including the impact of the Activision Blizzard acquisition.
+
+OTHER INCOME (EXPENSE), NET
+
+The components of other income (expense), net were as follows:
+
+&#160;
+
+(In millions)
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Year Ended June 30,
+
+2025
+
+2024
+
+&#160;
+
+&#160;
+
+Interest and dividends income
+
+$
+
+2,647
+
+$
+
+3,157
+
+Interest expense
+
+(2,385
+
+)
+
+(2,935
+
+)
+
+Net recognized losses on investments
+
+(349
+
+)
+
+(118
+
+)
+
+Net losses on derivatives
+
+(260
+
+)
+
+(187
+
+)
+
+Net gains (losses) on foreign currency remeasurements
+
+171
+
+&#160;
+
+(244
+
+)
+
+Other, net
+
+(4,725
+
+)
+
+(1,319
+
+)
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Total
+
+$
+
+(4,901
+
+)
+
+$
+
+(1,646
+
+)
+
+&#160;
+
+&#160;
+
+&#160;
+
+We use derivative instruments to manage risks related to foreign currencies, interest rates, equity prices, and credit; to enhance investment returns; and to facilitate portfolio diversification. Gains and losses from changes in fair values of derivatives that are not designated as hedging instruments are primarily recognized in other income (expense), net.
+
+41
+
+PART II
+
+Item 7
+
+&#160;
+
+Fiscal Year 2025 Compared with Fiscal Year 2024
+
+Interest and dividends income decreased primarily due to lower portfolio balances. Interest expense decreased primarily due to maturities of commercial paper and higher capitalization of debt interest expense, offset in part by higher finance lease interest expense. Net recognized losses on investments increased primarily due to higher impairments, offset in part by higher gains on equity investments in the current period. Net losses on derivatives increased primarily due to higher losses on equity derivatives in the current period. Other, net primarily reflects net recognized losses on equity method investments, including OpenAI.
+
+INCOME TAXES
+
+Effective Tax Rate
+
+Our effective tax rate for both fiscal years 2025 and 2024 was 18%. Our effective tax rate for the fiscal year ended June 30, 2025 was primarily impacted by changes in the mix of our earnings and tax expenses between the U.S. and foreign countries.
+
+Our effective tax rate was lower than the U.S. federal statutory rate, primarily due to earnings taxed at lower rates in foreign jurisdictions resulting from producing and distributing our products and services through our foreign regional operations center in Ireland.
+
+The mix of income before income taxes between the U.S. and foreign countries impacted our effective tax rate as a result of the geographic distribution of, and customer demand for, our products and services. In fiscal year 2025, our U.S. income before income taxes was $69.2 billion and our foreign income before income taxes was $54.4 billion. In fiscal year 2024, our U.S. income before income taxes was $62.9 billion and our foreign income before income taxes was $44.9 billion.
+
+The Organisation for Economic Co-operation and Development ("OECD") published its model rules "Tax Challenges Arising From the Digitalisation of the Economy - Global Anti-Base Erosion Model Rules (Pillar Two)" which established a global minimum corporate tax rate of 15% for certain multinational enterprises. Many countries have implemented or are in the process of implementing the Pillar Two legislation, which applies to Microsoft beginning in fiscal year 2025. While we do not currently estimate a material impact to our consolidated financial statements, we continue to monitor the impact as countries implement legislation and the OECD provides additional guidance.
+
+We are currently assessing the One Big Beautiful Bill Act ("OBBBA") which was enacted on July 4, 2025. The OBBBA provides a U.S. global intangible low-taxed income effective tax rate of 14% effective fiscal year 2027 for Microsoft. It also provides bonus depreciation for certain assets placed into service after January 19, 2025 and an election to expense U.S. incurred research or experimental expenditures.
+
+Uncertain Tax Positions
+
+We remain under audit by the IRS for tax years 2014 to 2017. With respect to the audit for tax years 2004 to 2013, on September 26, 2023, we received Notices of Proposed Adjustment ("NOPAs") from the IRS. The primary issues in the NOPAs relate to intercompany transfer pricing. In the NOPAs, the IRS is seeking an additional tax payment of $28.9 billion plus penalties and interest. As of June 30, 2025, we believe our allowances for income tax contingencies are adequate. We disagree with the proposed adjustments and will vigorously contest the NOPAs through the IRS's administrative appeals office and, if necessary, judicial proceedings. We do not expect a final resolution of these issues in the next 12 months. Based on the information currently available, we do not anticipate a significant increase or decrease to our income tax contingencies for these issues within the next 12 months.
+
+We are subject to income tax in many jurisdictions outside the U.S., some of which are currently under audit by local tax authorities. The resolution of these audits is not expected to be material to our consolidated financial statements. Our operations in Ireland remain subject to examination for tax years 2020 and thereafter.
+
+42
+
+PART II
+
+Item 7
+
+&#160;
+
+LIQUIDITY AND CAPITAL RESOURCES
+
+We expect existing cash, cash equivalents, short-term investments, cash flows from operations, and access to capital markets to continue to be sufficient to fund our operating activities and cash commitments for investing and financing activities, such as dividends, share repurchases, debt maturities, material capital expenditures, and the transition tax related to the Tax Cuts and Jobs Act ("TCJA"), for at least the next 12 months and thereafter for the foreseeable future.
+
+Cash, Cash Equivalents, and Investments
+
+Cash, cash equivalents, and short-term investments totaled $94.6 billion and $75.5 billion as of June 30, 2025 and 2024, respectively. Equity and other investments were $15.4 billion and $14.6 billion as of June 30, 2025 and 2024, respectively. Our short-term investments are primarily intended to facilitate liquidity and capital preservation. They consist predominantly of highly liquid investment-grade fixed-income securities, diversified among industries and individual issuers. The investments are predominantly U.S. dollar-denominated securities, but also include foreign currency-denominated securities to diversify risk. Our fixed-income investments are exposed to interest rate risk and credit risk. The credit risk and average maturity of our fixed-income portfolio are managed to achieve economic returns that correlate to certain fixed-income indices. The settleme

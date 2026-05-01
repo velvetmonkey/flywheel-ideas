@@ -17,7 +17,7 @@ const FIXTURE_DIR = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
   'fixtures',
   'sec-company',
-  'apple',
+  'public-tech',
 );
 
 let vault: string;
@@ -36,25 +36,39 @@ afterEach(async () => {
 });
 
 describe('company tracker', () => {
-  it('tracks fixture filings, writes reports, and stages outcomes without applying them', async () => {
+  it('tracks the 3-company fixture corpus, writes a comparison brief, and stages outcomes without applying them', async () => {
     const result = await trackCompanies(db, vault, {
-      companies: ['AAPL'],
+      companies: ['AAPL', 'MSFT', 'NVDA'],
       years: 10,
       forms: ['10-K', '10-Q'],
       confirm: true,
       fixture_dir: FIXTURE_DIR,
     });
 
-    expect(result.promoted_ideas).toBeGreaterThanOrEqual(2);
-    expect(result.promoted_assumptions).toBeGreaterThanOrEqual(3);
+    expect(result.promoted_ideas).toBeGreaterThanOrEqual(9);
+    expect(result.promoted_assumptions).toBeGreaterThanOrEqual(12);
     expect(result.staged_outcomes).toBeGreaterThanOrEqual(1);
 
     await expect(fsp.stat(path.join(vault, result.report_md_path))).resolves.toBeDefined();
     await expect(fsp.stat(path.join(vault, result.report_json_path))).resolves.toBeDefined();
 
+    const markdown = await fsp.readFile(path.join(vault, result.report_md_path), 'utf8');
+    expect(markdown).toContain('## Company Summaries');
+    expect(markdown).toContain('## Cross-Company Theme Matrix');
+    expect(markdown).toContain('## Staged Outcome Review Queue');
+    expect(markdown).toContain('AAPL');
+    expect(markdown).toContain('MSFT');
+    expect(markdown).toContain('NVDA');
+
     const data = readCompanyRun(db, result.run_id) as {
+      filings: unknown[];
+      company_summaries: unknown[];
+      theme_matrix: unknown[];
       outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
     };
+    expect(data.filings).toHaveLength(9);
+    expect(data.company_summaries).toHaveLength(3);
+    expect(data.theme_matrix.length).toBeGreaterThanOrEqual(3);
     expect(data.outcomes).toHaveLength(result.staged_outcomes);
     expect(data.outcomes[0].state).toBe('staged');
     expect(data.outcomes[0].applied_outcome_id).toBeNull();
@@ -65,7 +79,7 @@ describe('company tracker', () => {
 
   it('bulk applies reviewed staged outcomes through outcome.log', async () => {
     const result = await trackCompanies(db, vault, {
-      companies: ['AAPL'],
+      companies: ['MSFT'],
       confirm: true,
       fixture_dir: FIXTURE_DIR,
     });

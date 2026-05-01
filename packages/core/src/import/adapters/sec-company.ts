@@ -17,6 +17,7 @@ const SEC_SUBMISSIONS = 'https://data.sec.gov/submissions';
 const SEC_ARCHIVES = 'https://www.sec.gov/Archives/edgar/data';
 const TICKER_URL = 'https://www.sec.gov/files/company_tickers.json';
 const SEC_REQUEST_SPACING_MS = 150;
+const MIN_SECTION_CHARS = 500;
 let lastSecRequestAt = 0;
 
 export interface SecCompanyConfig {
@@ -254,56 +255,92 @@ export function extractEligibleSections(text: string, form: string): SectionSlic
   const cleaned = htmlToText(text);
   if (form === '10-K') {
     return [
-      ['item-1a', 'Item 1A Risk Factors', ['Item 1A', 'Risk Factors']],
-      ['item-7', 'Item 7 MD&A', ['Item 7', 'Management']],
-    ].flatMap(([key, title, markers]) =>
-      extractByMarkers(cleaned, key as string, title as string, markers as string[]),
-    );
+      extractByHeading(cleaned, 'item-1a', 'Item 1A Risk Factors', headingRegex(['item', '1a']), [
+        headingRegex(['item', '1b']),
+        headingRegex(['item', '2']),
+      ]),
+      extractByHeading(cleaned, 'item-7', 'Item 7 MD&A', headingRegex(['item', '7']), [
+        headingRegex(['item', '7a']),
+        headingRegex(['item', '8']),
+      ]),
+    ].filter((s): s is SectionSlice => Boolean(s));
   }
   if (form === '10-Q') {
     return [
-      ['part-ii-item-1a', 'Part II Item 1A Risk Factors', ['Part II', 'Item 1A', 'Risk Factors']],
-      ['part-i-item-2', 'Part I Item 2 MD&A', ['Part I', 'Item 2', 'Management']],
-    ].flatMap(([key, title, markers]) =>
-      extractByMarkers(cleaned, key as string, title as string, markers as string[]),
-    );
+      extractByHeading(cleaned, 'part-i-item-2', 'Part I Item 2 MD&A', itemHeadingRegex('2'), [
+        itemHeadingRegex('3'),
+        partHeadingRegex('ii'),
+      ]),
+      extractByHeading(cleaned, 'part-ii-item-1a', 'Part II Item 1A Risk Factors', itemHeadingRegex('1a'), [
+        itemHeadingRegex('2'),
+        itemHeadingRegex('3'),
+      ]),
+    ].filter((s): s is SectionSlice => Boolean(s));
   }
   return [];
 }
 
-function extractByMarkers(
+function extractByHeading(
   text: string,
   key: string,
   title: string,
-  markers: string[],
-): SectionSlice[] {
+  startRegex: RegExp,
+  endRegexes: RegExp[],
+): SectionSlice | null {
   const lines = text.split(/\n+/);
-  const starts = lines
-    .map((line, index) => ({ line, index }))
-    .filter(({ line }) => markers.every((m) => line.toLowerCase().includes(m.toLowerCase())))
-    .map(({ index }) => index);
-  if (starts.length === 0) return [];
+  const starts = lines.flatMap((line, index) => (startRegex.test(normalizeHeading(line)) ? [index] : []));
+  if (starts.length === 0) return null;
 
   const candidates = starts
-    .map((start) => collectSectionBody(lines, start))
-    .filter((body) => body.length > 0)
+    .map((start) => collectSectionBody(lines, start, endRegexes))
+    .filter(isSubstantiveSection)
     .sort((a, b) => scoreSection(b) - scoreSection(a));
   const body = candidates[0]?.trim() ?? '';
-  return body ? [{ key, title, text: body }] : [];
+  return body ? { key, title, text: body } : null;
 }
 
-function collectSectionBody(lines: string[], start: number): string {
+function collectSectionBody(lines: string[], start: number, endRegexes: RegExp[]): string {
   const out: string[] = [];
   for (let i = start + 1; i < lines.length; i++) {
     const line = lines[i].trim();
     const body = out.join(' ');
-    if (/^item\s+\d+[a-z]?\.?\s+/i.test(line) || /^part\s+[ivx]+/i.test(line)) {
-      if (body.length > 400) break;
+    if (endRegexes.some((regex) => regex.test(normalizeHeading(line)))) {
+      if (isSubstantiveSection(body)) break;
     }
     if (line) out.push(line);
     if (body.length > 12000) break;
   }
   return out.join('\n\n').trim();
+}
+
+function headingRegex(parts: string[]): RegExp {
+  return new RegExp(`^${parts.map(escapeRegex).join('[\\s\\.\\-:]*')}(?:\\b|\\s|\\.)`, 'i');
+}
+
+function partHeadingRegex(part: string): RegExp {
+  return headingRegex(['part', part]);
+}
+
+function itemHeadingRegex(item: string): RegExp {
+  return new RegExp(`^(?:part[\\s\\.\\-:]*[ivx]+[\\s\\.\\-:]+)?item[\\s\\.\\-:]*${escapeRegex(item)}(?:\\b|\\s|\\.)`, 'i');
+}
+
+function normalizeHeading(line: string): string {
+  return line
+    .replace(/\u00a0/g, ' ')
+    .replace(/[^\S\r\n]+/g, ' ')
+    .replace(/[•·]/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+function isSubstantiveSection(body: string): boolean {
+  if (body.length < MIN_SECTION_CHARS) return false;
+  const lower = body.toLowerCase();
+  const wordCount = body.split(/\s+/).filter(Boolean).length;
+  if (wordCount < 80) return false;
+  if (lower.includes('table of contents') && body.length < 2000) return false;
+  return /(risk|revenue|sales|operations|results|management|competition|customer|supplier|regulation|cyber|cash|cloud|inventory|demand)/i.test(body);
 }
 
 function scoreSection(body: string): number {
@@ -335,27 +372,32 @@ export function extractThemeHits(text: string): ThemeHit[] {
   return [...hits.values()];
 }
 
+const THEME_CATALOG: Array<Pick<ThemeHit, 'key' | 'title'> & { pattern: RegExp }> = [
+  { key: 'cybersecurity-privacy', title: 'Cybersecurity and privacy', pattern: /(cyber|security incident|data breach|privacy|personal data|ransomware|unauthorized access)/ },
+  { key: 'cloud-data-center-capacity', title: 'Cloud and data center capacity', pattern: /(cloud|data center|datacenter|server|capacity|gpu capacity|compute capacity|infrastructure|availability zone)/ },
+  { key: 'ai-rd-technology', title: 'AI, R&D, and technology', pattern: /(artificial intelligence|generative ai|\bai\b|research and development|r&d|technology transition|innovation|technical|semiconductor design)/ },
+  { key: 'geopolitics-tariffs', title: 'Geopolitics and tariffs', pattern: /(geopolitical|tariff|trade restriction|export control|sanction|china|taiwan|russia|ukraine|israel|middle east)/ },
+  { key: 'customer-platform-dependency', title: 'Customer and platform dependency', pattern: /(customer concentration|major customer|platform|app store|oem|channel partner|strategic partner|dependency|ecosystem)/ },
+  { key: 'inventory-channel', title: 'Inventory and channel', pattern: /(inventory|channel inventory|reseller|distributor|sell-through|sell-in|backlog|order cancellation)/ },
+  { key: 'supply-chain', title: 'Supply chain', pattern: /(supply|supplier|manufactur|logistics|component|foundry|fab|assembly|procurement|shortage)/ },
+  { key: 'competition', title: 'Competition', pattern: /(competition|competitor|competitive|pricing pressure|margin pressure|market share|substitute product)/ },
+  { key: 'demand', title: 'Demand', pattern: /(demand|customer demand|consumer|sales volume|revenue|net sales|unit sales|end market|seasonality)/ },
+  { key: 'liquidity', title: 'Liquidity', pattern: /(liquidity|cash|credit|interest rate|debt|capital market|financing|counterparty|investment portfolio)/ },
+  { key: 'regulation-legal', title: 'Regulation and legal', pattern: /(regulation|regulatory|legal|litigation|compliance|government investigation|antitrust|intellectual property|tax law)/ },
+  { key: 'macro-fx', title: 'Macro and foreign exchange', pattern: /(macroeconomic|inflation|recession|foreign currency|currency exchange|fx|interest rates|economic conditions)/ },
+];
+
 function classifyTheme(lower: string): Pick<ThemeHit, 'key' | 'title'> | null {
-  if (/(supply|supplier|manufactur|logistics|inventory|component)/.test(lower)) {
-    return { key: 'supply-chain', title: 'Supply chain' };
-  }
-  if (/(competition|competitor|pricing|margin|market share)/.test(lower)) {
-    return { key: 'competition', title: 'Competition' };
-  }
-  if (/(demand|customer|consumer|sales|revenue)/.test(lower)) {
-    return { key: 'demand', title: 'Demand' };
-  }
-  if (/(liquidity|cash|credit|interest rate|debt|capital)/.test(lower)) {
-    return { key: 'liquidity', title: 'Liquidity' };
-  }
-  if (/(regulation|regulatory|legal|litigation|compliance|government)/.test(lower)) {
-    return { key: 'regulation', title: 'Regulation' };
-  }
-  return null;
+  return THEME_CATALOG.find((theme) => theme.pattern.test(lower)) ?? null;
 }
 
 function isExplicitRealization(lower: string): boolean {
-  return /(adversely affected|materially affected|we experienced|resulted in|we incurred|decline was due to|disruption|shortage|litigation resulted|regulatory action)/.test(lower);
+  return [
+    /\b(resulted in|caused|led to|we experienced|we incurred|we recorded|we recognized|we suffered)\b.{0,120}\b(shortage|delay|decline|decrease|disruption|loss|impairment|charge|expense|cost|outage|breach|penalty|fine|constraint|reduction)\b/,
+    /\b(shortage|delay|decline|decrease|disruption|loss|impairment|charge|expense|outage|breach|penalty|fine|constraint|reduction)\b.{0,120}\b(adversely affected|materially affected|reduced|increased costs|lowered|limited|constrained)\b/,
+    /\bdecline was due to\b|\badversely affected\b|\bmaterially affected\b|\blitigation resulted\b|\bregulatory action resulted\b/,
+    /\b\d+(?:\.\d+)?\s?%\b.{0,120}\b(decline|decrease|increase in costs|reduction|adverse impact|headwind)\b/,
+  ].some((pattern) => pattern.test(lower));
 }
 
 function renderIdeaBody(filing: FilingRecord, section: SectionSlice): string {
@@ -464,6 +506,10 @@ function htmlToText(input: string): string {
 
 function hashText(text: string): string {
   return `sha256:${createHash('sha256').update(text).digest('hex')}`;
+}
+
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 interface SecSubmission {
