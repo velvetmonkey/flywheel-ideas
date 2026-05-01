@@ -95,6 +95,11 @@ describe('company tracker', () => {
 
     const refuted = db.prepare(`SELECT COUNT(*) as n FROM ideas_outcome_verdicts`).get() as { n: number };
     expect(refuted.n).toBe(0);
+
+    const assumptionPaths = db.prepare(
+      `SELECT vault_path FROM ideas_assumptions ORDER BY vault_path`,
+    ).all() as Array<{ vault_path: string }>;
+    expect(new Set(assumptionPaths.map((row) => row.vault_path)).size).toBe(assumptionPaths.length);
   });
 
   it('bulk applies reviewed staged outcomes through outcome.log', async () => {

@@ -223,7 +223,7 @@ async function* emitCandidatesForFiling(
           structured: {
             context: `${companyLabel} disclosed ${theme.title.toLowerCase()} risk in ${filing.form} ${filing.filedAt}.`,
             challenge: theme.excerpt,
-            decision: `${companyLabel} can manage this recurring risk without material disruption.`,
+            decision: `${companyLabel} can manage ${theme.title.toLowerCase()} risk without material disruption.`,
             tradeoff: 'The filing language is company-authored risk disclosure, not an independent forecast.',
           },
         },
