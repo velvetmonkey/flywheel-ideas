@@ -174,17 +174,35 @@ PILOT_VAULT=/tmp/flywheel-pilot-wedge \
 
 `pilot/seed-corpus.mjs` is a programmatic shortcut that calls `import.scan` and `import.promote` in sequence (skipping the user-consent gate, which is appropriate for pilot harnesses). For interactive use through Claude Code or another MCP client, the `import.promote` gate is the right shape — you review each candidate before it lands.
 
-## What's not yet shipped
+## Company tracker
 
-A planned `sec-edgar` adapter (Item 1A risk factors → assumption candidates) is fully specified in the Phase 4 plan but **not implemented in v0.3.0**. Per the post-roundtable revision of the plan, sec-edgar work is gated on at least one of:
+`sec-company` is the low-level SEC import adapter behind the `company` MCP tool. It scans 10-K and 10-Q filings, extracts eligible Risk Factors and MD&A sections, emits recurring risk-theme assumptions, and stages explicit realized-risk outcome candidates.
 
-1. A named user (not "an ADR enthusiast") using v0.2.0 + `github-repo-adr` against a real decision context with written feedback, OR
-2. A public post (Show HN, r/programming, Obsidian community thread, technical blog post) generating ≥1 GitHub star or ≥1 specific user request within ~3 weeks of v0.3.0 publish.
+```
+import.scan({
+  adapter: "sec-company",
+  source: "ticker:AAPL",
+  scan_config: { years: 10, forms: ["10-K", "10-Q"] }
+})
+```
 
-The gate is recorded in a tracking GitHub issue. If neither triggers, Phase 4 halts and the project pivots to GTM-only motion.
+For normal use, prefer the higher-level company workflow:
 
-`sec-edgar`'s readability was confirmed by Wedge 3b ([`docs/pilot.md`](./pilot.md#wedge-3b--domain-readability-spot-check) — 3/3 Apple FY2024 Item 1A entries surfaced specific operational detail), so the technical case for the adapter holds. The post-wedge question is whether anyone actually wants it.
+```
+company.track({
+  companies: ["AAPL", "MSFT", "NVDA"],
+  years: 10,
+  forms: ["10-K", "10-Q"],
+  confirm: true
+})
+```
+
+Outcome safety rule: the adapter may detect explicit realized-risk language, but it does not call `outcome.log`. Those candidates are staged and become canonical outcomes only through:
+
+```
+company.apply_outcomes({ run_id: "...", min_confidence: 0.9, confirm: true })
+```
 
 ---
 
-*Last updated: 2026-04-27.*
+*Last updated: 2026-05-01.*

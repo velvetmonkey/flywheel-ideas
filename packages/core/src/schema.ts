@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 11;
+export const SCHEMA_VERSION = 12;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -442,4 +442,92 @@ export const SCHEMA_SQL_V11 = `
 ALTER TABLE ideas_council_views ADD COLUMN most_vulnerable_assumption_id TEXT REFERENCES ideas_assumptions(id) ON DELETE SET NULL;
 CREATE INDEX IF NOT EXISTS idx_ideas_council_views_most_vulnerable
   ON ideas_council_views(most_vulnerable_assumption_id) WHERE most_vulnerable_assumption_id IS NOT NULL;
+`;
+
+/**
+ * v12 migration — company tracker sidecars (Company Adapter v1).
+ *
+ * These tables keep SEC company-tracking metadata out of the canonical
+ * idea/assumption/outcome tables while linking back to promoted entities.
+ * Detection may stage outcome candidates here; only company.apply_outcomes
+ * calls outcome.log and records applied_outcome_id.
+ */
+export const SCHEMA_SQL_V12 = `
+CREATE TABLE IF NOT EXISTS ideas_company_runs (
+  id TEXT PRIMARY KEY,
+  companies_json TEXT NOT NULL,
+  years INTEGER NOT NULL,
+  forms_json TEXT NOT NULL,
+  started_at INTEGER NOT NULL,
+  completed_at INTEGER,
+  status TEXT NOT NULL,
+  report_md_path TEXT,
+  report_json_path TEXT
+);
+
+CREATE TABLE IF NOT EXISTS ideas_company_filings (
+  id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES ideas_company_runs(id) ON DELETE CASCADE,
+  cik TEXT NOT NULL,
+  ticker TEXT,
+  company_name TEXT,
+  accession_no TEXT NOT NULL,
+  form TEXT NOT NULL,
+  filed_at TEXT NOT NULL,
+  period TEXT,
+  filing_url TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_company_filings_run
+  ON ideas_company_filings(run_id, cik, filed_at);
+
+CREATE TABLE IF NOT EXISTS ideas_company_themes (
+  id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES ideas_company_runs(id) ON DELETE CASCADE,
+  cik TEXT NOT NULL,
+  ticker TEXT,
+  theme_key TEXT NOT NULL,
+  title TEXT NOT NULL,
+  first_seen_at TEXT NOT NULL,
+  latest_seen_at TEXT NOT NULL,
+  assumption_id TEXT REFERENCES ideas_assumptions(id) ON DELETE SET NULL,
+  UNIQUE(run_id, cik, theme_key)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_company_themes_run
+  ON ideas_company_themes(run_id, cik);
+
+CREATE TABLE IF NOT EXISTS ideas_company_observations (
+  id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES ideas_company_runs(id) ON DELETE CASCADE,
+  theme_id TEXT NOT NULL REFERENCES ideas_company_themes(id) ON DELETE CASCADE,
+  filing_id TEXT NOT NULL REFERENCES ideas_company_filings(id) ON DELETE CASCADE,
+  section_key TEXT NOT NULL,
+  source_uri TEXT NOT NULL,
+  excerpt_hash TEXT NOT NULL,
+  excerpt TEXT NOT NULL,
+  observed_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_company_observations_theme
+  ON ideas_company_observations(theme_id, observed_at);
+
+CREATE TABLE IF NOT EXISTS ideas_company_outcome_candidates (
+  id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES ideas_company_runs(id) ON DELETE CASCADE,
+  theme_id TEXT NOT NULL REFERENCES ideas_company_themes(id) ON DELETE CASCADE,
+  assumption_id TEXT REFERENCES ideas_assumptions(id) ON DELETE SET NULL,
+  filing_id TEXT NOT NULL REFERENCES ideas_company_filings(id) ON DELETE CASCADE,
+  source_uri TEXT NOT NULL,
+  excerpt TEXT NOT NULL,
+  confidence REAL NOT NULL,
+  rationale TEXT NOT NULL,
+  state TEXT NOT NULL DEFAULT 'staged',
+  applied_outcome_id TEXT REFERENCES ideas_outcomes(id) ON DELETE SET NULL,
+  created_at INTEGER NOT NULL,
+  applied_at INTEGER
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_company_outcomes_run
+  ON ideas_company_outcome_candidates(run_id, state);
 `;
