@@ -10,8 +10,8 @@ The current proof surface is **company tracking**. It turns public SEC 10-K and 
 
 - **Decision ledger:** `idea.create`, `assumption.declare`, `council.run`, `outcome.log`.
 - **Company tracker:** `company.track` scans public-company filings and turns recurring risks into current bets.
-- **Visibility report:** `idea.report({ report_kind: "sec_company" })` shows current bets, review queue, accepted verdicts, and dependent ideas needing review.
-- **Outcome loop:** strict realized-risk detections are staged first; only accepted outcomes become pass/fail verdicts.
+- **Visibility report:** `idea.report({ report_kind: "sec_company" })` shows current bets, review queue, accepted verdicts, missing lesson memos, and dependent ideas needing review.
+- **Outcome loop:** strict realized-risk detections are staged first; only accepted outcomes become pass/fail verdicts, and refuted outcomes should get durable lesson memos.
 - **Vault-native storage:** notes stay as Markdown in your vault, with `ideas.db` as the local index.
 - **Multi-model dissent:** council runs can dispatch to `claude`, `codex`, and `gemini` CLIs.
 
@@ -25,12 +25,23 @@ SEC filings -> dated observations -> current bets -> review queue -> accepted ou
 
 A live AAPL/MSFT/NVDA dogfood run showed the scale of the workflow: 125 filings over 10 years compressed into 36 tracked company/theme assumptions, 2,192 dated observations, 36 staged outcome candidates, and 22 review events.
 
+After review, accepting three representative review groups produced 9 accepted failure verdicts, 9 written lesson memos, 29 still-current bets, and 19 review events left in the queue. That is the product loop: the tool does not just find filings; it shows which assumptions are still alive, which ones failed, what evidence caused the verdict, and what lesson should carry forward.
+
 Example lifecycle:
 
 - A filing discloses a recurring theme such as NVIDIA supply/demand risk. That becomes an open assumption: a current bet.
 - Later filings add dated observations to the same assumption instead of creating disconnected notes.
 - If a later filing says NVIDIA incurred a charge because demand diminished, that excerpt is grouped into the outcome review queue with its SEC source URI.
 - If you accept it, `company.apply_outcomes` calls `outcome.log`, refutes the linked assumption, and flags dependent ideas for review.
+- If you write the memo, the report shows the durable lesson instead of leaving a hidden post-mortem gap.
+
+Three lessons from the dogfood:
+
+- NVIDIA: geopolitical access constraints can turn demand risk into inventory write-down risk before the commercial opportunity fully disappears.
+- Apple: a distributed hardware business can see supply, channel, and demand assumptions fail together when a shock closes both factories and points of sale.
+- Microsoft: AI and cloud capacity bets should track both strategic upside and the impairment/opex drag created when adjacent hardware or gaming assumptions weaken.
+
+See [`docs/sec-lifecycle-dogfood.md`](./docs/sec-lifecycle-dogfood.md) for the before/after run.
 
 ## The Main Workflow
 
