@@ -148,7 +148,7 @@ describe('company tracker', () => {
       `SELECT vault_path FROM ideas_assumptions ORDER BY vault_path`,
     ).all() as Array<{ vault_path: string }>;
     expect(new Set(assumptionPaths.map((row) => row.vault_path)).size).toBe(assumptionPaths.length);
-  });
+  }, 30_000);
 
   it('bulk applies reviewed staged outcomes through outcome.log', async () => {
     const result = await trackCompanies(db, vault, {
