@@ -17,6 +17,7 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
   getActiveWritePath,
   buildAssumptionNextStepsForIdea,
+  buildSecCompanyLedgerReport,
   createFreeze,
   createIdea,
   exportPortfolio,
@@ -59,7 +60,8 @@ export function registerIdeaTool(
     [
       'Manage the idea lifecycle in your decision ledger.',
       'Actions: create (new markdown note), read (full note + frontmatter), ',
-      'list (paginated), transition (move lifecycle state; records a transition).',
+      'list (paginated), transition (move lifecycle state; records a transition), ',
+      'report (read-only ledger visibility).',
       'Every response includes next_steps to guide the next action.',
     ].join(''),
     {
@@ -68,7 +70,7 @@ export function registerIdeaTool(
           'create', 'read', 'list', 'transition', 'forget',
           'freeze', 'list_freezes',
           'ancestry', 'descendants', 'shared_assumptions',
-          'export',
+          'export', 'report',
         ])
         .describe('Operation to perform'),
       title: z
@@ -182,6 +184,14 @@ export function registerIdeaTool(
         .boolean()
         .optional()
         .describe('[export] Include private idea context in the export artifact. Default false.'),
+      report_kind: z
+        .enum(['sec_company'])
+        .optional()
+        .describe('[report] Report to render. `sec_company` summarizes current SEC company bets, review queue, accepted verdicts, and dependent ideas needing review.'),
+      run_id: z
+        .string()
+        .optional()
+        .describe('[report] Optional company tracker run id. Defaults to the latest run for `report_kind: sec_company`.'),
     },
     async (args) => {
       // Top-level error boundary: unhandled exceptions from handler I/O or
@@ -213,6 +223,8 @@ export function registerIdeaTool(
             return handleSharedAssumptions(getDb(), args);
           case 'export':
             return handleExport(getVaultPath(), getDb(), args);
+          case 'report':
+            return handleReport(getDb(), args);
           default:
             return mcpError(`unknown action: ${(args as { action: string }).action}`);
         }
@@ -228,6 +240,48 @@ export function registerIdeaTool(
       }
     },
   );
+}
+
+// ---------- idea.report ----------
+
+function handleReport(
+  db: IdeasDatabase,
+  args: { report_kind?: 'sec_company'; run_id?: string },
+): ReturnType<typeof mcpText> {
+  if (args.report_kind !== 'sec_company') {
+    return mcpError('idea.report requires `report_kind: "sec_company"`', [
+      {
+        action: 'idea.report',
+        example: 'idea.report({ report_kind: "sec_company" })',
+        why: 'Render the SEC company assumption ledger: current bets, review queue, accepted verdicts, and dependent ideas needing review.',
+      },
+    ]);
+  }
+  const report = buildSecCompanyLedgerReport(db, { run_id: args.run_id });
+  const next_steps: NextStep[] = [];
+  if (!report.run || (report.run as { missing?: boolean }).missing === true) {
+    next_steps.push({
+      action: 'company.track',
+      example: 'company.track({ companies: ["AAPL", "MSFT", "NVDA"], years: 10, confirm: true })',
+      why: 'Create a SEC company tracker run before reading the ledger report.',
+    });
+  } else if (report.review_queue.length > 0) {
+    next_steps.push({
+      action: 'company.apply_outcomes',
+      example: report.review_queue[0].apply_command,
+      why: 'Review a staged event and apply the candidate IDs only if the evidence should enter the pass/fail ledger.',
+    });
+  } else {
+    next_steps.push({
+      action: 'company.track',
+      example: 'company.track({ companies: ["AAPL", "MSFT", "NVDA"], years: 10, confirm: true })',
+      why: 'Refresh the SEC company tracker when you want a newer evidence snapshot.',
+    });
+  }
+  return mcpText({
+    result: report,
+    next_steps,
+  });
 }
 
 // ---------- idea.create ----------

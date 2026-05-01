@@ -1,35 +1,35 @@
 # flywheel-ideas
 
-**A local-first assumption ledger for tracking decisions, evidence, and outcomes over time.**
+**A local-first assumption ledger that shows what is still live, what broke, and what else now needs review.**
 
-flywheel-ideas runs as an MCP server against your Obsidian vault. It helps you capture a decision, name the assumptions behind it, attach dated evidence, challenge the decision with multiple AI CLIs, and later log what actually happened. When an assumption is refuted, every dependent idea is flagged for review.
+flywheel-ideas runs as an MCP server against your Obsidian vault. It captures decisions as assumptions, records dated evidence, and logs what actually happened. The important part is propagation: when `outcome.log` refutes an assumption, every dependent idea is flagged with `needs_review`.
 
-The current product wedge is **company tracking**. It turns public SEC 10-K and 10-Q filings into a dated assumption ledger: recurring issuer-disclosed risks become tracked assumptions, each later mention becomes an observation, and only strict realized-risk language is staged for human review. Nothing changes assumption status until you accept a staged candidate through `company.apply_outcomes`, which uses the same `outcome.log` path as manual decisions.
+The current proof surface is **company tracking**. It turns public SEC 10-K and 10-Q filings into an assumption ledger: recurring issuer-disclosed risks become current bets, later mentions become dated observations, and explicit realized-risk language becomes a review queue. Nothing counts as pass/fail until you accept a staged candidate through `company.apply_outcomes`, which uses the same `outcome.log` path as manual decisions.
 
 ## What It Does
 
 - **Decision ledger:** `idea.create`, `assumption.declare`, `council.run`, `outcome.log`.
-- **Company tracker:** `company.track` scans public-company filings and turns recurring risks into tracked assumptions.
-- **Observation ledger:** dated SEC evidence accumulates around each company/theme assumption.
-- **Outcome loop:** strict realized-risk detections are staged first; `company.apply_outcomes` explicitly logs accepted outcomes.
+- **Company tracker:** `company.track` scans public-company filings and turns recurring risks into current bets.
+- **Visibility report:** `idea.report({ report_kind: "sec_company" })` shows current bets, review queue, accepted verdicts, and dependent ideas needing review.
+- **Outcome loop:** strict realized-risk detections are staged first; only accepted outcomes become pass/fail verdicts.
 - **Vault-native storage:** notes stay as Markdown in your vault, with `ideas.db` as the local index.
 - **Multi-model dissent:** council runs can dispatch to `claude`, `codex`, and `gemini` CLIs.
 
 ## Where The Value Exists
 
-Company tracking is not a stock picker and it does not independently prove that a risk happened. SEC filings are issuer-authored evidence. The value is that the tool compresses a large filing corpus into an auditable lifecycle:
+This is not SEC search, a stock picker, or a claim that filings independently prove reality. Existing tools already summarize and search filings. The value here is the lifecycle: evidence stays attached to assumptions, outcomes change assumption status, and refutations propagate to related decisions.
 
 ```text
-SEC filings -> dated observations -> recurring assumptions -> evidence report -> reviewed outcomes -> outcome.log
+SEC filings -> dated observations -> current bets -> review queue -> accepted outcomes -> needs_review propagation
 ```
 
-A live AAPL/MSFT/NVDA dogfood run showed the scale of the workflow: 123 filings over 10 years compressed into 36 tracked assumptions, 1,793 dated observations, and 12 cross-company theme rows. The current outcome filter is intentionally stricter: reports show only realized-risk candidates that need review before they can affect the ledger.
+A live AAPL/MSFT/NVDA dogfood run showed the scale of the workflow: 125 filings over 10 years compressed into 36 tracked company/theme assumptions, 2,192 dated observations, 36 staged outcome candidates, and 22 review events.
 
 Example lifecycle:
 
-- A filing discloses a recurring theme such as NVIDIA supply/demand risk.
+- A filing discloses a recurring theme such as NVIDIA supply/demand risk. That becomes an open assumption: a current bet.
 - Later filings add dated observations to the same assumption instead of creating disconnected notes.
-- If a later filing says NVIDIA incurred a charge because demand diminished, that excerpt is staged as a realized-risk candidate with its SEC source URI.
+- If a later filing says NVIDIA incurred a charge because demand diminished, that excerpt is grouped into the outcome review queue with its SEC source URI.
 - If you accept it, `company.apply_outcomes` calls `outcome.log`, refutes the linked assumption, and flags dependent ideas for review.
 
 ## The Main Workflow
@@ -69,6 +69,20 @@ Tool: `company`
   "format": "both"
 }
 ```
+
+Or read the operator-facing ledger view:
+
+Tool: `idea`
+
+```json
+{
+  "action": "report",
+  "report_kind": "sec_company",
+  "run_id": "run-..."
+}
+```
+
+The report leads with current bets, staged review events, accepted pass/fail verdicts, and dependent ideas that now need review.
 
 Apply reviewed outcomes:
 
@@ -185,7 +199,7 @@ export FLYWHEEL_IDEAS_SEC_USER_AGENT="your-app-name contact: you@example.com"
 
 ### Tool: `idea`
 
-- actions: `create`, `read`, `list`, `transition`, `forget`, `freeze`, `list_freezes`, `ancestry`, `descendants`, `shared_assumptions`, `export`
+- actions: `create`, `read`, `list`, `transition`, `forget`, `freeze`, `list_freezes`, `ancestry`, `descendants`, `shared_assumptions`, `export`, `report`
 
 ### Tool: `assumption`
 
@@ -222,6 +236,8 @@ reports/company-tracker-<run_id>.json
 ```
 
 Decision portfolio exports are written through `idea.export`.
+
+SEC ledger visibility is available through `idea.report({ report_kind: "sec_company" })`.
 
 Private idea context is stored in the DB sidecar and is excluded from exports unless `include_private_context: true` is passed.
 
