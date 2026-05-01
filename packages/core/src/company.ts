@@ -17,6 +17,11 @@ import {
   type ImportCandidateRow,
 } from './import/index.js';
 import { logOutcome } from './outcome.js';
+import {
+  buildSecCompanyLedgerReport,
+  renderSecCompanyLedgerMarkdown,
+  type SecLedgerReport,
+} from './sec-ledger-report.js';
 
 export interface CompanyTrackInput {
   companies: string[];
@@ -289,6 +294,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const lifecycleSummary = buildLifecycleSummary(filings, themes, observations, outcomes);
   const observationExamples = buildObservationExamples(themes, observations, filings);
   const outcomeGroups = buildOutcomeGroups(outcomes, themes, filings);
+  const secLedgerReport = buildSecCompanyLedgerReport(db, { run_id: runId });
   const highConfidenceOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) >= 0.9);
   const reviewOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) < 0.9);
   return {
@@ -305,6 +311,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
     },
     observation_examples: observationExamples,
     outcome_groups: outcomeGroups,
+    sec_ledger_report: secLedgerReport,
     company_summaries: companySummaries,
     theme_matrix: themeMatrix,
     high_confidence_outcomes: highConfidenceOutcomes,
@@ -322,6 +329,7 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
   const lifecycle = data.lifecycle_summary as Record<string, unknown>;
   const examples = data.observation_examples as Array<Record<string, unknown>>;
   const outcomeGroups = data.outcome_groups as Array<Record<string, unknown>>;
+  const secLedgerReport = data.sec_ledger_report as SecLedgerReport;
   const lines = [
     `# Company Tracker ${run.id}`,
     '',
@@ -332,6 +340,8 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
     `- Themes tracked: ${themes.length}`,
     `- Staged outcomes: ${outcomes.filter((o) => o.state === 'staged').length}`,
     `- Applied outcomes: ${outcomes.filter((o) => o.state === 'applied').length}`,
+    '',
+    renderSecCompanyLedgerMarkdown(secLedgerReport).trim(),
     '',
     '## Lifecycle Summary',
     '',

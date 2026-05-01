@@ -558,6 +558,19 @@ export type {
   CompanyTrackResult,
 } from './company.js';
 
+export {
+  buildSecCompanyLedgerReport,
+  renderSecCompanyLedgerMarkdown,
+} from './sec-ledger-report.js';
+export type {
+  SecAcceptedVerdict,
+  SecCurrentBet,
+  SecLedgerReport,
+  SecLedgerReportOptions,
+  SecNeedsReviewIdea,
+  SecReviewEvent,
+} from './sec-ledger-report.js';
+
 // v3 idea-extensions sidecar (v0.2 Phase 1 D1)
 export {
   getIdeaContext,

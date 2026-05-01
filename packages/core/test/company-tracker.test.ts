@@ -10,6 +10,7 @@ import {
   readCompanyRun,
   runMigrations,
   trackCompanies,
+  buildSecCompanyLedgerReport,
   type IdeasDatabase,
 } from '../src/index.js';
 
@@ -87,6 +88,24 @@ describe('company tracker', () => {
         source_uris: string[];
         representative_excerpt: string;
       }>;
+      sec_ledger_report: {
+        executive_summary: {
+          current_bets: number;
+          review_events: number;
+          staged_candidates: number;
+          accepted_failures: number;
+          triage_completion: { applied_candidates: number; total_candidates: number; percent: number };
+        };
+        current_bets: Array<{
+          assumption_status: string;
+          review_pressure: number;
+          freshness: string;
+          latest_seen_at: string;
+          observation_count: number;
+        }>;
+        review_queue: Array<{ candidate_ids: string[]; apply_command: string; status: string }>;
+        accepted_verdicts: unknown[];
+      };
       outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
     };
     expect(data.filings).toHaveLength(9);
@@ -106,6 +125,17 @@ describe('company tracker', () => {
     expect(data.outcome_groups[0].themes.length).toBeGreaterThan(0);
     expect(data.outcome_groups[0].source_uris[0]).toContain('sec-company://');
     expect(data.outcome_groups[0].representative_excerpt.length).toBeGreaterThan(0);
+    expect(data.sec_ledger_report.executive_summary.current_bets).toBeGreaterThan(0);
+    expect(data.sec_ledger_report.executive_summary.review_events).toBe(data.sec_ledger_report.review_queue.length);
+    expect(data.sec_ledger_report.executive_summary.staged_candidates).toBe(result.staged_outcomes);
+    expect(data.sec_ledger_report.executive_summary.accepted_failures).toBe(0);
+    expect(data.sec_ledger_report.executive_summary.triage_completion.applied_candidates).toBe(0);
+    expect(data.sec_ledger_report.current_bets[0].assumption_status).toBe('open');
+    expect(data.sec_ledger_report.current_bets[0].review_pressure).toBeGreaterThanOrEqual(data.sec_ledger_report.current_bets.at(-1)?.review_pressure ?? 0);
+    expect(['fresh', 'cooling', 'stale']).toContain(data.sec_ledger_report.current_bets[0].freshness);
+    expect(data.sec_ledger_report.review_queue[0].status).toBe('needs_human_review');
+    expect(data.sec_ledger_report.review_queue[0].apply_command).toContain('company.apply_outcomes');
+    expect(data.sec_ledger_report.accepted_verdicts).toHaveLength(0);
     expect(data.outcomes).toHaveLength(result.staged_outcomes);
     expect(data.outcomes[0].state).toBe('staged');
     expect(data.outcomes[0].applied_outcome_id).toBeNull();
@@ -140,8 +170,35 @@ describe('company tracker', () => {
 
     const data = readCompanyRun(db, result.run_id) as {
       outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
+      sec_ledger_report: {
+        executive_summary: {
+          accepted_failures: number;
+          staged_candidates: number;
+          triage_completion: { applied_candidates: number; total_candidates: number; percent: number };
+        };
+        current_bets: Array<{ assumption_id: string }>;
+        review_queue: unknown[];
+        accepted_verdicts: Array<{ verdict: string; outcome_id: string; assumption_id: string }>;
+      };
     };
     expect(data.outcomes[0].state).toBe('applied');
     expect(data.outcomes[0].applied_outcome_id).toMatch(/^out-/);
+    expect(data.sec_ledger_report.executive_summary.accepted_failures).toBe(result.staged_outcomes);
+    expect(data.sec_ledger_report.executive_summary.staged_candidates).toBe(0);
+    expect(data.sec_ledger_report.executive_summary.triage_completion.percent).toBe(100);
+    expect(data.sec_ledger_report.review_queue).toHaveLength(0);
+    expect(data.sec_ledger_report.accepted_verdicts[0].verdict).toBe('refuted');
+    expect(data.sec_ledger_report.accepted_verdicts[0].outcome_id).toMatch(/^out-/);
+    const currentBetIds = new Set(data.sec_ledger_report.current_bets.map((bet) => bet.assumption_id));
+    for (const verdict of data.sec_ledger_report.accepted_verdicts) {
+      expect(currentBetIds.has(verdict.assumption_id)).toBe(false);
+    }
+  });
+
+  it('returns a clear empty SEC ledger report before any company run', () => {
+    const report = buildSecCompanyLedgerReport(db);
+    expect(report.run).toBeNull();
+    expect(report.current_bets).toHaveLength(0);
+    expect(report.markdown).toContain('No SEC company tracker run exists yet');
   });
 });

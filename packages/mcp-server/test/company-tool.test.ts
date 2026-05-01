@@ -52,6 +52,23 @@ describe('company MCP tool', () => {
     expect(tools.map((t) => t.name)).toContain('company');
   });
 
+  it('returns SEC ledger empty state through idea.report before a run exists', async () => {
+    const report = parseResp(await client.callTool('idea', {
+      action: 'report',
+      report_kind: 'sec_company',
+    })) as {
+      result: {
+        current_bets: unknown[];
+        markdown: string;
+      };
+      next_steps: Array<{ action: string }>;
+    };
+
+    expect(report.result.current_bets).toHaveLength(0);
+    expect(report.result.markdown).toContain('No SEC company tracker run exists yet');
+    expect(report.next_steps[0].action).toBe('company.track');
+  });
+
   it('tracks fixtures and applies staged outcomes only on explicit call', async () => {
     const tracked = parseResp(await client.callTool('company', {
       action: 'track',
@@ -75,5 +92,45 @@ describe('company MCP tool', () => {
     expect(applied.result.applied_count).toBe(tracked.result.staged_outcomes);
     const after = db.prepare(`SELECT COUNT(*) as n FROM ideas_outcome_verdicts`).get() as { n: number };
     expect(after.n).toBe(tracked.result.staged_outcomes);
+  });
+
+  it('returns latest and explicit SEC ledger reports through idea.report', async () => {
+    const tracked = parseResp(await client.callTool('company', {
+      action: 'track',
+      companies: ['AAPL', 'MSFT', 'NVDA'],
+      fixture_dir: FIXTURE_DIR,
+      confirm: true,
+    })) as { result: { run_id: string; staged_outcomes: number } };
+
+    const latest = parseResp(await client.callTool('idea', {
+      action: 'report',
+      report_kind: 'sec_company',
+    })) as {
+      result: {
+        run: { id: string };
+        executive_summary: { staged_candidates: number; review_events: number };
+        current_bets: unknown[];
+        review_queue: Array<{ apply_command: string }>;
+        accepted_verdicts: unknown[];
+        markdown: string;
+      };
+      next_steps: Array<{ action: string; example: string }>;
+    };
+
+    expect(latest.result.run.id).toBe(tracked.result.run_id);
+    expect(latest.result.executive_summary.staged_candidates).toBe(tracked.result.staged_outcomes);
+    expect(latest.result.executive_summary.review_events).toBeGreaterThan(0);
+    expect(latest.result.current_bets.length).toBeGreaterThan(0);
+    expect(latest.result.review_queue[0].apply_command).toContain(tracked.result.run_id);
+    expect(latest.result.accepted_verdicts).toHaveLength(0);
+    expect(latest.result.markdown).toContain('## Current Bets');
+    expect(latest.next_steps[0].action).toBe('company.apply_outcomes');
+
+    const explicit = parseResp(await client.callTool('idea', {
+      action: 'report',
+      report_kind: 'sec_company',
+      run_id: tracked.result.run_id,
+    })) as { result: { run: { id: string } } };
+    expect(explicit.result.run.id).toBe(tracked.result.run_id);
   });
 });
