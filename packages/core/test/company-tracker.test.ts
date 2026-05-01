@@ -57,7 +57,9 @@ describe('company tracker', () => {
     expect(markdown).toContain('## Company Summaries');
     expect(markdown).toContain('## Cross-Company Theme Matrix');
     expect(markdown).toContain('## Observation Evidence Examples');
+    expect(markdown).toContain('## Realized Outcome Review Events');
     expect(markdown).toContain('## Realized Outcome Candidates');
+    expect(markdown).toContain('grouped into');
     expect(markdown).toContain('Value signal: recurring issuer-authored evidence');
     expect(markdown).not.toMatch(/&#(?:x?[0-9a-f]+|[a-z]+);/i);
     expect(markdown).toContain('AAPL');
@@ -77,6 +79,14 @@ describe('company tracker', () => {
         applied_outcomes: number;
       };
       observation_examples: Array<{ excerpt: string; source_uri: string }>;
+      outcome_groups: Array<{
+        id: string;
+        candidate_count: number;
+        candidate_ids: string[];
+        themes: string[];
+        source_uris: string[];
+        representative_excerpt: string;
+      }>;
       outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
     };
     expect(data.filings).toHaveLength(9);
@@ -89,6 +99,13 @@ describe('company tracker', () => {
     expect(data.observation_examples[0].source_uri).toContain('sec-company://');
     expect(data.observation_examples.every((e) => e.excerpt.length <= 900)).toBe(true);
     expect(data.observation_examples.map((e) => e.excerpt).join('\n')).not.toMatch(/&#(?:x?[0-9a-f]+|[a-z]+);/i);
+    expect(data.outcome_groups.length).toBeGreaterThan(0);
+    expect(data.outcome_groups.length).toBeLessThanOrEqual(result.staged_outcomes);
+    expect(data.outcome_groups[0].id).toMatch(/^og-/);
+    expect(data.outcome_groups[0].candidate_count).toBe(data.outcome_groups[0].candidate_ids.length);
+    expect(data.outcome_groups[0].themes.length).toBeGreaterThan(0);
+    expect(data.outcome_groups[0].source_uris[0]).toContain('sec-company://');
+    expect(data.outcome_groups[0].representative_excerpt.length).toBeGreaterThan(0);
     expect(data.outcomes).toHaveLength(result.staged_outcomes);
     expect(data.outcomes[0].state).toBe('staged');
     expect(data.outcomes[0].applied_outcome_id).toBeNull();
