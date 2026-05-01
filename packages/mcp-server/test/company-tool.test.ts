@@ -55,7 +55,7 @@ describe('company MCP tool', () => {
   it('tracks fixtures and applies staged outcomes only on explicit call', async () => {
     const tracked = parseResp(await client.callTool('company', {
       action: 'track',
-      companies: ['MSFT'],
+      companies: ['NVDA'],
       fixture_dir: FIXTURE_DIR,
       confirm: true,
     })) as { result: { run_id: string; staged_outcomes: number } };
