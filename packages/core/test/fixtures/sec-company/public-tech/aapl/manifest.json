@@ -1,0 +1,40 @@
+{
+  "filings": [
+    {
+      "cik": "0000320193",
+      "ticker": "AAPL",
+      "company_name": "Apple Inc.",
+      "accession_no": "0000320193-22-000108",
+      "form": "10-K",
+      "filed_at": "2022-10-28",
+      "period": "2022-09-24",
+      "primary_document": "aapl-2022-10-28-10k.txt",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm",
+      "fixture_note": "Reduced text snapshot containing eligible SEC sections only."
+    },
+    {
+      "cik": "0000320193",
+      "ticker": "AAPL",
+      "company_name": "Apple Inc.",
+      "accession_no": "0000320193-25-000079",
+      "form": "10-K",
+      "filed_at": "2025-10-31",
+      "period": "2025-09-27",
+      "primary_document": "aapl-2025-10-31-10k.txt",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "fixture_note": "Reduced text snapshot containing eligible SEC sections only."
+    },
+    {
+      "cik": "0000320193",
+      "ticker": "AAPL",
+      "company_name": "Apple Inc.",
+      "accession_no": "0000320193-26-000006",
+      "form": "10-Q",
+      "filed_at": "2026-01-30",
+      "period": "2025-12-27",
+      "primary_document": "aapl-2026-01-30-10q.txt",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000006/aapl-20251227.htm",
+      "fixture_note": "Reduced text snapshot containing eligible SEC sections only."
+    }
+  ]
+}

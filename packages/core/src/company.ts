@@ -91,14 +91,17 @@ export async function trackCompanies(
   let stagedOutcomes = 0;
 
   for (const company of companies) {
-    const source = input.fixture_dir ? `fixture://${input.fixture_dir}` : company;
+    const fixtureDir = input.fixture_dir
+      ? await resolveCompanyFixtureDir(input.fixture_dir, company, companies.length)
+      : undefined;
+    const source = fixtureDir ? `fixture://${fixtureDir}` : company;
     const summary = await scanSource(db, vaultPath, {
       adapter: 'sec-company',
       source,
       scan_config: {
         years,
         forms,
-        fixture_dir: input.fixture_dir,
+        fixture_dir: fixtureDir,
         limit_filings: input.limit_filings,
       },
       dedup: false,
@@ -159,6 +162,8 @@ async function promoteCompanyCandidates(
   for (const row of candidates.filter((c) => c.candidate_kind === 'assumption')) {
     const fields = parseExtractedFields(row);
     const themeKey = stringField(fields, 'theme_key');
+    const sec = objectField(fields, 'sec_company');
+    const cik = stringField(sec, 'cik') ?? 'unknown';
     const parentSource = stringField(fields, 'parent_idea_source_uri');
     const targetIdea = parentSource ? ideaBySourceUri.get(parentSource) : undefined;
     if (!themeKey || !targetIdea) {
@@ -166,7 +171,8 @@ async function promoteCompanyCandidates(
       continue;
     }
     const filingId = recordFilingIfNeeded(db, runId, row);
-    const existing = themeByKey.get(themeKey);
+    const compoundThemeKey = `${cik}:${themeKey}`;
+    const existing = themeByKey.get(compoundThemeKey);
     if (existing) {
       recordObservation(db, runId, existing.themeId, filingId, row);
       markCandidateRejected(db, row.id);
@@ -180,14 +186,16 @@ async function promoteCompanyCandidates(
     });
     const themeId = recordTheme(db, runId, row, res.promoted_id);
     recordObservation(db, runId, themeId, filingId, row);
-    themeByKey.set(themeKey, { themeId, assumptionId: res.promoted_id });
+    themeByKey.set(compoundThemeKey, { themeId, assumptionId: res.promoted_id });
     assumptions++;
   }
 
   for (const row of candidates.filter((c) => c.candidate_kind === 'outcome')) {
     const fields = parseExtractedFields(row);
     const themeKey = stringField(fields, 'theme_key');
-    const matched = themeKey ? themeByKey.get(themeKey) : undefined;
+    const sec = objectField(fields, 'sec_company');
+    const cik = stringField(sec, 'cik') ?? 'unknown';
+    const matched = themeKey ? themeByKey.get(`${cik}:${themeKey}`) : undefined;
     if (!matched) {
       markCandidateRejected(db, row.id);
       continue;
@@ -276,7 +284,21 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const themes = db.prepare(`SELECT * FROM ideas_company_themes WHERE run_id = ? ORDER BY cik, theme_key`).all(runId);
   const observations = db.prepare(`SELECT * FROM ideas_company_observations WHERE run_id = ? ORDER BY observed_at`).all(runId);
   const outcomes = db.prepare(`SELECT * FROM ideas_company_outcome_candidates WHERE run_id = ? ORDER BY confidence DESC`).all(runId);
-  return { run, filings, themes, observations, outcomes };
+  const companySummaries = buildCompanySummaries(filings, themes, observations, outcomes);
+  const themeMatrix = buildThemeMatrix(themes, observations);
+  const highConfidenceOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) >= 0.9);
+  const reviewOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) < 0.9);
+  return {
+    run,
+    filings,
+    themes,
+    observations,
+    outcomes,
+    company_summaries: companySummaries,
+    theme_matrix: themeMatrix,
+    high_confidence_outcomes: highConfidenceOutcomes,
+    review_outcomes: reviewOutcomes,
+  };
 }
 
 function renderCompanyMarkdown(data: Record<string, unknown>): string {
@@ -284,6 +306,8 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
   const filings = data.filings as Array<Record<string, unknown>>;
   const themes = data.themes as Array<Record<string, unknown>>;
   const outcomes = data.outcomes as Array<Record<string, unknown>>;
+  const summaries = data.company_summaries as Array<Record<string, unknown>>;
+  const matrix = data.theme_matrix as Array<Record<string, unknown>>;
   const lines = [
     `# Company Tracker ${run.id}`,
     '',
@@ -295,17 +319,147 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
     `- Staged outcomes: ${outcomes.filter((o) => o.state === 'staged').length}`,
     `- Applied outcomes: ${outcomes.filter((o) => o.state === 'applied').length}`,
     '',
-    '## Themes',
+    '## Company Summaries',
     '',
   ];
+  for (const summary of summaries) {
+    lines.push(`### ${summary.ticker ?? summary.cik}`);
+    lines.push('');
+    lines.push(`- Filings scanned: ${summary.filing_count}`);
+    lines.push(`- Window: ${summary.first_filing_at ?? 'n/a'} to ${summary.latest_filing_at ?? 'n/a'}`);
+    lines.push(`- Themes tracked: ${summary.theme_count}`);
+    lines.push(`- Observations: ${summary.observation_count}`);
+    lines.push(`- Staged outcomes: ${summary.staged_outcome_count}`);
+    lines.push('');
+    const topThemes = summary.top_themes as Array<Record<string, unknown>>;
+    for (const theme of topThemes) {
+      lines.push(`- **${theme.title ?? theme.theme_key}**: ${theme.observation_count} observation(s), latest ${theme.latest_seen_at ?? 'n/a'}, assumption ${theme.assumption_id ?? 'none'}`);
+    }
+    lines.push('');
+  }
+  lines.push(
+    '## Cross-Company Theme Matrix',
+    '',
+    '| Theme | Companies | Observations | Latest Seen |',
+    '|---|---:|---:|---|',
+  );
+  for (const row of matrix) {
+    const companies = row.companies as string[];
+    lines.push(`| ${row.title ?? row.theme_key} | ${companies.join(', ')} | ${row.observation_count} | ${row.latest_seen_at ?? 'n/a'} |`);
+  }
+  lines.push(
+    '',
+    '## Staged Outcome Review Queue',
+    '',
+  );
+  for (const outcome of outcomes.filter((o) => o.state === 'staged')) {
+    lines.push(`- **${outcome.confidence}** ${outcome.rationale} (${outcome.source_uri})`);
+    lines.push(`  - ${String(outcome.excerpt ?? '').replace(/\s+/g, ' ').slice(0, 300)}`);
+  }
+  lines.push('', '## Source Themes', '');
   for (const theme of themes) {
     lines.push(`- **${theme.ticker ?? theme.cik} / ${theme.title}**: first ${theme.first_seen_at}, latest ${theme.latest_seen_at}, assumption ${theme.assumption_id ?? 'none'}`);
   }
-  lines.push('', '## Outcome Candidates', '');
-  for (const outcome of outcomes) {
-    lines.push(`- **${outcome.state} ${outcome.confidence}** ${outcome.rationale} (${outcome.source_uri})`);
-  }
   return `${lines.join('\n')}\n`;
+}
+
+async function resolveCompanyFixtureDir(baseDir: string, company: string, companyCount: number): Promise<string> {
+  if (companyCount === 1 && await hasManifest(baseDir)) return baseDir;
+  const ticker = company.replace(/^ticker:/i, '').trim().toLowerCase();
+  const candidate = path.join(baseDir, ticker);
+  if (await hasManifest(candidate)) return candidate;
+  if (await hasManifest(baseDir)) return baseDir;
+  throw new CompanyInputError(`fixture manifest not found for ${company}: expected ${candidate}/manifest.json`);
+}
+
+async function hasManifest(dir: string): Promise<boolean> {
+  try {
+    await fsp.access(path.join(dir, 'manifest.json'));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function buildCompanySummaries(
+  filings: unknown[],
+  themes: unknown[],
+  observations: unknown[],
+  outcomes: unknown[],
+): Array<Record<string, unknown>> {
+  const filingRows = filings as Array<Record<string, unknown>>;
+  const themeRows = themes as Array<Record<string, unknown>>;
+  const observationRows = observations as Array<Record<string, unknown>>;
+  const outcomeRows = outcomes as Array<Record<string, unknown>>;
+  const ciks = [...new Set(filingRows.map((f) => String(f.cik)))].sort();
+  return ciks.map((cik) => {
+    const companyFilings = filingRows.filter((f) => f.cik === cik);
+    const companyThemes = themeRows.filter((t) => t.cik === cik);
+    const companyThemeIds = new Set(companyThemes.map((t) => t.id));
+    const companyObservations = observationRows.filter((o) => companyThemeIds.has(o.theme_id));
+    const companyOutcomes = outcomeRows.filter((o) => companyThemeIds.has(o.theme_id));
+    return {
+      cik,
+      ticker: companyFilings[0]?.ticker,
+      company_name: companyFilings[0]?.company_name,
+      filing_count: companyFilings.length,
+      first_filing_at: minString(companyFilings.map((f) => stringish(f.filed_at))),
+      latest_filing_at: maxString(companyFilings.map((f) => stringish(f.filed_at))),
+      theme_count: companyThemes.length,
+      observation_count: companyObservations.length,
+      staged_outcome_count: companyOutcomes.filter((o) => o.state === 'staged').length,
+      top_themes: companyThemes
+        .map((theme) => {
+          const themeObservations = companyObservations.filter((o) => o.theme_id === theme.id);
+          return {
+            theme_key: theme.theme_key,
+            title: theme.title,
+            assumption_id: theme.assumption_id,
+            observation_count: themeObservations.length,
+            first_seen_at: theme.first_seen_at,
+            latest_seen_at: theme.latest_seen_at,
+          };
+        })
+        .sort((a, b) => Number(b.observation_count) - Number(a.observation_count) || String(a.title).localeCompare(String(b.title)))
+        .slice(0, 8),
+    };
+  });
+}
+
+function buildThemeMatrix(themes: unknown[], observations: unknown[]): Array<Record<string, unknown>> {
+  const themeRows = themes as Array<Record<string, unknown>>;
+  const observationRows = observations as Array<Record<string, unknown>>;
+  const byKey = new Map<string, {
+    theme_key: string;
+    title: string;
+    companies: Set<string>;
+    observation_count: number;
+    latest_seen_at: string | null;
+  }>();
+  for (const theme of themeRows) {
+    const key = stringish(theme.theme_key) || 'unknown';
+    const current = byKey.get(key) ?? {
+      theme_key: key,
+      title: stringish(theme.title) || key,
+      companies: new Set<string>(),
+      observation_count: 0,
+      latest_seen_at: null,
+    };
+    current.companies.add(stringish(theme.ticker) || stringish(theme.cik) || 'unknown');
+    const themeObservations = observationRows.filter((o) => o.theme_id === theme.id);
+    current.observation_count += themeObservations.length;
+    current.latest_seen_at = maxString([current.latest_seen_at, ...themeObservations.map((o) => stringish(o.observed_at))]);
+    byKey.set(key, current);
+  }
+  return [...byKey.values()]
+    .map((row) => ({
+      theme_key: row.theme_key,
+      title: row.title,
+      companies: [...row.companies].sort(),
+      observation_count: row.observation_count,
+      latest_seen_at: row.latest_seen_at,
+    }))
+    .sort((a, b) => b.companies.length - a.companies.length || Number(b.observation_count) - Number(a.observation_count) || String(a.title).localeCompare(String(b.title)));
 }
 
 function recordFilingIfNeeded(db: IdeasDatabase, runId: string, row: ImportCandidateRow): string {
@@ -424,6 +578,20 @@ function objectField(obj: Record<string, unknown> | null, key: string): Record<s
 function stringField(obj: Record<string, unknown> | null, key: string): string | undefined {
   const value = obj?.[key];
   return typeof value === 'string' && value.length > 0 ? value : undefined;
+}
+
+function stringish(value: unknown): string {
+  return typeof value === 'string' ? value : '';
+}
+
+function minString(values: Array<string | null>): string | null {
+  const filtered = values.filter((v): v is string => Boolean(v));
+  return filtered.length > 0 ? filtered.sort()[0] : null;
+}
+
+function maxString(values: Array<string | null>): string | null {
+  const filtered = values.filter((v): v is string => Boolean(v));
+  return filtered.length > 0 ? filtered.sort()[filtered.length - 1] : null;
 }
 
 interface CompanyOutcomeCandidateRow {

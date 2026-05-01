@@ -1,0 +1,40 @@
+{
+  "filings": [
+    {
+      "cik": "0000789019",
+      "ticker": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "accession_no": "0001564590-22-026876",
+      "form": "10-K",
+      "filed_at": "2022-07-28",
+      "period": "2022-06-30",
+      "primary_document": "msft-2022-07-28-10k.txt",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630.htm",
+      "fixture_note": "Reduced text snapshot containing eligible SEC sections only."
+    },
+    {
+      "cik": "0000789019",
+      "ticker": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "accession_no": "0000950170-25-100235",
+      "form": "10-K",
+      "filed_at": "2025-07-30",
+      "period": "2025-06-30",
+      "primary_document": "msft-2025-07-30-10k.txt",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "fixture_note": "Reduced text snapshot containing eligible SEC sections only."
+    },
+    {
+      "cik": "0000789019",
+      "ticker": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "accession_no": "0001193125-26-191507",
+      "form": "10-Q",
+      "filed_at": "2026-04-29",
+      "period": "2026-03-31",
+      "primary_document": "msft-2026-04-29-10q.txt",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+      "fixture_note": "Reduced text snapshot containing eligible SEC sections only."
+    }
+  ]
+}

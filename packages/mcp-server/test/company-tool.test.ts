@@ -20,7 +20,7 @@ const FIXTURE_DIR = path.join(
   'test',
   'fixtures',
   'sec-company',
-  'apple',
+  'public-tech',
 );
 
 let vault: string;
@@ -55,7 +55,7 @@ describe('company MCP tool', () => {
   it('tracks fixtures and applies staged outcomes only on explicit call', async () => {
     const tracked = parseResp(await client.callTool('company', {
       action: 'track',
-      companies: ['AAPL'],
+      companies: ['MSFT'],
       fixture_dir: FIXTURE_DIR,
       confirm: true,
     })) as { result: { run_id: string; staged_outcomes: number } };

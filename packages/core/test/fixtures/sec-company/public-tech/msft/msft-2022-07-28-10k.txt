@@ -1,0 +1,972 @@
+Item 1A Risk Factors
+
+
+
+&#160;
+
+We
+
+may experience quality or supply problems.
+
+&#160;Our hardware products such as Xbox consoles, Surface devices, and other devices we
+
+design
+
+and market are highly complex and can have defects in design, manufacture, or associated software. We could incur significant expenses, lost revenue, and reputational harm as a result of recalls, safety alerts, or product liability claims if we fail to prevent, detect, or address such issues through design, testing, or warranty repairs.
+
+Our software products and services also may experience quality or reliability problems. The highly sophisticated software we develop may contain bugs and other defects that interfere with their intended operation. Our customers increasingly rely on us for critical business functions
+
+and multiple workloads. Many of our products and services are interdependent with one another. Each of these circumstances potentially magnifies the impact of quality or reliability issues. Any defects we do not detect and fix in pre-release testing could cause reduced sales and revenue, damage to our reputation, repair or remediation costs, delays in the release of new products or versions, or legal liability. Although our license agreements typically contain provisions that eliminate or limit our exposure to liability, there is no assurance these provisions will withstand legal challenge.
+
+There are limited suppliers for certain device and datacenter components. Our competitors use some of the same suppliers and their demand for hardware components can affect the capacity available to us. If components are delayed or become unavailable, whether because of supplier capacity constraint, industry shortages, legal or regulatory changes that restrict supply sources, or other reasons, we may not obtain timely replacement supplies, resulting in reduced sales or inadequate datacenter capacity. Component shortages, excess or obsolete inventory, or price reductions resulting in inventory adjustments may increase our cost of revenue. Xbox consoles, Surface devices, datacenter servers, and other hardware are assembled in Asia and other geographies that may be subject to disruptions in the supply chain, resulting in shortages that would affect our revenue and operating margins.
+
+LEGAL, REGULATORY, AND LITIGATION RISKS
+
+Government litigation and regulatory activity relating to competition rules may limit how we design and market our products.
+
+&#160;As a leading global software and device maker, government agencies closely scrutinize us under U.S. and foreign competition laws. Governments are actively enforcing competition laws and regulations, and this includes scrutiny in potentially large markets such as the EU, the U.S., and China. Some jurisdictions also allow competitors or consumers to assert claims of anti-competitive conduct. U.S. federal and state antitrust authorities have previously brought enforcement actions and continue to scrutinize our business.
+
+The European Commission ("the Commission") closely scrutinizes the design of high-volume Microsoft products and the terms on which we make certain technologies used in these products, such as file formats, programming interfaces, and protocols, available to other companies. Flagship product releases such as Windows can receive significant scrutiny under competition laws. For example, in 2004, the Commission ordered us to create new versions of our Windows operating system that do not include certain multimedia technologies and to provide our competitors with specifications for how to implement certain proprietary Windows communications protocols in their own products. In 2009, the Commission accepted a set of commitments we offered to address the Commission's concerns relating to competition in web browsing software, including an undertaking to address Commission concerns relating to interoperability. The web browsing commitments expired in 2014. The remaining obligations may limit our ability to innovate in Windows or other products in the future, diminish the developer appeal of the Windows platform, and increase our product development costs. The availability of licenses related to protocols and file formats may enable competitors to develop software products that better mimic the functionality of our products, which could hamper sales of our&#160;products.
+
+Our portfolio of first-party devices continues to grow&#59; at the same time our OEM partners offer a large variety of devices for our platforms. As a result, increasingly we both cooperate and compete with our OEM partners, creating a risk that we fail to do so in compliance with competition rules. Regulatory scrutiny in this area may increase. Certain foreign governments, particularly in China and other countries in Asia, have advanced arguments under their competition laws that exert downward pressure on royalties for our intellectual property.
+
+30
+
+PART I
+
+Item 1A
+
+&#160;
+
+Government regulatory actions and court decisions such as these may result in fines or hinder our ability to provide the benefits of our software to consumers and businesses, reducing the attractiveness of our products and the revenue that come
+
+s
+
+from them. New competition law actions could be initiated, potentially using previous actions as precedent. The outcome of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
+
+&#160;
+
+&#8226;
+
+We may have to choose between withdrawing products from certain geographies to avoid fines or designing and developing alternative versions of those products to comply with government rulings, which may entail a delay in a product release and removing functionality that customers want or on which developers rely.
+
+&#160;
+
+&#8226;
+
+We may be required to make available licenses to our proprietary technologies on terms that do not reflect their fair market value or do not protect our associated intellectual property.
+
+&#160;
+
+&#8226;
+
+We are subject to a variety of ongoing commitments because of court or administrative orders, consent decrees, or other voluntary actions we have taken. If we fail to comply with these commitments, we may incur litigation costs and be subject to substantial fines or other remedial actions.
+
+&#160;
+
+&#8226;
+
+Our ability to realize anticipated Windows post-sale monetization opportunities may be limited.
+
+&#160;
+
+&#8226;
+
+Regulatory scrutiny may inhibit our ability to consummate acquisitions or impose conditions that reduce the ultimate value of such transactions.
+
+Our global operations subject us to potential consequences under anti-corruption, trade, and other laws and regulations.
+
+&#160;The Foreign Corrupt Practices Act ("FCPA") and other anti-corruption laws and regulations ("Anti-Corruption Laws") prohibit corrupt payments by our employees, vendors, or agents, and the accounting provisions of the FCPA require us to maintain accurate books and records and adequate internal controls. From time to time, we receive inquiries from authorities in the U.S. and elsewhere which may be based on reports from employees and others about our business activities outside the U.S. and our compliance with Anti-Corruption Laws. Periodically, we receive such reports directly and investigate them, and also cooperate with investigations by U.S. and foreign law enforcement authorities. An example of increasing international regulatory complexity is the EU Whistleblower Directive, initiated in 2021, which may present compliance challenges to the extent it is implemented in different forms by EU member states. Most countries in which we operate also have competition laws that prohibit competitors from colluding or otherwise attempting to reduce competition between themselves. While we devote substantial resources to our U.S. and international compliance programs and have implemented policies, training, and internal controls designed to reduce the risk of corrupt payments and collusive activity, our employees, vendors, or agents may violate our policies. Our failure to comply with Anti-Corruption Laws or competition laws could result in significant fines and penalties, criminal sanctions against us, our officers, or our employees, prohibitions on the conduct of our business, and damage to our reputation.
+
+Increasing trade laws, policies, sanctions, and other regulatory requirements also affect our operations in and outside the U.S. relating to trade and investment. Economic sanctions in the U.S., the EU, and other countries prohibit most business with restricted entities or countries such as Crimea, Cuba, Iran, North Korea, and Syria. U.S. export controls restrict Microsoft from offering many of its products and services to, or making investments in, certain entities in specified countries. U.S. import controls restrict us from integrating certain information and communication technologies into our supply chain and allow for government review of transactions involving information and communications technology from countries determined to be foreign adversaries. Periods of intense diplomatic or armed conflict, such as the ongoing conflict in Ukraine, may result in (1) new and rapidly evolving sanctions and trade restrictions, which may impair trade with sanctioned individuals and countries, and (2) negative impacts to regional trade ecosystems among our customers, partners, and us. Non-compliance with sanctions as well as general ecosystem disruptions could result in reputational harm, operational delays, monetary fines, loss of revenues, increased costs, loss of export privileges, or criminal sanctions.
+
+31
+
+PART I
+
+Item 1A
+
+&#160;
+
+Other regulatory areas that may apply to our products and online services offerings include
+
+requirements related to
+
+user privacy, telecommunications, data storage and protection,
+
+advertising,
+
+and online content. For example, some regulators are taking the position that our offerings such as
+
+Microsoft
+
+Teams and Skype are covered by existing laws regulating telecommunications services, and some new laws
+
+, including EU Member State laws under the European Electronic Communications Code,
+
+are defining more of our services as regulated telecommunications services.
+
+This trend may continue and will result in these offerings being subjected to additional data protection, security, and law enforcement surveillance obligations.
+
+Regulators
+
+may assert that our collection, use, and management of customer
+
+data
+
+and other
+
+information
+
+is inconsistent with their laws and regulations
+
+,
+
+including laws that apply to the tracking of users via technology such as cookies
+
+. Legislative or regulatory action relating to cybersecurity requirements may increase the costs to develop, implement, or secure our products and services. Legislative
+
+and
+
+regulatory action
+
+is emerging
+
+in the area
+
+s
+
+of AI and content moderation,
+
+which could increase
+
+costs or
+
+restrict
+
+opportunity. Applying these laws and regulations to our business is often unclear, subject to change over time, and sometimes may conflict from jurisdiction to jurisdiction. Additionally, these laws and governments' approach to their enforcement, and our products and services, are continuing to evolve. Compliance with these types of regulation may involve significant costs or require changes in products or business practices that result in reduced revenue. Noncompliance could result in the imposition of penalties or orders we stop the alleged noncompliant activity.
+
+We strive to empower all people and organizations to achieve more, and accessibility of our products is an important aspect of this goal. There is increasing pressure from advocacy groups, regulators, competitors, customers, and other stakeholders to make technology more accessible. If our products do not meet customer expectations or global accessibility requirements, we could lose sales opportunities or face regulatory or legal actions.
+
+Laws and regulations relating to the handling of personal data
+
+Item 7 MD&A
+
+
+
+&#160;
+
+&#160;
+
+Operating income increased $5.3 billion or 22%.
+
+&#160;
+
+&#8226;
+
+Gross margin increased $7.3 billion or 17% driven by growth in Office 365 Commercial and LinkedIn. Gross margin percentage was relatively unchanged. Excluding the impact of the change in accounting estimate, gross margin percentage increased 2 points driven by improvement across all cloud services.
+
+&#160;
+
+&#8226;
+
+Operating expenses increased $2.0 billion or 11% driven by investments in LinkedIn and cloud engineering.
+
+Gross margin and operating income both included an unfavorable foreign currency impact of 2%.
+
+Intelligent Cloud
+
+Revenue increased $15.2 billion or 25%.
+
+&#160;
+
+&#8226;
+
+Server products and cloud services revenue increased $14.7 billion or 28% driven by Azure and other cloud services. Azure and other cloud services revenue grew 45% driven by growth in our consumption-based services. Server products revenue increased 5% driven by hybrid solutions, including Windows Server and SQL Server running in multi-cloud environments.
+
+&#160;
+
+&#8226;
+
+Enterprise Services revenue increased $464 million or 7% driven by growth in Enterprise Support Services.
+
+Operating income increased $6.6 billion or 25%.
+
+&#160;
+
+&#8226;
+
+Gross margin increased $9.4 billion or 22% driven by growth in Azure and other cloud services. Gross margin percentage decreased. Excluding the impact of the change in accounting estimate, gross margin percentage was relatively unchanged driven by improvement in Azure and other cloud services, offset in part by sales mix shift to Azure and other cloud services.
+
+&#160;
+
+&#8226;
+
+Operating expenses increased $2.8 billion or 16% driven by investments in Azure and other cloud services.
+
+Revenue and operating income included an unfavorable foreign currency impact of 2% and 3%, respectively.
+
+More Personal Computing
+
+Revenue increased $5.6 billion or 10%.
+
+&#160;
+
+&#8226;
+
+Windows revenue increased $2.3 billion or 10% driven by growth in Windows OEM and Windows Commercial. Windows OEM revenue increased 11% driven by continued strength in the commercial PC market, which has higher revenue per license. Windows Commercial products and cloud services revenue increased 11% driven by demand for Microsoft 365.
+
+&#160;
+
+&#8226;
+
+Search and news advertising revenue increased $2.3 billion or 25%. Search and news advertising revenue excluding traffic acquisition costs increased 27% driven by higher revenue per search and search volume.
+
+&#160;
+
+&#8226;
+
+Gaming revenue increased $860 million or 6% on a strong prior year comparable that benefited from Xbox Series X|S launches and stay-at-home scenarios, driven by growth in Xbox hardware and Xbox content and services. Xbox hardware revenue increased 16% due to continued demand for Xbox Series X|S. Xbox content and services revenue increased 3% driven by growth in Xbox Game Pass subscriptions and first-party content, offset in part by a decline in third-party content.
+
+&#160;
+
+&#8226;
+
+Surface revenue increased $226 million or 3%.
+
+Operating income increased $1.5 billion or 8%.
+
+&#160;
+
+&#8226;
+
+Gross margin increased $3.1 billion or 10% driven by growth in Windows and Search and news advertising. Gross margin percentage was relatively unchanged.
+
+&#160;
+
+&#8226;
+
+Operating expenses increased $1.5 billion or 14% driven by investments in Gaming, Search and news advertising, and Windows marketing.
+
+45
+
+PART II
+
+Item 7
+
+&#160;
+
+OPERATING EXPENSES
+
+Research and Development
+
+&#160;
+
+(In millions, except percentages)
+
+&#160;
+
+2022
+
+&#160;
+
+&#160;
+
+2021
+
+&#160;
+
+&#160;
+
+Percentage
+
+Change
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Research and development
+
+&#160;
+
+$
+
+24,512
+
+&#160;
+
+&#160;
+
+$
+
+20,716
+
+&#160;
+
+&#160;
+
+&#160;
+
+18%
+
+&#160;
+
+As a percent of revenue
+
+&#160;
+
+&#160;
+
+12%
+
+&#160;
+
+&#160;
+
+&#160;
+
+12%
+
+&#160;
+
+&#160;
+
+&#160;
+
+0ppt
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Research and development expenses include payroll, employee benefits, stock-based compensation expense, and other headcount-related expenses associated with product development. Research and development expenses also include third-party development and programming costs, localization costs incurred to translate software for international markets, and the amortization of purchased software code and services content.
+
+Research and development expenses increased $3.8 billion or 18% driven by investments in cloud engineering, Gaming, and LinkedIn.
+
+Sales and Marketing
+
+&#160;
+
+(In millions, except percentages)
+
+&#160;
+
+2022
+
+&#160;
+
+&#160;
+
+2021
+
+&#160;
+
+&#160;
+
+Percentage
+
+Change
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Sales and marketing
+
+&#160;
+
+$
+
+21,825
+
+&#160;
+
+&#160;
+
+$
+
+20,117
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+8%
+
+&#160;
+
+As a percent of revenue
+
+&#160;
+
+&#160;
+
+11%
+
+&#160;
+
+&#160;
+
+&#160;
+
+12%
+
+&#160;
+
+&#160;
+
+&#160;
+
+(1)ppt
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Sales and marketing expenses include payroll, employee benefits, stock-based compensation expense, and other headcount-related expenses associated with sales and marketing personnel, and the costs of advertising, promotions, trade shows, seminars, and other programs.
+
+Sales and marketing expenses increased $1.7 billion or 8% driven by investments in commercial sales and LinkedIn. Sales and marketing included a favorable foreign currency impact of 2%.
+
+General and Administrative
+
+&#160;
+
+(In millions, except percentages)
+
+&#160;
+
+2022
+
+&#160;
+
+&#160;
+
+2021
+
+&#160;
+
+&#160;
+
+Percentage
+
+Change
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+General and administrative
+
+&#160;
+
+$
+
+5,900
+
+&#160;
+
+&#160;
+
+$
+
+5,107
+
+&#160;
+
+&#160;
+
+&#160;
+
+16%
+
+&#160;
+
+As a percent of revenue
+
+&#160;
+
+&#160;
+
+3%
+
+&#160;
+
+&#160;
+
+&#160;
+
+3%
+
+&#160;
+
+&#160;
+
+&#160;
+
+0ppt
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+General and administrative expenses include payroll, employee benefits, stock-based compensation expense, and other headcount-related expenses associated with finance, legal, facilities, certain human resources and other administrative personnel, certain taxes, and legal and other administrative fees.
+
+General and administrative expenses increased $793 million or 16% driven by investments in corporate functions.
+
+46
+
+PART II
+
+Item 7
+
+&#160;
+
+OTHER INCOME (EXPENSE), NET
+
+The components of other income (expense), net were as follows:
+
+&#160;
+
+(In millions)
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Year Ended June&#160;30,
+
+&#160;
+
+&#160;
+
+2022
+
+&#160;
+
+&#160;
+
+&#160;
+
+2021
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Interest and dividends income
+
+&#160;
+
+$
+
+2,094
+
+&#160;
+
+&#160;
+
+$
+
+2,131
+
+&#160;
+
+Interest expense
+
+&#160;
+
+&#160;
+
+&#160;&#160;(2,063
+
+)
+
+&#160;
+
+&#160;
+
+&#160;&#160;(2,346
+
+)
+
+Net recognized gains on investments
+
+&#160;
+
+&#160;
+
+461
+
+&#160;
+
+&#160;
+
+&#160;
+
+1,232
+
+&#160;
+
+Net gains (losses) on derivatives
+
+&#160;
+
+&#160;
+
+(52
+
+)
+
+&#160;
+
+&#160;
+
+17
+
+&#160;
+
+Net gains (losses) on foreign currency remeasurements
+
+&#160;
+
+&#160;
+
+(75
+
+)
+
+&#160;
+
+&#160;
+
+54
+
+&#160;
+
+Other, net
+
+&#160;
+
+&#160;
+
+(32
+
+)
+
+&#160;
+
+&#160;
+
+98
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+Total
+
+&#160;
+
+$
+
+333
+
+&#160;
+
+&#160;
+
+$
+
+1,186
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+&#160;
+
+We use derivative instruments to manage risks related to foreign currencies, equity prices, interest rates, and credit&#59; enhance investment returns&#59; and facilitate portfolio diversification. Gains and losses from changes in fair values of derivatives that are not designated as hedging instruments are primarily recognized in other income (expense), net.
+
+Interest and dividends income decreased due to lower portfolio balances. Interest expense decreased due to a decrease in outstanding long-term debt due to debt maturities. Net recognized gains on investments decreased primarily due to lower gains on equity securities.
+
+INCOME TAXES
+
+Effective Tax Rate
+
+Our effective tax rate for fiscal years 2022 and 2021 was 13% and 14%, respectively.&#160;The decrease in our effective tax rate was primarily due to a $3.3 billion net income tax benefit in the first quarter of fiscal year 2022 related to the transfer of intangible properties, offset in part by changes in the mix of our income before income taxes between the U.S. and foreign countries, as well as tax benefits in the prior year from the India Supreme Court decision on withholding taxes in the case of Engineering Analysis Centre of Excellent Private Limited vs The Commissioner of Income Tax, an agreement between the U.S. and India tax authorities related to transfer pricing, and final Tax Cuts and Jobs Act ("TCJA") regulations.
+
+In the first quarter of fiscal year 2022, we transferred certain intangible properties from our Puerto Rico subsidiary to the U.S. The transfer of intangible properties resulted in a $3.3 billion net income tax benefit in the first quarter of fiscal year 2022, as the value of future U.S. tax deductions exceeds the current tax liability from the U.S. global intangible low-taxed income tax.
+
+We have historically paid India withholding taxes on software sales through distributor withholding and tax audit assessments in India. In March 2021, the India Supreme Court ruled favorably for companies in 86 separate appeals, some dating back to 2012, holding that software sales are not subject to India withholding taxes. Although we were not a party to the appeals, our software sales in India were determined to be not subject to withholding taxes. Therefore, we recorded a net income tax benefit of $620 million in the third quarter of fiscal year 2021 to reflect the results of the India Supreme Court decision impacting fiscal year 1996 through fiscal year 2016.
+
+Our effective tax rate was lower than the U.S. federal statutory rate, primarily due to the net income tax benefit related to the transfer of intangible properties, earnings taxed at lower rates in foreign jurisdictions resulting from producing and distributing our products and services through our foreign regional operations center in Ireland, and tax benefits relating to stock-based compensation.
+
+The mix of income before income taxes between the U.S. and foreign countries impacted our effective tax rate as a result of the geographic distribution of, and customer demand for, our products and services. In fiscal year 2022, our U.S. income before income taxes was $47.8 billion and our foreign income before income taxes was $35.9 billion. In fiscal year 2021, our U.S. income before income taxes was $35.0 billion and our foreign income before income taxes was $36.1 billion.
+
+47
+
+PART II
+
+Item 7
+
+&#160;
+
+Uncertain Tax Positions
+
+We settled a portion of the Internal Revenue Service ("IRS") audit for tax years 2004 to 2006 in fiscal year 2011. In February 2012, the IRS withdrew its 2011 Revenue Agents Report related to unresolved issues for tax years 2004 to 2006 and reopened the audit phase of the examination. We also settled a portion of the IRS audit for tax years 2007 to 2009 in fiscal year 2016, and a portion of the IRS audit for tax years 2010 to 2013 in fiscal year 2018. In the second quarter of fiscal year 2021, we settled an additional portion of the IRS audits for tax years 2004 to 2013 and made a payment of $1.7 billion, including tax and interest. We remain under audit for tax years 2004 to 2017.
+

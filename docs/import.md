@@ -203,6 +203,18 @@ Outcome safety rule: the adapter may detect explicit realized-risk language, but
 company.apply_outcomes({ run_id: "...", min_confidence: 0.9, confirm: true })
 ```
 
+The regression fixture corpus lives at `packages/core/test/fixtures/sec-company/public-tech/`.
+It contains reduced real SEC text snapshots for AAPL, MSFT, and NVDA: latest 10-K,
+latest 10-Q, and one older 10-K per company. Refresh it with:
+
+```
+FLYWHEEL_IDEAS_SEC_USER_AGENT="flywheel-ideas fixture refresh contact: you@example.com" \
+  node scripts/refresh-sec-company-fixtures.mjs
+```
+
+The refresh script writes only eligible sections, not full SEC filings, so the
+tests stay deterministic without committing large raw HTML files.
+
 ---
 
 *Last updated: 2026-05-01.*

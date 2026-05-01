@@ -1,0 +1,329 @@
+Part I Item 2 MD&A
+
+
+
+Forward-Looking Statements
+
+&#160;
+
+This Quarterly Report on Form 10-Q contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, as amended, and Section 21E of the Securities Exchange Act of 1934, as amended, which are subject to the "safe harbor" created by those sections based on management's beliefs and assumptions and on information currently available to management. In some cases, you can identify forward-looking statements by terms such as "may," "will," "should," "could," "goal," "would," "expect," "plan," "anticipate," "believe," "estimate," "project," "predict," "potential" and similar expressions intended to identify forward-looking statements. These statements involve known and unknown risks, uncertainties and other factors, which may cause our actual results, performance, time frames or achievements to be materially different from any future results, performance, time frames or achievements expressed or implied by the forward-looking statements. We discuss many of these risks, uncertainties and other factors in this Quarterly Report on Form 10-Q and our Annual Report on Form 10-K for the fiscal year ended January&#160;26, 2025 in greater detail under the heading "Risk Factors" of such reports. Given these risks, uncertainties, and other factors, you should not place undue reliance on these forward-looking statements. Also, these forward-looking statements represent our estimates and assumptions only as of the date of this filing. You should read this Quarterly Report on Form 10-Q completely and understand that our actual future results may be materially different from what we expect. We hereby qualify our forward-looking statements by these cautionary statements. Except as required by law, we assume no obligation to update these forward-looking statements publicly, or to update the reasons actual results could differ materially from those anticipated in these forward-looking statements, even if new information becomes available in the future.
+
+All references to "NVIDIA," "we," "us," "our" or the "Company" mean NVIDIA Corporation and its subsidiaries.
+
+&#169; 2025 NVIDIA Corporation. All rights reserved.
+
+The following discussion and analysis of our financial condition and results of operations should be read in conjunction with the risk factors set forth in Item 1A. "Risk Factors" of our Annual Report on Form 10-K for the fiscal year ended January&#160;26, 2025 and Part II, Item 1A. "Risk Factors" of this Quarterly Report on Form 10-Q and our Condensed Consolidated Financial Statements and related Notes thereto, as well as other cautionary statements and risks described elsewhere in this Quarterly Report on Form 10-Q and our other filings with the SEC, before deciding to purchase, hold, or sell shares of our common stock.
+
+Overview
+
+Our Company and Our Businesses
+
+NVIDIA pioneered accelerated computing to help solve the most challenging computational problems. Since our original focus on PC graphics, we have expanded to several other large and important computationally intensive fields. Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific computing, AI, data science, autonomous vehicles, robotics, and digital twin applications.
+
+Our two operating segments are "Compute & Networking" and "Graphics," as described in Note 13 of the Notes to Condensed Consolidated Financial Statements in Part I, Item 1 of this Quarterly Report on Form 10-Q.
+
+Headquartered in Santa Clara, California, NVIDIA was incorporated in California in April 1993 and reincorporated in Delaware in April 1998.
+
+Recent Developments, Future Objectives and Challenges
+
+Revenue growth in the third quarter was driven by data center compute and networking platforms for accelerated computing and AI solutions. Our Blackwell architectures are the majority of our Data Center revenue.
+
+The availability of data centers, energy, and capital to support the buildout of NVIDIA AI infrastructure by our customers is crucial, and any shortage of these resources could impact our future revenue and financial performance. Expanding energy capacity to meet demand is a complex, multi-year process that involves significant regulatory, technical, and construction challenges. In addition, access to capital can be particularly constrained for less-capitalized companies, which may face difficulties securing financing for large-scale infrastructure projects. These limitations could delay customer deployments or reduce the scale of accelerated computing and AI adoption.
+
+We continue to execute Data Center compute product introductions, bringing new advanced architectures on a one-year product cadence. We began shipping production units of our new Blackwell Ultra platforms including GB300 in the second quarter of fiscal year 2026 and continue to sell prior generation architecture. The complexity of our product transitions and sophisticated system configurations may cause delays in production or create challenges in managing supply and demand. This could result in revenue volatility, quality issues, increased inventory provisions, and/or increased warranty costs. Customers may postpone purchasing new architectures or may adopt new technologies more gradually than anticipated, affecting our revenue timing and supply chain expenses.
+
+25
+
+In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the demand for H20 diminished. In August 2025, the USG granted licenses that would allow us to ship certain H20 products to certain China-based customers, but to date, we have generated approximately $50 million in H20 revenue under those licenses. USG officials have expressed an expectation that the USG will receive 15% or more of the revenue generated from licensed sales of our products, but to date, the USG has not published a regulation codifying such requirement.
+
+In January 2025, the USG published the "AI Diffusion" Interim Final Rule, or IFR, in the Federal Register. The IFR would have imposed a worldwide licensing requirement on our most recent data center products, such as our H200, GB200 and GB300. In May 2025, the USG announced that it would rescind the AI Diffusion IFR and implement a replacement rule. The scope, timing, and requirements of the forthcoming rule remain uncertain. The replacement rule may impose new restrictions on our products or operations and/or add license requirements that could have a material impact on our business, operating results, and financial condition. For example, in October 2025, the Senate passed the "GAIN AI Act" in the National Defense Authorization Act, or the NDAA. The GAIN AI Act would restrict the Trump Administration's ability to adapt the Biden Administration's export control rules and could also allow private U.S. persons to review and overturn licensing and foreign policy decisions made by the Trump Administration.
+
+The recent rise in high-quality open-source foundation models is making advanced AI capabilities broadly accessible. Open-source AI is dependent on developer adoption and if deployed on our competitors' platforms, it could reduce demand for our products and services.
+
+The rapid evolution of global trade policies, such as export controls and tariffs, has added complexity and increased costs throughout our supply chain, and these challenges are likely to persist. Ongoing uncertainty regarding the scope and application of such measures may adversely affect investment decisions by us and our partners, disrupt supply chain operations, and impact the timing and volume of customer purchases due to challenges in forecasting future costs and demand.
+
+We are increasing our U.S.-based manufacturing and investing in specialized equipment and processes to support domestic production. This move is expected to strengthen our supply chain, add resiliency and redundancy, and meet the growing demand for AI infrastructure. Our ability to increase manufacturing capabilities will depend on the domestic manufacturing ecosystem's capacity to ramp production supply to the required volume and on a timely basis.
+
+Macroeconomic factors, including tariffs, inflation, interest rate changes, capital market volatility, global supply chain constraints, and global economic and geopolitical developments, have direct and indirect impacts on our results of operations, particularly demand for our products. While difficult to isolate and quantify, these macroeconomic factors impact our supply chain and manufacturing costs, employee wages, costs for capital equipment and value of our investments. Our product and solution pricing generally does not fluctuate with short-term changes in our costs. Within our supply chain, we continuously manage product availability and costs with our vendors.
+
+Refer to "Item 1A. Risk Factors" for a discussion of these factors and other risks.
+
+Third Quarter of Fiscal Year 2026 Summary
+
+Three Months Ended
+
+Quarter-over-Quarter Change
+
+Year-over-Year Change
+
+&#160;
+
+Oct 26, 2025
+
+Jul 27, 2025
+
+Oct 27, 2024
+
+($ in millions, except per share data)
+
+Revenue
+
+$
+
+57,006&#160;
+
+$
+
+46,743&#160;
+
+$
+
+35,082&#160;
+
+22&#160;
+
+%
+
+62&#160;
+
+%
+
+Gross margin
+
+73.4&#160;
+
+%
+
+72.4&#160;
+
+%
+
+74.6&#160;
+
+%
+
+1.0&#160;
+
+&#160;pts
+
+(1.2)
+
+&#160;pts
+
+Operating expenses
+
+$
+
+5,839&#160;
+
+$
+
+5,413&#160;
+
+$
+
+4,287&#160;
+
+8&#160;
+
+%
+
+36&#160;
+
+%
+
+Operating income
+
+$
+
+36,010&#160;
+
+$
+
+28,440&#160;
+
+$
+
+21,869&#160;
+
+27&#160;
+
+%
+
+65&#160;
+
+%
+
+Net income
+
+$
+
+31,910&#160;
+
+$
+
+26,422&#160;
+
+$
+
+19,309&#160;
+
+21&#160;
+
+%
+
+65&#160;
+
+%
+
+Net income per diluted share
+
+$
+
+1.30&#160;
+
+$
+
+1.08&#160;
+
+$
+
+0.78&#160;
+
+20&#160;
+
+%
+
+67&#160;
+
+%
+
+Revenue was $57.0 billion, up 62% from a year ago and up 22% sequentially.
+
+Data Center revenue was $51.2 billion, up 66% from a year ago and up 25% sequentially, driven by three platform shifts &#8211;accelerated computing, powerful AI models, and agentic applications. Blackwell Ultra is now our leading architecture across all customer categories while our prior Blackwell architecture saw continued strong demand. H20 sales were insignificant in the third quarter of fiscal year 2026.
+
+Data Center compute revenue was $43.0 billion, up 56% from a year ago and up 27% sequentially. Networking revenue was $8.2 billion, up 162% from a year ago from the introduction and continued growth of NVLink compute fabric for
+
+26
+
+GB200 and GB300 systems. Networking revenue was up 13% sequentially, driven by the growth of XDR InfiniBand products, NVLink, and Ethernet for AI solutions, while shipment timing and supply availability varied compared to the prior quarter.
+
+Gaming revenue was up 30% from a year ago on the continued demand for Blackwell. Gaming revenue was down 1% sequentially as channel inventories have reached more normalized levels heading into the holiday season.
+
+Professional Visualization revenue was up 56% from a year ago and up 26% sequentially, driven by the launch of our new DGX Spark as well as the growth of Blackwell sales.
+
+Automotive revenue was up 32% from a year ago and up 1% sequentially, driven by continued adoption of our self-driving platforms.
+
+Gross margin decreased from a year ago as our business model transitioned from offering Hopper HGX systems to Blackwell full-scale datacenter solutions. Gross margin increased sequentially as Blackwell ramped with an improved mix and cost structure.
+
+Operating expenses were up 36% from a year ago and up 8% sequentially. The increases were primarily driven by compute and infrastructure costs, higher compensation and benefits due to compensation increases and employee growth and engineering development costs for new produc
+
+Part II Item 1A Risk Factors
+
+
+
+Other than the risk factors listed below, there have been no material changes from the risk factors previously described under Item 1A of our Annual Report on Form 10-K for the fiscal year ended January&#160;26, 2025 and Item 1A of our Quarterly Reports on Form 10-Q for the fiscal quarters ended April 27, 2025 and July&#160;27, 2025.
+
+Purchasing or owning NVIDIA common stock involves investment risks including, but not limited to, the risks described in Item 1A of our Annual Report on Form 10-K for the fiscal year ended January&#160;26, 2025, and Item 1A of our Quarterly
+
+33
+
+Reports on Form 10-Q for the fiscal quarters ended April 27, 2025 and July&#160;27, 2025, and below. Any one of those risks could harm our business, financial condition and results of operations or reputation, which could cause our stock price to decline. Additional risks, trends and uncertainties not presently known to us or that we currently believe are immaterial may also harm our business, financial condition, results of operations or reputation.
+
+Long manufacturing lead times and uncertain supply and capacity availability, combined with a failure to estimate customer demand accurately, has led and could lead to mismatches between supply and demand.
+
+We have long manufacturing lead times and build finished products and maintain inventory in advance of anticipated demand. In periods of shortages impacting the semiconductor industry and/or limited supply or capacity in our supply chain, the lead times for certain supply may be extended. We have previously experienced and may continue to experience extended lead times of more than 12 months. To secure future supply and capacity, we have paid premiums, provided deposits, and entered into long-term supply agreements and capacity commitments, which have increased our product costs and this may continue. We may still be unable to secure sufficient commitments for capacity to address our business needs.
+
+If we inaccurately estimate demand, or our customers change orders, as we have experienced in the past, we may not be able to reduce our supply commitments in time, at the same rate, or at all. Significant mismatches between supply and demand have varied across our market platforms, resulted in both product shortages and excess inventory, significantly harmed our financial results and could reoccur. If we underestimate demand, and our foundry partners and contract manufacturers are unable to increase production or provide sufficient supply, we may not be able to meet increased customer demand in a timely manner, or at all. Our reputation and customer relationships could be damaged and we could lose revenue and market share. Additionally, since some of our products are part of a complex data center buildout, supply constraints or availability issues with respect to any one component have had and may have a broader revenue impact. For example, our ability to sell certain products has been and could be impeded if components necessary for the finished products are not available from third parties.
+
+If we overestimate demand, or if customers cancel or defer orders or choose to purchase from our competitors, we may not be able to utilize on-hand inventory or reduce purchase commitments accordingly. We have had to reduce average selling prices, including due to our channel pricing programs, increase prices for certain of our products as a result of our suppliers' increase in prices, write down our inventory, incur cancellation penalties, and record impairments, and may have to do so in the future. These impacts would be amplified by our non-cancellable and non-returnable purchase orders placed in advance of our historical lead times and could be exacerbated if we need to make changes to the design of future products. The risk of these impacts has increased and may continue to increase as our purchase obligations and prepaids have grown and are expected to continue to grow and become a greater portion of our total supply. All of these factors may negatively impact our gross margins and financial results.
+
+Factors that have caused and/or could in the future cause us to underestimate or overestimate demand, and impact the timing and volume of our revenue, include:
+
+&#8226;
+
+changes in product development cycles and time to market;
+
+&#8226;
+
+competing technologies and competitor product releases, announcements or other actions;
+
+&#8226;
+
+changes in business and economic conditions;
+
+&#8226;
+
+sudden or sustained government lockdowns or public health issues;
+
+&#8226;
+
+rapidly changing technology or customer requirements;
+
+&#8226;
+
+the availability of sufficient data center capacity or energy for customers to procure;
+
+&#8226;
+
+new product introductions and transitions resulting in less demand for existing products;
+
+&#8226;
+
+new or unexpected end-use cases;
+
+&#8226;
+
+increase in demand for competitive products;
+
+&#8226;
+
+changes in end-user demand;
+
+&#8226;
+
+purchasing decisions made, and inventory levels held by, distributors, ODMs, OEMs, system integrators, other channel partners and other third parties;
+
+&#8226;
+
+the ability of developers, end customers and other third parties to build, enhance, and maintain accelerated computing applications that leverage our platforms;
+
+&#8226;
+
+the demand for accelerated computing, AI-related cloud services, or large language models;
+
+34
+
+&#8226;
+
+changes that impact the ecosystem for the architectures underlying our products and technologies;
+
+&#8226;
+
+government actions or changes in governmental policies, such as export controls, increased restrictions on gaming usage, or tariffs
+
+&#8226;
+
+our customers' and partners' ability to secure capital and energy and to build complex datacenter infrastructure timely; and
+
+&#8226;
+
+the availability of third-party content on our platforms, such as GeForce NOW.
+
+The availability of data centers, energy, and capital to support the buildout of NVIDIA AI infrastructure by our customers is crucial, and any shortage of these resources could impact our future revenue and financial performance. Expanding energy capacity to meet demand is a complex, multi-year process involving significant regulatory, technical, and construction challenges. In addition, access to capital can be particularly constrained for less-capitalized companies, which may face difficulties securing financing for large-scale infrastructure projects. These limitations could delay customer deployments or reduce the scale of accelerated computing and AI adoption.
+
+Challenges in estimating demand could become more pronounced or volatile in the future on both a global and regional basis. Extended lead times may occur if we experience other supply constraints caused by natural disasters, pandemics or other events. Geopolitical tensions in regions where we rely on suppliers, contract manufacturers, and assembly partners that are critical to our supply continuity, could have a material adverse impact on us. Publicly announced intentions by governments or other companies to purchase our products can further complicate our demand estimates, as such announcements are often non-binding and may not result in committed volumes.
+
+We continue to increase our supply and capacity purchases with existing and new suppliers to support our demand projections and increasing complexity of our data center products. With these additions, we have also entered and may continue to enter into prepaid manufacturing and capacity agreements to supply both current and future products. The increased purchase volumes and integration of new suppliers and contract manufacturers into our supply chain creates more complexity in managing multiple suppliers with variations in production planning, execution and logistics. Our expanding product portfolio and varying component compatibility and quality may lead to increased inventory levels. We have incurred and may in the future incur inventory provisions or impairments if our inventory or supply or capacity commitments exceed demand for our products or demand declines.
+
+We are increasing our U.S.-based manufacturing and investing in specialized equipment and processes to support domestic production. We may experience delays or difficulties in scaling production as planned. Our ability to increase manufacturing capabilities will depend on the domestic manufacturing ecosystem's capacity to ramp production supply to the required volume timely. Delays or shortfalls could impact our ability to meet demand.
+
+Product transitions are complex and we often ship both new and prior architecture products simultaneously as our channel partners prepare to ship and support new products. We are generally in various stages of transitioning the architectures of our Data Center, Gaming, Professional Visualization, and Automotive products. The computing industry is experiencing a broader and faster launch cadence of accelerated computing platforms to meet a growing and diverse set of AI opportunities. We have introduced a new product and architecture cadence of our Data Center solutions where we seek to complete new computing solutions each year and provide a greater variety of Data Center offerings. The increased frequency of these transitions and the larger number of products and product configurations may magnify the challenges associated with managing our supply and demand which may further create volatility in our revenue. Qualification time for new products, customers anticipating product transitions, and channel partners reducing channel inventory of prior architectures ahead of new product introductions can reduce, or create volatility in, our revenue. Customers may delay adopting new architectures if their data center infrastructure is not ready, which could affect the timing of our revenue. We have experienced and may in the future experience reduced demand for current generation architectures when customers anticipate transitions, and we may be unable to sell multiple product architectures at the same time for current and future architecture transitions. Our financial results have been and may in the future be negatively impacted if we are unable to execute our architectural transitions as planned for any reason. The increased frequency and complexity of newly introduced products could result in unanticipated quality or production issues that could increase the magnitude of inventory provisions, warranty, or other costs or result in product delays. For example, our gross margins in the second quarter of fiscal year 2025 were negatively impacted by inventory provisions for low-yielding Blackwell material.
+
+We incur significant engineering development resources for new products, and changes to our product roadmap may impact our ability to develop other products or adequately manage our supply chain cost. Customers may delay purchasing existing products as we increase the frequency of new products or may not be able to adopt our new products as fast as forecasted, both impacting the timing of our revenue and supply chain cost. While we have managed prior product transitions and have sold multiple product architectures at the same time, these transitions are difficult, may impair our ability to predict demand and impact our supply mix, and may cause us to incur additional costs.
+
+35
+
+Demand estimates for our products, applications, and services can be incorrect, which may create volatility in our revenue or supply levels. We may not be able to generate significant revenue from them. Because our products may be used in multiple use cases and applications, it is difficult to estimate with any reasonable degree of precision the impact of accelerated computing and AI models on our reported revenue or forecasted demand.
+
+The use of our GPUs for new, mercurial, or trendy applications, has impacted and can impact in the future, demand for our products, including by leading to inconsistent spikes and drops in demand. For example, sever
