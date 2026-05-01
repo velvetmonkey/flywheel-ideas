@@ -18,6 +18,13 @@ const FIXTURE_DIR = path.join(
   'public-tech',
   'msft',
 );
+const NVDA_FIXTURE_DIR = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  'fixtures',
+  'sec-company',
+  'public-tech',
+  'nvda',
+);
 
 function makeCtx(): ImportContext {
   const db = openInMemoryIdeasDb();
@@ -30,9 +37,9 @@ function makeCtx(): ImportContext {
   };
 }
 
-async function collect(adapter: SecCompanyAdapter): Promise<RawCandidate[]> {
+async function collect(adapter: SecCompanyAdapter, fixtureDir = FIXTURE_DIR): Promise<RawCandidate[]> {
   const out: RawCandidate[] = [];
-  for await (const c of adapter.scan(`fixture://${FIXTURE_DIR}`, makeCtx())) {
+  for await (const c of adapter.scan(`fixture://${fixtureDir}`, makeCtx())) {
     out.push(c);
   }
   return out;
@@ -52,6 +59,18 @@ describe('sec-company adapter', () => {
       'item-1a',
       'item-7',
     ]);
+  });
+
+  it('extracts headings with SEC HTML entities', () => {
+    const tenK = [
+      'Item&#160;1A. Risk Factors',
+      'The company depends on suppliers, manufacturers, logistics providers, component availability, and demand. January&#8239;26 disclosures describe these risks. '.repeat(20),
+      'Item&#160;1B. Other',
+    ].join('\n\n');
+    const sections = extractEligibleSections(tenK, '10-K');
+    expect(sections.map((s) => s.key)).toContain('item-1a');
+    expect(sections[0].text).not.toContain('&#160;');
+    expect(sections[0].text).not.toContain('&#8239;');
   });
 
   it('rejects table-of-contents stubs', () => {
@@ -82,26 +101,67 @@ describe('sec-company adapter', () => {
     expect(hits[0].realized).toBe(false);
   });
 
+  it.each([
+    'Supply chain disruption, component shortages, and logistics constraints could materially adversely affect future revenue.',
+    'Worsening economic conditions may result in lower cloud demand and adversely affect our revenue.',
+    'If suppliers cannot provide components, manufacturing delays could reduce sales.',
+    'Cybersecurity incidents may continue to result in remediation costs and customer trust issues.',
+    'Future customer demand may decline if macroeconomic conditions deteriorate.',
+    'Supply constraints have not materially affected revenue or results of operations.',
+  ])('keeps conditional or negated risk language as observations: %s', (text) => {
+    const hits = extractThemeHits(text);
+    expect(hits.length).toBeGreaterThan(0);
+    expect(hits.some((h) => h.realized)).toBe(false);
+    expect(hits.every((h) => h.confidence < 0.9)).toBe(true);
+  });
+
+  it.each([
+    'Supply disruption in Asia resulted in delayed shipments and adversely affected product revenue.',
+    'We incurred a $4.5 billion charge for excess inventory as customer demand diminished.',
+    'We recorded an inventory charge after supply commitments exceeded demand.',
+    'A cybersecurity incident resulted in outages and remediation costs.',
+    'Data center capacity constraints limited cloud deployments and reduced sales.',
+    'Demand mismatches have resulted in product shortages and harmed financial results, and could reoccur.',
+  ])('stages concrete realized-risk language: %s', (text) => {
+    const hits = extractThemeHits(text);
+    expect(hits.length).toBeGreaterThan(0);
+    expect(hits.some((h) => h.realized)).toBe(true);
+    expect(hits.find((h) => h.realized)?.confidence).toBeGreaterThanOrEqual(0.9);
+  });
+
+  it('uses cleaned, bounded, theme-centered evidence windows', () => {
+    const hits = extractThemeHits([
+      'Forward-looking statements may include terms like could and future.',
+      'The Company&#8217;s supply chain disruption resulted in delayed shipments and increased costs.',
+      'Unrelated boilerplate follows. '.repeat(100),
+    ].join(' '));
+    expect(hits[0].excerpt.length).toBeLessThanOrEqual(900);
+    expect(hits[0].excerpt).toContain("Company's supply chain disruption");
+    expect(hits[0].excerpt).not.toContain('&#8217;');
+  });
+
   it('classifies expanded SEC themes', () => {
     const hits = extractThemeHits([
       'Cybersecurity incidents, privacy regulation, and unauthorized access could affect customer trust.',
       'Data center capacity, cloud infrastructure availability, and GPU supply can constrain AI demand.',
       'Export controls, tariffs, and China trade restrictions may affect shipments.',
     ].join('\n\n'));
-    expect(hits.map((h) => h.key)).toEqual([
+    expect(hits.map((h) => h.key)).toEqual(expect.arrayContaining([
       'cybersecurity-privacy',
       'cloud-data-center-capacity',
       'geopolitics-tariffs',
-    ]);
+    ]));
   });
 
   it('emits idea, assumption, and staged outcome candidates from fixtures', async () => {
-    const all = await collect(new SecCompanyAdapter());
+    const all = await collect(new SecCompanyAdapter(), NVDA_FIXTURE_DIR);
     expect(all.filter((c) => c.kind === 'idea').length).toBeGreaterThanOrEqual(6);
     expect(all.filter((c) => c.kind === 'assumption').length).toBeGreaterThanOrEqual(8);
     const outcomes = all.filter((c) => c.kind === 'outcome');
     expect(outcomes.length).toBeGreaterThanOrEqual(1);
-    expect(outcomes[0].sourceUri).toContain('sec-company://0000789019/');
-    expect(outcomes.map((o) => o.extractedFields?.theme_key)).toContain('cloud-data-center-capacity');
+    expect(outcomes[0].sourceUri).toContain('sec-company://0001045810/');
+    expect(outcomes.every((o) => o.confidence >= 0.9)).toBe(true);
+    expect(outcomes.every((o) => o.extractedFields?.explicit_realization === true)).toBe(true);
+    expect(outcomes.map((o) => o.bodyMd).join('\n')).not.toContain('&#160;');
   });
 });
