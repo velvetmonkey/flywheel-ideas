@@ -288,6 +288,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const themeMatrix = buildThemeMatrix(themes, observations);
   const lifecycleSummary = buildLifecycleSummary(filings, themes, observations, outcomes);
   const observationExamples = buildObservationExamples(themes, observations, filings);
+  const outcomeGroups = buildOutcomeGroups(outcomes, themes, filings);
   const highConfidenceOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) >= 0.9);
   const reviewOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) < 0.9);
   return {
@@ -303,6 +304,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
       limitation: 'SEC disclosures are issuer-authored evidence, not independent truth or investment advice.',
     },
     observation_examples: observationExamples,
+    outcome_groups: outcomeGroups,
     company_summaries: companySummaries,
     theme_matrix: themeMatrix,
     high_confidence_outcomes: highConfidenceOutcomes,
@@ -319,6 +321,7 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
   const matrix = data.theme_matrix as Array<Record<string, unknown>>;
   const lifecycle = data.lifecycle_summary as Record<string, unknown>;
   const examples = data.observation_examples as Array<Record<string, unknown>>;
+  const outcomeGroups = data.outcome_groups as Array<Record<string, unknown>>;
   const lines = [
     `# Company Tracker ${run.id}`,
     '',
@@ -371,6 +374,22 @@ function renderCompanyMarkdown(data: Record<string, unknown>): string {
     lines.push(`- **${example.company} / ${example.theme_title}** (${example.observed_at}, ${example.section_key})`);
     lines.push(`  - Source: ${example.source_uri}`);
     lines.push(`  - ${String(example.excerpt ?? '').replace(/\s+/g, ' ').slice(0, 300)}`);
+  }
+  lines.push(
+    '',
+    '## Realized Outcome Review Events',
+    '',
+    `${outcomes.filter((o) => o.state === 'staged').length} staged candidate(s) grouped into ${outcomeGroups.length} review event(s). Apply still operates on candidate IDs; groups are for review only.`,
+    '',
+  );
+  for (const group of outcomeGroups) {
+    const themesForGroup = group.themes as string[];
+    const candidates = group.candidate_ids as string[];
+    const sources = group.source_uris as string[];
+    lines.push(`- **${group.company}** ${group.first_seen_at ?? 'n/a'}${group.latest_seen_at && group.latest_seen_at !== group.first_seen_at ? ` to ${group.latest_seen_at}` : ''}: ${group.candidate_count} candidate(s), ${themesForGroup.join(', ')}`);
+    lines.push(`  - Candidate IDs: ${candidates.join(', ')}`);
+    lines.push(`  - Representative source: ${sources[0] ?? 'n/a'}`);
+    lines.push(`  - ${String(group.representative_excerpt ?? '').replace(/\s+/g, ' ').slice(0, 300)}`);
   }
   lines.push(
     '',
@@ -515,6 +534,90 @@ function buildObservationExamples(
     if (examples.length >= 6) break;
   }
   return examples;
+}
+
+function buildOutcomeGroups(
+  outcomes: unknown[],
+  themes: unknown[],
+  filings: unknown[],
+): Array<Record<string, unknown>> {
+  const outcomeRows = outcomes as Array<Record<string, unknown>>;
+  const themeRows = themes as Array<Record<string, unknown>>;
+  const filingRows = filings as Array<Record<string, unknown>>;
+  const themeById = new Map(themeRows.map((theme) => [String(theme.id), theme]));
+  const filingById = new Map(filingRows.map((filing) => [String(filing.id), filing]));
+  const groups = new Map<string, {
+    company: string;
+    fingerprint: string;
+    candidate_ids: string[];
+    source_uris: string[];
+    themes: Set<string>;
+    theme_keys: Set<string>;
+    filing_dates: string[];
+    representative_excerpt: string;
+    max_confidence: number;
+  }>();
+  for (const outcome of outcomeRows.filter((o) => o.state === 'staged')) {
+    const theme = themeById.get(String(outcome.theme_id));
+    const filing = filingById.get(String(outcome.filing_id));
+    const company = stringish(theme?.ticker) || stringish(filing?.ticker) || stringish(theme?.cik) || stringish(filing?.cik) || 'unknown';
+    const excerpt = stringish(outcome.excerpt);
+    const fingerprint = outcomeFingerprint(excerpt);
+    const key = `${company}:${fingerprint}`;
+    const current = groups.get(key) ?? {
+      company,
+      fingerprint,
+      candidate_ids: [],
+      source_uris: [],
+      themes: new Set<string>(),
+      theme_keys: new Set<string>(),
+      filing_dates: [],
+      representative_excerpt: excerpt,
+      max_confidence: 0,
+    };
+    current.candidate_ids.push(String(outcome.id));
+    current.source_uris.push(stringish(outcome.source_uri));
+    current.themes.add(stringish(theme?.title) || stringish(outcome.theme_id) || 'unknown');
+    current.theme_keys.add(stringish(theme?.theme_key) || 'unknown');
+    const filedAt = stringish(filing?.filed_at);
+    if (filedAt) current.filing_dates.push(filedAt);
+    current.max_confidence = Math.max(current.max_confidence, Number(outcome.confidence) || 0);
+    if (!current.representative_excerpt || excerpt.length > current.representative_excerpt.length) {
+      current.representative_excerpt = excerpt;
+    }
+    groups.set(key, current);
+  }
+  const sorted = [...groups.values()]
+    .map((group) => ({
+      company: group.company,
+      fingerprint: group.fingerprint,
+      candidate_count: group.candidate_ids.length,
+      candidate_ids: group.candidate_ids,
+      source_uris: [...new Set(group.source_uris.filter(Boolean))],
+      themes: [...group.themes].sort(),
+      theme_keys: [...group.theme_keys].sort(),
+      first_seen_at: minString(group.filing_dates),
+      latest_seen_at: maxString(group.filing_dates),
+      max_confidence: group.max_confidence,
+      representative_excerpt: group.representative_excerpt,
+    }))
+    .sort((a, b) => Number(b.candidate_count) - Number(a.candidate_count) || String(a.company).localeCompare(String(b.company)) || String(a.first_seen_at).localeCompare(String(b.first_seen_at)));
+  return sorted.map((group, index) => ({
+    ...group,
+    id: `og-${String(index + 1).padStart(3, '0')}`,
+  }));
+}
+
+function outcomeFingerprint(excerpt: string): string {
+  const normalized = excerpt
+    .toLowerCase()
+    .replace(/https?:\/\/\S+/g, ' ')
+    .replace(/\$?\d+(?:\.\d+)?%?/g, '#')
+    .replace(/\b(?:fiscal|calendar)?\s?20\d{2}\b/g, 'year')
+    .replace(/[^a-z0-9#]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return normalized.slice(0, 120) || 'unknown';
 }
 
 function buildThemeMatrix(themes: unknown[], observations: unknown[]): Array<Record<string, unknown>> {
