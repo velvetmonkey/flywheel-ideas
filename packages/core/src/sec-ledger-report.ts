@@ -1,4 +1,5 @@
 import type { IdeasDatabase } from './db.js';
+import type { OutcomeMemo } from './outcome-memos.js';
 
 export interface SecLedgerReportOptions {
   run_id?: string;
@@ -18,6 +19,8 @@ export interface SecLedgerReport {
     staged_candidates: number;
     accepted_failures: number;
     accepted_validations: number;
+    accepted_lessons: number;
+    missing_lessons: number;
     triage_completion: {
       applied_candidates: number;
       total_candidates: number;
@@ -72,6 +75,10 @@ export interface SecAcceptedVerdict {
   source_uri: string;
   landed_at: number | null;
   landed_at_iso: string | null;
+  memo: OutcomeMemo | null;
+  memo_written_at: number | null;
+  lesson_status: 'memo_recorded' | 'needs_memo';
+  memo_command: string;
 }
 
 export interface SecNeedsReviewIdea {
@@ -159,6 +166,8 @@ interface VerdictRow {
   theme_title: string;
   ticker: string | null;
   cik: string;
+  memo_json: string | null;
+  memo_written_at: number | null;
 }
 
 export function buildSecCompanyLedgerReport(
@@ -204,6 +213,8 @@ export function buildSecCompanyLedgerReport(
       staged_candidates: candidates.filter((c) => c.state === 'staged').length,
       accepted_failures: acceptedVerdicts.filter((v) => v.verdict === 'refuted').length,
       accepted_validations: acceptedVerdicts.filter((v) => v.verdict === 'validated').length,
+      accepted_lessons: acceptedVerdicts.filter((v) => v.memo !== null).length,
+      missing_lessons: acceptedVerdicts.filter((v) => v.verdict === 'refuted' && v.memo === null).length,
       triage_completion: {
         applied_candidates: appliedCandidates,
         total_candidates: totalCandidates,
@@ -243,6 +254,9 @@ export function renderSecCompanyLedgerMarkdown(
   lines.push(
     `${s.accepted_failures} accepted failure(s), ${s.accepted_validations} accepted validation(s), ` +
       `${s.staged_candidates} staged candidate(s) still need human review.`,
+  );
+  lines.push(
+    `${s.accepted_lessons} accepted verdict(s) have durable lesson memo(s); ${s.missing_lessons} accepted failure(s) still need lesson memo(s).`,
   );
   lines.push(
     `Triage completion: ${s.triage_completion.applied_candidates}/${s.triage_completion.total_candidates} candidate(s) applied (${s.triage_completion.percent}%).`,
@@ -288,6 +302,11 @@ export function renderSecCompanyLedgerMarkdown(
       const label = verdict.verdict === 'refuted' ? 'FAIL' : 'PASS';
       lines.push(`- **${label}** ${verdict.company} / ${verdict.theme}: ${verdict.assumption_id} via ${verdict.outcome_id}`);
       lines.push(`  - ${verdict.assumption_text}`);
+      if (verdict.memo) {
+        lines.push(`  - Lesson: ${verdict.memo.lesson}`);
+      } else if (verdict.verdict === 'refuted') {
+        lines.push(`  - Needs lesson memo: \`${verdict.memo_command}\``);
+      }
     }
   }
   lines.push('');
@@ -325,6 +344,8 @@ function emptySecCompanyReport(requestedRunId?: string): SecLedgerReport {
       staged_candidates: 0,
       accepted_failures: 0,
       accepted_validations: 0,
+      accepted_lessons: 0,
+      missing_lessons: 0,
       triage_completion: { applied_candidates: 0, total_candidates: 0, percent: 100 },
     },
     current_bets: [],
@@ -456,28 +477,58 @@ function buildAcceptedVerdicts(db: IdeasDatabase, runId: string): SecAcceptedVer
             c.source_uri,
             t.title AS theme_title,
             t.ticker,
-            t.cik
+            t.cik,
+            m.memo_json,
+            m.written_at AS memo_written_at
        FROM ideas_company_outcome_candidates c
        JOIN ideas_outcome_verdicts v ON v.outcome_id = c.applied_outcome_id
        JOIN ideas_outcomes o ON o.id = v.outcome_id
        LEFT JOIN ideas_assumptions a ON a.id = v.assumption_id
        LEFT JOIN ideas_company_themes t ON t.id = c.theme_id
+       LEFT JOIN ideas_outcome_memos m ON m.outcome_id = o.id
       WHERE c.run_id = ?
         AND c.state = 'applied'
       ORDER BY o.landed_at ASC, c.id ASC`,
   ).all(runId) as VerdictRow[];
-  return rows.map((row) => ({
-    candidate_id: row.candidate_id,
-    outcome_id: row.outcome_id,
-    verdict: row.verdict === 'validated' ? 'validated' : 'refuted',
-    assumption_id: row.assumption_id,
-    assumption_text: row.assumption_text ?? '',
-    company: row.ticker ?? row.cik,
-    theme: row.theme_title,
-    source_uri: row.source_uri,
-    landed_at: row.landed_at,
-    landed_at_iso: row.landed_at === null ? null : new Date(row.landed_at).toISOString(),
-  }));
+  return rows.map((row) => {
+    const memo = parseMemo(row.memo_json);
+    return {
+      candidate_id: row.candidate_id,
+      outcome_id: row.outcome_id,
+      verdict: row.verdict === 'validated' ? 'validated' : 'refuted',
+      assumption_id: row.assumption_id,
+      assumption_text: row.assumption_text ?? '',
+      company: row.ticker ?? row.cik,
+      theme: row.theme_title,
+      source_uri: row.source_uri,
+      landed_at: row.landed_at,
+      landed_at_iso: row.landed_at === null ? null : new Date(row.landed_at).toISOString(),
+      memo,
+      memo_written_at: row.memo_written_at,
+      lesson_status: memo ? 'memo_recorded' : 'needs_memo',
+      memo_command: `outcome.memo_upsert({ outcome_id: "${row.outcome_id}", memo: { root_cause: "<what broke>", what_we_thought: "<original belief>", what_actually_happened: "<observed reality>", lesson: "<durable takeaway>" } })`,
+    };
+  });
+}
+
+function parseMemo(raw: string | null): OutcomeMemo | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    if (
+      parsed &&
+      typeof parsed === 'object' &&
+      typeof parsed.root_cause === 'string' &&
+      typeof parsed.what_we_thought === 'string' &&
+      typeof parsed.what_actually_happened === 'string' &&
+      typeof parsed.lesson === 'string'
+    ) {
+      return parsed as OutcomeMemo;
+    }
+  } catch {
+    return null;
+  }
+  return null;
 }
 
 function buildNeedsReview(db: IdeasDatabase): SecNeedsReviewIdea[] {

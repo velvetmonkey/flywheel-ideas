@@ -1314,9 +1314,9 @@ function handleExport(
       why: 'Re-export with bodies INCLUDED if you trust the recipient. Default redacts body prose for paranoia.',
     },
     {
-      action: 'phase-4.5-trigger-1',
-      example: 'Hand the markdown file to one specific human and capture their feedback as a comment on https://github.com/velvetmonkey/flywheel-ideas/issues/38',
-      why: 'A real human reading the export and giving written feedback fires Trigger 1 of the Phase 4.5 sec-edgar gate. Currently the only live route to unblock Phase 4 PR 2.',
+      action: 'idea.report',
+      example: 'idea.report({ report_kind: "sec_company" })',
+      why: 'If you are using the SEC company tracker, inspect the live bets, review queue, accepted verdicts, and missing lesson memos.',
     },
   ];
 
