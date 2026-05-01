@@ -4,7 +4,9 @@ Run date: 2026-05-01
 
 This dogfood used the 10-year AAPL/MSFT/NVDA SEC company tracker run and then exercised the full lifecycle after PR #49: review staged outcomes, accept a curated subset, write lesson memos, and re-render the SEC ledger report.
 
-Artifacts are in `/home/ben/sec-dogfood/flywheel-sec-lifecycle-2026-05-01T21-51-52-671Z/`.
+The checked-in reproduction driver is [`scripts/sec-lifecycle-dogfood.mjs`](../scripts/sec-lifecycle-dogfood.mjs). It copies a source dogfood vault, applies selected review groups in the copy, writes lesson memos, and emits before/after ledger reports.
+
+Original local artifact path from this run: `/home/ben/sec-dogfood/flywheel-sec-lifecycle-2026-05-01T21-51-52-671Z/`.
 
 ## Input Run
 
@@ -62,4 +64,4 @@ The novel part is not the SEC data or an AI summary. The useful surface is the l
 - Lesson memos turn failure into reusable judgment.
 - The report separates current bets, remaining review work, accepted failures, and missing lessons.
 
-The next product gap is report clarity: the homepage and report should make the "current bets -> review queue -> accepted failures -> lessons" loop obvious without needing a developer to explain it.
+This README update addresses the first clarity gap by leading with the dogfood examples and explaining what is novel. The remaining product gap is report clarity: the SEC ledger report itself should make the "current bets -> review queue -> accepted failures -> lessons" loop obvious without needing a developer to explain it.
