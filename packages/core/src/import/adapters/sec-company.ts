@@ -278,19 +278,39 @@ function extractByMarkers(
   markers: string[],
 ): SectionSlice[] {
   const lines = text.split(/\n+/);
-  const start = lines.findIndex((line) => markers.every((m) => line.toLowerCase().includes(m.toLowerCase())));
-  if (start < 0) return [];
+  const starts = lines
+    .map((line, index) => ({ line, index }))
+    .filter(({ line }) => markers.every((m) => line.toLowerCase().includes(m.toLowerCase())))
+    .map(({ index }) => index);
+  if (starts.length === 0) return [];
+
+  const candidates = starts
+    .map((start) => collectSectionBody(lines, start))
+    .filter((body) => body.length > 0)
+    .sort((a, b) => scoreSection(b) - scoreSection(a));
+  const body = candidates[0]?.trim() ?? '';
+  return body ? [{ key, title, text: body }] : [];
+}
+
+function collectSectionBody(lines: string[], start: number): string {
   const out: string[] = [];
   for (let i = start + 1; i < lines.length; i++) {
     const line = lines[i].trim();
+    const body = out.join(' ');
     if (/^item\s+\d+[a-z]?\.?\s+/i.test(line) || /^part\s+[ivx]+/i.test(line)) {
-      if (out.join(' ').length > 400) break;
+      if (body.length > 400) break;
     }
     if (line) out.push(line);
-    if (out.join(' ').length > 5000) break;
+    if (body.length > 12000) break;
   }
-  const body = out.join('\n\n').trim();
-  return body ? [{ key, title, text: body }] : [];
+  return out.join('\n\n').trim();
+}
+
+function scoreSection(body: string): number {
+  const lower = body.toLowerCase();
+  const themeBonus = extractThemeHits(body).length * 500;
+  const boilerplatePenalty = lower.includes('references to particular years') ? 1000 : 0;
+  return body.length + themeBonus - boilerplatePenalty;
 }
 
 export function extractThemeHits(text: string): ThemeHit[] {
