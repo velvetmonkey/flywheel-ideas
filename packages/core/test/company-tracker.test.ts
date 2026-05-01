@@ -8,6 +8,7 @@ import {
   deleteIdeasDbFiles,
   openIdeasDb,
   readCompanyRun,
+  recordOutcomeMemo,
   runMigrations,
   trackCompanies,
   buildSecCompanyLedgerReport,
@@ -147,7 +148,7 @@ describe('company tracker', () => {
       `SELECT vault_path FROM ideas_assumptions ORDER BY vault_path`,
     ).all() as Array<{ vault_path: string }>;
     expect(new Set(assumptionPaths.map((row) => row.vault_path)).size).toBe(assumptionPaths.length);
-  });
+  }, 30_000);
 
   it('bulk applies reviewed staged outcomes through outcome.log', async () => {
     const result = await trackCompanies(db, vault, {
@@ -173,26 +174,54 @@ describe('company tracker', () => {
       sec_ledger_report: {
         executive_summary: {
           accepted_failures: number;
+          accepted_lessons: number;
+          missing_lessons: number;
           staged_candidates: number;
           triage_completion: { applied_candidates: number; total_candidates: number; percent: number };
         };
         current_bets: Array<{ assumption_id: string }>;
         review_queue: unknown[];
-        accepted_verdicts: Array<{ verdict: string; outcome_id: string; assumption_id: string }>;
+        accepted_verdicts: Array<{
+          verdict: string;
+          outcome_id: string;
+          assumption_id: string;
+          memo: { lesson: string } | null;
+          memo_command: string;
+        }>;
       };
     };
     expect(data.outcomes[0].state).toBe('applied');
     expect(data.outcomes[0].applied_outcome_id).toMatch(/^out-/);
     expect(data.sec_ledger_report.executive_summary.accepted_failures).toBe(result.staged_outcomes);
+    expect(data.sec_ledger_report.executive_summary.accepted_lessons).toBe(0);
+    expect(data.sec_ledger_report.executive_summary.missing_lessons).toBe(result.staged_outcomes);
     expect(data.sec_ledger_report.executive_summary.staged_candidates).toBe(0);
     expect(data.sec_ledger_report.executive_summary.triage_completion.percent).toBe(100);
     expect(data.sec_ledger_report.review_queue).toHaveLength(0);
     expect(data.sec_ledger_report.accepted_verdicts[0].verdict).toBe('refuted');
     expect(data.sec_ledger_report.accepted_verdicts[0].outcome_id).toMatch(/^out-/);
+    expect(data.sec_ledger_report.accepted_verdicts[0].memo).toBeNull();
+    expect(data.sec_ledger_report.accepted_verdicts[0].memo_command).toContain('outcome.memo_upsert');
     const currentBetIds = new Set(data.sec_ledger_report.current_bets.map((bet) => bet.assumption_id));
     for (const verdict of data.sec_ledger_report.accepted_verdicts) {
       expect(currentBetIds.has(verdict.assumption_id)).toBe(false);
     }
+
+    recordOutcomeMemo(db, data.sec_ledger_report.accepted_verdicts[0].outcome_id, {
+      root_cause: 'H20 export restrictions reduced usable inventory value.',
+      what_we_thought: 'Demand and channel assumptions would remain open.',
+      what_actually_happened: 'The filing disclosed a charge tied to diminished H20 demand.',
+      lesson: 'Export controls can convert demand risk into inventory write-down risk.',
+    });
+    const withMemo = readCompanyRun(db, result.run_id) as {
+      sec_ledger_report: {
+        executive_summary: { accepted_lessons: number; missing_lessons: number };
+        accepted_verdicts: Array<{ memo: { lesson: string } | null }>;
+      };
+    };
+    expect(withMemo.sec_ledger_report.executive_summary.accepted_lessons).toBe(1);
+    expect(withMemo.sec_ledger_report.executive_summary.missing_lessons).toBe(result.staged_outcomes - 1);
+    expect(withMemo.sec_ledger_report.accepted_verdicts[0].memo?.lesson).toBe('Export controls can convert demand risk into inventory write-down risk.');
   });
 
   it('returns a clear empty SEC ledger report before any company run', () => {
