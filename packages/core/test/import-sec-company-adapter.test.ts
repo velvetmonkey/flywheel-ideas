@@ -86,7 +86,7 @@ describe('sec-company adapter', () => {
 
   it('classifies recurring themes and explicit realized-risk language', () => {
     const hits = extractThemeHits(
-      'Supply disruption in Asia resulted in delayed shipments and adversely affected product revenue.',
+      'We experienced supply disruption in Asia and recorded remediation costs for delayed shipments.',
     );
     expect(hits[0].key).toBe('supply-chain');
     expect(hits[0].realized).toBe(true);
@@ -108,6 +108,11 @@ describe('sec-company adapter', () => {
     'Cybersecurity incidents may continue to result in remediation costs and customer trust issues.',
     'Future customer demand may decline if macroeconomic conditions deteriorate.',
     'Supply constraints have not materially affected revenue or results of operations.',
+    'In the event of financial turmoil, there could be tightening in credit markets resulting in product delays.',
+    'An industrial accident at a supplier could occur and could result in serious injuries, disruption to business, and harm to reputation.',
+    'Demand mismatches have resulted in product shortages and harmed financial results, and could reoccur.',
+    'We currently devote significant resources to data center markets where we have a limited operating history.',
+    'We have introduced GPUs with limited mining capability and increased supply to miners.',
   ])('keeps conditional or negated risk language as observations: %s', (text) => {
     const hits = extractThemeHits(text);
     expect(hits.length).toBeGreaterThan(0);
@@ -116,12 +121,11 @@ describe('sec-company adapter', () => {
   });
 
   it.each([
-    'Supply disruption in Asia resulted in delayed shipments and adversely affected product revenue.',
     'We incurred a $4.5 billion charge for excess inventory as customer demand diminished.',
     'We recorded an inventory charge after supply commitments exceeded demand.',
-    'A cybersecurity incident resulted in outages and remediation costs.',
-    'Data center capacity constraints limited cloud deployments and reduced sales.',
-    'Demand mismatches have resulted in product shortages and harmed financial results, and could reoccur.',
+    'The Company experienced supply disruption and recorded remediation costs.',
+    'Our operations have adversely affected product revenue after a cybersecurity breach.',
+    'As a result, the Company recorded a $1.2 billion charge to align costs with demand.',
   ])('stages concrete realized-risk language: %s', (text) => {
     const hits = extractThemeHits(text);
     expect(hits.length).toBeGreaterThan(0);

@@ -402,11 +402,11 @@ function classifyThemes(lower: string): Array<Pick<ThemeHit, 'key' | 'title'>> {
 
 function isExplicitRealization(lower: string): boolean {
   if (hasNegatedImpact(lower)) return false;
+  if (hasConditionalLeadIn(lower)) return false;
   const hasActualTrigger = [
-    /\b(resulted in|resulting in|caused|led to|has led to|have led to|has resulted in|have resulted in)\b.{0,140}\b(shortages?|delays?|declines?|decreases?|disruptions?|loss(?:es)?|impairments?|charges?|expenses?|costs?|outages?|breaches?|penalties|fines?|constraints?|reductions?|reduced sales|harmed|limited|constrained|remediation)\b/,
-    /\b(we experienced|we incurred|we recorded|we recognized|we suffered|we wrote down|we wrote off)\b.{0,140}\b(shortages?|delays?|declines?|decreases?|disruptions?|loss(?:es)?|impairments?|charges?|expenses?|costs?|outages?|breaches?|penalties|fines?|constraints?|reductions?|inventory provisions?|remediation)\b/,
-    /\b(shortages?|delays?|declines?|decreases?|disruptions?|loss(?:es)?|impairments?|charges?|expenses?|outages?|breaches?|penalties|fines?|constraints?|reductions?|incidents?)\b.{0,140}\b(adversely affected|materially affected|reduced|increased costs|lowered|limited|constrained|harmed|negatively impacted)\b/,
-    /\b\d+(?:\.\d+)?\s?%\b.{0,140}\b(decline|decrease|increase in costs|reduction|adverse impact|headwind)\b/,
+    /\b(we|the company|our business|our operations|our results)\b.{0,80}\b(experienced|incurred|recorded|recognized|suffered|wrote down|wrote off)\b.{0,160}\b(shortages?|delays?|declines?|decreases?|disruptions?|loss(?:es)?|impairments?|charges?|expenses?|costs?|outages?|breaches?|penalties|fines?|constraints?|reductions?|inventory provisions?|remediation)\b/,
+    /\b(we|the company|our business|our operations|our results)\b.{0,120}\b(has|have|was|were)\b.{0,80}\b(adversely affected|materially affected|reduced|negatively impacted)\b/,
+    /\b(as a result|resulted in|resulting in)\b.{0,120}\b(we|the company)\b.{0,80}\b(incurred|recorded|recognized|experienced|suffered)\b/,
     /\$\s?\d+(?:\.\d+)?\s?(?:million|billion)\b.{0,140}\b(charge|cost|expense|loss|impairment|penalty|fine|provision)\b/,
   ].some((pattern) => pattern.test(lower));
   if (!hasActualTrigger) return false;
@@ -417,8 +417,15 @@ function hasNegatedImpact(lower: string): boolean {
   return /\b(has not|have not|did not|does not|do not|not expected to|not materially|no material|without material)\b.{0,80}\b(affected|impact|resulted|caused|led to|loss|charge|expense|cost|disruption|delay|decline)\b/.test(lower);
 }
 
+function hasConditionalLeadIn(lower: string): boolean {
+  return [
+    /\b(if|in the event of|in the event that|could|may|might|would|can|potential|future)\b.{0,180}\b(resulted in|resulting in|cause|caused|lead to|led to|adversely affect|adversely affected|materially affect|materially affected|reduce|reduced|harmed|limited|constrained|charge|cost|expense|loss|delay|disruption|decline)\b/,
+    /\b(resulted in|resulting in|cause|caused|lead to|led to|adversely affect|adversely affected|materially affect|materially affected|reduce|reduced|harmed|limited|constrained|charge|cost|expense|loss|delay|disruption|decline)\b.{0,180}\b(could|may|might|would|can|potential|future|reoccur)\b/,
+  ].some((pattern) => pattern.test(lower));
+}
+
 function isPurelyConditional(lower: string): boolean {
-  const actualMarkers = /\b(resulted in|resulting in|caused|led to|has led|have led|has resulted|have resulted|we experienced|we incurred|we recorded|we recognized|we suffered|adversely affected|materially affected|was due to|were due to)\b/;
+  const actualMarkers = /\b(we experienced|we incurred|we recorded|we recognized|we suffered|the company experienced|the company incurred|the company recorded|the company recognized|the company suffered|has adversely affected|have adversely affected|was due to|were due to)\b/;
   if (actualMarkers.test(lower)) return false;
   return /\b(could|may|might|would|can|potential|future|if|not expected to)\b/.test(lower);
 }
