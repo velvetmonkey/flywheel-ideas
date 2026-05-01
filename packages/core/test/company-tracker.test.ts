@@ -90,6 +90,7 @@ describe('company tracker', () => {
         representative_excerpt: string;
       }>;
       sec_ledger_report: {
+        markdown: string;
         executive_summary: {
           current_bets: number;
           review_events: number;
@@ -137,6 +138,14 @@ describe('company tracker', () => {
     expect(data.sec_ledger_report.review_queue[0].status).toBe('needs_human_review');
     expect(data.sec_ledger_report.review_queue[0].apply_command).toContain('company.apply_outcomes');
     expect(data.sec_ledger_report.accepted_verdicts).toHaveLength(0);
+    expect(data.sec_ledger_report.markdown).toContain('## Lifecycle Snapshot');
+    expect(data.sec_ledger_report.markdown).toContain('This report tracks the loop: current bets -> evidence over time -> review queue -> accepted outcomes -> lessons.');
+    expect(data.sec_ledger_report.markdown).toContain('## Operator Next Step');
+    expect(data.sec_ledger_report.markdown).toContain('## Lifecycle Status');
+    expect(data.sec_ledger_report.markdown).toContain('Visibility only so far');
+    expect(data.sec_ledger_report.markdown).toContain('Review the highest-pressure event');
+    expect(data.sec_ledger_report.markdown).toContain(`- Current bets: ${data.sec_ledger_report.executive_summary.current_bets} open company/theme assumption(s) still being carried.`);
+    expect(data.sec_ledger_report.markdown).toContain(`- Review queue: ${data.sec_ledger_report.executive_summary.review_events} event(s), ${data.sec_ledger_report.executive_summary.staged_candidates} staged candidate(s) awaiting human judgment.`);
     expect(data.outcomes).toHaveLength(result.staged_outcomes);
     expect(data.outcomes[0].state).toBe('staged');
     expect(data.outcomes[0].applied_outcome_id).toBeNull();
@@ -172,6 +181,7 @@ describe('company tracker', () => {
     const data = readCompanyRun(db, result.run_id) as {
       outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
       sec_ledger_report: {
+        markdown: string;
         executive_summary: {
           accepted_failures: number;
           accepted_lessons: number;
@@ -202,6 +212,11 @@ describe('company tracker', () => {
     expect(data.sec_ledger_report.accepted_verdicts[0].outcome_id).toMatch(/^out-/);
     expect(data.sec_ledger_report.accepted_verdicts[0].memo).toBeNull();
     expect(data.sec_ledger_report.accepted_verdicts[0].memo_command).toContain('outcome.memo_upsert');
+    expect(data.sec_ledger_report.markdown).toContain('## Lifecycle Snapshot');
+    expect(data.sec_ledger_report.markdown).toContain('- Accepted outcomes:');
+    expect(data.sec_ledger_report.markdown).toContain(`- Lessons: 0 recorded memo(s), ${result.staged_outcomes} missing memo(s).`);
+    expect(data.sec_ledger_report.markdown).toContain('Write the missing lesson memo');
+    expect(data.sec_ledger_report.markdown).toContain(`but ${result.staged_outcomes} still need lesson memos`);
     const currentBetIds = new Set(data.sec_ledger_report.current_bets.map((bet) => bet.assumption_id));
     for (const verdict of data.sec_ledger_report.accepted_verdicts) {
       expect(currentBetIds.has(verdict.assumption_id)).toBe(false);
@@ -215,6 +230,7 @@ describe('company tracker', () => {
     });
     const withMemo = readCompanyRun(db, result.run_id) as {
       sec_ledger_report: {
+        markdown: string;
         executive_summary: { accepted_lessons: number; missing_lessons: number };
         accepted_verdicts: Array<{ memo: { lesson: string } | null }>;
       };
@@ -222,6 +238,8 @@ describe('company tracker', () => {
     expect(withMemo.sec_ledger_report.executive_summary.accepted_lessons).toBe(1);
     expect(withMemo.sec_ledger_report.executive_summary.missing_lessons).toBe(result.staged_outcomes - 1);
     expect(withMemo.sec_ledger_report.accepted_verdicts[0].memo?.lesson).toBe('Export controls can convert demand risk into inventory write-down risk.');
+    expect(withMemo.sec_ledger_report.markdown).toContain(`- Lessons: 1 recorded memo(s), ${result.staged_outcomes - 1} missing memo(s).`);
+    expect(withMemo.sec_ledger_report.markdown).toContain('Lesson: Export controls can convert demand risk into inventory write-down risk.');
   });
 
   it('returns a clear empty SEC ledger report before any company run', () => {
@@ -229,5 +247,6 @@ describe('company tracker', () => {
     expect(report.run).toBeNull();
     expect(report.current_bets).toHaveLength(0);
     expect(report.markdown).toContain('No SEC company tracker run exists yet');
+    expect(report.markdown).toContain('Run `company.track');
   });
 });

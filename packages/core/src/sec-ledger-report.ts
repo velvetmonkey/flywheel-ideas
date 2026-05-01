@@ -236,7 +236,7 @@ export function renderSecCompanyLedgerMarkdown(
   report: Omit<SecLedgerReport, 'markdown'>,
 ): string {
   const lines: string[] = [];
-  lines.push('## What We Learned');
+  lines.push('## SEC Company Lifecycle Report');
   lines.push('');
   if (!report.run || (report.run as { missing?: boolean }).missing === true) {
     lines.push((report.run as { id?: string } | null)?.id
@@ -247,23 +247,31 @@ export function renderSecCompanyLedgerMarkdown(
     return `${lines.join('\n')}\n`;
   }
   const s = report.executive_summary;
-  lines.push(
-    `${s.companies.join(', ')}: ${s.filings_scanned} filing(s), ${s.tracked_assumptions} tracked assumption(s), ` +
-      `${s.observations} dated observation(s), ${s.review_events} outcome review event(s).`,
-  );
-  lines.push(
-    `${s.accepted_failures} accepted failure(s), ${s.accepted_validations} accepted validation(s), ` +
-      `${s.staged_candidates} staged candidate(s) still need human review.`,
-  );
-  lines.push(
-    `${s.accepted_lessons} accepted verdict(s) have durable lesson memo(s); ${s.missing_lessons} accepted failure(s) still need lesson memo(s).`,
-  );
-  lines.push(
-    `Triage completion: ${s.triage_completion.applied_candidates}/${s.triage_completion.total_candidates} candidate(s) applied (${s.triage_completion.percent}%).`,
-  );
+  lines.push('This report tracks the loop: current bets -> evidence over time -> review queue -> accepted outcomes -> lessons.');
+  lines.push('');
+  lines.push('## Lifecycle Snapshot');
+  lines.push('');
+  lines.push(`- Corpus: ${s.companies.join(', ')} across ${s.filings_scanned} filing(s), ${s.tracked_assumptions} tracked assumption(s), and ${s.observations} dated observation(s).`);
+  lines.push(`- Current bets: ${s.current_bets} open company/theme assumption(s) still being carried.`);
+  lines.push(`- Review queue: ${s.review_events} event(s), ${s.staged_candidates} staged candidate(s) awaiting human judgment.`);
+  lines.push(`- Accepted outcomes: ${s.accepted_failures} failure(s), ${s.accepted_validations} validation(s).`);
+  lines.push(`- Lessons: ${s.accepted_lessons} recorded memo(s), ${s.missing_lessons} missing memo(s).`);
+  lines.push(`- Triage completion: ${s.triage_completion.applied_candidates}/${s.triage_completion.total_candidates} candidate(s) applied (${s.triage_completion.percent}%).`);
+  lines.push('');
+  lines.push('## Operator Next Step');
+  lines.push('');
+  lines.push(operatorNextStep(report));
+  lines.push('');
+  lines.push('## Lifecycle Status');
+  lines.push('');
   if (s.accepted_failures === 0 && s.accepted_validations === 0 && s.staged_candidates > 0) {
-    lines.push('');
-    lines.push(`**No accepted verdicts yet.** The system has evidence and ${s.review_events} review event(s), but no pass/fail outcome enters the ledger until a human applies candidates.`);
+    lines.push(`Visibility only so far: the system has evidence and ${s.review_events} review event(s), but no pass/fail outcome enters the ledger until a human applies candidates.`);
+  } else if (s.missing_lessons > 0) {
+    lines.push(`${s.accepted_failures} failure(s) have been accepted, but ${s.missing_lessons} still need lesson memos before the knowledge loop is closed.`);
+  } else if (s.accepted_failures > 0 || s.accepted_validations > 0) {
+    lines.push(`${s.accepted_failures + s.accepted_validations} accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.`);
+  } else {
+    lines.push('No accepted verdicts or staged outcomes are currently present for this run.');
   }
   lines.push('');
   lines.push('## Current Bets');
@@ -320,6 +328,25 @@ export function renderSecCompanyLedgerMarkdown(
     }
   }
   return `${lines.join('\n')}\n`;
+}
+
+function operatorNextStep(report: Omit<SecLedgerReport, 'markdown'>): string {
+  const s = report.executive_summary;
+  const missingMemo = report.accepted_verdicts.find((verdict) => verdict.verdict === 'refuted' && verdict.memo === null);
+  if (missingMemo) {
+    return `Write the missing lesson memo for ${missingMemo.company} / ${missingMemo.theme}: \`${missingMemo.memo_command}\``;
+  }
+  const reviewEvent = report.review_queue[0];
+  if (reviewEvent) {
+    return `Review the highest-pressure event and apply only if the evidence really refutes the bet: \`${reviewEvent.apply_command}\``;
+  }
+  if (s.accepted_failures > 0 && s.missing_lessons === 0) {
+    return 'No staged SEC outcomes remain. Use the accepted lessons below when reviewing related decisions or future company bets.';
+  }
+  if (s.current_bets > 0) {
+    return 'No staged SEC outcomes need review. Keep tracking future filings so current bets accumulate new evidence.';
+  }
+  return 'No SEC company tracker data is awaiting action.';
 }
 
 function readRun(db: IdeasDatabase, runId?: string): CompanyRunRow | null {
