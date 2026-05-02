@@ -20,6 +20,7 @@ import {
   SCHEMA_SQL_V10,
   SCHEMA_SQL_V11,
   SCHEMA_SQL_V12,
+  SCHEMA_SQL_V13,
   SCHEMA_VERSION,
 } from './schema.js';
 
@@ -63,6 +64,9 @@ const MIGRATIONS: Record<number, (db: IdeasDatabase) => void> = {
   },
   12: (db) => {
     db.exec(SCHEMA_SQL_V12);
+  },
+  13: (db) => {
+    db.exec(SCHEMA_SQL_V13);
   },
 };
 

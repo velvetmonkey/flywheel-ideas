@@ -8,6 +8,7 @@ import {
   deleteIdeasDbFiles,
   openIdeasDb,
   readCompanyRun,
+  readCompanyThesisReport,
   recordOutcomeMemo,
   runMigrations,
   trackCompanies,
@@ -51,9 +52,12 @@ describe('company tracker', () => {
     expect(result.promoted_assumptions).toBeGreaterThanOrEqual(12);
     expect(result.staged_outcomes).toBeGreaterThanOrEqual(1);
     expect(result.report_md_path).toBe(`reports/company-tracker-${result.run_id.toLowerCase()}.md`);
+    expect(result.thesis_report_md_path).toBe(`reports/company-thesis-${result.run_id.toLowerCase()}.md`);
 
     await expect(fsp.stat(path.join(vault, result.report_md_path))).resolves.toBeDefined();
     await expect(fsp.stat(path.join(vault, result.report_json_path))).resolves.toBeDefined();
+    await expect(fsp.stat(path.join(vault, result.thesis_report_md_path))).resolves.toBeDefined();
+    await expect(fsp.stat(path.join(vault, result.thesis_report_json_path))).resolves.toBeDefined();
 
     const markdown = await fsp.readFile(path.join(vault, result.report_md_path), 'utf8');
     expect(markdown).toContain('type: report');
@@ -72,7 +76,33 @@ describe('company tracker', () => {
     expect(markdown).toContain('MSFT');
     expect(markdown).toContain('NVDA');
 
+    const thesisMarkdown = await fsp.readFile(path.join(vault, result.thesis_report_md_path), 'utf8');
+    expect(thesisMarkdown).toContain('type: report');
+    expect(thesisMarkdown).toContain('report_kind: company_thesis');
+    expect(thesisMarkdown).toContain('## Executive Readout');
+    expect(thesisMarkdown).toContain('## Current Thesis Dependencies');
+    expect(thesisMarkdown).toContain('## Prior Failures And Lessons');
+    expect(thesisMarkdown).toContain('## What Needs Human Review');
+    expect(thesisMarkdown).toContain('## Cross-Company Patterns');
+    expect(thesisMarkdown).toContain('## What To Watch Next');
+    expect(thesisMarkdown).toContain('## Limits');
+    expect(thesisMarkdown).toContain('not investment advice');
+
     const data = readCompanyRun(db, result.run_id) as {
+      company_thesis_report: {
+        report_kind: string;
+        executive_readout: {
+          current_bets: number;
+          review_events: number;
+          staged_candidates: number;
+          accepted_failures: number;
+        };
+        current_thesis_dependencies: unknown[];
+        needs_human_review: unknown[];
+        cross_company_patterns: unknown[];
+        watch_next: unknown[];
+        markdown: string;
+      };
       filings: unknown[];
       company_summaries: unknown[];
       theme_matrix: unknown[];
@@ -142,6 +172,17 @@ describe('company tracker', () => {
     expect(data.sec_ledger_report.review_queue[0].status).toBe('needs_human_review');
     expect(data.sec_ledger_report.review_queue[0].apply_command).toContain('company.apply_outcomes');
     expect(data.sec_ledger_report.accepted_verdicts).toHaveLength(0);
+    expect(data.company_thesis_report.report_kind).toBe('company_thesis');
+    expect(data.company_thesis_report.executive_readout.current_bets).toBe(data.sec_ledger_report.executive_summary.current_bets);
+    expect(data.company_thesis_report.executive_readout.review_events).toBe(data.sec_ledger_report.executive_summary.review_events);
+    expect(data.company_thesis_report.executive_readout.staged_candidates).toBe(result.staged_outcomes);
+    expect(data.company_thesis_report.executive_readout.accepted_failures).toBe(0);
+    expect(data.company_thesis_report.current_thesis_dependencies.length).toBeGreaterThan(0);
+    expect(data.company_thesis_report.needs_human_review.length).toBeGreaterThan(0);
+    expect(data.company_thesis_report.cross_company_patterns.length).toBeGreaterThan(0);
+    expect(data.company_thesis_report.watch_next.length).toBeGreaterThan(0);
+    expect(data.company_thesis_report.markdown).toContain('## What To Watch Next');
+    expect(readCompanyThesisReport(db, result.run_id).report_kind).toBe('company_thesis');
     expect(data.sec_ledger_report.markdown).toContain('## Lifecycle Snapshot');
     expect(data.sec_ledger_report.markdown).toContain('This report tracks the loop: current bets -> evidence over time -> review queue -> accepted outcomes -> lessons.');
     expect(data.sec_ledger_report.markdown).toContain('## Operator Next Step');
@@ -245,6 +286,11 @@ describe('company tracker', () => {
       });
     }
     const withMemo = readCompanyRun(db, result.run_id) as {
+      company_thesis_report: {
+        executive_readout: { accepted_failures: number; accepted_lessons: number; missing_lessons: number };
+        prior_failures_and_lessons: Array<{ lesson: string; verdict_count: number }>;
+        markdown: string;
+      };
       sec_ledger_report: {
         markdown: string;
         executive_summary: { accepted_lessons: number; missing_lessons: number };
@@ -274,6 +320,12 @@ describe('company tracker', () => {
     expect(withMemo.sec_ledger_report.markdown).toContain('## Lessons Captured');
     expect(withMemo.sec_ledger_report.markdown).toContain('Lesson: Export controls can convert demand risk into inventory write-down risk.');
     expect(withMemo.sec_ledger_report.markdown).toContain(`Evidence: ${expectedMemoCount} accepted failure verdict(s)`);
+    expect(withMemo.company_thesis_report.executive_readout.accepted_failures).toBe(result.staged_outcomes);
+    expect(withMemo.company_thesis_report.executive_readout.accepted_lessons).toBe(expectedMemoCount);
+    expect(withMemo.company_thesis_report.executive_readout.missing_lessons).toBe(result.staged_outcomes - expectedMemoCount);
+    expect(withMemo.company_thesis_report.prior_failures_and_lessons[0].lesson).toBe('Export controls can convert demand risk into inventory write-down risk.');
+    expect(withMemo.company_thesis_report.prior_failures_and_lessons[0].verdict_count).toBe(expectedMemoCount);
+    expect(withMemo.company_thesis_report.markdown).toContain('## Prior Failures And Lessons');
   });
 
   it('returns a clear empty SEC ledger report before any company run', () => {

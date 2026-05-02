@@ -545,6 +545,7 @@ export type { AdapterHooks, GithubStructuredDocsConfig } from './import/adapters
 // Company tracker (Company Adapter v1)
 export {
   applyCompanyOutcomes,
+  readCompanyThesisReport,
   readCompanyRun,
   trackCompanies,
   writeCompanyReports,
@@ -557,6 +558,19 @@ export type {
   CompanyTrackInput,
   CompanyTrackResult,
 } from './company.js';
+
+export {
+  buildCompanyThesisReport,
+  renderCompanyThesisMarkdown,
+} from './company-thesis-report.js';
+export type {
+  CompanyThesisReport,
+  CrossCompanyPattern,
+  ThesisDependency,
+  ThesisLesson,
+  ThesisReviewEvent,
+  ThesisWatchpoint,
+} from './company-thesis-report.js';
 
 export {
   buildSecCompanyLedgerReport,

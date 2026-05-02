@@ -75,10 +75,19 @@ describe('company MCP tool', () => {
       companies: ['NVDA'],
       fixture_dir: FIXTURE_DIR,
       confirm: true,
-    })) as { result: { run_id: string; staged_outcomes: number } };
+    })) as {
+      result: {
+        run_id: string;
+        staged_outcomes: number;
+        thesis_report_md_path: string;
+      };
+      next_steps: Array<{ action: string; example: string }>;
+    };
 
     expect(tracked.result.run_id).toMatch(/^run-/);
     expect(tracked.result.staged_outcomes).toBeGreaterThanOrEqual(1);
+    expect(tracked.result.thesis_report_md_path).toContain('reports/company-thesis-');
+    expect(tracked.next_steps[0].example).toContain('report_kind: "thesis"');
     const before = db.prepare(`SELECT COUNT(*) as n FROM ideas_outcome_verdicts`).get() as { n: number };
     expect(before.n).toBe(0);
 
@@ -132,5 +141,56 @@ describe('company MCP tool', () => {
       run_id: tracked.result.run_id,
     })) as { result: { run: { id: string } } };
     expect(explicit.result.run.id).toBe(tracked.result.run_id);
+  });
+
+  it('returns deterministic company thesis reports through company.report', async () => {
+    const tracked = parseResp(await client.callTool('company', {
+      action: 'track',
+      companies: ['AAPL', 'MSFT', 'NVDA'],
+      fixture_dir: FIXTURE_DIR,
+      confirm: true,
+    })) as { result: { run_id: string } };
+
+    const thesis = parseResp(await client.callTool('company', {
+      action: 'report',
+      run_id: tracked.result.run_id,
+      report_kind: 'thesis',
+    })) as {
+      result: {
+        report_kind: string;
+        data: {
+          report_kind: string;
+          executive_readout: { staged_candidates: number; accepted_failures: number };
+          current_thesis_dependencies: unknown[];
+          needs_human_review: unknown[];
+          cross_company_patterns: unknown[];
+          watch_next: unknown[];
+          markdown: string;
+        };
+      };
+    };
+
+    expect(thesis.result.report_kind).toBe('thesis');
+    expect(thesis.result.data.report_kind).toBe('company_thesis');
+    expect(thesis.result.data.executive_readout.staged_candidates).toBeGreaterThan(0);
+    expect(thesis.result.data.executive_readout.accepted_failures).toBe(0);
+    expect(thesis.result.data.current_thesis_dependencies.length).toBeGreaterThan(0);
+    expect(thesis.result.data.needs_human_review.length).toBeGreaterThan(0);
+    expect(thesis.result.data.cross_company_patterns.length).toBeGreaterThan(0);
+    expect(thesis.result.data.watch_next.length).toBeGreaterThan(0);
+    expect(thesis.result.data.markdown).toContain('## Executive Readout');
+    expect(thesis.result.data.markdown).toContain('not investment advice');
+
+    const tracker = parseResp(await client.callTool('company', {
+      action: 'report',
+      run_id: tracked.result.run_id,
+    })) as {
+      result: {
+        report_kind: string;
+        data: { sec_ledger_report: unknown };
+      };
+    };
+    expect(tracker.result.report_kind).toBe('tracker');
+    expect(tracker.result.data.sec_ledger_report).toBeDefined();
   });
 });

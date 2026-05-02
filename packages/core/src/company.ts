@@ -18,6 +18,10 @@ import {
 } from './import/index.js';
 import { logOutcome } from './outcome.js';
 import {
+  buildCompanyThesisReport,
+  type CompanyThesisReport,
+} from './company-thesis-report.js';
+import {
   buildSecCompanyLedgerReport,
   renderSecCompanyLedgerMarkdown,
   type SecLedgerReport,
@@ -44,10 +48,13 @@ export interface CompanyTrackResult {
   staged_outcomes: number;
   report_md_path: string;
   report_json_path: string;
+  thesis_report_md_path: string;
+  thesis_report_json_path: string;
 }
 
 export interface CompanyReportOptions {
   run_id: string;
+  report_kind?: 'tracker' | 'thesis';
   company?: string;
   format?: 'markdown' | 'json' | 'both';
 }
@@ -124,9 +131,18 @@ export async function trackCompanies(
   const artifacts = await writeCompanyReports(db, vaultPath, runId);
   db.prepare(
     `UPDATE ideas_company_runs
-       SET completed_at = ?, status = 'completed', report_md_path = ?, report_json_path = ?
+       SET completed_at = ?, status = 'completed',
+           report_md_path = ?, report_json_path = ?,
+           thesis_report_md_path = ?, thesis_report_json_path = ?
      WHERE id = ?`,
-  ).run(Date.now(), artifacts.markdownPath, artifacts.jsonPath, runId);
+  ).run(
+    Date.now(),
+    artifacts.markdownPath,
+    artifacts.jsonPath,
+    artifacts.thesisMarkdownPath,
+    artifacts.thesisJsonPath,
+    runId,
+  );
 
   return {
     run_id: runId,
@@ -139,6 +155,8 @@ export async function trackCompanies(
     staged_outcomes: stagedOutcomes,
     report_md_path: artifacts.markdownPath,
     report_json_path: artifacts.jsonPath,
+    thesis_report_md_path: artifacts.thesisMarkdownPath,
+    thesis_report_json_path: artifacts.thesisJsonPath,
   };
 }
 
@@ -268,17 +286,30 @@ export function readCompanyRun(db: IdeasDatabase, runId?: string): Record<string
   return buildReportData(db, (run as { id: string }).id);
 }
 
+export function readCompanyThesisReport(db: IdeasDatabase, runId: string): CompanyThesisReport {
+  const data = buildReportData(db, runId);
+  return data.company_thesis_report as CompanyThesisReport;
+}
+
 export async function writeCompanyReports(
   db: IdeasDatabase,
   vaultPath: string,
   runId: string,
-): Promise<{ markdownPath: string; jsonPath: string }> {
+): Promise<{
+  markdownPath: string;
+  jsonPath: string;
+  thesisMarkdownPath: string;
+  thesisJsonPath: string;
+}> {
   const data = buildReportData(db, runId);
   const dir = path.join(vaultPath, 'reports');
   await fsp.mkdir(dir, { recursive: true });
   const base = `company-tracker-${runId.toLowerCase()}`;
   const markdownPath = `reports/${base}.md`;
   const jsonPath = `reports/${base}.json`;
+  const thesisBase = `company-thesis-${runId.toLowerCase()}`;
+  const thesisMarkdownPath = `reports/${thesisBase}.md`;
+  const thesisJsonPath = `reports/${thesisBase}.json`;
   const markdownResult = await writeNote(
     vaultPath,
     markdownPath,
@@ -287,13 +318,29 @@ export async function writeCompanyReports(
     { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 8 },
   );
   const actualMarkdownPath = markdownResult.vault_path;
+  const thesisReport = data.company_thesis_report as CompanyThesisReport;
+  const thesisMarkdownResult = await writeNote(
+    vaultPath,
+    thesisMarkdownPath,
+    buildCompanyThesisFrontmatter(data),
+    thesisReport.markdown,
+    { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 8 },
+  );
+  const actualThesisMarkdownPath = thesisMarkdownResult.vault_path;
   await fsp.writeFile(path.join(vaultPath, jsonPath), `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+  await fsp.writeFile(path.join(vaultPath, thesisJsonPath), `${JSON.stringify(thesisReport, null, 2)}\n`, 'utf8');
   db.prepare(
     `UPDATE ideas_company_runs
-        SET report_md_path = ?, report_json_path = ?
+        SET report_md_path = ?, report_json_path = ?,
+            thesis_report_md_path = ?, thesis_report_json_path = ?
       WHERE id = ?`,
-  ).run(actualMarkdownPath, jsonPath, runId);
-  return { markdownPath: actualMarkdownPath, jsonPath };
+  ).run(actualMarkdownPath, jsonPath, actualThesisMarkdownPath, thesisJsonPath, runId);
+  return {
+    markdownPath: actualMarkdownPath,
+    jsonPath,
+    thesisMarkdownPath: actualThesisMarkdownPath,
+    thesisJsonPath,
+  };
 }
 
 function buildCompanyReportFrontmatter(data: Record<string, unknown>): Record<string, unknown> {
@@ -307,6 +354,15 @@ function buildCompanyReportFrontmatter(data: Record<string, unknown>): Record<st
     forms: parseJsonArray(run.forms_json),
     years: run.years,
     source: 'flywheel-ideas',
+  };
+}
+
+function buildCompanyThesisFrontmatter(data: Record<string, unknown>): Record<string, unknown> {
+  const base = buildCompanyReportFrontmatter(data);
+  return {
+    ...base,
+    id: `company-thesis-${(data.run as Record<string, unknown>).id}`,
+    report_kind: 'company_thesis',
   };
 }
 
@@ -332,6 +388,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const observationExamples = buildObservationExamples(themes, observations, filings);
   const outcomeGroups = buildOutcomeGroups(outcomes, themes, filings);
   const secLedgerReport = buildSecCompanyLedgerReport(db, { run_id: runId });
+  const companyThesisReport = buildCompanyThesisReport(secLedgerReport);
   const highConfidenceOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) >= 0.9);
   const reviewOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) < 0.9);
   return {
@@ -349,6 +406,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
     observation_examples: observationExamples,
     outcome_groups: outcomeGroups,
     sec_ledger_report: secLedgerReport,
+    company_thesis_report: companyThesisReport,
     company_summaries: companySummaries,
     theme_matrix: themeMatrix,
     high_confidence_outcomes: highConfidenceOutcomes,
