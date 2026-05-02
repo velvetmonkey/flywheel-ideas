@@ -55,6 +55,9 @@ describe('company tracker', () => {
     await expect(fsp.stat(path.join(vault, result.report_json_path))).resolves.toBeDefined();
 
     const markdown = await fsp.readFile(path.join(vault, result.report_md_path), 'utf8');
+    expect(markdown).toContain('type: report');
+    expect(markdown).toContain('report_kind: sec_company_tracker');
+    expect(markdown).toContain(`run_id: ${result.run_id}`);
     expect(markdown).toContain('## Lifecycle Summary');
     expect(markdown).toContain('## Company Summaries');
     expect(markdown).toContain('## Cross-Company Theme Matrix');

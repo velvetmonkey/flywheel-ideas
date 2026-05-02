@@ -22,6 +22,7 @@ import {
   renderSecCompanyLedgerMarkdown,
   type SecLedgerReport,
 } from './sec-ledger-report.js';
+import { writeNote } from './write/index.js';
 
 export interface CompanyTrackInput {
   companies: string[];
@@ -278,9 +279,39 @@ export async function writeCompanyReports(
   const base = `company-tracker-${runId}`;
   const markdownPath = `reports/${base}.md`;
   const jsonPath = `reports/${base}.json`;
-  await fsp.writeFile(path.join(vaultPath, markdownPath), renderCompanyMarkdown(data), 'utf8');
+  await writeNote(
+    vaultPath,
+    markdownPath,
+    buildCompanyReportFrontmatter(data),
+    renderCompanyMarkdown(data),
+    { overwrite: true, skipWikilinks: false },
+  );
   await fsp.writeFile(path.join(vaultPath, jsonPath), `${JSON.stringify(data, null, 2)}\n`, 'utf8');
   return { markdownPath, jsonPath };
+}
+
+function buildCompanyReportFrontmatter(data: Record<string, unknown>): Record<string, unknown> {
+  const run = data.run as Record<string, unknown>;
+  return {
+    id: `company-tracker-${run.id}`,
+    type: 'report',
+    report_kind: 'sec_company_tracker',
+    run_id: run.id,
+    companies: parseJsonArray(run.companies_json),
+    forms: parseJsonArray(run.forms_json),
+    years: run.years,
+    source: 'flywheel-ideas',
+  };
+}
+
+function parseJsonArray(value: unknown): unknown[] {
+  if (typeof value !== 'string') return [];
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
 }
 
 function buildReportData(db: IdeasDatabase, runId: string): Record<string, unknown> {

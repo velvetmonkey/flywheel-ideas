@@ -47,6 +47,34 @@ describe('writeNoteViaSubprocess', () => {
     expect(stat.isFile()).toBe(true);
   });
 
+  it('defaults imported notes to skip wikilinks but lets report callers opt in', async () => {
+    const log = path.join(tmp, 'invocations.jsonl');
+
+    await writeNoteViaSubprocess(
+      tmp,
+      'ideas/default.md',
+      { type: 'idea' },
+      'body',
+      mockOpts({ MOCK_FM_SUPPORTS_NOTE: '1', MOCK_FM_INVOKE_LOG: log }),
+    );
+    await writeNoteViaSubprocess(
+      tmp,
+      'reports/report.md',
+      { type: 'report' },
+      'body',
+      { ...mockOpts({ MOCK_FM_SUPPORTS_NOTE: '1', MOCK_FM_INVOKE_LOG: log }), skipWikilinks: false },
+    );
+
+    const invocations = (await fsp.readFile(log, 'utf8'))
+      .trim()
+      .split('\n')
+      .map((line) => JSON.parse(line) as { args: { path: string; skipWikilinks?: boolean } });
+    expect(invocations[0].args.path).toBe('ideas/default.md');
+    expect(invocations[0].args.skipWikilinks).toBe(true);
+    expect(invocations[1].args.path).toBe('reports/report.md');
+    expect(invocations[1].args.skipWikilinks).toBe(false);
+  });
+
   it('returns skipped tool_returned_error when tool reports failure', async () => {
     const outcome = await writeNoteViaSubprocess(
       tmp,
