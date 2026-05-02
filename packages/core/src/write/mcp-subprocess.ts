@@ -74,10 +74,9 @@ export async function writeNoteViaSubprocess(
         content: body,
         frontmatter,
         overwrite: options.overwrite === true,
-        // flywheel-memory's wikilink auto-apply would rewrite our imported
-        // content. Keep the writer semantically identical to direct-fs for
-        // v0.2; wikilink suggestions can ride on top later.
-        skipWikilinks: true,
+        // Imported notes keep direct-fs semantics by default. Generated
+        // reports can opt into Flywheel markup with skipWikilinks:false.
+        skipWikilinks: options.skipWikilinks ?? true,
       },
     });
     return parseNoteCreateResponse(resp, relPath);

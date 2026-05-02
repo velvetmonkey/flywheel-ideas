@@ -30,6 +30,7 @@ export interface SecLedgerReport {
   current_bets: SecCurrentBet[];
   review_queue: SecReviewEvent[];
   accepted_verdicts: SecAcceptedVerdict[];
+  lessons_captured: SecLessonCaptured[];
   needs_review: SecNeedsReviewIdea[];
   markdown: string;
 }
@@ -79,6 +80,25 @@ export interface SecAcceptedVerdict {
   memo_written_at: number | null;
   lesson_status: 'memo_recorded' | 'needs_memo';
   memo_command: string;
+}
+
+export interface SecLessonCaptured {
+  lesson: string;
+  verdict_count: number;
+  companies: string[];
+  themes: string[];
+  assumption_ids: string[];
+  outcome_ids: string[];
+  learned_at: string | null;
+  latest_landed_at: string | null;
+  representative: {
+    company: string;
+    theme: string;
+    outcome_id: string;
+    root_cause: string;
+    what_we_thought: string;
+    what_actually_happened: string;
+  };
 }
 
 export interface SecNeedsReviewIdea {
@@ -195,6 +215,7 @@ export function buildSecCompanyLedgerReport(
   const currentBets = buildCurrentBets(themes, observations, candidates, asOfDate);
   const reviewQueue = buildReviewQueue(run.id, candidates, themes, filings);
   const acceptedVerdicts = buildAcceptedVerdicts(db, run.id);
+  const lessonsCaptured = buildLessonsCaptured(acceptedVerdicts);
   const needsReview = buildNeedsReview(db);
   const companies = uniqueSorted(filings.map((f) => f.ticker ?? f.cik));
   const totalCandidates = candidates.length;
@@ -224,6 +245,7 @@ export function buildSecCompanyLedgerReport(
     current_bets: currentBets,
     review_queue: reviewQueue,
     accepted_verdicts: acceptedVerdicts,
+    lessons_captured: lessonsCaptured,
     needs_review: needsReview,
   };
   return {
@@ -272,6 +294,19 @@ export function renderSecCompanyLedgerMarkdown(
     lines.push(`${s.accepted_failures + s.accepted_validations} accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.`);
   } else {
     lines.push('No accepted verdicts or staged outcomes are currently present for this run.');
+  }
+  lines.push('');
+  lines.push('## Lessons Captured');
+  lines.push('');
+  if (report.lessons_captured.length === 0) {
+    lines.push('No lesson memos recorded yet.');
+  } else {
+    for (const lesson of report.lessons_captured) {
+      lines.push(`- **${lesson.lesson}**`);
+      lines.push(`  - Evidence: ${lesson.verdict_count} accepted failure verdict(s) across ${lesson.companies.join(', ')} / ${lesson.themes.join(', ')}`);
+      lines.push(`  - Representative context: ${lesson.representative.what_actually_happened}`);
+      lines.push(`  - Outcomes: ${lesson.outcome_ids.join(', ')}`);
+    }
   }
   lines.push('');
   lines.push('## Current Bets');
@@ -341,7 +376,7 @@ function operatorNextStep(report: Omit<SecLedgerReport, 'markdown'>): string {
     return `Review the highest-pressure event and apply only if the evidence really refutes the bet: \`${reviewEvent.apply_command}\``;
   }
   if (s.accepted_failures > 0 && s.missing_lessons === 0) {
-    return 'No staged SEC outcomes remain. Use the accepted lessons below when reviewing related decisions or future company bets.';
+    return 'No staged SEC outcomes remain. Use the Lessons Captured section when reviewing related decisions or future company bets.';
   }
   if (s.current_bets > 0) {
     return 'No staged SEC outcomes need review. Keep tracking future filings so current bets accumulate new evidence.';
@@ -378,6 +413,7 @@ function emptySecCompanyReport(requestedRunId?: string): SecLedgerReport {
     current_bets: [],
     review_queue: [],
     accepted_verdicts: [],
+    lessons_captured: [],
     needs_review: [],
   };
   return { ...report, markdown: renderSecCompanyLedgerMarkdown(report) };
@@ -538,6 +574,69 @@ function buildAcceptedVerdicts(db: IdeasDatabase, runId: string): SecAcceptedVer
   });
 }
 
+function buildLessonsCaptured(verdicts: SecAcceptedVerdict[]): SecLessonCaptured[] {
+  const groups = new Map<string, {
+    lesson: string;
+    companies: Set<string>;
+    themes: Set<string>;
+    assumption_ids: Set<string>;
+    outcome_ids: Set<string>;
+    learned_at: string | null;
+    latest_landed_at: string | null;
+    representative: SecLessonCaptured['representative'];
+  }>();
+  for (const verdict of verdicts) {
+    if (verdict.verdict !== 'refuted' || !verdict.memo) continue;
+    const key = normalizeLesson(verdict.memo.lesson);
+    if (!key) continue;
+    const landedAt = verdict.landed_at_iso;
+    const existing = groups.get(key);
+    if (existing) {
+      existing.companies.add(verdict.company);
+      existing.themes.add(verdict.theme);
+      existing.assumption_ids.add(verdict.assumption_id);
+      existing.outcome_ids.add(verdict.outcome_id);
+      existing.learned_at = minNullableIso(existing.learned_at, landedAt);
+      existing.latest_landed_at = maxNullableIso(existing.latest_landed_at, landedAt);
+      continue;
+    }
+    groups.set(key, {
+      lesson: verdict.memo.lesson.trim(),
+      companies: new Set([verdict.company]),
+      themes: new Set([verdict.theme]),
+      assumption_ids: new Set([verdict.assumption_id]),
+      outcome_ids: new Set([verdict.outcome_id]),
+      learned_at: landedAt,
+      latest_landed_at: landedAt,
+      representative: {
+        company: verdict.company,
+        theme: verdict.theme,
+        outcome_id: verdict.outcome_id,
+        root_cause: verdict.memo.root_cause,
+        what_we_thought: verdict.memo.what_we_thought,
+        what_actually_happened: verdict.memo.what_actually_happened,
+      },
+    });
+  }
+  return [...groups.values()]
+    .map((group) => ({
+      lesson: group.lesson,
+      verdict_count: group.outcome_ids.size,
+      companies: [...group.companies].sort(),
+      themes: [...group.themes].sort(),
+      assumption_ids: [...group.assumption_ids].sort(),
+      outcome_ids: [...group.outcome_ids].sort(),
+      learned_at: group.learned_at,
+      latest_landed_at: group.latest_landed_at,
+      representative: group.representative,
+    }))
+    .sort((a, b) =>
+      b.verdict_count - a.verdict_count ||
+      String(b.latest_landed_at ?? '').localeCompare(String(a.latest_landed_at ?? '')) ||
+      a.lesson.localeCompare(b.lesson),
+    );
+}
+
 function parseMemo(raw: string | null): OutcomeMemo | null {
   if (!raw) return null;
   try {
@@ -556,6 +655,22 @@ function parseMemo(raw: string | null): OutcomeMemo | null {
     return null;
   }
   return null;
+}
+
+function normalizeLesson(lesson: string): string {
+  return lesson.trim().replace(/\s+/g, ' ').toLowerCase();
+}
+
+function minNullableIso(a: string | null, b: string | null): string | null {
+  if (!a) return b;
+  if (!b) return a;
+  return a < b ? a : b;
+}
+
+function maxNullableIso(a: string | null, b: string | null): string | null {
+  if (!a) return b;
+  if (!b) return a;
+  return a > b ? a : b;
 }
 
 function buildNeedsReview(db: IdeasDatabase): SecNeedsReviewIdea[] {

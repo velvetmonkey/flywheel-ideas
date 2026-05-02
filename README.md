@@ -197,11 +197,15 @@ reports/company-tracker-<run_id>.md
 reports/company-tracker-<run_id>.json
 ```
 
+The Markdown report is a Flywheel note with `type: report` and `report_kind: sec_company_tracker`, so production writes go through flywheel-memory markup/linking. The JSON report remains a raw machine-readable artifact.
+
 SEC ledger visibility is available through `idea.report({ report_kind: "sec_company" })`.
 
 Decision portfolio exports are written through `idea.export`.
 
 Private idea context is stored in the DB sidecar and is excluded from exports unless `include_private_context: true` is passed.
+
+The May 2026 SEC dogfood generated several local raw report bundles under `/home/ben/sec-dogfood/`. The repo intentionally checks in the reproducible driver and the lifecycle readout, not every generated vault/report copy.
 
 ## Evidence And Limits
 

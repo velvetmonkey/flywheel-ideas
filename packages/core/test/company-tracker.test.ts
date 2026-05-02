@@ -55,6 +55,9 @@ describe('company tracker', () => {
     await expect(fsp.stat(path.join(vault, result.report_json_path))).resolves.toBeDefined();
 
     const markdown = await fsp.readFile(path.join(vault, result.report_md_path), 'utf8');
+    expect(markdown).toContain('type: report');
+    expect(markdown).toContain('report_kind: sec_company_tracker');
+    expect(markdown).toContain(`run_id: ${result.run_id}`);
     expect(markdown).toContain('## Lifecycle Summary');
     expect(markdown).toContain('## Company Summaries');
     expect(markdown).toContain('## Cross-Company Theme Matrix');
@@ -191,6 +194,7 @@ describe('company tracker', () => {
         };
         current_bets: Array<{ assumption_id: string }>;
         review_queue: unknown[];
+        lessons_captured: unknown[];
         accepted_verdicts: Array<{
           verdict: string;
           outcome_id: string;
@@ -208,6 +212,7 @@ describe('company tracker', () => {
     expect(data.sec_ledger_report.executive_summary.staged_candidates).toBe(0);
     expect(data.sec_ledger_report.executive_summary.triage_completion.percent).toBe(100);
     expect(data.sec_ledger_report.review_queue).toHaveLength(0);
+    expect(data.sec_ledger_report.lessons_captured).toHaveLength(0);
     expect(data.sec_ledger_report.accepted_verdicts[0].verdict).toBe('refuted');
     expect(data.sec_ledger_report.accepted_verdicts[0].outcome_id).toMatch(/^out-/);
     expect(data.sec_ledger_report.accepted_verdicts[0].memo).toBeNull();
@@ -217,6 +222,8 @@ describe('company tracker', () => {
     expect(data.sec_ledger_report.markdown).toContain(`- Lessons: 0 recorded memo(s), ${result.staged_outcomes} missing memo(s).`);
     expect(data.sec_ledger_report.markdown).toContain('Write the missing lesson memo');
     expect(data.sec_ledger_report.markdown).toContain(`but ${result.staged_outcomes} still need lesson memos`);
+    expect(data.sec_ledger_report.markdown).toContain('## Lessons Captured');
+    expect(data.sec_ledger_report.markdown).toContain('No lesson memos recorded yet.');
     const currentBetIds = new Set(data.sec_ledger_report.current_bets.map((bet) => bet.assumption_id));
     for (const verdict of data.sec_ledger_report.accepted_verdicts) {
       expect(currentBetIds.has(verdict.assumption_id)).toBe(false);
@@ -228,24 +235,51 @@ describe('company tracker', () => {
       what_actually_happened: 'The filing disclosed a charge tied to diminished H20 demand.',
       lesson: 'Export controls can convert demand risk into inventory write-down risk.',
     });
+    if (data.sec_ledger_report.accepted_verdicts[1]) {
+      recordOutcomeMemo(db, data.sec_ledger_report.accepted_verdicts[1].outcome_id, {
+        root_cause: 'Repeated H20 export restrictions reduced usable inventory value.',
+        what_we_thought: 'Demand and channel assumptions would remain open.',
+        what_actually_happened: 'Another filing disclosed the same charge pattern tied to diminished H20 demand.',
+        lesson: '  Export controls can convert demand risk into inventory write-down risk.  ',
+      });
+    }
     const withMemo = readCompanyRun(db, result.run_id) as {
       sec_ledger_report: {
         markdown: string;
         executive_summary: { accepted_lessons: number; missing_lessons: number };
+        lessons_captured: Array<{
+          lesson: string;
+          verdict_count: number;
+          companies: string[];
+          themes: string[];
+          outcome_ids: string[];
+          representative: { what_actually_happened: string };
+        }>;
         accepted_verdicts: Array<{ memo: { lesson: string } | null }>;
       };
     };
-    expect(withMemo.sec_ledger_report.executive_summary.accepted_lessons).toBe(1);
-    expect(withMemo.sec_ledger_report.executive_summary.missing_lessons).toBe(result.staged_outcomes - 1);
+    const expectedMemoCount = data.sec_ledger_report.accepted_verdicts[1] ? 2 : 1;
+    expect(withMemo.sec_ledger_report.executive_summary.accepted_lessons).toBe(expectedMemoCount);
+    expect(withMemo.sec_ledger_report.executive_summary.missing_lessons).toBe(result.staged_outcomes - expectedMemoCount);
     expect(withMemo.sec_ledger_report.accepted_verdicts[0].memo?.lesson).toBe('Export controls can convert demand risk into inventory write-down risk.');
-    expect(withMemo.sec_ledger_report.markdown).toContain(`- Lessons: 1 recorded memo(s), ${result.staged_outcomes - 1} missing memo(s).`);
+    expect(withMemo.sec_ledger_report.lessons_captured).toHaveLength(1);
+    expect(withMemo.sec_ledger_report.lessons_captured[0].lesson).toBe('Export controls can convert demand risk into inventory write-down risk.');
+    expect(withMemo.sec_ledger_report.lessons_captured[0].verdict_count).toBe(expectedMemoCount);
+    expect(withMemo.sec_ledger_report.lessons_captured[0].companies).toContain('NVDA');
+    expect(withMemo.sec_ledger_report.lessons_captured[0].themes.length).toBeGreaterThan(0);
+    expect(withMemo.sec_ledger_report.lessons_captured[0].outcome_ids).toHaveLength(expectedMemoCount);
+    expect(withMemo.sec_ledger_report.lessons_captured[0].representative.what_actually_happened).toContain('diminished H20 demand');
+    expect(withMemo.sec_ledger_report.markdown).toContain(`- Lessons: ${expectedMemoCount} recorded memo(s), ${result.staged_outcomes - expectedMemoCount} missing memo(s).`);
+    expect(withMemo.sec_ledger_report.markdown).toContain('## Lessons Captured');
     expect(withMemo.sec_ledger_report.markdown).toContain('Lesson: Export controls can convert demand risk into inventory write-down risk.');
+    expect(withMemo.sec_ledger_report.markdown).toContain(`Evidence: ${expectedMemoCount} accepted failure verdict(s)`);
   });
 
   it('returns a clear empty SEC ledger report before any company run', () => {
     const report = buildSecCompanyLedgerReport(db);
     expect(report.run).toBeNull();
     expect(report.current_bets).toHaveLength(0);
+    expect(report.lessons_captured).toHaveLength(0);
     expect(report.markdown).toContain('No SEC company tracker run exists yet');
     expect(report.markdown).toContain('Run `company.track');
   });

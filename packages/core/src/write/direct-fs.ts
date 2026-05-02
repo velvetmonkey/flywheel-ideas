@@ -34,6 +34,11 @@ export class WriteNotePathError extends Error {
 export interface WriteNoteOptions {
   /** Overwrite existing file. Defaults to false (throws if file exists). */
   overwrite?: boolean;
+  /**
+   * Production mcp-subprocess hint: when false, flywheel-memory may apply
+   * wikilinks/suggestions during note.create. Direct-fs ignores this.
+   */
+  skipWikilinks?: boolean;
 }
 
 export type WritePathLabel = 'direct-fs' | 'mcp-subprocess' | 'vault-core';

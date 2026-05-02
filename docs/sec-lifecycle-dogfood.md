@@ -8,6 +8,8 @@ The checked-in reproduction driver is [`scripts/sec-lifecycle-dogfood.mjs`](../s
 
 Original local artifact path from this run: `/home/ben/sec-dogfood/flywheel-sec-lifecycle-2026-05-01T21-51-52-671Z/`.
 
+Raw generated reports from the exploratory full, strict, and lifecycle SEC runs are stored locally under `/home/ben/sec-dogfood/`. The checked-in material is the durable evidence summary plus the reproduction driver; generated vault copies and report JSON/Markdown bundles are intentionally left out of git.
+
 ## Input Run
 
 - Companies: AAPL, MSFT, NVDA

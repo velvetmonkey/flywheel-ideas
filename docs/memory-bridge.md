@@ -13,13 +13,13 @@ debugging:
 
 ### 1. Custom-category registration
 
-flywheel-ideas writes notes with `type: ideas_note`, `ideas_assumption`,
-`ideas_council_session`, and `ideas_outcome` into the same vault that
-flywheel-memory indexes. Without registration, those four kinds are unknown
+flywheel-ideas writes notes with `type: idea`, `assumption`,
+`council_view`, `outcome`, and `report` into the same vault that
+flywheel-memory indexes. Without registration, those kinds are unknown
 entity types from flywheel-memory's POV — they don't get type-boost in the
 wikilink scorer and they're invisible to the citation graph.
 
-The bridge fixes this by registering the four kinds as custom categories in
+The bridge fixes this by registering those kinds as custom categories in
 flywheel-memory's `custom_categories` config. This is the original M14 purpose
 of the bridge.
 
@@ -30,7 +30,7 @@ of the bridge.
 import-dedup queries) similarly route through flywheel-memory's `search` /
 `read` tools.
 
-The practical effect: ideas / assumptions / outcomes / council artifacts
+The practical effect: ideas / assumptions / outcomes / council artifacts / reports
 are indexed instantly when they land, instead of waiting for flywheel-memory's
 watcher cadence. Every flywheel-ideas tool response surfaces `write_path`
 (`mcp-subprocess` in production).
@@ -45,10 +45,11 @@ install hint. Loud failure beats silent vault divergence.
 
 | Category               | type_boost | Why |
 |------------------------|-----------:|-----|
-| `ideas_note`           | 2          | The primary citation target — the actual idea note. Higher boost so wikilinks pointing at ideas score above generic notes. |
-| `ideas_assumption`     | 1          | Y-statements + signposts. |
-| `ideas_council_session`| 1          | Multi-model dissent records. |
-| `ideas_outcome`        | 1          | Refutation vectors. |
+| `idea`                 | 2          | The primary citation target — the actual idea note. Higher boost so wikilinks pointing at ideas score above generic notes. |
+| `assumption`           | 1          | Y-statements + signposts. |
+| `council_view`         | 1          | Multi-model dissent records. |
+| `outcome`              | 1          | Refutation vectors. |
+| `report`               | 1          | Generated visibility surfaces, including SEC company tracker reports. |
 
 These match the `type:` frontmatter values flywheel-ideas already writes.
 

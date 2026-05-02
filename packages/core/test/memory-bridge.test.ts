@@ -107,7 +107,7 @@ describe('registerCustomCategories — merge preservation (gemini CRITICAL)', ()
     expect(setCall.args.mode).toBe('set');
     expect(setCall.args.key).toBe('custom_categories');
     expect(Object.keys(setCall.args.value).sort()).toEqual(
-      ['assumption', 'council_view', 'idea', 'outcome', 'paper', 'recipe'],
+      ['assumption', 'council_view', 'idea', 'outcome', 'paper', 'recipe', 'report'],
     );
   });
 

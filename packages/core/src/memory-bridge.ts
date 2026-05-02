@@ -5,7 +5,7 @@
  * Why this exists: flywheel-ideas writes notes with `type: idea` etc. into
  * the same vault flywheel-memory indexes. Without registering them as custom
  * categories, flywheel-memory's wikilink scorer treats them as unknown noise.
- * Registering them lets the four note kinds participate in the graph.
+ * Registering them lets the note kinds participate in the graph.
  *
  * Behaviour:
  *  - Spawn `flywheel-memory` as an MCP subprocess via the SDK.
@@ -52,6 +52,7 @@ import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js'
  *   - `assumption`    (packages/core/src/assumptions.ts:195)
  *   - `outcome`       (packages/core/src/outcome.ts:229)
  *   - `council_view`  (packages/core/src/council.ts:666)
+ *   - `report`        (packages/core/src/company.ts:294)
  *
  * Prior alpha.x shipped names prefixed with `ideas_` (ideas_note,
  * ideas_assumption, ideas_council_session, ideas_outcome). None of those
@@ -67,6 +68,7 @@ export const IDEAS_CATEGORIES: Record<string, { type_boost: number }> = {
   assumption: { type_boost: 1 },
   council_view: { type_boost: 1 },
   outcome: { type_boost: 1 },
+  report: { type_boost: 1 },
 };
 
 export type MemoryBridgeSkipReason =
@@ -306,4 +308,3 @@ function resolveTimeout(opt?: number): number {
   }
   return DEFAULT_TIMEOUT_MS;
 }
-
