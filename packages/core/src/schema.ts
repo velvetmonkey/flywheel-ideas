@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 13;
+export const SCHEMA_VERSION = 14;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -541,4 +541,38 @@ CREATE INDEX IF NOT EXISTS idx_ideas_company_outcomes_run
 export const SCHEMA_SQL_V13 = `
 ALTER TABLE ideas_company_runs ADD COLUMN thesis_report_md_path TEXT;
 ALTER TABLE ideas_company_runs ADD COLUMN thesis_report_json_path TEXT;
+`;
+
+/**
+ * v14 migration - per-company run members for large sector bundles.
+ *
+ * Large SEC runs need resumability and per-company status. The member table is
+ * additive and keeps sector metadata out of the historical run JSON blobs.
+ */
+export const SCHEMA_SQL_V14 = `
+ALTER TABLE ideas_company_themes ADD COLUMN mechanism_key TEXT;
+ALTER TABLE ideas_company_themes ADD COLUMN mechanism_title TEXT;
+
+CREATE TABLE IF NOT EXISTS ideas_company_run_members (
+  id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES ideas_company_runs(id) ON DELETE CASCADE,
+  company TEXT NOT NULL,
+  sector TEXT,
+  display_name TEXT,
+  source_rank INTEGER,
+  source_weight TEXT,
+  source TEXT,
+  source_id TEXT REFERENCES ideas_import_sources(id) ON DELETE SET NULL,
+  status TEXT NOT NULL DEFAULT 'pending',
+  promoted_ideas INTEGER NOT NULL DEFAULT 0,
+  promoted_assumptions INTEGER NOT NULL DEFAULT 0,
+  staged_outcomes INTEGER NOT NULL DEFAULT 0,
+  error TEXT,
+  started_at INTEGER,
+  completed_at INTEGER,
+  UNIQUE(run_id, company)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_company_run_members_run
+  ON ideas_company_run_members(run_id, status, company);
 `;

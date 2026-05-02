@@ -71,6 +71,8 @@ interface ThemeHit {
   realized: boolean;
   confidence: number;
   rationale: string;
+  mechanism_key: string;
+  mechanism_title: string;
 }
 
 export class SecCompanyAdapter implements ImportAdapter {
@@ -86,8 +88,8 @@ export class SecCompanyAdapter implements ImportAdapter {
 
     if (!ctx.network) throw new ImportNetworkGatedError(this.name);
 
-    const identity = await resolveCompanyIdentity(source);
-    const filings = await fetchCompanyFilings(identity, config);
+    const identity = await resolveCompanyIdentity(source, ctx.cacheDir);
+    const filings = await fetchCompanyFilings(identity, config, ctx.cacheDir);
     for (const filing of filings) {
       yield* emitCandidatesForFiling(filing);
     }
@@ -136,11 +138,13 @@ async function* scanFixtureDir(
 async function fetchCompanyFilings(
   identity: CompanyIdentity,
   config: SecCompanyConfig,
+  cacheDir: string,
 ): Promise<FilingRecord[]> {
   const userAgent = resolveUserAgent();
   const submissions = await fetchJson<SecSubmission>(
     `${SEC_SUBMISSIONS}/CIK${identity.cik}.json`,
     userAgent,
+    cacheDir,
   );
   const batches: SecRecentFilings[] = [];
   if (submissions.filings?.recent) batches.push(submissions.filings.recent);
@@ -148,6 +152,7 @@ async function fetchCompanyFilings(
     const older = await fetchJson<SecSubmissionFile>(
       `${SEC_SUBMISSIONS}/${file.name}`,
       userAgent,
+      cacheDir,
     );
     batches.push(older);
   }
@@ -163,7 +168,7 @@ async function fetchCompanyFilings(
       const accessionNo = batch.accessionNumber[i];
       const primaryDocument = batch.primaryDocument[i];
       const filingUrl = filingDocumentUrl(identity.cik, accessionNo, primaryDocument);
-      const text = await fetchText(filingUrl, userAgent);
+      const text = await fetchText(filingUrl, userAgent, cacheDir);
       records.push({
         cik: identity.cik,
         ticker: identity.ticker,
@@ -218,6 +223,8 @@ async function* emitCandidatesForFiling(
           section_key: section.key,
           theme_key: theme.key,
           theme_title: theme.title,
+          mechanism_key: theme.mechanism_key,
+          mechanism_title: theme.mechanism_title,
           excerpt_hash: hashText(theme.excerpt),
           load_bearing: true,
           structured: {
@@ -241,6 +248,8 @@ async function* emitCandidatesForFiling(
             section_key: section.key,
             theme_key: theme.key,
             theme_title: theme.title,
+            mechanism_key: theme.mechanism_key,
+            mechanism_title: theme.mechanism_title,
             excerpt_hash: hashText(theme.excerpt),
             rationale: theme.rationale,
             explicit_realization: true,
@@ -366,6 +375,7 @@ export function extractThemeHits(text: string): ThemeHit[] {
         const current = hits.get(theme.key);
         if (current?.realized) continue;
         if (current && !realized) continue;
+        const mechanism = classifyMechanism(excerpt.toLowerCase());
         hits.set(theme.key, {
           ...theme,
           excerpt,
@@ -374,6 +384,8 @@ export function extractThemeHits(text: string): ThemeHit[] {
           rationale: realized
             ? 'Filing language states this risk had an actual effect on operations, results, costs, or supply.'
             : 'Risk theme disclosed without strict realized-outcome language.',
+          mechanism_key: mechanism.key,
+          mechanism_title: mechanism.title,
         });
       }
     }
@@ -396,8 +408,28 @@ const THEME_CATALOG: Array<Pick<ThemeHit, 'key' | 'title'> & { pattern: RegExp }
   { key: 'macro-fx', title: 'Macro and foreign exchange', pattern: /(macroeconomic|inflation|recession|foreign currency|currency exchange|fx|interest rates|economic conditions)/ },
 ];
 
+const MECHANISM_CATALOG: Array<{ key: string; title: string; pattern: RegExp }> = [
+  { key: 'export-controls-sanctions', title: 'Export controls or sanctions', pattern: /(export control|export license|sanction|restricted market|trade restriction)/ },
+  { key: 'single-supplier-manufacturing', title: 'Single supplier or manufacturing concentration', pattern: /(single supplier|sole supplier|limited number of suppliers|foundry|fab|contract manufacturer|manufacturing partner|assembly)/ },
+  { key: 'commodity-input-cost', title: 'Commodity or input cost pressure', pattern: /(commodity|raw material|input cost|fuel cost|energy cost|freight cost|transportation cost|inflationary pressure)/ },
+  { key: 'consumer-demand-shock', title: 'Consumer or end-market demand shock', pattern: /(consumer demand|customer demand|end market|traffic|same-store|unit sales|sales volume|seasonality)/ },
+  { key: 'regulatory-investigation-litigation', title: 'Regulatory investigation or litigation', pattern: /(investigation|litigation|lawsuit|antitrust|regulatory proceeding|government inquiry|fine|penalty)/ },
+  { key: 'data-breach-outage', title: 'Data breach, outage, or service disruption', pattern: /(data breach|security incident|ransomware|outage|service disruption|unauthorized access|systems failure)/ },
+  { key: 'capacity-investment-opex', title: 'Capacity investment and operating expense drag', pattern: /(capacity|capital expenditure|capex|operating expense|compute|data center|infrastructure investment|inventory charge)/ },
+  { key: 'interest-credit-liquidity', title: 'Interest, credit, or liquidity stress', pattern: /(interest rate|credit market|liquidity|debt|financing|counterparty|capital market)/ },
+  { key: 'geographic-concentration', title: 'Geographic concentration or local disruption', pattern: /(china|taiwan|russia|ukraine|middle east|europe|international|foreign|geographic concentration)/ },
+  { key: 'platform-customer-concentration', title: 'Platform or customer concentration', pattern: /(major customer|customer concentration|platform|app store|channel partner|strategic partner|oem)/ },
+];
+
 function classifyThemes(lower: string): Array<Pick<ThemeHit, 'key' | 'title'>> {
   return THEME_CATALOG.filter((theme) => theme.pattern.test(lower));
+}
+
+function classifyMechanism(lower: string): { key: string; title: string } {
+  return MECHANISM_CATALOG.find((mechanism) => mechanism.pattern.test(lower)) ?? {
+    key: 'generic-risk-disclosure',
+    title: 'Generic risk disclosure',
+  };
 }
 
 function isExplicitRealization(lower: string): boolean {
@@ -489,12 +521,13 @@ function mergeConfig(
   };
 }
 
-async function resolveCompanyIdentity(source: string): Promise<CompanyIdentity> {
+async function resolveCompanyIdentity(source: string, cacheDir: string): Promise<CompanyIdentity> {
   if (source.startsWith('cik:')) return { cik: padCik(source.slice(4)) };
   const ticker = source.startsWith('ticker:') ? source.slice(7).toUpperCase() : source.toUpperCase();
   const data = await fetchJson<Record<string, { cik_str: number; ticker: string; title: string }>>(
     TICKER_URL,
     resolveUserAgent(),
+    cacheDir,
   );
   const found = Object.values(data).find((row) => row.ticker.toUpperCase() === ticker);
   if (!found) throw new ImportAdapterError(`ticker not found: ${ticker}`, SEC_COMPANY_NAME, source);
@@ -505,18 +538,44 @@ function filingDocumentUrl(cik: string, accessionNo: string, doc: string): strin
   return `${SEC_ARCHIVES}/${Number(cik)}/${accessionNo.replace(/-/g, '')}/${doc}`;
 }
 
-async function fetchJson<T>(url: string, userAgent: string): Promise<T> {
+async function fetchJson<T>(url: string, userAgent: string, cacheDir?: string): Promise<T> {
+  const cached = cacheDir ? await readCache(cacheDir, 'json', url) : null;
+  if (cached) return JSON.parse(cached) as T;
   await throttleSecRequest();
   const res = await fetch(url, { headers: { 'User-Agent': userAgent, Accept: 'application/json' } });
   if (!res.ok) throw new Error(`SEC fetch failed ${res.status}: ${url}`);
-  return (await res.json()) as T;
+  const text = await res.text();
+  if (cacheDir) await writeCache(cacheDir, 'json', url, text);
+  return JSON.parse(text) as T;
 }
 
-async function fetchText(url: string, userAgent: string): Promise<string> {
+async function fetchText(url: string, userAgent: string, cacheDir?: string): Promise<string> {
+  const cached = cacheDir ? await readCache(cacheDir, 'text', url) : null;
+  if (cached) return cached;
   await throttleSecRequest();
   const res = await fetch(url, { headers: { 'User-Agent': userAgent, Accept: 'text/html,text/plain' } });
   if (!res.ok) throw new Error(`SEC filing fetch failed ${res.status}: ${url}`);
-  return res.text();
+  const text = await res.text();
+  if (cacheDir) await writeCache(cacheDir, 'text', url, text);
+  return text;
+}
+
+async function readCache(cacheDir: string, kind: 'json' | 'text', url: string): Promise<string | null> {
+  try {
+    return await fsp.readFile(cachePath(cacheDir, kind, url), 'utf8');
+  } catch {
+    return null;
+  }
+}
+
+async function writeCache(cacheDir: string, kind: 'json' | 'text', url: string, text: string): Promise<void> {
+  const target = cachePath(cacheDir, kind, url);
+  await fsp.mkdir(path.dirname(target), { recursive: true });
+  await fsp.writeFile(target, text, 'utf8');
+}
+
+function cachePath(cacheDir: string, kind: 'json' | 'text', url: string): string {
+  return path.join(cacheDir, 'sec-company', kind, `${hashText(url)}.${kind === 'json' ? 'json' : 'txt'}`);
 }
 
 async function throttleSecRequest(): Promise<void> {

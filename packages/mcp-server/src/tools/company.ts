@@ -26,13 +26,21 @@ export function registerCompanyTool(
     ].join(''),
     {
       action: z.enum(['track', 'read', 'report', 'apply_outcomes']),
-      companies: z.array(z.string()).max(3).optional().describe('[track] Up to 3 tickers or cik:########## sources'),
+      companies: z.array(z.string()).max(125).optional().describe('[track] Up to 125 tickers or cik:########## sources'),
       years: z.number().int().min(1).max(20).optional().describe('[track] Backfill window; default 10'),
       forms: z.array(z.enum(['10-K', '10-Q'])).optional().describe('[track] Filing forms; default 10-K + 10-Q'),
       confirm: z.boolean().optional().describe('[track|apply_outcomes] Required true for write-side actions'),
       fixture_dir: z.string().optional().describe('[track] Test/dev fixture directory for SEC filings'),
       limit_filings: z.number().int().min(1).optional().describe('[track] Dev/test cap on filings per company'),
-      run_id: z.string().optional().describe('[read|report|apply_outcomes] Company tracker run id'),
+      max_companies: z.number().int().min(1).max(125).optional().describe('[track] Safety cap override; default 125'),
+      company_metadata: z.record(z.object({
+        sector: z.string().optional(),
+        display_name: z.string().optional(),
+        source_rank: z.number().int().optional(),
+        source_weight: z.string().optional(),
+        source: z.string().optional(),
+      })).optional().describe('[track] Optional per-company sector/display metadata'),
+      run_id: z.string().optional().describe('[track|read|report|apply_outcomes] Company tracker run id; track resumes when supplied'),
       company: z.string().optional().describe('[report] Optional company filter; reserved for v1.1'),
       report_kind: z.enum(['tracker', 'thesis']).optional().describe('[report] tracker returns detailed audit data; thesis returns personal-investor decision support. Default tracker'),
       format: z.enum(['markdown', 'json', 'both']).optional().describe('[report] Report format; default both'),
@@ -71,6 +79,15 @@ async function handleTrack(
     confirm?: boolean;
     fixture_dir?: string;
     limit_filings?: number;
+    max_companies?: number;
+    company_metadata?: Record<string, {
+      sector?: string;
+      display_name?: string;
+      source_rank?: number;
+      source_weight?: string;
+      source?: string;
+    }>;
+    run_id?: string;
   },
 ) {
   if (!args.companies || args.companies.length === 0) {
@@ -78,7 +95,7 @@ async function handleTrack(
       {
         action: 'company.track',
         example: 'company.track({ companies: ["AAPL", "MSFT", "NVDA"], years: 10, confirm: true })',
-        why: 'Provide up to three tickers or CIK sources.',
+        why: 'Provide tickers or CIK sources.',
       },
     ]);
   }
@@ -92,12 +109,15 @@ async function handleTrack(
     ]);
   }
   const result = await trackCompanies(db, vaultPath, {
+    run_id: args.run_id,
     companies: args.companies,
     years: args.years,
     forms: args.forms,
     confirm: true,
     fixture_dir: args.fixture_dir,
     limit_filings: args.limit_filings,
+    max_companies: args.max_companies,
+    company_metadata: args.company_metadata,
   });
   const next_steps: NextStep[] = [
     {
