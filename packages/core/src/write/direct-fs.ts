@@ -39,6 +39,10 @@ export interface WriteNoteOptions {
    * wikilinks/suggestions during note.create. Direct-fs ignores this.
    */
   skipWikilinks?: boolean;
+  /** Production mcp-subprocess hint: ask flywheel-memory to append related outgoing link suggestions. */
+  suggestOutgoingLinks?: boolean;
+  /** Production mcp-subprocess hint: cap outgoing link suggestions when enabled. */
+  maxSuggestions?: number;
 }
 
 export type WritePathLabel = 'direct-fs' | 'mcp-subprocess' | 'vault-core';

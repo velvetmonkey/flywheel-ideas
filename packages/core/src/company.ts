@@ -276,18 +276,24 @@ export async function writeCompanyReports(
   const data = buildReportData(db, runId);
   const dir = path.join(vaultPath, 'reports');
   await fsp.mkdir(dir, { recursive: true });
-  const base = `company-tracker-${runId}`;
+  const base = `company-tracker-${runId.toLowerCase()}`;
   const markdownPath = `reports/${base}.md`;
   const jsonPath = `reports/${base}.json`;
-  await writeNote(
+  const markdownResult = await writeNote(
     vaultPath,
     markdownPath,
     buildCompanyReportFrontmatter(data),
     renderCompanyMarkdown(data),
-    { overwrite: true, skipWikilinks: false },
+    { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 8 },
   );
+  const actualMarkdownPath = markdownResult.vault_path;
   await fsp.writeFile(path.join(vaultPath, jsonPath), `${JSON.stringify(data, null, 2)}\n`, 'utf8');
-  return { markdownPath, jsonPath };
+  db.prepare(
+    `UPDATE ideas_company_runs
+        SET report_md_path = ?, report_json_path = ?
+      WHERE id = ?`,
+  ).run(actualMarkdownPath, jsonPath, runId);
+  return { markdownPath: actualMarkdownPath, jsonPath };
 }
 
 function buildCompanyReportFrontmatter(data: Record<string, unknown>): Record<string, unknown> {
