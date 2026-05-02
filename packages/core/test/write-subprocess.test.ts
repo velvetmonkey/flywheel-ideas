@@ -62,17 +62,48 @@ describe('writeNoteViaSubprocess', () => {
       'reports/report.md',
       { type: 'report' },
       'body',
-      { ...mockOpts({ MOCK_FM_SUPPORTS_NOTE: '1', MOCK_FM_INVOKE_LOG: log }), skipWikilinks: false },
+      {
+        ...mockOpts({ MOCK_FM_SUPPORTS_NOTE: '1', MOCK_FM_INVOKE_LOG: log }),
+        skipWikilinks: false,
+        suggestOutgoingLinks: true,
+        maxSuggestions: 8,
+      },
     );
 
     const invocations = (await fsp.readFile(log, 'utf8'))
       .trim()
       .split('\n')
-      .map((line) => JSON.parse(line) as { args: { path: string; skipWikilinks?: boolean } });
+      .map((line) => JSON.parse(line) as {
+        args: {
+          path: string;
+          skipWikilinks?: boolean;
+          suggestOutgoingLinks?: boolean;
+          maxSuggestions?: number;
+        };
+      });
     expect(invocations[0].args.path).toBe('ideas/default.md');
     expect(invocations[0].args.skipWikilinks).toBe(true);
+    expect(invocations[0].args.suggestOutgoingLinks).toBe(false);
     expect(invocations[1].args.path).toBe('reports/report.md');
     expect(invocations[1].args.skipWikilinks).toBe(false);
+    expect(invocations[1].args.suggestOutgoingLinks).toBe(true);
+    expect(invocations[1].args.maxSuggestions).toBe(8);
+  });
+
+  it('returns the actual path reported by flywheel-memory', async () => {
+    const outcome = await writeNoteViaSubprocess(
+      tmp,
+      'reports/Company-Tracker-run-AbC.md',
+      { type: 'report' },
+      'body',
+      mockOpts({
+        MOCK_FM_SUPPORTS_NOTE: '1',
+        MOCK_FM_RETURN_PATH: 'reports/company-tracker-run-abc.md',
+      }),
+    );
+    expect(outcome.status).toBe('ok');
+    if (outcome.status !== 'ok') return;
+    expect(outcome.value.vault_path).toBe('reports/company-tracker-run-abc.md');
   });
 
   it('returns skipped tool_returned_error when tool reports failure', async () => {

@@ -77,6 +77,8 @@ export async function writeNoteViaSubprocess(
         // Imported notes keep direct-fs semantics by default. Generated
         // reports can opt into Flywheel markup with skipWikilinks:false.
         skipWikilinks: options.skipWikilinks ?? true,
+        suggestOutgoingLinks: options.suggestOutgoingLinks === true,
+        maxSuggestions: options.maxSuggestions,
       },
     });
     return parseNoteCreateResponse(resp, relPath);
@@ -186,6 +188,9 @@ function parseNoteCreateResponse(
         throw new SubprocessToolError(
           `note.create reported failure: ${JSON.stringify(parsed)}`,
         );
+      }
+      if (typeof parsed.path === 'string' && parsed.path.length > 0) {
+        return { vault_path: parsed.path, write_path: 'mcp-subprocess' };
       }
     } catch (err) {
       if (err instanceof SubprocessToolError) throw err;

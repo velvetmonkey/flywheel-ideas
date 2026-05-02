@@ -128,7 +128,7 @@ if (process.env.MOCK_FM_SUPPORTS_NOTE === '1') {
       }
 
       return {
-        content: [{ type: 'text', text: JSON.stringify({ success: true, path: args.path }) }],
+        content: [{ type: 'text', text: JSON.stringify({ success: true, path: process.env.MOCK_FM_RETURN_PATH ?? args.path }) }],
       };
     },
   );

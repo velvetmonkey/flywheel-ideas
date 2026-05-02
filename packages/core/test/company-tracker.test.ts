@@ -50,6 +50,7 @@ describe('company tracker', () => {
     expect(result.promoted_ideas).toBeGreaterThanOrEqual(9);
     expect(result.promoted_assumptions).toBeGreaterThanOrEqual(12);
     expect(result.staged_outcomes).toBeGreaterThanOrEqual(1);
+    expect(result.report_md_path).toBe(`reports/company-tracker-${result.run_id.toLowerCase()}.md`);
 
     await expect(fsp.stat(path.join(vault, result.report_md_path))).resolves.toBeDefined();
     await expect(fsp.stat(path.join(vault, result.report_json_path))).resolves.toBeDefined();

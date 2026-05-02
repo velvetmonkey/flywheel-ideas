@@ -4,10 +4,13 @@ import * as path from 'node:path';
 import {
   applyCompanyOutcomes,
   buildSecCompanyLedgerReport,
+  getProbeOutcome,
   openIdeasDb,
+  probeWritePath,
   recordOutcomeMemo,
   renderSecCompanyLedgerMarkdown,
   runMigrations,
+  writeCompanyReports,
 } from '../packages/core/dist/index.js';
 
 const DEFAULT_GROUPS = ['og-001', 'og-002', 'og-006'];
@@ -32,6 +35,7 @@ await fsp.cp(sourceVault, workVault, { recursive: true, force: true });
 
 const db = openIdeasDb(workVault);
 runMigrations(db);
+await probeWritePath(workVault);
 
 const before = buildSecCompanyLedgerReport(db, { run_id: args.runId });
 await fsp.writeFile(path.join(outDir, 'before-sec-ledger.md'), before.markdown);
@@ -57,6 +61,7 @@ for (const group of selectedGroups) {
     recordOutcomeMemo(db, row.outcome_id, memoFor(group, candidate, row.assumption_id));
   }
 }
+const refreshedReports = await writeCompanyReports(db, workVault, args.runId);
 
 const after = buildSecCompanyLedgerReport(db, { run_id: args.runId });
 await fsp.writeFile(path.join(outDir, 'after-sec-ledger.md'), after.markdown);
@@ -65,7 +70,9 @@ await fsp.writeFile(path.join(outDir, 'lifecycle-summary.md'), renderLifecycleSu
 await fsp.writeFile(path.join(outDir, 'summary.json'), JSON.stringify({
   source_vault: sourceVault,
   work_vault: workVault,
+  write_probe: getProbeOutcome(),
   run_id: args.runId,
+  refreshed_reports: refreshedReports,
   selected_groups: selectedGroupIds,
   before: before.executive_summary,
   after: after.executive_summary,
