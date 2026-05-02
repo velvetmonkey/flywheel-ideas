@@ -4,6 +4,7 @@ import {
   applyCompanyOutcomes,
   CompanyInputError,
   readCompanyRun,
+  readCompanyThesisReport,
   trackCompanies,
   type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
@@ -33,6 +34,7 @@ export function registerCompanyTool(
       limit_filings: z.number().int().min(1).optional().describe('[track] Dev/test cap on filings per company'),
       run_id: z.string().optional().describe('[read|report|apply_outcomes] Company tracker run id'),
       company: z.string().optional().describe('[report] Optional company filter; reserved for v1.1'),
+      report_kind: z.enum(['tracker', 'thesis']).optional().describe('[report] tracker returns detailed audit data; thesis returns personal-investor decision support. Default tracker'),
       format: z.enum(['markdown', 'json', 'both']).optional().describe('[report] Report format; default both'),
       outcome_candidate_ids: z.array(z.string()).optional().describe('[apply_outcomes] Specific staged candidates to apply'),
       min_confidence: z.number().min(0).max(1).optional().describe('[apply_outcomes] Default 0.9'),
@@ -100,8 +102,8 @@ async function handleTrack(
   const next_steps: NextStep[] = [
     {
       action: 'company.report',
-      example: `company.report({ run_id: "${result.run_id}", format: "both" })`,
-      why: 'Read the Markdown/JSON report paths and structured data.',
+      example: `company.report({ run_id: "${result.run_id}", report_kind: "thesis", format: "both" })`,
+      why: 'Read the personal-investor thesis report first.',
     },
   ];
   if (result.staged_outcomes > 0) {
@@ -129,16 +131,21 @@ function handleRead(db: IdeasDatabase, args: { run_id?: string }) {
   });
 }
 
-function handleReport(db: IdeasDatabase, args: { run_id?: string; format?: string }) {
+function handleReport(db: IdeasDatabase, args: { run_id?: string; report_kind?: string; format?: string }) {
   if (!args.run_id) {
     return mcpError('company.report requires `run_id`', [
       { action: 'company.read', example: 'company.read({})', why: 'Find the latest run id.' },
     ]);
   }
+  const reportKind = args.report_kind ?? 'tracker';
+  const data = reportKind === 'thesis'
+    ? readCompanyThesisReport(db, args.run_id)
+    : readCompanyRun(db, args.run_id);
   return mcpText({
     result: {
+      report_kind: reportKind,
       format: args.format ?? 'both',
-      data: readCompanyRun(db, args.run_id),
+      data,
     },
     next_steps: [
       {

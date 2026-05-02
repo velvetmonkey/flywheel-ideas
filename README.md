@@ -10,7 +10,7 @@ The core loop is simple:
 bet -> evidence over time -> possible failure -> accepted outcome -> lesson -> related bets to review
 ```
 
-This is a general decision and assumption tracker. The strongest current proof is the SEC company tracker, which uses public company filings as a hard test corpus: lots of dated evidence, repeated assumptions, and later realized-risk language.
+This is a general decision and assumption tracker. The strongest current proof is the company thesis report, which uses SEC filings as a hard test corpus: lots of dated evidence, repeated assumptions, later realized-risk language, and a deterministic readout of what still needs human judgment.
 
 ## What It Does
 
@@ -22,7 +22,9 @@ This is a general decision and assumption tracker. The strongest current proof i
 - Captures durable lessons from failed assumptions.
 - Flags related ideas when a shared assumption fails.
 
-The product value is not “AI reads documents.” The value is a durable trail from belief to evidence to outcome to lesson.
+The product value is not "AI reads documents." The value is a durable trail from belief to evidence to outcome to lesson.
+
+For public companies, the main artifact is now a personal-investor thesis report. It does not say "buy" or "sell." It shows the live assumptions your company thesis depends on, where similar assumptions failed before, what needs review, and what to watch next.
 
 ## Worked Example: Three Companies Over Ten Years
 
@@ -115,10 +117,12 @@ Read the ledger view:
 ```json
 {
   "action": "report",
-  "report_kind": "sec_company",
+  "report_kind": "thesis",
   "run_id": "run-..."
 }
 ```
+
+Use `report_kind: "tracker"` for the detailed audit report. The thesis report is the investor-readable decision-support view; the tracker report is the lower-level evidence ledger.
 
 Apply reviewed outcomes:
 
@@ -195,9 +199,11 @@ Company tracker reports are written to:
 ```text
 reports/company-tracker-<run_id>.md
 reports/company-tracker-<run_id>.json
+reports/company-thesis-<run_id>.md
+reports/company-thesis-<run_id>.json
 ```
 
-The Markdown report is a Flywheel note with `type: report` and `report_kind: sec_company_tracker`, so production writes go through flywheel-memory markup/linking. The JSON report remains a raw machine-readable artifact.
+The Markdown reports are Flywheel notes with `type: report`; tracker reports use `report_kind: sec_company_tracker`, and thesis reports use `report_kind: company_thesis`. Production writes go through flywheel-memory markup/linking. JSON reports remain raw machine-readable artifacts.
 
 SEC ledger visibility is available through `idea.report({ report_kind: "sec_company" })`.
 

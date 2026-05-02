@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 12;
+export const SCHEMA_VERSION = 13;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -530,4 +530,15 @@ CREATE TABLE IF NOT EXISTS ideas_company_outcome_candidates (
 
 CREATE INDEX IF NOT EXISTS idx_ideas_company_outcomes_run
   ON ideas_company_outcome_candidates(run_id, state);
+`;
+
+/**
+ * v13 migration — company thesis report artifact paths.
+ *
+ * The detailed tracker report remains the audit artifact. The thesis report is
+ * the investor-readable decision-support surface derived from the same ledger.
+ */
+export const SCHEMA_SQL_V13 = `
+ALTER TABLE ideas_company_runs ADD COLUMN thesis_report_md_path TEXT;
+ALTER TABLE ideas_company_runs ADD COLUMN thesis_report_json_path TEXT;
 `;
