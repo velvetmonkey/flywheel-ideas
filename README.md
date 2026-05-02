@@ -51,6 +51,8 @@ After accepting three representative review groups, the ledger changed:
 
 See [`docs/sec-lifecycle-dogfood.md`](./docs/sec-lifecycle-dogfood.md) for the run details and [`scripts/sec-lifecycle-dogfood.mjs`](./scripts/sec-lifecycle-dogfood.mjs) for the reproducible driver.
 
+The next SEC proof surface is sector scale: 10 S&P 500 companies across each of the 11 GICS sectors. The reusable driver is [`scripts/sec-sector-lifecycle-bundle.mjs`](./scripts/sec-sector-lifecycle-bundle.mjs). It writes a linked report bundle with sector pages, company pages, theme pages, and cross-sector mechanism patterns so shared assumptions are not just keyword matches.
+
 ## Concrete Examples
 
 ### NVIDIA: Demand Became Inventory Risk
@@ -201,9 +203,10 @@ reports/company-tracker-<run_id>.md
 reports/company-tracker-<run_id>.json
 reports/company-thesis-<run_id>.md
 reports/company-thesis-<run_id>.json
+reports/company-runs/<run_id>/index.md
 ```
 
-The Markdown reports are Flywheel notes with `type: report`; tracker reports use `report_kind: sec_company_tracker`, and thesis reports use `report_kind: company_thesis`. Production writes go through flywheel-memory markup/linking. JSON reports remain raw machine-readable artifacts.
+The Markdown reports are Flywheel notes with `type: report`; tracker reports use `report_kind: sec_company_tracker`, thesis reports use `report_kind: company_thesis`, and sector bundles use `company_*` report kinds. Production writes go through flywheel-memory markup/linking. JSON reports remain raw machine-readable artifacts.
 
 SEC ledger visibility is available through `idea.report({ report_kind: "sec_company" })`.
 

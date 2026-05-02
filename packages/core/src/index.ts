@@ -548,12 +548,14 @@ export {
   readCompanyThesisReport,
   readCompanyRun,
   trackCompanies,
+  writeCompanyBundleReports,
   writeCompanyReports,
   CompanyInputError,
 } from './company.js';
 export type {
   CompanyApplyOutcomesInput,
   CompanyApplyOutcomesResult,
+  CompanyMetadata,
   CompanyReportOptions,
   CompanyTrackInput,
   CompanyTrackResult,

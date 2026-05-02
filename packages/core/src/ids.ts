@@ -59,6 +59,7 @@ export const generateFreezeId = (): string => generateId('fr');
 export const generateImportSourceId = (): string => generateId('src');
 export const generateImportCandidateId = (): string => generateId('cand');
 export const generateCompanyRunId = (): string => generateId('run');
+export const generateCompanyRunMemberId = (): string => generateId('member');
 export const generateCompanyFilingId = (): string => generateId('filing');
 export const generateCompanyThemeId = (): string => generateId('theme');
 export const generateCompanyObservationId = (): string => generateId('obs');

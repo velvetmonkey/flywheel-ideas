@@ -51,6 +51,8 @@ describe('company tracker', () => {
     expect(result.promoted_ideas).toBeGreaterThanOrEqual(9);
     expect(result.promoted_assumptions).toBeGreaterThanOrEqual(12);
     expect(result.staged_outcomes).toBeGreaterThanOrEqual(1);
+    expect(result.completed_companies).toBe(3);
+    expect(result.failed_companies).toEqual([]);
     expect(result.report_md_path).toBe(`reports/company-tracker-${result.run_id.toLowerCase()}.md`);
     expect(result.thesis_report_md_path).toBe(`reports/company-thesis-${result.run_id.toLowerCase()}.md`);
 
@@ -106,6 +108,15 @@ describe('company tracker', () => {
       filings: unknown[];
       company_summaries: unknown[];
       theme_matrix: unknown[];
+      sector_matrix: Array<{ sector: string; company_count: number; top_themes: string[] }>;
+      cross_sector_patterns: Array<{
+        theme_title: string;
+        mechanism_title: string;
+        sectors: string[];
+        companies: string[];
+        signal: string;
+        learning: string;
+      }>;
       lifecycle_summary: {
         filings_scanned: number;
         themes_tracked: number;
@@ -147,6 +158,7 @@ describe('company tracker', () => {
     expect(data.filings).toHaveLength(9);
     expect(data.company_summaries).toHaveLength(3);
     expect(data.theme_matrix.length).toBeGreaterThanOrEqual(3);
+    expect(data.sector_matrix.length).toBeGreaterThanOrEqual(1);
     expect(data.lifecycle_summary.filings_scanned).toBe(9);
     expect(data.lifecycle_summary.observations).toBeGreaterThan(0);
     expect(data.lifecycle_summary.staged_outcomes).toBe(result.staged_outcomes);
@@ -202,6 +214,42 @@ describe('company tracker', () => {
       `SELECT vault_path FROM ideas_assumptions ORDER BY vault_path`,
     ).all() as Array<{ vault_path: string }>;
     expect(new Set(assumptionPaths.map((row) => row.vault_path)).size).toBe(assumptionPaths.length);
+  }, 30_000);
+
+  it('tracks sector metadata, supports more than three companies, and writes bundle pages', async () => {
+    const result = await trackCompanies(db, vault, {
+      companies: ['AAPL', 'MSFT', 'NVDA', 'AAPL'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+      company_metadata: {
+        AAPL: { sector: 'Consumer Discretionary', display_name: 'Apple Inc', source_rank: 1, source: 'test' },
+        MSFT: { sector: 'Information Technology', display_name: 'Microsoft Corp', source_rank: 2, source: 'test' },
+        NVDA: { sector: 'Information Technology', display_name: 'NVIDIA Corp', source_rank: 3, source: 'test' },
+      },
+    });
+
+    expect(result.completed_companies).toBe(3);
+    const data = readCompanyRun(db, result.run_id) as {
+      run_members: Array<{ company: string; sector: string; status: string }>;
+      company_summaries: Array<{ ticker: string; sector: string; display_name: string }>;
+      sector_matrix: Array<{ sector: string; company_count: number; observation_count: number }>;
+      cross_sector_patterns: Array<{ mechanism_key: string; mechanism_title: string; sectors: string[]; learning: string }>;
+    };
+    expect(data.run_members).toHaveLength(3);
+    expect(data.run_members.every((member) => member.status === 'completed')).toBe(true);
+    expect(data.company_summaries.find((summary) => summary.ticker === 'MSFT')?.sector).toBe('Information Technology');
+    expect(data.sector_matrix.map((row) => row.sector)).toContain('Information Technology');
+
+    const index = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/index.md`), 'utf8');
+    expect(index).toContain('## Top Down');
+    expect(index).toContain('[[reports/company-runs/');
+    const matrix = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/sector-assumption-matrix.md`), 'utf8');
+    expect(matrix).toContain('# Sector Assumption Matrix');
+    const patterns = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/cross-sector-patterns.md`), 'utf8');
+    expect(patterns).toContain('# Cross-Sector Patterns');
+    expect(patterns).toContain('Mechanism-level comparison');
   }, 30_000);
 
   it('bulk applies reviewed staged outcomes through outcome.log', async () => {

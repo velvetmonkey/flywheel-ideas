@@ -197,6 +197,17 @@ company.track({
 })
 ```
 
+For sector-scale dogfood, use the reusable bundle driver:
+
+```
+npm run build
+export FLYWHEEL_IDEAS_IMPORT_NETWORK=1
+export FLYWHEEL_IDEAS_SEC_USER_AGENT="your-app-name contact: you@example.com"
+node scripts/sec-sector-lifecycle-bundle.mjs
+```
+
+The driver tracks 10 companies in each of the 11 GICS sectors, persists per-company run-member status for resume, and writes `reports/company-runs/<run_id>/index.md` as the top-level Flywheel-linked table of contents. Cross-sector pages compare mechanism-level patterns, not just shared SEC risk keywords.
+
 Outcome safety rule: the adapter may detect explicit realized-risk language, but it does not call `outcome.log`. Those candidates are staged and become canonical outcomes only through:
 
 ```
@@ -217,4 +228,4 @@ tests stay deterministic without committing large raw HTML files.
 
 ---
 
-*Last updated: 2026-05-01.*
+*Last updated: 2026-05-02.*
