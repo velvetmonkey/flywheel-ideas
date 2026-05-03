@@ -64,7 +64,7 @@ export interface WithEvidenceReaderOptions {
 // SQLite reads and complete in <100ms typically. Cold-start `init_semantic`
 // is the only failure mode; if it bites we surface 'timeout' and skip
 // evidence for that council run rather than blocking dispatch.
-const DEFAULT_TIMEOUT_MS = 5_000;
+const DEFAULT_TIMEOUT_MS = 30_000;
 const READER_NAME = 'flywheel-ideas-evidence-reader';
 const READER_VERSION = '0.2.x';
 
@@ -161,7 +161,6 @@ function classifyError<T>(
 function raceWithTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
   return new Promise<T>((resolve, reject) => {
     const t = setTimeout(() => reject(new Error('TIMEOUT')), ms);
-    t.unref();
     p.then(
       (v) => {
         clearTimeout(t);

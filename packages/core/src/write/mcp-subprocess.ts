@@ -267,7 +267,6 @@ function classifyError<T>(
 function raceWithTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
   return new Promise<T>((resolve, reject) => {
     const t = setTimeout(() => reject(new Error('TIMEOUT')), ms);
-    t.unref();
     p.then(
       (v) => {
         clearTimeout(t);

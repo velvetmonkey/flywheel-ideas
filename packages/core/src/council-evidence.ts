@@ -97,6 +97,7 @@ export async function assembleEvidencePack(
 ): Promise<EvidencePack> {
   const opts = { ...DEFAULTS, ...options };
   const budgetChars = opts.max_tokens * APPROX_CHARS_PER_TOKEN;
+  await refreshReaderIndex(reader);
 
   // Run the five query types in parallel; allSettled never throws.
   const [searchRes, memoryRes, backlinksRes, assumptionResAll, intelligenceRes] =
@@ -191,9 +192,10 @@ async function runIdeaSearch(
       limit,
       detail_count: limit,
     });
-    return parseSearchResults(res, 'search');
+    const parsed = parseSearchResults(res, 'search');
+    return parsed.length > 0 ? parsed : await runFindNotes(reader, query, limit, 'search');
   } catch {
-    return [];
+    return await runFindNotes(reader, query, limit, 'search');
   }
 }
 
@@ -253,6 +255,14 @@ async function runBacklinks(
       }));
   } catch {
     return [];
+  }
+}
+
+async function refreshReaderIndex(reader: EvidenceReader): Promise<void> {
+  try {
+    await reader.query('refresh_index', {});
+  } catch {
+    // Best-effort: older flywheel-memory builds may not expose refresh_index.
   }
 }
 
@@ -362,9 +372,12 @@ async function runAssumptionSearches(
           limit: hitsPer,
           detail_count: hitsPer,
         });
-        return parseSearchResults(res, 'assumption_search');
+        const parsed = parseSearchResults(res, 'assumption_search');
+        return parsed.length > 0
+          ? parsed
+          : await runFindNotes(reader, a.text, hitsPer, 'assumption_search');
       } catch {
-        return [];
+        return await runFindNotes(reader, a.text, hitsPer, 'assumption_search');
       }
     }),
   );
@@ -374,6 +387,40 @@ async function runAssumptionSearches(
     if (s.status === 'fulfilled') out.push(...s.value);
   }
   return out;
+}
+
+async function runFindNotes(
+  reader: EvidenceReader,
+  query: string,
+  limit: number,
+  kind: 'search' | 'assumption_search',
+): Promise<QueryHit[]> {
+  try {
+    const res = await reader.query('find_notes', {
+      query,
+      limit,
+    });
+    const text = extractToolText(res);
+    if (text === null) return [];
+    const parsed = JSON.parse(text) as { notes?: Array<Record<string, unknown>> };
+    const notes = Array.isArray(parsed.notes) ? parsed.notes : [];
+    return notes
+      .filter((note) => typeof note.path === 'string')
+      .map((note) => ({
+        kind,
+        path: note.path as string,
+        score: typeof note.hub_score === 'number' ? note.hub_score : undefined,
+        excerpt:
+          typeof note.content_preview === 'string'
+            ? note.content_preview
+            : typeof note.description === 'string'
+              ? note.description
+              : '',
+      }))
+      .filter((hit) => hit.excerpt.length > 0);
+  } catch {
+    return [];
+  }
 }
 
 function parseSearchResults(

@@ -431,7 +431,7 @@ function buildEvaluationPrompt(payload: CompanyEvaluationPayload): { system: str
 }
 
 function parseEvaluationOutput(stdout: string, fallbackRefs: string[]): CompanyEvaluationOutput {
-  const parsed = parseJsonish(stdout);
+  const parsed = parseJsonish(extractCodexAgentMessage(stdout) ?? stdout);
   const raw = typeof parsed.result === 'string' ? parseJsonish(parsed.result) : parsed;
   const decision = normalizeDecision(raw.decision);
   return {
@@ -446,6 +446,29 @@ function parseEvaluationOutput(stdout: string, fallbackRefs: string[]): CompanyE
     uncertainty: typeof raw.uncertainty === 'string' ? raw.uncertainty : null,
     recommended_next_step: typeof raw.recommended_next_step === 'string' ? raw.recommended_next_step : null,
   };
+}
+
+function extractCodexAgentMessage(stdout: string): string | null {
+  const lines = stdout.split('\n').filter((line) => line.trim().length > 0);
+  for (const line of [...lines].reverse()) {
+    try {
+      const event = JSON.parse(line) as unknown;
+      if (
+        typeof event === 'object' &&
+        event !== null &&
+        (event as { type?: unknown }).type === 'item.completed' &&
+        typeof (event as { item?: unknown }).item === 'object' &&
+        (event as { item: { type?: unknown } }).item !== null &&
+        (event as { item: { type?: unknown } }).item.type === 'agent_message' &&
+        typeof (event as { item: { text?: unknown } }).item.text === 'string'
+      ) {
+        return (event as { item: { text: string } }).item.text;
+      }
+    } catch {
+      // Non-JSON lines are allowed in CLI output; raw parsing below handles them.
+    }
+  }
+  return null;
 }
 
 function parseJsonish(text: string): Record<string, unknown> {
@@ -551,7 +574,7 @@ function cliFromEnv(): CliName {
 function resolveDefaultModel(cli: CliName): string {
   if (cli === 'claude') return process.env.FLYWHEEL_IDEAS_CLAUDE_MODEL ?? 'claude-haiku-4-5-20251001';
   if (cli === 'gemini') return process.env.FLYWHEEL_IDEAS_GEMINI_MODEL ?? 'gemini-2.5-flash-lite';
-  return process.env.FLYWHEEL_IDEAS_CODEX_MODEL ?? 'gpt-5-codex';
+  return process.env.FLYWHEEL_IDEAS_CODEX_MODEL ?? 'gpt-5.2';
 }
 
 function buildEvalArgv(cli: CliName, model: string, systemPrompt: string): string[] {
