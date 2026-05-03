@@ -44,6 +44,9 @@ describe('runMigrations', () => {
       // v7 (v0.2 Phase 2 — bulk-import staging)
       'ideas_import_sources',
       'ideas_import_candidates',
+      // v15 — shadow company LLM evaluation ledger
+      'ideas_company_evaluation_targets',
+      'ideas_company_evaluation_attempts',
     ];
 
     const rows = db

@@ -3,6 +3,7 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
   applyCompanyOutcomes,
   CompanyInputError,
+  evaluateCompanyRun,
   readCompanyRun,
   readCompanyThesisReport,
   trackCompanies,
@@ -20,16 +21,17 @@ export function registerCompanyTool(
     [
       'Track public companies over time using SEC 10-K/10-Q filings. ',
       'Actions: track (scan companies, promote recurring risk themes, stage ',
-      'realized-risk outcomes), read (latest or selected run), report ',
+      'realized-risk outcomes), evaluate (shadow LLM review without canonical ',
+      'mutation), read (latest or selected run), report ',
       '(return report paths/data), apply_outcomes (explicitly log staged ',
       'high-confidence outcomes).',
     ].join(''),
     {
-      action: z.enum(['track', 'read', 'report', 'apply_outcomes']),
+      action: z.enum(['track', 'evaluate', 'read', 'report', 'apply_outcomes']),
       companies: z.array(z.string()).max(125).optional().describe('[track] Up to 125 tickers or cik:########## sources'),
       years: z.number().int().min(1).max(20).optional().describe('[track] Backfill window; default 10'),
       forms: z.array(z.enum(['10-K', '10-Q'])).optional().describe('[track] Filing forms; default 10-K + 10-Q'),
-      confirm: z.boolean().optional().describe('[track|apply_outcomes] Required true for write-side actions'),
+      confirm: z.boolean().optional().describe('[track|evaluate|apply_outcomes] Required true for write-side actions'),
       fixture_dir: z.string().optional().describe('[track] Test/dev fixture directory for SEC filings'),
       limit_filings: z.number().int().min(1).optional().describe('[track] Dev/test cap on filings per company'),
       max_companies: z.number().int().min(1).max(125).optional().describe('[track] Safety cap override; default 125'),
@@ -40,7 +42,11 @@ export function registerCompanyTool(
         source_weight: z.string().optional(),
         source: z.string().optional(),
       })).optional().describe('[track] Optional per-company sector/display metadata'),
-      run_id: z.string().optional().describe('[track|read|report|apply_outcomes] Company tracker run id; track resumes when supplied'),
+      run_id: z.string().optional().describe('[track|evaluate|read|report|apply_outcomes] Company tracker run id; track resumes when supplied'),
+      stage: z.enum(['outcome_validity', 'thesis_delta']).optional().describe('[evaluate] Shadow evaluation stage'),
+      target_ids: z.array(z.string()).optional().describe('[evaluate] Specific outcome candidate ids or company tickers to evaluate'),
+      limit: z.number().int().min(1).max(100).optional().describe('[evaluate] Max selected targets; stage default applies'),
+      resume: z.boolean().optional().describe('[evaluate] Skip already-reviewed unchanged targets; default true'),
       company: z.string().optional().describe('[report] Optional company filter; reserved for v1.1'),
       report_kind: z.enum(['tracker', 'thesis']).optional().describe('[report] tracker returns detailed audit data; thesis returns personal-investor decision support. Default tracker'),
       format: z.enum(['markdown', 'json', 'both']).optional().describe('[report] Report format; default both'),
@@ -52,6 +58,8 @@ export function registerCompanyTool(
         switch (args.action) {
           case 'track':
             return await handleTrack(getVaultPath(), getDb(), args);
+          case 'evaluate':
+            return await handleEvaluate(getVaultPath(), getDb(), args);
           case 'read':
             return handleRead(getDb(), args);
           case 'report':
@@ -128,9 +136,69 @@ async function handleTrack(
   ];
   if (result.staged_outcomes > 0) {
     next_steps.push({
-      action: 'company.apply_outcomes',
-      example: `company.apply_outcomes({ run_id: "${result.run_id}", min_confidence: 0.9, confirm: true })`,
-      why: `${result.staged_outcomes} realized-risk outcome candidate(s) were staged; apply only after review.`,
+      action: 'company.evaluate',
+      example: `company.evaluate({ run_id: "${result.run_id}", stage: "outcome_validity", confirm: true })`,
+      why: `${result.staged_outcomes} realized-risk outcome candidate(s) were staged; run shadow LLM review before applying anything.`,
+    });
+  }
+  return mcpText({ result, next_steps });
+}
+
+async function handleEvaluate(
+  vaultPath: string,
+  db: IdeasDatabase,
+  args: {
+    run_id?: string;
+    stage?: 'outcome_validity' | 'thesis_delta';
+    target_ids?: string[];
+    limit?: number;
+    resume?: boolean;
+    confirm?: boolean;
+  },
+) {
+  if (!args.run_id) {
+    return mcpError('company.evaluate requires `run_id`', [
+      { action: 'company.read', example: 'company.read({})', why: 'Find the latest run id.' },
+    ]);
+  }
+  if (!args.stage) {
+    return mcpError('company.evaluate requires `stage`', [
+      {
+        action: 'company.evaluate',
+        example: `company.evaluate({ run_id: "${args.run_id}", stage: "outcome_validity", confirm: true })`,
+        why: 'Start by evaluating whether staged SEC candidates are real outcomes.',
+      },
+    ]);
+  }
+  if (args.confirm !== true) {
+    return mcpError('company.evaluate requires `confirm: true`', [
+      {
+        action: 'company.evaluate',
+        example: `company.evaluate({ run_id: "${args.run_id}", stage: "${args.stage}", confirm: true })`,
+        why: 'Evaluation spawns an LLM CLI and writes shadow audit reports, but does not mutate canonical outcomes.',
+      },
+    ]);
+  }
+  const result = await evaluateCompanyRun(db, vaultPath, {
+    run_id: args.run_id,
+    stage: args.stage,
+    target_ids: args.target_ids,
+    limit: args.limit,
+    resume: args.resume,
+    confirm: true,
+  });
+  const next_steps: NextStep[] = [
+    {
+      action: 'company.report',
+      example: `company.report({ run_id: "${args.run_id}", report_kind: "tracker", format: "both" })`,
+      why: 'Inspect shadow evaluation summaries and the unchanged human review queue.',
+    },
+  ];
+  if (args.stage === 'outcome_validity') {
+    next_steps.push({
+      action: 'company.evaluate',
+      example: `company.evaluate({ run_id: "${args.run_id}", stage: "thesis_delta", confirm: true })`,
+      why: 'Review company-level thesis changes after outcome validity has been calibrated.',
     });
   }
   return mcpText({ result, next_steps });
@@ -169,9 +237,9 @@ function handleReport(db: IdeasDatabase, args: { run_id?: string; report_kind?: 
     },
     next_steps: [
       {
-        action: 'company.apply_outcomes',
-        example: `company.apply_outcomes({ run_id: "${args.run_id}", min_confidence: 0.9, confirm: true })`,
-        why: 'Apply reviewed staged outcomes.',
+        action: 'company.evaluate',
+        example: `company.evaluate({ run_id: "${args.run_id}", stage: "outcome_validity", confirm: true })`,
+        why: 'Run shadow LLM review before applying staged outcomes.',
       },
     ],
   });
