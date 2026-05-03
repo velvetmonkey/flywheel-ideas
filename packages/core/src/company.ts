@@ -361,7 +361,7 @@ export async function writeCompanyBundleReports(
         source: 'flywheel-ideas',
       },
       page.body,
-      { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 12 },
+      { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: false, timeoutMs: 30_000 },
     );
     writtenPaths.push(result.vault_path);
   }

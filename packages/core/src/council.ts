@@ -67,7 +67,7 @@ import { logDispatchFinish, logDispatchStart } from './dispatches.js';
 import type { ApprovalScope } from './approval.js';
 
 const CLAUDE_MODEL_DEFAULT = 'claude-haiku-4-5-20251001';
-const CODEX_MODEL_DEFAULT = 'gpt-5-codex';
+const CODEX_MODEL_DEFAULT = 'gpt-5.2';
 const GEMINI_MODEL_DEFAULT = 'gemini-2.5-flash-lite';
 const DEFAULT_TIMEOUT_MS = 15 * 60 * 1000; // 15 min per spec
 const DEFAULT_CONCURRENCY = 3;
