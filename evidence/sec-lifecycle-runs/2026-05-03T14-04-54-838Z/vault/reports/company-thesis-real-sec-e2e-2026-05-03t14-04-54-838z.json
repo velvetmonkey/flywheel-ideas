@@ -1,0 +1,627 @@
+{
+  "report_kind": "company_thesis",
+  "run_id": "real-sec-e2e-2026-05-03t14-04-54-838z",
+  "as_of_date": "2026-05-01",
+  "executive_readout": {
+    "companies": [
+      "AAPL",
+      "AMZN",
+      "COP",
+      "CVX",
+      "GOOGL",
+      "HD",
+      "JNJ",
+      "LLY",
+      "META",
+      "MRK",
+      "MSFT",
+      "NFLX",
+      "NVDA",
+      "TSLA",
+      "XOM"
+    ],
+    "filings_scanned": 30,
+    "current_bets": 169,
+    "review_events": 8,
+    "staged_candidates": 11,
+    "accepted_failures": 1,
+    "accepted_lessons": 0,
+    "missing_lessons": 1,
+    "thesis_posture": "needs_review"
+  },
+  "current_thesis_dependencies": [
+    {
+      "company": "MSFT",
+      "theme": "AI, R&D, and technology",
+      "assumption_id": "asm-GPdNP7yd",
+      "observation_count": 4,
+      "review_pressure": 2,
+      "latest_seen_at": "2026-04-29",
+      "freshness": "fresh",
+      "why_it_matters": "Staged evidence exists; review before treating this assumption as intact."
+    },
+    {
+      "company": "MSFT",
+      "theme": "Cloud and data center capacity",
+      "assumption_id": "asm-iS9WFPyL",
+      "observation_count": 4,
+      "review_pressure": 2,
+      "latest_seen_at": "2026-04-29",
+      "freshness": "fresh",
+      "why_it_matters": "Staged evidence exists; review before treating this assumption as intact."
+    },
+    {
+      "company": "NVDA",
+      "theme": "Inventory and channel",
+      "assumption_id": "asm-McDqnPXB",
+      "observation_count": 4,
+      "review_pressure": 2,
+      "latest_seen_at": "2026-02-25",
+      "freshness": "fresh",
+      "why_it_matters": "Staged evidence exists; review before treating this assumption as intact."
+    },
+    {
+      "company": "META",
+      "theme": "Geopolitics and tariffs",
+      "assumption_id": "asm-yot7L65L",
+      "observation_count": 4,
+      "review_pressure": 1,
+      "latest_seen_at": "2026-04-30",
+      "freshness": "fresh",
+      "why_it_matters": "Staged evidence exists; review before treating this assumption as intact."
+    },
+    {
+      "company": "TSLA",
+      "theme": "Demand",
+      "assumption_id": "asm-d64bQ4Up",
+      "observation_count": 4,
+      "review_pressure": 1,
+      "latest_seen_at": "2026-04-23",
+      "freshness": "fresh",
+      "why_it_matters": "Staged evidence exists; review before treating this assumption as intact."
+    },
+    {
+      "company": "TSLA",
+      "theme": "Supply chain",
+      "assumption_id": "asm-qFzNqki9",
+      "observation_count": 4,
+      "review_pressure": 1,
+      "latest_seen_at": "2026-04-23",
+      "freshness": "fresh",
+      "why_it_matters": "Staged evidence exists; review before treating this assumption as intact."
+    },
+    {
+      "company": "NFLX",
+      "theme": "Demand",
+      "assumption_id": "asm-BE4ofwHA",
+      "observation_count": 4,
+      "review_pressure": 1,
+      "latest_seen_at": "2026-04-17",
+      "freshness": "fresh",
+      "why_it_matters": "Staged evidence exists; review before treating this assumption as intact."
+    },
+    {
+      "company": "AAPL",
+      "theme": "Demand",
+      "assumption_id": "asm-bZMiog1R",
+      "observation_count": 4,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01",
+      "freshness": "fresh",
+      "why_it_matters": "Recurring issuer disclosures make this a live dependency to keep tracking."
+    },
+    {
+      "company": "AAPL",
+      "theme": "Geopolitics and tariffs",
+      "assumption_id": "asm-fGLeK2CB",
+      "observation_count": 4,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01",
+      "freshness": "fresh",
+      "why_it_matters": "Recurring issuer disclosures make this a live dependency to keep tracking."
+    },
+    {
+      "company": "AAPL",
+      "theme": "AI, R&D, and technology",
+      "assumption_id": "asm-GfmjNzyR",
+      "observation_count": 3,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01",
+      "freshness": "fresh",
+      "why_it_matters": "Recurring issuer disclosures make this a live dependency to keep tracking."
+    },
+    {
+      "company": "AAPL",
+      "theme": "Cloud and data center capacity",
+      "assumption_id": "asm-DGwaJLnR",
+      "observation_count": 3,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01",
+      "freshness": "fresh",
+      "why_it_matters": "Recurring issuer disclosures make this a live dependency to keep tracking."
+    },
+    {
+      "company": "AAPL",
+      "theme": "Customer and platform dependency",
+      "assumption_id": "asm-e56MdArq",
+      "observation_count": 3,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01",
+      "freshness": "fresh",
+      "why_it_matters": "Recurring issuer disclosures make this a live dependency to keep tracking."
+    }
+  ],
+  "prior_failures_and_lessons": [],
+  "needs_human_review": [
+    {
+      "id": "og-001",
+      "company": "MSFT",
+      "themes": [
+        "AI, R&D, and technology",
+        "Cloud and data center capacity"
+      ],
+      "candidate_count": 2,
+      "candidate_ids": [
+        "cout-1KC2EGLt",
+        "cout-iEbFA9td"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2026-01-28",
+      "representative_excerpt": "Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-1KC2EGLt\",\"cout-iEbFA9td\"], confirm: true })"
+    },
+    {
+      "id": "og-002",
+      "company": "MSFT",
+      "themes": [
+        "AI, R&D, and technology",
+        "Cloud and data center capacity"
+      ],
+      "candidate_count": 2,
+      "candidate_ids": [
+        "cout-X4ua1bAb",
+        "cout-ewhLhPHk"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2026-04-29",
+      "representative_excerpt": "Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-X4ua1bAb\",\"cout-ewhLhPHk\"], confirm: true })"
+    },
+    {
+      "id": "og-003",
+      "company": "NVDA",
+      "themes": [
+        "Demand",
+        "Inventory and channel"
+      ],
+      "candidate_count": 2,
+      "candidate_ids": [
+        "cout-kXoBT5HF",
+        "cout-ogV4H2p7"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2026-02-25",
+      "representative_excerpt": "In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the demand for H20 diminished. In August 2025, the USG granted licenses that would allow us to ship certain H20 products to certain China-based customers.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-kXoBT5HF\",\"cout-ogV4H2p7\"], confirm: true })"
+    },
+    {
+      "id": "og-004",
+      "company": "META",
+      "themes": [
+        "Geopolitics and tariffs"
+      ],
+      "candidate_count": 1,
+      "candidate_ids": [
+        "cout-Ht9MFXWY"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2026-04-30",
+      "representative_excerpt": "User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For example, in the first quarter of 2026, we experienced a slight decline on a quarter-over-quarter basis in the total number of Family daily active people that was driven by internet disruptions in Iran, as well as a restriction on access to WhatsApp in Russia. Any future declines in the size of our active user base may adversely impact our ability to deliver ad impressions and, in turn, our financial performance.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-Ht9MFXWY\"], confirm: true })"
+    },
+    {
+      "id": "og-005",
+      "company": "NFLX",
+      "themes": [
+        "Demand"
+      ],
+      "candidate_count": 1,
+      "candidate_ids": [
+        "cout-4xp45AFo"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2026-04-17",
+      "representative_excerpt": "Discovery, Inc. (\"WBD\") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the \"WBD transaction\"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 million increase in revenues, partially offset by a $625 million increase in cost of revenues due to an increase in content amortization, and a $941 million increase in the provision for income taxes.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-4xp45AFo\"], confirm: true })"
+    },
+    {
+      "id": "og-006",
+      "company": "NVDA",
+      "themes": [
+        "Inventory and channel"
+      ],
+      "candidate_count": 1,
+      "candidate_ids": [
+        "cout-9vSCaRcJ"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2025-11-19",
+      "representative_excerpt": "In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the demand for H20 diminished. In August 2025, the USG granted licenses that would allow us to ship certain H20 products to certain China-based customers, but to date, we have generated approximately $50 million in H20 revenue under those licenses.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-9vSCaRcJ\"], confirm: true })"
+    },
+    {
+      "id": "og-007",
+      "company": "TSLA",
+      "themes": [
+        "Supply chain"
+      ],
+      "candidate_count": 1,
+      "candidate_ids": [
+        "cout-wimxiZSE"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2026-01-29",
+      "representative_excerpt": "We will also need to hire, train and compensate skilled employees to operate these facilities. Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing processes and reducing costs. If we are not successful in achieving these goals, we could face delays in establishing and/or sustaining our product ramps or be unable to meet our related cost and profitability targets.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-wimxiZSE\"], confirm: true })"
+    },
+    {
+      "id": "og-008",
+      "company": "TSLA",
+      "themes": [
+        "Demand"
+      ],
+      "candidate_count": 1,
+      "candidate_ids": [
+        "cout-byFW2ZJs"
+      ],
+      "max_confidence": 0.92,
+      "latest_seen_at": "2026-01-29",
+      "representative_excerpt": "In 2025, we recognized total revenues of $94.83 billion, representing a decrease of $2.86 billion compared to the prior year. In 2025, our net income attributable to common stockholders was $3.79 billion, representing a decrease of $3.30 billion compared to the prior year.",
+      "apply_command": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-byFW2ZJs\"], confirm: true })"
+    }
+  ],
+  "cross_company_patterns": [
+    {
+      "theme": "Demand",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 14,
+      "total_observations": 52,
+      "review_pressure": 2,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "AI, R&D, and technology",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 14,
+      "total_observations": 44,
+      "review_pressure": 2,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Cloud and data center capacity",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 15,
+      "total_observations": 44,
+      "review_pressure": 2,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Inventory and channel",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 14,
+      "total_observations": 34,
+      "review_pressure": 2,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Supply chain",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 14,
+      "total_observations": 47,
+      "review_pressure": 1,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Geopolitics and tariffs",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 15,
+      "total_observations": 46,
+      "review_pressure": 1,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Regulation and legal",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 15,
+      "total_observations": 53,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Liquidity",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 15,
+      "total_observations": 51,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Macro and foreign exchange",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 15,
+      "total_observations": 51,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Competition",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "COP",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA",
+        "XOM"
+      ],
+      "open_bet_count": 15,
+      "total_observations": 44,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Customer and platform dependency",
+      "companies": [
+        "AAPL",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "JNJ",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA"
+      ],
+      "open_bet_count": 11,
+      "total_observations": 28,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01"
+    },
+    {
+      "theme": "Cybersecurity and privacy",
+      "companies": [
+        "AAPL",
+        "AMZN",
+        "CVX",
+        "GOOGL",
+        "HD",
+        "LLY",
+        "META",
+        "MRK",
+        "MSFT",
+        "NFLX",
+        "NVDA",
+        "TSLA"
+      ],
+      "open_bet_count": 12,
+      "total_observations": 26,
+      "review_pressure": 0,
+      "latest_seen_at": "2026-05-01"
+    }
+  ],
+  "watch_next": [
+    {
+      "company": "MSFT",
+      "theme": "AI, R&D, and technology, Cloud and data center capacity",
+      "reason": "2 staged outcome candidate(s) need human review.",
+      "next_action": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-1KC2EGLt\",\"cout-iEbFA9td\"], confirm: true })",
+      "evidence": "Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent."
+    },
+    {
+      "company": "MSFT",
+      "theme": "AI, R&D, and technology, Cloud and data center capacity",
+      "reason": "2 staged outcome candidate(s) need human review.",
+      "next_action": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-X4ua1bAb\",\"cout-ewhLhPHk\"], confirm: true })",
+      "evidence": "Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio."
+    },
+    {
+      "company": "NVDA",
+      "theme": "Demand, Inventory and channel",
+      "reason": "2 staged outcome candidate(s) need human review.",
+      "next_action": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-kXoBT5HF\",\"cout-ogV4H2p7\"], confirm: true })",
+      "evidence": "In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the "
+    },
+    {
+      "company": "META",
+      "theme": "Geopolitics and tariffs",
+      "reason": "1 staged outcome candidate(s) need human review.",
+      "next_action": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-Ht9MFXWY\"], confirm: true })",
+      "evidence": "User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex"
+    },
+    {
+      "company": "NFLX",
+      "theme": "Demand",
+      "reason": "1 staged outcome candidate(s) need human review.",
+      "next_action": "company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-4xp45AFo\"], confirm: true })",
+      "evidence": "Discovery, Inc. (\"WBD\") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the \"WBD transaction\"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil"
+    },
+    {
+      "company": "MSFT",
+      "theme": "AI, R&D, and technology",
+      "reason": "Open assumption has review pressure 2.",
+      "next_action": "Review staged candidates linked to assumption asm-GPdNP7yd before carrying this bet forward.",
+      "evidence": "4 observation(s), latest 2026-04-29."
+    },
+    {
+      "company": "MSFT",
+      "theme": "Cloud and data center capacity",
+      "reason": "Open assumption has review pressure 2.",
+      "next_action": "Review staged candidates linked to assumption asm-iS9WFPyL before carrying this bet forward.",
+      "evidence": "4 observation(s), latest 2026-04-29."
+    },
+    {
+      "company": "NVDA",
+      "theme": "Inventory and channel",
+      "reason": "Open assumption has review pressure 2.",
+      "next_action": "Review staged candidates linked to assumption asm-McDqnPXB before carrying this bet forward.",
+      "evidence": "4 observation(s), latest 2026-02-25."
+    }
+  ],
+  "limits": [
+    "This is decision support, not investment advice or a buy/sell recommendation.",
+    "SEC disclosures are issuer-authored evidence; they are useful but not independent proof of business reality.",
+    "A staged review event is not a pass/fail verdict until a human applies it.",
+    "The report does not use price feeds, valuation models, technical indicators, or portfolio allocation."
+  ],
+  "markdown": "# Company Thesis Report real-sec-e2e-2026-05-03t14-04-54-838z\n\nA deterministic decision-support view of current company bets, prior failures, unresolved review events, and next watchpoints.\n\n## Executive Readout\n\n- Companies: AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM\n- Filings scanned: 30\n- Current thesis dependencies: 169 open bet(s).\n- Human review queue: 8 event(s), 11 staged candidate(s).\n- Accepted failures: 1; lessons recorded: 0; missing lesson memos: 1.\n- Posture: evidence needs human review before thesis confidence should increase.\n\n## Current Thesis Dependencies\n\n- **MSFT / AI, R&D, and technology** - fresh, review pressure 2, 4 observation(s), latest 2026-04-29\n  - Assumption: asm-GPdNP7yd\n  - Why it matters: Staged evidence exists; review before treating this assumption as intact.\n- **MSFT / Cloud and data center capacity** - fresh, review pressure 2, 4 observation(s), latest 2026-04-29\n  - Assumption: asm-iS9WFPyL\n  - Why it matters: Staged evidence exists; review before treating this assumption as intact.\n- **NVDA / Inventory and channel** - fresh, review pressure 2, 4 observation(s), latest 2026-02-25\n  - Assumption: asm-McDqnPXB\n  - Why it matters: Staged evidence exists; review before treating this assumption as intact.\n- **META / Geopolitics and tariffs** - fresh, review pressure 1, 4 observation(s), latest 2026-04-30\n  - Assumption: asm-yot7L65L\n  - Why it matters: Staged evidence exists; review before treating this assumption as intact.\n- **TSLA / Demand** - fresh, review pressure 1, 4 observation(s), latest 2026-04-23\n  - Assumption: asm-d64bQ4Up\n  - Why it matters: Staged evidence exists; review before treating this assumption as intact.\n- **TSLA / Supply chain** - fresh, review pressure 1, 4 observation(s), latest 2026-04-23\n  - Assumption: asm-qFzNqki9\n  - Why it matters: Staged evidence exists; review before treating this assumption as intact.\n- **NFLX / Demand** - fresh, review pressure 1, 4 observation(s), latest 2026-04-17\n  - Assumption: asm-BE4ofwHA\n  - Why it matters: Staged evidence exists; review before treating this assumption as intact.\n- **AAPL / Demand** - fresh, review pressure 0, 4 observation(s), latest 2026-05-01\n  - Assumption: asm-bZMiog1R\n  - Why it matters: Recurring issuer disclosures make this a live dependency to keep tracking.\n- **AAPL / Geopolitics and tariffs** - fresh, review pressure 0, 4 observation(s), latest 2026-05-01\n  - Assumption: asm-fGLeK2CB\n  - Why it matters: Recurring issuer disclosures make this a live dependency to keep tracking.\n- **AAPL / AI, R&D, and technology** - fresh, review pressure 0, 3 observation(s), latest 2026-05-01\n  - Assumption: asm-GfmjNzyR\n  - Why it matters: Recurring issuer disclosures make this a live dependency to keep tracking.\n- **AAPL / Cloud and data center capacity** - fresh, review pressure 0, 3 observation(s), latest 2026-05-01\n  - Assumption: asm-DGwaJLnR\n  - Why it matters: Recurring issuer disclosures make this a live dependency to keep tracking.\n- **AAPL / Customer and platform dependency** - fresh, review pressure 0, 3 observation(s), latest 2026-05-01\n  - Assumption: asm-e56MdArq\n  - Why it matters: Recurring issuer disclosures make this a live dependency to keep tracking.\n\n## Prior Failures And Lessons\n\nNo accepted failure lessons have been recorded yet.\n\n## What Needs Human Review\n\n- **MSFT / AI, R&D, and technology, Cloud and data center capacity** - 2 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-1KC2EGLt, cout-iEbFA9td\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-1KC2EGLt\",\"cout-iEbFA9td\"], confirm: true })`\n  - Evidence: Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.\n- **MSFT / AI, R&D, and technology, Cloud and data center capacity** - 2 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-X4ua1bAb, cout-ewhLhPHk\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-X4ua1bAb\",\"cout-ewhLhPHk\"], confirm: true })`\n  - Evidence: Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.\n- **NVDA / Demand, Inventory and channel** - 2 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-kXoBT5HF, cout-ogV4H2p7\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-kXoBT5HF\",\"cout-ogV4H2p7\"], confirm: true })`\n  - Evidence: In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the \n- **META / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-Ht9MFXWY\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-Ht9MFXWY\"], confirm: true })`\n  - Evidence: User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex\n- **NFLX / Demand** - 1 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-4xp45AFo\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-4xp45AFo\"], confirm: true })`\n  - Evidence: Discovery, Inc. (\"WBD\") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the \"WBD transaction\"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil\n- **NVDA / Inventory and channel** - 1 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-9vSCaRcJ\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-9vSCaRcJ\"], confirm: true })`\n  - Evidence: In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc\n- **TSLA / Supply chain** - 1 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-wimxiZSE\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-wimxiZSE\"], confirm: true })`\n  - Evidence: We will also need to hire, train and compensate skilled employees to operate these facilities. Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing proce\n- **TSLA / Demand** - 1 candidate(s), confidence up to 0.92\n  - Candidate IDs: cout-byFW2ZJs\n  - Apply after review: `company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-byFW2ZJs\"], confirm: true })`\n  - Evidence: In 2025, we recognized total revenues of $94.83 billion, representing a decrease of $2.86 billion compared to the prior year. In 2025, our net income attributable to common stockholders was $3.79 billion, representing a decrease of $3.30 billion compared to the prior year.\n\n## Cross-Company Patterns\n\n- **Demand**: 14 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, TSLA, XOM, 52 observation(s), review pressure 2, latest 2026-05-01\n- **AI, R&D, and technology**: 14 open bet(s) across AAPL, AMZN, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 44 observation(s), review pressure 2, latest 2026-05-01\n- **Cloud and data center capacity**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 44 observation(s), review pressure 2, latest 2026-05-01\n- **Inventory and channel**: 14 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 34 observation(s), review pressure 2, latest 2026-05-01\n- **Supply chain**: 14 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 47 observation(s), review pressure 1, latest 2026-05-01\n- **Geopolitics and tariffs**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 46 observation(s), review pressure 1, latest 2026-05-01\n- **Regulation and legal**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 53 observation(s), review pressure 0, latest 2026-05-01\n- **Liquidity**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 51 observation(s), review pressure 0, latest 2026-05-01\n- **Macro and foreign exchange**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 51 observation(s), review pressure 0, latest 2026-05-01\n- **Competition**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 44 observation(s), review pressure 0, latest 2026-05-01\n- **Customer and platform dependency**: 11 open bet(s) across AAPL, CVX, GOOGL, HD, JNJ, META, MRK, MSFT, NFLX, NVDA, TSLA, 28 observation(s), review pressure 0, latest 2026-05-01\n- **Cybersecurity and privacy**: 12 open bet(s) across AAPL, AMZN, CVX, GOOGL, HD, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, 26 observation(s), review pressure 0, latest 2026-05-01\n\n## What To Watch Next\n\n- **MSFT / AI, R&D, and technology, Cloud and data center capacity**\n  - Reason: 2 staged outcome candidate(s) need human review.\n  - Next action: company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-1KC2EGLt\",\"cout-iEbFA9td\"], confirm: true })\n  - Evidence: Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.\n- **MSFT / AI, R&D, and technology, Cloud and data center capacity**\n  - Reason: 2 staged outcome candidate(s) need human review.\n  - Next action: company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-X4ua1bAb\",\"cout-ewhLhPHk\"], confirm: true })\n  - Evidence: Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.\n- **NVDA / Demand, Inventory and channel**\n  - Reason: 2 staged outcome candidate(s) need human review.\n  - Next action: company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-kXoBT5HF\",\"cout-ogV4H2p7\"], confirm: true })\n  - Evidence: In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the \n- **META / Geopolitics and tariffs**\n  - Reason: 1 staged outcome candidate(s) need human review.\n  - Next action: company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-Ht9MFXWY\"], confirm: true })\n  - Evidence: User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex\n- **NFLX / Demand**\n  - Reason: 1 staged outcome candidate(s) need human review.\n  - Next action: company.apply_outcomes({ run_id: \"real-sec-e2e-2026-05-03t14-04-54-838z\", outcome_candidate_ids: [\"cout-4xp45AFo\"], confirm: true })\n  - Evidence: Discovery, Inc. (\"WBD\") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the \"WBD transaction\"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil\n- **MSFT / AI, R&D, and technology**\n  - Reason: Open assumption has review pressure 2.\n  - Next action: Review staged candidates linked to assumption asm-GPdNP7yd before carrying this bet forward.\n  - Evidence: 4 observation(s), latest 2026-04-29.\n- **MSFT / Cloud and data center capacity**\n  - Reason: Open assumption has review pressure 2.\n  - Next action: Review staged candidates linked to assumption asm-iS9WFPyL before carrying this bet forward.\n  - Evidence: 4 observation(s), latest 2026-04-29.\n- **NVDA / Inventory and channel**\n  - Reason: Open assumption has review pressure 2.\n  - Next action: Review staged candidates linked to assumption asm-McDqnPXB before carrying this bet forward.\n  - Evidence: 4 observation(s), latest 2026-02-25.\n\n## Limits\n\n- This is decision support, not investment advice or a buy/sell recommendation.\n- SEC disclosures are issuer-authored evidence; they are useful but not independent proof of business reality.\n- A staged review event is not a pass/fail verdict until a human applies it.\n- The report does not use price feeds, valuation models, technical indicators, or portfolio allocation.\n"
+}

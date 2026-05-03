@@ -214,7 +214,7 @@ Decision portfolio exports are written through `idea.export`.
 
 Private idea context is stored in the DB sidecar and is excluded from exports unless `include_private_context: true` is passed.
 
-The May 2026 SEC dogfood generated several local raw report bundles under `/home/ben/sec-dogfood/`. The repo intentionally checks in the reproducible driver and the lifecycle readout, not every generated vault/report copy.
+The May 2026 SEC dogfood generated local raw report bundles under `/home/ben/sec-dogfood/`. The full 2026-05-03 real SEC + LLM lifecycle E2E evidence bundle is checked in under [`evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z`](./evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z/), including the generated vault Markdown and SQLite state.
 
 ## Evidence And Limits
 
@@ -223,6 +223,7 @@ The original decision-loop claim was tested against public historical corpora:
 - Python 2 to 3 cite-rate pilot: [`pilot/RESULT.md`](./pilot/RESULT.md)
 - SEC and ADR readability wedges: [`pilot/RESULT.wedges.md`](./pilot/RESULT.wedges.md)
 - SEC lifecycle dogfood: [`docs/sec-lifecycle-dogfood.md`](./docs/sec-lifecycle-dogfood.md)
+- Full SEC + LLM lifecycle E2E evidence: [`evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z`](./evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z/)
 
 Those evaluations show that the system can identify and track load-bearing assumptions in known decision records and public filings. They do not prove market demand, investment value, or that the system improves every real-world decision.
 
