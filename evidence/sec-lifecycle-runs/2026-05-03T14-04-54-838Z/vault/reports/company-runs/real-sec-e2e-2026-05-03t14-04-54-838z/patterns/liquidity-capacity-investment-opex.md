@@ -10,10 +10,10 @@ created: '2026-05-03T14:29:11.059Z'
 ---
 # Liquidity / Capacity investment and operating expense drag real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Theme: Liquidity
+- Theme: [[liquidity]]
 - Mechanism: Capacity investment and operating expense drag
 - Sectors: Consumer Discretionary, Energy, Information Technology
-- Companies: NVDA, TSLA, XOM
+- Companies: [[nvda]], [[tsla]], [[xom]]
 - Observations: 11
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism

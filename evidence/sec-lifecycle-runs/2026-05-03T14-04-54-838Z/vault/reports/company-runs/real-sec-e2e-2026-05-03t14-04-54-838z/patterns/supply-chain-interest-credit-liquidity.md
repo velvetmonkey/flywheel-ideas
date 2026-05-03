@@ -11,9 +11,9 @@ created: '2026-05-03T14:29:23.135Z'
 # Supply chain / Interest, credit, or liquidity stress real-sec-e2e-2026-05-03t14-04-54-838z
 
 - Theme: Supply chain
-- Mechanism: Interest, credit, or liquidity stress
+- Mechanism: Interest, credit, or [[liquidity]] stress
 - Sectors: Consumer Discretionary, Information Technology
-- Companies: AAPL, AMZN
+- Companies: [[aapl]], [[amzn]]
 - Observations: 7
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism
@@ -25,7 +25,7 @@ Supply chain appears through the interest, credit, or liquidity stress mechanism
 ## Evidence Examples
 
 - **AAPL / Information Technology** (2026-01-30)
-  - Macroeconomic conditions, including inflation, interest rates, component pricing and currency fluctuations, have directly and indirectly impacted, and could in the future materially impact, the Company's results of operations and financial condition.
+  - Macroeconomic conditions, including inflation, interest rates, component pricing and currency fluctuations, have directly and indirectly impacted, and could in the future materially impact, the Company's results of [[operations]] and financial condition.
 - **AMZN / Consumer Discretionary** (2026-02-06)
   - Please carefully consider the following discussion of significant factors, events, and uncertainties that make an investment in our securities risky. The events and consequences discussed in these risk factors could, in circumstances we may or may not be able to accurately predict, recognize, or control, have a material adverse effect on our busine
 - **AMZN / Consumer Discretionary** (2026-02-06)

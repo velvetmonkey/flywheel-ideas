@@ -10,9 +10,9 @@ created: '2026-05-03T14:27:26.150Z'
 ---
 # Consumer Discretionary real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: AMZN, HD, [[tsla]]
+- Companies: [[amzn]], HD, [[tsla]]
 - Observations: 125
-- Staged outcomes: 2
+- Staged [[outcome|outcomes]]: 2
 
 ## Companies
 

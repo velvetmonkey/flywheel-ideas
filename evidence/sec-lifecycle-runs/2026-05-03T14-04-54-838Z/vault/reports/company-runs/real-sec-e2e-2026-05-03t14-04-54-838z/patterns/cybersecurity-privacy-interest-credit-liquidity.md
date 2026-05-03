@@ -11,9 +11,9 @@ created: '2026-05-03T14:29:25.563Z'
 # Cybersecurity and privacy / Interest, credit, or liquidity stress real-sec-e2e-2026-05-03t14-04-54-838z
 
 - Theme: Cybersecurity and privacy
-- Mechanism: Interest, credit, or liquidity stress
+- Mechanism: Interest, credit, or [[liquidity]] stress
 - Sectors: Communication Services, Consumer Discretionary
-- Companies: HD, NFLX
+- Companies: HD, [[nflx]]
 - Observations: 6
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism

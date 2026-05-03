@@ -1,0 +1,2205 @@
+---
+id: idea-ZrmHMSC7
+type: idea
+state: nascent
+title: UNH 2025-10-28 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T16:23:51.854Z'
+date: '2026-05-03'
+created: '2026-05-03T16:23:52.210Z'
+---
+# UNITEDHEALTH GROUP INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2025-10-28
+Source: https://www.sec.gov/Archives/edgar/data/731766/000073176625000305/unh-20250930.htm
+
+Risk Factors
+
+27
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+27
+
+Item 5.
+
+Other Information
+
+27
+
+Item 6.
+
+Exhibits
+
+28
+
+Signatures
+
+29
+
+PART I
+
+ITEM 1. FINANCIAL STATEMENTS
+
+UnitedHealth Group
+
+Condensed Consolidated Balance Sheets
+
+(Unaudited)
+
+(in millions, except per share data)
+
+September 30,
+
+2025
+
+December 31,
+
+2024
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+27,210
+
+$
+
+25,312
+
+Short-term investments
+
+3,404
+
+3,801
+
+Accounts receivable, net
+
+22,672
+
+22,365
+
+Other current receivables, net
+
+32,762
+
+26,089
+
+Prepaid expenses and other current assets
+
+9,019
+
+8,212
+
+Total current assets
+
+95,067
+
+85,779
+
+Long-term investments
+
+52,996
+
+52,354
+
+Property, equipment and capitalized software, net
+
+11,104
+
+10,553
+
+Goodwill
+
+110,340
+
+106,734
+
+Other intangible assets, net
+
+22,785
+
+23,268
+
+Other assets
+
+22,977
+
+19,590
+
+Total assets
+
+$
+
+315,269
+
+$
+
+298,278
+
+Liabilities, redeemable noncontrolling interests and equity
+
+Current liabilities:
+
+Medical costs payable
+
+$
+
+40,181
+
+$
+
+34,224
+
+Accounts payable and accrued liabilities
+
+36,033
+
+34,337
+
+Short-term borrowings and current maturities of long-term debt
+
+7,737
+
+4,545
+
+Unearned revenues
+
+3,366
+
+3,317
+
+Other current liabilities
+
+28,209
+
+27,346
+
+Total current liabilities
+
+115,526
+
+103,769
+
+Long-term debt, less current maturities
+
+72,399
+
+72,359
+
+Deferred income taxes
+
+3,162
+
+3,620
+
+Other liabilities
+
+18,369
+
+15,939
+
+Total liabilities
+
+209,456
+
+195,687
+
+Commitments and contingencies (Note 7)
+
+Redeemable noncontrolling interests
+
+4,244
+
+4,323
+
+Equity:
+
+Preferred stock, $
+
+0.001
+
+par value -
+
+10
+
+shares authorized;
+
+no
+
+shares issued or outstanding
+
+—
+
+—
+
+Common stock, $
+
+0.01
+
+par value -
+
+3,000
+
+shares authorized;
+
+906
+
+and
+
+915
+
+issued and outstanding
+
+9
+
+9
+
+Additional paid-in capital
+
+394
+
+—
+
+Retained earnings
+
+97,595
+
+96,036
+
+Accumulated other comprehensive loss
+
+(
+
+2,211
+
+)
+
+(
+
+3,387
+
+)
+
+Nonredeemable noncontrolling interests
+
+5,782
+
+5,610
+
+Total equity
+
+101,569
+
+98,268
+
+Total liabilities, redeemable noncontrolling interests and equity
+
+$
+
+315,269
+
+$
+
+298,278
+
+See
+
+Notes to the Condensed Consolidated Financial Statements
+
+1
+
+Table of Contents
+
+UnitedHealth Group
+
+Condensed Consolidated Statements of Operations
+
+(Unaudited)
+
+Three Months Ended
+
+September 30,
+
+Nine Months Ended
+
+September 30,
+
+(in millions, except per share data)
+
+2025
+
+2024
+
+2025
+
+2024
+
+Revenues:
+
+Premiums
+
+$
+
+88,979
+
+$
+
+77,442
+
+$
+
+263,418
+
+$
+
+232,327
+
+Products
+
+13,296
+
+12,631
+
+39,896
+
+36,751
+
+Services
+
+9,754
+
+9,104
+
+27,765
+
+26,742
+
+Investment and other income
+
+1,132
+
+1,643
+
+3,273
+
+3,651
+
+Total revenues
+
+113,161
+
+100,820
+
+334,352
+
+299,471
+
+Operating costs:
+
+Medical costs
+
+79,958
+
+65,957
+
+231,954
+
+197,150
+
+Operating costs
+
+15,223
+
+13,280
+
+42,595
+
+40,519
+
+Cost of products sold
+
+12,566
+
+11,834
+
+37,975
+
+34,230
+
+Depreciation and amortization
+
+1,099
+
+1,041
+
+3,244
+
+3,058
+
+Total operating costs
+
+108,846
+
+92,112
+
+315,768
+
+274,957
+
+Earnings from operations
+
+4,315
+
+8,708
+
+18,584
+
+24,514
+
+Interest expense
+
+(
+
+1,003
+
+)
+
+(
+
+1,074
+
+)
+
+(
+
+3,028
+
+)
+
+(
+
+2,903
+
+)
+
+Loss on sale of subsidiary and subsidiaries held for sale
+
+(
+
+83
+
+)
+
+(
+
+20
+
+)
+
+(
+
+139
+
+)
+
+(
+
+8,331
+
+)
+
+Earnings before income taxes
+
+3,229
+
+7,614
+
+15,417
+
+13,280
+
+Provision for income taxes
+
+(
+
+686
+
+)
+
+(
+
+1,356
+
+)
+
+(
+
+2,828
+
+)
+
+(
+
+3,822
+
+)
+
+Net earnings
+
+2,543
+
+6,258
+
+12,589
+
+9,458
+
+Earnings attributable to noncontrolling interests
+
+(
+
+195
+
+)
+
+(
+
+203
+
+)
+
+(
+
+543
+
+)
+
+(
+
+596
+
+)
+
+Net earnings attributable to UnitedHealth Group common shareholders
+
+$
+
+2,348
+
+$
+
+6,055
+
+$
+
+12,046
+
+$
+
+8,862
+
+Earnings per share attributable to UnitedHealth Group common shareholders:
+
+Basic
+
+$
+
+2.59
+
+$
+
+6.56
+
+$
+
+13.27
+
+$
+
+9.61
+
+Diluted
+
+$
+
+2.59
+
+$
+
+6.51
+
+$
+
+13.21
+
+$
+
+9.53
+
+Basic weighted-average number of common shares outstanding
+
+906
+
+923
+
+908
+
+922
+
+Dilutive effect of common share equivalents
+
+2
+
+7
+
+4
+
+8
+
+Diluted weighted-average number of common shares outstanding
+
+908
+
+930
+
+912
+
+930
+
+Anti-dilutive shares excluded from the calculation of dilutive effect of common share equivalents
+
+16
+
+4
+
+12
+
+6
+
+See
+
+Notes to the Condensed Consolidated Financial Statements
+
+2
+
+Table of Contents
+
+UnitedHealth Group
+
+Condensed Consolidated Statements of Comprehensive Income
+
+(Unaudited)
+
+Three Months Ended
+
+September 30,
+
+Nine Months Ended
+
+September 30,
+
+(in millions)
+
+2025
+
+2024
+
+2025
+
+2024
+
+Net earnings
+
+$
+
+2,543
+
+$
+
+6,258
+
+$
+
+12,589
+
+$
+
+9,458
+
+Other comprehensive income:
+
+Gross unrealized gains on investment securities during the period
+
+535
+
+1,434
+
+1,383
+
+1,069
+
+Income tax effect
+
+(
+
+122
+
+)
+
+(
+
+328
+
+)
+
+(
+
+316
+
+)
+
+(
+
+243
+
+)
+
+Total unrealized gains, net of tax
+
+413
+
+1,106
+
+1,067
+
+826
+
+Gross reclassification adjustment for net realized gains included in net earnings
+
+(
+
+24
+
+)
+
+(
+
+291
+
+)
+
+(
+
+51
+
+)
+
+(
+
+349
+
+)
+
+Income tax effect
+
+6
+
+67
+
+12
+
+80
+
+Total reclassification adjustment, net of tax
+
+(
+
+18
+
+)
+
+(
+
+224
+
+)
+
+(
+
+39
+
+)
+
+(
+
+269
+
+)
+
+Foreign currency translation (losses) gains
+
+(
+
+71
+
+)
+
+88
+
+148
+
+(
+
+197
+
+)
+
+Reclassification adjustment for translation losses included in net earnings
+
+—
+
+—
+
+—
+
+4,214
+
+Total foreign currency translation (losses) gains
+
+(
+
+71
+
+)
+
+88
+
+148
+
+4,017
+
+Other comprehensive income
+
+324
+
+970
+
+1,176
+
+4,574
+
+Comprehensive income
+
+2,867
+
+7,228
+
+13,765
+
+14,032
+
+Comprehensive income attributable to noncontrolling interests
+
+(
+
+195
+
+)
+
+(
+
+203
+
+)
+
+(
+
+543
+
+)
+
+(
+
+596
+
+)
+
+Comprehensive income attributable to UnitedHealth Group common shareholders
+
+$
+
+2,672
+
+$
+
+7,025
+
+$
+
+13,222
+
+$
+
+13,436
+
+See
+
+Notes to the Condensed Consolidated Financial Statements
+
+3
+
+Table of Contents
+
+UnitedHealth Group
+
+Condensed Consolidated Statements of Changes in Equity
+
+(Unaudited)
+
+Common Stock
+
+Additional Paid-In Capital
+
+Retained Earnings
+
+Accumulated Other Comprehensive Loss
+
+Nonredeemable Noncontrolling Interests
+
+Total
+
+Equity
+
+Three months ended September 30,
+
+(in millions)
+
+Shares
+
+Amount
+
+Net Unrealized (Losses) Gains on Investments
+
+Foreign Currency Translation (Losses) Gains
+
+Balance at June 30, 2025
+
+905
+
+$
+
+9
+
+$
+
+—
+
+$
+
+97,250
+
+$
+
+(
+
+1,593
+
+)
+
+$
+
+(
+
+942
+
+)
+
+$
+
+5,745
+
+$
+
+100,469
+
+Net earnings
+
+2,348
+
+167
+
+2,515
+
+Other comprehensive income (loss)
+
+395
+
+(
+
+71
+
+)
+
+324
+
+Issuances of common stock, and related tax effects
+
+1
+
+—
+
+241
+
+241
+
+Share-based compensation
+
+214
+
+214
+
+Common share repurchases
+
+—
+
+—
+
+1
+
+(
+
+1
+
+)
+
+—
+
+Cash dividends paid on common shares ($
+
+2.21
+
+per share)
+
+(
+
+2,002
+
+)
+
+(
+
+2,002
+
+)
+
+Redeemable noncontrolling interests fair value and other adjustments
+
+(
+
+62
+
+)
+
+(
+
+62
+
+)
+
+Acquisition and other adjustments of nonredeemable noncontrolling interests
+
+34
+
+34
+
+Distribution to nonredeemable noncontrolling interests
+
+(
+
+164
+
+)
+
+(
+
+164
+
+)
+
+Balance at September 30, 2025
+
+906
+
+$
+
+9
+
+$
+
+394
+
+$
+
+97,595
+
+$
+
+(
+
+1,198
+
+)
+
+$
+
+(
+
+1,013
+
+)
+
+$
+
+5,782
+
+$
+
+101,569
+
+Balance at June 30, 2024
+
+921
+
+$
+
+9
+
+$
+
+373
+
+$
+
+92,400
+
+$
+
+(
+
+2,296
+
+)
+
+$
+
+(
+
+1,127
+
+)
+
+$
+
+5,317
+
+$
+
+94,676
+
+Net earnings
+
+6,055
+
+155
+
+6,210
+
+Other comprehensive income
+
+882
+
+88
+
+970
+
+Issuances of common stock, and related tax effects
+
+4
+
+—
+
+842
+
+842
+
+Share-based compensation
+
+208
+
+208
+
+Common share repurchases
+
+(
+
+2
+
+)
+
+—
+
+(
+
+957
+
+)
+
+—
+
+(
+
+957
+
+)
+
+Cash dividends paid on common shares ($
+
+2.10
+
+per share)
+
+(
+
+1,937
+
+)
+
+(
+
+1,937
+
+)
+
+Redeemable noncontrolling interests fair value and other adjustments
+
+(
+
+5
+
+)
+
+(
+
+5
+
+)
+
+Acquisition and other adjustments of nonredeemable noncontrolling interests
+
+28
+
+28
+
+Distribution to nonredeemable noncontrolling interests
+
+(
+
+154
+
+)
+
+(
+
+154
+
+)
+
+Balance at September 30, 2024
+
+923
+
+$
+
+9
+
+$
+
+461
+
+$
+
+96,518
+
+$
+
+(
+
+1,414
+
+)
+
+$
+
+(
+
+1,039
+
+)
+
+$
+
+5,346
+
+$
+
+99,881
+
+See
+
+Notes to the Condensed Consolidated Financial Statements
+
+4
+
+Table of Contents
+
+UnitedHealth Group
+
+Condensed Consolidated Statements of Changes in Equity
+
+(Unaudited)
+
+Common Stock
+
+Additional Paid-In Capital
+
+Retained Earnings
+
+Accumulated Other Comprehensive Loss
+
+Nonredeemable Noncontrolling Interests
+
+Total
+
+Equity
+
+Nine months ended September 30,
+
+(in millions)
+
+Shares
+
+Amount
+
+Net Unrealized (Losses) Gains on Investments
+
+Foreign Currency Translation (Losses) Gains
+
+Balance at January 1, 2025
+
+915
+
+$
+
+9
+
+$
+
+—
+
+$
+
+96,036
+
+$
+
+(
+
+2,226
+
+)
+
+$
+
+(
+
+1,161
+
+)
+
+$
+
+5,610
+
+$
+
+98,268
+
+Net earnings
+
+12,046
+
+464
+
+12,510
+
+Other comprehensive income
+
+1,028
+
+148
+
+1,176
+
+Issuances of common stock, and related tax effects
+
+3
+
+—
+
+620
+
+620
+
+Share-based compensation
+
+805
+
+805
+
+Common share repurchases
+
+(
+
+12
+
+)
+
+—
+
+(
+
+954
+
+)
+
+(
+
+4,573
+
+)
+
+(
+
+5,527
+
+)
+
+Cash dividends paid on common shares ($
+
+6.52
+
+per share)
+
+(
+
+5,914
+
+)
+
+(
+
+5,914
+
+)
+
+Redeemable noncontrolling interests fair value and other adjustments
+
+(
+
+77
+
+)
+
+(
+
+77
+
+)
+
+Acquisition and other adjustments of nonredeemable noncontrolling interests
+
+209
+
+209
+
+Distribution to nonredeemable noncontrolling interests
+
+(
+
+501
+
+)
+
+(
+
+501
+
+)
+
+Balance at September 30, 2025
+
+906
+
+$
+
+9
+
+$
+
+394
+
+$
+
+97,595
+
+$
+
+(
+
+1,198
+
+)
+
+$
+
+(
+
+1,013
+
+)
+
+$
+
+5,782
+
+$
+
+101,569
+
+Balance at January 1, 2024
+
+924
+
+$
+
+9
+
+$
+
+—
+
+$
+
+95,774
+
+$
+
+(
+
+1,971
+
+)
+
+$
+
+(
+
+5,056
+
+)
+
+$
+
+5,665
+
+$
+
+94,421
+
+Net earnings
+
+8,862
+
+462
+
+9,324
+
+Other comprehensive income
+
+557
+
+4,017
+
+4,574
+
+Issuances of common stock, and related tax effects
+
+7
+
+—
+
+1,280
+
+1,280
+
+Share-based compensation
+
+770
+
+770
+
+Common share repurchases
+
+(
+
+8
+
+)
+
+—
+
+(
+
+1,528
+
+)
+
+(
+
+2,517
+
+)
+
+(
+
+4,045
+
+)
+
+Cash dividends paid on common shares ($
+
+6.08
+
+per share)
+
+(
+
+5,601
+
+)
+
+(
+
+5,601
+
+)
+
+Redeemable noncontrolling interests fair value and other adjustments
+
+(
+
+61
+
+)
+
+(
+
+61
+
+)
+
+Acquisition and other adjustments of nonredeemable noncontrolling interests
+
+(
+
+291
+
+)
+
+(
+
+291
+
+)
+
+Distribution to nonredeemable noncontrolling interests
+
+(
+
+490
+
+)
+
+(
+
+490
+
+)
+
+Balance at September 30, 2024
+
+923
+
+$
+
+9
+
+$
+
+461
+
+$
+
+96,518
+
+$
+
+(
+
+1,414
+
+)
+
+$
+
+(
+
+1,039
+
+)
+
+$
+
+5,346
+
+$
+
+99,881
+
+See
+
+Notes to the Condensed Consolidated Financial Statements
+
+5
+
+Table of Contents
+
+UnitedHealth Group
+
+Condensed Consolidated Statements of Cash Flows
+
+(Unaudited)
+
+Nine Months Ended
+
+September 30,
+
+(in millions)
+
+2025
+
+2024
+
+Operating activities
+
+Net earnings
+
+$
+
+12,589
+
+$
+
+9,458
+
+Noncash items:
+
+Depreciation and amortization
+
+3,244
+
+3,058
+
+Deferred income taxes
+
+(
+
+1,019
+
+)
+
+(
+
+234
+
+)
+
+Share-based compensation
+
+795
+
+831
+
+Loss on sale of subsidiary and subsidiaries held for sale
+
+139
+
+8,331
+
+Other, net
+
+64
+
+(
+
+610
+
+)
+
+Net change in other operating items, net of effects from acquisitions and dispositions:
+
+Accounts receivable
+
+65
+
+685
+
+Other assets
+
+(
+
+3,105
+
+)
+
+(
+
+2,988
+
+)
+
+Medical costs payable
+
+6,178
+
+2,235
+
+Accounts payable and other liabilities
+
+(
+
+417
+
+)
+
+1,250
+
+Unearned revenues
+
+56
+
+(
+
+181
+
+)
+
+Cash flows from operating activities
+
+18,589
+
+21,835
+
+Investing activities
+
+Purchases of investments
+
+(
+
+12,805
+
+)
+
+(
+
+19,951
+
+)
+
+Sales of investments
+
+7,945
+
+15,065
+
+Maturities of investments
+
+6,517
+
+6,738
+
+Cash paid for acquisitions and other transactions, net of cash assumed
+
+(
+
+4,436
+
+)
+
+(
+
+11,674
+
+)
+
+Purchases of property, equipment and capitalized software
+
+(
+
+2,674
+
+)
+
+(
+
+2,587
+
+)
+
+Loans to care providers - cyberattack
+
+—
+
+(
+
+8,904
+
+)
+
+Repayments of care provider loans - cyberattack
+
+1,543
+
+3,189
+
+Other, net
+
+(
+
+2,164
+
+)
+
+(
+
+1,284
+
+)
+
+Cash flows used for investing activities
+
+(
+
+6,074
+
+)
+
+(
+
+19,408
+
+)
+
+Financing activities
+
+Common share repurchases
+
+(
+
+5,545
+
+)
+
+(
+
+4,028
+
+)
+
+Cash dividends paid
+
+(
+
+5,914
+
+)
+
+(
+
+5,601
+
+)
+
+Proceeds from common stock issuances
+
+803
+
+1,611
+
+Repayments of long-term debt
+
+(
+
+2,000
+
+)
+
+(
+
+2,500
+
+)
+
+Proceeds from (repayments of) short-term borrowings, net
+
+1,469
+
+(
+
+191
+
+)
+
+Proceeds from issuance of long-term debt
+
+2,969
+
+17,811
+
+Customer funds administered
+
+(
+
+1,792
+
+)
+
+(
+
+1,059
+
+)
+
+Other, net
+
+(
+
+603
+
+)
+
+(
+
+1,213
+
+)
+
+Cash flows (used for) from financing activities
+
+(
+
+10,613
+
+)
+
+4,830
+
+Effect of exchange rate changes on cash and cash equivalents
+
+25
+
+(
+
+30
+
+)
+
+Increase in cash and cash equivalents, including cash within businesses held for sale
+
+1,927
+
+7,227
+
+Less: net increase in cash within businesses held for sale
+
+(
+
+29
+
+)
+
+(
+
+254
+
+)
+
+Net increase in cash and cash equivalents
+
+1,898
+
+6,973
+
+Cash and cash equivalents, beginning of period
+
+25,312
+
+25,427
+
+Cash and cash equivalents, end of period
+
+$
+
+27,210
+
+$
+
+32,400
+
+See
+
+Notes to the Condensed Consolidated Financial Statements
+
+6
+
+Table of Contents
+
+UnitedHealth Group
+
+Notes to the Condensed Consolidated Financial Statements
+
+(Unaudited)
+
+1.
+
+Basis of Presentation
+
+UnitedHealth Group Incorporated (individually and together with its subsidiaries, "UnitedHealth Group" and the "Company") is a health care and well-being company with a mission to help people live healthier lives and help make the health system work better for everyone. The Company's two distinct, yet complementary businesses — Optum and UnitedHealthcare — are working to help build a modern, high-performing health system through improved access, affordability, outcomes and experiences for the individuals and organizations the Company is privileged to serve.
+
+The Company has prepared the Condensed Consolidated Financial Statements according to U.S. Generally Accepted Accounting Principles (GAAP) and has included the accounts of UnitedHealth Group and its subsidiaries. The year-end condensed consolidated balance sheet was derived from audited financial statements, but does not include all disclosures required by GAAP. In accordance with the rules and regulations of the U.S. Securities and Exchange Commission (SEC), the Company has omitted certain footnote disclosures that would substantially duplicate the disclosures contained in its annual audited Consolidated Financial Statements. Therefore, these Condensed Consolidated Financial Statements should be read together with the Consolidated Financial Statements and the Notes included in Part II, Item 8, "Financial Statements and Supplementary Data" in the Company's Annual Report on Form 10-K for the year ended December 31, 2024 as filed with the SEC (2024 10-K). The accompanying Condensed Consolidated Financial Statements include all normal recurring adjustments necessary to present the interim financial statements fairly.

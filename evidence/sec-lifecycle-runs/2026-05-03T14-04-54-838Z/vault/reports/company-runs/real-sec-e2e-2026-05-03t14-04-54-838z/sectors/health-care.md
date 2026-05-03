@@ -9,9 +9,9 @@ created: '2026-05-03T14:27:30.966Z'
 ---
 # Health Care real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: JNJ, [[lly]], [[mrk]]
+- Companies: [[jnj]], [[lly]], [[mrk]]
 - Observations: 83
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

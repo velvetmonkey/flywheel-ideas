@@ -13,7 +13,7 @@ created: '2026-05-03T14:29:35.567Z'
 - Theme: Inventory and channel
 - Mechanism: Commodity or input cost pressure
 - Sectors: Energy, Health Care
-- Companies: JNJ, XOM
+- Companies: [[jnj]], [[xom]]
 - Observations: 5
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism

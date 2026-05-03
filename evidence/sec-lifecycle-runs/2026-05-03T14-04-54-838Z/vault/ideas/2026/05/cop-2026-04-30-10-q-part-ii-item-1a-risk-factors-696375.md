@@ -276,7 +276,7 @@ U.S. Securities and Exchange
 
 NGLs
 
-natural gas liquids
+natural gas [[liquidity|liquids]]
 
 Commission
 
@@ -1232,7 +1232,7 @@ Notes to Consolidated Financial Statements
 
 Note 1—Basis of Presentation
 
-The interim-period financial information presented in the financial statements included in this report is unaudited and, in the opinion of management, includes all known accruals and adjustments necessary for a fair presentation of the consolidated financial position of ConocoPhillips, its results of operations and cash flows for such periods. All such adjustments are of a normal and recurring nature, unless otherwise disclosed. Certain notes and other information have been condensed or omitted from the interim financial statements included in this report; therefore, these financial statements should be read in conjunction with the consolidated financial statements and notes included in our 2025 Annual Report on Form 10-K. Certain prior year financial statement line items have been reclassified to conform to the current year presentation.
+The interim-period financial information presented in the financial statements included in this report is unaudited and, in the opinion of management, includes all known accruals and adjustments necessary for a fair presentation of the consolidated financial position of ConocoPhillips, its results of [[operations]] and cash flows for such periods. All such adjustments are of a normal and recurring nature, unless otherwise disclosed. Certain notes and other information have been condensed or omitted from the interim financial statements included in this report; therefore, these financial statements should be read in conjunction with the consolidated financial statements and notes included in our 2025 Annual Report on Form 10-K. Certain prior year financial statement line items have been reclassified to conform to the current year presentation.
 
 Note 2—Inventories
 

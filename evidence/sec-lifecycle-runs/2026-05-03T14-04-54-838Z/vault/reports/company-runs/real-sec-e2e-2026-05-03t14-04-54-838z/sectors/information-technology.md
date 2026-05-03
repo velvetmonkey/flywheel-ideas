@@ -10,9 +10,9 @@ created: '2026-05-03T14:27:33.388Z'
 ---
 # Information Technology real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: AAPL, [[msft]], [[nvda]]
+- Companies: [[aapl]], [[msft]], [[nvda]]
 - Observations: 119
-- Staged outcomes: 7
+- Staged [[outcome|outcomes]]: 7
 
 ## Companies
 

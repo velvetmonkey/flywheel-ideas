@@ -13,7 +13,7 @@ created: '2026-05-03T14:29:30.748Z'
 - Theme: Cloud and data center capacity
 - Mechanism: Commodity or input cost pressure
 - Sectors: Energy, Health Care
-- Companies: COP, JNJ
+- Companies: COP, [[jnj]]
 - Observations: 5
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism
@@ -29,7 +29,7 @@ Cloud and data center capacity appears through the commodity or input cost press
 - **JNJ / Health Care** (2026-02-11)
   - Growth of ERLEADA (apalutamide) was primarily due to continued share gains and market growth partially offset by the impact of Medicare Part D redesign. Increased sales of CARVYKTI (ciltacabtagene autoleucel) were driven by continued share gains and capacity expansion. Additionally, sales from the ongoing launches and share gains of TECVAYLI (tecli
 - **COP / Energy** (2026-02-17)
-  - As discussed herein, our operations are subject to extensive governmental regulations across numerous jurisdictions. From time to time, regulatory agencies have imposed price controls and limitations on production by restricting the rate of flow of crude oil, bitumen, natural gas and NGLs wells below actual production capacity. Similarly, in respon
+  - As discussed herein, our [[operations]] are subject to extensive governmental regulations across numerous jurisdictions. From time to time, regulatory agencies have imposed price controls and limitations on production by restricting the rate of flow of crude oil, bitumen, natural gas and NGLs wells below actual production capacity. Similarly, in respon
 - **COP / Energy** (2026-02-17)
   - As part of our LNG strategy to build a dynamic portfolio and expand our footprint across the value chain, we have various commercial LNG offtake agreements in North America totaling 10.2 MTPA with offtake commencing between 2026-2031. Furthermore, we currently have a total regasification capacity in Europe of approximately 6.7 MTPA. We continue to 
 - **COP / Energy** (2026-04-30)

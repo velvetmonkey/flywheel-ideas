@@ -13,7 +13,7 @@ created: '2026-05-03T14:29:20.729Z'
 - Theme: Competition
 - Mechanism: Platform or customer concentration
 - Sectors: Communication Services, Information Technology
-- Companies: NFLX, NVDA
+- Companies: [[nflx]], [[nvda]]
 - Observations: 7
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism

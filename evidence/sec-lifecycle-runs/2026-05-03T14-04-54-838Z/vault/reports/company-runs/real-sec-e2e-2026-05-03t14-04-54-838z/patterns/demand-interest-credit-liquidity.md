@@ -11,9 +11,9 @@ created: '2026-05-03T14:28:58.896Z'
 # Demand / Interest, credit, or liquidity stress real-sec-e2e-2026-05-03t14-04-54-838z
 
 - Theme: Demand
-- Mechanism: Interest, credit, or liquidity stress
+- Mechanism: Interest, credit, or [[liquidity]] stress
 - Sectors: Communication Services, Consumer Discretionary
-- Companies: HD, NFLX
+- Companies: HD, [[nflx]]
 - Observations: 8
 - Realized candidates: 1
 - Signal: shared mechanism with realized-risk evidence

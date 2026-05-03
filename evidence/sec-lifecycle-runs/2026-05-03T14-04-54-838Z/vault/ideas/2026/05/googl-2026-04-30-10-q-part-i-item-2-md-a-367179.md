@@ -12,13 +12,13 @@ created: '2026-05-03T14:09:27.619Z'
 Filed: 2026-04-30
 Source: https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm
 
-MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS
+MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF [[operations]]
 
 Please read the following discussion and analysis of our financial condition and results of operations together with "Note about Forward-Looking Statements" and our consolidated financial statements and related notes included under Item 1 of this Quarterly Report on Form 10-Q as well as our Annual Report on Form 10-K for the fiscal year ended December 31, 2025, including Part I, Item 1A "Risk Factors," as updated in Part II, Item 1A of this Quarterly Report on Form 10-Q.
 
 Understanding Alphabet's Financial Results
 
-Alphabet is a collection of businesses — the largest of which is Google. We report Google in two segments, Google Services and Google Cloud, and all non-Google businesses collectively as Other Bets. Supporting these businesses, we have centralized certain AI-related research and development focused on advanced research in AI and developing the frontier models that serve our businesses, which is reported in Alphabet-level activities. For further details on our segments, see Note 15 of the Notes to Consolidated Financial Statements included in Item 1 of this Quarterly Report on Form 10-Q.
+Alphabet is a collection of businesses — the largest of which is [[googl|Google]]. We report Google in two segments, Google Services and Google Cloud, and all non-Google businesses collectively as Other Bets. Supporting these businesses, we have centralized certain AI-related research and development focused on advanced research in AI and developing the frontier models that serve our businesses, which is reported in Alphabet-level activities. For further details on our segments, see Note 15 of the Notes to Consolidated Financial Statements included in Item 1 of this Quarterly Report on Form 10-Q.
 
 Revenues and Monetization Metrics
 

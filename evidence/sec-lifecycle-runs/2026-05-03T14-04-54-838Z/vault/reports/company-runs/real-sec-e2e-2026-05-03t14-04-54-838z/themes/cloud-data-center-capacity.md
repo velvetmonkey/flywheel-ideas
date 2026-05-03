@@ -10,6 +10,6 @@ created: '2026-05-03T14:28:29.560Z'
 ---
 # Cloud and data center capacity real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, [[lly]], META, [[mrk]], [[msft]], NFLX, NVDA, [[tsla]], [[xom]]
+- Companies: [[aapl]], [[amzn]], COP, [[cvx]], [[googl]], HD, [[jnj]], [[lly]], META, [[mrk]], [[msft]], [[nflx]], [[nvda]], [[tsla]], [[xom]]
 - Observations: 44
 - Latest seen: 2026-05-01

@@ -463,19 +463,19 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
 
 ## Observation Evidence Examples
 
-- **LLY / AI, R&D, and technology** (2026-02-12, item-1a)
+- **[[lly]] / AI, R&D, and technology** (2026-02-12, item-1a)
   - Source: sec-company://0000059478/0000059478-26-000013#item-1a:theme:ai-rd-technology:assumption
   - Pharmaceutical research and development is very costly and highly uncertain; we may not succeed in developing, licensing, or acquiring commercially successful products sufficient in number or value to replace revenues of products that have lost or will lose intellectual property protection or are di
 - **HD / AI, R&D, and technology** (2025-11-25, part-i-item-2)
   - Source: sec-company://0000354950/0001628280-25-053868#part-i-item-2:theme:ai-rd-technology:assumption
   - Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and expectations; net sales growth; comparable sales; the effects of competition; our brand and reputation; impl
-- **MSFT / AI, R&D, and technology** (2026-01-28, part-i-item-2)
+- **[[msft]] / AI, R&D, and technology** (2026-01-28, part-i-item-2)
   - Source: sec-company://0000789019/0001193125-26-027207#part-i-item-2:theme:ai-rd-technology:assumption
   - Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
 - **NVDA / AI, R&D, and technology** (2025-11-19, part-i-item-2)
   - Source: sec-company://0001045810/0001045810-25-000230#part-i-item-2:theme:ai-rd-technology:assumption
   - Since our original focus on PC graphics, we have expanded to several other large and important computationally intensive fields. Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific
-- **TSLA / AI, R&D, and technology** (2026-01-29, item-1a)
+- **[[tsla]] / AI, R&D, and technology** (2026-01-29, item-1a)
   - Source: sec-company://0001318605/0001628280-26-003952#item-1a:theme:ai-rd-technology:assumption
   - In particular, our future business depends on development of our driver assistance systems and autonomous driving solutions and increasing the production of mass-market vehicles, including Cybercab, our purpose-built Robotaxi product. In order to be successful, we will need to further advance our ca
 - **META / AI, R&D, and technology** (2026-01-29, item-1a)
@@ -502,7 +502,7 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Candidate IDs: cout-Ht9MFXWY
   - Representative source: sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome
   - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
-- **NFLX** 2026-04-17: 1 candidate(s), Demand
+- **[[nflx]]** 2026-04-17: 1 candidate(s), Demand
   - Candidate IDs: cout-4xp45AFo
   - Representative source: sec-company://0001065280/0001065280-26-000138#part-i-item-2:theme:demand:outcome
   - Discovery, Inc. ("WBD") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the "WBD transaction"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil
@@ -569,7 +569,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **LLY / Macro and foreign exchange**: first 2026-02-12, latest 2026-04-30, assumption asm-derUbUFf
 - **LLY / Regulation and legal**: first 2026-02-12, latest 2026-04-30, assumption asm-VFoQikod
 - **LLY / Supply chain**: first 2026-02-12, latest 2026-04-30, assumption asm-Yat6WVD3
-- **CVX / AI, R&D, and technology**: first 2026-02-24, latest 2026-02-24, assumption asm-ZSJopWuv
+- **[[cvx]] / AI, R&D, and technology**: first 2026-02-24, latest 2026-02-24, assumption asm-ZSJopWuv
 - **CVX / Cloud and data center capacity**: first 2026-02-24, latest 2026-02-24, assumption asm-CrQ9sp2d
 - **CVX / Competition**: first 2025-11-06, latest 2026-02-24, assumption asm-NRVecFwa
 - **CVX / Customer and platform dependency**: first 2026-02-24, latest 2026-02-24, assumption asm-7nH5hRnj
@@ -581,7 +581,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **CVX / Macro and foreign exchange**: first 2025-11-06, latest 2026-02-24, assumption asm-A6GfvtrT
 - **CVX / Regulation and legal**: first 2025-11-06, latest 2026-02-24, assumption asm-LidC1ga9
 - **CVX / Supply chain**: first 2025-11-06, latest 2026-02-24, assumption asm-DbV1sbEF
-- **JNJ / AI, R&D, and technology**: first 2026-02-11, latest 2026-04-22, assumption asm-hRSm45i8
+- **[[jnj]] / AI, R&D, and technology**: first 2026-02-11, latest 2026-04-22, assumption asm-hRSm45i8
 - **JNJ / Cloud and data center capacity**: first 2026-02-11, latest 2026-02-11, assumption asm-kwu8591Z
 - **JNJ / Competition**: first 2026-02-11, latest 2026-04-22, assumption asm-AxC8rZQY
 - **JNJ / Customer and platform dependency**: first 2026-04-22, latest 2026-04-22, assumption asm-aRpVrXKX
@@ -592,7 +592,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **JNJ / Macro and foreign exchange**: first 2026-02-11, latest 2026-02-11, assumption asm-wewjF5g5
 - **JNJ / Regulation and legal**: first 2026-02-11, latest 2026-04-22, assumption asm-7ikEapJ9
 - **JNJ / Supply chain**: first 2026-02-11, latest 2026-04-22, assumption asm-dNq8J6Vp
-- **MRK / AI, R&D, and technology**: first 2025-11-05, latest 2026-02-24, assumption asm-wBcvhCMy
+- **[[mrk]] / AI, R&D, and technology**: first 2025-11-05, latest 2026-02-24, assumption asm-wBcvhCMy
 - **MRK / Cloud and data center capacity**: first 2026-02-24, latest 2026-02-24, assumption asm-juZNihiF
 - **MRK / Competition**: first 2025-11-05, latest 2026-02-24, assumption asm-2E9HuqMi
 - **MRK / Customer and platform dependency**: first 2026-02-24, latest 2026-02-24, assumption asm-f8zcqTYW
@@ -604,7 +604,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **MRK / Macro and foreign exchange**: first 2025-11-05, latest 2026-02-24, assumption asm-AovWRn1g
 - **MRK / Regulation and legal**: first 2025-11-05, latest 2026-02-24, assumption asm-ak64bURW
 - **MRK / Supply chain**: first 2025-11-05, latest 2026-02-24, assumption asm-TQYN98UA
-- **AAPL / AI, R&D, and technology**: first 2026-01-30, latest 2026-05-01, assumption asm-GfmjNzyR
+- **[[aapl]] / AI, R&D, and technology**: first 2026-01-30, latest 2026-05-01, assumption asm-GfmjNzyR
 - **AAPL / Cloud and data center capacity**: first 2026-01-30, latest 2026-05-01, assumption asm-DGwaJLnR
 - **AAPL / Competition**: first 2026-05-01, latest 2026-05-01, assumption asm-4PhFSN51
 - **AAPL / Customer and platform dependency**: first 2026-01-30, latest 2026-05-01, assumption asm-e56MdArq
@@ -640,7 +640,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **MSFT / Macro and foreign exchange**: first 2026-01-28, latest 2026-04-29, assumption asm-yyHd4h7k
 - **MSFT / Regulation and legal**: first 2026-01-28, latest 2026-04-29, assumption asm-wYKdaUEh
 - **MSFT / Supply chain**: first 2026-01-28, latest 2026-04-29, assumption asm-ivPdQJPh
-- **AMZN / AI, R&D, and technology**: first 2026-02-06, latest 2026-04-30, assumption asm-5Vv2K8mG
+- **[[amzn]] / AI, R&D, and technology**: first 2026-02-06, latest 2026-04-30, assumption asm-5Vv2K8mG
 - **AMZN / Cloud and data center capacity**: first 2026-02-06, latest 2026-04-30, assumption asm-gmyqhGKK
 - **AMZN / Competition**: first 2026-02-06, latest 2026-04-30, assumption asm-sNf7JTNq
 - **AMZN / Cybersecurity and privacy**: first 2026-02-06, latest 2026-04-30, assumption asm-14hTdTLG
@@ -706,7 +706,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **META / Liquidity**: first 2026-01-29, latest 2026-04-30, assumption asm-L1facWwu
 - **META / Macro and foreign exchange**: first 2026-01-29, latest 2026-04-30, assumption asm-L17E1Jrs
 - **META / Regulation and legal**: first 2026-01-29, latest 2026-04-30, assumption asm-ts2AsHFj
-- **GOOGL / AI, R&D, and technology**: first 2026-02-05, latest 2026-04-30, assumption asm-hgXczyrR
+- **[[googl]] / AI, R&D, and technology**: first 2026-02-05, latest 2026-04-30, assumption asm-hgXczyrR
 - **GOOGL / Cloud and data center capacity**: first 2026-02-05, latest 2026-04-30, assumption asm-HwoHakqe
 - **GOOGL / Competition**: first 2026-02-05, latest 2026-04-30, assumption asm-k464Quak
 - **GOOGL / Customer and platform dependency**: first 2026-02-05, latest 2026-04-30, assumption asm-UnoJ8zXs

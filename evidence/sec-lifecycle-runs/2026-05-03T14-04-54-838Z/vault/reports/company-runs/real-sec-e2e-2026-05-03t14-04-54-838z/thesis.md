@@ -13,7 +13,7 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## Executive Readout
 
-- Companies: AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, [[xom]]
+- Companies: [[aapl]], [[amzn]], COP, [[cvx]], [[googl]], HD, [[jnj]], [[lly]], META, [[mrk]], [[msft]], [[nflx]], NVDA, [[tsla]], [[xom]]
 - Filings scanned: 30
 - Current thesis dependencies: 169 open bet(s).
 - Human review queue: 8 event(s), 11 staged candidate(s).

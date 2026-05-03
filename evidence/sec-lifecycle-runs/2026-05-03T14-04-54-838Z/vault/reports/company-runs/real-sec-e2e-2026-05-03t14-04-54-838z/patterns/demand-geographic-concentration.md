@@ -13,7 +13,7 @@ created: '2026-05-03T14:28:54.019Z'
 - Theme: Demand
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Consumer Discretionary, Information Technology
-- Companies: AMZN, NVDA
+- Companies: [[amzn]], [[nvda]]
 - Observations: 8
 - Realized candidates: 2
 - Signal: shared mechanism with realized-risk evidence

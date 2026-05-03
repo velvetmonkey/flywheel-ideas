@@ -1,0 +1,507 @@
+---
+id: idea-UpgAEsoQ
+type: idea
+state: nascent
+title: DUK 2025-11-07 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T16:59:37.181Z'
+date: '2026-05-03'
+created: '2026-05-03T16:59:37.546Z'
+---
+# Duke Energy CORP 10-Q Part II Item 1A Risk Factors
+
+Filed: 2025-11-07
+Source: https://www.sec.gov/Archives/edgar/data/1326160/000132616025000192/duk-20250930.htm
+
+Risk Factors
+
+122
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+122
+
+Item 5.
+
+Other Information
+
+122
+
+Item 6.
+
+Exhibits
+
+124
+
+Signatures
+
+127
+
+GLOSSARY OF TERMS
+
+Glossary of Terms
+
+The following terms or acronyms used in this Form 10-Q are defined below:
+
+Term or Acronym
+
+Definition
+
+2015 CCR Rule
+
+A 2015 EPA rule establishing national regulations to provide a comprehensive set of requirements for the
+
+management and disposal of CCR from coal-fired power plants
+
+2024 CCR Rule
+
+The EPA's Legacy CCR Surface Impoundments rule issued in April 2024 under the Resource Conservation and Recovery Act, which significantly expands the scope of the 2015 CCR Rule
+
+AFUDC
+
+Allowance for funds used during construction
+
+Bison
+
+Bison Insurance Company Limited
+
+Brookfield
+
+Brookfield Renewable Partners L.P.
+
+CC
+
+Combined Cycle
+
+CCR
+
+Coal Combustion Residuals
+
+CECPCN
+
+Certificate of Environmental Compatibility and Public Convenience and Necessity
+
+CFIUS
+
+The Committee on Foreign Investments in the United States
+
+CPCN
+
+Certificate of Public Convenience and Necessity
+
+the Company
+
+Duke Energy Corporation and its subsidiaries
+
+Commercial Renewables Disposal Groups
+
+Commercial Renewables business segment, excluding the offshore wind contract for Carolina Long Bay, separated into the utility-scale solar and wind group, the distributed generation group and the remaining assets
+
+COVID
+
+Coronavirus Disease 2019
+
+CRC
+
+Cinergy Receivables Company, LLC
+
+Crystal River Unit 3
+
+Crystal River Unit 3 Nuclear Plant
+
+CT
+
+Combustion Turbine
+
+CWIP
+
+Construction Work in Progress
+
+DEFR
+
+Duke Energy Florida Receivables, LLC
+
+DEPR
+
+Duke Energy Progress Receivables, LLC
+
+DERF
+
+Duke Energy Receivables Finance Company, LLC
+
+Duke Energy
+
+Duke Energy Corporation (collectively with its subsidiaries)
+
+Duke Energy Ohio
+
+Duke Energy Ohio, Inc.
+
+Duke Energy Progress
+
+Duke Energy Progress, LLC
+
+Duke Energy Carolinas
+
+Duke Energy Carolinas, LLC
+
+Duke Energy Florida
+
+Duke Energy Florida, LLC
+
+Duke Energy Indiana
+
+Duke Energy Indiana, LLC
+
+Duke Energy Kentucky
+
+Duke Energy Kentucky, Inc.
+
+Duke Energy Registrants
+
+Duke Energy, Duke Energy Carolinas, Progress Energy, Duke Energy Progress, Duke Energy Florida, Duke Energy Ohio, Duke Energy Indiana and Piedmont
+
+EDIT
+
+Excess deferred income tax
+
+EPA
+
+United States Environmental Protection Agency
+
+EPS
+
+Earnings (Loss) Per Share
+
+ETR
+
+Effective tax rate
+
+EU&I
+
+Electric Utilities and Infrastructure
+
+Exchange Act
+
+Securities Exchange Act of 1934
+
+FERC
+
+Federal Energy Regulatory Commission
+
+Florida Progress
+
+Florida Progress, LLC
+
+FPSC
+
+Florida Public Service Commission
+
+FTR
+
+Financial transmission rights
+
+GLOSSARY OF TERMS
+
+GAAP
+
+Generally accepted accounting principles in the U.S.
+
+GAAP Reported Earnings
+
+Net Income Available to Duke Energy Corporation Common Stockholders
+
+GAAP Reported EPS
+
+Basic Earnings Per Share Available to Duke Energy Corporation common stockholders
+
+GHG
+
+Greenhouse Gas
+
+GU&I
+
+Gas Utilities and Infrastructure
+
+GWh
+
+Gigawatt-hours
+
+HB951
+
+The Energy Solutions for North Carolina, or House Bill 951, passed in October 2021
+
+HSR
+
+Hart-Scott-Rodino Antitrust Improvements Act of 1976, as amended
+
+IRA
+
+Inflation Reduction Act
+
+IRS
+
+Internal Revenue Service
+
+IURC
+
+Indiana Utility Regulatory Commission
+
+JDA
+
+Joint Dispatch Agreement
+
+KPSC
+
+Kentucky Public Service Commission
+
+LLC
+
+Limited Liability Company
+
+MTBE
+
+Methyl tertiary butyl ether
+
+MW
+
+Megawatt
+
+MWh
+
+Megawatt-hour
+
+MYRP
+
+Multiyear rate plan
+
+NCI
+
+Noncontrolling Interests
+
+NCUC
+
+North Carolina Utilities Commission
+
+NMC
+
+National Methanol Company
+
+NPNS
+
+Normal purchase/normal sale
+
+NRC
+
+U.S. Nuclear Regulatory Commission
+
+Oconee
+
+Oconee Nuclear Station
+
+OPEB
+
+Other Post-Retirement Benefit Obligations
+
+OVEC
+
+Ohio Valley Electric Corporation
+
+the Parent
+
+Duke Energy Corporation holding company
+
+Piedmont
+
+Piedmont Natural Gas Company, Inc.
+
+Piedmont Tennessee Disposal Group
+
+Piedmont's Tennessee business, a natural gas local distribution company included in a purchase agreement with Spire Inc.
+
+PJM
+
+PJM Interconnection LLC.
+
+Progress Energy
+
+Progress Energy, Inc.
+
+PSCSC
+
+Public Service Commission of South Carolina
+
+PTC
+
+Production Tax Credit
+
+PUCO
+
+Public Utilities Commission of Ohio
+
+Robinson
+
+Robinson Nuclear Plant
+
+RTO
+
+Regional Transmission Organization
+
+SPP
+
+Storm Protection Plan
+
+Subsidiary Registrants
+
+Duke Energy Carolinas, Progress Energy, Duke Energy Progress, Duke Energy Florida, Duke Energy Ohio, Duke Energy Indiana and Piedmont
+
+TPUC
+
+Tennessee Public Utility Commission
+
+U.S.
+
+United States
+
+U.S. Supreme Court
+
+Supreme Court of the United States
+
+VIE
+
+Variable Interest Entity
+
+FORWARD-LOOKING STATEMENTS
+
+CAUTIONARY STATEMENT REGARDING FORWARD-LOOKING INFORMATION
+
+This document includes forward-looking statements within the meaning of Section 27A of the Securities Act of 1933 and Section 21E of the Securities Exchange Act of 1934. Forward-looking statements are based on management's beliefs and assumptions and can often be identified by terms and phrases that include "anticipate," "believe," "intend," "estimate," "expect," "continue," "should," "could," "may," "plan," "project," "predict," "will," "potential," "forecast," "target," "guidance," "outlook" or other similar terminology. Various factors may cause actual results to be materially different than the suggested outcomes within forward-looking statements; accordingly, there is no assurance that such results will be realized. These factors include, but are not limited to:
+
+◦
+
+The ability to implement our business strategy, including meeting forecasted load growth demand, grid and fleet modernization objectives, and our carbon emission reduction goals, while balancing customer reliability and affordability;
+
+◦
+
+State, federal and foreign legislative and regulatory initiatives, including costs of compliance with existing and future environmental requirements and/or uncertainty of applicability or changes to such legislative and regulatory initiatives, including those related to climate change, as well as rulings that affect cost and investment recovery or have an impact on rate structures or market prices;
+
+◦
+
+The extent and timing of costs and liabilities to comply with federal and state laws, regulations and legal requirements related to coal ash remediation, including amounts for required closure of certain ash impoundments, are uncertain and difficult to estimate;
+
+◦
+
+The ability to timely recover eligible costs, including amounts associated with coal ash impoundment retirement obligations, asset retirement and construction costs related to carbon emissions reductions, and costs related to significant weather events, and to earn an adequate return on investment through rate case proceedings and the regulatory process;
+
+◦
+
+The costs of decommissioning nuclear facilities could prove to be more extensive than amounts estimated and all costs may not be fully recoverable through the regulatory process;
+
+◦
+
+The impact of extraordinary external events, such as a global pandemic, trade wars or military conflict, and their collateral consequences, including the disruption of global supply chains or the economic activity in our service territories;
+
+◦
+
+Costs and effects of legal and administrative proceedings, settlements, investigations and claims;
+
+◦
+
+Industrial, commercial and residential decline in service territories or customer bases resulting from sustained downturns of the economy, storm damage, reduced customer usage due to cost pressures from inflation, tariffs, or fuel costs, worsening economic health of our service territories, reductions in customer usage patterns, or lower than anticipated load growth, particularly if usage of electricity by data centers is less than currently projected, energy efficiency efforts, natural gas building and appliance electrification, and use of alternative energy sources, such as self-generation and distributed generation technologies;
+
+◦
+
+Federal and state regulations, laws and other efforts designed to promote and expand the use of energy efficiency measures, natural gas electrification, and distributed generation technologies, such as private solar and battery storage, in Duke Energy service territories could result in a reduced number of customers, excess generation resources as well as stranded costs;
+
+◦
+
+Advancements in technology, including artificial intelligence;
+
+◦
+
+Additional competition in electric and natural gas markets, municipalization and continued industry consolidation;
+
+◦
+
+The influence of weather and other natural phenomena on operations, financial position, and cash flows, including the economic, operational and other effects of severe storms, hurricanes, droughts, earthquakes and tornadoes, including extreme weather associated with climate change;
+
+◦
+
+Changing or conflicting investor, customer and other stakeholder expectations and demands, particularly regarding environmental, social and governance matters and costs related thereto;
+
+◦
+
+The ability to successfully operate electric generating facilities and deliver electricity to customers including direct or indirect effects to the Company resulting from an incident that affects the United States electric grid or generating resources;
+
+◦
+
+Operational interruptions to our natural gas distribution and transmission activities;
+
+◦
+
+The availability of adequate interstate pipeline transportation capacity and natural gas supply;
+
+◦
+
+The impact on facilities and business from a terrorist or other attack, war, vandalism, cybersecurity threats, data security breaches, operational events, information technology failures or other catastrophic events, such as severe storms, fires, explosions, pandemic health events or other similar occurrences;
+
+◦
+
+The inherent risks associated with the operation of nuclear facilities, including environmental, health, safety, regulatory and financial risks, including the financial stability of third-party service providers;
+
+◦
+
+The timing and extent of changes in commodity prices, including any impact from increased tariffs, export controls and interest rates, and the ability to timely recover such costs through the regulatory process, where appropriate, and their impact on liquidity positions and the value of underlying assets;
+
+◦
+
+The results of financing efforts, including the ability to obtain financing on favorable terms, which can be affected by various factors, including credit ratings, interest rate fluctuations, compliance with debt covenants and conditions, an individual utility's generation portfolio, and general market and economic conditions;
+
+◦
+
+Credit ratings of the Duke Energy Registrants may be different from what is expected;
+
+◦
+
+Declines in the market prices of equity and fixed-income securities and resultant cash funding requirements for defined benefit pension plans, other post-retirement benefit plans and nuclear decommissioning trust funds;
+
+FORWARD-LOOKING STATEMENTS
+
+◦
+
+Construction and development risks associated with the completion of the Duke Energy Registrants' capital investment projects, including risks related to financing, timing and receipt of necessary regulatory approvals, obtaining and complying with terms of permits, meeting construction budgets and schedules and satisfying operating and environmental performance standards, as well as the ability to recover costs from customers in a timely manner, or at all;
+
+◦
+
+Changes in rules for regional transmission organizations, including changes in rate designs and new and evolving capacity markets, and risks related to obligations created by the default of other participants;
+
+◦
+
+The ability to control operation and maintenance costs;
+
+◦
+
+The level of creditworthiness of counterparties to transactions;
+
+◦
+
+The ability to obtain adequate insurance at acceptable costs and recover on claims made;
+
+◦
+
+Employee workforce factors, including the potential inability to attract and retain key personnel;
+
+◦
+
+The ability of subsidiaries to pay dividends or distributions to Duke Energy Corporation holding company (the Parent);
+
+◦
+
+The performance of projects undertaken by our businesses and the success of efforts to invest in and develop new opportunities;
+
+◦
+
+The effect of accounting and reporting pronouncements issued periodically by accounting standard-setting bodies and the SEC;
+
+◦

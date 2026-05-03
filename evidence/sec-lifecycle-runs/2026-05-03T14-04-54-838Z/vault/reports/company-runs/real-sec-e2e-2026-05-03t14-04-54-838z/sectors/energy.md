@@ -9,9 +9,9 @@ created: '2026-05-03T14:27:28.557Z'
 ---
 # Energy real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: [[cop]], CVX, [[xom]]
+- Companies: [[cop]], [[cvx]], [[xom]]
 - Observations: 91
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

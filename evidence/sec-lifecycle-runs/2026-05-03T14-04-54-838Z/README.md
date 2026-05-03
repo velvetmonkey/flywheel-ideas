@@ -2,7 +2,7 @@
 
 Run id: real-sec-e2e-2026-05-03t14-04-54-838z
 Vault: /home/ben/sec-dogfood/real-e2e-runs/2026-05-03T14-04-54-838Z/vault
-Companies: AAPL, MSFT, NVDA, AMZN, TSLA, HD, GOOGL, META, NFLX, LLY, JNJ, MRK, XOM, CVX, COP
+Companies: [[aapl]], [[msft]], NVDA, [[amzn]], [[tsla]], HD, GOOGL, META, [[nflx]], [[lly]], [[jnj]], [[mrk]], [[xom]], [[cvx]], COP
 Write path: mcp-subprocess
 
 ## Start Here

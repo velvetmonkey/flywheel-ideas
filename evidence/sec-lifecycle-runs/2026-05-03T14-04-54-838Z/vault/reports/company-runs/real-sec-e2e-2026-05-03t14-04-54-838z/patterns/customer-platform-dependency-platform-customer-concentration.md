@@ -13,7 +13,7 @@ created: '2026-05-03T14:29:03.775Z'
 - Theme: Customer and platform dependency
 - Mechanism: Platform or customer concentration
 - Sectors: Communication Services, Consumer Discretionary, Health Care, Information Technology
-- Companies: AAPL, GOOGL, HD, META, MRK, MSFT, NFLX, NVDA
+- Companies: [[aapl]], [[googl]], HD, META, [[mrk]], [[msft]], [[nflx]], [[nvda]]
 - Observations: 25
 - Realized candidates: 0
 - Signal: broad shared mechanism to monitor

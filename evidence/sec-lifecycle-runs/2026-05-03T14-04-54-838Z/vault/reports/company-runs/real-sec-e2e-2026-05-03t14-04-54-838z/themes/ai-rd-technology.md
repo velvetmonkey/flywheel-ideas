@@ -9,6 +9,6 @@ created: '2026-05-03T14:28:36.789Z'
 ---
 # AI, R&D, and technology real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: AAPL, AMZN, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM
+- Companies: [[aapl]], AMZN, CVX, [[googl]], HD, [[jnj]], [[lly]], META, [[mrk]], [[msft]], [[nflx]], [[nvda]], [[tsla]], [[xom]]
 - Observations: 44
 - Latest seen: 2026-05-01

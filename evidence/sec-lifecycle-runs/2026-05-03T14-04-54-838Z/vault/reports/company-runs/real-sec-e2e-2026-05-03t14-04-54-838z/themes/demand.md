@@ -9,6 +9,6 @@ created: '2026-05-03T14:28:14.755Z'
 ---
 # Demand real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, [[lly]], META, [[mrk]], [[msft]], NFLX, NVDA, [[tsla]], [[xom]]
+- Companies: [[aapl]], [[amzn]], COP, [[cvx]], [[googl]], HD, [[jnj]], [[lly]], META, [[mrk]], [[msft]], [[nflx]], [[nvda]], [[tsla]], [[xom]]
 - Observations: 56
 - Latest seen: 2026-05-01

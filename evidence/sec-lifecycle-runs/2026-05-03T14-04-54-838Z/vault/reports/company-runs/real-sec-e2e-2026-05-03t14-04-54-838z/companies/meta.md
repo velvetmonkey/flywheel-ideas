@@ -25,4 +25,4 @@ created: '2026-05-03T14:28:09.944Z'
 - **Cybersecurity and privacy**: 4 observation(s), latest 2026-04-30, assumption asm-KdqVugiw
 - **Demand**: 4 observation(s), latest 2026-04-30, assumption asm-vfyxVhjv
 - **Geopolitics and tariffs**: 4 observation(s), latest 2026-04-30, assumption asm-yot7L65L
-- **Liquidity**: 4 observation(s), latest 2026-04-30, assumption asm-L1facWwu
+- **[[liquidity]]**: 4 observation(s), latest 2026-04-30, assumption asm-L1facWwu

@@ -13,7 +13,7 @@ created: '2026-05-03T14:29:06.203Z'
 - Theme: Macro and foreign exchange
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Consumer Discretionary, Health Care, Information Technology
-- Companies: AMZN, LLY, META, MSFT
+- Companies: [[amzn]], [[lly]], META, [[msft]]
 - Observations: 15
 - Realized candidates: 0
 - Signal: broad shared mechanism to monitor
@@ -27,7 +27,7 @@ Macro and foreign exchange appears through the geographic concentration or local
 - **MSFT / Information Technology** (2026-01-28)
   - Revenue, gross margin, and operating income included a favorable foreign currency impact of 2%, 2%, and 3%, respectively.
 - **MSFT / Information Technology** (2026-01-28)
-  - Worsening economic conditions, including inflation, recession, pandemic, or other changes in economic conditions, may cause lower IT spending and adversely affect our results of operations. If demand for computing power, PCs, servers, and other computing devices declines, or consumer or business spending for those products declines, our results of 
+  - Worsening economic conditions, including inflation, recession, pandemic, or other changes in economic conditions, may cause lower IT spending and adversely affect our results of [[operations]]. If demand for computing power, PCs, servers, and other computing devices declines, or consumer or business spending for those products declines, our results of 
 - **META / Communication Services** (2026-01-29)
   - We have experienced, and expect to continue to experience, fluctuations and declines in the size of our active user base in one or more markets from time to time, particularly in markets where we have achieved higher penetration rates. User growth and engagement are also impacted by a number of other factors, including competitive products and serv
 - **META / Communication Services** (2026-01-29)

@@ -9,7 +9,7 @@ created: '2026-05-03T14:27:18.923Z'
 ---
 # Accepted Lessons real-sec-e2e-2026-05-03t14-04-54-838z
 
-- **A company [[thesis]] becomes more valuable when recurring disclosed risks are connected to accepted outcomes and downstream review.**
+- **A company [[thesis]] becomes more valuable when recurring disclosed risks are connected to accepted [[outcome|outcomes]] and downstream review.**
   - Companies: [[nvda]]
   - Themes: Demand
   - Outcomes: out-pWRUPmW6

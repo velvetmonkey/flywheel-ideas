@@ -26,7 +26,7 @@ created: '2026-05-03T14:26:51.965Z'
 
 ### Risk Pessimist (codex)
 
-I remain skeptical that cross-sector SEC “patterns” are meaningful in the sense of being decision-grade, investable signals. The co-occurrence of mechanism labels across sectors looks consistent with disclosure-template convergence (cyber, liquidity, input costs) and taxonomy clustering, not demonstrated cross-sector causal coupling that would synchronize outcomes or provide timing.
+I remain skeptical that cross-sector SEC “patterns” are meaningful in the sense of being decision-grade, investable signals. The co-occurrence of mechanism labels across sectors looks consistent with disclosure-template convergence (cyber, [[liquidity]], input costs) and taxonomy clustering, not demonstrated cross-sector causal coupling that would synchronize outcomes or provide timing.
 
 Attacking [asm-6uMVYFPv]: the provided evidence does not substantiate the claim that shared mechanisms are “meaningful cross-sector [[thesis]] risks rather than boilerplate.” Two pattern notes explicitly show “Realized candidates: 0” while still being framed as signals, which is more consistent with unvalidated pattern discovery than validated thesis-risk transmission (see `reports/company-runs/real-sec-e2e-2026-05-03t14-04-54-838z/patterns/inventory-channel-commodity-input-cost.md` and `reports/company-runs/real-sec-e2e-2026-05-03t14-04-54-838z/patterns/cloud-data-center-capacity-commodity-input-cost.md`). The cybersecurity cross-sector cluster is plausible in reality, but the note itself only establishes cross-sector presence, not that the language is non-boilerplate or predictive (`reports/company-runs/real-sec-e2e-2026-05-03t14-04-54-838z/patterns/cybersecurity-privacy-data-breach-outage.md`).
 

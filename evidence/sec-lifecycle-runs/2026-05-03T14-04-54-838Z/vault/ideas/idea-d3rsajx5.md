@@ -7,4 +7,4 @@ needs_review: true
 date: '2026-05-03'
 created: '2026-05-03T14:21:46.604Z'
 ---
-This dependent thesis intentionally cites a company assumption so accepted SEC outcomes can test refutation propagation.
+This dependent [[thesis]] intentionally cites a company assumption so accepted SEC [[outcome|outcomes]] can test refutation propagation.

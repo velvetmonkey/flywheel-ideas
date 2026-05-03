@@ -14,13 +14,13 @@ created: '2026-05-03T14:27:35.811Z'
 - Filings scanned: 2
 - Window: 2025-11-03 to 2026-02-18
 - Observations: 24
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Top Themes
 
 - **Demand**: 3 observation(s), latest 2026-02-18, assumption asm-95Mu2jmR
 - **Geopolitics and tariffs**: 3 observation(s), latest 2026-02-18, assumption asm-pqM8Z7ti
-- **Liquidity**: 3 observation(s), latest 2026-02-18, assumption asm-ZLuzbVSm
+- **[[liquidity]]**: 3 observation(s), latest 2026-02-18, assumption asm-ZLuzbVSm
 - **Macro and foreign exchange**: 3 observation(s), latest 2026-02-18, assumption asm-7SQu4X65
 - **Supply chain**: 3 observation(s), latest 2026-02-18, assumption asm-7qZgVGjH
 - **Cloud and data center capacity**: 2 observation(s), latest 2026-02-18, assumption asm-Qw88LWZ8

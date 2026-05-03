@@ -1,0 +1,281 @@
+---
+id: idea-bWvN5R3Q
+type: idea
+state: nascent
+title: NEE 2026-02-13 10-K Item 1A Risk Factors
+created_at: '2026-05-03T16:58:21.073Z'
+date: '2026-05-03'
+created: '2026-05-03T16:58:21.422Z'
+---
+# NEXTERA ENERGY INC 10-K Item 1A Risk Factors
+
+Filed: 2026-02-13
+Source: https://www.sec.gov/Archives/edgar/data/753308/000075330826000015/nee-20251231.htm
+
+Risk Factors
+
+23
+
+Item 1B.
+
+Unresolved Staff Comments
+
+36
+
+Item 1C.
+
+Cybersecurity
+
+36
+
+Item 2.
+
+Properties
+
+37
+
+Item 3.
+
+Legal Proceedings
+
+38
+
+Item 4.
+
+Mine Safety Disclosures
+
+38
+
+PART II
+
+Item 5.
+
+Market for Registrants' Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+38
+
+Item 6.
+
+R
+
+e
+
+served
+
+38
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+39
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+59
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+60
+
+Item 9.
+
+Changes in and Disagreements With Accountants on Accounting and Financial Disclosure
+
+118
+
+Item 9A.
+
+Controls and Procedures
+
+118
+
+Item 9B.
+
+Other Information
+
+118
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+118
+
+PART III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+119
+
+Item 11.
+
+Executive Compensation
+
+119
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+119
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+119
+
+Item 14.
+
+Principal Account
+
+ant
+
+Fees and Services
+
+120
+
+PART IV
+
+Item 15.
+
+Exhibits
+
+and
+
+Financial Statement Schedules
+
+121
+
+Item 16.
+
+Form 10-K Summary
+
+129
+
+Signatures
+
+130
+
+FORWARD-LOOKING STATEMENTS
+
+This report includes forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. Any statements that express, or involve discussions as to, expectations, beliefs, plans, objectives, assumptions, strategies, future events or performance (often, but not always, through the use of words or phrases such as may result, are expected to, will continue, is anticipated, believe, will, could, should, would, estimated, may, plan, potential, future, projection, goals, target, outlook, predict and intend or words of similar meaning) are not statements of historical facts and may be forward looking. Forward-looking statements involve estimates, assumptions and uncertainties. Accordingly, any such statements are qualified in their entirety by reference to, and are accompanied by, important factors included in Part I, Item 1A. Risk Factors (in addition to any assumptions and other factors referred to specifically in connection with such forward-looking statements) that could have a significant impact on NEE's and/or FPL's operations and financial results, and could cause NEE's and/or FPL's actual results to differ materially from those contained or implied in forward-looking statements made by or on behalf of NEE and/or FPL in this combined Form 10-K, in presentations, on their respective websites, in response to questions or otherwise.
+
+Any forward-looking statement speaks only as of the date on which such statement is made, and NEE and FPL undertake no obligation to update any forward-looking statement to reflect events or circumstances, including, but not limited to, unanticipated events, after the date on which such statement is made, unless otherwise required by law. New factors emerge from time to time and it is not possible for management to predict all of such factors, nor can it assess the impact of each such factor on the business or the extent to which any factor, or combination of factors, may cause actual results to differ materially from those contained or implied in any forward-looking statement.
+
+3
+
+Table of Content
+
+s
+
+PART I
+
+Item 1. Business
+
+OVERVIEW
+
+NEE is one of the largest electric power and energy infrastructure companies in North America. As of December 31, 2025, NEE had approximately 80 gigawatts of net generation and storage capacity from a diverse portfolio of assets, primarily including natural gas, wind, solar and nuclear generation facilities and battery storage facilities. NEE has two principal businesses, FPL and NEER. FPL is the largest electric utility in Florida and the U.S. FPL's strategic focus is centered on investing in generation, storage, transmission and distribution facilities to deliver on its value proposition of keeping customer bills low and delivering high reliability, outstanding customer service and energy from diverse generation sources for the benefit of its more than
+
+six million
+
+customer accounts. NEER is one of t
+
+he largest energy infrastructure developers in the U.S.
+
+NEER's strategic focus is centered on the development, construction and operation of long-term contracted generation facilities, including renewables, nuclear and natural gas, as well as battery storage facilities. NEER also builds and owns regulated electric and gas transmission assets, is a leading gas and power supplier, and delivers integrated energy and technology solutions to utilities and businesses across the U.S.
+
+NEE seeks to create value in its two principal businesses by meeting customer needs more economically and reliably than its competitors. NEE's strategy has resulted in profitable growth over sustained periods at both FPL and NEER. Management seeks to grow each business (see Note 15 – Commitments) in a manner consistent with the varying opportunities available to it; however, management believes that the diversification and balance represented by FPL and NEER is a valuable characteristic of the enterprise and recognizes that each business contributes to NEE's financial strength in different ways. FPL and NEER share a common platform with the objective of lowering costs, creating efficiencies and encouraging innovative ideas for their businesses. NEE and its subsidiaries, with employees totaling approximately 17,400 as of December 31, 2025, continue to develop and implement enterprise-wide initiatives, including deploying advanced technologies such as artificial intelligence and proprietary tools, focused on improving processes, lowering costs and driving growth.
+
+NEE's reportable segments for financial reporting purposes are FPL and NEER (see Note 16). NEECH, a wholly owned subsidiary of NEE, owns and provides funding for NEE's operating subsidiaries, other than FPL and its subsidiaries. The following diagram depicts NEE's simplified ownership structure:
+
+4
+
+Table of Content
+
+s
+
+FPL
+
+FPL is a rate-regulated electric utility engaged primarily in the generation, storage, transmission, distribution and sale of electric energy in Florida. FPL is the largest electric utility in Florida and the U.S. As of December 31, 2025, FPL had 35,963 MW of net generating capacity, approximately 93,000 circuit miles of transmission and distribution lines and 932 substations. FPL provides electric service through an integrated transmission and distribution system that links its generation facilities to its customers.
+
+FPL serves approximately 12 million people through more than 6 million customer accounts. The following map shows FPL's service areas and plant locations as of February 13, 2026, which cover most of the east and lower west coasts of Florida and are in ten counties throughout northwest Florida (see FPL Sources of Generation below).
+
+5
+
+Table of Content
+
+s
+
+CUSTOMERS AND REVENUE
+
+FPL's primary source of operating revenues is from its retail customer base; it also serves a limited number of wholesale customers within Florida. The percentage of FPL's operating revenues and customer accounts
+
+by customer class were as follows:
+
+For both retail and wholesale customers, the prices (or rates) that FPL may charge are approved by regulatory bodies, by the FPSC in the case of retail customers and by the FERC in the case of wholesale customers. In general, under U.S. and Florida law, regulated rates are intended to cover the cost of providing service, including a reasonable rate of return on invested capital. Since the regulatory bodies have authority to determine the relevant cost of providing service and the appropriate rate of return on capital employed, there can be no guarantee that FPL will be able to earn any particular rate of return or recover all of its costs through regulated rates. See FPL Regulation below.
+
+FPL seeks to maintain low rates for its customers, while continuing to deliver reliable service. Since rates are largely cost-based, maintaining low rates requires a strategy focused on developing and maintaining a low-cost position, including the implementation of ideas generated from cost savings initiatives and the use of advanced technologies such as artificial intelligence. FPL also seeks to serve large-load customers, such as data centers, through the tariff established in the 2025 rate agreement (as defined in FPL Regulation – FPL Electric Rate Regulation – Base Rates – Base Rates Effective January 2026 through December 2029 below).
+
+FRANCHISE AGREEMENTS AND COMPETITION
+
+FPL's service to its electric retail customers is provided primarily under franchise agreements negotiated with municipalities or counties. During the term of a franchise agreement, which is typically 30 years, the municipality or county agrees not to form its own utility,
+
+and FPL has the right to offer electric service to residents. As of
+
+December 31, 2025
+
+, FPL held 226 franchise agreements with various municipalities and counties in Florida with varying expiration dates through 2055. These franchise agreements cover the vast majority of FPL's retail customer base in Florida. As of
+
+December 31, 2025
+
+, FPL also provided service to customers in 10 other municipalities and to 27
+
+unincorporated areas within its service area without franchise agreements, pursuant to the general obligation to serve as a public utility. FPL relies upon Florida law for access to public rights-of-way.
+
+Because any customer may elect to provide its own electric services, FPL effectively must compete for an individual customer's business. As a practical matter, few customers provide their own service at the present time since FPL's cost of service is lower than the cost of self-generation for a significant majority of customers. Changing technology (particularly the increasing efficiency of solar power generation), tax incentives, economic conditions, regulatory changes and other factors could alter the favorable relative cost position that FPL currently enjoys; however, FPL seeks as a matter of strategy to ensure that it delivers superior value in the form of low customer bills, high reliability, outstanding customer service and energy from diverse generation sources.
+
+In addition to self-generation by residential, commercial and industrial customers, FPL also faces competition from other suppliers of electrical energy to wholesale and industrial customers and from alternative energy sources. In 2025, 2024 and 2023, annual operating revenues from wholesale and ind
+
+ustrial electric customers combined represented approximately
+
+5% of FPL's total operating revenues.
+
+6
+
+Table of Content
+
+s
+
+For the building of new steam and solar generating capacity of 75 MW or greater, the FPSC requires investor-owned electric utilities, including FPL, to issue a request for proposal (RFP) except when the FPSC determines that an exception from the RFP process is in the public interest. The RFP process allows independent power producers and others to bid to supply the new generating capacity. If a bidder has the most cost-effective alternative, meets other criteria such as financial viability and demonstrates adequate expertise and experience in building and/or operating generating capacity of the type proposed, the investor-owned electric utility would seek to negotiate a PPA with the selected bidder and request that the FPSC approve the terms of the PPA and, if appropriate, provide the required authorization for the construction of the bidder's generating capacity.
+
+FPL
+
+SOURCES OF GENERATION
+
+As of
+
+December 31, 2025
+
+, FPL's resources for serving load consisted of approximately 36,616 MW of net generating capacity, of which
+
+36,372
+
+MW were from FPL-owned facilities and
+
+244
+
+MW were available through PPAs. FPL owned and operated
+
+44
+
+units with generating capacity of 24,314 MW that primarily use natural gas and 108 solar generation facilities with generating capacity totaling 7,932 MW. In addition, FPL owned, or had undivided interests in, and operated four nuclear units with net generating capacity totaling 3,502 MW (see Nuclear Operations below) an
+
+d had a joint ownership interest in a coal unit located in Georgia, which is operated by the joint owner, with a net generating capacity of 215 MW (see Note 7 – Jointly-Owned Electric Plants).

@@ -1,0 +1,947 @@
+---
+id: idea-RSjFAHST
+type: idea
+state: nascent
+title: HON 2026-04-23 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T16:40:44.897Z'
+date: '2026-05-03'
+created: '2026-05-03T16:40:45.249Z'
+---
+# HONEYWELL INTERNATIONAL INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2026-04-23
+Source: https://www.sec.gov/Archives/edgar/data/773840/000077384026000057/hon-20260331.htm
+
+Risk Factors
+
+53
+
+ITEM 2
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+54
+
+ITEM 4
+
+Mine Safety Disclosures
+
+54
+
+ITEM 5
+
+Other Information
+
+54
+
+ITEM 6
+
+Exhibits
+
+55
+
+Signatures
+
+56
+
+TABLE OF CONTENTS
+
+CAUTIONARY STATEMENT ABOUT FORWARD-LOOKING STATEMENTS
+
+We describe many of the trends and other factors that drive our business and future results in the section titled
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+and in other parts of this report (including
+
+Part II, Item 1A Risk Factors
+
+). Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), including statements related to the proposed separation of Honeywell from Honeywell Aerospace and the planned sales of the Productivity Solutions and Services and Warehouse and Workflow Solutions businesses. Forward-looking statements are those that address activities, events, or developments that we or our management intend, expect, project, believe, or anticipate will or may occur in the future. They are based on management's assumptions and assessments in light of past experience and trends, current economic and industry conditions, expected future developments, and other relevant factors, many of which are difficult to predict and outside of our control, including Honeywell's current expectations, estimates, and projections regarding the proposed separation of Honeywell from Honeywell Aerospace and the planned sales of the Productivity Solutions and Services and Warehouse and Workflow Solutions businesses. They are not guarantees of future performance, and actual results, developments, and business decisions may differ significantly from those envisaged by our forward-looking statements, including the proposed separation of Honeywell from Honeywell Aerospace and the planned sales of the Productivity Solutions and Services and Warehouse and Workflow Solutions businesses, and the anticipated benefits of each. We do not undertake to update or revise any of our forward-looking statements, except as required by applicable securities law. Our forward-looking statements are also subject to material risks and uncertainties, including ongoing macroeconomic and geopolitical risks, such as changes in or application of trade and tax laws and policies, including the impacts of tariffs and other trade barriers and restrictions, lower GDP growth or recession in the U.S. or globally, supply chain disruptions, capital markets volatility, inflation, and certain regional conflicts, including ongoing conflicts in the Middle East, which can affect our performance in both the near- and long-term. In addition, no assurance can be given that any plan, initiative, projection, goal, commitment, expectation, or prospect set forth in this Form 10-Q can or will be achieved. These forward-looking statements should be considered in light of the information included in this report and our other filings with the Securities and Exchange Commission (SEC), including, without limitation, the
+
+Risk Factors
+
+, as well as the description of trends and other factors in
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+, set forth in this report and our 2025 Annual Report on Form 10-K. Any forward-looking plans described herein are not final and may be modified or abandoned at any time.
+
+1
+
+Honeywell International Inc.
+
+TABLE OF CONTENTS
+
+ABOUT HONEYWELL
+
+Honeywell International Inc. (Honeywell, we, us, our, or the Company) is an integrated operating company serving a broad range of industries and geographies around the world, with a portfolio that is underpinned by our Honeywell Accelerator operating system and Honeywell Forge platform. Our portfolio of solutions is uniquely positioned to blend physical products with software to serve customers worldwide. On February 6, 2025, we announced our plans to separate Honeywell from Honeywell Aerospace, into two independent U.S. public companies. Our Honeywell business will be a leading global, pure-play automation company, delivering productivity enhancing mission-critical solutions that enable optimized outcomes for customers. Our Honeywell Aerospace business will be a leading global tier-1 aerospace and defense supplier of mission critical systems and technologies that enable the production, maintenance, and safe operation of aerospace and defense platforms. Each of our businesses helps organizations solve the world's toughest, most complex challenges, providing actionable solutions and innovations for aerospace, building automation, industrial automation, process automation, and process technology, that help make the world smarter and safer, as well as more secure and sustainable. The Honeywell brand dates back to 1906, and the Company was incorporated in Delaware in 1985.
+
+Our Annual Report on Form 10-K, Quarterly Reports on Form 10-Q, Current Reports on Form 8-K, and any amendments to those reports, are available free of charge on our Investor Relations website (investor.honeywell.com) under the heading Financials (see SEC Filings) immediately after they are filed with, or furnished to, the SEC. Honeywell uses our Investor Relations website, along with press releases on our primary Honeywell website (honeywell.com) under the heading News & Media, as a means of disclosing information which may be of interest or material to our investors and for complying with disclosure obligations under Regulation FD. Accordingly, investors should monitor our Investor Relations website and Honeywell News feed, in addition to following our press releases, SEC filings, public conference calls, webcasts, and social media. Information contained on or accessible through, including any reports available on, our website is not a part of, and is not incorporated by reference into, this Quarterly Report on Form 10-Q or any other report or document we file with the SEC. Any reference to our website in this Form 10-Q is intended to be an inactive textual reference only.
+
+2
+
+Honeywell International Inc.
+
+TABLE OF CONTENTS
+
+PART I. FINANCIAL INFORMATION
+
+The financial statements and related notes as of March 31, 2026, should be read in conjunction with the financial statements for the year ended December 31, 2025, contained in the Company's 2025 Annual Report on Form 10-K.
+
+FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA
+
+HONEYWELL INTERNATIONAL INC.
+
+CONSOLIDATED STATEMENT OF OPERATIONS
+
+(Unaudited)
+
+Three Months Ended March 31,
+
+2026
+
+2025
+
+(Dollars in millions, except per share amounts)
+
+Product sales
+
+$
+
+5,867
+
+$
+
+5,807
+
+Service sales
+
+3,276
+
+3,118
+
+Net sales
+
+9,143
+
+8,925
+
+Costs, expenses and other
+
+Cost of products sold
+
+3,863
+
+3,723
+
+Cost of services sold
+
+1,741
+
+1,740
+
+Total Cost of products and services sold
+
+5,604
+
+5,463
+
+Research and development expenses
+
+492
+
+416
+
+Selling, general and administrative expenses
+
+1,310
+
+1,310
+
+Impairment of assets held for sale
+
+263
+
+15
+
+Loss on debt extinguishment
+
+239
+
+—
+
+Other (income) expense
+
+(
+
+7
+
+)
+
+(
+
+229
+
+)
+
+Interest and other financial charges
+
+356
+
+285
+
+Total costs, expenses and other
+
+8,257
+
+7,260
+
+Income from continuing operations before taxes
+
+886
+
+1,665
+
+Tax expense
+
+91
+
+369
+
+Net income from continuing operations
+
+795
+
+1,296
+
+Net income from discontinued operations
+
+—
+
+171
+
+Net income
+
+795
+
+1,467
+
+Less: Net (loss) income attributable to noncontrolling interest
+
+(
+
+26
+
+)
+
+18
+
+Net income attributable to Honeywell
+
+$
+
+821
+
+$
+
+1,449
+
+Earnings per share of common stock—basic:
+
+Earnings per share of common stock from continuing operations—basic
+
+$
+
+1.29
+
+$
+
+1.99
+
+Earnings per share of common stock from discontinued operations—basic
+
+—
+
+0.25
+
+Total earnings per share of common stock—basic
+
+$
+
+1.29
+
+$
+
+2.24
+
+Earnings per share of common stock—assuming dilution:
+
+Earnings per share of common stock from continuing operations—assuming dilution
+
+$
+
+1.29
+
+$
+
+1.97
+
+Earnings per share of common stock from discontinued operations—assuming dilution
+
+—
+
+0.25
+
+Total earnings per share of common stock—assuming dilution
+
+$
+
+1.29
+
+$
+
+2.22
+
+The Notes to Consolidated Financial Statements are an integral part of this statement.
+
+3
+
+Honeywell International Inc.
+
+TABLE OF CONTENTS
+
+HONEYWELL INTERNATIONAL INC.
+
+CONSOLIDATED STATEMENT OF COMPREHENSIVE INCOME
+
+(Unaudited)
+
+Three Months Ended March 31,
+
+2026
+
+2025
+
+(Dollars in millions)
+
+Net income
+
+$
+
+795
+
+$
+
+1,467
+
+Other comprehensive income (loss), net of tax
+
+Foreign exchange translation adjustment
+
+144
+
+(
+
+278
+
+)
+
+Pension and other postretirement benefit adjustments
+
+(
+
+2
+
+)
+
+11
+
+Changes in fair value of available for sale investments
+
+(
+
+1
+
+)
+
+—
+
+Changes in fair value of cash flow hedges
+
+40
+
+(
+
+18
+
+)
+
+Other comprehensive income (loss), net of tax
+
+181
+
+(
+
+285
+
+)
+
+Comprehensive income
+
+976
+
+1,182
+
+Less: Comprehensive (loss) income attributable to the noncontrolling interest
+
+(
+
+18
+
+)
+
+30
+
+Comprehensive income attributable to Honeywell
+
+$
+
+994
+
+$
+
+1,152
+
+The Notes to Consolidated Financial Statements are an integral part of this statement.
+
+4
+
+Honeywell International Inc.
+
+TABLE OF CONTENTS
+
+HONEYWELL INTERNATIONAL INC.
+
+CONSOLIDATED BALANCE SHEET
+
+(Unaudited)
+
+March 31, 2026
+
+December 31, 2025
+
+(Dollars in millions)
+
+ASSETS
+
+Current assets
+
+Cash and cash equivalents
+
+$
+
+11,977
+
+$
+
+12,487
+
+Short-term investments
+
+413
+
+443
+
+Accounts receivable, less allowances of $
+
+165
+
+and $
+
+202
+
+, respectively
+
+8,062
+
+7,621
+
+Inventories
+
+6,369
+
+6,162
+
+Assets held for sale
+
+2,377
+
+2,492
+
+Other current assets
+
+1,392
+
+1,182
+
+Total current assets
+
+30,590
+
+30,387
+
+Investments and long-term receivables
+
+1,414
+
+1,404
+
+Property, plant and equipment—net
+
+4,664
+
+4,629
+
+Goodwill
+
+21,079
+
+21,079
+
+Other intangible assets—net
+
+6,562
+
+6,736
+
+Deferred income taxes
+
+199
+
+199
+
+Other assets
+
+9,480
+
+9,247
+
+Total assets
+
+$
+
+73,988
+
+$
+
+73,681
+
+LIABILITIES
+
+Current liabilities
+
+Accounts payable
+
+$
+
+6,026
+
+$
+
+6,315
+
+Commercial paper and other short-term borrowings
+
+4,630
+
+5,893
+
+Current maturities of long-term debt
+
+3,099
+
+1,546
+
+Accrued liabilities
+
+7,112
+
+8,462
+
+Liabilities held for sale
+
+1,218
+
+1,198
+
+Total current liabilities
+
+22,085
+
+23,414
+
+Long-term debt
+
+29,010
+
+27,141
+
+Deferred income taxes
+
+1,581
+
+1,577
+
+Postretirement benefit obligations other than pensions
+
+108
+
+111
+
+Other liabilities
+
+6,537
+
+6,408
+
+SHAREOWNERS' EQUITY
+
+Capital—common stock issued
+
+958
+
+958
+
+—additional paid-in capital
+
+10,480
+
+10,157
+
+Common stock held in treasury, at cost
+
+(
+
+43,904
+
+)
+
+(
+
+43,029
+
+)
+
+Accumulated other comprehensive loss
+
+(
+
+4,973
+
+)
+
+(
+
+5,146
+
+)
+
+Retained earnings
+
+51,029
+
+50,964
+
+Total Honeywell shareowners' equity
+
+13,590
+
+13,904
+
+Noncontrolling interest
+
+1,077
+
+1,126
+
+Total shareowners' equity
+
+14,667
+
+15,030
+
+Total liabilities and shareowners' equity
+
+$
+
+73,988
+
+$
+
+73,681
+
+The Notes to Consolidated Financial Statements are an integral part of this statement.
+
+5
+
+Honeywell International Inc.
+
+TABLE OF CONTENTS
+
+HONEYWELL INTERNATIONAL INC.
+
+CONSOLIDATED STATEMENT OF CASH FLOWS
+
+(Unaudited)
+
+Three Months Ended March 31,
+
+2026
+
+2025
+
+(Dollars in millions)
+
+Cash flows from operating activities
+
+Net income
+
+$
+
+795
+
+$
+
+1,467
+
+Less: Net income from discontinued operations
+
+—
+
+171
+
+Net income from continuing operations
+
+795
+
+1,296
+
+Adjustments to reconcile net income from continuing operations to net cash (used for) provided by operating activities
+
+Depreciation
+
+134
+
+126
+
+Amortization
+
+223
+
+199
+
+Gain on sale of non-strategic businesses and assets
+
+(
+
+6
+
+)
+
+(
+
+1
+
+)
+
+Impairment of assets held for sale
+
+263
+
+15
+
+Loss on debt extinguishment
+
+239
+
+—
+
+Repositioning and other charges
+
+68
+
+43
+
+Net payments for repositioning and other charges
+
+(
+
+63
+
+)
+
+(
+
+104
+
+)
+
+Pension and other postretirement income
+
+(
+
+167
+
+)
+
+(
+
+144
+
+)
+
+Pension and other postretirement benefit payments
+
+(
+
+5
+
+)
+
+(
+
+5
+
+)
+
+Stock compensation expense
+
+57
+
+59
+
+Deferred income taxes
+
+(
+
+117
+
+)
+
+(
+
+19
+
+)
+
+Other
+
+33
+
+(
+
+221
+
+)
+
+Changes in assets and liabilities, net of the effects of acquisitions and divestitures:
+
+Accounts receivable
+
+(
+
+447
+
+)
+
+(
+
+424
+
+)
+
+Inventories
+
+(
+
+203
+
+)
+
+(
+
+147
+
+)
+
+Other current assets
+
+(
+
+135
+
+)
+
+29
+
+Accounts payable
+
+(
+
+289
+
+)
+
+(
+
+132
+
+)
+
+Accrued liabilities
+
+(
+
+825
+
+)
+
+(
+
+142
+
+)
+
+Income taxes
+
+(
+
+205
+
+)
+
+(
+
+50
+
+)
+
+Net cash (used for) provided by operating activities from continuing operations
+
+(
+
+650
+
+)
+
+378
+
+Net cash provided by operating activities from discontinued operations
+
+—
+
+219
+
+Net cash (used for) provided by operating activities
+
+(

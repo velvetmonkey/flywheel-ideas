@@ -13,7 +13,7 @@ created: '2026-05-03T14:29:33.167Z'
 - Theme: Cybersecurity and privacy
 - Mechanism: Data breach, outage, or service disruption
 - Sectors: Health Care, Information Technology
-- Companies: AAPL, LLY, MSFT
+- Companies: [[aapl]], [[lly]], [[msft]]
 - Observations: 5
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism
@@ -25,7 +25,7 @@ Cybersecurity and privacy appears through the data breach, outage, or service di
 ## Evidence Examples
 
 - **MSFT / Information Technology** (2026-01-28)
-  - It may then become easier for third parties to compete with our products by copying functionality, which could adversely affect our results of operations. Unauthorized access to or disclosure of source code or other intellectual property also increases the security risks described elsewhere in these risk factors.
+  - It may then become easier for third parties to compete with our products by copying functionality, which could adversely affect our results of [[operations]]. Unauthorized access to or disclosure of source code or other intellectual property also increases the security risks described elsewhere in these risk factors.
 - **MSFT / Information Technology** (2026-04-29)
   - It may then become easier for third parties to compete with our products by copying functionality, which could adversely affect our results of operations. Unauthorized access to or disclosure of source code or other intellectual property also increases the security risks described elsewhere in these risk factors.
 - **LLY / Health Care** (2026-04-30)

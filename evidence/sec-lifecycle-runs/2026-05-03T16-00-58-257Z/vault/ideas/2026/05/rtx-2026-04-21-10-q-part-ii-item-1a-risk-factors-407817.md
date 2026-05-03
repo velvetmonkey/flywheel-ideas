@@ -1,0 +1,1677 @@
+---
+id: idea-NyvFFhDF
+type: idea
+state: nascent
+title: RTX 2026-04-21 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T16:40:07.817Z'
+date: '2026-05-03'
+created: '2026-05-03T16:40:08.171Z'
+---
+# RTX Corp 10-Q Part II Item 1A Risk Factors
+
+Filed: 2026-04-21
+Source: https://www.sec.gov/Archives/edgar/data/101829/000010182926000011/rtx-20260331.htm
+
+43
+
+Item 2. Unregistered Sales of Equity Securities
+
+and Use of Proceeds
+
+43
+
+Item 5. Other Information
+
+44
+
+Item 6. Exhibits
+
+44
+
+SIGNATURES
+
+45
+
+RTX Corporation and its subsidiaries' names, abbreviations thereof, logos, and products and services designators are all either the registered or unregistered trademarks or tradenames of RTX Corporation and its subsidiaries. Names, abbreviations of names, logos, and products and services designators of other companies are either the registered or unregistered trademarks or tradenames of their respective owners. References to internet web sites in this Form 10-Q are provided for convenience only. Information available through these web sites is not incorporated by reference into this Form 10-Q.
+
+3
+
+Table of Content
+
+s
+
+PART I – FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+RTX CORPORATION
+
+AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENT OF OPERATIONS
+
+(Unaudited)
+
+Quarter Ended March 31,
+
+(dollars in millions, except per share amounts)
+
+2026
+
+2025
+
+Net Sales:
+
+Products sales
+
+$
+
+15,765
+
+$
+
+14,591
+
+Services sales
+
+6,311
+
+5,715
+
+Total net sales
+
+22,076
+
+20,306
+
+Costs and Expenses:
+
+Cost of sales - products
+
+13,000
+
+12,283
+
+Cost of sales - services
+
+4,482
+
+3,907
+
+Research and development
+
+627
+
+637
+
+Selling, general, and administrative
+
+1,476
+
+1,448
+
+Total costs and expenses
+
+19,585
+
+18,275
+
+Other income, net
+
+64
+
+4
+
+Operating profit
+
+2,555
+
+2,035
+
+Non-operating expense (income), net:
+
+Non-service pension income
+
+(
+
+355
+
+)
+
+(
+
+366
+
+)
+
+Interest expense, net
+
+390
+
+443
+
+Total non-operating expense, net
+
+35
+
+77
+
+Income before income taxes
+
+2,520
+
+1,958
+
+Income tax expense
+
+363
+
+333
+
+Net income
+
+2,157
+
+1,625
+
+Less: Noncontrolling interest in subsidiaries' earnings
+
+98
+
+90
+
+Net income attributable to common shareowners
+
+$
+
+2,059
+
+$
+
+1,535
+
+Earnings Per Share attributable to common shareowners:
+
+Basic
+
+$
+
+1.53
+
+$
+
+1.15
+
+Diluted
+
+1.51
+
+1.14
+
+See accompanying Notes to Condensed Consolidated Financial Statements
+
+4
+
+Table of Content
+
+s
+
+RTX CORPORATION
+
+AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENT OF COMPREHENSIVE INCOME
+
+(Unaudited)
+
+Quarter Ended March 31,
+
+(dollars in millions)
+
+2026
+
+2025
+
+Net income
+
+$
+
+2,157
+
+$
+
+1,625
+
+Other comprehensive (loss) income, before tax:
+
+Foreign currency translation adjustments
+
+(
+
+133
+
+)
+
+499
+
+Pension and postretirement benefit plans adjustments
+
+(
+
+27
+
+)
+
+(
+
+75
+
+)
+
+Change in unrealized cash flow hedging
+
+(
+
+85
+
+)
+
+144
+
+Other comprehensive (loss) income, before tax
+
+(
+
+245
+
+)
+
+568
+
+Income tax benefit (expense) related to items of other comprehensive (loss) income
+
+18
+
+(
+
+20
+
+)
+
+Other comprehensive (loss) income, net of tax
+
+(
+
+227
+
+)
+
+548
+
+Comprehensive income
+
+1,930
+
+2,173
+
+Less: Comprehensive income attributable to noncontrolling interest
+
+98
+
+90
+
+Comprehensive income attributable to common shareowners
+
+$
+
+1,832
+
+$
+
+2,083
+
+See accompanying Notes to Condensed Consolidated Financial Statements
+
+5
+
+Table of Content
+
+s
+
+RTX CORPORATION
+
+AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED BALANCE SHEET
+
+(Unaudited)
+
+(dollars in millions)
+
+March 31, 2026
+
+December 31, 2025
+
+Assets
+
+Current Assets
+
+Cash and cash equivalents
+
+$
+
+6,818
+
+$
+
+7,435
+
+Accounts receivable, net
+
+12,945
+
+14,701
+
+Contract assets, net
+
+18,070
+
+17,092
+
+Inventory, net
+
+14,153
+
+13,364
+
+Other assets, current
+
+8,023
+
+7,740
+
+Total current assets
+
+60,009
+
+60,332
+
+Customer financing assets
+
+2,041
+
+2,132
+
+Fixed assets
+
+35,681
+
+35,335
+
+Accumulated depreciation
+
+(
+
+18,839
+
+)
+
+(
+
+18,467
+
+)
+
+Fixed assets, net
+
+16,842
+
+16,868
+
+Operating lease right-of-use assets
+
+1,773
+
+1,887
+
+Goodwill
+
+53,276
+
+53,343
+
+Intangible assets, net
+
+31,482
+
+31,845
+
+Other assets
+
+5,008
+
+4,672
+
+Total assets
+
+$
+
+170,431
+
+$
+
+171,079
+
+Liabilities, Redeemable Noncontrolling Interest, and Equity
+
+Current Liabilities
+
+Short-term borrowings
+
+$
+
+226
+
+$
+
+204
+
+Accounts payable
+
+15,979
+
+15,895
+
+Accrued employee compensation
+
+2,004
+
+3,308
+
+Other accrued liabilities
+
+14,217
+
+14,350
+
+Contract liabilities
+
+21,940
+
+21,615
+
+Long-term debt currently due
+
+4,213
+
+3,412
+
+Total current liabilities
+
+58,579
+
+58,784
+
+Long-term debt
+
+32,974
+
+34,288
+
+Operating lease liabilities, non-current
+
+1,522
+
+1,602
+
+Future pension and postretirement benefit obligations
+
+2,015
+
+2,067
+
+Other long-term liabilities
+
+7,307
+
+7,200
+
+Total liabilities
+
+102,397
+
+103,941
+
+Commitments and contingencies (Note 15)
+
+Redeemable noncontrolling interest
+
+37
+
+36
+
+Shareowners' Equity:
+
+Common stock
+
+38,178
+
+38,126
+
+Treasury stock
+
+(
+
+26,814
+
+)
+
+(
+
+26,881
+
+)
+
+Retained earnings
+
+57,861
+
+56,718
+
+Accumulated other comprehensive loss
+
+(
+
+2,945
+
+)
+
+(
+
+2,718
+
+)
+
+Total shareowners' equity
+
+66,280
+
+65,245
+
+Noncontrolling interest
+
+1,717
+
+1,857
+
+Total equity
+
+67,997
+
+67,102
+
+Total liabilities, redeemable noncontrolling interest, and equity
+
+$
+
+170,431
+
+$
+
+171,079
+
+See accompanying Notes to Condensed Consolidated Financial Statements
+
+6
+
+Table of Content
+
+s
+
+RTX CORPORATION
+
+AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENT OF CASH FLOWS
+
+(Unaudited)
+
+Quarter Ended March 31,
+
+(dollars in millions)
+
+2026
+
+2025
+
+Operating Activities:
+
+Net income
+
+$
+
+2,157
+
+$
+
+1,625
+
+Adjustments to reconcile net income to net cash flows provided by operating activities:
+
+Depreciation and amortization
+
+1,071
+
+1,052
+
+Deferred income tax provision
+
+26
+
+67
+
+Stock compensation cost
+
+132
+
+111
+
+Net periodic pension and other postretirement income
+
+(
+
+313
+
+)
+
+(
+
+324
+
+)
+
+Share-based 401(k) matching contributions
+
+192
+
+167
+
+Change in:
+
+Accounts receivable
+
+1,823
+
+(
+
+372
+
+)
+
+Contract assets
+
+(
+
+979
+
+)
+
+(
+
+706
+
+)
+
+Inventory
+
+(
+
+813
+
+)
+
+(
+
+813
+
+)
+
+Other current assets
+
+(
+
+469
+
+)
+
+(
+
+125
+
+)
+
+Accounts payable and accrued liabilities
+
+(
+
+1,155
+
+)
+
+397
+
+Contract liabilities
+
+94
+
+373
+
+Other operating activities, net
+
+89
+
+(
+
+147
+
+)
+
+Net cash flows provided by operating activities
+
+1,855
+
+1,305
+
+Investing Activities:
+
+Capital expenditures
+
+(
+
+546
+
+)
+
+(
+
+513
+
+)
+
+Increase in other intangible assets
+
+(
+
+98
+
+)
+
+(
+
+104
+
+)
+
+Receipts (payments) from settlements of derivative contracts, net
+
+72
+
+(
+
+47
+
+)
+
+Other investing activities, net
+
+(
+
+36
+
+)
+
+(
+
+14
+
+)
+
+Net cash flows used in investing activities
+
+(
+
+608
+
+)
+
+(
+
+678
+
+)
+
+Financing Activities:
+
+Repayment of long-term debt
+
+(
+
+500
+
+)
+
+(
+
+9
+
+)
+
+Dividends paid
+
+(
+
+915
+
+)
+
+(
+
+840
+
+)
+
+Repurchase of common stock
+
+—
+
+(
+
+50
+
+)
+
+Other financing activities, net
+
+(
+
+425
+
+)
+
+(
+
+157
+
+)
+
+Net cash flows used in financing activities
+
+(
+
+1,840
+
+)
+
+(
+
+1,056
+
+)
+
+Effect of foreign exchange rate changes on cash and cash equivalents
+
+(
+
+6
+
+)
+
+16
+
+Net decrease in cash, cash equivalents, and restricted cash
+
+(
+
+599
+
+)
+
+(
+
+413
+
+)
+
+Cash, cash equivalents, and restricted cash, beginning of period
+
+7,470
+
+5,606
+
+Cash, cash equivalents, and restricted cash, end of period
+
+6,871
+
+5,193
+
+Less: Restricted cash, included in Other assets, current and Other assets
+
+53
+
+36
+
+Cash and cash equivalents, end of period
+
+$
+
+6,818
+
+$
+
+5,157
+
+See accompanying Notes to Condensed Consolidated Financial Statements
+
+7
+
+Table of Content
+
+s
+
+RTX CORPORATION
+
+AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENT OF CHANGES IN EQUITY
+
+(Unaudited)
+
+Quarter Ended March 31,
+
+(dollars in millions, except per share amounts; shares in thousands)
+
+2026
+
+2025
+
+Equity beginning balance
+
+$
+
+67,102
+
+$
+
+61,923
+
+Common Stock
+
+Beginning balance
+
+38,126
+
+37,434
+
+Common stock plans activity
+
+(
+
+73
+
+)
+
+7
+
+Share-based 401(k) matching contributions
+
+125
+
+74
+
+Ending balance
+
+38,178
+
+37,515
+
+Treasury Stock
+
+Beginning balance
+
+(
+
+26,881
+
+)
+
+(
+
+27,112
+
+)
+
+Share-based 401(k) matching contributions
+
+67
+
+93
+
+Common stock repurchased
+
+—
+
+(
+
+50
+
+)
+
+Ending balance
+
+(
+
+26,814
+
+)
+
+(
+
+27,069
+
+)
+
+Retained Earnings
+
+Beginning balance
+
+56,718
+
+53,589
+
+Net income attributable to common shareholders
+
+2,059
+
+1,535
+
+Dividends on common stock
+
+(
+
+877
+
+)
+
+(
+
+803
+
+)
+
+Dividends on ESOP common stock
+
+(
+
+38
+
+)
+
+(
+
+37
+
+)
+
+Other
+
+(
+
+1
+
+)
+
+(
+
+7
+
+)
+
+Ending balance
+
+57,861
+
+54,277
+
+Accumulated Other Comprehensive Loss
+
+Beginning balance
+
+(
+
+2,718
+
+)
+
+(
+
+3,755
+
+)
+
+Other comprehensive (loss) income, net of tax
+
+(
+
+227
+
+)
+
+548
+
+Ending balance
+
+(
+
+2,945
+
+)
+
+(
+
+3,207
+
+)
+
+Noncontrolling Interest
+
+Beginning balance
+
+1,857
+
+1,767
+
+Net income
+
+98
+
+90
+
+Less: Redeemable noncontrolling interest net income
+
+—
+
+(
+
+2
+
+)
+
+Dividends attributable to noncontrolling interest
+
+(
+
+238
+
+)
+
+(
+
+64
+
+)
+
+Ending balance
+
+1,717
+
+1,791
+
+Equity at March 31
+
+$
+
+67,997
+
+$
+
+63,307
+
+Supplemental share information
+
+Shares of common stock issued under employee plans, net
+
+3,437
+
+2,903
+
+Shares of common stock repurchased
+
+—
+
+396
+
+Treasury shares reissued related to 401(k) matching contributions
+
+959
+
+1,323
+
+Dividends declared per share of common stock
+
+$
+
+0.680
+
+$
+
+0.630
+
+See accompanying Notes to Condensed Consolidated Financial Statements
+
+8
+
+Table of Content
+
+s
+
+RTX CORPORATION
+
+AND SUBSIDIARIES
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(Unaudited)
+
+Note 1: Basis of Presentation
+
+The Condensed Consolidated Financial Statements at March 31, 2026 and for the quarters ended March 31, 2026 and 2025 are unaudited, and in the opinion of management include adjustments of a normal recurring nature necessary for a fair statement of the results for the interim periods. The results reported in these Condensed Consolidated Financial Statements should not necessarily be taken as indicative of results that may be expected for the entire year. The financial information included herein should be read in conjunction with the financial statements and notes in our 2025 Annual Report on Form 10-K.
+
+Unless the context otherwise requires, the terms "we," "our," "us," "the Company," and "RTX" mean RTX Corporation and its subsidiaries.
+
+We operate in
+
+three
+
+segments: Collins Aerospace (Collins), Pratt & Whitney, and Raytheon. Raytheon follows a fiscal calendar, while Collins and Pratt & Whitney use calendar quarter ends. Throughout this Form 10-Q, references to the quarters ended March 31, 2026 and 2025 for Raytheon correspond to its fiscal quarter ends of March 29, 2026 and March 30, 2025, respectively.
+
+Note 2: Goodwill and Intangible Assets
+
+Goodwill.
+
+Changes in our goodwill balances for the quarter ended March 31, 2026 were as follows:
+
+(dollars in millions)
+
+Balance as of December 31, 2025
+
+Acquisitions and Divestitures
+
+Foreign Currency Translation and Other
+
+Balance as of March 31, 2026
+
+Collins Aerospace
+
+$
+
+32,776
+
+$
+
+—
+
+$
+
+(
+
+68
+
+)
+
+$
+
+32,708
+
+Pratt & Whitney
+
+1,563
+
+—
+
+—
+
+1,563
+
+Raytheon
+
+18,987
+
+—
+
+1
+
+18,988
+
+Total Segments
+
+53,326
+
+—
+
+(
+
+67
+
+)
+
+53,259
+
+Eliminations and other
+
+17
+
+—
+
+—
+
+17
+
+Total
+
+$
+
+53,343
+
+$
+
+—
+
+$
+
+(
+
+67
+
+)
+
+$
+
+53,276
+
+Intangible Assets.
+
+Identifiable intangible assets are comprised of the following:
+
+March 31, 2026
+
+December 31, 2025
+
+(dollars in millions)
+
+Gross Amount
+
+Accumulated Amortization
+
+Gross Amount
+
+Accumulated Amortization
+
+Amortized:
+
+Collaboration assets
+
+$
+
+6,263
+
+$
+
+(
+
+2,456
+
+)
+
+$
+
+6,234
+
+$
+
+(
+
+2,374
+
+)
+
+Exclusivity assets
+
+4,085
+
+(
+
+269
+
+)
+
+3,980
+
+(
+
+258
+
+)
+
+Developed technology and other
+
+1,195
+
+(
+
+775
+
+)
+
+1,192
+
+(
+
+758
+
+)
+
+Customer relationships
+
+29,327
+
+(
+
+14,365
+
+)
+
+29,338
+
+(
+
+13,989
+
+)
+
+40,870
+
+(
+
+17,865
+
+)
+
+40,744
+
+(
+
+17,379
+
+)
+
+Indefinite-lived:
+
+Trademarks and other
+
+8,477
+
+—
+
+8,480
+
+—
+
+Total
+
+$
+
+49,347
+
+$
+
+(
+
+17,865
+
+)
+
+$
+
+49,224
+
+$
+
+(
+
+17,379
+
+)
+
+Amortization of intangible assets for the quarters ended March 31, 2026 and 2025 was $
+
+494
+
+million and $
+
+501
+
+million, respectively.
+
+The following is the expected amortization of intangible assets for the remainder of 2026 through 2031:
+
+(dollars in millions)
+
+Remaining 2026
+
+2027
+
+2028
+
+2029
+
+2030
+
+2031
+
+Amortization expense
+
+$
+
+1,468
+
+$
+
+1,911
+
+$
+
+1,793
+
+$
+
+1,634
+
+$
+
+1,602
+
+$
+
+1,523
+
+9
+
+Table of Content
+
+s
+
+Note 3: Earnings Per Share
+
+Quarter Ended March 31,
+
+(dollars and shares in millions, except per share amounts)
+
+2026
+
+2025
+
+Net income attributable to common shareowners
+
+$
+
+2,059
+
+$
+
+1,535
+
+Basic weighted average number of shares outstanding
+
+1,348.0
+
+1,337.1
+
+Stock awards and equity units (share equivalent)
+
+16.6
+
+14.7
+
+Diluted weighted average number of shares outstanding
+
+1,364.6
+
+1,351.8
+
+Earnings Per Share attributable to common shareowners:
+
+Basic
+
+$
+
+1.53
+
+$
+
+1.15
+
+Diluted
+
+1.51
+
+1.14
+
+The computation of diluted earnings per share (EPS) excludes the effect of the potential exercise of stock awards, including stock appreciation rights and stock options, when the average market price of the common stock is lower than the exercise price of the related stock awards during the period because the effect would be anti-dilutive. In addition, the computation of diluted EPS excludes the effect of the potential release or exercise of stock awards when the awards' assumed proceeds exceed the average market price of the common shares during the period. For the quarters ended March 31, 2026 and 2025, the number of stock awards excluded from the computation was
+
+2.2
+
+million and
+
+3.2
+
+million, respectively.

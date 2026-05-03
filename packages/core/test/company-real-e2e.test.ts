@@ -37,17 +37,22 @@ import {
 const RUN_REAL = process.env.RUN_REAL_SEC_COMPANY_E2E === '1';
 
 const DEFAULT_COHORT = [
-  ['Information Technology', ['AAPL', 'MSFT', 'NVDA']],
-  ['Consumer Discretionary', ['AMZN', 'TSLA', 'HD']],
-  ['Communication Services', ['GOOGL', 'META', 'NFLX']],
-  ['Health Care', ['LLY', 'JNJ', 'MRK']],
-  ['Energy', ['XOM', 'CVX', 'COP']],
+  ['Information Technology', ['AAPL', 'MSFT', 'NVDA', 'AVGO', 'ORCL', 'CRM', 'AMD', 'CSCO', 'IBM', 'INTU']],
+  ['Consumer Discretionary', ['AMZN', 'TSLA', 'HD', 'MCD', 'NKE', 'LOW', 'SBUX', 'BKNG', 'TJX', 'GM']],
+  ['Communication Services', ['GOOGL', 'META', 'NFLX', 'DIS', 'CMCSA', 'VZ', 'T', 'TMUS', 'EA', 'TTWO']],
+  ['Health Care', ['LLY', 'JNJ', 'MRK', 'ABBV', 'PFE', 'UNH', 'TMO', 'ABT', 'DHR', 'BMY']],
+  ['Energy', ['XOM', 'CVX', 'COP', 'EOG', 'SLB', 'MPC', 'PSX', 'VLO', 'OXY', 'HAL']],
+  ['Financials', ['JPM', 'BAC', 'WFC', 'GS', 'MS', 'C', 'BLK', 'AXP', 'SCHW', 'PNC']],
+  ['Industrials', ['CAT', 'GE', 'RTX', 'HON', 'UPS', 'BA', 'LMT', 'DE', 'MMM', 'UNP']],
+  ['Consumer Staples', ['WMT', 'COST', 'PG', 'KO', 'PEP', 'PM', 'MO', 'CL', 'KMB', 'MDLZ']],
+  ['Materials', ['LIN', 'SHW', 'APD', 'FCX', 'NEM', 'ECL', 'DOW', 'DD', 'NUE', 'MLM']],
+  ['Utilities', ['NEE', 'SO', 'DUK', 'AEP', 'EXC', 'SRE', 'D', 'DTE', 'PEG', 'XEL']],
 ] as const;
 
 describe.skipIf(!RUN_REAL)('company tracker — real SEC + real LLM E2E', () => {
   it(
     'produces a durable real-world lifecycle output bundle',
-    { timeout: 30 * 60 * 1000, retry: 0 },
+    { timeout: 4 * 60 * 60 * 1000, retry: 0 },
     async () => {
       const stamp = new Date().toISOString().replace(/[:.]/g, '-');
       const outRoot = process.env.FLYWHEEL_IDEAS_SEC_E2E_OUT_DIR
@@ -104,6 +109,7 @@ describe.skipIf(!RUN_REAL)('company tracker — real SEC + real LLM E2E', () => 
         const crossSectorCouncil = await runCrossSectorCouncil(db, vault, result.run_id, afterEvaluation);
         const bundle = await writeCompanyBundleReports(db, vault, result.run_id);
         const bundleVerification = await verifyBundleArtifacts(vault, bundle);
+        const bundleWikilinks = await countBundleWikilinks(vault, bundle);
         const evidenceSourceCount = countCouncilEvidenceSources(db, String(crossSectorCouncil.session_id ?? ''));
         const report = readCompanyRun(db, result.run_id) as {
           evaluation_attempts: unknown[];
@@ -137,6 +143,7 @@ describe.skipIf(!RUN_REAL)('company tracker — real SEC + real LLM E2E', () => 
           cross_sector_council: crossSectorCouncil,
           bundle,
           bundle_verification: bundleVerification,
+          bundle_wikilinks: bundleWikilinks,
           council_evidence_sources: evidenceSourceCount,
           report_summary: {
             evaluation_attempts: report.evaluation_attempts.length,
@@ -162,6 +169,7 @@ describe.skipIf(!RUN_REAL)('company tracker — real SEC + real LLM E2E', () => 
         expect(adjudication.status).toBe('applied');
         expect(adjudication.dependent_needs_review).toBe(true);
         expect(bundleVerification.missing).toEqual([]);
+        expect(bundleWikilinks.total).toBeGreaterThan(0);
       } finally {
         db?.close();
         if (previousNetwork === undefined) delete process.env.FLYWHEEL_IDEAS_IMPORT_NETWORK;
@@ -382,6 +390,22 @@ async function verifyBundleArtifacts(
   return { checked: paths.length, missing };
 }
 
+async function countBundleWikilinks(
+  vault: string,
+  bundle: { indexPath: string; writtenPaths: string[] },
+): Promise<{ files_with_wikilinks: number; total: number }> {
+  const paths = Array.from(new Set([bundle.indexPath, ...bundle.writtenPaths]));
+  let filesWithWikilinks = 0;
+  let total = 0;
+  for (const relPath of paths) {
+    const body = await fsp.readFile(path.join(vault, relPath), 'utf8');
+    const count = body.match(/\[\[/g)?.length ?? 0;
+    if (count > 0) filesWithWikilinks += 1;
+    total += count;
+  }
+  return { files_with_wikilinks: filesWithWikilinks, total };
+}
+
 function countCouncilEvidenceSources(db: IdeasDatabase, sessionId: string): number {
   const row = db.prepare(`SELECT sources_json FROM ideas_council_evidence WHERE session_id = ?`)
     .get(sessionId) as { sources_json: string } | undefined;
@@ -440,6 +464,7 @@ function renderReadme(manifest: {
   vault: string;
   bundle: { indexPath: string };
   bundle_verification?: { checked: number; missing: string[] };
+  bundle_wikilinks?: { files_with_wikilinks: number; total: number };
   companies: string[];
   write_path: string;
   council_evidence_sources?: number;
@@ -474,6 +499,7 @@ function renderReadme(manifest: {
     `- Cross-sector council: ${String(manifest.cross_sector_council.status)}`,
     `- Council evidence sources from Flywheel search: ${manifest.council_evidence_sources ?? 0}`,
     `- Bundle artifacts verified: ${manifest.bundle_verification?.checked ?? 0}`,
+    `- Bundle wikilinks: ${manifest.bundle_wikilinks?.total ?? 0} across ${manifest.bundle_wikilinks?.files_with_wikilinks ?? 0} files`,
     '',
     '## Notes',
     '',

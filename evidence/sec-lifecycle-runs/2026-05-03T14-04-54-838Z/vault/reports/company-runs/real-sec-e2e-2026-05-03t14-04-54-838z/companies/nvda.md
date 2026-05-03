@@ -24,5 +24,5 @@ created: '2026-05-03T14:28:00.312Z'
 - **Customer and platform dependency**: 4 observation(s), latest 2026-02-25, assumption asm-L5HKPogZ
 - **Demand**: 4 observation(s), latest 2026-02-25, assumption asm-WhezHdP9
 - **Inventory and channel**: 4 observation(s), latest 2026-02-25, assumption asm-McDqnPXB
-- **Liquidity**: 4 observation(s), latest 2026-02-25, assumption asm-8rmpaVJX
+- **[[liquidity]]**: 4 observation(s), latest 2026-02-25, assumption asm-8rmpaVJX
 - **Macro and foreign exchange**: 4 observation(s), latest 2026-02-25, assumption asm-WHQXkXza

@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/59478/000005947826000013/lly-202
 
 Risk Factors
 
-In addition to the other information contained in this Annual Report on Form 10-K, the following risk factors should be considered carefully in evaluating our company. It is possible that our business, financial condition, liquidity, cash flows, results of operations, reputation, and prospects could be materially adversely affected by any of these risks. Additional risks and uncertainties not presently known to us or that we currently believe to be immaterial could also adversely affect our business, financial condition, liquidity, cash flows, results of operations, reputation, and prospects.
+In addition to the other information contained in this Annual Report on Form 10-K, the following risk factors should be considered carefully in evaluating our company. It is possible that our business, financial condition, [[liquidity]], cash flows, results of [[operations]], reputation, and prospects could be materially adversely affected by any of these risks. Additional risks and uncertainties not presently known to us or that we currently believe to be immaterial could also adversely affect our business, financial condition, liquidity, cash flows, results of operations, reputation, and prospects.
 
 Risks Related to Our Business and Industry
 

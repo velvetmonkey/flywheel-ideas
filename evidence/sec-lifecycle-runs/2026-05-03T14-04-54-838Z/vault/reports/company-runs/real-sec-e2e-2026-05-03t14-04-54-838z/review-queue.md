@@ -15,7 +15,7 @@ created: '2026-05-03T14:27:09.278Z'
 - **MSFT / AI, R&D, and technology, Cloud and data center capacity**: 2 candidate(s).
   - Candidate IDs: cout-X4ua1bAb, cout-ewhLhPHk
   - Evidence: Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
-- **NVDA / Demand, Inventory and channel**: 2 candidate(s).
+- **[[nvda]] / Demand, Inventory and channel**: 2 candidate(s).
   - Candidate IDs: cout-kXoBT5HF, cout-ogV4H2p7
   - Evidence: In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the 
 - **META / Geopolitics and tariffs**: 1 candidate(s).

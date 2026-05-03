@@ -12,7 +12,7 @@ created: '2026-05-03T14:05:48.427Z'
 Filed: 2026-01-28
 Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm
 
-Changes in the law may continue to weaken our ability to prevent the use of patented technology. Our increasing engagement with open-source software will also cause us to license our intellectual property rights broadly in certain situations. If we are unable to protect our intellectual property, our results of operations could be adversely affected.
+Changes in the law may continue to weaken our ability to prevent the use of patented technology. Our increasing engagement with open-source software will also cause us to license our intellectual property rights broadly in certain situations. If we are unable to protect our intellectual property, our results of [[operations]] could be adversely affected.
 
 Source code, the detailed program commands for our operating systems and other software programs, is critical to our business. If our source code leaks, we might lose future trade secret protection for that code. It may then become easier for third parties to compete with our products by copying functionality, which could adversely affect our results of operations. Unauthorized access to or disclosure of source code or other intellectual property also increases the security risks described elsewhere in these risk factors.
 
@@ -54,7 +54,7 @@ PART II
 
 Item 1A
 
-We maintain an investment portfolio of various holdings, types, and maturities. These investments are subject to general credit, liquidity, market, and interest rate risks, which may be exacerbated by market downturns or events that affect global financial markets. A significant part of our investment portfolio comprises U.S. government securities. If global financial markets decline for long periods, or if there is a downgrade of the U.S. government credit rating due to an actual or threatened default on government debt, our investment portfolio could be adversely affected and we could determine that more of our investments have experienced a decline in fair value, requiring impairment charges that could adversely affect our financial condition and results of operations.
+We maintain an investment portfolio of various holdings, types, and maturities. These investments are subject to general credit, [[liquidity]], market, and interest rate risks, which may be exacerbated by market downturns or events that affect global financial markets. A significant part of our investment portfolio comprises U.S. government securities. If global financial markets decline for long periods, or if there is a downgrade of the U.S. government credit rating due to an actual or threatened default on government debt, our investment portfolio could be adversely affected and we could determine that more of our investments have experienced a decline in fair value, requiring impairment charges that could adversely affect our financial condition and results of operations.
 
 Catastrophic events or geopolitical conditions could disrupt our business.
 
@@ -68,7 +68,7 @@ The long-term effects of climate change on the global economy and the IT industr
 
 Our global business exposes us to operational and economic risks.
 
-Our customers, employees, and infrastructure are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Global, regional, and local economic developments, monetary policy, geopolitical tension, particularly between the U.S. and Europe, restrictions on international trade, such as tariffs and other controls on imports or exports, inflation, and recession, as well as political and military disputes, could adversely affect our results of operations. Non-compliance with sanctions as well as general ecosystem disruptions could result in reputational harm, operational delays, monetary fines, loss of revenue, increased costs, loss of export privileges, or criminal sanctions, which could adversely affect our business, financial condition, and results of operations.
+Our customers, employees, and infrastructure are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Global, regional, and local economic developments, monetary policy, geopolitical tension, particularly between the U.S. and Europe, restrictions on international trade, such as tariffs and other controls on imports or exports, inflation, and recession, as well as political and military [[disputes]], could adversely affect our results of operations. Non-compliance with sanctions as well as general ecosystem disruptions could result in reputational harm, operational delays, monetary fines, loss of revenue, increased costs, loss of export privileges, or criminal sanctions, which could adversely affect our business, financial condition, and results of operations.
 
 60
 

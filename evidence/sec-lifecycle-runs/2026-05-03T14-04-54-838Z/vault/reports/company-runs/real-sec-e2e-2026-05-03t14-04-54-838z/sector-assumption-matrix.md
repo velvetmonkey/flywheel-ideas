@@ -21,7 +21,7 @@ created: '2026-05-03T14:27:01.651Z'
 
 ## Shared Assumptions Across Companies
 
-- **Demand** appears across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, [[mrk]], MSFT, NFLX, NVDA, TSLA, [[xom]] with 56 observation(s).
+- **Demand** appears across [[aapl]], [[amzn]], COP, [[cvx]], [[googl]], HD, [[jnj]], [[lly]], META, [[mrk]], [[msft]], [[nflx]], [[nvda]], [[tsla]], [[xom]] with 56 observation(s).
 - **Regulation and legal** appears across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM with 53 observation(s).
 - **Liquidity** appears across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM with 51 observation(s).
 - **Macro and foreign exchange** appears across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM with 51 observation(s).

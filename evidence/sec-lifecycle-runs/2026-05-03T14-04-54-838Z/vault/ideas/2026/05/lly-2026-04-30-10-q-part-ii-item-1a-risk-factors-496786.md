@@ -52,7 +52,7 @@ the significant costs and uncertainties in the pharmaceutical research and devel
 
 •
 
-the impact and uncertain outcome of acquisitions and business development transactions and related costs;
+the impact and uncertain [[outcome]] of acquisitions and business development transactions and related costs;
 
 •
 
@@ -104,11 +104,11 @@ reliance on third-party relationships and outsourcing arrangements;
 
 •
 
-the use of artificial intelligence or other emerging technologies in various facets of our operations, including partnerships related to the use of, or the sharing of, such technologies with third parties, which may exacerbate competitive, regulatory, litigation, cybersecurity, and other risks;
+the use of artificial intelligence or other emerging technologies in various facets of our [[operations]], including partnerships related to the use of, or the sharing of, such technologies with third parties, which may exacerbate competitive, regulatory, litigation, cybersecurity, and other risks;
 
 •
 
-the impact of global macroeconomic conditions, including uneven economic growth or downturns or uncertainty, trade and other global disputes and interruptions, including related to tariffs, trade protection measures, and similar restrictions, international tension, conflicts, regional dependencies, or other costs, uncertainties, and risks related to engaging in business globally;
+the impact of global macroeconomic conditions, including uneven economic growth or downturns or uncertainty, trade and other global [[disputes]] and interruptions, including related to tariffs, trade protection measures, and similar restrictions, international tension, conflicts, regional dependencies, or other costs, uncertainties, and risks related to engaging in business globally;
 
 •
 

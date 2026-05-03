@@ -13,7 +13,7 @@ created: '2026-05-03T14:29:15.893Z'
 - Theme: Regulation and legal
 - Mechanism: Regulatory investigation or litigation
 - Sectors: Communication Services, Consumer Discretionary, Information Technology
-- Companies: AAPL, HD, META
+- Companies: [[aapl]], HD, META
 - Observations: 11
 - Realized candidates: 0
 - Signal: emerging cross-sector mechanism

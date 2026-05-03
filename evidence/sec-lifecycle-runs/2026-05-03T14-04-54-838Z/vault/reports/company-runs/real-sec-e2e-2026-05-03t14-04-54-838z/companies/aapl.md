@@ -24,5 +24,5 @@ created: '2026-05-03T14:27:50.705Z'
 - **Cloud and data center capacity**: 3 observation(s), latest 2026-05-01, assumption asm-DGwaJLnR
 - **Customer and platform dependency**: 3 observation(s), latest 2026-05-01, assumption asm-e56MdArq
 - **Inventory and channel**: 3 observation(s), latest 2026-05-01, assumption asm-TPpVPXUW
-- **Liquidity**: 3 observation(s), latest 2026-05-01, assumption asm-7k9coxno
+- **[[liquidity]]**: 3 observation(s), latest 2026-05-01, assumption asm-7k9coxno
 - **Macro and foreign exchange**: 3 observation(s), latest 2026-05-01, assumption asm-8cv24FkW

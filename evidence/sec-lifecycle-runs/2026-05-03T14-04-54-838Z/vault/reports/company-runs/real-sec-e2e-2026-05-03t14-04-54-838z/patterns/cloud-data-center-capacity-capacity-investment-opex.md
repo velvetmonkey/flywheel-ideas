@@ -13,7 +13,7 @@ created: '2026-05-03T14:28:46.438Z'
 - Theme: Cloud and data center capacity
 - Mechanism: Capacity investment and operating expense drag
 - Sectors: Consumer Discretionary, Energy, Information Technology
-- Companies: MSFT, NVDA, TSLA, XOM
+- Companies: [[msft]], [[nvda]], [[tsla]], [[xom]]
 - Observations: 14
 - Realized candidates: 2
 - Signal: shared mechanism with realized-risk evidence
@@ -31,7 +31,7 @@ Cloud and data center capacity is not just recurring boilerplate: the capacity i
 - **MSFT / Information Technology** (2026-01-28)
   - Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
 - **MSFT / Information Technology** (2026-01-28)
-  - Worsening economic conditions, including inflation, recession, pandemic, or other changes in economic conditions, may cause lower IT spending and adversely affect our results of operations. If demand for computing power, PCs, servers, and other computing devices declines, or consumer or business spending for those products declines, our results of 
+  - Worsening economic conditions, including inflation, recession, pandemic, or other changes in economic conditions, may cause lower IT spending and adversely affect our results of [[operations]]. If demand for computing power, PCs, servers, and other computing devices declines, or consumer or business spending for those products declines, our results of 
 - **TSLA / Consumer Discretionary** (2026-01-29)
   - Likewise, we may encounter delays with the design, construction and regulatory or other approvals necessary to build and bring online future manufacturing facilities and products. In addition, as we continue to develop our artificial intelligence services and products, we may face many additional challenges, including the availability and cost of e
 - **TSLA / Consumer Discretionary** (2026-01-29)

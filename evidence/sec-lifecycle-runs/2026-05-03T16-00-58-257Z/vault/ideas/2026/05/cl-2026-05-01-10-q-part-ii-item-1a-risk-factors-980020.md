@@ -1,0 +1,115 @@
+---
+id: idea-WxneMGjy
+type: idea
+state: nascent
+title: CL 2026-05-01 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T16:49:40.020Z'
+date: '2026-05-03'
+created: '2026-05-03T16:49:40.350Z'
+---
+# COLGATE PALMOLIVE CO 10-Q Part II Item 1A Risk Factors
+
+Filed: 2026-05-01
+Source: https://www.sec.gov/Archives/edgar/data/21665/000002166526000023/cl-20260331.htm
+
+Risk Factors
+
+There have been no material changes from the risk factors disclosed in "Risk Factors" in Part 1, Item 1A of the Company's Annual Report on Form 10-K for the year ended December 31, 2025.
+
+46
+
+COLGATE-PALMOLIVE COMPANY
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+On March 20, 2025, the Board authorized the repurchase of shares of the Company's common stock having an aggregate purchase price of up to $5 billion under a new share repurchase program (the "2025 Program"), which replaced a previously authorized share repurchase program. The Board also has authorized share repurchases on an ongoing basis to fulfill certain requirements of the Company's compensation and benefit programs. The shares are repurchased from time to time in open market or privately negotiated transactions at the Company's discretion, subject to market conditions, customary blackout periods and other factors.
+
+The following table shows the stock repurchase activity for the three months in the quarter ended March 31, 2026:
+
+Month
+
+Total Number of Shares Purchased
+
+(1)
+
+Average Price Paid per Share
+
+Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs
+
+(2)
+
+Approximate Dollar Value of Shares That May Yet Be Purchased Under the Plans or Programs
+
+(3)
+
+(in millions)
+
+January 1 through 31, 2026
+
+3,038
+
+$
+
+84.52
+
+—
+
+$
+
+4,087
+
+February 1 through 28, 2026
+
+975,160
+
+$
+
+95.90
+
+691,300
+
+$
+
+4,021
+
+March 1 through 31, 2026
+
+2,408,652
+
+$
+
+88.02
+
+2,404,356
+
+$
+
+3,809
+
+Total
+
+3,386,850
+
+$
+
+90.28
+
+3,095,656
+
+(1)
+
+Includes share repurchases under the 2025 Program and those associated with certain employee elections under the Company's compensation and benefit programs.
+
+(2)
+
+The difference between the total number of shares purchased and the total number of shares purchased as part of publicly announced plans or programs is 291,194 shares, which represents shares deemed surrendered to the Company to satisfy certain employee elections under the Company's compensation and benefit programs.
+
+(3)
+
+Includes approximate dollar value of shares that were available to be purchased under the publicly announced plans or programs that were in effect as of March 31, 2026.
+
+47
+
+COLGATE-PALMOLIVE COMPANY

@@ -20,7 +20,7 @@ created: '2026-05-03T14:28:05.124Z'
 
 - **Demand**: 4 observation(s), latest 2026-04-30, assumption asm-qrdkAb5G
 - **Geopolitics and tariffs**: 4 observation(s), latest 2026-04-30, assumption asm-MUZiab1j
-- **Liquidity**: 4 observation(s), latest 2026-04-30, assumption asm-KiiU87xT
+- **[[liquidity]]**: 4 observation(s), latest 2026-04-30, assumption asm-KiiU87xT
 - **Macro and foreign exchange**: 4 observation(s), latest 2026-04-30, assumption asm-d5ERdzDj
 - **Regulation and legal**: 4 observation(s), latest 2026-04-30, assumption asm-tirpifGy
 - **Cloud and data center capacity**: 3 observation(s), latest 2026-04-30, assumption asm-5eLWKNi6

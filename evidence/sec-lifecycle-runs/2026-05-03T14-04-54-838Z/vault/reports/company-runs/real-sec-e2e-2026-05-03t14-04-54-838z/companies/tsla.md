@@ -21,7 +21,7 @@ created: '2026-05-03T14:28:07.530Z'
 - **AI, R&D, and technology**: 4 observation(s), latest 2026-04-23, assumption asm-6hkP4A2y
 - **Cloud and data center capacity**: 4 observation(s), latest 2026-04-23, assumption asm-ow6RyeQP
 - **Demand**: 4 observation(s), latest 2026-04-23, assumption asm-d64bQ4Up
-- **Liquidity**: 4 observation(s), latest 2026-04-23, assumption asm-gZhkp4ux
+- **[[liquidity]]**: 4 observation(s), latest 2026-04-23, assumption asm-gZhkp4ux
 - **Macro and foreign exchange**: 4 observation(s), latest 2026-04-23, assumption asm-CVaT3FJn
 - **Regulation and legal**: 4 observation(s), latest 2026-04-23, assumption asm-2NxoiyQj
 - **Supply chain**: 4 observation(s), latest 2026-04-23, assumption asm-qFzNqki9

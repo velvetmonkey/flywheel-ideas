@@ -1,0 +1,1005 @@
+---
+id: idea-Y9v9pJpE
+type: idea
+state: nascent
+title: JPM 2026-05-01 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T16:33:49.949Z'
+date: '2026-05-03'
+created: '2026-05-03T16:33:50.295Z'
+---
+# JPMORGAN CHASE & CO 10-Q Part II Item 1A Risk Factors
+
+Filed: 2026-05-01
+Source: https://www.sec.gov/Archives/edgar/data/19617/000162828026029344/jpm-20260331.htm
+
+Risk Factors.
+
+179
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds.
+
+179
+
+Item 3.
+
+Defaults Upon Senior Securities.
+
+180
+
+Item 4.
+
+Mine Safety Disclosures.
+
+180
+
+Item 5.
+
+Other Information.
+
+180
+
+Item 6.
+
+Exhibits.
+
+181
+
+2
+
+JPMorgan Chase & Co.
+
+Consolidated financial highlights (unaudited)
+
+As of or for the period ended, (in millions, except per share, ratio, employee data and where otherwise noted)
+
+1Q26
+
+4Q25
+
+3Q25
+
+2Q25
+
+1Q25
+
+Selected income statement data
+
+Total net revenue
+
+$
+
+49,836
+
+$
+
+45,798
+
+$
+
+46,427
+
+$
+
+44,912
+
+$
+
+45,310
+
+Total noninterest expense
+
+26,850
+
+23,983
+
+24,281
+
+23,779
+
+23,597
+
+Pre-provision profit
+
+(a)
+
+22,986
+
+21,815
+
+22,146
+
+21,133
+
+21,713
+
+Provision for credit losses
+
+2,507
+
+4,655
+
+(d)
+
+3,403
+
+2,849
+
+3,305
+
+Income before income tax expense
+
+20,479
+
+17,160
+
+18,743
+
+18,284
+
+18,408
+
+Income tax expense
+
+3,985
+
+4,135
+
+4,350
+
+3,297
+
+3,765
+
+Net income
+
+$
+
+16,494
+
+$
+
+13,025
+
+$
+
+14,393
+
+$
+
+14,987
+
+$
+
+14,643
+
+Earnings per share data
+
+Net income: Basic
+
+$
+
+5.95
+
+$
+
+4.64
+
+$
+
+5.08
+
+$
+
+5.25
+
+$
+
+5.08
+
+Diluted
+
+5.94
+
+4.63
+
+5.07
+
+5.24
+
+5.07
+
+Average shares: Basic
+
+2,716.2
+
+2,735.3
+
+2,762.4
+
+2,788.7
+
+2,819.4
+
+Diluted
+
+2,720.2
+
+2,740.5
+
+2,767.6
+
+2,793.7
+
+2,824.3
+
+Market and per common share data
+
+Market capitalization
+
+$
+
+788,205
+
+$
+
+868,793
+
+$
+
+858,683
+
+$
+
+797,181
+
+$
+
+681,712
+
+Common shares at period-end
+
+2,679.5
+
+2,696.2
+
+2,722.2
+
+2,749.7
+
+2,779.1
+
+Book value per share
+
+$
+
+128.38
+
+$
+
+126.99
+
+$
+
+124.96
+
+$
+
+122.51
+
+$
+
+119.24
+
+Tangible book value per share ("TBVPS")
+
+(a)
+
+108.87
+
+107.56
+
+105.70
+
+103.40
+
+100.36
+
+Cash dividends declared per share
+
+1.50
+
+1.50
+
+1.50
+
+1.40
+
+1.40
+
+Selected ratios and metrics
+
+Return on common equity ("ROE")
+
+(b)
+
+19
+
+%
+
+15
+
+%
+
+17
+
+%
+
+18
+
+%
+
+18
+
+%
+
+Return on tangible common equity ("ROTCE")
+
+(a)(b)
+
+23
+
+18
+
+20
+
+21
+
+21
+
+Return on assets
+
+(b)
+
+1.41
+
+1.14
+
+1.26
+
+1.35
+
+1.40
+
+Overhead ratio
+
+54
+
+52
+
+52
+
+53
+
+52
+
+Loans-to-deposits ratio
+
+56
+
+58
+
+56
+
+55
+
+54
+
+Firm Liquidity coverage ratio ("LCR") (average)
+
+112
+
+111
+
+110
+
+113
+
+113
+
+JPMorgan Chase Bank, N.A. LCR (average)
+
+120
+
+115
+
+117
+
+120
+
+124
+
+Common equity Tier 1 ("CET1") capital ratio – Standardized
+
+(c)
+
+14.3
+
+14.6
+
+14.8
+
+15.1
+
+15.4
+
+Tier 1 capital ratio – Standardized
+
+(c)
+
+15.2
+
+15.5
+
+15.8
+
+16.1
+
+16.5
+
+Total capital ratio – Standardized
+
+(c)
+
+17.2
+
+17.4
+
+17.7
+
+17.8
+
+18.2
+
+Tier 1 leverage ratio
+
+6.6
+
+6.9
+
+6.9
+
+6.9
+
+7.2
+
+Supplementary leverage ratio ("SLR")
+
+5.6
+
+5.8
+
+5.8
+
+5.9
+
+6.0
+
+Selected balance sheet data (period-end)
+
+Trading assets
+
+$
+
+1,069,335
+
+$
+
+802,873
+
+$
+
+952,777
+
+$
+
+889,856
+
+$
+
+875,203
+
+Investment securities, net of allowance for credit losses
+
+821,179
+
+777,332
+
+783,945
+
+745,939
+
+664,447
+
+Loans
+
+1,503,520
+
+1,493,429
+
+1,435,246
+
+1,411,992
+
+1,355,695
+
+Total assets
+
+4,900,475
+
+4,424,900
+
+4,560,205
+
+4,552,482
+
+4,357,856
+
+Deposits
+
+2,675,520
+
+2,559,320
+
+2,548,476
+
+2,562,380
+
+2,495,877
+
+Long-term debt
+
+448,764
+
+435,206
+
+427,203
+
+419,802
+
+407,224
+
+Common stockholders' equity
+
+343,993
+
+342,393
+
+340,167
+
+336,879
+
+331,375
+
+Total stockholders' equity
+
+364,038
+
+362,438
+
+360,212
+
+356,924
+
+351,420
+
+Employees
+
+320,079
+
+318,512
+
+318,153
+
+317,160
+
+318,477
+
+Credit quality metrics
+
+Allowances for credit losses
+
+$
+
+31,383
+
+$
+
+31,230
+
+$
+
+29,089
+
+$
+
+28,281
+
+$
+
+27,835
+
+Allowance for loan losses to total retained loans
+
+1.82
+
+%
+
+1.83
+
+%
+
+1.88
+
+%
+
+1.85
+
+%
+
+1.94
+
+%
+
+Nonperforming assets
+
+$
+
+10,049
+
+$
+
+10,359
+
+$
+
+10,635
+
+$
+
+10,480
+
+$
+
+9,105
+
+Net charge-offs
+
+2,316
+
+2,514
+
+2,593
+
+2,410
+
+2,332
+
+Net charge-off rate
+
+0.67
+
+%
+
+0.72
+
+%
+
+0.76
+
+%
+
+0.73
+
+%
+
+0.74
+
+%
+
+On January 7, 2026, JPMorganChase announced that Chase will become the new issuer of Apple Card. The Firm entered into a forward purchase commitment on December 30, 2025 to acquire the Apple credit card portfolio (the "Apple Card transaction"), with an expected closing date approximately 24 months thereafter. Refer to Notes 4, 13, 27 and 28 of JPMorganChase's 2025 Form 10-K for additional information.
+
+(a)
+
+Pre-provision profit, TBVPS and ROTCE are each non-GAAP financial measures. Tangible common equity ("TCE") is also a non-GAAP financial measure. Refer to Explanation and Reconciliation of the Firm's Use of Non-GAAP Financial Measures on pages 15-16 for a further discussion of these measures.
+
+(b)
+
+Ratios are based upon annualized amounts.
+
+(c)
+
+At each of March 31, 2026 and December 31, 2025, the Advanced risk-based ratios were more binding on the Firm than the Standardized risk-based ratios. Refer to Capital Risk Management on pages 33-40 of this Form 10-Q and pages 89–99 of JPMorganChase's 2025 Form 10-K for additional information.
+
+(d)
+
+Included $2.2 billion associated with the Apple Card transaction. Refer to Note 13 of JPMorganChase's 2025 Form 10-K for additional information.
+
+3
+
+INTRODUCTION
+
+The following is Management's discussion and analysis of the financial condition and results of operations ("MD&A") of JPMorgan Chase & Co. ("JPMorganChase" or the "Firm") for the first quarter of 2026.
+
+This Quarterly Report on Form 10-Q for the first quarter of 2026 ("Form 10-Q") should be read together with JPMorganChase's Annual Report on Form 10-K for the year ended December 31, 2025 ("2025 Form 10-K"). Refer to the Glossary of terms and acronyms and line of business metrics on pages 170-178 for definitions of terms and acronyms used throughout this Form 10-Q.
+
+This Form 10-Q contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. These forward-looking statements are based on the current beliefs and expectations of JPMorganChase's management, speak only as of the date of this Form 10-Q and are subject to significant risks and uncertainties. Refer to Forward-looking Statements on page 79
+
+of this Form 10-Q and Part I, Item 1A, Risk Factors on pages 9–31 of the 2025 Form 10-K for a discussion of certain of those risks and uncertainties and the factors that could cause JPMorganChase's actual results to differ materially because of those risks and uncertainties. There is no assurance that actual results will be in line with any outlook information set forth herein, and the Firm does not undertake to update any forward-looking statements.
+
+JPMorgan Chase & Co. (NYSE: JPM), a financial holding company incorporated under Delaware law in 1968, is a leading financial services firm based in the United States of America ("U.S."), with operations worldwide. JPMorganChase had $4.9 trillion in assets and $364.0 billion in stockholders' equity as of March 31, 2026. The Firm is a leader in investment banking, financial services for consumers and small businesses, commercial banking, financial transaction processing and asset management. Under the J.P. Morgan and Chase brands, the Firm serves millions of customers, predominantly in the U.S., and many of the world's most prominent corporate, institutional and government clients globally.
+
+JPMorganChase's principal bank subsidiary is JPMorgan Chase Bank, National Association ("JPMorgan Chase Bank, N.A."), a national banking association with U.S. branches in 48 states and Washington, D.C. JPMorganChase's principal non-bank subsidiary is J.P. Morgan Securities LLC ("J.P. Morgan Securities"), a U.S. broker-dealer. The bank and non-bank subsidiaries of JPMorganChase operate nationally as well as through overseas branches and subsidiaries, representative offices and subsidiary foreign banks. The Firm's principal operating subsidiaries outside the U.S. are J.P. Morgan Securities
+
+plc and J.P. Morgan SE ("JPMSE"), which are subsidiaries of JPMorgan Chase Bank, N.A. and are based in the United Kingdom ("U.K.") and Germany, respectively.
+
+For management reporting purposes, the Firm has three reportable business segments – Consumer & Community Banking ("CCB"), Commercial & Investment Bank ("CIB") and Asset & Wealth Management ("AWM") – with the remaining activities in Corporate. The Firm's consumer business segment is CCB, and the Firm's wholesale business segments are CIB and AWM. Refer to Business Segment & Corporate Results on pages 17-31 and Note 25 of this Form 10-Q, and Note 32 of JPMorganChase's 2025 Form 10-K, for a description of the Firm's reportable business segments and the products and services they provide to their respective client bases, as well as a description of Corporate activities.
+
+The Firm's website is www.jpmorganchase.com. JPMorganChase makes available on its website, free of charge, annual reports on Form 10-K, quarterly reports on Form 10-Q and current reports on Form 8-K pursuant to Section 13(a) or Section 15(d) of the Securities Exchange Act of 1934, as soon as reasonably practicable after it electronically files or furnishes such material to the U.S. Securities and Exchange Commission (the "SEC") at www.sec.gov. JPMorganChase makes new and important information about the Firm available on its website at https://www.jpmorganchase.com, including on the Investor Relations section of its website at https://www.jpmorganchase.com/ir. Information on the Firm's website, including documents on the website that are referenced in this Form 10-Q, is not incorporated by reference into this Form 10-Q or the Firm's other filings with the SEC.
+
+4
+
+EXECUTIVE OVERVIEW
+
+This executive overview of the MD&A highlights selected information and does not contain all of the information that is important to readers of this Form 10-Q. For a complete description of the trends and uncertainties, as well as the risks and critical accounting estimates affecting the Firm, this Form 10-Q and the 2025 Form 10-K should be read together and in their entirety.
+
+Financial performance of JPMorganChase
+
+(unaudited)
+
+As of or for the period ended,
+
+(in millions, except per share data and ratios)
+
+Three months ended March 31,
+
+2026
+
+2025
+
+Change
+
+Selected income statement data
+
+Noninterest revenue
+
+$
+
+24,470
+
+$
+
+22,037
+
+11
+
+%
+
+Net interest income
+
+25,366
+
+23,273
+
+9
+
+Total net revenue
+
+49,836
+
+45,310
+
+10
+
+Total noninterest expense
+
+26,850
+
+23,597
+
+14
+
+Pre-provision profit
+
+22,986
+
+21,713
+
+6
+
+Provision for credit losses
+
+2,507
+
+3,305
+
+(24)
+
+Net income
+
+16,494
+
+14,643
+
+13
+
+Diluted earnings per share
+
+5.94
+
+5.07
+
+17
+
+Selected ratios and metrics
+
+Return on common equity
+
+19
+
+%
+
+18
+
+%
+
+Return on tangible common equity
+
+23
+
+21
+
+Book value per share
+
+$
+
+128.38
+
+$
+
+119.24
+
+8
+
+Tangible book value per share
+
+108.87
+
+100.36
+
+8
+
+Capital ratios - Standardized
+
+(a)
+
+CET1 capital
+
+14.3
+
+%
+
+15.4
+
+%
+
+Tier 1 capital
+
+15.2
+
+16.5
+
+Total capital
+
+17.2
+
+18.2
+
+Memo:
+
+NII excluding Markets
+
+(b)
+
+$
+
+23,280
+
+$
+
+22,590
+
+3
+
+NIR excluding Markets
+
+(b)
+
+15,697
+
+13,761
+
+14
+
+Markets
+
+(c)
+
+11,559
+
+9,663
+
+20
+
+Total net revenue - managed basis
+
+$
+
+50,536
+
+$
+
+46,014
+
+10
+
+%
+
+(a)
+
+At March 31, 2026, the Advanced risk-based ratios were more binding on the Firm than the Standardized risk-based ratios. Refer to Capital Risk Management on pages 33-40 of this Form 10-Q and pages 89–99 of JPMorganChase's
+
+2025 Form 10-K
+
+for additional information.
+
+(b)
+
+NII and NIR refer to net interest income and noninterest revenue, respectively.
+
+(c)
+
+Markets consists of CIB's Fixed Income Markets and Equity Markets businesses. The Firm assesses the performance of its Markets business on a total net revenue basis, as revenues in NII generally have offsets across other revenue lines, primarily Principal transactions revenue.
+
+Comparisons noted in the sections below are for the first quarter of 2026 versus the first quarter of 2025, unless otherwise specified.
+
+Firmwide overview
+
+For the first quarter of 2026, JPMorganChase reported net income of $16.5 billion, up 13%, with earnings per share of $5.94, ROE of 19% and ROTCE of 23%.
+
+•
+
+Total net revenue
+
+was $49.8 billion, up 10%, reflecting:
+
+–
+
+Net interest income
+
+("NII") was $25.4 billion, up 9%, driven by higher Markets net interest income, higher deposit balances, and higher revolving balances in Card Services, partially offset by the impact of lower rates. NII excluding Markets was $23.3 billion, up 3%.
+
+–
+
+Noninterest revenue
+
+("NIR") was $24.5 billion, up 11%, driven by higher asset management fees in AWM and CCB, higher investment banking fees, higher Markets noninterest revenue, higher auto operating lease income, and higher Payments fees. These increases were partially offset by the absence of the $588 million First Republic-related gain recorded in the prior year.
+
+•
+
+Noninterest expense
+
+was $26.9 billion, up 14%, predominantly driven by higher compensation expense, including higher revenue-related compensation and growth in the number of employees, as well as higher brokerage expense and distribution fees, continued investments in marketing, and higher auto lease depreciation. The increase also reflected the absence of an FDIC special assessment accrual release recorded in the prior year.
+
+•

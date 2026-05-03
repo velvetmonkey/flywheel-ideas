@@ -10,10 +10,10 @@ created: '2026-05-03T14:29:01.303Z'
 ---
 # Liquidity / Interest, credit, or liquidity stress real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Theme: Liquidity
+- Theme: [[liquidity]]
 - Mechanism: Interest, credit, or liquidity stress
 - Sectors: Communication Services, Consumer Discretionary, Health Care, Information Technology
-- Companies: AAPL, AMZN, GOOGL, HD, JNJ, LLY, MSFT, NFLX
+- Companies: [[aapl]], [[amzn]], [[googl]], HD, [[jnj]], [[lly]], [[msft]], [[nflx]]
 - Observations: 27
 - Realized candidates: 0
 - Signal: broad shared mechanism to monitor

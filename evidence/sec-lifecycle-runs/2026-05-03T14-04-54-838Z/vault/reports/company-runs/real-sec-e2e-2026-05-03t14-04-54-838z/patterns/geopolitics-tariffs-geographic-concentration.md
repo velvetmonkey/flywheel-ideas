@@ -13,7 +13,7 @@ created: '2026-05-03T14:28:56.464Z'
 - Theme: Geopolitics and tariffs
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Health Care, Information Technology
-- Companies: JNJ, LLY, META, NFLX, NVDA
+- Companies: [[jnj]], [[lly]], META, [[nflx]], [[nvda]]
 - Observations: 15
 - Realized candidates: 1
 - Signal: shared mechanism with realized-risk evidence

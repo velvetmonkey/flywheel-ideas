@@ -33,9 +33,9 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## Executive Readout
 
-- Companies: AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM
+- Companies: [[aapl]], [[amzn]], COP, [[cvx]], GOOGL, HD, [[jnj]], [[lly]], META, [[mrk]], [[msft]], NFLX, NVDA, TSLA, [[xom]]
 - Filings scanned: 30
-- Current thesis dependencies: 169 open bet(s).
+- Current [[thesis]] dependencies: 169 open bet(s).
 - Human review queue: 8 event(s), 11 staged candidate(s).
 - Accepted failures: 1; lessons recorded: 0; missing lesson memos: 1.
 - Posture: evidence needs human review before thesis confidence should increase.
@@ -127,7 +127,7 @@ No accepted failure lessons have been recorded yet.
 - **Supply chain**: 14 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 47 observation(s), review pressure 1, latest 2026-05-01
 - **Geopolitics and tariffs**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 46 observation(s), review pressure 1, latest 2026-05-01
 - **Regulation and legal**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 53 observation(s), review pressure 0, latest 2026-05-01
-- **Liquidity**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 51 observation(s), review pressure 0, latest 2026-05-01
+- **[[liquidity]]**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 51 observation(s), review pressure 0, latest 2026-05-01
 - **Macro and foreign exchange**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 51 observation(s), review pressure 0, latest 2026-05-01
 - **Competition**: 15 open bet(s) across AAPL, AMZN, COP, CVX, GOOGL, HD, JNJ, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA, XOM, 44 observation(s), review pressure 0, latest 2026-05-01
 - **Customer and platform dependency**: 11 open bet(s) across AAPL, CVX, GOOGL, HD, JNJ, META, MRK, MSFT, NFLX, NVDA, TSLA, 28 observation(s), review pressure 0, latest 2026-05-01

@@ -9,6 +9,6 @@ created: '2026-05-03T14:28:41.604Z'
 ---
 # Cybersecurity and privacy real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: AAPL, AMZN, CVX, GOOGL, HD, LLY, META, MRK, MSFT, NFLX, NVDA, TSLA
+- Companies: [[aapl]], [[amzn]], [[cvx]], [[googl]], HD, [[lly]], META, [[mrk]], [[msft]], [[nflx]], [[nvda]], [[tsla]]
 - Observations: 26
 - Latest seen: 2026-05-01

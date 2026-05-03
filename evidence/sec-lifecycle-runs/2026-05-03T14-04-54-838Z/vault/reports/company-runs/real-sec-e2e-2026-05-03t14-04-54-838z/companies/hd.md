@@ -24,5 +24,5 @@ created: '2026-05-03T14:27:53.111Z'
 - **Demand**: 4 observation(s), latest 2026-03-18, assumption asm-mHcifgga
 - **Geopolitics and tariffs**: 4 observation(s), latest 2026-03-18, assumption asm-R4gDrQuf
 - **Inventory and channel**: 4 observation(s), latest 2026-03-18, assumption asm-Lx9xebXY
-- **Liquidity**: 4 observation(s), latest 2026-03-18, assumption asm-v4Pxrpe5
+- **[[liquidity]]**: 4 observation(s), latest 2026-03-18, assumption asm-v4Pxrpe5
 - **Macro and foreign exchange**: 4 observation(s), latest 2026-03-18, assumption asm-oKP9rAjK

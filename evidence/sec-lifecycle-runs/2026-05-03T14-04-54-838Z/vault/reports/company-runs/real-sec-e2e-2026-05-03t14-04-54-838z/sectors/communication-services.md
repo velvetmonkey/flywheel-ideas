@@ -10,9 +10,9 @@ created: '2026-05-03T14:27:23.741Z'
 ---
 # Communication Services real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: GOOGL, [[meta]], [[nflx]]
+- Companies: [[googl]], [[meta]], [[nflx]]
 - Observations: 106
-- Staged outcomes: 2
+- Staged [[outcome|outcomes]]: 2
 
 ## Companies
 

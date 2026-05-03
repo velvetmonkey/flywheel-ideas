@@ -10,6 +10,6 @@ created: '2026-05-03T14:28:44.028Z'
 ---
 # Customer and platform dependency real-sec-e2e-2026-05-03t14-04-54-838z
 
-- Companies: AAPL, CVX, GOOGL, HD, JNJ, META, MRK, MSFT, NFLX, NVDA, TSLA
+- Companies: [[aapl]], [[cvx]], [[googl]], HD, [[jnj]], META, [[mrk]], [[msft]], [[nflx]], [[nvda]], [[tsla]]
 - Observations: 28
 - Latest seen: 2026-05-01
