@@ -8,7 +8,7 @@
  * function in migrations.ts. Fresh databases always land on the latest version.
  */
 
-export const SCHEMA_VERSION = 14;
+export const SCHEMA_VERSION = 15;
 
 export const IDEAS_DB_FILENAME = 'ideas.db';
 export const FLYWHEEL_DIR = '.flywheel';
@@ -575,4 +575,53 @@ CREATE TABLE IF NOT EXISTS ideas_company_run_members (
 
 CREATE INDEX IF NOT EXISTS idx_ideas_company_run_members_run
   ON ideas_company_run_members(run_id, status, company);
+`;
+
+/**
+ * v15 migration - shadow LLM evaluation ledger for company runs.
+ *
+ * Evaluations are intentionally append-only and sidecar-only. They never
+ * mutate canonical assumptions or outcomes; company.apply_outcomes remains the
+ * only path that promotes staged SEC candidates into accepted ledger outcomes.
+ */
+export const SCHEMA_SQL_V15 = `
+CREATE TABLE IF NOT EXISTS ideas_company_evaluation_targets (
+  id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES ideas_company_runs(id) ON DELETE CASCADE,
+  stage TEXT NOT NULL,
+  target_kind TEXT NOT NULL,
+  target_id TEXT NOT NULL,
+  input_hash TEXT NOT NULL,
+  selection_rank INTEGER NOT NULL,
+  selection_reason TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'pending',
+  latest_attempt_id TEXT,
+  created_at INTEGER NOT NULL,
+  UNIQUE(run_id, stage, target_kind, target_id, input_hash)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_company_eval_targets_run
+  ON ideas_company_evaluation_targets(run_id, stage, status, selection_rank);
+
+CREATE TABLE IF NOT EXISTS ideas_company_evaluation_attempts (
+  id TEXT PRIMARY KEY,
+  target_id TEXT NOT NULL REFERENCES ideas_company_evaluation_targets(id) ON DELETE CASCADE,
+  run_id TEXT NOT NULL REFERENCES ideas_company_runs(id) ON DELETE CASCADE,
+  stage TEXT NOT NULL,
+  target_kind TEXT NOT NULL,
+  target_id_value TEXT NOT NULL,
+  input_hash TEXT NOT NULL,
+  prompt_version TEXT NOT NULL,
+  model TEXT NOT NULL,
+  decision TEXT NOT NULL,
+  confidence REAL,
+  abstention_reason TEXT,
+  evidence_refs_json TEXT NOT NULL,
+  output_json TEXT NOT NULL,
+  latency_ms INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ideas_company_eval_attempts_run
+  ON ideas_company_evaluation_attempts(run_id, stage, created_at DESC);
 `;

@@ -64,3 +64,5 @@ export const generateCompanyFilingId = (): string => generateId('filing');
 export const generateCompanyThemeId = (): string => generateId('theme');
 export const generateCompanyObservationId = (): string => generateId('obs');
 export const generateCompanyOutcomeCandidateId = (): string => generateId('cout');
+export const generateCompanyEvaluationTargetId = (): string => generateId('evtarget');
+export const generateCompanyEvaluationAttemptId = (): string => generateId('evattempt');

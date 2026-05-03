@@ -322,6 +322,7 @@ export async function applyCompanyOutcomes(
     });
   }
   await writeCompanyReports(db, vaultPath, input.run_id);
+  await writeCompanyBundleReports(db, vaultPath, input.run_id);
   return { run_id: input.run_id, applied_count: applied.length, applied };
 }
 
@@ -458,6 +459,9 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const themes = db.prepare(`SELECT * FROM ideas_company_themes WHERE run_id = ? ORDER BY cik, theme_key`).all(runId);
   const observations = db.prepare(`SELECT * FROM ideas_company_observations WHERE run_id = ? ORDER BY observed_at`).all(runId);
   const outcomes = db.prepare(`SELECT * FROM ideas_company_outcome_candidates WHERE run_id = ? ORDER BY confidence DESC`).all(runId);
+  const evaluationAttempts = db.prepare(
+    `SELECT * FROM ideas_company_evaluation_attempts WHERE run_id = ? ORDER BY created_at DESC, id DESC`,
+  ).all(runId);
   const runMembers = db.prepare(`SELECT * FROM ideas_company_run_members WHERE run_id = ? ORDER BY sector, company`).all(runId);
   const companySummaries = buildCompanySummaries(filings, themes, observations, outcomes);
   const companySummariesWithMetadata = attachCompanyMetadata(companySummaries, runMembers);
@@ -477,6 +481,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
     themes,
     observations,
     outcomes,
+    evaluation_attempts: evaluationAttempts,
     lifecycle_summary: lifecycleSummary,
     value_summary: {
       primary_value: 'Auditable recurring-risk observations across dated SEC filings.',
@@ -638,12 +643,16 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
   const crossSectorPatterns = data.cross_sector_patterns as Array<Record<string, unknown>>;
   const outcomeGroups = data.outcome_groups as Array<Record<string, unknown>>;
   const secLedgerReport = data.sec_ledger_report as SecLedgerReport;
+  const evaluations = data.evaluation_attempts as Array<Record<string, unknown>>;
   const pages: BundlePage[] = [];
   const indexLinks = [
     `- [[${baseDir}/thesis|Company thesis]]`,
     `- [[${baseDir}/tracker|Evidence tracker]]`,
     `- [[${baseDir}/sector-assumption-matrix|Sector assumption matrix]]`,
     `- [[${baseDir}/cross-sector-patterns|Cross-sector patterns]]`,
+    `- [[${baseDir}/evaluation-index|Shadow LLM evaluation index]]`,
+    `- [[${baseDir}/thesis-deltas|Thesis deltas]]`,
+    `- [[${baseDir}/disputes|Evaluation disputes]]`,
     `- [[${baseDir}/review-queue|Human review queue]]`,
     `- [[${baseDir}/accepted-lessons|Accepted lessons]]`,
     `- [[${baseDir}/run-delta|Run delta]]`,
@@ -673,6 +682,7 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
       `- Filings scanned: ${secLedgerReport.executive_summary.filings_scanned}`,
       `- Current bets: ${secLedgerReport.executive_summary.current_bets}`,
       `- Review events: ${secLedgerReport.executive_summary.review_events}`,
+      `- Shadow LLM evaluations: ${evaluations.length}`,
       `- Accepted failures: ${secLedgerReport.executive_summary.accepted_failures}`,
       '',
     ].join('\n'),
@@ -706,6 +716,24 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
     kind: 'company_review_queue',
     path: `${baseDir}/review-queue.md`,
     body: renderReviewQueuePage(runId, outcomeGroups),
+  });
+  pages.push({
+    id: `company-run-${runId}-evaluation-index`,
+    kind: 'company_evaluation_index',
+    path: `${baseDir}/evaluation-index.md`,
+    body: renderBundleEvaluationIndex(runId, evaluations),
+  });
+  pages.push({
+    id: `company-run-${runId}-thesis-deltas`,
+    kind: 'company_thesis_deltas',
+    path: `${baseDir}/thesis-deltas.md`,
+    body: renderBundleThesisDeltas(runId, evaluations),
+  });
+  pages.push({
+    id: `company-run-${runId}-disputes`,
+    kind: 'company_evaluation_disputes',
+    path: `${baseDir}/disputes.md`,
+    body: renderBundleDisputes(runId, evaluations),
   });
   pages.push({
     id: `company-run-${runId}-accepted-lessons`,
@@ -793,6 +821,66 @@ function renderReviewQueuePage(runId: string, outcomeGroups: Array<Record<string
     }
   }
   return `${lines.join('\n')}\n`;
+}
+
+function renderBundleEvaluationIndex(runId: string, evaluations: Array<Record<string, unknown>>): string {
+  const lines = [
+    `# Evaluation Index ${runId}`,
+    '',
+    'Shadow LLM evaluations review SEC evidence without mutating canonical assumptions or outcomes.',
+    '',
+    '| Stage | Target | Decision | Confidence |',
+    '|---|---|---|---:|',
+  ];
+  for (const evaluation of evaluations) {
+    lines.push(`| ${evaluation.stage} | ${evaluation.target_id_value} | ${evaluation.decision} | ${evaluation.confidence ?? 'n/a'} |`);
+  }
+  if (evaluations.length === 0) lines.push('| none | none | none | n/a |');
+  return `${lines.join('\n')}\n`;
+}
+
+function renderBundleThesisDeltas(runId: string, evaluations: Array<Record<string, unknown>>): string {
+  const thesis = evaluations.filter((evaluation) => evaluation.stage === 'thesis_delta');
+  const lines = [`# Thesis Deltas ${runId}`, ''];
+  if (thesis.length === 0) {
+    lines.push('No shadow thesis-delta evaluations have been run yet.');
+  } else {
+    for (const evaluation of thesis) {
+      const output = parseOutputJson(evaluation.output_json);
+      lines.push(`- **${evaluation.target_id_value}**: ${evaluation.decision} (${evaluation.confidence ?? 'n/a'})`);
+      lines.push(`  - ${output.summary ?? 'No summary recorded.'}`);
+    }
+  }
+  return `${lines.join('\n')}\n`;
+}
+
+function renderBundleDisputes(runId: string, evaluations: Array<Record<string, unknown>>): string {
+  const disputes = evaluations.filter((evaluation) =>
+    evaluation.decision === 'ambiguous' ||
+    evaluation.decision === 'insufficient_evidence' ||
+    evaluation.confidence === null ||
+    Number(evaluation.confidence) < 0.65);
+  const lines = [`# Disputes ${runId}`, '', 'Items here need human review or council escalation before any canonical action.', ''];
+  if (disputes.length === 0) {
+    lines.push('No low-confidence or abstained evaluations yet.');
+  } else {
+    for (const evaluation of disputes) {
+      const output = parseOutputJson(evaluation.output_json);
+      lines.push(`- **${evaluation.stage} / ${evaluation.target_id_value}**: ${evaluation.decision} (${evaluation.confidence ?? 'n/a'})`);
+      lines.push(`  - ${output.rationale ?? output.summary ?? 'No rationale recorded.'}`);
+    }
+  }
+  return `${lines.join('\n')}\n`;
+}
+
+function parseOutputJson(value: unknown): Record<string, unknown> {
+  if (typeof value !== 'string') return {};
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    return parsed && typeof parsed === 'object' ? parsed as Record<string, unknown> : {};
+  } catch {
+    return {};
+  }
 }
 
 function renderCrossSectorPatternsPage(

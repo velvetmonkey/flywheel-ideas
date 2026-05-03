@@ -5,13 +5,18 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   applyCompanyOutcomes,
+  evaluateCompanyRun,
   deleteIdeasDbFiles,
+  generateCouncilSessionId,
+  generateCouncilViewId,
+  generateIdeaId,
   openIdeasDb,
   readCompanyRun,
   readCompanyThesisReport,
   recordOutcomeMemo,
   runMigrations,
   trackCompanies,
+  writeCompanyBundleReports,
   buildSecCompanyLedgerReport,
   type IdeasDatabase,
 } from '../src/index.js';
@@ -22,6 +27,14 @@ const FIXTURE_DIR = path.join(
   'sec-company',
   'public-tech',
 );
+
+const FIVE_SECTOR_COHORT = [
+  ['Information Technology', ['AAPL', 'MSFT', 'NVDA']],
+  ['Consumer Discretionary', ['AMZN', 'TSLA', 'HD']],
+  ['Communication Services', ['GOOGL', 'META', 'NFLX']],
+  ['Health Care', ['LLY', 'JNJ', 'MRK']],
+  ['Energy', ['XOM', 'CVX', 'COP']],
+] as const;
 
 let vault: string;
 let db: IdeasDatabase;
@@ -37,6 +50,102 @@ afterEach(async () => {
   deleteIdeasDbFiles(vault);
   await fsp.rm(vault, { recursive: true, force: true });
 });
+
+async function createFiveSectorFixtureDir(root: string): Promise<string> {
+  const out = path.join(root, 'five-sector-fixtures');
+  await fsp.mkdir(out, { recursive: true });
+  const templates = ['aapl', 'msft', 'nvda'];
+  let index = 0;
+  for (const [, tickers] of FIVE_SECTOR_COHORT) {
+    for (const ticker of tickers) {
+      const template = templates[index % templates.length];
+      await copyCompanyFixtureAlias(template, ticker, index + 1, out);
+      index += 1;
+    }
+  }
+  return out;
+}
+
+async function copyCompanyFixtureAlias(
+  template: string,
+  ticker: string,
+  index: number,
+  out: string,
+): Promise<void> {
+  const src = path.join(FIXTURE_DIR, template);
+  const dest = path.join(out, ticker.toLowerCase());
+  await fsp.cp(src, dest, { recursive: true });
+  const manifestPath = path.join(dest, 'manifest.json');
+  const manifest = JSON.parse(await fsp.readFile(manifestPath, 'utf8')) as {
+    filings: Array<Record<string, unknown>>;
+  };
+  const cik = String(9000000000 + index).padStart(10, '0');
+  manifest.filings = manifest.filings.map((filing, filingIndex) => ({
+    ...filing,
+    cik,
+    ticker,
+    company_name: `${ticker} Fixture Corp`,
+    accession_no: `${cik}-${String(index).padStart(2, '0')}-${String(filingIndex + 1).padStart(6, '0')}`,
+    filing_url: `fixture://${ticker.toLowerCase()}/${filing.primary_document}`,
+  }));
+  await fsp.writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+}
+
+function buildFiveSectorMetadata(): Record<string, { sector: string; display_name: string; source_rank: number; source: string }> {
+  const metadata: Record<string, { sector: string; display_name: string; source_rank: number; source: string }> = {};
+  for (const [sector, tickers] of FIVE_SECTOR_COHORT) {
+    tickers.forEach((ticker, index) => {
+      metadata[ticker] = {
+        sector,
+        display_name: `${ticker} Fixture Corp`,
+        source_rank: index + 1,
+        source: 'test-five-sector-fixture',
+      };
+    });
+  }
+  return metadata;
+}
+
+async function seedDependentIdeaCitingAssumption(
+  assumptionId: string,
+  title: string,
+): Promise<string> {
+  const ideaId = generateIdeaId();
+  const vaultPath = `ideas/${ideaId}.md`;
+  const now = Date.now();
+  db.prepare(
+    `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)
+     VALUES (?, ?, ?, 'explored', ?, ?)`,
+  ).run(ideaId, vaultPath, title, now, now);
+  await fsp.mkdir(path.join(vault, 'ideas'), { recursive: true });
+  await fsp.writeFile(
+    path.join(vault, vaultPath),
+    `---\ntitle: ${title}\nneeds_review: false\n---\n\nThis follow-on thesis cites a company assumption through a prior council view.\n`,
+    'utf8',
+  );
+
+  const sessionId = generateCouncilSessionId();
+  const viewId = generateCouncilViewId();
+  db.prepare(
+    `INSERT INTO ideas_council_sessions (id, idea_id, depth, mode, started_at, completed_at, synthesis_vault_path, purpose)
+     VALUES (?, ?, 'light', 'standard', ?, ?, ?, 'predictive')`,
+  ).run(sessionId, ideaId, now, now, `councils/${ideaId}/session-01/SYNTHESIS.md`);
+  db.prepare(
+    `INSERT INTO ideas_council_views (
+       id, session_id, model, persona,
+       prompt_version, persona_version, model_version,
+       input_hash,
+       initial_stance, stance, self_critique, confidence,
+       content_vault_path, failure_reason, stderr_tail
+     ) VALUES (?, ?, 'mock-model', 'risk-pessimist', 'test', 'test', NULL, 'sha256:test',
+               NULL, 'The thesis depends on a company assumption.', NULL, 0.7,
+               ?, NULL, NULL)`,
+  ).run(viewId, sessionId, `councils/${ideaId}/session-01/view.md`);
+  db.prepare(
+    `INSERT INTO ideas_assumption_citations (view_id, assumption_id) VALUES (?, ?)`,
+  ).run(viewId, assumptionId);
+  return ideaId;
+}
 
 describe('company tracker', () => {
   it('tracks the 3-company fixture corpus, writes a comparison brief, and stages outcomes without applying them', async () => {
@@ -154,6 +263,7 @@ describe('company tracker', () => {
         accepted_verdicts: unknown[];
       };
       outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
+      evaluation_attempts: unknown[];
     };
     expect(data.filings).toHaveLength(9);
     expect(data.company_summaries).toHaveLength(3);
@@ -206,6 +316,7 @@ describe('company tracker', () => {
     expect(data.outcomes).toHaveLength(result.staged_outcomes);
     expect(data.outcomes[0].state).toBe('staged');
     expect(data.outcomes[0].applied_outcome_id).toBeNull();
+    expect(data.evaluation_attempts).toHaveLength(0);
 
     const refuted = db.prepare(`SELECT COUNT(*) as n FROM ideas_outcome_verdicts`).get() as { n: number };
     expect(refuted.n).toBe(0);
@@ -245,6 +356,7 @@ describe('company tracker', () => {
     const index = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/index.md`), 'utf8');
     expect(index).toContain('## Top Down');
     expect(index).toContain('[[reports/company-runs/');
+    expect(index).toContain('Shadow LLM evaluation index');
     const matrix = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/sector-assumption-matrix.md`), 'utf8');
     expect(matrix).toContain('# Sector Assumption Matrix');
     const patterns = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/cross-sector-patterns.md`), 'utf8');
@@ -375,6 +487,219 @@ describe('company tracker', () => {
     expect(withMemo.company_thesis_report.prior_failures_and_lessons[0].verdict_count).toBe(expectedMemoCount);
     expect(withMemo.company_thesis_report.markdown).toContain('## Prior Failures And Lessons');
   });
+
+  it('runs shadow evaluations without mutating canonical outcomes', async () => {
+    const result = await trackCompanies(db, vault, {
+      companies: ['AAPL', 'MSFT', 'NVDA'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+    });
+
+    const evaluated = await evaluateCompanyRun(db, vault, {
+      run_id: result.run_id,
+      stage: 'outcome_validity',
+      limit: 2,
+      confirm: true,
+    }, {
+      model: 'mock-evaluator',
+      evaluator: async (payload) => ({
+        decision: 'ambiguous',
+        confidence: 0.6,
+        abstention_reason: 'fixture review intentionally abstains',
+        summary: `Reviewed ${payload.target_label}`,
+        rationale: 'The cited excerpt needs human review before canonical application.',
+        evidence_refs: payload.evidence_refs,
+        uncertainty: 'Mock evaluator cannot adjudicate issuer language.',
+        recommended_next_step: 'human review',
+      }),
+    });
+
+    expect(evaluated.selected_targets).toBeGreaterThan(0);
+    expect(evaluated.evaluated_targets).toBe(evaluated.selected_targets);
+    expect(evaluated.summary_paths.evaluation_index).toContain('evaluation-index.md');
+
+    const data = readCompanyRun(db, result.run_id) as {
+      evaluation_attempts: Array<{ decision: string; model: string }>;
+      outcomes: Array<{ state: string; applied_outcome_id: string | null }>;
+    };
+    expect(data.evaluation_attempts).toHaveLength(evaluated.evaluated_targets);
+    expect(data.evaluation_attempts[0].decision).toBe('ambiguous');
+    expect(data.evaluation_attempts[0].model).toBe('mock-evaluator');
+    expect(data.outcomes.every((outcome) => outcome.state === 'staged')).toBe(true);
+    expect(data.outcomes.every((outcome) => outcome.applied_outcome_id === null)).toBe(true);
+
+    const refuted = db.prepare(`SELECT COUNT(*) as n FROM ideas_outcome_verdicts`).get() as { n: number };
+    expect(refuted.n).toBe(0);
+
+    const index = await fsp.readFile(path.join(vault, evaluated.summary_paths.evaluation_index), 'utf8');
+    expect(index).toContain('Shadow LLM evaluations');
+    expect(index).toContain('ambiguous');
+    const disputes = await fsp.readFile(path.join(vault, evaluated.summary_paths.disputes), 'utf8');
+    expect(disputes).toContain('Items here need human review');
+
+    const resumed = await evaluateCompanyRun(db, vault, {
+      run_id: result.run_id,
+      stage: 'outcome_validity',
+      limit: 2,
+      confirm: true,
+    }, {
+      model: 'mock-evaluator',
+      evaluator: async () => {
+        throw new Error('resume should skip unchanged reviewed targets');
+      },
+    });
+    expect(resumed.evaluated_targets).toBe(0);
+    expect(resumed.skipped_targets).toBe(evaluated.selected_targets);
+  }, 30_000);
+
+  it('runs the full SEC product loop across 5 sectors with 3 companies each', async () => {
+    const fixtureDir = await createFiveSectorFixtureDir(vault);
+    const companies = FIVE_SECTOR_COHORT.flatMap(([, tickers]) => [...tickers]);
+    const companyMetadata = buildFiveSectorMetadata();
+    const result = await trackCompanies(db, vault, {
+      companies,
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      confirm: true,
+      fixture_dir: fixtureDir,
+      company_metadata: companyMetadata,
+    });
+
+    expect(result.completed_companies).toBe(15);
+    expect(result.failed_companies).toEqual([]);
+    expect(result.staged_outcomes).toBeGreaterThan(0);
+
+    const outcomeReview = await evaluateCompanyRun(db, vault, {
+      run_id: result.run_id,
+      stage: 'outcome_validity',
+      limit: 5,
+      confirm: true,
+    }, {
+      model: 'mock-evaluator',
+      evaluator: async (payload) => ({
+        decision: 'valid_failure',
+        confidence: 0.92,
+        summary: `Validated realized-risk candidate for ${payload.target_label}`,
+        rationale: 'Fixture evidence is treated as a high-confidence realized event for full-loop testing.',
+        evidence_refs: payload.evidence_refs,
+        uncertainty: null,
+        recommended_next_step: 'human apply selected outcome after review',
+      }),
+    });
+    const thesisReview = await evaluateCompanyRun(db, vault, {
+      run_id: result.run_id,
+      stage: 'thesis_delta',
+      limit: 5,
+      confirm: true,
+    }, {
+      model: 'mock-evaluator',
+      evaluator: async (payload) => ({
+        decision: 'thesis_weakened',
+        confidence: 0.81,
+        summary: `${payload.target_label} has a weakened thesis because staged evidence needs review.`,
+        rationale: 'The company has staged realized-risk evidence that should reduce confidence until adjudicated.',
+        evidence_refs: payload.evidence_refs,
+        uncertainty: 'Fixture aliases reuse reduced SEC evidence, so this is a process test rather than a market claim.',
+        recommended_next_step: 'review accepted outcome candidates and capture lessons',
+      }),
+    });
+
+    expect(outcomeReview.evaluated_targets).toBeGreaterThan(0);
+    expect(thesisReview.evaluated_targets).toBe(5);
+
+    const selectedCandidateId = outcomeReview.attempts[0].target_id_value;
+    const selectedCandidate = db.prepare(
+      `SELECT id, assumption_id FROM ideas_company_outcome_candidates WHERE id = ?`,
+    ).get(selectedCandidateId) as { id: string; assumption_id: string } | undefined;
+    expect(selectedCandidate?.assumption_id).toMatch(/^asm-/);
+
+    const dependentIdeaId = await seedDependentIdeaCitingAssumption(
+      selectedCandidate!.assumption_id,
+      'Follow-on sector allocation thesis',
+    );
+    const beforeApply = db.prepare(`SELECT needs_review FROM ideas_notes WHERE id = ?`)
+      .get(dependentIdeaId) as { needs_review: number };
+    expect(beforeApply.needs_review).toBe(0);
+
+    const applied = await applyCompanyOutcomes(db, vault, {
+      run_id: result.run_id,
+      outcome_candidate_ids: [selectedCandidateId],
+      confirm: true,
+    });
+    expect(applied.applied_count).toBe(1);
+    expect(applied.applied[0].candidate_id).toBe(selectedCandidateId);
+
+    const refutedAssumption = db.prepare(`SELECT status FROM ideas_assumptions WHERE id = ?`)
+      .get(selectedCandidate!.assumption_id) as { status: string };
+    expect(refutedAssumption.status).toBe('refuted');
+    const dependentAfterApply = db.prepare(`SELECT needs_review FROM ideas_notes WHERE id = ?`)
+      .get(dependentIdeaId) as { needs_review: number };
+    expect(dependentAfterApply.needs_review).toBe(1);
+    const dependentMarkdown = await fsp.readFile(path.join(vault, `ideas/${dependentIdeaId}.md`), 'utf8');
+    expect(dependentMarkdown).toContain('needs_review: true');
+
+    recordOutcomeMemo(db, applied.applied[0].outcome_id, {
+      refuted_assumption_id: selectedCandidate!.assumption_id,
+      root_cause: 'Realized SEC risk evidence weakened a previously open company assumption.',
+      what_we_thought: 'The company could carry the risk without material disruption.',
+      what_actually_happened: 'A later filing disclosed realized-risk evidence requiring human acceptance.',
+      lesson: 'Recurring risk disclosure becomes valuable when it is linked to accepted outcomes and downstream review.',
+    });
+    await writeCompanyBundleReports(db, vault, result.run_id);
+
+    const finalData = readCompanyRun(db, result.run_id) as {
+      evaluation_attempts: Array<{ stage: string; decision: string }>;
+      sector_matrix: Array<{ sector: string; company_count: number }>;
+      company_summaries: Array<{ ticker: string; sector: string }>;
+      sec_ledger_report: {
+        executive_summary: {
+          accepted_failures: number;
+          accepted_lessons: number;
+          missing_lessons: number;
+          staged_candidates: number;
+        };
+        needs_review: Array<{ id: string; title: string }>;
+        lessons_captured: Array<{ lesson: string; verdict_count: number; companies: string[]; themes: string[] }>;
+        accepted_verdicts: Array<{ outcome_id: string; assumption_id: string; memo: { lesson: string } | null }>;
+        markdown: string;
+      };
+      company_thesis_report: {
+        executive_readout: { accepted_failures: number; accepted_lessons: number };
+        prior_failures_and_lessons: Array<{ lesson: string; verdict_count: number }>;
+        markdown: string;
+      };
+    };
+    expect(finalData.company_summaries).toHaveLength(15);
+    expect(finalData.sector_matrix).toHaveLength(5);
+    expect(finalData.sector_matrix.every((sector) => sector.company_count === 3)).toBe(true);
+    expect(finalData.evaluation_attempts.filter((attempt) => attempt.stage === 'outcome_validity')).toHaveLength(outcomeReview.evaluated_targets);
+    expect(finalData.evaluation_attempts.filter((attempt) => attempt.stage === 'thesis_delta')).toHaveLength(thesisReview.evaluated_targets);
+    expect(finalData.evaluation_attempts.map((attempt) => attempt.decision)).toContain('valid_failure');
+    expect(finalData.evaluation_attempts.map((attempt) => attempt.decision)).toContain('thesis_weakened');
+    expect(finalData.sec_ledger_report.executive_summary.accepted_failures).toBe(1);
+    expect(finalData.sec_ledger_report.executive_summary.accepted_lessons).toBe(1);
+    expect(finalData.sec_ledger_report.executive_summary.missing_lessons).toBe(0);
+    expect(finalData.sec_ledger_report.needs_review.map((idea) => idea.id)).toContain(dependentIdeaId);
+    expect(finalData.sec_ledger_report.lessons_captured).toHaveLength(1);
+    expect(finalData.sec_ledger_report.lessons_captured[0].verdict_count).toBe(1);
+    expect(finalData.sec_ledger_report.accepted_verdicts[0].memo?.lesson).toContain('Recurring risk disclosure');
+    expect(finalData.sec_ledger_report.markdown).toContain('Dependent Ideas Needing Review');
+    expect(finalData.company_thesis_report.executive_readout.accepted_failures).toBe(1);
+    expect(finalData.company_thesis_report.executive_readout.accepted_lessons).toBe(1);
+    expect(finalData.company_thesis_report.prior_failures_and_lessons[0].lesson).toContain('Recurring risk disclosure');
+    expect(finalData.company_thesis_report.markdown).toContain('## Prior Failures And Lessons');
+
+    const bundleIndex = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/index.md`), 'utf8');
+    expect(bundleIndex).toContain('Shadow LLM evaluations: 10');
+    expect(bundleIndex).toContain('Accepted failures: 1');
+    const evalIndex = await fsp.readFile(path.join(vault, outcomeReview.summary_paths.evaluation_index), 'utf8');
+    expect(evalIndex).toContain('valid_failure');
+    expect(evalIndex).toContain('thesis_weakened');
+    const acceptedLessons = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/accepted-lessons.md`), 'utf8');
+    expect(acceptedLessons).toContain('Recurring risk disclosure');
+  }, 60_000);
 
   it('returns a clear empty SEC ledger report before any company run', () => {
     const report = buildSecCompanyLedgerReport(db);

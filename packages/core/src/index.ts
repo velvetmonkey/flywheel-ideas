@@ -562,6 +562,26 @@ export type {
 } from './company.js';
 
 export {
+  evaluateCompanyRun,
+  listCompanyEvaluationAttempts,
+  writeCompanyEvaluationSummaries,
+  CompanyEvaluationInputError,
+  COMPANY_EVALUATION_PROMPT_VERSION,
+} from './company-evaluation.js';
+export type {
+  CompanyEvaluateInput,
+  CompanyEvaluateOptions,
+  CompanyEvaluateResult,
+  CompanyEvaluationAttemptRow,
+  CompanyEvaluationDecision,
+  CompanyEvaluationOutput,
+  CompanyEvaluationPayload,
+  CompanyEvaluationStage,
+  CompanyEvaluationTargetRow,
+  CompanyEvaluator,
+} from './company-evaluation.js';
+
+export {
   buildCompanyThesisReport,
   renderCompanyThesisMarkdown,
 } from './company-thesis-report.js';
