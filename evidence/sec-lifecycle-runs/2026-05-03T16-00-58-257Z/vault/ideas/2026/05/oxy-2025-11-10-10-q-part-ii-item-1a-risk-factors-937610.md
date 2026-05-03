@@ -92,7 +92,7 @@ earnings per share
 
 HLBV
 
-Hypothetical Liquidation at Book Value
+Hypothetical [[liquidity|Liquidation]] at Book Value
 
 IRA
 
@@ -208,7 +208,7 @@ Occidental's Annual Report on Form 10-K for the year ended December 31, 2024
 
 1
 
-PART I FINANCIAL INFORMATION
+PART I [[financials|FINANCIAL]] INFORMATION
 
 Item 1. Financial Statements (unaudited)
 
@@ -548,7 +548,7 @@ The accompanying notes are an integral part of these Consolidated Condensed Fina
 
 3
 
-Consolidated Condensed Statements of Operations
+Consolidated Condensed Statements of [[operations]]
 
 Occidental Petroleum Corporation and Subsidiaries
 

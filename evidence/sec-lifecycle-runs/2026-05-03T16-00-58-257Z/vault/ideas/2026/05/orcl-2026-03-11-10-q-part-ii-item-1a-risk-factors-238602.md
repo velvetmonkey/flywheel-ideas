@@ -360,7 +360,7 @@ ORACLE CORPORATION
 
 CONDENSED CONSOLIDATED S
 
-TATEMENTS OF OPERATIONS
+TATEMENTS OF [[operations]]
 
 For the Three and Nine Months Ended February 28, 2026 and 2025
 

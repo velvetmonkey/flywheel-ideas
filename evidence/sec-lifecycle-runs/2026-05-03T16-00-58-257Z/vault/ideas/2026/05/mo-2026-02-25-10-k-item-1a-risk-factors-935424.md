@@ -20,7 +20,7 @@ We cannot guarantee that any forward-looking statement will be realized, althoug
 
 Risks Relating to Our Business
 
-Business Operations Risks
+Business [[operations]] Risks
 
 We may be unsuccessful in anticipating and responding to changes in adult nicotine consumer purchase behavior, including as a result of difficult economic conditions, and preferences, each of which could have a material adverse effect on our business, results of operations, cash flows or financial position.
 
@@ -90,7 +90,7 @@ oral nicotine pouch products, and we have plans to commercialize additional
 
 on!
 
-and NJOY products. If the outcome of any legal proceedings or investigations involving NJOY prevent us from, or we are otherwise unsuccessful in, executing these strategies, there could be a material negative impact on our business and our ability to achieve our Vision. For example, as a result of a patent lawsuit adjudicated before the ITC, the ITC imposed bans on the importation of
+and NJOY products. If the [[outcome]] of any legal proceedings or investigations involving NJOY prevent us from, or we are otherwise unsuccessful in, executing these strategies, there could be a material negative impact on our business and our ability to achieve our Vision. For example, as a result of a patent lawsuit adjudicated before the ITC, the ITC imposed bans on the importation of
 
 NJOY ACE
 

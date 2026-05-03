@@ -1472,7 +1472,7 @@ Note 1—
 
 Interim Financial Information
 
-The unaudited interim financial information presented in the financial statements included in this report is prepared in accordance with generally accepted accounting principles in the United States (GAAP) and includes all known accruals and adjustments necessary, in the opinion of management, for a fair presentation of the consolidated financial position of Phillips 66 and its results of operations and cash flows for the periods presented. Unless otherwise specified, all such adjustments are of a normal and recurring nature. Certain notes and other information have been condensed or omitted from the interim financial statements included in this report. Therefore, these interim financial statements should be read in conjunction with the consolidated financial statements and notes included in our 2025 Annual Report on Form 10-K. The results of operations for the three months ended March 31, 2026, are not necessarily indicative of the results expected for the full year.
+The unaudited interim financial information presented in the financial statements included in this report is prepared in accordance with generally accepted accounting principles in the United States (GAAP) and includes all known accruals and adjustments necessary, in the opinion of management, for a fair presentation of the consolidated financial position of Phillips 66 and its results of [[operations]] and cash flows for the periods presented. Unless otherwise specified, all such adjustments are of a normal and recurring nature. Certain notes and other information have been condensed or omitted from the interim financial statements included in this report. Therefore, these interim financial statements should be read in conjunction with the consolidated financial statements and notes included in our 2025 Annual Report on Form 10-K. The results of operations for the three months ended March 31, 2026, are not necessarily indicative of the results expected for the full year.
 
 6
 
@@ -1560,7 +1560,7 @@ million of deferred income tax liabilities. The fair values of the assets acquir
 
 Midstream Acquisition
 
-On April 1, 2025, we acquired all issued and outstanding equity interests in each of EPIC Y-Grade GP, LLC and EPIC Y-Grade, LP, together with their respective subsidiaries (collectively referred to herein as Coastal Bend), which own various long haul natural gas liquids (NGL) pipelines, fractionation facilities and distribution systems, for total consideration of $
+On April 1, 2025, we acquired all issued and outstanding equity interests in each of EPIC Y-Grade GP, LLC and EPIC Y-Grade, LP, together with their respective subsidiaries (collectively referred to herein as Coastal Bend), which own various long haul natural gas [[liquidity|liquids]] (NGL) pipelines, fractionation facilities and distribution systems, for total consideration of $
 
 2.2
 

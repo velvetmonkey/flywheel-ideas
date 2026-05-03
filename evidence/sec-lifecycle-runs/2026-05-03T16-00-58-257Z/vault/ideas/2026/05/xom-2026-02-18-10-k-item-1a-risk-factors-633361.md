@@ -24,7 +24,7 @@ Liza Destiny, Liza Unity and Prosperity floating production, storage and offload
 
 Permian:
 
-ExxonMobil delivered strong and efficient growth in Permian production volumes in 2025. Total production volumes averaged a record 1.6 Moebd in 2025, approximately 0.4 Moebd higher than the previous year. ExxonMobil operations continue to deliver industry-leading capital efficiency and cost performance by leveraging scale, integration, and technology. Examples include deploying ExxonMobil cube design and proprietary lightweight proppant as well as leading capabilities and technology in drilling and completions. ExxonMobil expects to increase production in the Permian Basin to approximately 2.5 Moebd by 2030. ExxonMobil remains on track to achieve Scope 1 and 2 net zero greenhouse gas emissions in the integrated Permian Basin operated assets by 2035.
+ExxonMobil delivered strong and efficient growth in Permian production volumes in 2025. Total production volumes averaged a record 1.6 Moebd in 2025, approximately 0.4 Moebd higher than the previous year. ExxonMobil [[operations]] continue to deliver industry-leading capital efficiency and cost performance by leveraging scale, integration, and technology. Examples include deploying ExxonMobil cube design and proprietary lightweight proppant as well as leading capabilities and technology in drilling and completions. ExxonMobil expects to increase production in the Permian Basin to approximately 2.5 Moebd by 2030. ExxonMobil remains on track to achieve Scope 1 and 2 net zero greenhouse gas emissions in the integrated Permian Basin operated assets by 2035.
 
 LNG:
 

@@ -12,7 +12,7 @@ created: '2026-05-03T16:03:07.371Z'
 Filed: 2025-12-18
 Source: https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm
 
-Our business, operations and financial results are subject to various risks and uncertainties, including those described below, that could adversely affect our business, financial condition, results of operations, cash flows and the trading price of our common stock. The following material factors, among others, could cause our actual results to differ materially from historical results and those expressed in forward-looking statements made by us or on our behalf in filings with the SEC, press releases, communications with investors and oral statements. Additional risks, trends and uncertainties not presently known to us or that we currently believe are immaterial may also harm our business, financial condition, results of operations, cash flows, our reputation or the trading price of our common stock.
+Our business, [[operations]] and financial results are subject to various risks and uncertainties, including those described below, that could adversely affect our business, financial condition, results of operations, cash flows and the trading price of our common stock. The following material factors, among others, could cause our actual results to differ materially from historical results and those expressed in forward-looking statements made by us or on our behalf in filings with the SEC, press releases, communications with investors and oral statements. Additional risks, trends and uncertainties not presently known to us or that we currently believe are immaterial may also harm our business, financial condition, results of operations, cash flows, our reputation or the trading price of our common stock.
 
 Risk Factors Summary
 
@@ -182,7 +182,7 @@ For a more complete discussion of the material risks facing our business, see be
 
 Risks Related to Our Business
 
-Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and liquidity.
+Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and [[liquidity]].
 
 A general weakening of the economy globally or in a particular region or industry, uncertainty and volatility in financial markets, efforts of governments to stimulate or stabilize the economy or to achieve specific policy objectives such as onshoring of semiconductor manufacturing and other unfavorable changes in economic conditions, such as inflation, higher interest rates, tightening of the credit markets, recession or slowing growth, as well as an increase in trade tensions and related tariffs with U.S. trading partners, could negatively impact our business, financial condition, cash flows and liquidity. Adverse global economic conditions have from time to time caused or exacerbated significant slowdowns in the industries and markets in which we operate, which have adversely affected our business and results of operations. Macroeconomic weakness and uncertainty may also make it more difficult to accurately forecast operating results, and market volatility stemming from current macroeconomic events may materially impact our cash flow and our ability to raise or refinance debt at favorable rates. An escalation of trade tensions between the U.S. and its trading partners may continue to result in trade restrictions and increased protectionism on both ends that harm our ability to participate in some markets or compete effectively.
 
@@ -194,7 +194,7 @@ these regulations may cause us to incur significant expense and failure to maint
 
 compliance with applicable regulations could adversely affect our business.
 
-Our business is subject to various domestic and international laws and other legal requirements, including antitrust and import/export regulations, such as the U.S. Export Administration Regulations, and applicable executive orders. These laws,
+Our business is subject to various domestic and international laws and other legal requirements, including antitrust and [[import]]/export regulations, such as the U.S. Export Administration Regulations, and applicable executive orders. These laws,
 
 13
 

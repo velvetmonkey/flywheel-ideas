@@ -216,7 +216,7 @@ Administrative Function
 
 The Administrative function includes the administrative expenses and assets of the Company's new global headquarters and research and development center. In addition, it includes the operations of a real estate management unit that is responsible for the ownership, management and leasing of non-retail properties held primarily for use by the Company, including the Company's new and former global headquarters and former research and development center and disposal of idle facilities. The Administrative function's remaining assets consist primarily of cash and cash equivalents, investments and noncurrent pension assets. Also included in the Administrative function is interest expense, interest and investment income, certain expenses related to closed facilities and environmental-related matters and other expenses that were not directly associated with the Reportable Segments. Sales of this function represented external leasing revenue. The Administrative function did not include any significant foreign operations. Gains and losses from the sale of property were not a significant operating factor in determining the performance of the Administrative function.
 
-Raw Materials and Products Purchased for Resale
+Raw [[materials]] and Products Purchased for Resale
 
 Raw materials and products purchased for resale make up the majority of our consolidated Cost of goods sold. Raw materials may vary considerably by the specific paint or coating being manufactured but can generally be divided into the following categories: resins and latex, pigments, additives, solvents and metal or plastic containers. A significant portion of these raw materials are derived from various upstream petrochemical and related commodity feedstocks, notably propylene. Raw materials are sourced from multiple suppliers globally, typically within the geographic region where our products are being manufactured. A portion of specialized resins and other products are manufactured in house. We also purchase a variety of products for resale that are highly complementary to our paint and coating offerings, notably spray equipment and parts, floorcovering and assorted sundries. We attempt, if feasible, to mitigate our potential risk associated with the sourcing of our raw materials and other products through inventory management, strategic relationships with key suppliers, alternative sourcing strategies and long-term investments to expand our manufacturing capabilities.
 
@@ -226,7 +226,7 @@ The majority of the sales for the Reportable Segments traditionally occur during
 
 Working Capital
 
-In order to meet increased demand during the second and third quarters, the Company usually builds its inventories during the first quarter. Working capital items (inventories and accounts receivable) are generally financed through short-term borrowings, which include the use of lines of credit and the issuance of commercial paper. For a description of the Company's liquidity and capital resources, see Item 7 Financial Condition, Liquidity and Cash Flow.
+In order to meet increased demand during the second and third quarters, the Company usually builds its inventories during the first quarter. Working capital items (inventories and accounts receivable) are generally financed through short-term borrowings, which include the use of lines of credit and the issuance of commercial paper. For a description of the Company's [[liquidity]] and capital resources, see Item 7 Financial Condition, Liquidity and Cash Flow.
 
 Trademarks and Trade Names
 

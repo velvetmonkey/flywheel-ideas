@@ -1748,7 +1748,7 @@ Basis of Presentation
 
 The unaudited condensed consolidated financial statements of T-Mobile US, Inc. ("T-Mobile," "we," "our," "us" or the "Company") include all adjustments of a normal recurring nature necessary for the fair presentation of the results for the interim periods presented. The results for the interim periods are not necessarily indicative of those for the full year. The condensed consolidated financial statements should be read in conjunction with our consolidated financial statements included in our Annual Report on Form 10-K for the year ended December 31, 2025.
 
-The condensed consolidated financial statements include the balances and results of operations of T-Mobile and our consolidated subsidiaries. We consolidate majority-owned subsidiaries over which we exercise control, variable interest entities ("VIEs") for which we are deemed to be the primary beneficiary and VIEs which cannot be deconsolidated, such as those related to our tower obligations as discussed in
+The condensed consolidated financial statements include the balances and results of [[operations]] of T-Mobile and our consolidated subsidiaries. We consolidate majority-owned subsidiaries over which we exercise control, variable interest entities ("VIEs") for which we are deemed to be the primary beneficiary and VIEs which cannot be deconsolidated, such as those related to our tower obligations as discussed in
 
 Note 8 - Tower Obligations
 

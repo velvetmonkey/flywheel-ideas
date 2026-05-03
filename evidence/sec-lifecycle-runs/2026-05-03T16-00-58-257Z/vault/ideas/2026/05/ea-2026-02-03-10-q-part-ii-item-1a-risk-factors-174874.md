@@ -42,9 +42,9 @@ We have incurred, and will continue to incur, significant costs, expenses, and f
 
 The Merger may not occur on the expected timeline because of a delay in receiving required regulatory approvals or other reasons. Any delay or inability to close the Merger may cause the market price of our common stock to decline.
 
-Lawsuits have been or may be filed against us and the members of our Board of Directors arising out of the proposed Merger, which may delay or prevent the proposed Merger or otherwise negatively affect our business and operations.
+Lawsuits have been or may be filed against us and the members of our Board of Directors arising out of the proposed Merger, which may delay or prevent the proposed Merger or otherwise negatively affect our business and [[operations]].
 
-Putative stockholder complaints, including stockholder class action complaints, and other complaints have been or in the future may be filed against us, our Board of Directors and others in connection with the transactions contemplated by the Merger Agreement. Certain complaints asserted in connection with the transaction contemplated by the Merger Agreement have been mooted, however, the outcome of any additional litigation is uncertain, and we may not be successful in defending against any such future claims. Lawsuits that have been or may be filed against us, our Board of Directors or others could delay or prevent
+Putative stockholder complaints, including stockholder class action complaints, and other complaints have been or in the future may be filed against us, our Board of Directors and others in connection with the transactions contemplated by the Merger Agreement. Certain complaints asserted in connection with the transaction contemplated by the Merger Agreement have been mooted, however, the [[outcome]] of any additional litigation is uncertain, and we may not be successful in defending against any such future claims. Lawsuits that have been or may be filed against us, our Board of Directors or others could delay or prevent
 
 48
 

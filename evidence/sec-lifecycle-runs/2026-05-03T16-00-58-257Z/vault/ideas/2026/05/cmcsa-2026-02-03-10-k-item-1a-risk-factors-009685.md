@@ -12,7 +12,7 @@ created: '2026-05-03T16:16:50.042Z'
 Filed: 2026-02-03
 Source: https://www.sec.gov/Archives/edgar/data/1166691/000162828026004994/cmcsa-20251231.htm
 
-Risks Related to Our Business, Industry and Operations
+Risks Related to Our Business, Industry and [[operations]]
 
 Our businesses operate in highly competitive and dynamic industries, and our businesses and results of operations could be adversely affected if we do not compete effectively.
 

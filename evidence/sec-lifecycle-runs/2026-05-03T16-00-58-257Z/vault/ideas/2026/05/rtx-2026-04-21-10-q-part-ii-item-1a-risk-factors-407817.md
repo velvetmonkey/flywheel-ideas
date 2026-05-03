@@ -32,7 +32,7 @@ SIGNATURES
 
 45
 
-RTX Corporation and its subsidiaries' names, abbreviations thereof, logos, and products and services designators are all either the registered or unregistered trademarks or tradenames of RTX Corporation and its subsidiaries. Names, abbreviations of names, logos, and products and services designators of other companies are either the registered or unregistered trademarks or tradenames of their respective owners. References to internet web sites in this Form 10-Q are provided for convenience only. Information available through these web sites is not incorporated by reference into this Form 10-Q.
+[[rtx]] Corporation and its subsidiaries' names, abbreviations thereof, logos, and products and services designators are all either the registered or unregistered trademarks or tradenames of RTX Corporation and its subsidiaries. Names, abbreviations of names, logos, and products and services designators of other companies are either the registered or unregistered trademarks or tradenames of their respective owners. References to internet web sites in this Form 10-Q are provided for convenience only. Information available through these web sites is not incorporated by reference into this Form 10-Q.
 
 3
 

@@ -396,7 +396,7 @@ Loans-to-deposits ratio
 
 54
 
-Firm Liquidity coverage ratio ("LCR") (average)
+Firm [[liquidity]] coverage ratio ("LCR") (average)
 
 112
 
@@ -730,7 +730,7 @@ Included $2.2 billion associated with the Apple Card transaction. Refer to Note 
 
 INTRODUCTION
 
-The following is Management's discussion and analysis of the financial condition and results of operations ("MD&A") of JPMorgan Chase & Co. ("JPMorganChase" or the "Firm") for the first quarter of 2026.
+The following is Management's discussion and analysis of the financial condition and results of [[operations]] ("MD&A") of JPMorgan Chase & Co. ("JPMorganChase" or the "Firm") for the first quarter of 2026.
 
 This Quarterly Report on Form 10-Q for the first quarter of 2026 ("Form 10-Q") should be read together with JPMorganChase's Annual Report on Form 10-K for the year ended December 31, 2025 ("2025 Form 10-K"). Refer to the Glossary of terms and acronyms and line of business metrics on pages 170-178 for definitions of terms and acronyms used throughout this Form 10-Q.
 

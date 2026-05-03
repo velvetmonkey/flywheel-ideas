@@ -90,7 +90,7 @@ AEP Texas Inc., an AEP electric utility subsidiary. AEP Texas engages in the tra
 
 AEP Transmission Holdco / AEPTHCo
 
-AEP Transmission Holding Company, LLC, a subsidiary of AEP, an intermediate holding company that owns transmission operations joint ventures and AEPTCo.
+AEP Transmission Holding Company, LLC, a subsidiary of AEP, an intermediate holding company that owns transmission [[operations]] joint ventures and AEPTCo.
 
 AEPEP
 

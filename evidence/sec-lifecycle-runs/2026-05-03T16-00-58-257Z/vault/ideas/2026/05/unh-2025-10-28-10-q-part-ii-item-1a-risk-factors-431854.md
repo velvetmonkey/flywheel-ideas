@@ -318,7 +318,7 @@ Table of Contents
 
 UnitedHealth Group
 
-Condensed Consolidated Statements of Operations
+Condensed Consolidated Statements of [[operations]]
 
 (Unaudited)
 
@@ -2200,6 +2200,6 @@ Notes to the Condensed Consolidated Financial Statements
 
 Basis of Presentation
 
-UnitedHealth Group Incorporated (individually and together with its subsidiaries, "UnitedHealth Group" and the "Company") is a health care and well-being company with a mission to help people live healthier lives and help make the health system work better for everyone. The Company's two distinct, yet complementary businesses — Optum and UnitedHealthcare — are working to help build a modern, high-performing health system through improved access, affordability, outcomes and experiences for the individuals and organizations the Company is privileged to serve.
+UnitedHealth Group Incorporated (individually and together with its subsidiaries, "UnitedHealth Group" and the "Company") is a health care and well-being company with a mission to help people live healthier lives and help make the health system work better for everyone. The Company's two distinct, yet complementary businesses — Optum and UnitedHealthcare — are working to help build a modern, high-performing health system through improved access, affordability, [[outcome|outcomes]] and experiences for the individuals and organizations the Company is privileged to serve.
 
 The Company has prepared the Condensed Consolidated Financial Statements according to U.S. Generally Accepted Accounting Principles (GAAP) and has included the accounts of UnitedHealth Group and its subsidiaries. The year-end condensed consolidated balance sheet was derived from audited financial statements, but does not include all disclosures required by GAAP. In accordance with the rules and regulations of the U.S. Securities and Exchange Commission (SEC), the Company has omitted certain footnote disclosures that would substantially duplicate the disclosures contained in its annual audited Consolidated Financial Statements. Therefore, these Condensed Consolidated Financial Statements should be read together with the Consolidated Financial Statements and the Notes included in Part II, Item 8, "Financial Statements and Supplementary Data" in the Company's Annual Report on Form 10-K for the year ended December 31, 2024 as filed with the SEC (2024 10-K). The accompanying Condensed Consolidated Financial Statements include all normal recurring adjustments necessary to present the interim financial statements fairly.

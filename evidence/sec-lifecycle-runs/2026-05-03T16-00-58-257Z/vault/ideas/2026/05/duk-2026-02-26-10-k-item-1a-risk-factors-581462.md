@@ -12,7 +12,7 @@ created: '2026-05-03T16:59:41.827Z'
 Filed: 2026-02-26
 Source: https://www.sec.gov/Archives/edgar/data/1326160/000132616026000014/duk-20251231.htm
 
-In addition to other disclosures within this Form 10-K, including "Management's Discussion and Analysis of Financial Condition and Results of Operations – Matters Impacting Future Results" for each registrant in Item 7, and other documents filed with the SEC from time to time, the following factors should be considered in evaluating Duke Energy and its subsidiaries. Such factors could affect actual results of operations and cause results to differ substantially from those currently expected or sought. Unless otherwise indicated, risk factors discussed below generally relate to risks associated with all of the Duke Energy Registrants. Risks identified at the Subsidiary Registrant level are generally applicable to Duke Energy.
+In addition to other disclosures within this Form 10-K, including "Management's Discussion and Analysis of Financial Condition and Results of [[operations]] – Matters Impacting Future Results" for each registrant in Item 7, and other documents filed with the SEC from time to time, the following factors should be considered in evaluating Duke Energy and its subsidiaries. Such factors could affect actual results of operations and cause results to differ substantially from those currently expected or sought. Unless otherwise indicated, risk factors discussed below generally relate to risks associated with all of the Duke Energy Registrants. Risks identified at the Subsidiary Registrant level are generally applicable to Duke Energy.
 
 BUSINESS STRATEGY RISKS
 

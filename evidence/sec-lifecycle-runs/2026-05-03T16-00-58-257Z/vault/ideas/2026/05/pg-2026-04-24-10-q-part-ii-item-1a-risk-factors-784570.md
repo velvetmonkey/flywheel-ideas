@@ -40,7 +40,7 @@ Signature
 
 The Procter & Gamble Company 1
 
-PART I. FINANCIAL INFORMATION
+PART I. [[financials|FINANCIAL]] INFORMATION
 
 Item 1.
 
@@ -2006,7 +2006,7 @@ NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
 
 Basis of Presentation
 
-The accompanying unaudited Consolidated Financial Statements of The Procter & Gamble Company and subsidiaries ("the Company," "Procter & Gamble," "P&G," "we" or "our") should be read in conjunction with the Company's Annual Report on Form 10-K for the fiscal year ended June 30, 2025. We have prepared these statements in conformity with accounting principles generally accepted in the United States (U.S. GAAP) pursuant to the rules and regulations of the U.S. Securities and Exchange Commission (SEC) for interim financial information. Note that certain columns and rows may not add due to rounding. In the opinion of management, the accompanying Consolidated Financial Statements contain all normal recurring adjustments necessary to present fairly the financial position, results of operations and cash flows for the interim periods reported. However, the results of operations included in such financial statements may not necessarily be indicative of annual results.
+The accompanying unaudited Consolidated Financial Statements of The Procter & Gamble Company and subsidiaries ("the Company," "Procter & Gamble," "P&G," "we" or "our") should be read in conjunction with the Company's Annual Report on Form 10-K for the fiscal year ended June 30, 2025. We have prepared these statements in conformity with accounting principles generally accepted in the United States (U.S. GAAP) pursuant to the rules and regulations of the U.S. Securities and Exchange Commission (SEC) for interim financial information. Note that certain columns and rows may not add due to rounding. In the opinion of management, the accompanying Consolidated Financial Statements contain all normal recurring adjustments necessary to present fairly the financial position, results of [[operations]] and cash flows for the interim periods reported. However, the results of operations included in such financial statements may not necessarily be indicative of annual results.
 
 2.
 

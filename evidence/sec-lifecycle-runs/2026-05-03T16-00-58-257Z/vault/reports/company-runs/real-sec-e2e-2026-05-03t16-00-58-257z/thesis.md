@@ -13,7 +13,7 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## Executive Readout
 
-- Companies: AAPL, ABBV, ABT, AEP, AMD, AMZN, APD, AVGO, AXP, BA, BAC, BKNG, BLK, BMY, CAT, CL, CMCSA, COP, COST, CRM, CSCO, CVX, D, DD, DE, DHR, DIS, DOW, DTE, DUK, EA, ECL, EOG, EXC, FCX, GE, GM, GOOGL, GS, HAL, HD, HON, IBM, INTU, JNJ, JPM, KMB, KO, LIN, LLY, LMT, LOW, MCD, MDLZ, META, MLM, MMM, MO, MPC, MRK, MSFT, NEE, NEM, NFLX, NKE, NUE, NVDA, ORCL, OXY, PEG, PEP, PFE, PG, PM, PNC, PSX, RTX, SBUX, SCHW, SHW, SLB, SO, SRE, T, TJX, TMO, TMUS, TSLA, TTWO, UNH, UNP, UPS, VLO, VZ, WFC, WMT, XEL, XOM
+- Companies: [[aapl]], ABBV, ABT, AEP, AMD, AMZN, APD, AVGO, AXP, BA, BAC, BKNG, BLK, BMY, CAT, CL, CMCSA, COP, COST, CRM, CSCO, CVX, D, DD, DE, DHR, DIS, DOW, DTE, DUK, EA, ECL, EOG, EXC, FCX, GE, GM, [[googl]], GS, HAL, HD, HON, IBM, INTU, JNJ, JPM, KMB, KO, LIN, [[lly]], LMT, LOW, MCD, MDLZ, META, MLM, MMM, MO, MPC, MRK, [[msft]], NEE, NEM, NFLX, NKE, NUE, NVDA, ORCL, OXY, PEG, PEP, PFE, PG, PM, PNC, PSX, RTX, SBUX, SCHW, SHW, SLB, SO, SRE, T, TJX, TMO, TMUS, TSLA, TTWO, UNH, UNP, UPS, VLO, VZ, WFC, WMT, XEL, XOM
 - Filings scanned: 196
 - Current thesis dependencies: 1026 open bet(s).
 - Human review queue: 32 event(s), 56 staged candidate(s).

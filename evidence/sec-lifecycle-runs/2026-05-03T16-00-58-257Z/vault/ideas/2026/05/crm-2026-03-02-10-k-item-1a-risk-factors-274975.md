@@ -12,7 +12,7 @@ created: '2026-05-03T16:04:35.323Z'
 Filed: 2026-03-02
 Source: https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm
 
-In evaluating our business, you should carefully consider the following discussion of material risks, events and uncertainties that make an investment in us speculative or risky in addition to the other information included in this Annual Report. A manifestation of any of the following risks and uncertainties could, in circumstances we may or may not be able to accurately predict, materially and adversely affect our business and operations, growth, reputation, prospects, operating and financial results, financial condition, cash flows, liquidity and stock price. Some of the factors, events and contingencies discussed below may have occurred in the past, but the disclosures below are not representations as to whether or not the factors, events or contingencies have occurred in the past and instead reflect our beliefs and opinions as to the factors, events or contingencies that could materially and adversely affect us in the future. The risks and uncertainties described below are not the only ones we face. Other events, factors or uncertainties that we do not currently anticipate or that we currently deem immaterial also may affect our business, financial condition, results of operations, cash flows, other key metrics and the trading price of our common stock. Therefore, you should not consider the following risks to be a complete statement of all the potential risks or uncertainties that we face.
+In evaluating our business, you should carefully consider the following discussion of material risks, events and uncertainties that make an investment in us speculative or risky in addition to the other information included in this Annual Report. A manifestation of any of the following risks and uncertainties could, in circumstances we may or may not be able to accurately predict, materially and adversely affect our business and [[operations]], growth, reputation, prospects, operating and financial results, financial condition, cash flows, [[liquidity]] and stock price. Some of the factors, events and contingencies discussed below may have occurred in the past, but the disclosures below are not representations as to whether or not the factors, events or contingencies have occurred in the past and instead reflect our beliefs and opinions as to the factors, events or contingencies that could materially and adversely affect us in the future. The risks and uncertainties described below are not the only ones we face. Other events, factors or uncertainties that we do not currently anticipate or that we currently deem immaterial also may affect our business, financial condition, results of operations, cash flows, other key metrics and the trading price of our common stock. Therefore, you should not consider the following risks to be a complete statement of all the potential risks or uncertainties that we face.
 
 Risk Factor Summary
 
@@ -120,7 +120,7 @@ Risks related to government contracts and related procurement regulations.
 
 •
 
-Governmental sanctions and export and import controls that could impair our ability to compete in international markets and may subject us to liability.
+Governmental sanctions and export and [[import]] controls that could impair our ability to compete in international markets and may subject us to liability.
 
 Financial Risks
 

@@ -18,8 +18,8 @@ Items here need human review or council escalation before any canonical action.
 - **thesis_delta / AVGO**: thesis_unchanged (0.62)
   - 
 - **thesis_delta / WFC**: new_watchpoint (0.62)
-  - The cited outcome shows consumer net loan charge-offs decreasing in 1Q 2026 versus the prior-year period, explicitly driven by lower credit card losses. Without an explicit prior thesis statement to anchor “strengthened vs weakened,” the most falsifiable thesis delta is to add a monitoring watchpoint: sustained improvement (or reversal) in consumer credit card losses/charge-offs can materially change earnings stability, provisioning needs, and balance-sheet risk, which in turn can affect liquidity posture and lending appetite.
-- **thesis_delta / MSFT**: new_watchpoint (0.62)
+  - The cited outcome shows consumer net loan charge-offs decreasing in 1Q 2026 versus the prior-year period, explicitly driven by lower credit card losses. Without an explicit prior [[thesis]] statement to anchor “strengthened vs weakened,” the most falsifiable thesis delta is to add a monitoring watchpoint: sustained improvement (or reversal) in consumer credit card losses/charge-offs can materially change earnings stability, provisioning needs, and balance-sheet risk, which in turn can affect [[liquidity]] posture and lending appetite.
+- **thesis_delta / [[msft]]**: new_watchpoint (0.62)
   - The Jan 28, 2026 filing attributes a 6% opex increase ($236M) to Gaming impairment charges and R&D investments in compute capacity and AI talent. The Apr 29, 2026 filing again attributes a 6% opex increase, but with a larger cited absolute increase ($628M), to Gaming impairment/related expenses and continued investments in R&D compute capacity, AI talent, and data. This indicates persistence of the same drivers and suggests the scale of expense growth associated with these drivers may be rising, warranting explicit monitoring rather than concluding the underlying thesis strengthened or weakened.
 - **thesis_delta / CL**: new_watchpoint (0.62)
   - 

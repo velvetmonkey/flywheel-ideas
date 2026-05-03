@@ -68,7 +68,7 @@ Reserved
 
 Item 7.
 
-Management's Discussion and Analysis of Financial Condition and Results of Operations.
+Management's Discussion and Analysis of Financial Condition and Results of [[operations]].
 
 33
 
@@ -204,7 +204,7 @@ Permissible business activities
 
 requirements. The Federal Reserve may also impose corrective capital and/or managerial requirements on the FHC, and if deficiencies are persistent, may require divestiture of the FHC's depository institutions. If any depository institution controlled by an FHC fails to maintain a satisfactory rating under the Community Reinvestment Act, the Federal Reserve must prohibit the FHC and its subsidiaries from engaging in any new activities other than those permissible for BHCs, or acquiring a company engaged in such activities.
 
-Capital and liquidity requirements
+Capital and [[liquidity]] requirements
 
 . The Federal Reserve establishes capital, liquidity and leverage requirements for JPMorganChase that are generally consistent with the international Basel III capital and liquidity framework and evaluates the Firm's compliance with those requirements. The OCC establishes similar requirements for JPMorgan Chase Bank, N.A. Certain of the Firm's non-U.S. subsidiaries and branches are also subject to local capital and liquidity requirements.
 

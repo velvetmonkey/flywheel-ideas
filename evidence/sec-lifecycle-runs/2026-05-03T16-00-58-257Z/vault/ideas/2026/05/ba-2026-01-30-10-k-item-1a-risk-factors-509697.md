@@ -12,7 +12,7 @@ created: '2026-05-03T16:41:50.052Z'
 Filed: 2026-01-30
 Source: https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/ba-20251231.htm
 
-An investment in our securities involves risks and uncertainties, including those described below, which can materially affect our business, financial position, results of operations and cash flows. These risk factors should be carefully reviewed in conjunction with the other information in this report, including "Management's Discussion and Analysis of Financial Condition and Results of Operations" and the Consolidated Financial Statements and related notes. Due to risks and uncertainties, known and unknown, our past financial results may not be a reliable indicator of future performance, and historical trends should not be used to anticipate results or trends in future periods.
+An investment in our securities involves risks and uncertainties, including those described below, which can materially affect our business, financial position, results of [[operations]] and cash flows. These risk factors should be carefully reviewed in conjunction with the other information in this report, including "Management's Discussion and Analysis of Financial Condition and Results of Operations" and the Consolidated Financial Statements and related notes. Due to risks and uncertainties, known and unknown, our past financial results may not be a reliable indicator of future performance, and historical trends should not be used to anticipate results or trends in future periods.
 
 Risks Related to Our Business and Operations
 

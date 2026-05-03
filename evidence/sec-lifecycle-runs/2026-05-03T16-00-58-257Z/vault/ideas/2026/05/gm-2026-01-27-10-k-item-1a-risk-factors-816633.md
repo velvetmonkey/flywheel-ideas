@@ -62,7 +62,7 @@ Item 6.
 
 Item 7.
 
-Management's Discussion and Analysis of Financial Condition and Results of Operations
+Management's Discussion and Analysis of Financial Condition and Results of [[operations]]
 
 27
 
@@ -354,7 +354,7 @@ GENERAL MOTORS COMPANY AND SUBSIDIARIES
 
 our plan to spend approximately $4.0 billion in capital investments to onshore production at plants in Tennessee, Kansas, and Michigan over the next two years and nearly $1.0 billion to build a new generation of advanced, fuel-efficient V8 engines in New York. These investments in U.S. assembly and propulsion plants will enable us to strengthen domestic manufacturing and ensure flexibility for both ICE and electric vehicles.
 
-As government policies have evolved, we have acted with urgency and discipline to maintain strong positioning within the industry. In 2025, the U.S. and other governments implemented new import tariffs impacting GM and our suppliers, including tariffs on vehicles and parts imported into the U.S. The tariff environment is highly dynamic and the specific tariffs applicable to goods imported by GM and its suppliers into the U.S., including under the U.S.-Mexico-Canada Agreement, and other countries are likely to evolve further. We will continue to adapt as appropriate.
+As government policies have evolved, we have acted with urgency and discipline to maintain strong positioning within the industry. In 2025, the U.S. and other governments implemented new [[import]] tariffs impacting GM and our suppliers, including tariffs on vehicles and parts imported into the U.S. The tariff environment is highly dynamic and the specific tariffs applicable to goods imported by GM and its suppliers into the U.S., including under the U.S.-Mexico-Canada Agreement, and other countries are likely to evolve further. We will continue to adapt as appropriate.
 
 Software-Enabled Technology Services
 

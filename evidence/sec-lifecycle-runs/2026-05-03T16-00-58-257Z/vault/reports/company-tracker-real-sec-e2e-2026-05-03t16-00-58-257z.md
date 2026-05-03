@@ -2102,7 +2102,7 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
 - **CAT / AI, R&D, and technology** (2025-11-03, part-i-item-2)
   - Source: sec-company://0000018230/0000018230-25-000048#part-i-item-2:theme:ai-rd-technology:assumption
   - research and development (R&D) expenses. This was partially offset by the profit impact of higher sales volume, favorable other operating income/expense and lower restructuring costs.
-- **LLY / AI, R&D, and technology** (2026-02-12, item-1a)
+- **[[lly]] / AI, R&D, and technology** (2026-02-12, item-1a)
   - Source: sec-company://0000059478/0000059478-26-000013#item-1a:theme:ai-rd-technology:assumption
   - Pharmaceutical research and development is very costly and highly uncertain; we may not succeed in developing, licensing, or acquiring commercially successful products sufficient in number or value to replace revenues of products that have lost or will lose intellectual property protection or are di
 - **PFE / AI, R&D, and technology** (2025-11-04, part-i-item-2)
@@ -2683,7 +2683,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **SO / Macro and foreign exchange**: first 2026-02-19, latest 2026-04-30, assumption asm-9ShmTi2M
 - **SO / Regulation and legal**: first 2026-02-19, latest 2026-04-30, assumption asm-yYcsYnnc
 - **SO / Supply chain**: first 2026-02-19, latest 2026-04-30, assumption asm-rVn86TDn
-- **CVX / AI, R&D, and technology**: first 2026-02-24, latest 2026-02-24, assumption asm-3AqrMwh6
+- **[[cvx]] / AI, R&D, and technology**: first 2026-02-24, latest 2026-02-24, assumption asm-3AqrMwh6
 - **CVX / Cloud and data center capacity**: first 2026-02-24, latest 2026-02-24, assumption asm-sBNMiFKn
 - **CVX / Competition**: first 2025-11-06, latest 2026-02-24, assumption asm-zBzykXUc
 - **CVX / Customer and platform dependency**: first 2026-02-24, latest 2026-02-24, assumption asm-ixASaaHM
@@ -2813,7 +2813,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **NKE / Macro and foreign exchange**: first 2025-12-30, latest 2026-04-01, assumption asm-rMrbNub9
 - **NKE / Regulation and legal**: first 2025-12-30, latest 2026-04-01, assumption asm-EHYLKx23
 - **NKE / Supply chain**: first 2025-12-30, latest 2026-04-01, assumption asm-BHruAQ8Z
-- **AAPL / AI, R&D, and technology**: first 2026-01-30, latest 2026-05-01, assumption asm-3G2JTBRp
+- **[[aapl]] / AI, R&D, and technology**: first 2026-01-30, latest 2026-05-01, assumption asm-3G2JTBRp
 - **AAPL / Cloud and data center capacity**: first 2026-01-30, latest 2026-05-01, assumption asm-jbrQzKR1
 - **AAPL / Competition**: first 2026-05-01, latest 2026-05-01, assumption asm-VXvdP1kd
 - **AAPL / Customer and platform dependency**: first 2026-01-30, latest 2026-05-01, assumption asm-ZTtTg4AV
@@ -3072,7 +3072,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **TTWO / Macro and foreign exchange**: first 2025-11-07, latest 2026-02-04, assumption asm-Vk8Pgdx3
 - **TTWO / Regulation and legal**: first 2025-11-07, latest 2026-02-04, assumption asm-DDPQ2efx
 - **TTWO / Supply chain**: first 2025-11-07, latest 2026-02-04, assumption asm-TmNchK5L
-- **AMZN / AI, R&D, and technology**: first 2026-02-06, latest 2026-04-30, assumption asm-8669AanA
+- **[[amzn]] / AI, R&D, and technology**: first 2026-02-06, latest 2026-04-30, assumption asm-8669AanA
 - **AMZN / Cloud and data center capacity**: first 2026-02-06, latest 2026-04-30, assumption asm-AKd7fvsg
 - **AMZN / Competition**: first 2026-02-06, latest 2026-04-30, assumption asm-T7BmTV88
 - **AMZN / Cybersecurity and privacy**: first 2026-02-06, latest 2026-04-30, assumption asm-Uf8kWJgK
@@ -3315,7 +3315,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **ABBV / Macro and foreign exchange**: first 2025-11-04, latest 2026-02-20, assumption asm-hJtWrcEM
 - **ABBV / Regulation and legal**: first 2025-11-04, latest 2026-02-20, assumption asm-wc8UJiig
 - **ABBV / Supply chain**: first 2025-11-04, latest 2026-02-20, assumption asm-q5KzLBad
-- **GOOGL / AI, R&D, and technology**: first 2026-02-05, latest 2026-04-30, assumption asm-1U4RW3aX
+- **[[googl]] / AI, R&D, and technology**: first 2026-02-05, latest 2026-04-30, assumption asm-1U4RW3aX
 - **GOOGL / Cloud and data center capacity**: first 2026-02-05, latest 2026-04-30, assumption asm-R9CV5WPk
 - **GOOGL / Competition**: first 2026-02-05, latest 2026-04-30, assumption asm-1U2831A9
 - **GOOGL / Customer and platform dependency**: first 2026-02-05, latest 2026-04-30, assumption asm-xY6WaxMD

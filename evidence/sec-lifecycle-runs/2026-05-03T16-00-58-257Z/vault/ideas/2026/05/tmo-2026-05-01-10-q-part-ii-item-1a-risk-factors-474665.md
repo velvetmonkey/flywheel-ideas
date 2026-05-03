@@ -1740,7 +1740,7 @@ NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
 
 Note 1.
 
-Nature of Operations and Summary of Significant Accounting Policies
+Nature of [[operations]] and Summary of Significant Accounting Policies
 
 Nature of Operations
 

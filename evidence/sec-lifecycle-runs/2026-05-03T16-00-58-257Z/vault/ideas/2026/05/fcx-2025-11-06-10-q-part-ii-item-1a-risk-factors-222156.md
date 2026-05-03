@@ -1026,7 +1026,7 @@ U.S. copper mines
 
 )
 
-South America operations
+South America [[operations]]
 
 (
 

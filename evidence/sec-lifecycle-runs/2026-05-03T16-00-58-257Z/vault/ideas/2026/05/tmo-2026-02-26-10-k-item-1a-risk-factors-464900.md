@@ -26,7 +26,7 @@ Our growth depends in part on the growth of the markets which we serve. Any decl
 
 Our business is affected by general economic conditions and related uncertainties affecting markets in which we operate.
 
-Our business is affected by general economic conditions, both inside and outside the U.S. Both domestic and international markets experienced significant inflationary pressures in 2025 and inflation rates in the U.S., as well as in other countries in which we operate, continue at elevated levels. If the global economy and financial markets, or economic conditions in Europe, the U.S. or other key markets, are unstable, that could adversely affect the business, results of operations and financial condition of the company and its customers, distributors, and suppliers, having the effect of:
+Our business is affected by general economic conditions, both inside and outside the U.S. Both domestic and international markets experienced significant inflationary pressures in 2025 and inflation rates in the U.S., as well as in other countries in which we operate, continue at elevated levels. If the global economy and financial markets, or economic conditions in Europe, the U.S. or other key markets, are unstable, that could adversely affect the business, results of [[operations]] and financial condition of the company and its customers, distributors, and suppliers, having the effect of:
 
 •
 
@@ -78,7 +78,7 @@ changes in a specific country's or region's political, economic, social or other
 
 •
 
-changes in diplomatic and trade relationships, including new tariffs, trade protection measures, import or export licensing requirements, trade embargoes and sanctions and other trade barriers;
+changes in diplomatic and trade relationships, including new tariffs, trade protection measures, [[import]] or export licensing requirements, trade embargoes and sanctions and other trade barriers;
 
 •
 

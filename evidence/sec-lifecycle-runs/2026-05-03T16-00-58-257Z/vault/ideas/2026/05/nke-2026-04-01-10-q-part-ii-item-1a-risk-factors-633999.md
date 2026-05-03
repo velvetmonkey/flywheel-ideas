@@ -686,7 +686,7 @@ NINE MONTHS ENDED FEBRUARY 28,
 
 2025
 
-Cash provided (used) by operations:
+Cash provided (used) by [[operations]]:
 
 Net income
 

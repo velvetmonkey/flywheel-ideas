@@ -90,7 +90,7 @@ Summary of Results
 
 41
 
-Liquidity and Capital Resources
+[[liquidity]] and Capital Resources
 
 49
 
@@ -260,7 +260,7 @@ weakness in consumer spending and/or changes in consumer preferences and demand 
 
 •
 
-the outcome and effects on us of legal and tax proceedings and government investigations;
+the [[outcome]] and effects on us of legal and tax proceedings and government investigations;
 
 •
 

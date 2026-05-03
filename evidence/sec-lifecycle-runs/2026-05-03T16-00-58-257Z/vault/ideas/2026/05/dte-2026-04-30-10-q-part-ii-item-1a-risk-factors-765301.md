@@ -182,7 +182,7 @@ Net Asset Value
 
 Net zero
 
-Goal for DTE Energy's utility operations and gas suppliers at DTE Gas that any carbon emissions put into the atmosphere will be balanced by those taken out of the atmosphere. Achieving this goal will include collective efforts to reduce carbon emissions and actions to offset any remaining emissions. Progress towards net zero goals is estimated and methodologies and calculations may vary from those of other utility businesses with similar targets
+Goal for DTE Energy's utility [[operations]] and gas suppliers at DTE Gas that any carbon emissions put into the atmosphere will be balanced by those taken out of the atmosphere. Achieving this goal will include collective efforts to reduce carbon emissions and actions to offset any remaining emissions. Progress towards net zero goals is estimated and methodologies and calculations may vary from those of other utility businesses with similar targets
 
 Non-utility
 
@@ -408,7 +408,7 @@ successful execution of new business development and future growth plans;
 
 •
 
-contract disputes, binding arbitration, litigation, and related appeals;
+contract [[disputes]], binding arbitration, litigation, and related appeals;
 
 •
 

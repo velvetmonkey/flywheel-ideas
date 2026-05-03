@@ -790,7 +790,7 @@ and $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,714
 
@@ -1412,11 +1412,11 @@ The accompanying unaudited condensed consolidated financial statements have been
 
 Raw materials, direct labor and plant overhead, as well as purchasing and receiving costs, costs directly related to production planning, inspection costs and raw materials handling facilities, are included in cost of sales. The costs of moving, storing and delivering finished product, including merchandising activities, are included in selling, general and administrative expenses.
 
-While our financial results in the United States and Canada (North America) are reported on a 12-week basis, all of our international operations are reported on a monthly calendar basis for which the months of January and February are reflected in our results for the 12 weeks ended
+While our financial results in the United States and Canada (North America) are reported on a 12-week basis, all of our international [[operations]] are reported on a monthly calendar basis for which the months of January and February are reflected in our results for the 12 weeks ended
 
 March 21, 2026 and March 22, 2025.
 
-The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from volatile geopolitical conditions, an increasingly complex global tax environment, including changes in how existing laws are interpreted or enforced, expanded or retaliatory tariffs and changes in the interest rate and inflationary cost environment have made such estimates and assumptions more difficult to calculate. Accordingly, actual results and outcomes could differ from those estimates.
+The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from volatile geopolitical conditions, an increasingly complex global tax environment, including changes in how existing laws are interpreted or enforced, expanded or retaliatory tariffs and changes in the interest rate and inflationary cost environment have made such estimates and assumptions more difficult to calculate. Accordingly, actual results and [[outcome|outcomes]] could differ from those estimates.
 
 Our significant interim accounting policies include the recognition of a pro rata share of certain estimated annual sales incentives and certain advertising and marketing costs in proportion to revenue or volume, as applicable, and the recognition of income taxes using an estimated annual effective tax rate.
 

@@ -270,7 +270,7 @@ Kilovolt-ampere
 
 MD&A
 
-Management's Discussion and Analysis of Financial Condition and Results of Operations
+Management's Discussion and Analysis of Financial Condition and Results of [[operations]]
 
 MGD
 
@@ -402,7 +402,7 @@ Section 232 of the Trade Expansion Act of 1962
 
 Series C Preferred Stock
 
-Dominion Energy's 4.35% Series C Fixed-Rate Cumulative Redeemable Perpetual Preferred Stock, without par value, with a liquidation preference of $1,000 per share
+Dominion Energy's 4.35% Series C Fixed-Rate Cumulative Redeemable Perpetual Preferred Stock, without par value, with a [[liquidity|liquidation]] preference of $1,000 per share
 
 South Carolina Commission
 

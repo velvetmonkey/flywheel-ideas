@@ -12,7 +12,7 @@ created: '2026-05-03T16:02:30.768Z'
 Filed: 2026-02-25
 Source: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
 
-The following risk factors should be considered in addition to the other information in this Annual Report on Form 10-K. The following risks could harm our business, financial condition, results of operations or reputation, which could cause our stock price to decline. Additional risks, trends and uncertainties not presently known to us or that we currently believe are immaterial may also harm our business, financial condition, results of operations or reputation.
+The following risk factors should be considered in addition to the other information in this Annual Report on Form 10-K. The following risks could harm our business, financial condition, results of [[operations]] or reputation, which could cause our stock price to decline. Additional risks, trends and uncertainties not presently known to us or that we currently believe are immaterial may also harm our business, financial condition, results of operations or reputation.
 
 Risk Factors Summary
 

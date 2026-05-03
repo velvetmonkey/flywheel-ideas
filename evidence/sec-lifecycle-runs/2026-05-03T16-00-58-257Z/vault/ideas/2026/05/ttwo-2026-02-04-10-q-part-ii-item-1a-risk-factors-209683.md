@@ -410,7 +410,7 @@ Table of Contents
 
 TAKE-TWO INTERACTIVE SOFTWARE, INC.
 
-CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited)
+CONDENSED CONSOLIDATED STATEMENTS OF [[operations]] (Unaudited)
 
 (in millions, except per share amounts)
 

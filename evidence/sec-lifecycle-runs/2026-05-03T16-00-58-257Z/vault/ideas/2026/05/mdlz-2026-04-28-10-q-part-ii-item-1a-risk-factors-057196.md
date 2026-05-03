@@ -1512,7 +1512,7 @@ Notes to Condensed Consolidated Financial Statements
 
 Note 1. Basis of Presentation
 
-Our interim condensed consolidated financial statements are unaudited. Certain information and footnote disclosures normally included in annual financial statements prepared in accordance with accounting principles generally accepted in the United States of America ("U.S. GAAP") have been omitted. It is management's opinion that these financial statements include all normal and recurring adjustments necessary for a fair presentation of our results of operations, financial position and cash flows. Results of operations for any interim period are not necessarily indicative of future or annual results. For a complete set of consolidated financial statements and related notes, refer to our Annual Report on Form 10-K for the year ended December 31, 2025.
+Our interim condensed consolidated financial statements are unaudited. Certain information and footnote disclosures normally included in annual financial statements prepared in accordance with accounting principles generally accepted in the United States of America ("U.S. GAAP") have been omitted. It is management's opinion that these financial statements include all normal and recurring adjustments necessary for a fair presentation of our results of [[operations]], financial position and cash flows. Results of operations for any interim period are not necessarily indicative of future or annual results. For a complete set of consolidated financial statements and related notes, refer to our Annual Report on Form 10-K for the year ended December 31, 2025.
 
 Principles of Consolidation
 
@@ -1554,7 +1554,7 @@ of our consolidated net revenues for the three months ended March 31, 2026. The 
 
 Cash, Cash Equivalents and Restricted Cash
 
-Cash and cash equivalents include demand deposits with banks and all highly liquid investments with original maturities of three months or less. Restricted cash primarily includes cash held on behalf of financial institutions in accordance with accounts receivable factoring arrangements and letters of credit arrangements with legally restricted cash collateral provisions.
+Cash and cash equivalents include demand deposits with banks and all highly [[liquidity|liquid]] investments with original maturities of three months or less. Restricted cash primarily includes cash held on behalf of financial institutions in accordance with accounts receivable factoring arrangements and letters of credit arrangements with legally restricted cash collateral provisions.
 
 Restricted cash is recorded within other current assets and was $
 

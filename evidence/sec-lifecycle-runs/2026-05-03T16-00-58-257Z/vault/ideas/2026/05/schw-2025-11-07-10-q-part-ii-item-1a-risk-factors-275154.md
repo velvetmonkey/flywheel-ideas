@@ -98,7 +98,7 @@ On our website,
 
 https://www.aboutschwab.com
 
-, we post the following filings after they are electronically filed with or furnished to the Securities and Exchange Commission (SEC or Commission): annual reports on Form 10-K, quarterly reports on Form 10-Q, current reports on Form 8-K, and any amendments to those reports filed or furnished pursuant to Section 13(a) or 15(d) of the Securities Exchange Act of 1934. In addition, we post to the website the Dodd-Frank stress test results, our regulatory capital disclosures based on Basel III, our average liquidity coverage ratio (LCR), and our average net stable funding ratio (NSFR). The SEC maintains a website at
+, we post the following filings after they are electronically filed with or furnished to the Securities and Exchange Commission (SEC or Commission): annual reports on Form 10-K, quarterly reports on Form 10-Q, current reports on Form 8-K, and any amendments to those reports filed or furnished pursuant to Section 13(a) or 15(d) of the Securities Exchange Act of 1934. In addition, we post to the website the Dodd-Frank stress test results, our regulatory capital disclosures based on Basel III, our average [[liquidity]] coverage ratio (LCR), and our average net stable funding ratio (NSFR). The SEC maintains a website at
 
 https://www.sec.gov
 
@@ -164,7 +164,7 @@ The likelihood of indemnification and guarantee payment obligations and clients 
 
 •
 
-The outcome and impact of legal proceedings and regulatory matters (see Commitments and Contingencies in Item 1 – Note 10, and Legal Proceedings in Part II – Item 1).
+The [[outcome]] and impact of legal proceedings and regulatory matters (see Commitments and Contingencies in Item 1 – Note 10, and Legal Proceedings in Part II – Item 1).
 
 Achievement of the expressed beliefs, objectives, and expectations described in these statements is subject to certain risks and uncertainties that could cause actual results to differ materially from the expressed beliefs, objectives, and expectations. Readers are cautioned not to place undue reliance on these forward-looking statements, which speak only as of the date of this Quarterly Report on Form 10-Q or, in the case of documents incorporated by reference, as of the date of those documents.
 

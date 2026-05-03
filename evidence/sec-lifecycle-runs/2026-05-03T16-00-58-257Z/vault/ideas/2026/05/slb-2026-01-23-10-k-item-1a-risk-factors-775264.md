@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/87347/000119312526021017/slb-202
 
 k Factors.
 
-The following discussion of risk factors known to us contains important information for the understanding of our "forward-looking statements," which are discussed immediately following Item 7A. of this Form 10-K and elsewhere. These risk factors should also be read in conjunction with Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations, and the
+The following discussion of risk factors known to us contains important information for the understanding of our "forward-looking statements," which are discussed immediately following Item 7A. of this Form 10-K and elsewhere. These risk factors should also be read in conjunction with Item 7. Management's Discussion and Analysis of Financial Condition and Results of [[operations]], and the
 
 Consolidated Financial Statements
 

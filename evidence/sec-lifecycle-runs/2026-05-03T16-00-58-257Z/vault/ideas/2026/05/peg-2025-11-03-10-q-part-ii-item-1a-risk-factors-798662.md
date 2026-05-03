@@ -64,7 +64,7 @@ disruptions or cost increases in our supply chain, including labor shortages;
 
 •
 
-any inability to maintain sufficient liquidity or access sufficient capital on commercially reasonable terms;
+any inability to maintain sufficient [[liquidity]] or access sufficient capital on commercially reasonable terms;
 
 •
 

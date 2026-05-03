@@ -68,7 +68,7 @@ Failure to obtain regulatory or other approvals, delays, cost escalations or oth
 
 Macroeconomic considerations, including inflationary levels, gas and electric supply prices that are passed through to customers and other pressures could factor into our regulators' assessment in approving the size, duration and timing of cost recovery of certain of these programs. Further, certain negative public and political views by certain stakeholders on energy infrastructure could result in diminishing support for those investments.
 
-In addition, the successful operation of new facilities or transmission or distribution projects is subject to risks relating to supply interruptions; labor availability, work stoppages and labor disputes; weather interferences; unforeseen engineering and environmental problems, including those related to climate change; opposition from local communities, and the other risks described herein.
+In addition, the successful operation of new facilities or transmission or distribution projects is subject to risks relating to supply interruptions; labor availability, work stoppages and labor [[disputes]]; weather interferences; unforeseen engineering and environmental problems, including those related to climate change; opposition from local communities, and the other risks described herein.
 
 Any of these risks could cause the amounts of our investments and/or our return on these investments to be lower than expected, which could adversely impact our financial condition and results of operations through lower investment opportunities and/or lower returns.
 
@@ -100,7 +100,7 @@ climate change-related state policy goals, including but not limited to those re
 
 Table of Contents
 
-We may be subject to climate change lawsuits that may seek injunctive relief, monetary compensation, penalties, and punitive damages, including but not limited to, for liabilities for damages related to mitigate harm caused by climate change. An adverse outcome could require substantial capital expenditures and possibly require payment of substantial penalties or damages. Defense costs associated with such litigation can also be significant and could affect results of operations, financial condition or cash flows if such costs are not recovered through regulated rates
+We may be subject to climate change lawsuits that may seek injunctive relief, monetary compensation, penalties, and punitive damages, including but not limited to, for liabilities for damages related to mitigate harm caused by climate change. An adverse [[outcome]] could require substantial capital expenditures and possibly require payment of substantial penalties or damages. Defense costs associated with such litigation can also be significant and could affect results of operations, financial condition or cash flows if such costs are not recovered through regulated rates
 
 .
 
@@ -116,7 +116,7 @@ Further, a major failure of availability or performance of a critical operating 
 
 .
 
-We have historically benefited from access to mutual aid, a voluntary and reciprocal arrangement with other utilities that provides access to a trained and flexible labor force which has helped to reduce outage restoration times during extreme weather events. There is no guarantee that we will have continued access to mutual aid as the frequency of severe weather events rises.
+We have historically benefited from access to mutual aid, a voluntary and reciprocal arrangement with other [[utilities]] that provides access to a trained and flexible labor force which has helped to reduce outage restoration times during extreme weather events. There is no guarantee that we will have continued access to mutual aid as the frequency of severe weather events rises.
 
 These events could result in increased political, economic, financial and insurance market instability, a lack of available insurance or the availability of insurance on commercially reasonable terms, and volatility in power and fuel markets, which could materially adversely affect our business and results of operations, including our ability to access capital on terms and conditions acceptable to us.
 

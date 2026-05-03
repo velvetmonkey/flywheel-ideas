@@ -58,7 +58,7 @@ Item 1. Financial Statements
 
 The Boeing Company and Subsidiaries
 
-Condensed Consolidated Statements of Operations
+Condensed Consolidated Statements of [[operations]]
 
 (Unaudited)
 
@@ -734,7 +734,7 @@ shares authorized;
 
 5,750,000
 
-shares issued; aggregate liquidation preference $
+shares issued; aggregate [[liquidity|liquidation]] preference $
 
 5,750
 

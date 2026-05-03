@@ -18,7 +18,7 @@ Purchasing or owning NVIDIA common stock involves investment risks including, bu
 
 33
 
-Reports on Form 10-Q for the fiscal quarters ended April 27, 2025 and July 27, 2025, and below. Any one of those risks could harm our business, financial condition and results of operations or reputation, which could cause our stock price to decline. Additional risks, trends and uncertainties not presently known to us or that we currently believe are immaterial may also harm our business, financial condition, results of operations or reputation.
+Reports on Form 10-Q for the fiscal quarters ended April 27, 2025 and July 27, 2025, and below. Any one of those risks could harm our business, financial condition and results of [[operations]] or reputation, which could cause our stock price to decline. Additional risks, trends and uncertainties not presently known to us or that we currently believe are immaterial may also harm our business, financial condition, results of operations or reputation.
 
 Long manufacturing lead times and uncertain supply and capacity availability, combined with a failure to estimate customer demand accurately, has led and could lead to mismatches between supply and demand.
 

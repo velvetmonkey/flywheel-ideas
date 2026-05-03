@@ -58,7 +58,7 @@ Accounting Standards Update
 
 barrel
 
-One stock tank barrel, or 42 U.S. gallons liquid volume, used in reference to crude oil or other liquid hydrocarbons
+One stock tank barrel, or 42 U.S. gallons [[liquidity|liquid]] volume, used in reference to crude oil or other liquid hydrocarbons
 
 CARB
 
@@ -306,7 +306,7 @@ Total costs and expenses
 
 101,291
 
-Income from operations
+Income from [[operations]]
 
 2,713
 

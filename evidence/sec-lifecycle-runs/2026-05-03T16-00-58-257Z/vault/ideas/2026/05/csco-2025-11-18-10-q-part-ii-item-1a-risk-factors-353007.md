@@ -18,7 +18,7 @@ Set forth below and elsewhere in this report and in other documents we file with
 
 Risks Related to our Business and Industry
 
-Our operations can be difficult to predict because our operating results may fluctuate in future periods.
+Our [[operations]] can be difficult to predict because our operating results may fluctuate in future periods.
 
 Our operating results have been in the past, and will continue to be, subject to quarterly and annual fluctuations as a result of numerous factors, some of which may contribute to more pronounced fluctuations in an uncertain global economic environment. These factors include:
 

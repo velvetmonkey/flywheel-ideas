@@ -8,4 +8,4 @@ declared_at: '2026-05-03T16:01:32.892Z'
 date: '2026-05-03'
 created: '2026-05-03T16:01:33.265Z'
 ---
-In the context of **AAPL disclosed cloud and data center capacity risk in 10-Q 2026-01-30.**, facing **and cloud services.**, we assume **AAPL can manage cloud and data center capacity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+In the context of **[[aapl]] disclosed cloud and data center capacity risk in 10-Q 2026-01-30.**, facing **and cloud services.**, we assume **AAPL can manage cloud and data center capacity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.

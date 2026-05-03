@@ -12,7 +12,7 @@ created: '2026-05-03T17:29:52.670Z'
 - **CL / Geopolitics and tariffs, Macro and foreign exchange, Supply chain**: 6 candidate(s).
   - Candidate IDs: cout-zKK4nNXY, cout-kYzkVw4Y, cout-tM4smWkE, cout-3qBj5DL8, cout-suCu5FHt, cout-EgGnafEE
   - Evidence: For the year ended December 31, 2025, our business in the Eurasia region constituted approximately 1% of our consolidated net sales and approximately 2% of our consolidated operating profit. We, however, have experienced, and expect to continue to experience, risks related to the impact of the war i
-- **WFC / Demand, Liquidity**: 4 candidate(s).
+- **WFC / Demand, [[liquidity]]**: 4 candidate(s).
   - Candidate IDs: cout-8JrMRygG, cout-dahEEW6N, cout-x1rbn1tF, cout-g9DzuwvT
   - Evidence: Consumer portfolio net loan charge-offs were $740 million, or 78 basis points of average consumer loans, in first quarter 2026, compared with net loan charge-offs of $798 million, or 86 basis points, in the same period a year ago, due to lower losses in our credit card portfolio.
 - **AMD / Demand, Inventory and channel, Supply chain**: 3 candidate(s).
@@ -45,13 +45,13 @@ created: '2026-05-03T17:29:52.670Z'
 - **LMT / Supply chain**: 2 candidate(s).
   - Candidate IDs: cout-STU6oG2E, cout-J98S4DPX
   - Evidence: We have experienced, and continue to experience, supply chain challenges, including supplier shortages and performance issues. While on-time deliveries are improving, pressures remain in certain areas, and we are proactively working with our suppliers to meet our contract commitments.
-- **MSFT / AI, R&D, and technology, Cloud and data center capacity**: 2 candidate(s).
+- **[[msft]] / AI, R&D, and technology, Cloud and data center capacity**: 2 candidate(s).
   - Candidate IDs: cout-Fv61XFCq, cout-qDcXtibN
   - Evidence: Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
 - **MSFT / AI, R&D, and technology, Cloud and data center capacity**: 2 candidate(s).
   - Candidate IDs: cout-rFJoMHDQ, cout-6jwNER4X
   - Evidence: Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
-- **NVDA / Demand, Inventory and channel**: 2 candidate(s).
+- **[[nvda]] / Demand, Inventory and channel**: 2 candidate(s).
   - Candidate IDs: cout-W1krF5ev, cout-gN9xNLTv
   - Evidence: In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the 
 - **BA / Supply chain**: 1 candidate(s).
@@ -81,7 +81,7 @@ created: '2026-05-03T17:29:52.670Z'
 - **MPC / Liquidity**: 1 candidate(s).
   - Candidate IDs: cout-Aikdwry3
   - Evidence: On July 1, 2025, MPLX purchased the remaining 55 percent interest in BANGL, LLC ("BANGL") for approximately $703 million in cash, plus an earnout provision of up to $275 million based on targeted EBITDA growth from 2026 to 2029 (the "BANGL Acquisition"). As a result of the BANGL Acquisition, MPLX no
-- **NFLX / Demand**: 1 candidate(s).
+- **[[nflx]] / Demand**: 1 candidate(s).
   - Candidate IDs: cout-aaSAiRon
   - Evidence: Discovery, Inc. ("WBD") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the "WBD transaction"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil
 - **NVDA / Demand**: 1 candidate(s).
@@ -99,7 +99,7 @@ created: '2026-05-03T17:29:52.670Z'
 - **SRE / Liquidity**: 1 candidate(s).
   - Candidate IDs: cout-PbJrUC9W
   - Evidence: $9 million interest expense from unrealized losses in 2025 on interest rate swaps related to the PA LNG Phase 1 project
-- **TSLA / Supply chain**: 1 candidate(s).
+- **[[tsla]] / Supply chain**: 1 candidate(s).
   - Candidate IDs: cout-2yCn8mfg
   - Evidence: We will also need to hire, train and compensate skilled employees to operate these facilities. Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing proce
 - **TSLA / Demand**: 1 candidate(s).

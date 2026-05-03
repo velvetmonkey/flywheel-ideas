@@ -12,7 +12,7 @@ created: '2026-05-03T16:51:32.204Z'
 Filed: 2026-02-25
 Source: https://www.sec.gov/Archives/edgar/data/1707925/000162828026011430/lin-20251231.htm
 
-Due to the size and geographic reach of the company's operations, a wide range of factors, many of which are outside of the company's control, could materially affect the company's future operations and financial performance. Management believes the following risks may significantly impact the company:
+Due to the size and geographic reach of the company's [[operations]], a wide range of factors, many of which are outside of the company's control, could materially affect the company's future operations and financial performance. Management believes the following risks may significantly impact the company:
 
 Weakening economic conditions in markets in which Linde does business may adversely impact its financial results and/or cash flows.
 
@@ -34,7 +34,7 @@ Linde has substantial international operations which are subject to risks includ
 
 Table of Contents
 
-funds, trade conflicts and the imposition of duties and tariffs, import and export controls, changes in governmental policies, labor unrest, possible nationalization and/or expropriation of assets, changes in U.S. and non-U.S. tax policies and compliance with governmental regulations. These events could have an adverse effect on the international operations of Linde in the future by reducing the demand for its products, decreasing the prices at which it can sell its products, reducing the revenue from international operations or otherwise having an adverse effect on its business.
+funds, trade conflicts and the imposition of duties and tariffs, [[import]] and export controls, changes in governmental policies, labor unrest, possible nationalization and/or expropriation of assets, changes in U.S. and non-U.S. tax policies and compliance with governmental regulations. These events could have an adverse effect on the international operations of Linde in the future by reducing the demand for its products, decreasing the prices at which it can sell its products, reducing the revenue from international operations or otherwise having an adverse effect on its business.
 
 Currency exchange rate fluctuations and other related risks may adversely affect Linde's results.
 

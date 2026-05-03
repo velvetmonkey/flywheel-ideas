@@ -12,7 +12,7 @@ created: '2026-05-03T16:05:14.335Z'
 Filed: 2026-02-04
 Source: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
 
-The risks and uncertainties described below are not the only ones we face. If any of the following risks actually occurs, our business, financial condition or results of operations could be materially adversely affected. In addition, you should consider the interrelationship and compounding effects of two or more risks occurring simultaneously.
+The risks and uncertainties described below are not the only ones we face. If any of the following risks actually occurs, our business, financial condition or results of [[operations]] could be materially adversely affected. In addition, you should consider the interrelationship and compounding effects of two or more risks occurring simultaneously.
 
 Risk Factors Summary
 
@@ -142,7 +142,7 @@ Legal and Regulatory Risks
 
 •
 
-Government actions and regulations, including but not limited to export regulations, import tariffs and trade protection measures, may limit our ability to export our products to certain customers.
+Government actions and regulations, including but not limited to export regulations, [[import]] tariffs and trade protection measures, may limit our ability to export our products to certain customers.
 
 •
 

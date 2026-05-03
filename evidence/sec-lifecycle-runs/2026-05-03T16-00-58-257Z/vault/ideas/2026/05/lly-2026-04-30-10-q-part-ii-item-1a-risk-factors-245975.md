@@ -52,7 +52,7 @@ the significant costs and uncertainties in the pharmaceutical research and devel
 
 •
 
-the impact and uncertain outcome of acquisitions and business development transactions and related costs;
+the impact and uncertain [[outcome]] of acquisitions and business development transactions and related costs;
 
 •
 
@@ -108,7 +108,7 @@ the use of artificial intelligence or other emerging technologies in various fac
 
 •
 
-the impact of global macroeconomic conditions, including uneven economic growth or downturns or uncertainty, trade and other global disputes and interruptions, including related to tariffs, trade protection measures, and similar restrictions, international tension, conflicts, regional dependencies, or other costs, uncertainties, and risks related to engaging in business globally;
+the impact of global macroeconomic conditions, including uneven economic growth or downturns or uncertainty, trade and other global [[disputes]] and interruptions, including related to tariffs, trade protection measures, and similar restrictions, international tension, conflicts, regional dependencies, or other costs, uncertainties, and risks related to engaging in business globally;
 
 •
 

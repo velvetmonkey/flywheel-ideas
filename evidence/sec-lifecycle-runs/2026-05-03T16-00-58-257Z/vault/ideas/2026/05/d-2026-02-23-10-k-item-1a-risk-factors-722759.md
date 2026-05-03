@@ -26,7 +26,7 @@ in Item 7. MD&A.
 
 Regulatory, Legislative and Legal Risks
 
-The rates of the Companies' principal electric transmission, distribution and generation operations and gas distribution operations are subject to regulatory review.
+The rates of the Companies' principal electric transmission, distribution and generation [[operations]] and gas distribution operations are subject to regulatory review.
 
 Revenue provided by the Companies' electric transmission, distribution and generation operations and by gas distribution operations is based primarily on rates approved by state and federal regulatory agencies. The profitability of the Companies' businesses is dependent on their ability, through the rates that they are permitted to charge, to recover costs and earn a reasonable rate of return on their capital investment.
 
@@ -52,7 +52,7 @@ corporate alternative minimum tax, that the Companies have considered in recordi
 
 The Companies have been and may continue to be or become subject to legal proceedings and governmental investigations and examinations.
 
-The Companies may from time to time be subject to various legal proceedings and governmental investigations and examinations. For example, Dominion Energy, following the SCANA Combination, was subject to numerous federal and state legal proceedings and governmental investigations relating to the decision of SCANA and DESC to abandon construction at the NND Project. Dominion Energy spent substantial amounts of time and money defending these lawsuits and proceedings and on related investigations. In addition, juries have demonstrated a willingness to grant large awards in certain cases, including personal injury claims. Accordingly, actual costs incurred may differ from insured or reserved amounts and may not be recoverable, in whole or in part, by insurance or in rates from customers. The outcome of these or future legal proceedings, investigations and examinations, including settlements, may adversely affect the Companies' financial condition, results of operation and/or cash flows.
+The Companies may from time to time be subject to various legal proceedings and governmental investigations and examinations. For example, Dominion Energy, following the SCANA Combination, was subject to numerous federal and state legal proceedings and governmental investigations relating to the decision of SCANA and DESC to abandon construction at the NND Project. Dominion Energy spent substantial amounts of time and money defending these lawsuits and proceedings and on related investigations. In addition, juries have demonstrated a willingness to grant large awards in certain cases, including personal injury claims. Accordingly, actual costs incurred may differ from insured or reserved amounts and may not be recoverable, in whole or in part, by insurance or in rates from customers. The [[outcome]] of these or future legal proceedings, investigations and examinations, including settlements, may adversely affect the Companies' financial condition, results of operation and/or cash flows.
 
 Construction Risks
 

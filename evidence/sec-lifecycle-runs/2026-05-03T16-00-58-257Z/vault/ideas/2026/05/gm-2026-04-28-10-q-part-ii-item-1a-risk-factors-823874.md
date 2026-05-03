@@ -752,7 +752,7 @@ Available-for-sale marketable securities, acquisitions
 
 )
 
-Available-for-sale marketable securities, liquidations
+Available-for-sale marketable securities, [[liquidity|liquidations]]
 
 2,845
 
@@ -1424,7 +1424,7 @@ NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
 
 Note 1.
 
-Nature of Operations and Basis of Presentation
+Nature of [[operations]] and Basis of Presentation
 
 General Motors Company (sometimes referred to in this Quarterly Report on Form 10-Q as we, our, us, ourselves, the Company, General Motors, or GM) designs, builds, and sells trucks, crossovers, cars, and automobile parts, and provides software-enabled services and subscriptions worldwide. We also provide automotive financing services through General Motors Financial Company, Inc. (GM Financial). We analyze the results of our operations through the following segments: GM North America (GMNA), GM International (GMI), and GM Financial. In December 2024, we announced that we would no longer fund Cruise's robotaxi development work and will refocus our autonomous driving strategy on personal vehicles, and, in February 2025 we completed the acquisition of the noncontrolling interests in Cruise, began to wind down the Cruise robotaxi operations, and combined the GM and Cruise autonomous technical efforts in our GMNA segment. Corporate includes certain centrally recorded income and costs such as interest, income taxes, corporate expenditures, and certain revenues and expenses that are not part of a reportable segment.
 

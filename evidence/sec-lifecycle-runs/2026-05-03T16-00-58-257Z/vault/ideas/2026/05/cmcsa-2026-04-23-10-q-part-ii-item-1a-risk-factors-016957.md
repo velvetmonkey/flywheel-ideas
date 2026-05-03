@@ -42,7 +42,7 @@ CAUTION CONCERNING FORWARD-LOOKING STATEMENTS
 
 This Quarterly Report on Form 10-Q includes statements that may constitute "forward-looking statements" within the meaning of the Private Securities Litigation Reform Act of 1995, Section 27A of the Securities Act of 1933, and Section 21E of the Securities Exchange Act of 1934. Forward-looking statements are not historical facts or statements of current conditions, but instead represent only our beliefs regarding future events, many of which, by their nature, are inherently uncertain and outside of our control. These may include estimates, projections and statements relating to our business plans, objectives and expected operating results, which are based on current expectations and assumptions that are subject to risks and uncertainties that may cause actual results to differ materially. These forward-looking statements are generally identified by words such as "believe," "project," "expect," "anticipate," "estimate," "intend," "potential," "strategy," "future," "opportunity," "commit," "plan," "goal," "may," "should," "could," "would," "will," "continue," "will likely result" and similar expressions. In evaluating these statements, you should consider various factors, including the risks and uncertainties we describe in the "Risk Factors" sections of our Forms 10-K and 10-Q and in other reports we file with the SEC.
 
-Any of these factors could cause our actual results to differ materially from those expressed or implied by our forward-looking statements, which could adversely affect our businesses, results of operations or financial condition. Readers are cautioned not to place undue reliance on forward-looking statements, which speak only as of the date they are made. We undertake no obligation to update or revise publicly any forward-looking statements, whether because of new information, future events or otherwise.
+Any of these factors could cause our actual results to differ materially from those expressed or implied by our forward-looking statements, which could adversely affect our businesses, results of [[operations]] or financial condition. Readers are cautioned not to place undue reliance on forward-looking statements, which speak only as of the date they are made. We undertake no obligation to update or revise publicly any forward-looking statements, whether because of new information, future events or otherwise.
 
 Our businesses may be affected by, among other things, the following:
 
@@ -108,7 +108,7 @@ the loss of key management personnel or popular on-air and creative talent could
 
 •
 
-labor disputes, whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
+labor [[disputes]], whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
 
 •
 

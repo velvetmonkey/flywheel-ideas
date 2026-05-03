@@ -66,7 +66,7 @@ Item 6.
 
 Item 7.
 
-Management's Discussion and Analysis of Financial Condition and Results of Operations
+Management's Discussion and Analysis of Financial Condition and Results of [[operations]]
 
 32
 
@@ -216,7 +216,7 @@ Nucor produces hot-rolled, cold-rolled and galvanized sheet steel to customers' 
 
 Nucor owns a 51% controlling economic and voting interest in Nucor-JFE Steel Mexico, S. de R.L. de C.V. ("NJSM"). NJSM is a joint venture with JFE Steel Corporation of Japan that operates a galvanized sheet steel plant in central Mexico with an annual capacity of approximately 400,000 tons, that is expected to supply the country's automotive market.
 
-In January 2022, Nucor announced it had selected Mason County, West Virginia as the site for its new three-million-ton state-of-the-art sheet mill. When operational, the new mill will be equipped to produce 84-inch sheet products, and among other features, will include a 76-inch tandem cold mill and two galvanizing lines capable of producing advanced high-end automotive and construction grades.
+In January 2022, Nucor announced it had selected Mason County, West Virginia as the site for its new three-million-ton state-of-the-art sheet mill. When operational, the new mill will be equipped to produce 84-inch sheet products, and among other [[features]], will include a 76-inch tandem cold mill and two galvanizing lines capable of producing advanced high-end automotive and construction grades.
 
 2
 

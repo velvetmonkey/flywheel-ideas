@@ -8,4 +8,4 @@ declared_at: '2026-05-03T16:02:03.540Z'
 date: '2026-05-03'
 created: '2026-05-03T16:02:03.951Z'
 ---
-In the context of **MSFT disclosed macro and foreign exchange risk in 10-Q 2026-01-28.**, facing **Revenue, gross margin, and operating income included a favorable foreign currency impact of 2%, 2%, and 3%, respectively.**, we assume **MSFT can manage macro and foreign exchange risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+In the context of **[[msft]] disclosed macro and foreign exchange risk in 10-Q 2026-01-28.**, facing **Revenue, gross margin, and operating income included a favorable foreign currency impact of 2%, 2%, and 3%, respectively.**, we assume **MSFT can manage macro and foreign exchange risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.

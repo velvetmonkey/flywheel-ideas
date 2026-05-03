@@ -666,7 +666,7 @@ SIX MONTHS ENDED NOVEMBER 30,
 
 2024
 
-Cash provided (used) by operations:
+Cash provided (used) by [[operations]]:
 
 Net income
 

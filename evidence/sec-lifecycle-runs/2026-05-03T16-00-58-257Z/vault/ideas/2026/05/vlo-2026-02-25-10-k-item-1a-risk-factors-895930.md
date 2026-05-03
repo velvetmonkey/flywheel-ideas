@@ -12,7 +12,7 @@ created: '2026-05-03T16:31:36.287Z'
 Filed: 2026-02-25
 Source: https://www.sec.gov/Archives/edgar/data/1035002/000162828026011499/vlo-20251231.htm
 
-You should carefully consider the following risk factors in addition to the other information included in this report. Each of these risks could adversely affect our business, financial condition, results of operations, and/or liquidity, as well as, in certain cases, the value of an investment in our securities. Although the risks are organized by headings and each risk is discussed separately, many are interrelated.
+You should carefully consider the following risk factors in addition to the other information included in this report. Each of these risks could adversely affect our business, financial condition, results of [[operations]], and/or [[liquidity]], as well as, in certain cases, the value of an investment in our securities. Although the risks are organized by headings and each risk is discussed separately, many are interrelated.
 
 BUSINESS, INDUSTRY, AND OPERATIONS RISKS
 

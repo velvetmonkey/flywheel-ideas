@@ -1060,7 +1060,7 @@ Produced 1.3 million attributable ounces of gold and 258 thousand attributable g
 
 Financial strength:
 
-Ended the quarter with $8,775 of consolidated cash and $12,775 of total liquidity; redeemed $42 of senior notes and repurchased $1,895 of common stock. In April, settled an additional $556 of share repurchases, declared a dividend of $0.26 per share, and authorized an additional $6,000 stock repurchase program.
+Ended the quarter with $8,775 of consolidated cash and $12,775 of total [[liquidity]]; redeemed $42 of senior notes and repurchased $1,895 of common stock. In April, settled an additional $556 of share repurchases, declared a dividend of $0.26 per share, and authorized an additional $6,000 stock repurchase program.
 
 5
 

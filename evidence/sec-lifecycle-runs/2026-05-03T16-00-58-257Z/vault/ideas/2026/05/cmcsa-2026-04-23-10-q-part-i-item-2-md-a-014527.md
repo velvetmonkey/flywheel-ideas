@@ -12,7 +12,7 @@ created: '2026-05-03T16:16:54.902Z'
 Filed: 2026-04-23
 Source: https://www.sec.gov/Archives/edgar/data/1166691/000162828026026805/cmcsa-20260331.htm
 
-Management's Discussion and Analysis of Financial Condition and Results of Operations
+Management's Discussion and Analysis of Financial Condition and Results of [[operations]]
 
 15
 
@@ -134,7 +134,7 @@ the loss of key management personnel or popular on-air and creative talent could
 
 •
 
-labor disputes, whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
+labor [[disputes]], whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
 
 •
 

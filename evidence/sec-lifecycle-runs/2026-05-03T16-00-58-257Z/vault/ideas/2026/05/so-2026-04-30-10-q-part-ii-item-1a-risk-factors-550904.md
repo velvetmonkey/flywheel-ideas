@@ -248,7 +248,7 @@ MW
 
 Megawatt
 
-natural gas distribution utilities
+natural gas distribution [[utilities]]
 
 Southern Company Gas' natural gas distribution utilities (Nicor Gas, Atlanta Gas Light, Virginia Natural Gas, and Chattanooga Gas)
 
@@ -280,7 +280,7 @@ OPC
 
 Oglethorpe Power Corporation (an electric membership corporation)
 
-PEP
+[[pep]]
 
 Mississippi Power's Performance Evaluation Plan
 
@@ -484,7 +484,7 @@ transmission constraints;
 
 •
 
-the ability to control costs and avoid cost and schedule overruns during the development, construction, and operation of facilities or other projects due to challenges which include, but are not limited to, changes in labor costs, availability, and productivity; challenges with the management of contractors or vendors; subcontractor performance; adverse weather conditions; shortages, delays, increased costs, or inconsistent quality of equipment, materials, and labor; contractor or supplier delay; the impacts of inflation and trade policies (including tariffs and other trade measures) of the United States and other countries; delays due to judicial or regulatory action; nonperformance under construction, operating, or other agreements; operational readiness, including specialized operator training and required site safety programs; engineering or design problems or any remediation related thereto; design and other licensing-based compliance matters; challenges with start-up activities, including major equipment failure, or system integration, and/or operational performance; challenges related to future epidemic or pandemic health events; continued public and policymaker support for projects; environmental and geological conditions; delays or increased costs to interconnect facilities to transmission grids; and increased financing costs as a result of changes in interest rates or as a result of project delays;
+the ability to control costs and avoid cost and schedule overruns during the development, construction, and operation of facilities or other projects due to challenges which include, but are not limited to, changes in labor costs, availability, and productivity; challenges with the management of contractors or vendors; subcontractor performance; adverse weather conditions; shortages, delays, increased costs, or inconsistent quality of equipment, [[materials]], and labor; contractor or supplier delay; the impacts of inflation and trade policies (including tariffs and other trade measures) of the United States and other countries; delays due to judicial or regulatory action; nonperformance under construction, operating, or other agreements; operational readiness, including specialized operator training and required site safety programs; engineering or design problems or any remediation related thereto; design and other licensing-based compliance matters; challenges with start-up activities, including major equipment failure, or system integration, and/or operational performance; challenges related to future epidemic or pandemic health events; continued public and policymaker support for projects; environmental and geological conditions; delays or increased costs to interconnect facilities to transmission grids; and increased financing costs as a result of changes in interest rates or as a result of project delays;
 
 •
 

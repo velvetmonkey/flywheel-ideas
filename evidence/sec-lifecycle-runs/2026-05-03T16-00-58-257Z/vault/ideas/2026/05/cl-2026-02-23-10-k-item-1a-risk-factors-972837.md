@@ -40,7 +40,7 @@ environmental events, widespread health emergencies, such as pandemics or epidem
 
 •
 
-exchange controls and other limits on our ability to import or export raw materials or finished product or to repatriate cash from overseas, including as a result of the war in Ukraine;
+exchange controls and other limits on our ability to [[import]] or export raw materials or finished product or to repatriate cash from overseas, including as a result of the war in Ukraine;
 
 •
 

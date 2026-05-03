@@ -46,7 +46,7 @@ Item
 
 1. Financial Statements.
 
-MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES
+MARTIN MARIETTA [[materials]], INC. AND CONSOLIDATED SUBSIDIARIES
 
 (UNAUDITED) CONSOLIDATED BALANCE SHEETS
 
@@ -412,7 +412,7 @@ Other operating expense, net
 
 9
 
-Earnings from Operations
+Earnings from [[operations]]
 
 162
 

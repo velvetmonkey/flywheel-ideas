@@ -42,9 +42,9 @@ We have incurred, and will continue to incur, significant costs, expenses, and f
 
 The Merger may not occur on the expected timeline because of a delay in receiving required regulatory approvals, stockholder approvals or other reasons. Any delay or inability to close the Merger may cause the market price of our common stock to decline.
 
-Lawsuits may be filed against us and the members of our Board of Directors arising out of the proposed Merger, which may delay or prevent the proposed Merger or otherwise negatively affect our business and operations.
+Lawsuits may be filed against us and the members of our Board of Directors arising out of the proposed Merger, which may delay or prevent the proposed Merger or otherwise negatively affect our business and [[operations]].
 
-Putative stockholder complaints, including stockholder class action complaints, and other complaints may be filed against us, our Board of Directors and others in connection with the transactions contemplated by the Merger Agreement. The outcome of any such litigation is uncertain, and we may not be successful in defending against any such future claims. Lawsuits that may be filed against us, our Board of Directors or others could delay or prevent the Merger from being completed, divert the
+Putative stockholder complaints, including stockholder class action complaints, and other complaints may be filed against us, our Board of Directors and others in connection with the transactions contemplated by the Merger Agreement. The [[outcome]] of any such litigation is uncertain, and we may not be successful in defending against any such future claims. Lawsuits that may be filed against us, our Board of Directors or others could delay or prevent the Merger from being completed, divert the
 
 47
 

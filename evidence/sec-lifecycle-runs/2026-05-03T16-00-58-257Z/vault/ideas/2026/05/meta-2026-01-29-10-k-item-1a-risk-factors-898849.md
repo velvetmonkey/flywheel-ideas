@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-
 
 Risk Factors
 
-Certain factors may have a material adverse effect on our business, financial condition, and results of operations. You should consider carefully the risks and uncertainties described below, in addition to other information contained in this Annual Report on Form 10-K, including our consolidated financial statements and related notes. The risks and uncertainties described below are not the only ones we face. Additional risks and uncertainties that we are unaware of, or that we currently believe are not material, may also become important factors that adversely affect our business. If any of the following risks actually occurs, our business, financial condition, results of operations, and future prospects could be materially and adversely affected. In that event, the trading price of our Class A common stock could decline, and you could lose part or all of your investment.
+Certain factors may have a material adverse effect on our business, financial condition, and results of [[operations]]. You should consider carefully the risks and uncertainties described below, in addition to other information contained in this Annual Report on Form 10-K, including our consolidated financial statements and related notes. The risks and uncertainties described below are not the only ones we face. Additional risks and uncertainties that we are unaware of, or that we currently believe are not material, may also become important factors that adversely affect our business. If any of the following risks actually occurs, our business, financial condition, results of operations, and future prospects could be materially and adversely affected. In that event, the trading price of our Class A common stock could decline, and you could lose part or all of your investment.
 
 Summary Risk Factors
 
@@ -124,7 +124,7 @@ users increasingly engage with other competitive products or services;
 
 •
 
-we fail to introduce new features, products, or services that users find engaging or if we introduce new products or services, or make changes to existing products and services, that are not favorably received;
+we fail to introduce new [[features]], products, or services that users find engaging or if we introduce new products or services, or make changes to existing products and services, that are not favorably received;
 
 •
 

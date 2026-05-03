@@ -1018,7 +1018,7 @@ $
 
 6,207
 
-Adjustments to reconcile to cash provided by operations
+Adjustments to reconcile to cash provided by [[operations]]
 
 Charges and credits:
 

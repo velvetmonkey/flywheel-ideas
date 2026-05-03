@@ -74,7 +74,7 @@ Results of Operations by Registrant
 
 73
 
-Capital Resources and Liquidity
+Capital Resources and [[liquidity]]
 
 88
 
@@ -598,7 +598,7 @@ NEIL
 
 Nuclear Electric Insurance Limited
 
-NEM
+[[nem]]
 
 net energy metering
 

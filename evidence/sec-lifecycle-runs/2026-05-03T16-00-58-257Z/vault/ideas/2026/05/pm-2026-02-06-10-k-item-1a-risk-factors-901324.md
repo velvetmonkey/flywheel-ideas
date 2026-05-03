@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/1413329/000162828026005939/pm-20
 
 Risk Factors.
 
-The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual outcome of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
+The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual [[outcome]] of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
 
 Forward-Looking and Cautionary Statements
 
@@ -94,7 +94,7 @@ requirements regarding testing, disclosure and performance standards for tar, ni
 
 •
 
-disclosure, restrictions, or bans of tobacco and nicotine-containing product ingredients, components or other product features, including bans on the flavors of certain tobacco and nicotine-containing products, and restrictions on certain device features;
+disclosure, restrictions, or bans of tobacco and nicotine-containing product ingredients, components or other product [[features]], including bans on the flavors of certain tobacco and nicotine-containing products, and restrictions on certain device features;
 
 •
 
@@ -142,6 +142,6 @@ ZYN
 
 products will receive authorizations, particularly if there is a significant uptake in youth or non-nicotine user initiation.
 
-The commercialization of our products in the United States is dependent on successfully managing compliance with federal, state, and local laws, regulations, legal agreements, and related interpretations. Failure to successfully manage compliance and to resolve any disputes that may arise regarding the application of legal and administrative requirements to our products could negatively impact the timing, manner, or success of our SFP commercialization in the United States, which could in turn have a material adverse effect on our results of operations, revenues, cash flows, or profitability.
+The commercialization of our products in the United States is dependent on successfully managing compliance with federal, state, and local laws, regulations, legal agreements, and related interpretations. Failure to successfully manage compliance and to resolve any [[disputes]] that may arise regarding the application of legal and administrative requirements to our products could negatively impact the timing, manner, or success of our SFP commercialization in the United States, which could in turn have a material adverse effect on our results of [[operations]], revenues, cash flows, or profitability.
 
 We face intense competition, and our failure to compete effectively could have a material adverse effect on our profitability and results of operations

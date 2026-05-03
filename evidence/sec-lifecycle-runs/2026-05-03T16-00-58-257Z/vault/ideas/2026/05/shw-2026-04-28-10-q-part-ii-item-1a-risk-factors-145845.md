@@ -30,7 +30,7 @@ SIGNATURES
 
 40
 
-PART I. FINANCIAL INFORMATION
+PART I. [[financials|FINANCIAL]] INFORMATION
 
 Item 1. Financial Statements
 
@@ -1376,7 +1376,7 @@ BASIS OF PRESENTATION
 
 The accompanying unaudited condensed consolidated financial statements included in this report have been prepared by management of The Sherwin-Williams Company (herein referred to as the Company) in accordance with U.S. generally accepted accounting principles (US GAAP) for interim financial information and the instructions to Form 10-Q. Accordingly, they do not include all of the information and footnotes required by US GAAP for complete financial statements. In the opinion of management, all adjustments (consisting of normal recurring accruals) considered necessary for a fair presentation have been included. The condensed consolidated financial statements include the accounts of the Company and all consolidated subsidiaries. Intercompany accounts and transactions have been eliminated. The Company's share of earnings or losses from nonconsolidated affiliates is included in the condensed consolidated financial statements using the equity method of accounting when the Company is able to exercise significant influence over the operating and financial decisions of the affiliate.
 
-The Company has historically experienced, and expects to continue to experience, variability in quarterly results. The results of operations for the three months ended March 31, 2026 are not indicative of the results to be expected for the full year as business is seasonal in nature with the majority of Net sales for the reportable segments traditionally occurring during the second and third quarters. However, periods of economic uncertainty can alter the Company's seasonal patterns.
+The Company has historically experienced, and expects to continue to experience, variability in quarterly results. The results of [[operations]] for the three months ended March 31, 2026 are not indicative of the results to be expected for the full year as business is seasonal in nature with the majority of Net sales for the reportable segments traditionally occurring during the second and third quarters. However, periods of economic uncertainty can alter the Company's seasonal patterns.
 
 Since
 

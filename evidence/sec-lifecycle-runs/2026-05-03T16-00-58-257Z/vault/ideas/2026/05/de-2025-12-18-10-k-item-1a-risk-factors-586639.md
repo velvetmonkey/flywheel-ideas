@@ -34,7 +34,7 @@ The demand for our products and services depends on the fundamentals in the mark
 
 Sustained general negative economic conditions and outlook could also affect construction and housing activities, and energy prices and demand, which could decrease demand for construction and turf equipment and could have a material adverse effect on our financial results.
 
-Uncertain or negative outlook with respect to pervasive U.S. fiscal issues as well as general economic conditions and outlook, such as market volatility, inflation, or interest rate changes, have caused and could continue to cause significant changes in market liquidity conditions. Such changes could impact access to funding and associated funding costs, which could reduce our earnings and cash flows.
+Uncertain or negative outlook with respect to pervasive U.S. fiscal issues as well as general economic conditions and outlook, such as market volatility, inflation, or interest rate changes, have caused and could continue to cause significant changes in market [[liquidity]] conditions. Such changes could impact access to funding and associated funding costs, which could reduce our earnings and cash flows.
 
 We face risks associated with international, national, and regional trade laws, regulations, and policies that could materially impair our profitability.
 

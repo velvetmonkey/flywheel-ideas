@@ -26,13 +26,13 @@ section in our 2024 Form 10-K and within MD&A. We note these factors for investo
 
 Item 1A. Risk Factors
 
-section in our 2024 Form 10-K or within MD&A, or other risks currently unknown, could have a material adverse effect on our business, financial condition or results of operations, or we may be required to increase our accruals for contingencies. It is not possible to predict or identify all such factors. Consequently, you should not consider the following to be a complete discussion of all potential risks or uncertainties:
+section in our 2024 Form 10-K or within MD&A, or other risks currently unknown, could have a material adverse effect on our business, financial condition or results of [[operations]], or we may be required to increase our accruals for contingencies. It is not possible to predict or identify all such factors. Consequently, you should not consider the following to be a complete discussion of all potential risks or uncertainties:
 
 Risks Related to Our Business, Industry and Operations, and Business Development
 
 •
 
-the outcome of R&D activities, including the ability to meet anticipated pre-clinical or clinical endpoints, commencement and/or completion dates for our pre-clinical or clinical trials, regulatory submission dates, and/or regulatory approval and/or launch dates; the possibility of unfavorable pre-clinical and clinical trial results, including the possibility of unfavorable new pre-clinical or clinical data and further analyses of existing pre-clinical or clinical data; risks associated with preliminary, early stage or interim data; the risk that pre-clinical and clinical trial data are subject to differing interpretations and assessments, including during the peer review/publication process, in the scientific community generally, and by regulatory authorities; whether and when additional data from our pipeline programs will be published in scientific journal publications, and if so, when and with what modifications and interpretations; and uncertainties regarding the future development of our product candidates, including whether or when our product candidates will advance to future studies or phases of development or whether or when regulatory applications may be filed for any of our product candidates, including as a result of clinical trial data or regulatory feedback that could impact the future development of our product candidates, including our vaccine candidates such as our next generation pneumococcal conjugate vaccine candidate;
+the [[outcome]] of R&D activities, including the ability to meet anticipated pre-clinical or clinical endpoints, commencement and/or completion dates for our pre-clinical or clinical trials, regulatory submission dates, and/or regulatory approval and/or launch dates; the possibility of unfavorable pre-clinical and clinical trial results, including the possibility of unfavorable new pre-clinical or clinical data and further analyses of existing pre-clinical or clinical data; risks associated with preliminary, early stage or interim data; the risk that pre-clinical and clinical trial data are subject to differing interpretations and assessments, including during the peer review/publication process, in the scientific community generally, and by regulatory authorities; whether and when additional data from our pipeline programs will be published in scientific journal publications, and if so, when and with what modifications and interpretations; and uncertainties regarding the future development of our product candidates, including whether or when our product candidates will advance to future studies or phases of development or whether or when regulatory applications may be filed for any of our product candidates, including as a result of clinical trial data or regulatory feedback that could impact the future development of our product candidates, including our vaccine candidates such as our next generation pneumococcal conjugate vaccine candidate;
 
 54
 
@@ -94,7 +94,7 @@ any significant issues related to the outsourcing of certain operational and sta
 
 •
 
-any significant issues related to our JVs and other third-party business arrangements, including modifications or disputes related to supply agreements or other contracts with customers including governments or other payors;
+any significant issues related to our JVs and other third-party business arrangements, including modifications or [[disputes]] related to supply agreements or other contracts with customers including governments or other payors;
 
 •
 
