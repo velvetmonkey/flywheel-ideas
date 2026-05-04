@@ -1,0 +1,1685 @@
+---
+id: idea-rD1rLaEx
+type: idea
+state: nascent
+title: TMUS 2024-04-26 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:48:02.779Z'
+date: '2026-05-03'
+created: '2026-05-03T20:48:03.219Z'
+---
+# T-Mobile US, Inc. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2024-04-26
+Source: https://www.sec.gov/Archives/edgar/data/1283699/000128369924000065/tmus-20240331.htm
+
+Risk Factors
+
+43
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+43
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+44
+
+Item 4.
+
+Mine Safety Disclosures
+
+44
+
+Item 5.
+
+Other Information
+
+44
+
+Item 6.
+
+Exhibits
+
+45
+
+Signatures
+
+46
+
+2
+
+Index for Notes to the Condensed Consolidated Financial Statements
+
+PART I. FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+T-Mobile US, Inc.
+
+Condensed Consolidated Balance Sheets
+
+(Unaudited)
+
+(in millions, except share and per share amounts)
+
+March 31,
+
+2024
+
+December 31,
+
+2023
+
+Assets
+
+Current assets
+
+Cash and cash equivalents
+
+$
+
+6,708
+
+$
+
+5,135
+
+Accounts receivable, net of allowance for credit losses of $
+
+161
+
+and $
+
+161
+
+4,253
+
+4,692
+
+Equipment installment plan receivables, net of allowance for credit losses and imputed discount of $
+
+614
+
+and $
+
+623
+
+4,059
+
+4,456
+
+Inventory
+
+1,521
+
+1,678
+
+Prepaid expenses
+
+715
+
+702
+
+Other current assets
+
+2,039
+
+2,352
+
+Total current assets
+
+19,295
+
+19,015
+
+Property and equipment, net
+
+39,286
+
+40,432
+
+Operating lease right-of-use assets
+
+26,766
+
+27,135
+
+Financing lease right-of-use assets
+
+3,180
+
+3,270
+
+Goodwill
+
+12,234
+
+12,234
+
+Spectrum licenses
+
+97,154
+
+96,707
+
+Other intangible assets, net
+
+2,445
+
+2,618
+
+Equipment installment plan receivables due after one year, net of allowance for credit losses and imputed discount of $
+
+143
+
+and $
+
+150
+
+1,908
+
+2,042
+
+Other assets
+
+4,000
+
+4,229
+
+Total assets
+
+$
+
+206,268
+
+$
+
+207,682
+
+Liabilities and Stockholders' Equity
+
+Current liabilities
+
+Accounts payable and accrued liabilities
+
+$
+
+7,720
+
+$
+
+10,373
+
+Short-term debt
+
+5,356
+
+3,619
+
+Deferred revenue
+
+846
+
+825
+
+Short-term operating lease liabilities
+
+3,443
+
+3,555
+
+Short-term financing lease liabilities
+
+1,265
+
+1,260
+
+Other current liabilities
+
+1,933
+
+1,296
+
+Total current liabilities
+
+20,563
+
+20,928
+
+Long-term debt
+
+71,361
+
+69,903
+
+Long-term debt to affiliates
+
+1,496
+
+1,496
+
+Tower obligations
+
+3,751
+
+3,777
+
+Deferred tax liabilities
+
+14,187
+
+13,458
+
+Operating lease liabilities
+
+27,827
+
+28,240
+
+Financing lease liabilities
+
+1,163
+
+1,236
+
+Other long-term liabilities
+
+3,846
+
+3,929
+
+Total long-term liabilities
+
+123,631
+
+122,039
+
+Commitments and contingencies (Note 12)
+
+Stockholders' equity
+
+Common stock, par value $
+
+0.00001
+
+per share,
+
+2,000,000,000
+
+shares authorized;
+
+1,266,294,032
+
+and
+
+1,262,904,154
+
+shares issued,
+
+1,177,240,110
+
+and
+
+1,195,807,331
+
+shares outstanding
+
+—
+
+—
+
+Additional paid-in capital
+
+67,786
+
+67,705
+
+Treasury stock, at cost,
+
+89,053,922
+
+and
+
+67,096,823
+
+shares
+
+(
+
+12,982
+
+)
+
+(
+
+9,373
+
+)
+
+Accumulated other comprehensive loss
+
+(
+
+926
+
+)
+
+(
+
+964
+
+)
+
+Retained earnings
+
+8,196
+
+7,347
+
+Total stockholders' equity
+
+62,074
+
+64,715
+
+Total liabilities and stockholders' equity
+
+$
+
+206,268
+
+$
+
+207,682
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+3
+
+Index for Notes to the Condensed Consolidated Financial Statements
+
+T-Mobile US, Inc.
+
+Condensed Consolidated Statements of Comprehensive Income
+
+(Unaudited)
+
+Three Months Ended March 31,
+
+(in millions, except share and per share amounts)
+
+2024
+
+2023
+
+Revenues
+
+Postpaid revenues
+
+$
+
+12,631
+
+$
+
+11,862
+
+Prepaid revenues
+
+2,403
+
+2,417
+
+Wholesale and other service revenues
+
+1,062
+
+1,267
+
+Total service revenues
+
+16,096
+
+15,546
+
+Equipment revenues
+
+3,251
+
+3,719
+
+Other revenues
+
+247
+
+367
+
+Total revenues
+
+19,594
+
+19,632
+
+Operating expenses
+
+Cost of services, exclusive of depreciation and amortization shown separately below
+
+2,688
+
+3,061
+
+Cost of equipment sales, exclusive of depreciation and amortization shown separately below
+
+4,399
+
+4,588
+
+Selling, general and administrative
+
+5,138
+
+5,425
+
+Gain on disposal group held for sale
+
+—
+
+(
+
+42
+
+)
+
+Depreciation and amortization
+
+3,371
+
+3,203
+
+Total operating expenses
+
+15,596
+
+16,235
+
+Operating income
+
+3,998
+
+3,397
+
+Other expense, net
+
+Interest expense, net
+
+(
+
+880
+
+)
+
+(
+
+835
+
+)
+
+Other income, net
+
+20
+
+9
+
+Total other expense, net
+
+(
+
+860
+
+)
+
+(
+
+826
+
+)
+
+Income before income taxes
+
+3,138
+
+2,571
+
+Income tax expense
+
+(
+
+764
+
+)
+
+(
+
+631
+
+)
+
+Net income
+
+$
+
+2,374
+
+$
+
+1,940
+
+Net income
+
+$
+
+2,374
+
+$
+
+1,940
+
+Other comprehensive income, net of tax
+
+Reclassification of loss from cash flow hedges, net of tax effect of $
+
+15
+
+and $
+
+14
+
+43
+
+40
+
+Unrealized gain on foreign currency translation adjustment, net of tax effect of $
+
+0
+
+, and $
+
+0
+
+—
+
+2
+
+Amortization of actuarial gain, net of tax effect of $(
+
+2
+
+) and $
+
+0
+
+(
+
+5
+
+)
+
+—
+
+Other comprehensive income
+
+38
+
+42
+
+Total comprehensive income
+
+$
+
+2,412
+
+$
+
+1,982
+
+Earnings per share
+
+Basic
+
+$
+
+2.00
+
+$
+
+1.59
+
+Diluted
+
+$
+
+2.00
+
+$
+
+1.58
+
+Weighted-average shares outstanding
+
+Basic
+
+1,185,298,497
+
+1,219,608,362
+
+Diluted
+
+1,189,092,019
+
+1,224,604,698
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+4
+
+Index for Notes to the Condensed Consolidated Financial Statements
+
+T-Mobile US, Inc.
+
+Condensed Consolidated Statements of Cash Flows
+
+(Unaudited)
+
+Three Months Ended March 31,
+
+(in millions)
+
+2024
+
+2023
+
+Operating activities
+
+Net income
+
+$
+
+2,374
+
+$
+
+1,940
+
+Adjustments to reconcile net income to net cash provided by operating activities
+
+Depreciation and amortization
+
+3,371
+
+3,203
+
+Stock-based compensation expense
+
+140
+
+177
+
+Deferred income tax expense
+
+715
+
+611
+
+Bad debt expense
+
+282
+
+222
+
+Losses from sales of receivables
+
+21
+
+38
+
+Gain on remeasurement of disposal group held for sale
+
+—
+
+(
+
+13
+
+)
+
+Changes in operating assets and liabilities
+
+Accounts receivable
+
+(
+
+416
+
+)
+
+(
+
+1,268
+
+)
+
+Equipment installment plan receivables
+
+277
+
+152
+
+Inventory
+
+170
+
+129
+
+Operating lease right-of-use assets
+
+856
+
+1,008
+
+Other current and long-term assets
+
+160
+
+(
+
+142
+
+)
+
+Accounts payable and accrued liabilities
+
+(
+
+1,734
+
+)
+
+(
+
+882
+
+)
+
+Short- and long-term operating lease liabilities
+
+(
+
+1,017
+
+)
+
+(
+
+1,009
+
+)
+
+Other current and long-term liabilities
+
+(
+
+172
+
+)
+
+(
+
+183
+
+)
+
+Other, net
+
+57
+
+68
+
+Net cash provided by operating activities
+
+5,084
+
+4,051
+
+Investing activities
+
+Purchases of property and equipment, including capitalized interest of $(
+
+9
+
+) and $(
+
+14
+
+)
+
+(
+
+2,627
+
+)
+
+(
+
+3,001
+
+)
+
+Purchases of spectrum licenses and other intangible assets, including deposits
+
+(
+
+61
+
+)
+
+(
+
+73
+
+)
+
+Proceeds from sales of tower sites
+
+—
+
+6
+
+Proceeds related to beneficial interests in securitization transactions
+
+890
+
+1,345
+
+Other, net
+
+11
+
+(
+
+5
+
+)
+
+Net cash used in investing activities
+
+(
+
+1,787
+
+)
+
+(
+
+1,728
+
+)
+
+Financing activities
+
+Proceeds from issuance of long-term debt
+
+3,473
+
+3,013
+
+Repayments of financing lease obligations
+
+(
+
+327
+
+)
+
+(
+
+306
+
+)
+
+Repayments of long-term debt
+
+(
+
+223
+
+)
+
+(
+
+131
+
+)
+
+Repurchases of common stock
+
+(
+
+3,594
+
+)
+
+(
+
+4,619
+
+)
+
+Dividends on common stock
+
+(
+
+769
+
+)
+
+—
+
+Tax withholdings on share-based awards
+
+(
+
+192
+
+)
+
+(
+
+187
+
+)
+
+Other, net
+
+(
+
+34
+
+)
+
+(
+
+43
+
+)
+
+Net cash used in financing activities
+
+(
+
+1,666
+
+)
+
+(
+
+2,273
+
+)
+
+Change in cash and cash equivalents, including restricted cash and cash held for sale
+
+1,631
+
+50
+
+Cash and cash equivalents, including restricted cash and cash held for sale
+
+Beginning of period
+
+5,307
+
+4,674
+
+End of period
+
+$
+
+6,938
+
+$
+
+4,724
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+5
+
+Index for Notes to the Condensed Consolidated Financial Statements
+
+T-Mobile US, Inc.
+
+Condensed Consolidated Statement of Stockholders' Equity
+
+(Unaudited)
+
+(in millions, except share and per share amounts)
+
+Common Stock Outstanding
+
+Treasury Stock Outstanding
+
+Treasury Shares at Cost
+
+Par Value and Additional Paid-in Capital
+
+Accumulated Other Comprehensive Loss
+
+Retained Earnings (Accumulated Deficit)
+
+Total Stockholders' Equity
+
+Balance as of December 31, 2023
+
+1,195,807,331
+
+67,096,823
+
+$
+
+(
+
+9,373
+
+)
+
+$
+
+67,705
+
+$
+
+(
+
+964
+
+)
+
+$
+
+7,347
+
+$
+
+64,715
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+—
+
+2,374
+
+2,374
+
+Dividends declared ($
+
+1.30
+
+per share)
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+1,525
+
+)
+
+(
+
+1,525
+
+)
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+38
+
+—
+
+38
+
+Stock-based compensation
+
+—
+
+—
+
+—
+
+152
+
+—
+
+—
+
+152
+
+Stock issued for employee stock purchase plan
+
+950,082
+
+—
+
+—
+
+112
+
+—
+
+—
+
+112
+
+Issuance of vested restricted stock units
+
+3,525,790
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Shares withheld related to net share settlement of stock awards and stock options
+
+(
+
+1,171,055
+
+)
+
+—
+
+—
+
+(
+
+192
+
+)
+
+—
+
+—
+
+(
+
+192
+
+)
+
+Repurchases of common stock
+
+(
+
+21,933,790
+
+)
+
+21,933,790
+
+(
+
+3,604
+
+)
+
+—
+
+—
+
+—
+
+(
+
+3,604
+
+)
+
+Other, net
+
+61,752
+
+23,309
+
+(
+
+5
+
+)
+
+9
+
+—
+
+—
+
+4
+
+Balance as of March 31, 2024
+
+1,177,240,110
+
+89,053,922
+
+$
+
+(
+
+12,982
+
+)
+
+$
+
+67,786
+
+$
+
+(
+
+926
+
+)
+
+$
+
+8,196
+
+$
+
+62,074
+
+Balance as of December 31, 2022
+
+1,233,960,078
+
+22,916,449
+
+$
+
+(
+
+3,016
+
+)
+
+$
+
+73,941
+
+$
+
+(
+
+1,046
+
+)
+
+$
+
+(
+
+223
+
+)
+
+$
+
+69,656
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+—
+
+1,940
+
+1,940
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+42
+
+—
+
+42
+
+Stock-based compensation
+
+—
+
+—
+
+—
+
+155
+
+—
+
+—
+
+155
+
+Stock issued for employee stock purchase plan
+
+1,063,426
+
+—
+
+—
+
+126
+
+—
+
+—
+
+126
+
+Issuance of vested restricted stock units
+
+3,844,801
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Shares withheld related to net share settlement of stock awards and stock options
+
+(
+
+1,263,356
+
+)
+
+—
+
+—
+
+(
+
+187
+
+)
+
+—
+
+—
+
+(
+
+187
+
+)
+
+Repurchases of common stock
+
+(
+
+32,963,940
+
+)
+
+32,963,940
+
+(
+
+4,810
+
+)
+
+—
+
+—
+
+—
+
+(
+
+4,810
+
+)
+
+Other, net
+
+55,316
+
+30,275
+
+(
+
+5
+
+)
+
+8
+
+—
+
+—
+
+3
+
+Balance as of March 31, 2023
+
+1,204,696,325
+
+55,910,664
+
+$
+
+(
+
+7,831
+
+)
+
+$
+
+74,043
+
+$
+
+(
+
+1,004
+
+)
+
+$
+
+1,717
+
+$
+
+66,925
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+6
+
+Index for Notes to the Condensed Consolidated Financial Statements
+
+T-Mobile US, Inc.
+
+Index for Notes to the Condensed Consolidated Financial Statements
+
+Note 1
+
+Summary of Significant Accounting Policies
+
+8
+
+Note 2
+
+Business Combination
+
+8
+
+Note 3
+
+Receivables and Related Allowance for Credit Losses
+
+9
+
+Note 4
+
+Sales of Certain Receivables
+
+11
+
+Note 5
+
+Spectrum License Transactions
+
+13
+
+Note 6
+
+Fair Value Measurements
+
+14
+
+Note 7
+
+Debt
+
+15
+
+Note 8
+
+Tower Obligations
+
+17
+
+Note 9
+
+Revenue from Contracts with Customers
+
+18
+
+Note 10
+
+Stockholder Return Program
+
+20
+
+Note 11
+
+Earnings Per Share
+
+21
+
+Note 12
+
+Commitments and Contingencies
+
+21
+
+Note 13
+
+Additional Financial Information
+
+24
+
+Note 14
+
+Subsequent Events
+
+24
+
+7
+
+Index for Notes to the Condensed Consolidated Financial Statements
+
+T-Mobile US, Inc.
+
+Notes to the Condensed Consolidated Financial Statements
+
+Note 1 – Summary of Significant Accounting Policies
+
+Basis of Presentation
+
+The unaudited condensed consolidated financial statements of T-Mobile US, Inc. ("T-Mobile," "we," "our," "us" or the "Company") include all adjustments of a normal recurring nature necessary for the fair presentation of the results for the interim periods presented. The results for the interim periods are not necessarily indicative of those for the full year. The condensed consolidated financial statements should be read in conjunction with our consolidated financial statements included in our Annual Report on Form 10-K for the year ended December 31, 2023.
+
+The condensed consolidated financial statements include the balances and results of operations of T-Mobile and our consolidated subsidiaries. We consolidate majority-owned subsidiaries over which we exercise control, as well as variable interest entities ("VIEs") for which we are deemed to be the primary beneficiary and VIEs, which cannot be deconsolidated, such as those related to our obligations to pay for the management and operation of certain of our wireless communications tower sites. Intercompany transactions and balances have been eliminated in consolidation.
+
+The preparation of financial statements in conformity with United States ("U.S.") generally accepted accounting principles ("GAAP") requires our management to make estimates and assumptions that affect the financial statements and accompanying notes.
+
+Estimates are based on historical experience, where applicable, and other assumptions that management believes are reasonable under the circumstances. Estimates are inherently subject to judgment and actual results could differ from those estimates.
+
+Accounting Pronouncements Not Yet Adopted
+
+Segment Reporting Disclosures
+
+In November 2023, the Financial Accounting Standards Board ("FASB") issued Accounting Standards Update ("ASU") 2023-07, "Segment Reporting (Topic 280): Improvements to Reportable Segment Disclosures." The standard expands reportable segment disclosure requirements for public business entities primarily through enhanced disclosures about significant segment expenses that are regularly provided to the chief operating decision maker ("CODM") and included within each reported measure of segment profit (referred to as the "significant expense principle"). The standard will become effective for us for our fiscal year 2024 annual financial statements and interim financial statements thereafter and will be applied retrospectively for all prior periods presented in the financial statements, with early adoption permitted. We plan to adopt the standard when it becomes effective for us beginning in our fiscal year 2024 annual financial statements. We are currently evaluating the impact this guidance will have on the disclosures included in the Notes to the Consolidated Financial Statements.
+
+Income Tax Disclosures

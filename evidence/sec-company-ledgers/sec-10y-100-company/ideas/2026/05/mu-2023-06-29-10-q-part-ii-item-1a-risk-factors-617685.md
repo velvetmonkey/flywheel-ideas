@@ -1,0 +1,1789 @@
+---
+id: idea-EWw4am26
+type: idea
+state: nascent
+title: MU 2023-06-29 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T19:30:17.685Z'
+date: '2026-05-03'
+created: '2026-05-03T19:30:18.039Z'
+---
+# MICRON TECHNOLOGY INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2023-06-29
+Source: https://www.sec.gov/Archives/edgar/data/723125/000072312523000041/mu-20230601.htm
+
+Risk Factors
+
+43
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+63
+
+Item 6.
+
+Exhibits
+
+64
+
+Signatures
+
+65
+
+2
+
+|
+
+2023 Q3 10-Q
+
+Table of Contents
+
+Definitions of Commonly Used Terms
+
+As used herein, "we," "our," "us," and similar terms include Micron Technology, Inc. and its consolidated subsidiaries, unless the context indicates otherwise. Abbreviations, terms, or acronyms are commonly used or found in multiple locations throughout this report and include the following:
+
+Term
+
+Definition
+
+Term
+
+Definition
+
+2023 Notes
+
+2.497% Senior Notes due April 2023, repaid November 2021
+
+DDR
+
+Double data rate DRAM
+
+2024 Notes
+
+4.640% Senior Notes due February 2024, repaid November 2021
+
+EBITDA
+
+Earnings before interest, taxes, depreciation, and amortization
+
+2024 Term Loan A
+
+Senior Term Loan A due October 2024
+
+ESG
+
+Environmental, social, and governance
+
+2025 Term Loan A
+
+Senior Term Loan A due November 2025
+
+EUV
+
+Extreme ultraviolet lithography
+
+2026 Term Loan A
+
+Senior Term Loan A due November 2026
+
+GDDR
+
+Graphics double data rate
+
+2027 Term Loan A
+
+Senior Term Loan A due November 2027
+
+HBM
+
+High-bandwidth memory, a stacked DRAM technology optimized for memory-bandwidth intensive applications
+
+2026 Notes
+
+4.975% Senior Notes due February 2026
+
+Inotera
+
+Inotera Memories, Inc.
+
+2027 Notes
+
+4.185% Senior Notes due February 2027
+
+LIBOR
+
+London Interbank Offered Rate
+
+2028 Notes
+
+5.375% Senior Notes due April 2028
+
+LPDRAM
+
+Low-power DRAM
+
+2029 A Notes
+
+5.327% Senior Notes due February 2029
+
+MCP
+
+Multichip packaged solutions with managed NAND and LPDRAM
+
+2029 B Notes
+
+6.750% Senior Notes due November 2029
+
+Micron
+
+Micron Technology, Inc. (Parent Company)
+
+2030 Notes
+
+4.663% Senior Notes due February 2030
+
+NRV
+
+Net realizable value
+
+2032 Green Bonds
+
+2.703% Senior Notes due April 2032
+
+OEM
+
+Original equipment manufacturer
+
+2033 A Notes
+
+5.875% Senior Notes due February 2033
+
+Qimonda
+
+Qimonda AG
+
+2033 B Notes
+
+5.875% Senior Notes due September 2033
+
+Revolving Credit Facility
+
+$2.5 billion Revolving Credit Facility due May 2026
+
+2041 Notes
+
+3.366% Senior Notes due November 2041
+
+SOFR
+
+Secured Overnight Financing Rate
+
+2051 Notes
+
+3.477% Senior Notes due November 2051
+
+SSD
+
+Solid state drive
+
+We are an industry leader in innovative memory and storage solutions transforming how the world uses information to enrich life
+
+for all
+
+. With a relentless focus on our customers, technology leadership, and manufacturing and operational excellence, Micron delivers a rich portfolio of high-performance DRAM, NAND, and NOR memory and storage products through our Micron® and Crucial® brands. Every day, the innovations that our people create fuel the data economy, enabling advances in artificial intelligence and 5G applications that unleash opportunities — from the data center to the intelligent edge and across the client and mobile user experience.
+
+Micron, Crucial, any associated logos, and all other Micron trademarks are the property of Micron. Other product names or trademarks that are not owned by Micron are for identification purposes only and may be the trademarks of their respective owners.
+
+All period references herein are to our fiscal periods unless otherwise indicated. Our fiscal year is the 52 or 53-week period ending on the Thursday closest to August 31. Fiscal years 2023 and 2022 each contain 52 weeks.
+
+3
+
+Table of Contents
+
+Available Information
+
+Investors and others should note that we announce material financial information about our business and products through a variety of means, including our investor relations website (investors.micron.com), filings with the U.S. Securities and Exchange Commission ("SEC"), press releases, public conference calls, blog posts (micron.com/about/blog), and webcasts. We use these channels to achieve broad, non-exclusionary distribution of information to the public and for complying with our disclosure obligations under Regulation FD. Therefore, we encourage investors, the media, and others interested in our company to review the information we post on such channels.
+
+Forward-Looking Statements
+
+This Form 10-Q contains trend information and other forward-looking statements that involve a number of risks and uncertainties. Such forward-looking statements may be identified by words such as "anticipate," "expect," "intend," "pledge," "committed," "plan," "opportunities," "future," "believe," "target," "on track," "estimate," "continue," "likely," "may," "will," "would," "should," "could," and variations of such words and similar expressions. However, the absence of these words or similar expressions does not mean that a statement is not forward-looking. Specific forward-looking statements include, but are not limited to, statements such as those made regarding the expected one-time payment to the Qimonda estate; restructure plans and expected related savings and charges; market conditions and profitability in our industry; potential write-downs of inventories in future quarters; reductions in our wafer starts and the corresponding impact on our costs in 2023; the impact of the Cyberspace Administration of China decision; the timing for construction and ramping of production for new memory manufacturing fabs in the United States; the construction or expansion of our backend facilities; the receipt of government grants and investment tax credits; the sufficiency of our cash and investments; capital spending in 2023; funding of sustainability-focused projects; and allocation and dispersal of the net proceeds of our 2032 Green Bonds. Our actual results could differ materially from our historical results and those discussed in the forward-looking statements. Factors that could cause actual results to differ materially include, but are not limited to, those identified in "Part II. Other Information – Item 1A. Risk Factors."
+
+4
+
+|
+
+2023 Q3 10-Q
+
+Table of Contents
+
+PART I. FINANCIAL INFORMATION
+
+ITEM 1. FINANCIAL STATEMENTS
+
+Micron Technology, Inc.
+
+Consolidated Statements of Operations
+
+(In millions, except per share amounts)
+
+(Unaudited)
+
+Quarter ended
+
+Nine months ended
+
+June 1,
+
+2023
+
+June 2,
+
+2022
+
+June 1,
+
+2023
+
+June 2,
+
+2022
+
+Revenue
+
+$
+
+3,752
+
+$
+
+8,642
+
+$
+
+11,530
+
+$
+
+24,115
+
+Cost of goods sold
+
+4,420
+
+4,607
+
+12,511
+
+12,839
+
+Gross margin
+
+(
+
+668
+
+)
+
+4,035
+
+(
+
+981
+
+)
+
+11,276
+
+Research and development
+
+758
+
+773
+
+2,395
+
+2,277
+
+Selling, general, and administrative
+
+219
+
+264
+
+701
+
+786
+
+Restructure and asset impairments
+
+68
+
+—
+
+167
+
+43
+
+Other operating (income) expense, net
+
+48
+
+(
+
+6
+
+)
+
+29
+
+(
+
+11
+
+)
+
+Operating income (loss)
+
+(
+
+1,761
+
+)
+
+3,004
+
+(
+
+4,273
+
+)
+
+8,181
+
+Interest income
+
+127
+
+20
+
+334
+
+42
+
+Interest expense
+
+(
+
+119
+
+)
+
+(
+
+44
+
+)
+
+(
+
+259
+
+)
+
+(
+
+144
+
+)
+
+Other non-operating income (expense), net
+
+—
+
+8
+
+(
+
+2
+
+)
+
+(
+
+61
+
+)
+
+(
+
+1,753
+
+)
+
+2,988
+
+(
+
+4,200
+
+)
+
+8,018
+
+Income tax (provision) benefit
+
+(
+
+139
+
+)
+
+(
+
+358
+
+)
+
+(
+
+201
+
+)
+
+(
+
+832
+
+)
+
+Equity in net income (loss) of equity method investees
+
+(
+
+4
+
+)
+
+(
+
+4
+
+)
+
+(
+
+2
+
+)
+
+9
+
+Net income (loss)
+
+$
+
+(
+
+1,896
+
+)
+
+$
+
+2,626
+
+$
+
+(
+
+4,403
+
+)
+
+$
+
+7,195
+
+Earnings (loss) per share
+
+Basic
+
+$
+
+(
+
+1.73
+
+)
+
+$
+
+2.36
+
+$
+
+(
+
+4.03
+
+)
+
+$
+
+6.44
+
+Diluted
+
+(
+
+1.73
+
+)
+
+2.34
+
+(
+
+4.03
+
+)
+
+6.38
+
+Number of shares used in per share calculations
+
+Basic
+
+1,094
+
+1,112
+
+1,092
+
+1,117
+
+Diluted
+
+1,094
+
+1,121
+
+1,092
+
+1,127
+
+See accompanying notes to consolidated financial statements.
+
+5
+
+Table of Contents
+
+Micron Technology, Inc.
+
+Consolidated Statements of Comprehensive Income (Loss)
+
+(In millions)
+
+(Unaudited)
+
+Quarter ended
+
+Nine months ended
+
+June 1,
+
+2023
+
+June 2,
+
+2022
+
+June 1,
+
+2023
+
+June 2,
+
+2022
+
+Net income (loss)
+
+$
+
+(
+
+1,896
+
+)
+
+$
+
+2,626
+
+$
+
+(
+
+4,403
+
+)
+
+$
+
+7,195
+
+Other comprehensive income (loss), net of tax
+
+Gains (losses) on derivative instruments
+
+22
+
+(
+
+210
+
+)
+
+222
+
+(
+
+330
+
+)
+
+Gains (losses) on investments
+
+12
+
+(
+
+18
+
+)
+
+—
+
+(
+
+38
+
+)
+
+Foreign currency translation adjustments
+
+1
+
+—
+
+(
+
+1
+
+)
+
+1
+
+Pension liability adjustments
+
+(
+
+2
+
+)
+
+2
+
+(
+
+1
+
+)
+
+1
+
+Other comprehensive income (loss)
+
+33
+
+(
+
+226
+
+)
+
+220
+
+(
+
+366
+
+)
+
+Total comprehensive income (loss)
+
+$
+
+(
+
+1,863
+
+)
+
+$
+
+2,400
+
+$
+
+(
+
+4,183
+
+)
+
+$
+
+6,829
+
+See accompanying notes to consolidated financial statements.
+
+6
+
+|
+
+2023 Q3 10-Q
+
+Table of Contents
+
+Micron Technology, Inc.
+
+Consolidated Balance Sheets
+
+(In millions, except par value amounts)
+
+(Unaudited)
+
+As of
+
+June 1,
+
+2023
+
+September 1,
+
+2022
+
+Assets
+
+Cash and equivalents
+
+$
+
+9,298
+
+$
+
+8,262
+
+Short-term investments
+
+1,054
+
+1,069
+
+Receivables
+
+2,429
+
+5,130
+
+Inventories
+
+8,238
+
+6,663
+
+Other current assets
+
+715
+
+657
+
+Total current assets
+
+21,734
+
+21,781
+
+Long-term marketable investments
+
+973
+
+1,647
+
+Property, plant, and equipment
+
+38,727
+
+38,549
+
+Operating lease right-of-use assets
+
+655
+
+678
+
+Intangible assets
+
+410
+
+421
+
+Deferred tax assets
+
+708
+
+702
+
+Goodwill
+
+1,252
+
+1,228
+
+Other noncurrent assets
+
+1,221
+
+1,277
+
+Total assets
+
+$
+
+65,680
+
+$
+
+66,283
+
+Liabilities and equity
+
+Accounts payable and accrued expenses
+
+$
+
+4,177
+
+$
+
+6,090
+
+Current debt
+
+259
+
+103
+
+Other current liabilities
+
+668
+
+1,346
+
+Total current liabilities
+
+5,104
+
+7,539
+
+Long-term debt
+
+12,986
+
+6,803
+
+Noncurrent operating lease liabilities
+
+603
+
+610
+
+Noncurrent unearned government incentives
+
+632
+
+589
+
+Other noncurrent liabilities
+
+950
+
+835
+
+Total liabilities
+
+20,275
+
+16,376
+
+Commitments and contingencies
+
+Shareholders' equity
+
+Common stock, $
+
+0.10
+
+par value,
+
+3,000
+
+shares authorized,
+
+1,236
+
+shares issued and
+
+1,095
+
+outstanding (
+
+1,226
+
+shares issued and
+
+1,094
+
+outstanding as of September 1, 2022)
+
+124
+
+123
+
+Additional capital
+
+10,782
+
+10,197
+
+Retained earnings
+
+42,391
+
+47,274
+
+Treasury stock,
+
+141
+
+shares held (
+
+132
+
+shares as of September 1, 2022)
+
+(
+
+7,552
+
+)
+
+(
+
+7,127
+
+)
+
+Accumulated other comprehensive income (loss)
+
+(
+
+340
+
+)
+
+(
+
+560
+
+)
+
+Total equity
+
+45,405
+
+49,907
+
+Total liabilities and equity
+
+$
+
+65,680
+
+$
+
+66,283
+
+See accompanying notes to consolidated financial statements.
+
+7
+
+Table of Contents
+
+Micron Technology, Inc.
+
+Consolidated Statements of Changes in Equity
+
+(In millions, except per share amounts)
+
+(Unaudited)
+
+Common Stock
+
+Additional Capital
+
+Retained Earnings
+
+Treasury Stock
+
+Accumulated Other Comprehensive
+
+Income (Loss)
+
+Total Shareholders' Equity
+
+Number
+
+of Shares
+
+Amount
+
+Balance at September 1, 2022
+
+1,226
+
+$
+
+123
+
+$
+
+10,197
+
+$
+
+47,274
+
+$
+
+(
+
+7,127
+
+)
+
+$
+
+(
+
+560
+
+)
+
+$
+
+49,907
+
+Net income (loss)
+
+—
+
+—
+
+—
+
+(
+
+195
+
+)
+
+—
+
+—
+
+(
+
+195
+
+)
+
+Other comprehensive income (loss), net
+
+—
+
+—
+
+—
+
+—
+
+—
+
+87
+
+87
+
+Stock issued under stock plans
+
+8
+
+—
+
+7
+
+—
+
+—
+
+—
+
+7
+
+Stock-based compensation expense
+
+—
+
+—
+
+146
+
+—
+
+—
+
+—
+
+146
+
+Repurchase of stock - repurchase program
+
+—
+
+—
+
+—
+
+—
+
+(
+
+425
+
+)
+
+—
+
+(
+
+425
+
+)
+
+Repurchase of stock - withholdings on employee equity awards
+
+(
+
+2
+
+)
+
+—
+
+(
+
+15
+
+)
+
+(
+
+80
+
+)
+
+—
+
+—
+
+(
+
+95
+
+)
+
+Dividends and dividend equivalents declared ($
+
+0.115
+
+per share)
+
+—
+
+—
+
+—
+
+(
+
+126
+
+)
+
+—
+
+—
+
+(
+
+126
+
+)
+
+Balance at December 1, 2022
+
+1,232
+
+$
+
+123
+
+$
+
+10,335
+
+$
+
+46,873
+
+$
+
+(
+
+7,552
+
+)
+
+$
+
+(
+
+473
+
+)
+
+$
+
+49,306
+
+Net income (loss)
+
+—
+
+—
+
+—
+
+(
+
+2,312
+
+)
+
+—
+
+—
+
+(
+
+2,312
+
+)
+
+Other comprehensive income (loss), net
+
+—
+
+—
+
+—
+
+—
+
+—
+
+100
+
+100
+
+Stock issued under stock plans
+
+3
+
+—
+
+142
+
+—
+
+—
+
+—
+
+142
+
+Stock-based compensation expense
+
+—
+
+—
+
+157
+
+—
+
+—
+
+—
+
+157
+
+Repurchase of stock - withholdings on employee equity awards
+
+—
+
+—
+
+(
+
+1
+
+)
+
+(
+
+7
+
+)
+
+—
+
+—
+
+(
+
+8
+
+)
+
+Dividends and dividend equivalents declared ($
+
+0.115
+
+per share)
+
+—
+
+—
+
+—
+
+(
+
+128
+
+)
+
+—
+
+—
+
+(
+
+128
+
+)
+
+Balance at March 2, 2023
+
+1,235
+
+$
+
+123
+
+$
+
+10,633
+
+$
+
+44,426
+
+$
+
+(
+
+7,552
+
+)
+
+$
+
+(
+
+373
+
+)
+
+$
+
+47,257
+
+Net income (loss)
+
+—
+
+—
+
+—
+
+(
+
+1,896
+
+)
+
+—
+
+—
+
+(
+
+1,896
+
+)
+
+Other comprehensive income (loss), net
+
+—
+
+—
+
+—
+
+—
+
+—
+
+33
+
+33
+
+Stock issued under stock plans
+
+1
+
+1
+
+6
+
+—
+
+—
+
+—
+
+7
+
+Stock-based compensation expense
+
+—
+
+—
+
+145
+
+—
+
+—
+
+—
+
+145
+
+Repurchase of stock - withholdings on employee equity awards
+
+—
+
+—
+
+(
+
+2
+
+)
+
+(
+
+11
+
+)
+
+—
+
+—
+
+(
+
+13
+
+)
+
+Dividends and dividend equivalents declared ($
+
+0.115
+
+per share)
+
+—
+
+—
+
+—
+
+(
+
+128
+
+)
+
+—
+
+—
+
+(
+
+128
+
+)
+
+Balance at June 1, 2023
+
+1,236
+
+$
+
+124
+
+$
+
+10,782
+
+$
+
+42,391
+
+$
+
+(
+
+7,552
+
+)
+
+$
+
+(
+
+340
+
+)
+
+$
+
+45,405
+
+See accompanying notes to consolidated financial statements.
+
+8
+
+|
+
+2023 Q3 10-Q
+
+Table of Contents
+
+Micron Technology, Inc.
+
+Consolidated Statements of Changes in Equity
+
+(In millions, except per share amounts)
+
+(Unaudited)
+
+Common Stock
+
+Additional Capital
+
+Retained Earnings
+
+Treasury Stock
+
+Accumulated Other Comprehensive
+
+Income (Loss)
+
+Total Shareholders' Equity
+
+Number
+
+of Shares
+
+Amount
+
+Balance at September 2, 2021
+
+1,216
+
+$
+
+122
+
+$
+
+9,453
+
+$
+
+39,051
+
+$
+
+(
+
+4,695
+
+)
+
+$
+
+2
+
+$
+
+43,933
+
+Net income (loss)
+
+—
+
+—
+
+—
+
+2,306
+
+—
+
+—
+
+2,306
+
+Other comprehensive income (loss), net
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+93
+
+)
+
+(
+
+93
+
+)
+
+Stock issued under stock plans
+
+5
+
+—
+
+5
+
+—
+
+—
+
+—
+
+5
+
+Stock-based compensation expense
+
+—
+
+—
+
+118
+
+—
+
+—
+
+—
+
+118
+
+Repurchase of stock - repurchase program
+
+—
+
+—
+
+—
+
+—
+
+(
+
+259
+
+)
+
+—
+
+(
+
+259
+
+)
+
+Repurchase of stock - withholdings on employee equity awards
+
+(

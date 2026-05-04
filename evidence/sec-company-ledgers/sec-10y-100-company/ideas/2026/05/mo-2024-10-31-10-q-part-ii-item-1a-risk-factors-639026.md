@@ -1,0 +1,2273 @@
+---
+id: idea-jZJeGz3w
+type: idea
+state: nascent
+title: MO 2024-10-31 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:43:59.026Z'
+date: '2026-05-03'
+created: '2026-05-03T21:43:59.379Z'
+---
+# ALTRIA GROUP, INC. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2024-10-31
+Source: https://www.sec.gov/Archives/edgar/data/764180/000076418024000102/mo-20240930.htm
+
+Risk Factors
+
+71
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+72
+
+Item 5.
+
+Other Information
+
+72
+
+Item 6.
+
+Exhibits
+
+73
+
+Signature
+
+Signature
+
+74
+
+2
+
+Table of Contents
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Balance Sheets
+
+(in millions of dollars)
+
+(Unaudited)
+
+______________________________
+
+September 30, 2024
+
+December 31, 2023
+
+Assets
+
+Cash and cash equivalents
+
+$
+
+1,897
+
+$
+
+3,686
+
+Receivables
+
+87
+
+71
+
+Inventories:
+
+Leaf tobacco
+
+524
+
+649
+
+Other raw materials
+
+189
+
+204
+
+Work in process
+
+26
+
+22
+
+Finished product
+
+362
+
+340
+
+1,101
+
+1,215
+
+Income taxes
+
+204
+
+496
+
+Other current assets
+
+210
+
+117
+
+Total current assets
+
+3,499
+
+5,585
+
+Property, plant and equipment, at cost
+
+4,518
+
+4,582
+
+Less accumulated depreciation
+
+2,900
+
+2,930
+
+1,618
+
+1,652
+
+Goodwill
+
+6,945
+
+6,791
+
+Other intangible assets, net
+
+13,010
+
+13,686
+
+Investments in equity securities
+
+8,153
+
+10,011
+
+Other assets
+
+942
+
+845
+
+Total Assets
+
+$
+
+34,167
+
+$
+
+38,570
+
+See notes to condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Balance Sheets (Continued)
+
+(in millions of dollars, except share and per share data)
+
+(Unaudited)
+
+________________________________________________
+
+September 30, 2024
+
+December 31, 2023
+
+Liabilities
+
+Current portion of long-term debt
+
+$
+
+1,585
+
+$
+
+1,121
+
+Accounts payable
+
+510
+
+582
+
+Accrued liabilities:
+
+Marketing
+
+817
+
+716
+
+Settlement charges
+
+2,118
+
+2,563
+
+Other
+
+1,227
+
+1,902
+
+Deferred gain from the sale of
+
+IQOS
+
+System commercialization rights
+
+—
+
+2,700
+
+Dividends payable
+
+1,739
+
+1,735
+
+Total current liabilities
+
+7,996
+
+11,319
+
+Long-term debt
+
+23,570
+
+25,112
+
+Deferred income taxes
+
+3,208
+
+2,799
+
+Accrued pension costs
+
+125
+
+130
+
+Accrued postretirement health care costs
+
+1,090
+
+1,079
+
+Other liabilities
+
+1,596
+
+1,621
+
+Total liabilities
+
+37,585
+
+42,060
+
+Contingencies (Note 14)
+
+Stockholders' Equity (Deficit)
+
+Common stock, par value $0.33 1/3 per share
+
+(
+
+2,805,961,317
+
+shares issued)
+
+935
+
+935
+
+Additional paid-in capital
+
+5,890
+
+5,906
+
+Earnings reinvested in the business
+
+34,206
+
+31,094
+
+Accumulated other comprehensive losses
+
+(
+
+2,617
+
+)
+
+(
+
+2,673
+
+)
+
+Cost of repurchased stock
+
+(
+
+1,109,485,036
+
+shares at September 30, 2024 and
+
+1,042,499,542
+
+shares at December 31, 2023)
+
+(
+
+41,882
+
+)
+
+(
+
+38,802
+
+)
+
+Total stockholders' equity (deficit) attributable to Altria
+
+(
+
+3,468
+
+)
+
+(
+
+3,540
+
+)
+
+Noncontrolling interests
+
+50
+
+50
+
+Total stockholders' equity (deficit)
+
+(
+
+3,418
+
+)
+
+(
+
+3,490
+
+)
+
+Total Liabilities and Stockholders' Equity (Deficit)
+
+$
+
+34,167
+
+$
+
+38,570
+
+See notes to condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Earnings
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+_____________________________________
+
+For the Nine Months Ended September 30,
+
+For the Three Months Ended September 30,
+
+2024
+
+2023
+
+2024
+
+2023
+
+Net revenues
+
+$
+
+18,044
+
+$
+
+18,508
+
+$
+
+6,259
+
+$
+
+6,281
+
+Cost of sales
+
+4,575
+
+4,693
+
+1,536
+
+1,578
+
+Excise taxes on products
+
+2,706
+
+3,030
+
+915
+
+1,004
+
+Gross profit
+
+10,763
+
+10,785
+
+3,808
+
+3,699
+
+Marketing, administration and research costs
+
+2,050
+
+2,034
+
+656
+
+610
+
+Asset impairment
+
+354
+
+—
+
+—
+
+—
+
+Operating income
+
+8,359
+
+8,751
+
+3,152
+
+3,089
+
+Interest and other debt expense, net
+
+782
+
+758
+
+267
+
+272
+
+Net periodic benefit income, excluding service cost
+
+(
+
+74
+
+)
+
+(
+
+95
+
+)
+
+(
+
+25
+
+)
+
+(
+
+33
+
+)
+
+(Income) losses from investments in equity securities
+
+(
+
+530
+
+)
+
+(
+
+105
+
+)
+
+(
+
+116
+
+)
+
+(
+
+58
+
+)
+
+Gain on the sale of
+
+IQOS
+
+System commercialization rights
+
+(
+
+2,700
+
+)
+
+—
+
+—
+
+—
+
+Earnings before income taxes
+
+10,881
+
+8,193
+
+3,026
+
+2,908
+
+Provision for income taxes
+
+2,656
+
+2,123
+
+733
+
+742
+
+Net earnings
+
+$
+
+8,225
+
+$
+
+6,070
+
+$
+
+2,293
+
+$
+
+2,166
+
+Per share data:
+
+Basic and diluted earnings per share
+
+$
+
+4.75
+
+$
+
+3.40
+
+$
+
+1.34
+
+$
+
+1.22
+
+See notes to condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Comprehensive Earnings
+
+(in millions of dollars)
+
+(Unaudited)
+
+_____________________
+
+For the Nine Months Ended September 30,
+
+For the Three Months Ended September 30,
+
+2024
+
+2023
+
+2024
+
+2023
+
+Net earnings
+
+$
+
+8,225
+
+$
+
+6,070
+
+$
+
+2,293
+
+$
+
+2,166
+
+Other comprehensive earnings (losses), net of deferred income taxes:
+
+Benefit plans
+
+(
+
+4
+
+)
+
+(
+
+16
+
+)
+
+(
+
+2
+
+)
+
+(
+
+5
+
+)
+
+ABI
+
+64
+
+302
+
+(
+
+330
+
+)
+
+236
+
+Currency translation adjustments and other
+
+(
+
+4
+
+)
+
+14
+
+(
+
+2
+
+)
+
+7
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+56
+
+300
+
+(
+
+334
+
+)
+
+238
+
+Comprehensive earnings
+
+$
+
+8,281
+
+$
+
+6,370
+
+$
+
+1,959
+
+$
+
+2,404
+
+See notes to condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Stockholders' Equity (Deficit)
+
+for the Nine Months Ended September 30, 2024 and 2023
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+_______________________________________
+
+Attributable to Altria
+
+Common
+
+Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Earnings
+
+Reinvested
+
+in the
+
+Business
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Losses
+
+Cost of
+
+Repurchased
+
+Stock
+
+Non-
+
+controlling
+
+Interests
+
+Total
+
+Stockholders'
+
+Equity (Deficit)
+
+Balances, December 31, 2023
+
+$
+
+935
+
+$
+
+5,906
+
+$
+
+31,094
+
+$
+
+(
+
+2,673
+
+)
+
+$
+
+(
+
+38,802
+
+)
+
+$
+
+50
+
+$
+
+(
+
+3,490
+
+)
+
+Net earnings
+
+—
+
+—
+
+8,225
+
+—
+
+—
+
+—
+
+8,225
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+56
+
+—
+
+—
+
+56
+
+Stock award activity
+
+—
+
+2
+
+—
+
+—
+
+23
+
+—
+
+25
+
+Cash dividends declared ($
+
+2.98
+
+per share)
+
+—
+
+—
+
+(
+
+5,113
+
+)
+
+—
+
+—
+
+—
+
+(
+
+5,113
+
+)
+
+Repurchases of common stock
+
+—
+
+(
+
+18
+
+)
+
+—
+
+—
+
+(
+
+3,072
+
+)
+
+—
+
+(
+
+3,090
+
+)
+
+Other
+
+—
+
+—
+
+—
+
+—
+
+(
+
+31
+
+)
+
+—
+
+(
+
+31
+
+)
+
+Balances, September 30, 2024
+
+$
+
+935
+
+$
+
+5,890
+
+$
+
+34,206
+
+$
+
+(
+
+2,617
+
+)
+
+$
+
+(
+
+41,882
+
+)
+
+$
+
+50
+
+$
+
+(
+
+3,418
+
+)
+
+Balances, December 31, 2022
+
+$
+
+935
+
+$
+
+5,887
+
+$
+
+29,792
+
+$
+
+(
+
+2,771
+
+)
+
+$
+
+(
+
+37,816
+
+)
+
+$
+
+50
+
+$
+
+(
+
+3,923
+
+)
+
+Net earnings
+
+—
+
+—
+
+6,070
+
+—
+
+—
+
+—
+
+6,070
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+300
+
+—
+
+—
+
+300
+
+Stock award activity
+
+—
+
+8
+
+—
+
+—
+
+20
+
+—
+
+28
+
+Cash dividends declared ($
+
+2.86
+
+per share)
+
+—
+
+—
+
+(
+
+5,095
+
+)
+
+—
+
+—
+
+—
+
+(
+
+5,095
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+732
+
+)
+
+—
+
+(
+
+732
+
+)
+
+Other
+
+—
+
+—
+
+—
+
+—
+
+(
+
+5
+
+)
+
+—
+
+(
+
+5
+
+)
+
+Balances, September 30, 2023
+
+$
+
+935
+
+$
+
+5,895
+
+$
+
+30,767
+
+$
+
+(
+
+2,471
+
+)
+
+$
+
+(
+
+38,533
+
+)
+
+$
+
+50
+
+$
+
+(
+
+3,357
+
+)
+
+See notes to condensed consolidated financial statements.
+
+7
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Stockholders' Equity (Deficit)
+
+for the Three Months Ended September 30, 2024 and 2023
+
+(
+
+in millions of dollars, except per share data)
+
+(Unaudited)
+
+_______________________________________
+
+Attributable to Altria
+
+Common
+
+Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Earnings
+
+Reinvested
+
+in the
+
+Business
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Losses
+
+Cost of
+
+Repurchased
+
+Stock
+
+Non-
+
+controlling
+
+Interests
+
+Total
+
+Stockholders'
+
+Equity (Deficit)
+
+Balances, June 30, 2024
+
+$
+
+935
+
+$
+
+5,876
+
+$
+
+33,651
+
+$
+
+(
+
+2,283
+
+)
+
+$
+
+(
+
+41,195
+
+)
+
+$
+
+50
+
+$
+
+(
+
+2,966
+
+)
+
+Net earnings
+
+—
+
+—
+
+2,293
+
+—
+
+—
+
+—
+
+2,293
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+(
+
+334
+
+)
+
+—
+
+—
+
+(
+
+334
+
+)
+
+Stock award activity
+
+—
+
+14
+
+—
+
+—
+
+—
+
+—
+
+14
+
+Cash dividends declared ($
+
+1.02
+
+per share)
+
+—
+
+—
+
+(
+
+1,738
+
+)
+
+—
+
+—
+
+—
+
+(
+
+1,738
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+680
+
+)
+
+—
+
+(
+
+680
+
+)
+
+Other
+
+—
+
+—
+
+—
+
+—
+
+(
+
+7
+
+)
+
+—
+
+(
+
+7
+
+)
+
+Balances, September 30, 2024
+
+$
+
+935
+
+$
+
+5,890
+
+$
+
+34,206
+
+$
+
+(
+
+2,617
+
+)
+
+$
+
+(
+
+41,882
+
+)
+
+$
+
+50
+
+$
+
+(
+
+3,418
+
+)
+
+Balances, June 30, 2023
+
+$
+
+935
+
+$
+
+5,880
+
+$
+
+30,340
+
+$
+
+(
+
+2,709
+
+)
+
+$
+
+(
+
+38,273
+
+)
+
+$
+
+50
+
+$
+
+(
+
+3,777
+
+)
+
+Net earnings
+
+—
+
+—
+
+2,166
+
+—
+
+—
+
+—
+
+2,166
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+238
+
+—
+
+—
+
+238
+
+Stock award activity
+
+—
+
+15
+
+—
+
+—
+
+—
+
+—
+
+15
+
+Cash dividends declared ($
+
+0.98
+
+per share)
+
+—
+
+—
+
+(
+
+1,739
+
+)
+
+—
+
+—
+
+—
+
+(
+
+1,739
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+260
+
+)
+
+—
+
+(
+
+260
+
+)
+
+Balances, September 30, 2023
+
+$
+
+935
+
+$
+
+5,895
+
+$
+
+30,767
+
+$
+
+(
+
+2,471
+
+)
+
+$
+
+(
+
+38,533
+
+)
+
+$
+
+50
+
+$
+
+(
+
+3,357
+
+)
+
+See notes to condensed consolidated financial statements.
+
+8
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Cash Flows
+
+(in millions of dollars)
+
+(Unaudited)
+
+_____________________
+
+For the Nine Months Ended September 30,
+
+2024
+
+2023
+
+Cash Provided by (Used in) Operating Activities
+
+Net earnings
+
+$
+
+8,225
+
+$
+
+6,070
+
+Adjustments to reconcile net earnings to operating cash flows:
+
+Depreciation and amortization
+
+213
+
+194
+
+Deferred income tax provision (benefit)
+
+(1)
+
+459
+
+(
+
+241
+
+)
+
+Unrecognized tax benefit
+
+(1)
+
+80
+
+830
+
+(Income) losses from investments in equity securities
+
+(
+
+530
+
+)
+
+(
+
+105
+
+)
+
+Gain on the sale of
+
+IQOS
+
+System commercialization rights
+
+(
+
+2,700
+
+)
+
+—
+
+Dividends from ABI
+
+139
+
+163
+
+Asset impairment
+
+354
+
+—
+
+Cash effects of changes:
+
+(2)
+
+Receivables
+
+(
+
+14
+
+)
+
+19
+
+Inventories
+
+114
+
+26
+
+Accounts payable
+
+(
+
+68
+
+)
+
+(
+
+47
+
+)
+
+Income taxes
+
+396
+
+(
+
+210
+
+)
+
+Accrued liabilities and other current assets
+
+(
+
+919
+
+)
+
+(
+
+210
+
+)
+
+Accrued settlement charges
+
+(
+
+445
+
+)
+
+(
+
+537
+
+)
+
+Pension plan contributions
+
+(
+
+13
+
+)
+
+(
+
+14
+
+)
+
+Pension and postretirement, net
+
+(
+
+76
+
+)
+
+(
+
+97
+
+)
+
+Other, net
+
+(1)
+
+198
+
+219
+
+Net cash provided by (used in) operating activities
+
+5,413
+
+6,060
+
+Cash Provided by (Used in) Investing Activities
+
+Capital expenditures
+
+(
+
+95
+
+)
+
+(
+
+143
+
+)
+
+Proceeds from the ABI Transaction
+
+(3)
+
+2,353
+
+—
+
+Proceeds from the sale of
+
+IQOS
+
+System
+
+commercialization rights
+
+—
+
+1,700
+
+Acquisition of NJOY, net of cash acquired
+
+—
+
+(
+
+2,751
+
+)
+
+Other, net
+
+(
+
+20
+
+)
+
+(
+
+23
+
+)
+
+Net cash provided by (used in) investing activities
+
+$
+
+2,238
+
+$
+
+(
+
+1,217
+
+)
+
+(1)
+
+2023 relates to unrecognized tax benefit from the ordinary loss for cash tax purposes with respect to a portion of our tax basis associated with our former investment in JUUL, partially offset by our estimated corporate alternative minimum tax credit carryforward. 2023 amounts have been reclassified to conform to the current year presentation.
+
+(2)
+
+2023 amounts are net of the effects from the NJOY Transaction. See Note 2.
+
+Acquisition of NJOY
+
+.
+
+(3)
+
+See Note 6.
+
+Investments in Equity Securities
+
+.
+
+See notes to condensed consolidated financial statements.
+
+9
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Cash Flows (Continued)
+
+(in millions of dollars)
+
+(Unaudited)
+
+_____________________
+
+For the Nine Months Ended September 30,
+
+2024
+
+2023
+
+Cash Provided by (Used in) Financing Activities
+
+Proceeds from short-term borrowings
+
+$
+
+—
+
+$
+
+2,000
+
+Repayment of short-term borrowings
+
+—
+
+(
+
+2,000
+
+)
+
+Long-term debt repaid
+
+(
+
+1,121
+
+)
+
+(
+
+1,566
+
+)
+
+Repurchases of common stock
+
+(
+
+3,090
+
+)
+
+(
+
+732
+
+)
+
+Dividends paid on common stock
+
+(
+
+5,108
+
+)
+
+(
+
+5,040
+
+)
+
+Other, net
+
+(
+
+125
+
+)
+
+(
+
+15
+
+)
+
+Net cash provided by (used in) financing activities
+
+(
+
+9,444
+
+)
+
+(
+
+7,353
+
+)
+
+Cash, cash equivalents and restricted cash:
+
+Increase (decrease)
+
+(
+
+1,793
+
+)
+
+(
+
+2,510
+
+)
+
+Balance at beginning of period
+
+3,721
+
+4,091
+
+Balance at end of period
+
+$
+
+1,928
+
+$
+
+1,581
+
+The following table provides a reconciliation of cash, cash equivalents and restricted cash
+
+(1)
+
+to the amounts reported on our condensed consolidated balance sheets:
+
+At September 30, 2024
+
+At December 31, 2023
+
+Cash and cash equivalents
+
+$
+
+1,897
+
+$
+
+3,686
+
+Restricted cash included in other current assets
+
+8
+
+5
+
+Restricted cash included in other assets
+
+23
+
+30
+
+Cash, cash equivalents and restricted cash
+
+$
+
+1,928
+
+$
+
+3,721
+
+(1)
+
+Restricted cash consisted of cash deposits collateralizing appeal bonds posted by PM USA to obtain stays of judgments pending appeals. See Note 14.
+
+Contingencies
+
+.
+
+See notes to condensed consolidated financial statements.
+
+10
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Notes to Condensed Consolidated Financial Statements
+
+(Unaudited)
+
+Note 1.
+
+Background and Basis of Presentation
+
+When used in these notes, the terms
+
+"
+
+Altria," "we," "us" and "our" refer to either (i) Altria Group, Inc. and its consolidated subsidiaries or (ii) Altria Group, Inc. only and not its consolidated subsidiaries, as appropriate in the context.
+
+▪
+
+Background:
+
+At September 30, 2024, our wholly owned subsidiaries included Philip Morris USA Inc. ("PM USA"), which is engaged in the manufacture and sale of cigarettes in the United States; John Middleton Co. ("Middleton"), which is engaged in the manufacture and sale of machine-made large cigars and is a wholly owned subsidiary of PM USA; UST LLC ("UST"), which, through its wholly owned subsidiary U.S. Smokeless Tobacco Company LLC ("USSTC"), is engaged in the manufacture and sale of moist smokeless tobacco products ("MST") and snus products; Helix Innovations LLC ("Helix"), which operates in the United States, and Helix Innovations GmbH and its affiliates ("Helix International"), which operate in certain other countries, are engaged in the manufacture and sale of oral nicotine pouches; and NJOY, LLC ("NJOY"), which is engaged in the manufacture and sale of e-vapor products. Other wholly owned subsidiaries included Altria Group Distribution Company ("AGDC"), which provides sales and distribution services to our domestic operating companies; and Altria Client Services LLC ("ALCS"), which provides various support services to our companies in areas such as legal, regulatory, research and product development, consumer engagement, finance, human resources and external affairs. Our access to the operating cash flows of our subsidiaries consists of cash received from the payment of dividends and distributions, and the payment of interest on intercompany loans by our subsidiaries. At September 30, 2024, our significant subsidiaries were not limited by contractual obligations in their ability to pay cash dividends or make other distributions with respect to their equity interests.
+
+At September 30, 2024, we also owned a

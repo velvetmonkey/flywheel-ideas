@@ -1,0 +1,1067 @@
+---
+id: idea-VVmWXSJj
+type: idea
+state: nascent
+title: TSLA 2017-05-10 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T19:55:59.094Z'
+date: '2026-05-03'
+created: '2026-05-03T19:55:59.497Z'
+---
+# Tesla, Inc. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2017-05-10
+Source: https://www.sec.gov/Archives/edgar/data/1318605/000156459017009968/tsla-10q_20170331.htm
+
+Risk Factors
+
+40
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+56
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+56
+
+Item 4.
+
+Mine Safety Disclosures
+
+56
+
+Item 5.
+
+Other Information
+
+56
+
+Item 6.
+
+Exhibits
+
+56
+
+SIGNATURES
+
+57
+
+Forward-Looking Statements
+
+The discussions in this Quarterly Report on Form 10-Q contain forward-looking statements reflecting our current expectations that involve risks and uncertainties. These forward-looking statements include, but are not limited to, statements concerning our strategy, future operations, future financial position, future revenues, projected costs, profitability, expected cost reductions, capital adequacy, expectations regarding demand and acceptance for our technologies, growth opportunities and trends in the market in which we operate, prospects and plans and objectives of management. The words "anticipates", "believes", "could", "estimates", "expects", "intends", "may", "might", "plans", "projects", "will", "would" and similar expressions are intended to identify forward-looking statements, although not all forward-looking statements contain these identifying words. We may not actually achieve the plans, intentions or expectations disclosed in these forward-looking statements, and you should not place undue reliance on these forward-looking statements. These forward-looking statements involve risks and uncertainties that could cause our actual results or events to differ materially from the plans, intentions or expectations disclosed in these forward-looking statements, including, without limitation, the risks set forth in Part II, Item 1A, "Risk Factors" in this quarterly report on Form 10-Q and in our other filings with the Securities and Exchange Commission. We do not assume any obligation to update any forward-looking statements.
+
+P
+
+ART I. FINANCIAL INFORMATION
+
+I
+
+TEM 1.
+
+FINANCIAL STATEMENTS
+
+Tesla, Inc.
+
+Consolidated Balance Sheets
+
+(in thousands, except for par values)
+
+(unaudited)
+
+March 31,
+
+December 31,
+
+2017
+
+2016
+
+Assets
+
+Current assets
+
+Cash and cash equivalents
+
+$
+
+4,006,593
+
+$
+
+3,393,216
+
+Restricted cash
+
+88,946
+
+105,519
+
+Accounts receivable, net
+
+440,349
+
+499,142
+
+Inventory
+
+2,220,336
+
+2,067,454
+
+Prepaid expenses and other current assets
+
+271,665
+
+194,465
+
+Total current assets
+
+7,027,889
+
+6,259,796
+
+Operating lease vehicles, net
+
+3,452,595
+
+3,134,080
+
+Solar energy systems, leased and to be leased, net
+
+6,085,990
+
+5,919,880
+
+Property, plant and equipment, net
+
+7,016,551
+
+5,982,957
+
+Intangible assets, net
+
+388,608
+
+376,145
+
+Goodwill
+
+40,984
+
+—
+
+MyPower customer notes receivable, net of current portion
+
+486,350
+
+506,302
+
+Restricted cash, net of current portion
+
+330,223
+
+268,165
+
+Other assets
+
+224,536
+
+216,751
+
+Total assets
+
+$
+
+25,053,726
+
+$
+
+22,664,076
+
+Liabilities and Equity
+
+Current liabilities
+
+Accounts payable
+
+$
+
+2,075,333
+
+$
+
+1,860,341
+
+Accrued liabilities and other
+
+1,460,367
+
+1,210,028
+
+Deferred revenue
+
+841,494
+
+763,126
+
+Resale value guarantees
+
+248,536
+
+179,504
+
+Customer deposits
+
+616,398
+
+663,859
+
+Current portion of long-term debt and capital leases
+
+829,080
+
+984,211
+
+Current portion of solar bonds issued to related parties
+
+174,231
+
+165,936
+
+Total current liabilities
+
+6,245,439
+
+5,827,005
+
+Long-term debt and capital leases, net of current portion
+
+7,148,416
+
+5,860,049
+
+Solar bonds issued to related parties, net of current portion
+
+100
+
+99,164
+
+Convertible senior notes issued to related parties
+
+10,440
+
+10,287
+
+Deferred revenue, net of current portion
+
+955,078
+
+851,790
+
+Resale value guarantees, net of current portion
+
+2,444,058
+
+2,210,423
+
+Other long-term liabilities
+
+2,081,822
+
+1,891,449
+
+Total liabilities
+
+18,885,353
+
+16,750,167
+
+Commitments and contingencies (Note 14)
+
+Redeemable noncontrolling interests in subsidiaries
+
+364,296
+
+367,039
+
+Convertible senior notes (Notes 11)
+
+7,283
+
+8,784
+
+Stockholders' equity:
+
+Preferred stock; $0.001 par value; 100,000 shares authorized; no shares
+
+issued and outstanding
+
+—
+
+—
+
+Common stock; $0.001 par value; 2,000,000 shares authorized as of
+
+March 31, 2017 and December 31, 2016; 164,164 and 161,561
+
+shares issued and outstanding as of March 31, 2017 and December 31, 2016, respectively
+
+161
+
+161
+
+Additional paid-in capital
+
+8,351,514
+
+7,773,727
+
+Accumulated other comprehensive loss
+
+(20,769
+
+)
+
+(23,740
+
+)
+
+Accumulated deficit
+
+(3,343,187
+
+)
+
+(2,997,237
+
+)
+
+Total stockholders' equity
+
+4,987,719
+
+4,752,911
+
+Noncontrolling interests in subsidiaries
+
+809,075
+
+785,175
+
+Total liabilities and equity
+
+$
+
+25,053,726
+
+$
+
+22,664,076
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+4
+
+Tesla, Inc.
+
+Consolidated Statements of Operations
+
+(in thousands, except per share data)
+
+(unaudited)
+
+Three Months Ended March 31,
+
+2017
+
+2016
+
+Revenues
+
+Automotive
+
+$
+
+2,035,060
+
+$
+
+901,892
+
+Automotive leasing
+
+254,540
+
+124,172
+
+Total automotive revenue
+
+2,289,600
+
+1,026,064
+
+Energy generation and storage
+
+213,944
+
+22,728
+
+Services and other
+
+192,726
+
+98,256
+
+Total revenues
+
+2,696,270
+
+1,147,048
+
+Cost of revenues
+
+Automotive
+
+1,496,649
+
+713,149
+
+Automotive leasing
+
+166,026
+
+66,167
+
+Total automotive cost of revenues
+
+1,662,675
+
+779,316
+
+Energy generation and storage
+
+151,773
+
+18,113
+
+Services and other
+
+213,876
+
+97,151
+
+Total cost of revenues
+
+2,028,324
+
+894,580
+
+Gross profit
+
+667,946
+
+252,468
+
+Operating expenses
+
+Research and development
+
+322,040
+
+182,482
+
+Selling, general and administrative
+
+603,455
+
+318,210
+
+Total operating expenses
+
+925,495
+
+500,692
+
+Loss from operations
+
+(257,549
+
+)
+
+(248,224
+
+)
+
+Interest income
+
+3,090
+
+1,251
+
+Interest expense
+
+(99,346
+
+)
+
+(40,625
+
+)
+
+Other income (expense), net
+
+(18,098
+
+)
+
+9,177
+
+Loss before income taxes
+
+(371,903
+
+)
+
+(278,421
+
+)
+
+Provision for income taxes
+
+25,278
+
+3,846
+
+Net loss
+
+(397,181
+
+)
+
+(282,267
+
+)
+
+Net loss attributable to noncontrolling interests and redeemable
+
+noncontrolling interests in subsidiaries
+
+(66,904
+
+)
+
+—
+
+Net loss attributable to common stockholders
+
+$
+
+(330,277
+
+)
+
+$
+
+(282,267
+
+)
+
+Net loss per share of common stock attributable to common stockholders,
+
+basic and diluted
+
+$
+
+(2.04
+
+)
+
+$
+
+(2.13
+
+)
+
+Weighted average shares used in computing net loss per share of
+
+common stock, basic and diluted
+
+162,129
+
+132,676
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+5
+
+Tesla, Inc.
+
+Consolidated Statements of Comprehensive Loss
+
+(in thousands)
+
+(unaudited)
+
+Three Months Ended March 31,
+
+2017
+
+2016
+
+Net loss attributable to common stockholders
+
+$
+
+(330,277
+
+)
+
+$
+
+(282,267
+
+)
+
+Other comprehensive gain (loss), net of tax:
+
+Unrealized gains (losses) on derivatives:
+
+Change in net unrealized gain (loss)
+
+—
+
+20,805
+
+Less: Reclassification adjustment for net (gains) losses into net loss
+
+(5,570
+
+)
+
+—
+
+Net unrealized gain (loss) on derivatives
+
+(5,570
+
+)
+
+20,805
+
+Foreign currency translation adjustment
+
+8,541
+
+(3,684
+
+)
+
+Other comprehensive income
+
+2,971
+
+17,121
+
+Comprehensive loss
+
+$
+
+(327,306
+
+)
+
+$
+
+(265,146
+
+)
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+6
+
+Tesla, Inc.
+
+Consolidated Statements of Cash Flows
+
+(in thousands)
+
+(unaudited)
+
+Three Months Ended March 31,
+
+2017
+
+2016
+
+Cash Flows From Operating Activities
+
+Net loss
+
+$
+
+(397,181
+
+)
+
+$
+
+(282,267
+
+)
+
+Adjustments to reconcile net loss to net cash used in operating activities:
+
+Depreciation and amortization
+
+376,602
+
+156,460
+
+Stock-based compensation
+
+103,717
+
+89,658
+
+Amortization of discount on convertible debt
+
+30,337
+
+20,613
+
+Inventory write-downs
+
+26,918
+
+13,010
+
+Loss on disposal of property and equipment
+
+41,120
+
+26,171
+
+Foreign currency transaction loss (gain)
+
+5,064
+
+(9,356
+
+)
+
+Loss on the acquisition of SolarCity
+
+11,571
+
+—
+
+Non-cash interest and other operating activities
+
+(5,179
+
+)
+
+7,135
+
+Changes in operating assets and liabilities, net of effect of business combinations
+
+Accounts receivable
+
+91,541
+
+(159,327
+
+)
+
+Inventories and operating lease vehicles
+
+(583,479
+
+)
+
+(512,671
+
+)
+
+Prepaid expenses and other current assets
+
+(75,504
+
+)
+
+(9,134
+
+)
+
+Other assets and MyPower notes receivable
+
+8,006
+
+(6,862
+
+)
+
+Accounts payable and accrued liabilities
+
+2,531
+
+60,593
+
+Deferred revenue
+
+103,941
+
+89,671
+
+Customer deposits
+
+(51,004
+
+)
+
+100,804
+
+Resale value guarantee
+
+184,579
+
+150,636
+
+Other long-term liabilities
+
+56,609
+
+15,261
+
+Net cash used in operating activities
+
+(69,811
+
+)
+
+(249,605
+
+)
+
+Cash Flows From Investing Activities
+
+Purchases of property and equipment excluding capital leases, net of sales
+
+(552,624
+
+)
+
+(216,859
+
+)
+
+Purchase of solar energy systems, leased to be leased
+
+(219,948
+
+)
+
+—
+
+Increase in other restricted cash
+
+(45,224
+
+)
+
+(16,960
+
+)
+
+Business combination, net of cash acquired
+
+(109,147
+
+)
+
+—
+
+Net cash used in investing activities
+
+(926,943
+
+)
+
+(233,819
+
+)
+
+Cash Flows From Financing Activities
+
+Proceeds from issuance of common stock in public offering
+
+400,175
+
+—
+
+Proceeds from issuance of convertible and other debt
+
+1,838,166
+
+430,000
+
+Repayments of convertible and other debt
+
+(690,945
+
+)
+
+—
+
+Repayments of borrowings under solar bonds issued to related parties
+
+(90,000
+
+)
+
+—
+
+Collateralized lease borrowings
+
+186,355
+
+241,763
+
+Proceeds from exercise of stock options and other stock issuances
+
+57,307
+
+52,838
+
+Principal payments on capital leases
+
+(18,303
+
+)
+
+(8,128
+
+)
+
+Common stock and debt issuance costs
+
+(11,094
+
+)
+
+(1,038
+
+)
+
+Purchase of convertible note hedges
+
+(204,102
+
+)
+
+—
+
+Proceeds from issuance of warrants
+
+52,883
+
+—
+
+Proceeds from investment by noncontrolling interests in subsidiaries
+
+142,003
+
+—
+
+Distributions paid to noncontrolling interests in subsidiaries
+
+(63,696
+
+)
+
+—
+
+Net cash provided by financing activities
+
+1,598,749
+
+715,435
+
+Effect of exchange rate changes on cash and cash equivalents
+
+11,382
+
+12,870
+
+Net increase in cash and cash equivalents
+
+613,377
+
+244,881
+
+Cash and cash equivalents, beginning of period
+
+3,393,216
+
+1,196,908
+
+Cash and cash equivalents, end of period
+
+$
+
+4,006,593
+
+$
+
+1,441,789
+
+Supplemental noncash investing and financing activities
+
+Acquisition of property and equipment included in accounts payable and accrued liabilities
+
+$
+
+654,322
+
+$
+
+235,829
+
+Estimated fair value of facilities under build-to-suit lease
+
+65,244
+
+39,034
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+7
+
+Tesla, Inc.
+
+Notes to Consolidated Financial Statements
+
+(Unaudited)
+
+Note 1 – Overview
+
+Tesla, Inc. ("Tesla", the "Company", "we", "us" or "our") was incorporated in the State of Delaware on July 1, 2003. We design, develop, manufacture and sell high-performance fully electric vehicles and energy products. In addition, as a result of our acquisition of SolarCity Corporation ("SolarCity") on November 21, 2016,
+
+we also design, manufacture, install and sell or lease solar energy systems, or sell electricity generated by our solar energy systems to customers. Our Chief Executive Officer, as the chief operating decision maker ("CODM"), organizes the Company, manages resource allocations and measures performance among two segments: (i) automotive and (ii) energy generation and storage.
+
+Note 2 – Summary of Significant Accounting Policies
+
+Unaudited Interim Financial Statements
+
+The consolidated balance sheet as of March 31, 2017, the consolidated statements of operations and the consolidated statements of comprehensive loss for the three months ended March 31, 2017 and 2016 and the consolidated statements of cash flows for the three months ended March 31, 2017 and 2016, as well as other information disclosed in the accompanying notes, are unaudited. The consolidated balance sheet as of December 31, 2016 was derived from the audited consolidated financial statements as of that date. The interim consolidated financial statements and the accompanying notes should be read in conjunction with the annual consolidated financial statements and the accompanying notes contained in our Annual Report on Form 10-K for the year ended December 31, 2016.
+
+The interim consolidated financial statements and the accompanying notes have been prepared on the same basis as the annual consolidated financial statements and, in the opinion of management, reflect all adjustments, which include only normal recurring adjustments, necessary for a fair statement of the results of operations for the periods presented. The consolidated results of operations for any interim period are not necessarily indicative of the results to be expected for the full year or for any other future years or interim periods.
+
+Reclassifications
+
+Certain prior period balances have been reclassified to conform to the current period presentation in the consolidated financial statements and the accompanying notes. Such reclassifications had no effect on previously reported results of operations. Starting in the fourth quarter of 2016, we have reclassified the revenue and cost of revenue of our energy storage products from 'services and other' into 'energy generation and storage' for all periods presented.

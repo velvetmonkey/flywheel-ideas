@@ -1,0 +1,1643 @@
+---
+id: idea-BQtM3Moj
+type: idea
+state: nascent
+title: NFLX 2024-07-19 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:43:34.972Z'
+date: '2026-05-03'
+created: '2026-05-03T20:43:35.434Z'
+---
+# NETFLIX INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2024-07-19
+Source: https://www.sec.gov/Archives/edgar/data/1065280/000106528024000200/nflx-20240630.htm
+
+Risk Factors
+
+36
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+36
+
+Item 5.
+
+Other Information
+
+36
+
+Item 6.
+
+Exhibits
+
+36
+
+Exhibit Index
+
+37
+
+Signatures
+
+37
+
+2
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Operations
+
+(unaudited)
+
+(in thousands, except per share data)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+Revenues
+
+$
+
+9,559,310
+
+$
+
+8,187,301
+
+$
+
+18,929,750
+
+$
+
+16,348,804
+
+Cost of revenues
+
+5,174,143
+
+4,673,470
+
+10,151,216
+
+9,477,095
+
+Marketing
+
+644,084
+
+627,168
+
+1,298,424
+
+1,182,530
+
+Technology and development
+
+711,254
+
+657,983
+
+1,413,727
+
+1,345,258
+
+General and administrative
+
+426,992
+
+401,497
+
+831,012
+
+802,421
+
+Operating income
+
+2,602,837
+
+1,827,183
+
+5,235,371
+
+3,541,500
+
+Other income (expense):
+
+Interest expense
+
+(
+
+167,986
+
+)
+
+(
+
+174,812
+
+)
+
+(
+
+341,300
+
+)
+
+(
+
+349,051
+
+)
+
+Interest and other income (expense)
+
+79,005
+
+26,961
+
+234,364
+
+(
+
+44,243
+
+)
+
+Income before income taxes
+
+2,513,856
+
+1,679,332
+
+5,128,435
+
+3,148,206
+
+Provision for income taxes
+
+(
+
+366,550
+
+)
+
+(
+
+191,722
+
+)
+
+(
+
+648,920
+
+)
+
+(
+
+355,476
+
+)
+
+Net income
+
+$
+
+2,147,306
+
+$
+
+1,487,610
+
+$
+
+4,479,515
+
+$
+
+2,792,730
+
+Earnings per share:
+
+Basic
+
+$
+
+4.99
+
+$
+
+3.35
+
+$
+
+10.39
+
+$
+
+6.28
+
+Diluted
+
+$
+
+4.88
+
+$
+
+3.29
+
+$
+
+10.16
+
+$
+
+6.18
+
+Weighted-average shares of common stock outstanding:
+
+Basic
+
+430,065
+
+443,881
+
+431,078
+
+444,559
+
+Diluted
+
+439,739
+
+451,572
+
+440,697
+
+451,990
+
+See accompanying notes to the consolidated financial statements.
+
+3
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Comprehensive Income
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+Net income
+
+$
+
+2,147,306
+
+$
+
+1,487,610
+
+$
+
+4,479,515
+
+$
+
+2,792,730
+
+Other comprehensive income:
+
+Foreign currency translation adjustments
+
+(
+
+75,246
+
+)
+
+52,429
+
+(
+
+148,298
+
+)
+
+78,040
+
+Cash flow hedges:
+
+Net unrealized gains
+
+123,733
+
+—
+
+300,337
+
+—
+
+Reclassification of net gains included in net income
+
+(
+
+25,722
+
+)
+
+—
+
+(
+
+17,208
+
+)
+
+—
+
+Net change, net of income tax expense of $
+
+29
+
+million, $
+
+0
+
+, $
+
+84
+
+million, and $
+
+0
+
+, respectively
+
+98,011
+
+—
+
+283,129
+
+—
+
+Total other comprehensive income
+
+22,765
+
+52,429
+
+134,831
+
+78,040
+
+Comprehensive income
+
+$
+
+2,170,071
+
+$
+
+1,540,039
+
+$
+
+4,614,346
+
+$
+
+2,870,770
+
+See accompanying notes to the consolidated financial statements.
+
+4
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Cash Flows
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+2,147,306
+
+$
+
+1,487,610
+
+$
+
+4,479,515
+
+$
+
+2,792,730
+
+Adjustments to reconcile net income to net cash provided by operating activities:
+
+Additions to content assets
+
+(
+
+4,048,852
+
+)
+
+(
+
+3,683,007
+
+)
+
+(
+
+7,777,819
+
+)
+
+(
+
+6,141,673
+
+)
+
+Change in content liabilities
+
+(
+
+366,572
+
+)
+
+46,119
+
+(
+
+556,013
+
+)
+
+(
+
+308,672
+
+)
+
+Amortization of content assets
+
+3,769,690
+
+3,410,021
+
+7,440,495
+
+6,870,005
+
+Depreciation and amortization of property, equipment and intangibles
+
+81,227
+
+89,385
+
+168,461
+
+179,720
+
+Stock-based compensation expense
+
+68,766
+
+78,030
+
+145,111
+
+177,129
+
+Foreign currency remeasurement loss (gain) on debt
+
+(
+
+42,692
+
+)
+
+28,952
+
+(
+
+173,493
+
+)
+
+109,603
+
+Other non-cash items
+
+138,588
+
+121,483
+
+235,769
+
+241,491
+
+Deferred income taxes
+
+(
+
+209,387
+
+)
+
+(
+
+103,172
+
+)
+
+(
+
+316,464
+
+)
+
+(
+
+201,954
+
+)
+
+Changes in operating assets and liabilities:
+
+Other current assets
+
+(
+
+28,959
+
+)
+
+(
+
+183,049
+
+)
+
+9,090
+
+(
+
+271,571
+
+)
+
+Accounts payable
+
+(
+
+19,358
+
+)
+
+38,332
+
+(
+
+164,623
+
+)
+
+(
+
+51,336
+
+)
+
+Accrued expenses and other liabilities
+
+(
+
+114,303
+
+)
+
+177,831
+
+137,479
+
+363,130
+
+Deferred revenue
+
+4,236
+
+49,647
+
+30,751
+
+47,257
+
+Other non-current assets and liabilities
+
+(
+
+88,843
+
+)
+
+(
+
+117,950
+
+)
+
+(
+
+154,890
+
+)
+
+(
+
+186,887
+
+)
+
+Net cash provided by operating activities
+
+1,290,847
+
+1,440,232
+
+3,503,369
+
+3,618,972
+
+Cash flows from investing activities:
+
+Purchases of property and equipment
+
+(
+
+78,287
+
+)
+
+(
+
+100,972
+
+)
+
+(
+
+154,001
+
+)
+
+(
+
+162,991
+
+)
+
+Purchases of short-term investments
+
+—
+
+(
+
+303,228
+
+)
+
+—
+
+(
+
+504,862
+
+)
+
+Proceeds from maturities of short-term investments
+
+—
+
+501,937
+
+—
+
+501,937
+
+Net cash provided by (used in) investing activities
+
+(
+
+78,287
+
+)
+
+97,737
+
+(
+
+154,001
+
+)
+
+(
+
+165,916
+
+)
+
+Cash flows from financing activities:
+
+Repayments of debt
+
+—
+
+—
+
+(
+
+400,000
+
+)
+
+—
+
+Proceeds from issuance of common stock
+
+118,750
+
+34,717
+
+387,631
+
+60,745
+
+Repurchases of common stock
+
+(
+
+1,599,998
+
+)
+
+(
+
+645,146
+
+)
+
+(
+
+3,599,998
+
+)
+
+(
+
+1,045,247
+
+)
+
+Taxes paid related to net share settlement of equity awards
+
+(
+
+1,883
+
+)
+
+—
+
+(
+
+3,708
+
+)
+
+—
+
+Other financing activities
+
+(
+
+6,250
+
+)
+
+(
+
+38,920
+
+)
+
+(
+
+6,250
+
+)
+
+(
+
+38,920
+
+)
+
+Net cash used in financing activities
+
+(
+
+1,489,381
+
+)
+
+(
+
+649,349
+
+)
+
+(
+
+3,622,325
+
+)
+
+(
+
+1,023,422
+
+)
+
+Effect of exchange rate changes on cash, cash equivalents and restricted cash
+
+(
+
+122,723
+
+)
+
+39,626
+
+(
+
+218,513
+
+)
+
+66,049
+
+Net increase (decrease) in cash, cash equivalents and restricted cash
+
+(
+
+399,544
+
+)
+
+928,246
+
+(
+
+491,470
+
+)
+
+2,495,683
+
+Cash, cash equivalents and restricted cash at beginning of period
+
+7,026,589
+
+6,738,019
+
+7,118,515
+
+5,170,582
+
+Cash, cash equivalents and restricted cash at end of period
+
+$
+
+6,627,045
+
+$
+
+7,666,265
+
+$
+
+6,627,045
+
+$
+
+7,666,265
+
+See accompanying notes to the consolidated financial statements.
+
+5
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Balance Sheets
+
+(in thousands, except share and par value data)
+
+As of
+
+June 30,
+
+2024
+
+December 31,
+
+2023
+
+(unaudited)
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+6,624,939
+
+$
+
+7,116,913
+
+Short-term investments
+
+30,973
+
+20,973
+
+Other current assets
+
+2,959,641
+
+2,780,247
+
+Total current assets
+
+9,615,553
+
+9,918,133
+
+Content assets, net
+
+31,927,355
+
+31,658,056
+
+Property and equipment, net
+
+1,510,958
+
+1,491,444
+
+Other non-current assets
+
+6,045,029
+
+5,664,359
+
+Total assets
+
+$
+
+49,098,895
+
+$
+
+48,731,992
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Current content liabilities
+
+$
+
+4,391,437
+
+$
+
+4,466,470
+
+Accounts payable
+
+598,557
+
+747,412
+
+Accrued expenses and other liabilities
+
+1,876,244
+
+1,803,960
+
+Deferred revenue
+
+1,473,720
+
+1,442,969
+
+Short-term debt
+
+1,800,041
+
+399,844
+
+Total current liabilities
+
+10,139,999
+
+8,860,655
+
+Non-current content liabilities
+
+2,028,782
+
+2,578,173
+
+Long-term debt
+
+12,180,024
+
+14,143,417
+
+Other non-current liabilities
+
+2,637,397
+
+2,561,434
+
+Total liabilities
+
+26,986,202
+
+28,143,679
+
+Commitments and contingencies (Note 8)
+
+Stockholders' equity:
+
+Common stock, $
+
+0.001
+
+par value;
+
+4,990,000,000
+
+shares authorized at June 30, 2024 and December 31, 2023;
+
+429,164,615
+
+and
+
+432,759,584
+
+issued and outstanding at June 30, 2024 and December 31, 2023, respectively
+
+5,680,061
+
+5,145,172
+
+Treasury stock at cost (
+
+22,229,834
+
+and
+
+16,078,268
+
+shares at June 30, 2024 and December 31, 2023, respectively)
+
+(
+
+10,547,055
+
+)
+
+(
+
+6,922,200
+
+)
+
+Accumulated other comprehensive loss
+
+(
+
+89,114
+
+)
+
+(
+
+223,945
+
+)
+
+Retained earnings
+
+27,068,801
+
+22,589,286
+
+Total stockholders' equity
+
+22,112,693
+
+20,588,313
+
+Total liabilities and stockholders' equity
+
+$
+
+49,098,895
+
+$
+
+48,731,992
+
+See accompanying notes to the consolidated financial statements.
+
+6
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Stockholders' Equity
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+June 30,
+
+2024
+
+June 30,
+
+2023
+
+Total stockholders' equity, beginning balances
+
+$
+
+21,365,410
+
+$
+
+21,828,196
+
+$
+
+20,588,313
+
+$
+
+20,777,401
+
+Common stock and additional paid-in capital:
+
+Beginning balances
+
+$
+
+5,489,850
+
+$
+
+4,762,395
+
+$
+
+5,145,172
+
+$
+
+4,637,601
+
+Issuance of common stock
+
+121,445
+
+33,783
+
+389,778
+
+59,478
+
+Stock-based compensation expense
+
+68,766
+
+78,030
+
+145,111
+
+177,129
+
+Ending balances
+
+$
+
+5,680,061
+
+$
+
+4,874,208
+
+$
+
+5,680,061
+
+$
+
+4,874,208
+
+Treasury stock:
+
+Beginning balances
+
+$
+
+(
+
+8,934,056
+
+)
+
+$
+
+(
+
+1,228,920
+
+)
+
+$
+
+(
+
+6,922,200
+
+)
+
+$
+
+(
+
+824,190
+
+)
+
+Repurchases of common stock to be held as treasury stock
+
+(
+
+1,612,999
+
+)
+
+(
+
+647,833
+
+)
+
+(
+
+3,624,855
+
+)
+
+(
+
+1,052,563
+
+)
+
+Ending balances
+
+$
+
+(
+
+10,547,055
+
+)
+
+$
+
+(
+
+1,876,753
+
+)
+
+$
+
+(
+
+10,547,055
+
+)
+
+$
+
+(
+
+1,876,753
+
+)
+
+Accumulated other comprehensive loss:
+
+Beginning balances
+
+$
+
+(
+
+111,879
+
+)
+
+$
+
+(
+
+191,695
+
+)
+
+$
+
+(
+
+223,945
+
+)
+
+$
+
+(
+
+217,306
+
+)
+
+Other comprehensive income
+
+22,765
+
+52,429
+
+134,831
+
+78,040
+
+Ending balances
+
+$
+
+(
+
+89,114
+
+)
+
+$
+
+(
+
+139,266
+
+)
+
+$
+
+(
+
+89,114
+
+)
+
+$
+
+(
+
+139,266
+
+)
+
+Retained earnings:
+
+Beginning balances
+
+$
+
+24,921,495
+
+$
+
+18,486,416
+
+$
+
+22,589,286
+
+$
+
+17,181,296
+
+Net income
+
+2,147,306
+
+1,487,610
+
+4,479,515
+
+2,792,730
+
+Ending balances
+
+$
+
+27,068,801
+
+$
+
+19,974,026
+
+$
+
+27,068,801
+
+$
+
+19,974,026
+
+Total stockholders' equity, ending balances
+
+$
+
+22,112,693
+
+$
+
+22,832,215
+
+$
+
+22,112,693
+
+$
+
+22,832,215
+
+See accompanying notes to the consolidated financial statements.
+
+7
+
+Table of Contents
+
+NETFLIX, INC.
+
+Notes to Consolidated Financial Statements
+
+(unaudited)
+
+1.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+The accompanying interim consolidated financial statements of Netflix, Inc. and its wholly owned subsidiaries (the "Company") have been prepared in conformity with accounting principles generally accepted in the United States ("U.S.") and are consistent in all material respects with those applied in the Company's Annual Report on Form 10-K for the year ended December 31, 2023 filed with the Securities and Exchange Commission (the "SEC") on January 26, 2024.
+
+The preparation of consolidated financial statements in conformity with U.S. generally accepted accounting principles ("GAAP") requires management to make estimates and judgments that affect the amounts reported in the consolidated financial statements and accompanying notes. Significant items subject to such estimates and assumptions include the amortization of content assets and the recognition and measurement of income tax assets and liabilities. The Company bases its estimates on historical experience and on various other assumptions that the Company believes to be reasonable under the circumstances. On a regular basis, the Company evaluates the assumptions, judgments and estimates. Actual results may differ from these estimates.
+
+The interim financial information is unaudited, but reflects all normal recurring adjustments that are, in the opinion of management, necessary to fairly present the information set forth herein. The interim consolidated financial statements should be read in conjunction with the audited consolidated financial statements and related notes included in the Company's Annual Report on Form 10-K for the year ended December 31, 2023. Interim results are not necessarily indicative of the results for a full year.
+
+The following is provided to update the Company's significant accounting policies previously described in the Company's Annual Report on Form 10-K for the year ended December 31, 2023.
+
+Derivative Financial Instruments and Hedging Activities
+
+The Company uses derivative and non-derivative instruments to manage foreign exchange risk related to its ongoing business operations with the primary objective of reducing earnings and cash flow volatility associated with fluctuations in foreign exchange rates.
+
+The Company recognizes derivative instruments at fair value as either assets (presented in "Other current assets" and "Other non-current assets") or liabilities (presented in "Accrued expenses and other liabilities" and "Other non-current liabilities") on the Company's Consolidated Balance Sheets. The Company classifies derivative instruments in the Level 2 category within the fair value hierarchy.
+
+Cash flow hedges
+
+The Company enters into forward contracts to manage the foreign exchange risk on forecasted revenue transactions denominated in currencies other than the U.S. dollar, as well as the foreign exchange risk on forecasted transactions and firm commitments related to the licensing and production of foreign currency-denominated content assets. These forward contracts are designated as cash flow hedges of foreign currency firm commitments and forecasted transactions and generally have maturities of
+
+24
+
+months or less. The hedging contracts may reduce, but do not entirely eliminate, the effect of foreign currency exchange movements, and the Company may choose not to hedge certain exposures.
+
+The gain or loss on derivative instruments designated as cash flow hedges of forecasted foreign currency revenue is initially reported as a component of accumulated other comprehensive income ("AOCI") and reclassified into "Revenues" on the Consolidated Statements of Operations in the same period the forecasted transaction affects earnings. The gain or loss on derivative instruments designated as cash flow hedges of firmly committed or forecasted transactions related to the licensing and production of content assets is initially reported as a component of AOCI and reclassified into "Cost of Revenues" on the Consolidated Statements of Operations in the same period the hedged transaction affects earnings, which occurs as the underlying hedged content assets are amortized. Cash flows from hedging activities are classified in the same category as the cash flows for the underlying item being hedged within "Net cash provided by operating activities" on the Consolidated Statements of Cash Flows.
+
+In the event that the likelihood of occurrence of the underlying forecasted transactions is determined to be probable not to occur, the gains or losses on the related cash flow hedges are reclassified from AOCI to "Interest and other income (expense)" in the Consolidated Statements of Operations in the period of dedesignation.

@@ -1,0 +1,1615 @@
+---
+id: idea-D2ZNEmBA
+type: idea
+state: nascent
+title: MO 2016-10-27 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:41:08.551Z'
+date: '2026-05-03'
+created: '2026-05-03T21:41:08.902Z'
+---
+# ALTRIA GROUP, INC. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2016-10-27
+Source: https://www.sec.gov/Archives/edgar/data/764180/000076418016000211/a2016form10-qq32016.htm
+
+Risk Factors
+
+107
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+108
+
+Item 5.
+
+Other Information
+
+109
+
+Item 6.
+
+Exhibits
+
+109
+
+Signature
+
+Signature
+
+110
+
+2
+
+Table of Contents
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Financial Statements.
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Balance Sheets
+
+(in millions of dollars)
+
+(Unaudited)
+
+September 30, 2016
+
+December 31, 2015
+
+Assets
+
+Cash and cash equivalents
+
+$
+
+2,298
+
+$
+
+2,369
+
+Receivables
+
+146
+
+124
+
+Inventories:
+
+Leaf tobacco
+
+844
+
+957
+
+Other raw materials
+
+174
+
+181
+
+Work in process
+
+410
+
+444
+
+Finished product
+
+552
+
+449
+
+1,980
+
+2,031
+
+Deferred income taxes
+
+1,188
+
+1,175
+
+Other current assets
+
+791
+
+387
+
+Total current assets
+
+6,403
+
+6,086
+
+Property, plant and equipment, at cost
+
+4,820
+
+4,877
+
+Less accumulated depreciation
+
+2,851
+
+2,895
+
+1,969
+
+1,982
+
+Goodwill
+
+5,285
+
+5,285
+
+Other intangible assets, net
+
+12,042
+
+12,028
+
+Investment in SABMiller
+
+5,826
+
+5,483
+
+Finance assets, net
+
+1,046
+
+1,239
+
+Other assets
+
+363
+
+360
+
+Total Assets
+
+$
+
+32,934
+
+$
+
+32,463
+
+See notes to condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Balance Sheets (Continued)
+
+(in millions of dollars, except share and per share data)
+
+(Unaudited)
+
+September 30, 2016
+
+December 31, 2015
+
+Liabilities
+
+Current portion of long-term debt
+
+$
+
+—
+
+$
+
+4
+
+Accounts payable
+
+296
+
+400
+
+Accrued liabilities:
+
+Marketing
+
+797
+
+695
+
+Employment costs
+
+216
+
+198
+
+Settlement charges
+
+3,429
+
+3,590
+
+Other
+
+964
+
+1,081
+
+Dividends payable
+
+1,193
+
+1,110
+
+Total current liabilities
+
+6,895
+
+7,078
+
+Long-term debt
+
+13,878
+
+12,843
+
+Deferred income taxes
+
+5,607
+
+5,663
+
+Accrued pension costs
+
+863
+
+1,277
+
+Accrued postretirement health care costs
+
+2,296
+
+2,245
+
+Other liabilities
+
+412
+
+447
+
+Total liabilities
+
+29,951
+
+29,553
+
+Contingencies (Note 11)
+
+Redeemable noncontrolling interest
+
+36
+
+37
+
+Stockholders' Equity
+
+Common stock, par value $0.33 1/3 per share
+
+(2,805,961,317 shares issued)
+
+935
+
+935
+
+Additional paid-in capital
+
+5,864
+
+5,813
+
+Earnings reinvested in the business
+
+27,816
+
+27,257
+
+Accumulated other comprehensive losses
+
+(3,278
+
+)
+
+(3,280
+
+)
+
+Cost of repurchased stock
+
+(854,558,381 shares at September 30, 2016 and
+
+845,901,836 shares at December 31, 2015)
+
+(28,393
+
+)
+
+(27,845
+
+)
+
+Total stockholders' equity attributable to Altria Group, Inc.
+
+2,944
+
+2,880
+
+Noncontrolling interests
+
+3
+
+(7
+
+)
+
+Total stockholders' equity
+
+2,947
+
+2,873
+
+Total Liabilities and Stockholders' Equity
+
+$
+
+32,934
+
+$
+
+32,463
+
+See notes to condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Earnings
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+For the Nine Months Ended September 30,
+
+2016
+
+2015
+
+Net revenues
+
+$
+
+19,492
+
+$
+
+19,116
+
+Cost of sales
+
+5,841
+
+5,733
+
+Excise taxes on products
+
+4,888
+
+4,991
+
+Gross profit
+
+8,763
+
+8,392
+
+Marketing, administration and research costs
+
+1,871
+
+1,951
+
+Reduction of PMI tax-related receivable
+
+—
+
+41
+
+Asset impairment and exit costs
+
+123
+
+4
+
+Operating income
+
+6,769
+
+6,396
+
+Interest and other debt expense, net
+
+571
+
+609
+
+Loss on early extinguishment of debt
+
+823
+
+228
+
+Earnings from equity investment in SABMiller
+
+(564
+
+)
+
+(546
+
+)
+
+Gain on derivative financial instruments
+
+(205
+
+)
+
+—
+
+Earnings before income taxes
+
+6,144
+
+6,105
+
+Provision for income taxes
+
+2,178
+
+2,110
+
+Net earnings
+
+3,966
+
+3,995
+
+Net earnings attributable to noncontrolling interests
+
+(3
+
+)
+
+(1
+
+)
+
+Net earnings attributable to Altria Group, Inc.
+
+$
+
+3,963
+
+$
+
+3,994
+
+Per share data:
+
+Basic and diluted earnings per share attributable to Altria Group, Inc.
+
+$
+
+2.02
+
+$
+
+2.03
+
+Dividends declared
+
+$
+
+1.74
+
+$
+
+1.605
+
+See notes to condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Earnings
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+For the Three Months Ended September 30,
+
+2016
+
+2015
+
+Net revenues
+
+$
+
+6,905
+
+$
+
+6,699
+
+Cost of sales
+
+2,043
+
+1,932
+
+Excise taxes on products
+
+1,712
+
+1,721
+
+Gross profit
+
+3,150
+
+3,046
+
+Marketing, administration and research costs
+
+766
+
+698
+
+Reduction of PMI tax-related receivable
+
+—
+
+41
+
+Asset impairment and exit costs
+
+2
+
+—
+
+Operating income
+
+2,382
+
+2,307
+
+Interest and other debt expense, net
+
+179
+
+205
+
+Loss on early extinguishment of debt
+
+823
+
+—
+
+Earnings from equity investment in SABMiller
+
+(299
+
+)
+
+(187
+
+)
+
+Gain on derivative financial instruments
+
+(48
+
+)
+
+—
+
+Earnings before income taxes
+
+1,727
+
+2,289
+
+Provision for income taxes
+
+633
+
+761
+
+Net earnings
+
+1,094
+
+1,528
+
+Net earnings attributable to noncontrolling interests
+
+(1
+
+)
+
+—
+
+Net earnings attributable to Altria Group, Inc.
+
+$
+
+1,093
+
+$
+
+1,528
+
+Per share data:
+
+Basic and diluted earnings per share attributable to Altria Group, Inc.
+
+$
+
+0.56
+
+$
+
+0.78
+
+Dividends declared
+
+$
+
+0.61
+
+$
+
+0.565
+
+See notes to condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Comprehensive Earnings
+
+(in millions of dollars)
+
+(Unaudited)
+
+For the Nine Months Ended September 30,
+
+2016
+
+2015
+
+Net earnings
+
+$
+
+3,966
+
+$
+
+3,995
+
+Other comprehensive earnings (losses), net of deferred income taxes:
+
+Currency translation adjustments
+
+1
+
+(3
+
+)
+
+Benefit plans
+
+(116
+
+)
+
+121
+
+SABMiller
+
+117
+
+(593
+
+)
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+2
+
+(475
+
+)
+
+Comprehensive earnings
+
+3,968
+
+3,520
+
+Comprehensive earnings attributable to noncontrolling interests
+
+(3
+
+)
+
+(1
+
+)
+
+Comprehensive earnings attributable to Altria Group, Inc.
+
+$
+
+3,965
+
+$
+
+3,519
+
+See notes to condensed consolidated financial statements.
+
+7
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Comprehensive Earnings
+
+(in millions of dollars)
+
+(Unaudited)
+
+For the Three Months Ended September 30,
+
+2016
+
+2015
+
+Net earnings
+
+$
+
+1,094
+
+$
+
+1,528
+
+Other comprehensive earnings (losses), net of deferred income taxes:
+
+Currency translation adjustments
+
+—
+
+(2
+
+)
+
+Benefit plans
+
+28
+
+40
+
+SABMiller
+
+34
+
+(317
+
+)
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+62
+
+(279
+
+)
+
+Comprehensive earnings
+
+1,156
+
+1,249
+
+Comprehensive earnings attributable to noncontrolling interests
+
+(1
+
+)
+
+—
+
+Comprehensive earnings attributable to Altria Group, Inc.
+
+$
+
+1,155
+
+$
+
+1,249
+
+See notes to condensed consolidated financial statements.
+
+8
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Stockholders' Equity
+
+for the Year Ended
+
+December 31, 2015
+
+and
+
+the
+
+Nine Months Ended September 30, 2016
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+Attributable to Altria Group, Inc.
+
+Common
+
+Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Earnings
+
+Reinvested
+
+in the
+
+Business
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Losses
+
+Cost of
+
+Repurchased
+
+Stock
+
+Non-controlling
+
+Interests
+
+Total
+
+Stockholders'
+
+Equity
+
+Balances, December 31, 2014
+
+$
+
+935
+
+$
+
+5,735
+
+$
+
+26,277
+
+$
+
+(2,682
+
+)
+
+$
+
+(27,251
+
+)
+
+$
+
+(4
+
+)
+
+$
+
+3,010
+
+Net earnings (losses)
+
+(1)
+
+—
+
+—
+
+5,241
+
+—
+
+—
+
+(3
+
+)
+
+5,238
+
+Other comprehensive losses, net of deferred income taxes
+
+—
+
+—
+
+—
+
+(598
+
+)
+
+—
+
+—
+
+(598
+
+)
+
+Stock award activity
+
+—
+
+78
+
+—
+
+—
+
+(40
+
+)
+
+—
+
+38
+
+Cash dividends declared ($2.17 per share)
+
+—
+
+—
+
+(4,261
+
+)
+
+—
+
+—
+
+—
+
+(4,261
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(554
+
+)
+
+—
+
+(554
+
+)
+
+Balances, December 31, 2015
+
+935
+
+5,813
+
+27,257
+
+(3,280
+
+)
+
+(27,845
+
+)
+
+(7
+
+)
+
+2,873
+
+Net earnings
+
+(1)
+
+—
+
+—
+
+3,963
+
+—
+
+—
+
+—
+
+3,963
+
+Other comprehensive earnings, net of deferred income taxes
+
+—
+
+—
+
+—
+
+2
+
+—
+
+—
+
+2
+
+Stock award activity
+
+—
+
+61
+
+—
+
+—
+
+(36
+
+)
+
+—
+
+25
+
+Cash dividends declared ($1.74 per share)
+
+—
+
+—
+
+(3,404
+
+)
+
+—
+
+—
+
+—
+
+(3,404
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(512
+
+)
+
+—
+
+(512
+
+)
+
+Other
+
+—
+
+(10
+
+)
+
+—
+
+—
+
+—
+
+10
+
+—
+
+Balances, September 30, 2016
+
+$
+
+935
+
+$
+
+5,864
+
+$
+
+27,816
+
+$
+
+(3,278
+
+)
+
+$
+
+(28,393
+
+)
+
+$
+
+3
+
+$
+
+2,947
+
+(1)
+
+Amounts attributable to noncontrolling interests
+
+for the nine months ended September 30, 2016
+
+and for the year ended
+
+December 31, 2015
+
+exclude net earnings of
+
+$3 million
+
+and
+
+$5 million
+
+, respectively, due to the redeemable noncontrolling interest related to Stag's Leap Wine Cellars
+
+,
+
+which is reported in the mezzanine equity section in the condensed consolidated balance sheets at
+
+September 30, 2016
+
+and
+
+December 31, 2015
+
+.
+
+See notes to condensed consolidated financial statements.
+
+9
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Cash Flows
+
+(in millions of dollars)
+
+(Unaudited)
+
+For the Nine Months Ended September 30,
+
+2016
+
+2015
+
+Cash Provided by (Used in) Operating Activities
+
+Net earnings
+
+$
+
+3,966
+
+$
+
+3,995
+
+Adjustments to reconcile net earnings to operating cash flows:
+
+Depreciation and amortization
+
+149
+
+150
+
+Deferred income tax benefit
+
+(69
+
+)
+
+(1
+
+)
+
+Earnings from equity investment in SABMiller
+
+(564
+
+)
+
+(546
+
+)
+
+Dividends from SABMiller
+
+403
+
+374
+
+Gain on derivative financial instruments
+
+(205
+
+)
+
+—
+
+Asset impairment and exit costs, net of cash paid
+
+71
+
+2
+
+Loss on early extinguishment of debt
+
+823
+
+228
+
+Cash effects of changes:
+
+Receivables
+
+(21
+
+)
+
+9
+
+Inventories
+
+54
+
+59
+
+Accounts payable
+
+(132
+
+)
+
+(102
+
+)
+
+Income taxes
+
+(122
+
+)
+
+(6
+
+)
+
+Accrued liabilities and other current assets
+
+(257
+
+)
+
+22
+
+Accrued settlement charges
+
+(161
+
+)
+
+(284
+
+)
+
+Pension plan contributions
+
+(520
+
+)
+
+(23
+
+)
+
+Pension provisions and postretirement, net
+
+(56
+
+)
+
+78
+
+Other
+
+141
+
+135
+
+Net cash provided by operating activities
+
+3,500
+
+4,090
+
+Cash Provided by (Used in) Investing Activities
+
+Capital expenditures
+
+(128
+
+)
+
+(162
+
+)
+
+Proceeds from finance assets
+
+207
+
+255
+
+Other
+
+(44
+
+)
+
+2
+
+Net cash provided by investing activities
+
+35
+
+95
+
+Cash Provided by (Used in) Financing Activities
+
+Long-term debt issued
+
+1,976
+
+—
+
+Long-term debt repaid
+
+(933
+
+)
+
+(1,793
+
+)
+
+Repurchases of common stock
+
+(512
+
+)
+
+(518
+
+)
+
+Dividends paid on common stock
+
+(3,321
+
+)
+
+(3,071
+
+)
+
+Premiums and fees related to early extinguishment of debt
+
+(809
+
+)
+
+(226
+
+)
+
+Other
+
+(7
+
+)
+
+9
+
+Net cash used in financing activities
+
+(3,606
+
+)
+
+(5,599
+
+)
+
+Cash and cash equivalents:
+
+Decrease
+
+(71
+
+)
+
+(1,414
+
+)
+
+Balance at beginning of period
+
+2,369
+
+3,321
+
+Balance at end of period
+
+$
+
+2,298
+
+$
+
+1,907
+
+See notes to condensed consolidated financial statements.
+
+10
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Notes to Condensed Consolidated Financial Statements
+
+(Unaudited)
+
+Note 1
+
+. Background and Basis of Presentation:
+
+Background
+
+At
+
+September 30, 2016
+
+, Altria Group, Inc.'s wholly-owned subsidiaries included Philip Morris USA Inc. ("PM USA"), which is engaged predominantly in the manufacture and sale of cigarettes in the United States; John Middleton Co. ("Middleton"), which is engaged in the manufacture and sale of machine-made large cigars and pipe tobacco and is a wholly-owned subsidiary of PM USA; and UST LLC ("UST"), which through its wholly-owned subsidiaries, including U.S. Smokeless Tobacco Company LLC ("USSTC") and Ste. Michelle Wine Estates Ltd. ("Ste. Michelle"), is engaged in the manufacture and sale of smokeless tobacco products and wine. Altria Group, Inc.'s other operating companies included Nu Mark LLC ("Nu Mark"), a wholly-owned subsidiary that is engaged in the manufacture and sale of innovative tobacco products, and Philip Morris Capital Corporation ("PMCC"), a wholly-owned subsidiary that maintains a portfolio of finance assets, substantially all of which are leveraged leases. Other Altria Group, Inc. wholly-owned subsidiaries included Altria Group Distribution Company, which provides sales, distribution and consumer engagement services to certain Altria Group, Inc. operating subsidiaries, and Altria Client Services LLC, which provides various support services in areas, such as legal, regulatory, finance, human resources and external affairs, to Altria Group, Inc. and its subsidiaries. Altria Group, Inc.'s access to the operating cash flows of its wholly-owned subsidiaries consists of cash received from the payment of dividends and distributions, and the payment of interest on intercompany loans by its subsidiaries. At
+
+September 30, 2016
+
+, Altria Group, Inc.'s principal wholly-owned subsidiaries were not limited by long-term debt or other agreements in their ability to pay cash dividends or make other distributions with respect to their equity interests.
+
+At
+
+September 30, 2016
+
+, Altria Group, Inc. had an approximate
+
+27%
+
+ownership of SABMiller plc ("SABMiller"), which Altria Group, Inc. accounted for under the equity method of accounting. On
+
+October 10, 2016
+
+, Anheuser-Busch InBev SA/NV ("Legacy AB InBev") completed its previously-announced business combination with SABMiller in a cash and stock transaction (the "Transaction"). A newly formed Belgian company, which retained the name Anheuser-Busch InBev SA/NV ("AB InBev"), has become the holding company for the combined SABMiller and Legacy AB InBev businesses. Upon completion of the Transaction, Altria Group, Inc. had a
+
+9.6%

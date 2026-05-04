@@ -1,0 +1,1933 @@
+---
+id: idea-PGiZevKS
+type: idea
+state: nascent
+title: TJX 2022-08-26 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:10:22.219Z'
+date: '2026-05-03'
+created: '2026-05-03T20:10:22.569Z'
+---
+# TJX COMPANIES INC /DE/ 10-Q Part II Item 1A Risk Factors
+
+Filed: 2022-08-26
+Source: https://www.sec.gov/Archives/edgar/data/109198/000010919822000041/tjx-20220730.htm
+
+32
+
+ITEM 2. Unregistered Sales of Equity Securities and Use of Proceeds
+
+32
+
+ITEM 6. Exhibits
+
+33
+
+SIGNATURE
+
+33
+
+2
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Consolidated Financial Statements
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF INCOME
+
+(UNAUDITED)
+
+IN THOUSANDS EXCEPT PER SHARE AMOUNTS
+
+Thirteen Weeks Ended
+
+Twenty-Six Weeks Ended
+
+July 30,
+
+2022
+
+July 31,
+
+2021
+
+July 30,
+
+2022
+
+July 31,
+
+2021
+
+Net sales
+
+$
+
+11,843,008
+
+$
+
+12,077,063
+
+$
+
+23,249,482
+
+$
+
+22,163,724
+
+Cost of sales, including buying and occupancy costs
+
+8,571,550
+
+8,528,130
+
+16,794,763
+
+15,783,765
+
+Selling, general and administrative expenses
+
+2,174,861
+
+2,223,692
+
+4,269,443
+
+4,288,684
+
+Impairment on equity investment
+
+—
+
+—
+
+217,619
+
+—
+
+Loss on early extinguishment of debt
+
+—
+
+242,248
+
+—
+
+242,248
+
+Interest expense, net
+
+11,007
+
+28,661
+
+29,792
+
+73,349
+
+Income before income taxes
+
+1,085,590
+
+1,054,332
+
+1,937,865
+
+1,775,678
+
+Provision for income taxes
+
+276,250
+
+268,651
+
+541,052
+
+456,067
+
+Net income
+
+$
+
+809,340
+
+$
+
+785,681
+
+$
+
+1,396,813
+
+$
+
+1,319,611
+
+Basic earnings per share
+
+$
+
+0.69
+
+$
+
+0.65
+
+$
+
+1.19
+
+$
+
+1.09
+
+Weighted average common shares – basic
+
+1,167,922
+
+1,205,054
+
+1,172,531
+
+1,205,247
+
+Diluted earnings per share
+
+$
+
+0.69
+
+$
+
+0.64
+
+$
+
+1.18
+
+$
+
+1.08
+
+Weighted average common shares – diluted
+
+1,178,140
+
+1,220,615
+
+1,183,704
+
+1,221,012
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+3
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Thirteen Weeks Ended
+
+July 30,
+
+2022
+
+July 31,
+
+2021
+
+Net income
+
+$
+
+809,340
+
+$
+
+785,681
+
+Additions to other comprehensive (loss) income:
+
+Foreign currency translation adjustments, net of related tax provision of $
+
+409
+
+in fiscal 2023 and tax benefit of $
+
+1,140
+
+in fiscal 2022
+
+(
+
+30,935
+
+)
+
+(
+
+876
+
+)
+
+Reclassifications from other comprehensive (loss) to net income:
+
+Amortization of prior service cost and deferred gains/losses, net of related tax provisions of $
+
+1,376
+
+in fiscal 2023 and $
+
+1,590
+
+in fiscal 2022
+
+3,778
+
+4,368
+
+Other comprehensive (loss) income, net of tax
+
+(
+
+27,157
+
+)
+
+3,492
+
+Total comprehensive income
+
+$
+
+782,183
+
+$
+
+789,173
+
+Twenty-Six Weeks Ended
+
+July 30,
+
+2022
+
+July 31,
+
+2021
+
+Net income
+
+$
+
+1,396,813
+
+$
+
+1,319,611
+
+Additions to other comprehensive (loss) income:
+
+Foreign currency translation adjustments, net of related tax benefit of $
+
+165
+
+in fiscal 2023 and tax provision of $
+
+1,758
+
+in fiscal 2022
+
+(
+
+88,547
+
+)
+
+21,373
+
+Reclassifications from other comprehensive (loss) to net income:
+
+Amortization of prior service cost and deferred gains/losses, net of related tax provisions of $
+
+2,751
+
+in fiscal 2023 and $
+
+2,646
+
+in fiscal 2022
+
+7,556
+
+7,269
+
+Amortization of loss on cash flow hedge, net of related tax provision of $
+
+603
+
+in fiscal 2022
+
+—
+
+(
+
+263
+
+)
+
+Other comprehensive (loss) income, net of tax
+
+(
+
+80,991
+
+)
+
+28,379
+
+Total comprehensive income
+
+$
+
+1,315,822
+
+$
+
+1,347,990
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+4
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED BALANCE SHEETS
+
+(UNAUDITED)
+
+IN THOUSANDS, EXCEPT SHARE DATA
+
+July 30,
+
+2022
+
+January 29,
+
+2022
+
+July 31,
+
+2021
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+3,531,212
+
+$
+
+6,226,765
+
+$
+
+7,106,016
+
+Accounts receivable, net
+
+555,691
+
+517,623
+
+615,634
+
+Merchandise inventories
+
+7,083,260
+
+5,961,573
+
+5,086,631
+
+Prepaid expenses and other current assets
+
+552,480
+
+438,099
+
+459,046
+
+Federal, state and foreign income taxes recoverable
+
+112,122
+
+114,537
+
+121,703
+
+Total current assets
+
+11,834,765
+
+13,258,597
+
+13,389,030
+
+Net property at cost
+
+5,389,735
+
+5,270,827
+
+5,107,346
+
+Non-current deferred income taxes, net
+
+171,723
+
+184,971
+
+127,483
+
+Operating lease right of use assets
+
+8,986,682
+
+8,853,934
+
+9,183,258
+
+Goodwill
+
+96,648
+
+96,662
+
+97,972
+
+Other assets
+
+611,053
+
+796,467
+
+878,357
+
+Total assets
+
+$
+
+27,090,606
+
+$
+
+28,461,458
+
+$
+
+28,783,446
+
+Liabilities
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+4,085,478
+
+$
+
+4,465,427
+
+$
+
+4,413,316
+
+Accrued expenses and other current liabilities
+
+3,928,610
+
+4,244,997
+
+3,968,968
+
+Current portion of operating lease liabilities
+
+1,571,508
+
+1,576,561
+
+1,612,603
+
+Current portion of long-term debt
+
+499,646
+
+—
+
+—
+
+Federal, state and foreign income taxes payable
+
+61,877
+
+181,155
+
+47,171
+
+Total current liabilities
+
+10,147,119
+
+10,468,140
+
+10,042,058
+
+Other long-term liabilities
+
+916,663
+
+1,015,720
+
+1,072,847
+
+Non-current deferred income taxes, net
+
+67,030
+
+44,175
+
+3,451
+
+Long-term operating lease liabilities
+
+7,706,002
+
+7,575,590
+
+7,905,814
+
+Long-term debt
+
+2,857,143
+
+3,354,841
+
+3,352,892
+
+Commitments and contingencies (See Note K)
+
+Shareholders' equity
+
+Preferred stock, authorized
+
+5,000,000
+
+shares, par value $
+
+1
+
+,
+
+no
+
+shares issued
+
+—
+
+—
+
+—
+
+Common stock, authorized
+
+1,800,000,000
+
+shares, par value $
+
+1
+
+, issued and outstanding
+
+1,161,886,769
+
+;
+
+1,181,188,731
+
+and
+
+1,202,980,524
+
+respectively
+
+1,161,887
+
+1,181,189
+
+1,202,981
+
+Additional paid-in capital
+
+—
+
+—
+
+117,603
+
+Accumulated other comprehensive loss
+
+(
+
+768,141
+
+)
+
+(
+
+687,150
+
+)
+
+(
+
+577,692
+
+)
+
+Retained earnings
+
+5,002,903
+
+5,508,953
+
+5,663,492
+
+Total shareholders' equity
+
+5,396,649
+
+6,002,992
+
+6,406,384
+
+Total liabilities and shareholders' equity
+
+$
+
+27,090,606
+
+$
+
+28,461,458
+
+$
+
+28,783,446
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+5
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Twenty-Six Weeks Ended
+
+July 30,
+
+2022
+
+July 31,
+
+2021
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+1,396,813
+
+$
+
+1,319,611
+
+Adjustments to reconcile net income to cash provided by operating activities:
+
+Depreciation and amortization
+
+437,733
+
+430,561
+
+Loss on early extinguishment of debt
+
+—
+
+242,248
+
+Impairment on equity investment
+
+217,619
+
+—
+
+Loss on property disposals and impairment charges
+
+5,232
+
+482
+
+Deferred income tax provision (benefit)
+
+25,867
+
+(
+
+39,258
+
+)
+
+Share-based compensation
+
+58,186
+
+114,121
+
+Changes in assets and liabilities:
+
+(Increase) in accounts receivable
+
+(
+
+47,758
+
+)
+
+(
+
+154,350
+
+)
+
+(Increase) in merchandise inventories
+
+(
+
+1,206,761
+
+)
+
+(
+
+733,035
+
+)
+
+Decrease (increase) in income taxes recoverable
+
+2,415
+
+(
+
+85,441
+
+)
+
+(Increase) decrease in prepaid expenses and other current assets
+
+(
+
+49,755
+
+)
+
+19,738
+
+(Decrease) in accounts payable
+
+(
+
+311,338
+
+)
+
+(
+
+425,274
+
+)
+
+(Decrease) increase in accrued expenses and other liabilities
+
+(
+
+392,606
+
+)
+
+468,039
+
+(Decrease) in income taxes payable
+
+(
+
+122,617
+
+)
+
+(
+
+34,819
+
+)
+
+Increase (decrease) in net operating lease liabilities
+
+5,771
+
+(
+
+96,648
+
+)
+
+Other, net
+
+(
+
+12,564
+
+)
+
+(
+
+79,096
+
+)
+
+Net cash provided by operating activities
+
+6,237
+
+946,879
+
+Cash flows from investing activities:
+
+Property additions
+
+(
+
+693,495
+
+)
+
+(
+
+444,944
+
+)
+
+Purchases of investments
+
+(
+
+20,901
+
+)
+
+(
+
+12,182
+
+)
+
+Sales and maturities of investments
+
+11,013
+
+14,365
+
+Net cash (used in) investing activities
+
+(
+
+703,383
+
+)
+
+(
+
+442,761
+
+)
+
+Cash flows from financing activities:
+
+Payments on debt
+
+—
+
+(
+
+2,975,518
+
+)
+
+Payments for repurchase of common stock
+
+(
+
+1,307,202
+
+)
+
+(
+
+297,099
+
+)
+
+Cash dividends paid
+
+(
+
+655,213
+
+)
+
+(
+
+628,859
+
+)
+
+Proceeds from issuance of common stock
+
+49,982
+
+62,510
+
+Payments of employee tax withholdings for stock awards
+
+(
+
+32,454
+
+)
+
+(
+
+24,478
+
+)
+
+Net cash (used in) financing activities
+
+(
+
+1,944,887
+
+)
+
+(
+
+3,863,444
+
+)
+
+Effect of exchange rate changes on cash
+
+(
+
+53,520
+
+)
+
+(
+
+4,228
+
+)
+
+Net (decrease) in cash and cash equivalents
+
+(
+
+2,695,553
+
+)
+
+(
+
+3,363,554
+
+)
+
+Cash and cash equivalents at beginning of year
+
+6,226,765
+
+10,469,570
+
+Cash and cash equivalents at end of period
+
+$
+
+3,531,212
+
+$
+
+7,106,016
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+6
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance, April 30, 2022
+
+1,172,711
+
+$
+
+1,172,711
+
+$
+
+—
+
+$
+
+(
+
+740,984
+
+)
+
+$
+
+5,163,713
+
+$
+
+5,595,440
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+809,340
+
+809,340
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+27,157
+
+)
+
+—
+
+(
+
+27,157
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+343,280
+
+)
+
+(
+
+343,280
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+30,850
+
+—
+
+—
+
+30,850
+
+Issuance of common stock under stock incentive plan, and related tax effect
+
+1,022
+
+1,022
+
+31,034
+
+—
+
+(
+
+599
+
+)
+
+31,457
+
+Common stock repurchased
+
+(
+
+11,846
+
+)
+
+(
+
+11,846
+
+)
+
+(
+
+61,884
+
+)
+
+—
+
+(
+
+626,271
+
+)
+
+(
+
+700,001
+
+)
+
+Balance, July 30, 2022
+
+1,161,887
+
+$
+
+1,161,887
+
+$
+
+—
+
+$
+
+(
+
+768,141
+
+)
+
+$
+
+5,002,903
+
+$
+
+5,396,649
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance, May 1, 2021
+
+1,206,387
+
+$
+
+1,206,387
+
+$
+
+321,475
+
+$
+
+(
+
+581,184
+
+)
+
+$
+
+5,192,536
+
+$
+
+6,139,214
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+785,681
+
+785,681
+
+Other comprehensive income, net of tax
+
+—
+
+—
+
+—
+
+3,492
+
+—
+
+3,492
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+314,378
+
+)
+
+(
+
+314,378
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+63,585
+
+—
+
+—
+
+63,585
+
+Issuance of common stock under stock incentive plan, and related tax effect
+
+1,105
+
+1,105
+
+25,131
+
+—
+
+(
+
+347
+
+)
+
+25,889
+
+Common stock repurchased and retired
+
+(
+
+4,511
+
+)
+
+(
+
+4,511
+
+)
+
+(
+
+292,588
+
+)
+
+—
+
+—
+
+(
+
+297,099
+
+)
+
+Balance, July 31, 2021
+
+1,202,981
+
+$
+
+1,202,981
+
+$
+
+117,603
+
+$
+
+(
+
+577,692
+
+)
+
+$
+
+5,663,492
+
+$
+
+6,406,384
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+7
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Twenty-Six Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance, January 29, 2022
+
+1,181,189
+
+$
+
+1,181,189
+
+$
+
+—
+
+$
+
+(
+
+687,150
+
+)
+
+$
+
+5,508,953
+
+$
+
+6,002,992
+
+Net income
+
+1,396,813
+
+1,396,813
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+80,991
+
+)
+
+(
+
+80,991
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+690,202
+
+)
+
+(
+
+690,202
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+58,186
+
+—
+
+—
+
+58,186
+
+Issuance of common stock under stock incentive plan, net of shares used to pay tax withholdings
+
+2,167
+
+2,167
+
+15,485
+
+—
+
+(
+
+599
+
+)
+
+17,053
+
+Common stock repurchased and retired
+
+(
+
+21,469
+
+)
+
+(
+
+21,469
+
+)
+
+(
+
+73,671
+
+)
+
+—
+
+(
+
+1,212,062
+
+)
+
+(
+
+1,307,202
+
+)
+
+Balance, July 30, 2022
+
+1,161,887
+
+$
+
+1,161,887
+
+$
+
+—
+
+$
+
+(
+
+768,141
+
+)
+
+$
+
+5,002,903
+
+$
+
+5,396,649
+
+Twenty-Six Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance, January 30, 2021
+
+1,204,698
+
+$
+
+1,204,698
+
+$
+
+260,515
+
+$
+
+(
+
+606,071
+
+)
+
+$
+
+4,973,542
+
+$
+
+5,832,684
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,319,611
+
+1,319,611
+
+Other comprehensive income, net of tax
+
+—
+
+—
+
+—
+
+28,379
+
+28,379
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+629,314
+
+)
+
+(
+
+629,314
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+114,121
+
+—
+
+—
+
+114,121
+
+Issuance of common stock under stock incentive plan, net of shares used to pay tax withholdings
+
+2,794
+
+2,794
+
+35,555
+
+—
+
+(
+
+347
+
+)
+
+38,002
+
+Common stock repurchased
+
+(
+
+4,511
+
+)
+
+(
+
+4,511
+
+)
+
+(
+
+292,588
+
+)
+
+—
+
+—
+
+(
+
+297,099
+
+)
+
+Balance, July 31, 2021
+
+1,202,981
+
+$
+
+1,202,981
+
+$
+
+117,603
+
+$
+
+(
+
+577,692
+
+)
+
+$
+
+5,663,492
+
+$
+
+6,406,384
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+8
+
+THE TJX COMPANIES, INC.
+
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
+
+Note A.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+Basis of Presentation
+
+The Consolidated Financial Statements and Notes thereto have been prepared in accordance with accounting principles generally accepted in the United States of America ("GAAP") for interim financial information. These Consolidated Financial Statements and Notes thereto are unaudited and, in the opinion of management, reflect all normal recurring adjustments, accruals and deferrals among periods required to match costs properly with the related revenue or activity, considered necessary by The TJX Companies, Inc. (together with its subsidiaries, "TJX") for a fair statement of its Consolidated Financial Statements for the periods reported, all in conformity with GAAP consistently applied. Investments for which the Company exercises significant influence but does not have control are accounted for under the equity method. The Consolidated Financial Statements and Notes thereto should be read in conjunction with the audited Consolidated Financial Statements, including the related notes, contained in TJX's Annual Report on Form 10-K for the fiscal year ended January 29, 2022 ("fiscal 2022").
+
+These interim results are not necessarily indicative of results for the full fiscal year. TJX's business, in common with the businesses of retailers generally, is subject to seasonal influences, with higher levels of sales and income generally realized in the second half of the year.

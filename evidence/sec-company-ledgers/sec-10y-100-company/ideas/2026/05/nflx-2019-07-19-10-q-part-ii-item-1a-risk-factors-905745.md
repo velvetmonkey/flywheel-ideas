@@ -1,0 +1,1445 @@
+---
+id: idea-pHQqNswS
+type: idea
+state: nascent
+title: NFLX 2019-07-19 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:41:45.745Z'
+date: '2026-05-03'
+created: '2026-05-03T20:41:46.210Z'
+---
+# NETFLIX INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2019-07-19
+Source: https://www.sec.gov/Archives/edgar/data/1065280/000106528019000260/form10qq219.htm
+
+Risk Factors
+
+37
+
+Item 6.
+
+Exhibits
+
+37
+
+Exhibit Index
+
+38
+
+Signatures
+
+38
+
+2
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Operations
+
+(unaudited)
+
+(in thousands, except per share data)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+Revenues
+
+$
+
+4,923,116
+
+$
+
+3,907,270
+
+$
+
+9,444,108
+
+$
+
+7,608,126
+
+Cost of revenues
+
+3,005,657
+
+2,402,431
+
+5,876,271
+
+4,703,010
+
+Marketing
+
+603,150
+
+592,007
+
+1,219,728
+
+1,128,784
+
+Technology and development
+
+383,233
+
+299,095
+
+755,997
+
+581,405
+
+General and administrative
+
+224,657
+
+151,524
+
+426,609
+
+286,136
+
+Operating income
+
+706,419
+
+462,213
+
+1,165,503
+
+908,791
+
+Other income (expense):
+
+Interest expense
+
+(
+
+152,033
+
+)
+
+(
+
+101,605
+
+)
+
+(
+
+287,562
+
+)
+
+(
+
+182,824
+
+)
+
+Interest and other income (expense)
+
+(
+
+53,470
+
+)
+
+68,028
+
+22,634
+
+2,285
+
+Income before income taxes
+
+500,916
+
+428,636
+
+900,575
+
+728,252
+
+Provision for income taxes
+
+230,266
+
+44,287
+
+285,873
+
+53,779
+
+Net income
+
+$
+
+270,650
+
+$
+
+384,349
+
+$
+
+614,702
+
+$
+
+674,473
+
+Earnings per share:
+
+Basic
+
+$
+
+0.62
+
+$
+
+0.88
+
+$
+
+1.41
+
+$
+
+1.55
+
+Diluted
+
+$
+
+0.60
+
+$
+
+0.85
+
+$
+
+1.36
+
+$
+
+1.50
+
+Weighted-average common shares outstanding:
+
+Basic
+
+437,587
+
+435,097
+
+437,271
+
+434,638
+
+Diluted
+
+452,195
+
+451,552
+
+452,063
+
+450,958
+
+See accompanying notes to the consolidated financial statements.
+
+3
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Comprehensive Income
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+Net income
+
+$
+
+270,650
+
+$
+
+384,349
+
+$
+
+614,702
+
+$
+
+674,473
+
+Other comprehensive income (loss):
+
+Foreign currency translation adjustments
+
+5,248
+
+(
+
+16,691
+
+)
+
+(
+
+770
+
+)
+
+8,130
+
+Comprehensive income
+
+$
+
+275,898
+
+$
+
+367,658
+
+$
+
+613,932
+
+$
+
+682,603
+
+See accompanying notes to the consolidated financial statements.
+
+4
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Cash Flows
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+270,650
+
+$
+
+384,349
+
+$
+
+614,702
+
+$
+
+674,473
+
+Adjustments to reconcile net income to net cash used in operating activities:
+
+Additions to streaming content assets
+
+(
+
+3,325,103
+
+)
+
+(
+
+3,033,721
+
+)
+
+(
+
+6,322,849
+
+)
+
+(
+
+6,020,468
+
+)
+
+Change in streaming content liabilities
+
+(
+
+12,414
+
+)
+
+288,474
+
+(
+
+27,112
+
+)
+
+667,359
+
+Amortization of streaming content assets
+
+2,231,915
+
+1,817,817
+
+4,356,601
+
+3,566,661
+
+Amortization of DVD content assets
+
+7,656
+
+11,154
+
+16,165
+
+22,288
+
+Depreciation and amortization of property, equipment and intangibles
+
+25,496
+
+19,736
+
+49,057
+
+38,777
+
+Stock-based compensation expense
+
+103,848
+
+81,232
+
+205,048
+
+149,627
+
+Other non-cash items
+
+53,039
+
+13,921
+
+90,238
+
+22,130
+
+Foreign currency remeasurement loss (gain) on long-term debt
+
+61,284
+
+(
+
+85,410
+
+)
+
+3,684
+
+(
+
+44,330
+
+)
+
+Deferred taxes
+
+35,519
+
+(
+
+9,539
+
+)
+
+42,146
+
+(
+
+31,588
+
+)
+
+Changes in operating assets and liabilities:
+
+Other current assets
+
+(
+
+24,231
+
+)
+
+(
+
+25,564
+
+)
+
+(
+
+56,307
+
+)
+
+(
+
+81,469
+
+)
+
+Accounts payable
+
+(
+
+2,674
+
+)
+
+7,733
+
+(
+
+127,141
+
+)
+
+81,816
+
+Accrued expenses and other liabilities
+
+(
+
+26,705
+
+)
+
+(
+
+52,851
+
+)
+
+130,942
+
+66,198
+
+Deferred revenue
+
+84,085
+
+23,848
+
+131,878
+
+79,118
+
+Other non-current assets and liabilities
+
+(
+
+26,119
+
+)
+
+40,582
+
+(
+
+30,605
+
+)
+
+54,412
+
+Net cash used in operating activities
+
+(
+
+543,754
+
+)
+
+(
+
+518,239
+
+)
+
+(
+
+923,553
+
+)
+
+(
+
+754,996
+
+)
+
+Cash flows from investing activities:
+
+Acquisition of DVD content assets
+
+(
+
+7,798
+
+)
+
+(
+
+12,552
+
+)
+
+(
+
+16,968
+
+)
+
+(
+
+23,348
+
+)
+
+Purchases of property and equipment
+
+(
+
+39,584
+
+)
+
+(
+
+27,323
+
+)
+
+(
+
+99,965
+
+)
+
+(
+
+64,493
+
+)
+
+Change in other assets
+
+(
+
+2,654
+
+)
+
+(
+
+441
+
+)
+
+(
+
+13,206
+
+)
+
+(
+
+2,227
+
+)
+
+Net cash used in investing activities
+
+(
+
+50,036
+
+)
+
+(
+
+40,316
+
+)
+
+(
+
+130,139
+
+)
+
+(
+
+90,068
+
+)
+
+Cash flows from financing activities:
+
+Proceeds from issuance of debt
+
+2,243,196
+
+1,900,000
+
+2,243,196
+
+1,900,000
+
+Debt issuance costs
+
+(
+
+18,192
+
+)
+
+(
+
+16,992
+
+)
+
+(
+
+18,192
+
+)
+
+(
+
+16,992
+
+)
+
+Proceeds from issuance of common stock
+
+21,896
+
+26,936
+
+44,868
+
+83,271
+
+Other financing activities
+
+—
+
+(
+
+532
+
+)
+
+—
+
+(
+
+853
+
+)
+
+Net cash provided by financing activities
+
+2,246,900
+
+1,909,412
+
+2,269,872
+
+1,965,426
+
+Effect of exchange rate changes on cash, cash equivalents, and restricted cash
+
+4,998
+
+(
+
+36,340
+
+)
+
+(
+
+16
+
+)
+
+(
+
+29,163
+
+)
+
+Net increase in cash, cash equivalents, and restricted cash
+
+1,658,108
+
+1,314,517
+
+1,216,164
+
+1,091,199
+
+Cash, cash equivalents and restricted cash at beginning of period
+
+3,370,097
+
+2,599,477
+
+3,812,041
+
+2,822,795
+
+Cash, cash equivalents and restricted cash at end of period
+
+$
+
+5,028,205
+
+$
+
+3,913,994
+
+$
+
+5,028,205
+
+$
+
+3,913,994
+
+See accompanying notes to the consolidated financial statements.
+
+5
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Balance Sheets
+
+(in thousands, except share and par value data)
+
+As of
+
+June 30,
+
+2019
+
+December 31,
+
+2018
+
+(unaudited)
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+5,004,247
+
+$
+
+3,794,483
+
+Current content assets, net
+
+—
+
+5,151,186
+
+Other current assets
+
+872,910
+
+748,466
+
+Total current assets
+
+5,877,157
+
+9,694,135
+
+Non-current content assets, net
+
+21,945,740
+
+14,960,954
+
+Property and equipment, net
+
+452,399
+
+418,281
+
+Other non-current assets
+
+1,896,043
+
+901,030
+
+Total assets
+
+$
+
+30,171,339
+
+$
+
+25,974,400
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Current content liabilities
+
+$
+
+4,848,201
+
+$
+
+4,686,019
+
+Accounts payable
+
+442,194
+
+562,985
+
+Accrued expenses and other liabilities
+
+750,812
+
+477,417
+
+Deferred revenue
+
+892,777
+
+760,899
+
+Total current liabilities
+
+6,933,984
+
+6,487,320
+
+Non-current content liabilities
+
+3,564,440
+
+3,759,026
+
+Long-term debt
+
+12,594,135
+
+10,360,058
+
+Other non-current liabilities
+
+973,232
+
+129,231
+
+Total liabilities
+
+24,065,791
+
+20,735,635
+
+Commitments and contingencies (Note 6)
+
+Stockholders' equity:
+
+Common stock, $0.001 par value; 4,990,000,000 shares authorized at June 30, 2019 and December 31, 2018; 437,834,882 and 436,598,597 issued and outstanding at June 30, 2019 and December 31, 2018, respectively
+
+2,566,365
+
+2,315,988
+
+Accumulated other comprehensive loss
+
+(
+
+20,352
+
+)
+
+(
+
+19,582
+
+)
+
+Retained earnings
+
+3,559,535
+
+2,942,359
+
+Total stockholders' equity
+
+6,105,548
+
+5,238,765
+
+Total liabilities and stockholders' equity
+
+$
+
+30,171,339
+
+$
+
+25,974,400
+
+See accompanying notes to the consolidated financial statements.
+
+6
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Stockholders' Equity
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+June 30,
+
+2019
+
+June 30,
+
+2018
+
+Total stockholders' equity, beginning balances
+
+$
+
+5,703,058
+
+$
+
+4,020,730
+
+$
+
+5,238,765
+
+$
+
+3,581,956
+
+Common stock and additional paid-in capital:
+
+Beginning balances
+
+$
+
+2,439,773
+
+$
+
+1,995,225
+
+$
+
+2,315,988
+
+$
+
+1,871,396
+
+Issuance of common stock upon exercise of options
+
+22,744
+
+26,980
+
+45,329
+
+82,414
+
+Stock-based compensation expense
+
+103,848
+
+81,232
+
+205,048
+
+149,627
+
+Ending balance
+
+$
+
+2,566,365
+
+$
+
+2,103,437
+
+$
+
+2,566,365
+
+$
+
+2,103,437
+
+Accumulated other comprehensive income (loss):
+
+Beginning balances
+
+$
+
+(
+
+25,600
+
+)
+
+$
+
+4,264
+
+$
+
+(
+
+19,582
+
+)
+
+$
+
+(
+
+20,557
+
+)
+
+Other comprehensive income (loss)
+
+5,248
+
+(
+
+16,691
+
+)
+
+(
+
+770
+
+)
+
+8,130
+
+Ending balance
+
+$
+
+(
+
+20,352
+
+)
+
+$
+
+(
+
+12,427
+
+)
+
+$
+
+(
+
+20,352
+
+)
+
+$
+
+(
+
+12,427
+
+)
+
+Retained earnings:
+
+Beginning balances
+
+$
+
+3,288,885
+
+$
+
+2,021,241
+
+$
+
+2,942,359
+
+$
+
+1,731,117
+
+Net income
+
+270,650
+
+384,349
+
+614,702
+
+674,473
+
+Adoption of ASU 2016-02, Leases (Topic 842)
+
+—
+
+—
+
+2,474
+
+—
+
+Ending balances
+
+$
+
+3,559,535
+
+$
+
+2,405,590
+
+$
+
+3,559,535
+
+$
+
+2,405,590
+
+Total stockholders' equity, ending balances
+
+$
+
+6,105,548
+
+$
+
+4,496,600
+
+$
+
+6,105,548
+
+$
+
+4,496,600
+
+See accompanying notes to the consolidated financial statements.
+
+7
+
+Table of Contents
+
+NETFLIX, INC.
+
+Notes to Consolidated Financial Statements
+
+(unaudited)
+
+1.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+The accompanying interim consolidated financial statements of Netflix, Inc. and its wholly owned subsidiaries (the "Company") have been prepared in conformity with accounting principles generally accepted in the United States ("U.S.") and are consistent in all material respects with those applied in the Company's Annual Report on Form 10-K, as amended by Form 10-K/A, for the year ended
+
+December 31, 2018
+
+filed with the Securities and Exchange Commission (the "SEC") on January 29, 2019 and
+
+February 8, 2019
+
+, respectively.
+
+The preparation of consolidated financial statements in conformity with U.S. generally accepted accounting principles ("GAAP") requires management to make estimates and judgments that affect the amounts reported in the consolidated financial statements and accompanying notes. Significant items subject to such estimates and assumptions include the streaming content asset amortization policy and the recognition and measurement of income tax assets and liabilities. The Company bases its estimates on historical experience and on various other assumptions that the Company believes to be reasonable under the circumstances. On a regular basis, the Company evaluates the assumptions, judgments and estimates. Actual results may differ from these estimates.
+
+The interim financial information is unaudited, but reflects all normal recurring adjustments that are, in the opinion of management, necessary to fairly present the information set forth herein. The interim consolidated financial statements should be read in conjunction with the audited consolidated financial statements and related notes included in the Company's Annual Report on Form 10-K, as amended by Form 10-K/A, for the year ended
+
+December 31, 2018
+
+. Interim results are not necessarily indicative of the results for a full year.
+
+There have been no material changes in the Company's significant accounting policies, other than the adoption of accounting pronouncements below, as compared to the significant accounting policies described in the Company's Annual Report on Form 10-K, as amended by Form 10-K/A, for the year ended December 31, 2018.
+
+Recently adopted accounting pronouncements
+
+In February 2016, the Financial Accounting Standards Board ("FASB") issued ASU 2016-02,
+
+Leases (Topic 842)
+
+in order to increase transparency and comparability among organizations by recognizing lease assets and lease liabilities on the balance sheet for those leases classified as operating leases under prior GAAP. ASU 2016-02 requires that a lessee should recognize a liability to make lease payments (the lease liability) and a right-of-use asset representing its right to use the underlying asset for the lease term on the balance sheet. The Company adopted ASU 2016-02 in the first quarter of 2019 utilizing the modified retrospective transition method through a cumulative-effect adjustment at the beginning of the first quarter of 2019. The Company has elected the package of practical expedients, which allows the Company not to reassess (1) whether any expired or existing contracts as of the adoption date are or contain a lease, (2) lease classification for any expired or existing leases as of the adoption date and (3) initial direct costs for any existing leases as of the adoption date. The Company did not elect to apply the hindsight practical expedient when determining lease term and assessing impairment of right-of-use assets. The adoption of ASU 2016-02 on January 1, 2019 resulted in the recognition of right-of-use assets of approximately
+
+$
+
+743
+
+million
+
+, lease liabilities for operating leases of approximately
+
+$
+
+813
+
+million
+
+and a cumulative-effect adjustment on retained earnings of
+
+$
+
+2
+
+million
+
+on its Consolidated Balance Sheets, with no material impact to its Consolidated Statements of Operations. See Note 4 for further information regarding the impact of the adoption of ASU 2016-02 on the Company's financial statements.
+
+In March 2019, the FASB issued ASU 2019-02,
+
+Improvements to Accounting for Costs of Films and License Agreements for Program Materials
+
+, in order to align the accounting for production costs of an episodic television series with the accounting for production costs of films by removing the content distinction for capitalization. ASU 2019-02 also requires that an entity reassess estimates of the use of a film in a film group and account for any changes prospectively. In addition, ASU 2019-02 requires that an entity test films and license agreements for program material for impairment at a film group level when the film or license agreements are predominantly monetized with other films and license agreements. ASU 2019-02 is effective for fiscal years beginning after December 15, 2019 and early adoption is permitted. The Company early adopted ASU 2019-02 in the first quarter of 2019 and as such has included all content assets (licensed and produced) as "Non-current content assets, net" on its Consolidated Balance Sheets, beginning with the period of adoption. There was no material impact to its Consolidated Statements of Operations. See the Company's updated Streaming Content policy below for further details.
+
+Streaming Content (Effective January 1, 2019)

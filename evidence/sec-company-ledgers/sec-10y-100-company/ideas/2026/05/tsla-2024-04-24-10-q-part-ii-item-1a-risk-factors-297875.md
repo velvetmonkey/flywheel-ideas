@@ -1,0 +1,1641 @@
+---
+id: idea-kCSm1mMt
+type: idea
+state: nascent
+title: TSLA 2024-04-24 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T19:58:17.875Z'
+date: '2026-05-03'
+created: '2026-05-03T19:58:18.255Z'
+---
+# Tesla, Inc. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2024-04-24
+Source: https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm
+
+Risk Factors
+
+34
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+34
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+34
+
+Item 4.
+
+Mine Safety Disclosures
+
+34
+
+Item 5.
+
+Other Information
+
+34
+
+Item 6.
+
+Exhibits
+
+35
+
+Signatures
+
+36
+
+1
+
+Table of Contents
+
+Forward-Looking Statements
+
+The discussions in this Quarterly Report on Form 10-Q contain forward-looking statements reflecting our current expectations that involve risks and uncertainties. These forward-looking statements include, but are not limited to, statements concerning supply chain constraints, our strategy, competition, future operations and production capacity, future financial position, future revenues, projected costs, profitability, expected cost reductions, capital adequacy, expectations regarding demand and acceptance for our technologies, growth opportunities and trends in the markets in which we operate, prospects and plans and objectives of management. The words "anticipates," "believes," "could," "estimates," "expects," "intends," "may," "plans," "projects," "will," "would" and similar expressions are intended to identify forward-looking statements, although not all forward-looking statements contain these identifying words. We may not actually achieve the plans, intentions or expectations disclosed in our forward-looking statements and you should not place undue reliance on our forward-looking statements. Actual results or events could differ materially from the plans, intentions and expectations disclosed in the forward-looking statements that we make. These forward-looking statements involve risks and uncertainties that could cause our actual results to differ materially from those in the forward-looking statements, including, without limitation, the risks set forth in Part I, Item 1A, "Risk Factors" of the Annual Report on Form 10-K for the fiscal year ended December 31, 2023 and that are otherwise described or updated from time to time in our other filings with the Securities and Exchange Commission (the "SEC"). The discussion of such risks is not an indication that any such risks have occurred at the time of this filing. We do not assume any obligation to update any forward-looking statements.
+
+Table of Contents
+
+PART I. FINANCIAL INFORMATION
+
+ITEM 1. FINANCIAL STATEMENTS
+
+Tesla, Inc.
+
+Consolidated Balance Sheets
+
+(in millions, except per share data)
+
+(unaudited)
+
+March 31,
+
+2024
+
+December 31,
+
+2023
+
+Assets
+
+Current assets
+
+Cash and cash equivalents
+
+$
+
+11,805
+
+$
+
+16,398
+
+Short-term investments
+
+15,058
+
+12,696
+
+Accounts receivable, net
+
+3,887
+
+3,508
+
+Inventory
+
+16,033
+
+13,626
+
+Prepaid expenses and other current assets
+
+3,752
+
+3,388
+
+Total current assets
+
+50,535
+
+49,616
+
+Operating lease vehicles, net
+
+5,736
+
+5,989
+
+Solar energy systems, net
+
+5,162
+
+5,229
+
+Property, plant and equipment, net
+
+31,436
+
+29,725
+
+Operating lease right-of-use assets
+
+4,367
+
+4,180
+
+Digital assets, net
+
+184
+
+184
+
+Intangible assets, net
+
+171
+
+178
+
+Goodwill
+
+250
+
+253
+
+Deferred tax assets
+
+6,769
+
+6,733
+
+Other non-current assets
+
+4,616
+
+4,531
+
+Total assets
+
+$
+
+109,226
+
+$
+
+106,618
+
+Liabilities
+
+Current liabilities
+
+Accounts payable
+
+$
+
+14,725
+
+$
+
+14,431
+
+Accrued liabilities and other
+
+9,243
+
+9,080
+
+Deferred revenue
+
+3,024
+
+2,864
+
+Current portion of debt and finance leases
+
+2,461
+
+2,373
+
+Total current liabilities
+
+29,453
+
+28,748
+
+Debt and finance leases, net of current portion
+
+2,899
+
+2,857
+
+Deferred revenue, net of current portion
+
+3,214
+
+3,251
+
+Other long-term liabilities
+
+8,480
+
+8,153
+
+Total liabilities
+
+44,046
+
+43,009
+
+Commitments and contingencies (Note 10)
+
+Redeemable noncontrolling interests in subsidiaries
+
+73
+
+242
+
+Equity
+
+Stockholders' equity
+
+Preferred stock; $
+
+0.001
+
+par value;
+
+100
+
+shares authorized;
+
+no
+
+shares issued and outstanding
+
+—
+
+—
+
+Common stock; $
+
+0.001
+
+par value;
+
+6,000
+
+shares authorized;
+
+3,189
+
+and
+
+3,185
+
+shares issued and outstanding as of March 31, 2024 and December 31, 2023, respectively
+
+3
+
+3
+
+Additional paid-in capital
+
+35,763
+
+34,892
+
+Accumulated other comprehensive loss
+
+(
+
+399
+
+)
+
+(
+
+143
+
+)
+
+Retained earnings
+
+29,011
+
+27,882
+
+Total stockholders' equity
+
+64,378
+
+62,634
+
+Noncontrolling interests in subsidiaries
+
+729
+
+733
+
+Total liabilities and equity
+
+$
+
+109,226
+
+$
+
+106,618
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+4
+
+Table of Contents
+
+Tesla, Inc.
+
+Consolidated Statements of Operations
+
+(in millions, except per share data)
+
+(unaudited)
+
+Three Months Ended March 31,
+
+2024
+
+2023
+
+Revenues
+
+Automotive sales
+
+$
+
+16,460
+
+$
+
+18,878
+
+Automotive regulatory credits
+
+442
+
+521
+
+Automotive leasing
+
+476
+
+564
+
+Total automotive revenues
+
+17,378
+
+19,963
+
+Energy generation and storage
+
+1,635
+
+1,529
+
+Services and other
+
+2,288
+
+1,837
+
+Total revenues
+
+21,301
+
+23,329
+
+Cost of revenues
+
+Automotive sales
+
+13,897
+
+15,422
+
+Automotive leasing
+
+269
+
+333
+
+Total automotive cost of revenues
+
+14,166
+
+15,755
+
+Energy generation and storage
+
+1,232
+
+1,361
+
+Services and other
+
+2,207
+
+1,702
+
+Total cost of revenues
+
+17,605
+
+18,818
+
+Gross profit
+
+3,696
+
+4,511
+
+Operating expenses
+
+Research and development
+
+1,151
+
+771
+
+Selling, general and administrative
+
+1,374
+
+1,076
+
+Total operating expenses
+
+2,525
+
+1,847
+
+Income from operations
+
+1,171
+
+2,664
+
+Interest income
+
+350
+
+213
+
+Interest expense
+
+(
+
+76
+
+)
+
+(
+
+29
+
+)
+
+Other income (expense), net
+
+108
+
+(
+
+48
+
+)
+
+Income before income taxes
+
+1,553
+
+2,800
+
+Provision for income taxes
+
+409
+
+261
+
+Net income
+
+1,144
+
+2,539
+
+Net income attributable to noncontrolling interests and redeemable noncontrolling interests in subsidiaries
+
+15
+
+26
+
+Net income attributable to common stockholders
+
+$
+
+1,129
+
+$
+
+2,513
+
+Net income per share of common stock attributable to common stockholders
+
+Basic
+
+$
+
+0.37
+
+$
+
+0.80
+
+Diluted
+
+$
+
+0.34
+
+$
+
+0.73
+
+Weighted average shares used in computing net income per share of common stock
+
+Basic
+
+3,186
+
+3,166
+
+Diluted
+
+3,484
+
+3,468
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+5
+
+Table of Contents
+
+Tesla, Inc.
+
+Consolidated Statements of Comprehensive Income
+
+(in millions)
+
+(unaudited)
+
+Three Months Ended March 31,
+
+2024
+
+2023
+
+Net income
+
+$
+
+1,144
+
+$
+
+2,539
+
+Other comprehensive (loss) income:
+
+Foreign currency translation adjustment
+
+(
+
+252
+
+)
+
+130
+
+Unrealized net (loss) gain on investments, net of tax
+
+(
+
+4
+
+)
+
+6
+
+Comprehensive income
+
+888
+
+2,675
+
+Less: Comprehensive income attributable to noncontrolling interests and redeemable noncontrolling interests in subsidiaries
+
+15
+
+26
+
+Comprehensive income attributable to common stockholders
+
+$
+
+873
+
+$
+
+2,649
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+6
+
+Table of Contents
+
+Tesla, Inc.
+
+Consolidated Statements of Redeemable Noncontrolling Interests and Equity
+
+(in millions)
+
+(unaudited)
+
+Three Months Ended March 31, 2024
+
+Redeemable
+
+Noncontrolling
+
+Interests
+
+Common Stock
+
+Additional
+
+Paid-In
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests in
+
+Subsidiaries
+
+Total
+
+Equity
+
+Shares
+
+Amount
+
+Balance as of December 31, 2023
+
+$
+
+242
+
+3,185
+
+$
+
+3
+
+$
+
+34,892
+
+$
+
+(
+
+143
+
+)
+
+$
+
+27,882
+
+$
+
+62,634
+
+$
+
+733
+
+$
+
+63,367
+
+Issuance of common stock for equity incentive awards
+
+—
+
+4
+
+—
+
+251
+
+—
+
+—
+
+251
+
+—
+
+251
+
+Stock-based compensation
+
+—
+
+—
+
+—
+
+578
+
+—
+
+—
+
+578
+
+—
+
+578
+
+Distributions to noncontrolling interests
+
+(
+
+6
+
+)
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+16
+
+)
+
+(
+
+16
+
+)
+
+Buy-outs of noncontrolling interests
+
+(
+
+166
+
+)
+
+—
+
+—
+
+42
+
+—
+
+—
+
+42
+
+—
+
+42
+
+Net income
+
+3
+
+—
+
+—
+
+—
+
+—
+
+1,129
+
+1,129
+
+12
+
+1,141
+
+Other comprehensive loss
+
+—
+
+—
+
+—
+
+—
+
+(
+
+256
+
+)
+
+—
+
+(
+
+256
+
+)
+
+—
+
+(
+
+256
+
+)
+
+Balance as of March 31, 2024
+
+$
+
+73
+
+3,189
+
+$
+
+3
+
+$
+
+35,763
+
+$
+
+(
+
+399
+
+)
+
+$
+
+29,011
+
+$
+
+64,378
+
+$
+
+729
+
+$
+
+65,107
+
+Three Months Ended March 31, 2023
+
+Redeemable
+
+Noncontrolling
+
+Interests
+
+Common Stock
+
+Additional
+
+Paid-In
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests in
+
+Subsidiaries
+
+Total
+
+Equity
+
+Shares
+
+Amount
+
+Balance as of December 31, 2022
+
+$
+
+409
+
+3,164
+
+$
+
+3
+
+$
+
+32,177
+
+$
+
+(
+
+361
+
+)
+
+$
+
+12,885
+
+$
+
+44,704
+
+$
+
+785
+
+$
+
+45,489
+
+Issuance of common stock for equity incentive awards
+
+—
+
+5
+
+—
+
+231
+
+—
+
+—
+
+231
+
+—
+
+231
+
+Stock-based compensation
+
+—
+
+—
+
+—
+
+465
+
+—
+
+—
+
+465
+
+—
+
+465
+
+Distributions to noncontrolling interests
+
+(
+
+5
+
+)
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+22
+
+)
+
+(
+
+22
+
+)
+
+Buy-outs of noncontrolling interests
+
+—
+
+—
+
+—
+
+5
+
+—
+
+—
+
+5
+
+(
+
+12
+
+)
+
+(
+
+7
+
+)
+
+Net income
+
+3
+
+—
+
+—
+
+—
+
+—
+
+2,513
+
+2,513
+
+23
+
+2,536
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+136
+
+—
+
+136
+
+—
+
+136
+
+Balance as of March 31, 2023
+
+$
+
+407
+
+3,169
+
+$
+
+3
+
+$
+
+32,878
+
+$
+
+(
+
+225
+
+)
+
+$
+
+15,398
+
+$
+
+48,054
+
+$
+
+774
+
+$
+
+48,828
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+7
+
+Table of Contents
+
+Tesla, Inc.
+
+Consolidated Statements of Cash Flows
+
+(in millions)
+
+(unaudited)
+
+Three Months Ended March 31,
+
+2024
+
+2023
+
+Cash Flows from Operating Activities
+
+Net income
+
+$
+
+1,144
+
+$
+
+2,539
+
+Adjustments to reconcile net income to net cash provided by operating activities:
+
+Depreciation, amortization and impairment
+
+1,246
+
+1,046
+
+Stock-based compensation
+
+524
+
+418
+
+Inventory and purchase commitments write-downs
+
+68
+
+50
+
+Foreign currency transaction net unrealized gain
+
+(
+
+63
+
+)
+
+(
+
+25
+
+)
+
+Deferred income taxes
+
+(
+
+11
+
+)
+
+(
+
+55
+
+)
+
+Non-cash interest and other operating activities
+
+(
+
+5
+
+)
+
+15
+
+Changes in operating assets and liabilities:
+
+Accounts receivable
+
+(
+
+422
+
+)
+
+(
+
+32
+
+)
+
+Inventory
+
+(
+
+2,697
+
+)
+
+(
+
+1,540
+
+)
+
+Operating lease vehicles
+
+(
+
+12
+
+)
+
+(
+
+675
+
+)
+
+Prepaid expenses and other assets
+
+(
+
+972
+
+)
+
+(
+
+737
+
+)
+
+Accounts payable, accrued and other liabilities
+
+1,247
+
+1,403
+
+Deferred revenue
+
+195
+
+106
+
+Net cash provided by operating activities
+
+242
+
+2,513
+
+Cash Flows from Investing Activities
+
+Purchases of property and equipment excluding finance leases, net of sales
+
+(
+
+2,773
+
+)
+
+(
+
+2,072
+
+)
+
+Purchases of solar energy systems, net of sales
+
+(
+
+4
+
+)
+
+(
+
+1
+
+)
+
+Purchases of investments
+
+(
+
+6,622
+
+)
+
+(
+
+2,015
+
+)
+
+Proceeds from maturities of investments
+
+4,315
+
+1,604
+
+Net cash used in investing activities
+
+(
+
+5,084
+
+)
+
+(
+
+2,484
+
+)
+
+Cash Flows from Financing Activities
+
+Proceeds from issuances of debt
+
+776
+
+—
+
+Repayments of debt
+
+(
+
+591
+
+)
+
+(
+
+302
+
+)
+
+Proceeds from exercises of stock options and other stock issuances
+
+251
+
+231
+
+Principal payments on finance leases
+
+(
+
+106
+
+)
+
+(
+
+106
+
+)
+
+Debt issuance costs
+
+(
+
+3
+
+)
+
+(
+
+13
+
+)
+
+Distributions paid to noncontrolling interests in subsidiaries
+
+(
+
+30
+
+)
+
+(
+
+36
+
+)
+
+Payments for buy-outs of noncontrolling interests in subsidiaries
+
+(
+
+101
+
+)
+
+(
+
+7
+
+)
+
+Net cash provided by (used in) financing activities
+
+196
+
+(
+
+233
+
+)
+
+Effect of exchange rate changes on cash and cash equivalents and restricted cash
+
+(
+
+79
+
+)
+
+50
+
+Net decrease in cash and cash equivalents and restricted cash
+
+(
+
+4,725
+
+)
+
+(
+
+154
+
+)
+
+Cash and cash equivalents and restricted cash, beginning of period
+
+17,189
+
+16,924
+
+Cash and cash equivalents and restricted cash, end of period
+
+$
+
+12,464
+
+$
+
+16,770
+
+Supplemental Non-Cash Investing and Financing Activities
+
+Acquisitions of property and equipment included in liabilities
+
+$
+
+1,431
+
+$
+
+1,193
+
+Leased assets obtained in exchange for finance lease liabilities
+
+$
+
+20
+
+$
+
+—
+
+Leased assets obtained in exchange for operating lease liabilities
+
+$
+
+406
+
+$
+
+362
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+8
+
+Table of Contents
+
+Tesla, Inc.
+
+Notes to Consolidated Financial Statements
+
+(unaudited)
+
+Note 1 –
+
+Summary of Significant Accounting Policies
+
+Unaudited Interim Financial Statements
+
+The consolidated financial statements of Tesla, Inc. ("Tesla", the "Company", "we", "us" or "our"), including the consolidated balance sheet as of March 31, 2024, the consolidated statements of operations, the consolidated statements of comprehensive income, the consolidated statements of redeemable noncontrolling interests and equity, and the consolidated statements of cash flows for the three months ended March 31, 2024 and 2023, as well as other information disclosed in the accompanying notes, are unaudited. The consolidated balance sheet as of December 31, 2023 was derived from the audited consolidated financial statements as of that date. The interim consolidated financial statements and the accompanying notes should be read in conjunction with the annual consolidated financial statements and the accompanying notes contained in our Annual Report on Form 10-K for the year ended December 31, 2023.
+
+The interim consolidated financial statements and the accompanying notes have been prepared on the same basis as the annual consolidated financial statements and, in the opinion of management, reflect all adjustments, which include only normal recurring adjustments, necessary for a fair statement of the results of operations for the periods presented. The consolidated results of operations for any interim period are not necessarily indicative of the results to be expected for the full year or for any other future years or interim periods.
+
+Reclassifications

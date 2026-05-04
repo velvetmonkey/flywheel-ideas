@@ -1,0 +1,1505 @@
+---
+id: idea-GM653TPf
+type: idea
+state: nascent
+title: HD 2021-08-24 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:01:42.197Z'
+date: '2026-05-03'
+created: '2026-05-03T20:01:42.587Z'
+---
+# HOME DEPOT, INC. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2021-08-24
+Source: https://www.sec.gov/Archives/edgar/data/354950/000035495021000189/hd-20210801.htm
+
+Risk Factors.
+
+19
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds.
+
+20
+
+Item 6.
+
+Exhibits.
+
+21
+
+SIGNATURES
+
+22
+
+i
+
+Table of Contents
+
+COMMONLY USED OR DEFINED TERMS
+
+Term
+
+Definition
+
+ASU
+
+Accounting Standards Update
+
+Comparable sales
+
+As defined in the
+
+Results of Operations and Non-GAAP Financial Measures
+
+section of MD&A
+
+Exchange Act
+
+Securities Exchange Act of 1934, as amended
+
+FASB
+
+Financial Accounting Standards Board
+
+fiscal 2020
+
+Fiscal year ended January 31, 2021
+
+fiscal 2021
+
+Fiscal year ending January 30, 2022
+
+GAAP
+
+U.S. generally accepted accounting principles
+
+HD Supply
+
+HD Supply Holdings, Inc.
+
+MD&A
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+MRO
+
+Maintenance, repair and operations
+
+NOPAT
+
+Net operating profit after tax
+
+Restoration Plan
+
+Home Depot FutureBuilder Restoration Plan
+
+ROIC
+
+Return on invested capital
+
+SEC
+
+Securities and Exchange Commission
+
+Securities Act
+
+Securities Act of 1933, as amended
+
+SG&A
+
+Selling, general and administrative
+
+2020 Form 10-K
+
+Annual Report on Form 10-K for fiscal 2020 as filed with the SEC on March 24, 2021
+
+ii
+
+Table of
+
+Contents
+
+FORWARD-LOOKING STATEMENTS
+
+Certain statements contained herein, as well as in other filings we make with the SEC and other written and oral information we release, regarding our future performance constitute "forward-looking statements" as defined in the Private Securities Litigation Reform Act of 1995. Forward-looking statements may relate to, among other things, the impact of the COVID-19 pandemic and the related recovery on our business, results of operations, cash flows and financial condition (which, among other things, may affect many of the items listed below); the demand for our products and services; net sales growth; comparable sales; effects of competition; our brand and reputation; implementation of store, interconnected retail, supply chain and technology initiatives; inventory and in-stock positions; state of the economy; state of the housing and home improvement markets; state of the credit markets, including mortgages, home equity loans, and consumer credit; impact of tariffs; issues related to the payment methods we accept; demand for credit offerings; management of relationships with our associates, suppliers and service providers; international trade disputes, natural disasters, public health issues (including pandemics and quarantines, related shut-downs and other governmental orders, and similar restrictions, as well as subsequent re-openings), and other business interruptions that could disrupt supply or delivery of, or demand for, the Company's products or services; continuation or suspension of share repurchases; net earnings performance; earnings per share; dividend targets; capital allocation and expenditures; liquidity; return on invested capital; expense leverage; stock-based compensation expense; commodity price inflation and deflation; the ability to issue debt on terms and at rates acceptable to us; the impact and expected outcome of investigations, inquiries, claims, and litigation, including compliance with related settlements; the effect of accounting charges; the effect of adopting certain accounting standards; the impact of regulatory changes, including changes to tax laws and regulations; store openings and closures; financial outlook; and the impact of acquired companies, including HD Supply, on our organization and the ability to recognize the anticipated benefits of those acquisitions.
+
+Forward-looking statements are based on currently available information and our current assumptions, expectations and projections about future events. You should not rely on our forward-looking statements. These statements are not guarantees of future performance and are subject to future events, risks and uncertainties – many of which are beyond our control, dependent on the actions of third parties, or currently unknown to us – as well as potentially inaccurate assumptions that could cause actual results to differ materially from our expectations and projections. These risks and uncertainties include, but are not limited to, those described in Part II, Item 1A, "Risk Factors" and elsewhere in this report and as also may be described from time to time in future reports we file with the SEC. You should read such information in conjunction with our consolidated financial statements and related notes and "Management's Discussion and Analysis of Financial Condition and Results of Operations" in this report. There also may be other factors that we cannot anticipate or that are not described in this report, generally because we do not currently perceive them to be material. Such factors could cause results to differ materially from our expectations.
+
+Forward-looking statements speak only as of the date they are made, and we do not undertake to update these statements other than as required by law. You are advised, however, to review any further disclosures we make on related subjects in our periodic filings with the SEC and in our other public statements.
+
+iii
+
+Table of Contents
+
+PART I – FINANCIAL INFORMATION
+
+Item 1. Financial Statements.
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED BALANCE SHEETS
+
+(Unaudited)
+
+in millions, except per share data
+
+August 1,
+
+2021
+
+January 31,
+
+2021
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+4,566
+
+$
+
+7,895
+
+Receivables, net
+
+3,322
+
+2,992
+
+Merchandise inventories
+
+18,909
+
+16,627
+
+Other current assets
+
+1,465
+
+963
+
+Total current assets
+
+28,262
+
+28,477
+
+Net property and equipment
+
+24,750
+
+24,705
+
+Operating lease right-of-use assets
+
+5,960
+
+5,962
+
+Goodwill
+
+7,454
+
+7,126
+
+Other assets
+
+4,343
+
+4,311
+
+Total assets
+
+$
+
+70,769
+
+$
+
+70,581
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+12,817
+
+$
+
+11,606
+
+Accrued salaries and related expenses
+
+2,329
+
+2,463
+
+Sales taxes payable
+
+1,014
+
+774
+
+Deferred revenue
+
+3,498
+
+2,823
+
+Current installments of long-term debt
+
+2,428
+
+1,416
+
+Current operating lease liabilities
+
+814
+
+828
+
+Other accrued expenses
+
+3,766
+
+3,256
+
+Total current liabilities
+
+26,666
+
+23,166
+
+Long-term debt, excluding current installments
+
+33,746
+
+35,822
+
+Long-term operating lease liabilities
+
+5,360
+
+5,356
+
+Other long-term liabilities
+
+2,928
+
+2,938
+
+Total liabilities
+
+68,700
+
+67,282
+
+Common stock, par value $
+
+0.05
+
+; authorized:
+
+10,000
+
+shares; issued:
+
+1,791
+
+shares at August 1, 2021 and
+
+1,789
+
+shares at January 31, 2021; outstanding:
+
+1,056
+
+shares at August 1, 2021 and
+
+1,077
+
+shares at January 31, 2021
+
+90
+
+89
+
+Paid-in capital
+
+11,797
+
+11,540
+
+Retained earnings
+
+63,560
+
+58,134
+
+Accumulated other comprehensive loss
+
+(
+
+585
+
+)
+
+(
+
+671
+
+)
+
+Treasury stock, at cost,
+
+735
+
+shares at August 1, 2021 and
+
+712
+
+shares at January 31, 2021
+
+(
+
+72,793
+
+)
+
+(
+
+65,793
+
+)
+
+Total stockholders' equity
+
+2,069
+
+3,299
+
+Total liabilities and stockholders' equity
+
+$
+
+70,769
+
+$
+
+70,581
+
+See accompanying notes to consolidated financial statements.
+
+1
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF EARNINGS
+
+(Unaudited)
+
+Three Months Ended
+
+Six Months Ended
+
+in millions, except per share data
+
+August 1,
+
+2021
+
+August 2,
+
+2020
+
+August 1,
+
+2021
+
+August 2,
+
+2020
+
+Net sales
+
+$
+
+41,118
+
+$
+
+38,053
+
+$
+
+78,618
+
+$
+
+66,313
+
+Cost of sales
+
+27,453
+
+25,112
+
+52,211
+
+43,747
+
+Gross profit
+
+13,665
+
+12,941
+
+26,407
+
+22,566
+
+Operating expenses:
+
+Selling, general and administrative
+
+6,433
+
+6,355
+
+12,807
+
+12,184
+
+Depreciation and amortization
+
+593
+
+519
+
+1,180
+
+1,039
+
+Total operating expenses
+
+7,026
+
+6,874
+
+13,987
+
+13,223
+
+Operating income
+
+6,639
+
+6,067
+
+12,420
+
+9,343
+
+Interest and other (income) expense:
+
+Interest and investment income
+
+(
+
+5
+
+)
+
+(
+
+9
+
+)
+
+(
+
+11
+
+)
+
+(
+
+26
+
+)
+
+Interest expense
+
+326
+
+346
+
+665
+
+670
+
+Interest and other, net
+
+321
+
+337
+
+654
+
+644
+
+Earnings before provision for income taxes
+
+6,318
+
+5,730
+
+11,766
+
+8,699
+
+Provision for income taxes
+
+1,511
+
+1,398
+
+2,814
+
+2,122
+
+Net earnings
+
+$
+
+4,807
+
+$
+
+4,332
+
+$
+
+8,952
+
+$
+
+6,577
+
+Basic weighted average common shares
+
+1,058
+
+1,073
+
+1,064
+
+1,073
+
+Basic earnings per share
+
+$
+
+4.54
+
+$
+
+4.04
+
+$
+
+8.41
+
+$
+
+6.13
+
+Diluted weighted average common shares
+
+1,062
+
+1,077
+
+1,068
+
+1,077
+
+Diluted earnings per share
+
+$
+
+4.53
+
+$
+
+4.02
+
+$
+
+8.38
+
+$
+
+6.11
+
+See accompanying notes to consolidated financial statements.
+
+2
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(Unaudited)
+
+Three Months Ended
+
+Six Months Ended
+
+in millions
+
+August 1,
+
+2021
+
+August 2,
+
+2020
+
+August 1,
+
+2021
+
+August 2,
+
+2020
+
+Net earnings
+
+$
+
+4,807
+
+$
+
+4,332
+
+$
+
+8,952
+
+$
+
+6,577
+
+Other comprehensive income (loss), net of tax:
+
+Foreign currency translation adjustments
+
+21
+
+141
+
+55
+
+(
+
+278
+
+)
+
+Cash flow hedges
+
+2
+
+5
+
+4
+
+5
+
+Other
+
+—
+
+(
+
+10
+
+)
+
+27
+
+—
+
+Total other comprehensive income (loss)
+
+23
+
+136
+
+86
+
+(
+
+273
+
+)
+
+Comprehensive income
+
+$
+
+4,830
+
+$
+
+4,468
+
+$
+
+9,038
+
+$
+
+6,304
+
+See accompanying notes to consolidated financial statements.
+
+3
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF STOCKHOLDERS' EQUITY
+
+(Unaudited)
+
+Three Months Ended
+
+Six Months Ended
+
+in millions
+
+August 1,
+
+2021
+
+August 2,
+
+2020
+
+August 1,
+
+2021
+
+August 2,
+
+2020
+
+Common Stock:
+
+Balance at beginning of period
+
+$
+
+90
+
+$
+
+89
+
+$
+
+89
+
+$
+
+89
+
+Shares issued under employee stock plans
+
+—
+
+—
+
+1
+
+—
+
+Balance at end of period
+
+90
+
+89
+
+90
+
+89
+
+Paid-in Capital:
+
+Balance at beginning of period
+
+11,555
+
+11,008
+
+11,540
+
+11,001
+
+Shares issued under employee stock plans
+
+149
+
+144
+
+32
+
+73
+
+Stock-based compensation expense
+
+93
+
+76
+
+225
+
+154
+
+Balance at end of period
+
+11,797
+
+11,228
+
+11,797
+
+11,228
+
+Retained Earnings:
+
+Balance at beginning of period
+
+60,504
+
+52,354
+
+58,134
+
+51,729
+
+Net earnings
+
+4,807
+
+4,332
+
+8,952
+
+6,577
+
+Cash dividends
+
+(
+
+1,751
+
+)
+
+(
+
+1,612
+
+)
+
+(
+
+3,526
+
+)
+
+(
+
+3,223
+
+)
+
+Other
+
+—
+
+—
+
+—
+
+(
+
+9
+
+)
+
+Balance at end of period
+
+63,560
+
+55,074
+
+63,560
+
+55,074
+
+Accumulated Other Comprehensive Income (Loss):
+
+Balance at beginning of period
+
+(
+
+608
+
+)
+
+(
+
+1,148
+
+)
+
+(
+
+671
+
+)
+
+(
+
+739
+
+)
+
+Foreign currency translation adjustments, net of tax
+
+21
+
+141
+
+55
+
+(
+
+278
+
+)
+
+Cash flow hedges, net of tax
+
+2
+
+5
+
+4
+
+5
+
+Other, net of tax
+
+—
+
+(
+
+10
+
+)
+
+27
+
+—
+
+Balance at end of period
+
+(
+
+585
+
+)
+
+(
+
+1,012
+
+)
+
+(
+
+585
+
+)
+
+(
+
+1,012
+
+)
+
+Treasury Stock:
+
+Balance at beginning of period
+
+(
+
+69,793
+
+)
+
+(
+
+65,793
+
+)
+
+(
+
+65,793
+
+)
+
+(
+
+65,196
+
+)
+
+Repurchases of common stock
+
+(
+
+3,000
+
+)
+
+—
+
+(
+
+7,000
+
+)
+
+(
+
+597
+
+)
+
+Balance at end of period
+
+(
+
+72,793
+
+)
+
+(
+
+65,793
+
+)
+
+(
+
+72,793
+
+)
+
+(
+
+65,793
+
+)
+
+Total stockholders' equity (deficit)
+
+$
+
+2,069
+
+$
+
+(
+
+414
+
+)
+
+$
+
+2,069
+
+$
+
+(
+
+414
+
+)
+
+See accompanying notes to consolidated financial statements.
+
+4
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(Unaudited)
+
+Six Months Ended
+
+in millions
+
+August 1,
+
+2021
+
+August 2,
+
+2020
+
+Cash Flows from Operating Activities:
+
+Net earnings
+
+$
+
+8,952
+
+$
+
+6,577
+
+Reconciliation of net earnings to net cash provided by operating activities:
+
+Depreciation and amortization
+
+1,414
+
+1,222
+
+Stock-based compensation expense
+
+226
+
+155
+
+Changes in receivables, net
+
+(
+
+321
+
+)
+
+(
+
+477
+
+)
+
+Changes in merchandise inventories
+
+(
+
+2,191
+
+)
+
+920
+
+Changes in other current assets
+
+(
+
+574
+
+)
+
+(
+
+126
+
+)
+
+Changes in accounts payable and accrued expenses
+
+1,658
+
+5,673
+
+Changes in deferred revenue
+
+671
+
+397
+
+Changes in income taxes payable
+
+154
+
+447
+
+Changes in deferred income taxes
+
+(
+
+116
+
+)
+
+13
+
+Other operating activities
+
+74
+
+28
+
+Net cash provided by operating activities
+
+9,947
+
+14,829
+
+Cash Flows from Investing Activities:
+
+Capital expenditures
+
+(
+
+1,042
+
+)
+
+(
+
+1,032
+
+)
+
+Payments for businesses acquired, net
+
+(
+
+416
+
+)
+
+—
+
+Other investing activities
+
+—
+
+12
+
+Net cash used in investing activities
+
+(
+
+1,458
+
+)
+
+(
+
+1,020
+
+)
+
+Cash Flows from Financing Activities:
+
+Repayments of short-term debt, net
+
+—
+
+(
+
+974
+
+)
+
+Proceeds from long-term debt, net of discounts and premiums
+
+—
+
+4,960
+
+Repayments of long-term debt
+
+(
+
+1,434
+
+)
+
+(
+
+1,806
+
+)
+
+Repurchases of common stock
+
+(
+
+6,905
+
+)
+
+(
+
+791
+
+)
+
+Proceeds from sales of common stock
+
+167
+
+164
+
+Cash dividends
+
+(
+
+3,526
+
+)
+
+(
+
+3,223
+
+)
+
+Other financing activities
+
+(
+
+136
+
+)
+
+(
+
+127
+
+)
+
+Net cash used in financing activities
+
+(
+
+11,834
+
+)
+
+(
+
+1,797
+
+)
+
+Change in cash and cash equivalents
+
+(
+
+3,345
+
+)
+
+12,012
+
+Effect of exchange rate changes on cash and cash equivalents
+
+16
+
+(
+
+6
+
+)
+
+Cash and cash equivalents at beginning of period
+
+7,895
+
+2,133
+
+Cash and cash equivalents at end of period
+
+$
+
+4,566
+
+$
+
+14,139
+
+Supplemental Disclosures:
+
+Cash paid for interest, net of interest capitalized
+
+$
+
+626
+
+$
+
+587
+
+Cash paid for income taxes
+
+2,913
+
+1,611
+
+See accompanying notes to consolidated financial statements.
+
+5
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
+
+(Unaudited)

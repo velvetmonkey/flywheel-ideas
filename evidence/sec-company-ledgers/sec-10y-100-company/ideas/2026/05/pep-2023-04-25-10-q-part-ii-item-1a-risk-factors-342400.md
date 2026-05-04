@@ -1,0 +1,1517 @@
+---
+id: idea-uqVeM5nr
+type: idea
+state: nascent
+title: PEP 2023-04-25 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:39:02.400Z'
+date: '2026-05-03'
+created: '2026-05-03T21:39:02.778Z'
+---
+# PEPSICO INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2023-04-25
+Source: https://www.sec.gov/Archives/edgar/data/77476/000007747623000023/pep-20230325.htm
+
+Risk Factors
+
+42
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+42
+
+Item 6.
+
+Exhibits
+
+42
+
+1
+
+Table of Contents
+
+PART I FINANCIAL INFORMATION
+
+ITEM 1. Condensed Consolidated Financial Statements.
+
+Condensed Consolidated Statement of Income
+
+PepsiCo, Inc. and Subsidiaries
+
+(in millions except per share amounts, unaudited)
+
+12 Weeks Ended
+
+3/25/2023
+
+3/19/2022
+
+Net Revenue
+
+$
+
+17,846
+
+$
+
+16,200
+
+Cost of sales
+
+7,988
+
+7,433
+
+Gross profit
+
+9,858
+
+8,767
+
+Selling, general and administrative expenses
+
+7,229
+
+6,580
+
+Gain associated with the Juice Transaction
+
+(a)
+
+—
+
+(
+
+3,322
+
+)
+
+Impairment of intangible assets (see Notes 1 and 4)
+
+—
+
+242
+
+Operating Profit
+
+2,629
+
+5,267
+
+Other pension and retiree medical benefits income
+
+61
+
+134
+
+Net interest expense and other
+
+(
+
+200
+
+)
+
+(
+
+240
+
+)
+
+Income before income taxes
+
+2,490
+
+5,161
+
+Provision for income taxes
+
+546
+
+888
+
+Net income
+
+1,944
+
+4,273
+
+Less: Net income attributable to noncontrolling interests
+
+12
+
+12
+
+Net Income Attributable to PepsiCo
+
+$
+
+1,932
+
+$
+
+4,261
+
+Net Income Attributable to PepsiCo per Common Share
+
+Basic
+
+$
+
+1.40
+
+$
+
+3.08
+
+Diluted
+
+$
+
+1.40
+
+$
+
+3.06
+
+Weighted-average common shares outstanding
+
+Basic
+
+1,378
+
+1,383
+
+Diluted
+
+1,384
+
+1,391
+
+(a)
+
+In the 12 weeks ended March 19, 2022, we sold our Tropicana, Naked and other select juice brands to PAI Partners for $
+
+3.5
+
+billion in cash and a
+
+39
+
+% noncontrolling interest in a joint venture, Tropicana Brands Group (TBG), operating across North America and Europe (Juice Transaction). See Note 12 for further information.
+
+See accompanying notes to the condensed consolidated financial statements.
+
+2
+
+Table of Contents
+
+Condensed Consolidated Statement of Comprehensive Income
+
+PepsiCo, Inc. and Subsidiaries
+
+(in millions, unaudited)
+
+12 Weeks Ended
+
+3/25/2023
+
+3/19/2022
+
+Net income
+
+$
+
+1,944
+
+$
+
+4,273
+
+Other comprehensive loss, net of taxes:
+
+Net currency translation adjustment
+
+(
+
+235
+
+)
+
+(
+
+560
+
+)
+
+Net change on cash flow hedges
+
+(
+
+59
+
+)
+
+106
+
+Net pension and retiree medical adjustments
+
+(
+
+4
+
+)
+
+13
+
+Other
+
+(
+
+1
+
+)
+
+(
+
+4
+
+)
+
+(
+
+299
+
+)
+
+(
+
+445
+
+)
+
+Comprehensive income
+
+1,645
+
+3,828
+
+Less: Comprehensive income attributable to
+
+noncontrolling interests
+
+12
+
+12
+
+Comprehensive Income Attributable to PepsiCo
+
+$
+
+1,633
+
+$
+
+3,816
+
+See accompanying notes to the condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+Condensed Consolidated Statement of Cash Flows
+
+PepsiCo, Inc. and Subsidiaries
+
+(in millions, unaudited)
+
+12 Weeks Ended
+
+3/25/2023
+
+3/19/2022
+
+Operating Activities
+
+Net income
+
+$
+
+1,944
+
+$
+
+4,273
+
+Depreciation and amortization
+
+590
+
+555
+
+Gain associated with the Juice Transaction
+
+—
+
+(
+
+3,322
+
+)
+
+Impairment and other (credits)/charges
+
+(
+
+13
+
+)
+
+482
+
+Operating lease right-of-use asset amortization
+
+116
+
+103
+
+Share-based compensation expense
+
+93
+
+81
+
+Restructuring and impairment charges
+
+112
+
+27
+
+Cash payments for restructuring charges
+
+(
+
+64
+
+)
+
+(
+
+32
+
+)
+
+Acquisition and divestiture-related charges
+
+2
+
+56
+
+Cash payments for acquisition and divestiture-related charges
+
+(
+
+4
+
+)
+
+(
+
+17
+
+)
+
+Pension and retiree medical plan expense/(income)
+
+30
+
+(
+
+1
+
+)
+
+Pension and retiree medical plan contributions
+
+(
+
+175
+
+)
+
+(
+
+178
+
+)
+
+Deferred income taxes and other tax charges and credits
+
+78
+
+257
+
+Change in assets and liabilities:
+
+Accounts and notes receivable
+
+(
+
+348
+
+)
+
+(
+
+837
+
+)
+
+Inventories
+
+(
+
+542
+
+)
+
+(
+
+549
+
+)
+
+Prepaid expenses and other current assets
+
+(
+
+288
+
+)
+
+(
+
+190
+
+)
+
+Accounts payable and other current liabilities
+
+(
+
+2,259
+
+)
+
+(
+
+1,238
+
+)
+
+Income taxes payable
+
+290
+
+489
+
+Other, net
+
+46
+
+(
+
+133
+
+)
+
+Net Cash Used for Operating Activities
+
+(
+
+392
+
+)
+
+(
+
+174
+
+)
+
+Investing Activities
+
+Capital spending
+
+(
+
+581
+
+)
+
+(
+
+522
+
+)
+
+Sales of property, plant and equipment
+
+19
+
+3
+
+Acquisitions, net of cash acquired, investments in noncontrolled affiliates and purchases of intangible and other assets
+
+(
+
+16
+
+)
+
+(
+
+13
+
+)
+
+Proceeds associated with the Juice Transaction
+
+—
+
+3,456
+
+Other divestitures, sales of investments in noncontrolled affiliates and other assets
+
+85
+
+5
+
+Short-term investments, by original maturity:
+
+More than three months - purchases
+
+(
+
+158
+
+)
+
+—
+
+More than three months - maturities
+
+100
+
+—
+
+Three months or less, net
+
+19
+
+22
+
+Other investing, net
+
+—
+
+4
+
+Net Cash (Used for)/Provided by Investing Activities
+
+(
+
+532
+
+)
+
+2,955
+
+(Continued on following page)
+
+4
+
+Table of Contents
+
+Condensed Consolidated Statement of Cash Flows (continued)
+
+PepsiCo, Inc. and Subsidiaries
+
+(in millions, unaudited)
+
+12 Weeks Ended
+
+3/25/2023
+
+3/19/2022
+
+Financing Activities
+
+Proceeds from issuances of long-term debt
+
+$
+
+2,986
+
+$
+
+—
+
+Payments of long-term debt
+
+(
+
+1,251
+
+)
+
+(
+
+1,251
+
+)
+
+Short-term borrowings, by original maturity:
+
+More than three months - proceeds
+
+393
+
+559
+
+More than three months - payments
+
+(
+
+1
+
+)
+
+—
+
+Three months or less, net
+
+491
+
+647
+
+Cash dividends paid
+
+(
+
+1,608
+
+)
+
+(
+
+1,505
+
+)
+
+Share repurchases - common
+
+(
+
+160
+
+)
+
+(
+
+193
+
+)
+
+Proceeds from exercises of stock options
+
+46
+
+49
+
+Withholding tax payments on restricted stock units (RSUs) and performance stock units (PSUs) converted
+
+(
+
+116
+
+)
+
+(
+
+85
+
+)
+
+Other financing
+
+(
+
+3
+
+)
+
+(
+
+1
+
+)
+
+Net Cash Provided by/(Used for) Financing Activities
+
+777
+
+(
+
+1,780
+
+)
+
+Effect of exchange rate changes on cash and cash equivalents and restricted cash
+
+(
+
+116
+
+)
+
+(
+
+17
+
+)
+
+Net (Decrease)/Increase in Cash and Cash Equivalents and Restricted Cash
+
+(
+
+263
+
+)
+
+984
+
+Cash and Cash Equivalents and Restricted Cash, Beginning of Year
+
+5,100
+
+5,707
+
+Cash and Cash Equivalents and Restricted Cash, End of Period
+
+$
+
+4,837
+
+$
+
+6,691
+
+Supplemental Non-Cash Activity
+
+Right-of-use assets obtained in exchange for lease obligations
+
+$
+
+213
+
+$
+
+100
+
+See accompanying notes to the condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+Condensed Consolidated Balance Sheet
+
+PepsiCo, Inc. and Subsidiaries
+
+(in millions except per share amounts)
+
+(Unaudited)
+
+3/25/2023
+
+12/31/2022
+
+ASSETS
+
+Current Assets
+
+Cash and cash equivalents
+
+$
+
+4,770
+
+$
+
+4,954
+
+Short-term investments
+
+434
+
+394
+
+Accounts and notes receivable, less allowance ($184 and $150, respectively)
+
+10,469
+
+10,163
+
+Inventories:
+
+Raw materials and packaging
+
+2,435
+
+2,366
+
+Work-in-process
+
+115
+
+114
+
+Finished goods
+
+3,147
+
+2,742
+
+5,697
+
+5,222
+
+Prepaid expenses and other current assets
+
+1,057
+
+806
+
+Total Current Assets
+
+22,427
+
+21,539
+
+Property, plant and equipment
+
+50,022
+
+49,784
+
+Accumulated depreciation
+
+(
+
+25,794
+
+)
+
+(
+
+25,493
+
+)
+
+Property, Plant and Equipment, net
+
+24,228
+
+24,291
+
+Amortizable Intangible Assets, net
+
+1,250
+
+1,277
+
+Goodwill
+
+18,089
+
+18,202
+
+Other Indefinite-Lived Intangible Assets
+
+14,273
+
+14,309
+
+Investments in Noncontrolled Affiliates
+
+3,123
+
+3,073
+
+Deferred Income Taxes
+
+4,211
+
+4,204
+
+Other Assets
+
+5,441
+
+5,292
+
+Total Assets
+
+$
+
+93,042
+
+$
+
+92,187
+
+LIABILITIES AND EQUITY
+
+Current Liabilities
+
+Short-term debt obligations
+
+$
+
+4,281
+
+$
+
+3,414
+
+Accounts payable and other current liabilities
+
+21,556
+
+23,371
+
+Total Current Liabilities
+
+25,837
+
+26,785
+
+Long-Term Debt Obligations
+
+37,486
+
+35,657
+
+Deferred Income Taxes
+
+4,039
+
+4,133
+
+Other Liabilities
+
+8,505
+
+8,339
+
+Total Liabilities
+
+75,867
+
+74,914
+
+Commitments and contingencies
+
+PepsiCo Common Shareholders' Equity
+
+Common stock, par value 1
+
+2
+
+/
+
+3
+
+¢ per share (authorized
+
+3,600
+
+shares; issued, net of repurchased common stock at par value:
+
+1,378
+
+and
+
+1,377
+
+shares, respectively)
+
+23
+
+23
+
+Capital in excess of par value
+
+3,996
+
+4,134
+
+Retained earnings
+
+68,142
+
+67,800
+
+Accumulated other comprehensive loss
+
+(
+
+15,601
+
+)
+
+(
+
+15,302
+
+)
+
+Repurchased common stock, in excess of par value (
+
+489
+
+and
+
+490
+
+shares, respectively)
+
+(
+
+39,518
+
+)
+
+(
+
+39,506
+
+)
+
+Total PepsiCo Common Shareholders' Equity
+
+17,042
+
+17,149
+
+Noncontrolling interests
+
+133
+
+124
+
+Total Equity
+
+17,175
+
+17,273
+
+Total Liabilities and Equity
+
+$
+
+93,042
+
+$
+
+92,187
+
+See accompanying notes to the condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+Condensed Consolidated Statement of Equity
+
+PepsiCo, Inc. and Subsidiaries
+
+(in millions, except per share amounts, unaudited)
+
+12 Weeks Ended
+
+3/25/2023
+
+3/19/2022
+
+Shares
+
+Amount
+
+Shares
+
+Amount
+
+Common Stock
+
+Balance, beginning of period
+
+1,377
+
+$
+
+23
+
+1,383
+
+$
+
+23
+
+Change in repurchased common stock
+
+1
+
+—
+
+1
+
+—
+
+Balance, end of period
+
+1,378
+
+23
+
+1,384
+
+23
+
+Capital in Excess of Par Value
+
+Balance, beginning of period
+
+4,134
+
+4,001
+
+Share-based compensation expense
+
+94
+
+83
+
+Stock option exercises, RSUs and PSUs converted
+
+(
+
+116
+
+)
+
+(
+
+106
+
+)
+
+Withholding tax on RSUs and PSUs converted
+
+(
+
+116
+
+)
+
+(
+
+85
+
+)
+
+Balance, end of period
+
+3,996
+
+3,893
+
+Retained Earnings
+
+Balance, beginning of period
+
+67,800
+
+65,165
+
+Net income attributable to PepsiCo
+
+1,932
+
+4,261
+
+Cash dividends declared – common
+
+(a)
+
+(
+
+1,590
+
+)
+
+(
+
+1,492
+
+)
+
+Balance, end of period
+
+68,142
+
+67,934
+
+Accumulated Other Comprehensive Loss
+
+Balance, beginning of period
+
+(
+
+15,302
+
+)
+
+(
+
+14,898
+
+)
+
+Other comprehensive loss attributable to PepsiCo
+
+(
+
+299
+
+)
+
+(
+
+445
+
+)
+
+Balance, end of period
+
+(
+
+15,601
+
+)
+
+(
+
+15,343
+
+)
+
+Repurchased Common Stock
+
+Balance, beginning of period
+
+(
+
+490
+
+)
+
+(
+
+39,506
+
+)
+
+(
+
+484
+
+)
+
+(
+
+38,248
+
+)
+
+Share repurchases
+
+(
+
+1
+
+)
+
+(
+
+174
+
+)
+
+(
+
+1
+
+)
+
+(
+
+213
+
+)
+
+Stock option exercises, RSUs and PSUs converted
+
+2
+
+162
+
+2
+
+156
+
+Balance, end of period
+
+(
+
+489
+
+)
+
+(
+
+39,518
+
+)
+
+(
+
+483
+
+)
+
+(
+
+38,305
+
+)
+
+Total PepsiCo Common Shareholders' Equity
+
+17,042
+
+18,202
+
+Noncontrolling Interests
+
+Balance, beginning of period
+
+124
+
+108
+
+Net income attributable to noncontrolling interest
+
+12
+
+12
+
+Distributions to noncontrolling interests
+
+(
+
+1
+
+)
+
+—
+
+Other, net
+
+(
+
+2
+
+)
+
+(
+
+2
+
+)
+
+Balance, end of period
+
+133
+
+118
+
+Total Equity
+
+$
+
+17,175
+
+$
+
+18,320
+
+(a)
+
+Cash dividends declared per common share were $
+
+1.15
+
+and $
+
+1.075
+
+for the
+
+12 weeks ended
+
+March 25, 2023 and March 19, 2022, respectively.
+
+See accompanying notes to the condensed consolidated financial statements.
+
+7
+
+Table of Contents
+
+Notes to the Condensed Consolidated Financial Statements
+
+Note 1 -
+
+Basis of Presentation and Our Divisions
+
+Basis of Presentation
+
+When used in this report, the terms "we," "us," "our," "PepsiCo" and the "Company" mean PepsiCo, Inc. and its consolidated subsidiaries, collectively.
+
+The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with U.S. Generally Accepted Accounting Principles (GAAP) for interim financial information and with the rules and regulations for reporting the Quarterly Report on Form 10-Q (Form 10-Q). Accordingly, they do not include all of the information and footnotes required by GAAP for complete financial statements. The condensed consolidated balance sheet at December 31, 2022 has been derived from the audited consolidated financial statements at that date, but does not include all of the information and footnotes required by GAAP for complete financial statements. These financial statements have been prepared on a basis that is substantially consistent with the accounting principles applied in our Annual Report on Form 10-K for the fiscal year ended December 31, 2022 (2022 Form 10-K). This report should be read in conjunction with our 2022 Form 10-K. In our opinion, these financial statements include all normal and recurring adjustments necessary for a fair presentation. The results for the 12 weeks ended March 25, 2023 are not necessarily indicative of the results expected for any future period or the full year.
+
+Raw materials, direct labor and plant overhead, as well as purchasing and receiving costs, costs directly related to production planning, inspection costs and raw materials handling facilities, are included in cost of sales. The costs of moving, storing and delivering finished product, including merchandising activities, are included in selling, general and administrative expenses.
+
+While our financial results in the United States and Canada (North America) are reported on a 12-week basis, all of our international operations are reported on a monthly calendar basis for which the months of January and February are reflected in our results for the 12 weeks ended
+
+March 25, 2023 and March 19, 2022.
+
+The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from the Russia-Ukraine conflict and the high interest rate and inflationary cost environment has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and outcomes could differ from those estimates.
+
+Our significant interim accounting policies include the recognition of a pro rata share of certain estimated annual sales incentives and certain advertising and marketing costs in proportion to revenue or volume, as applicable, and the recognition of income taxes using an estimated annual effective tax rate.
+
+Unless otherwise noted, tabular dollars are in millions, except per share amounts. All per share amounts reflect common per share amounts, assume dilution unless otherwise noted, and are based on unrounded amounts. Certain reclassifications were made to the prior year's financial statements to conform to the current year presentation.

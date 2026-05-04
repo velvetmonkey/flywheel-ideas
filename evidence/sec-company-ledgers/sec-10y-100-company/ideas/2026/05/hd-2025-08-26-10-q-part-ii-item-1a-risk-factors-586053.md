@@ -1,0 +1,1247 @@
+---
+id: idea-igpxHw6s
+type: idea
+state: nascent
+title: HD 2025-08-26 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:03:06.053Z'
+date: '2026-05-03'
+created: '2026-05-03T20:03:06.413Z'
+---
+# HOME DEPOT, INC. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2025-08-26
+Source: https://www.sec.gov/Archives/edgar/data/354950/000035495025000217/hd-20250803.htm
+
+Risk Factors.
+
+23
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds.
+
+23
+
+Item 5.
+
+Other Information.
+
+24
+
+Item 6.
+
+Exhibits.
+
+24
+
+SIGNATURES
+
+25
+
+Fiscal Q2 2025 Form 10-Q
+
+i
+
+Table of Contents
+
+COMMONLY USED OR DEFINED TERMS
+
+Term
+
+Definition
+
+Comparable sales
+
+As defined in the
+
+Results of Operations
+
+section of MD&A
+
+Exchange Act
+
+Securities Exchange Act of 1934, as amended
+
+fiscal 2023
+
+Fiscal year ended January 28, 2024 (includes 52 weeks)
+
+fiscal 2024
+
+Fiscal year ended February 2, 2025 (includes 53 weeks)
+
+fiscal 2025
+
+Fiscal year ending February 1, 2026 (includes 52 weeks)
+
+GAAP
+
+U.S. generally accepted accounting principles
+
+GMS
+
+GMS Inc.
+
+MD&A
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+NOPAT
+
+Net operating profit after tax
+
+Restoration Plans
+
+Home Depot FutureBuilder Restoration Plan and HD Supply Restoration Plan
+
+ROIC
+
+Return on invested capital
+
+SEC
+
+Securities and Exchange Commission
+
+Securities Act
+
+Securities Act of 1933, as amended
+
+SG&A
+
+Selling, general, and administrative expenses
+
+SRS
+
+SRS Distribution Inc.
+
+2024 Form 10-K
+
+Annual Report on Form 10-K for fiscal 2024 as filed with the SEC on March 21, 2025
+
+Fiscal Q2 2025 Form 10-Q
+
+ii
+
+Table of
+
+Contents
+
+FORWARD-LOOKING STATEMENTS
+
+Certain statements contained herein, as well as in other filings we make with the SEC and other written and oral information we release, including statements regarding our performance, estimates, expectations, beliefs, intentions, projections, strategies for the future, or other events or developments in the future constitute "forward-looking statements" under the federal securities laws, including as defined in the Private Securities Litigation Reform Act of 1995. Forward-looking statements are based on currently available information and our current assumptions, expectations and projections about future events, and use words such as "may," "will," "could," "should," "would," "anticipate," "intend," "estimate," "project," "plan," "believe," "expect," "target," "prospects," "potential," "commit" and "forecast," or words of similar import or meaning or refer to future time periods.
+
+Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and expectations; net sales growth; comparable sales; the effects of competition; our brand and reputation; implementation of interconnected retail, store, supply chain technology, innovation and other strategic initiatives, including with respect to real estate; inventory and in-stock positions; the state of the economy; the state of the housing and home improvement markets; the state of the credit markets, including mortgages, home equity loans, and consumer credit; the impact of tariffs, trade policy changes or restrictions, or international trade disputes and efforts and ability to continue to diversify our supply chain; issues related to the payment methods we accept; demand for credit offerings, including trade credit; management of relationships with our associates, jobseekers, suppliers and service providers; cost and availability of labor; costs of fuel and other energy sources; events that could disrupt our business, supply chain, technology infrastructure, or demand for our products and services, such as tariffs, trade policy changes or restrictions or international trade disputes, natural disasters, climate change, public health issues, cybersecurity events, labor disputes, geopolitical conflicts, military conflicts or acts of war; our ability to maintain a safe and secure store environment; our ability to address expectations regarding sustainability and human capital management matters and meet related goals; continuation or suspension of share repurchases; net earnings performance; earnings per share; future dividends; capital allocation and expenditures; liquidity; return on invested capital; expense leverage; changes in interest rates; changes in foreign currency exchange rates; commodity or other price inflation and deflation; our ability to issue debt on terms and at rates acceptable to us; the impact and expected outcome of investigations, inquiries, claims, and litigation, including compliance with related settlements; the challenges of operating in international markets; the adequacy of insurance coverage; the effect of accounting charges; the effect of adopting certain accounting standards; the impact of legal and regulatory changes, including executive orders and other administrative or legislative actions, such as changes to tax laws and regulations; store openings and closures; financial outlook; the status of the pending GMS acquisition; and the impact of acquired companies, including SRS, on our organization and the ability to recognize the anticipated benefits of any completed or pending acquisitions.
+
+These statements are not guarantees of future performance and are subject to future events, risks and uncertainties — many of which are beyond our control, dependent on the actions of third parties, or currently unknown to us — as well as potentially inaccurate assumptions that could cause actual results to differ materially from our historical experience and our expectations and projections. These risks and uncertainties include, but are not limited to, those described elsewhere in this report and in Part I, Item 1A. Risk Factors of the 2024 Form 10-K and elsewhere in the 2024 Form 10-K, and also as described from time to time in reports subsequently filed with the SEC. You should read such information in conjunction with our consolidated financial statements and related notes and
+
+Part I, Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+in this report. There also may be other factors that we cannot anticipate or that are not described herein, generally because we do not currently perceive them to be material. Such factors could cause results to differ materially from our expectations. Forward-looking statements speak only as of the date they are made, and we do not undertake to update these statements other than as required by law. You are advised, however, to review any further disclosures we make on related subjects in our filings with the SEC and in our other public statements.
+
+Fiscal Q2 2025 Form 10-Q
+
+iii
+
+Table of Contents
+
+PART I – FINANCIAL INFORMATION
+
+Item 1. Financial Statements.
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED BALANCE SHEETS
+
+(Unaudited)
+
+in millions, except per share data
+
+August 3,
+
+2025
+
+February 2,
+
+2025
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+2,804
+
+$
+
+1,659
+
+Receivables, net
+
+5,878
+
+4,903
+
+Merchandise inventories
+
+24,843
+
+23,451
+
+Other current assets
+
+1,866
+
+1,670
+
+Total current assets
+
+35,391
+
+31,683
+
+Net property and equipment
+
+26,896
+
+26,702
+
+Operating lease right-of-use assets
+
+8,662
+
+8,592
+
+Goodwill
+
+19,619
+
+19,475
+
+Intangible assets, net
+
+8,770
+
+8,983
+
+Other assets
+
+711
+
+684
+
+Total assets
+
+$
+
+100,049
+
+$
+
+96,119
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Short-term debt
+
+$
+
+—
+
+$
+
+316
+
+Accounts payable
+
+13,086
+
+11,938
+
+Accrued salaries and related expenses
+
+2,385
+
+2,315
+
+Sales taxes payable
+
+661
+
+628
+
+Deferred revenue
+
+2,605
+
+2,610
+
+Income taxes payable
+
+37
+
+832
+
+Current installments of long-term debt
+
+6,400
+
+4,582
+
+Current operating lease liabilities
+
+1,336
+
+1,274
+
+Other accrued expenses
+
+4,336
+
+4,166
+
+Total current liabilities
+
+30,846
+
+28,661
+
+Long-term debt, excluding current installments
+
+45,917
+
+48,485
+
+Long-term operating lease liabilities
+
+7,668
+
+7,633
+
+Deferred income taxes
+
+2,491
+
+1,962
+
+Other long-term liabilities
+
+2,462
+
+2,738
+
+Total liabilities
+
+89,384
+
+89,479
+
+Contingencies (
+
+Note 9
+
+)
+
+Common stock, par value $
+
+0.05
+
+; authorized:
+
+10,000
+
+shares; issued:
+
+1,801
+
+shares at August 3, 2025 and
+
+1,800
+
+shares at February 2, 2025; outstanding:
+
+995
+
+shares at August 3, 2025 and
+
+994
+
+shares at February 2, 2025
+
+90
+
+90
+
+Paid-in capital
+
+14,438
+
+14,117
+
+Retained earnings
+
+92,943
+
+89,533
+
+Accumulated other comprehensive loss
+
+(
+
+835
+
+)
+
+(
+
+1,129
+
+)
+
+Treasury stock, at cost,
+
+806
+
+shares at August 3, 2025 and February 2, 2025
+
+(
+
+95,971
+
+)
+
+(
+
+95,971
+
+)
+
+Total stockholders' equity
+
+10,665
+
+6,640
+
+Total liabilities and stockholders' equity
+
+$
+
+100,049
+
+$
+
+96,119
+
+—————
+
+See accompanying notes to consolidated financial statements.
+
+Fiscal Q2 2025 Form 10-Q
+
+1
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF EARNINGS
+
+(Unaudited)
+
+Three Months Ended
+
+Six Months Ended
+
+in millions, except per share data
+
+August 3,
+
+2025
+
+July 28,
+
+2024
+
+August 3,
+
+2025
+
+July 28,
+
+2024
+
+Net sales
+
+$
+
+45,277
+
+$
+
+43,175
+
+$
+
+85,133
+
+$
+
+79,593
+
+Cost of sales
+
+30,152
+
+28,759
+
+56,549
+
+52,744
+
+Gross profit
+
+15,125
+
+14,416
+
+28,584
+
+26,849
+
+Operating expenses:
+
+Selling, general and administrative
+
+7,764
+
+7,144
+
+15,294
+
+13,811
+
+Depreciation and amortization
+
+806
+
+738
+
+1,602
+
+1,425
+
+Total operating expenses
+
+8,570
+
+7,882
+
+16,896
+
+15,236
+
+Operating income
+
+6,555
+
+6,534
+
+11,688
+
+11,613
+
+Interest and other (income) expense:
+
+Interest income and other, net
+
+(
+
+25
+
+)
+
+(
+
+84
+
+)
+
+(
+
+49
+
+)
+
+(
+
+141
+
+)
+
+Interest expense
+
+575
+
+573
+
+1,190
+
+1,058
+
+Interest and other, net
+
+550
+
+489
+
+1,141
+
+917
+
+Earnings before provision for income taxes
+
+6,005
+
+6,045
+
+10,547
+
+10,696
+
+Provision for income taxes
+
+1,454
+
+1,484
+
+2,563
+
+2,535
+
+Net earnings
+
+$
+
+4,551
+
+$
+
+4,561
+
+$
+
+7,984
+
+$
+
+8,161
+
+Basic weighted average common shares
+
+992
+
+990
+
+992
+
+989
+
+Basic earnings per share
+
+$
+
+4.59
+
+$
+
+4.61
+
+$
+
+8.05
+
+$
+
+8.25
+
+Diluted weighted average common shares
+
+994
+
+992
+
+994
+
+992
+
+Diluted earnings per share
+
+$
+
+4.58
+
+$
+
+4.60
+
+$
+
+8.03
+
+$
+
+8.23
+
+—————
+
+See accompanying notes to consolidated financial statements.
+
+Fiscal Q2 2025 Form 10-Q
+
+2
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(Unaudited)
+
+Three Months Ended
+
+Six Months Ended
+
+in millions
+
+August 3,
+
+2025
+
+July 28,
+
+2024
+
+August 3,
+
+2025
+
+July 28,
+
+2024
+
+Net earnings
+
+$
+
+4,551
+
+$
+
+4,561
+
+$
+
+7,984
+
+$
+
+8,161
+
+Other comprehensive income (loss), net of tax:
+
+Foreign currency translation adjustments
+
+167
+
+(
+
+249
+
+)
+
+289
+
+(
+
+259
+
+)
+
+Cash flow hedges
+
+1
+
+(
+
+60
+
+)
+
+5
+
+(
+
+51
+
+)
+
+Total other comprehensive income (loss), net of tax
+
+168
+
+(
+
+309
+
+)
+
+294
+
+(
+
+310
+
+)
+
+Comprehensive income
+
+$
+
+4,719
+
+$
+
+4,252
+
+$
+
+8,278
+
+$
+
+7,851
+
+—————
+
+See accompanying notes to consolidated financial statements.
+
+Fiscal Q2 2025 Form 10-Q
+
+3
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF STOCKHOLDERS' EQUITY
+
+(Unaudited)
+
+Three Months Ended
+
+Six Months Ended
+
+in millions
+
+August 3,
+
+2025
+
+July 28,
+
+2024
+
+August 3,
+
+2025
+
+July 28,
+
+2024
+
+Common Stock:
+
+Balance at beginning of period
+
+$
+
+90
+
+$
+
+90
+
+$
+
+90
+
+$
+
+90
+
+Shares issued under employee stock plans, net
+
+—
+
+—
+
+—
+
+—
+
+Balance at end of period
+
+90
+
+90
+
+90
+
+90
+
+Paid-in Capital:
+
+Balance at beginning of period
+
+14,159
+
+13,153
+
+14,117
+
+13,147
+
+Shares issued under employee stock plans, net
+
+148
+
+466
+
+33
+
+362
+
+Stock-based compensation expense
+
+131
+
+112
+
+288
+
+222
+
+Balance at end of period
+
+14,438
+
+13,731
+
+14,438
+
+13,731
+
+Retained Earnings:
+
+Balance at beginning of period
+
+90,680
+
+85,027
+
+89,533
+
+83,656
+
+Net earnings
+
+4,551
+
+4,561
+
+7,984
+
+8,161
+
+Cash dividends
+
+(
+
+2,288
+
+)
+
+(
+
+2,231
+
+)
+
+(
+
+4,574
+
+)
+
+(
+
+4,460
+
+)
+
+Balance at end of period
+
+92,943
+
+87,357
+
+92,943
+
+87,357
+
+Accumulated Other Comprehensive Loss:
+
+Balance at beginning of period
+
+(
+
+1,003
+
+)
+
+(
+
+478
+
+)
+
+(
+
+1,129
+
+)
+
+(
+
+477
+
+)
+
+Foreign currency translation adjustments, net of tax
+
+167
+
+(
+
+249
+
+)
+
+289
+
+(
+
+259
+
+)
+
+Cash flow hedges, net of tax
+
+1
+
+(
+
+60
+
+)
+
+5
+
+(
+
+51
+
+)
+
+Balance at end of period
+
+(
+
+835
+
+)
+
+(
+
+787
+
+)
+
+(
+
+835
+
+)
+
+(
+
+787
+
+)
+
+Treasury Stock:
+
+Balance at beginning of period
+
+(
+
+95,971
+
+)
+
+(
+
+95,972
+
+)
+
+(
+
+95,971
+
+)
+
+(
+
+95,372
+
+)
+
+Repurchases of common stock
+
+—
+
+1
+
+—
+
+(
+
+599
+
+)
+
+Balance at end of period
+
+(
+
+95,971
+
+)
+
+(
+
+95,971
+
+)
+
+(
+
+95,971
+
+)
+
+(
+
+95,971
+
+)
+
+Total stockholders' equity
+
+$
+
+10,665
+
+$
+
+4,420
+
+$
+
+10,665
+
+$
+
+4,420
+
+—————
+
+See accompanying notes to consolidated financial statements.
+
+Fiscal Q2 2025 Form 10-Q
+
+4
+
+Table of
+
+Contents
+
+THE HOME DEPOT, INC.
+
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(Unaudited)
+
+Six Months Ended
+
+in millions
+
+August 3,
+
+2025
+
+July 28,
+
+2024
+
+Cash Flows from Operating Activities:
+
+Net earnings
+
+$
+
+7,984
+
+$
+
+8,161
+
+Reconciliation of net earnings to net cash provided by operating activities:
+
+Depreciation and amortization, excluding amortization of intangible assets
+
+1,720
+
+1,615
+
+Intangible asset amortization
+
+278
+
+142
+
+Stock-based compensation expense
+
+288

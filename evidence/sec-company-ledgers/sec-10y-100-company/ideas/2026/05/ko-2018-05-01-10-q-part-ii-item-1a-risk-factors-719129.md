@@ -1,0 +1,1049 @@
+---
+id: idea-DV1m93M8
+type: idea
+state: nascent
+title: KO 2018-05-01 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:28:39.129Z'
+date: '2026-05-03'
+created: '2026-05-03T21:28:39.496Z'
+---
+# COCA COLA CO 10-Q Part II Item 1A Risk Factors
+
+Filed: 2018-05-01
+Source: https://www.sec.gov/Archives/edgar/data/21344/000002134418000023/a2018033010-q.htm
+
+Risk Factors
+
+60
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+60
+
+Item 6.
+
+Exhibits
+
+60
+
+Signatures
+
+64
+
+FORWARD-LOOKING STATEMENTS
+
+This report contains information that may constitute "forward-looking statements." Generally, the words "believe," "expect," "intend," "estimate," "anticipate," "project," "will" and similar expressions identify forward-looking statements, which generally are not historical in nature. However, the absence of these words or similar expressions does not mean that a statement is not forward-looking. All statements that address operating performance, events or developments that we expect or anticipate will occur in the future — including statements relating to volume growth, share of sales and earnings per share growth, and statements expressing general views about future operating results — are forward-looking statements. Management believes that these forward-looking statements are reasonable as and when made. However, caution should be taken not to place undue reliance on any such forward-looking statements because such statements speak only as of the date when made. Our Company undertakes no obligation to publicly update or revise any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by law. In addition, forward-looking statements are subject to certain risks and uncertainties that could cause actual results to differ materially from our Company's historical experience and our present expectations or projections. These risks and uncertainties include, but are not limited to, those described in Part II, "Item 1A. Risk Factors" and elsewhere in this report and in our Annual Report on Form 10-K for the year ended
+
+December 31, 2017
+
+, and those described from time to time in our future reports filed with the Securities and Exchange Commission.
+
+1
+
+Part I. Financial Information
+
+Item 1. Financial Statements (Unaudited)
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF INCOME
+
+(UNAUDITED)
+
+(In millions except per share data)
+
+Three Months Ended
+
+March 30,
+
+2018
+
+March 31,
+
+2017
+
+NET OPERATING REVENUES
+
+$
+
+7,626
+
+$
+
+9,118
+
+Cost of goods sold
+
+2,738
+
+3,513
+
+GROSS PROFIT
+
+4,888
+
+5,605
+
+Selling, general and administrative expenses
+
+2,541
+
+3,352
+
+Other operating charges
+
+536
+
+290
+
+OPERATING INCOME
+
+1,811
+
+1,963
+
+Interest income
+
+165
+
+155
+
+Interest expense
+
+230
+
+192
+
+Equity income (loss) — net
+
+142
+
+116
+
+Other income (loss) — net
+
+(55
+
+)
+
+(535
+
+)
+
+INCOME FROM CONTINUING OPERATIONS BEFORE INCOME TAXES
+
+1,833
+
+1,507
+
+Income taxes from continuing operations
+
+506
+
+323
+
+NET INCOME FROM CONTINUING OPERATIONS
+
+1,327
+
+1,184
+
+Income from discontinued operations (net of income taxes of $40 and $0, respectively)
+
+73
+
+—
+
+CONSOLIDATED NET INCOME
+
+1,400
+
+1,184
+
+Less: Net income attributable to noncontrolling interests
+
+32
+
+2
+
+NET INCOME ATTRIBUTABLE TO SHAREOWNERS OF
+
+THE COCA-COLA COMPANY
+
+$
+
+1,368
+
+$
+
+1,182
+
+Basic net income per share from continuing operations
+
+1
+
+$
+
+0.31
+
+$
+
+0.28
+
+Basic net income per share from discontinued operations
+
+2
+
+0.01
+
+—
+
+BASIC NET INCOME PER SHARE
+
+$
+
+0.32
+
+$
+
+0.28
+
+Diluted net income per share from continuing operations
+
+1
+
+$
+
+0.31
+
+$
+
+0.27
+
+Diluted net income per share from discontinued operations
+
+2
+
+0.01
+
+—
+
+DILUTED NET INCOME PER SHARE
+
+$
+
+0.32
+
+$
+
+0.27
+
+DIVIDENDS PER SHARE
+
+$
+
+0.39
+
+$
+
+0.37
+
+AVERAGE SHARES OUTSTANDING — BASIC
+
+4,265
+
+4,287
+
+Effect of dilutive securities
+
+41
+
+47
+
+AVERAGE SHARES OUTSTANDING — DILUTED
+
+4,306
+
+4,334
+
+1
+
+Calculated based on net income from continuing operations less net income from continuing operations attributable to noncontrolling interests.
+
+2
+
+Calculated based on net income from discontinued operations less net income from discontinued operations attributable to noncontrolling interests.
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+2
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(UNAUDITED)
+
+(In millions)
+
+Three Months Ended
+
+March 30,
+
+2018
+
+March 31,
+
+2017
+
+CONSOLIDATED NET INCOME
+
+$
+
+1,400
+
+$
+
+1,184
+
+Other comprehensive income:
+
+Net foreign currency translation adjustment
+
+728
+
+921
+
+Net gain (loss) on derivatives
+
+(16
+
+)
+
+(121
+
+)
+
+Net unrealized gain (loss) on available-for-sale securities
+
+(11
+
+)
+
+159
+
+Net change in pension and other benefit liabilities
+
+34
+
+41
+
+TOTAL COMPREHENSIVE INCOME (LOSS)
+
+2,135
+
+2,184
+
+Less: Comprehensive income (loss) attributable to noncontrolling interests
+
+91
+
+3
+
+TOTAL COMPREHENSIVE INCOME (LOSS) ATTRIBUTABLE TO SHAREOWNERS
+
+OF THE COCA-COLA COMPANY
+
+$
+
+2,044
+
+$
+
+2,181
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+3
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED BALANCE SHEETS
+
+(UNAUDITED)
+
+(In millions except par value)
+
+March 30,
+
+2018
+
+December 31,
+
+2017
+
+ASSETS
+
+CURRENT ASSETS
+
+Cash and cash equivalents
+
+$
+
+8,291
+
+$
+
+6,006
+
+Short-term investments
+
+7,518
+
+9,352
+
+TOTAL CASH, CASH EQUIVALENTS AND SHORT-TERM INVESTMENTS
+
+15,809
+
+15,358
+
+Marketable securities
+
+5,564
+
+5,317
+
+Trade accounts receivable, less allowances of $479 and $477, respectively
+
+3,904
+
+3,667
+
+Inventories
+
+2,937
+
+2,655
+
+Prepaid expenses and other assets
+
+2,449
+
+2,000
+
+Assets held for sale
+
+213
+
+219
+
+Assets held for sale
+
+—
+
+discontinued operations
+
+7,166
+
+7,329
+
+TOTAL CURRENT ASSETS
+
+38,042
+
+36,545
+
+EQUITY METHOD INVESTMENTS
+
+21,478
+
+20,856
+
+OTHER INVESTMENTS
+
+1,039
+
+1,096
+
+OTHER ASSETS
+
+4,428
+
+4,230
+
+DEFERRED INCOME TAX ASSETS
+
+3,298
+
+330
+
+PROPERTY, PLANT AND EQUIPMENT, less accumulated depreciation of
+
+$8,370 and $8,246, respectively
+
+7,977
+
+8,203
+
+TRADEMARKS WITH INDEFINITE LIVES
+
+6,753
+
+6,729
+
+BOTTLERS' FRANCHISE RIGHTS WITH INDEFINITE LIVES
+
+53
+
+138
+
+GOODWILL
+
+9,908
+
+9,401
+
+OTHER INTANGIBLE ASSETS
+
+306
+
+368
+
+TOTAL ASSETS
+
+$
+
+93,282
+
+$
+
+87,896
+
+LIABILITIES AND EQUITY
+
+CURRENT LIABILITIES
+
+Accounts payable and accrued expenses
+
+$
+
+10,218
+
+$
+
+8,748
+
+Loans and notes payable
+
+14,785
+
+13,205
+
+Current maturities of long-term debt
+
+4,370
+
+3,298
+
+Accrued income taxes
+
+579
+
+410
+
+Liabilities held for sale
+
+33
+
+37
+
+Liabilities held for sale
+
+—
+
+discontinued operations
+
+1,495
+
+1,496
+
+TOTAL CURRENT LIABILITIES
+
+31,480
+
+27,194
+
+LONG-TERM DEBT
+
+29,792
+
+31,182
+
+OTHER LIABILITIES
+
+8,079
+
+8,021
+
+DEFERRED INCOME TAX LIABILITIES
+
+2,314
+
+2,522
+
+THE COCA-COLA COMPANY SHAREOWNERS' EQUITY
+
+Common stock, $0.25 par value; Authorized — 11,200 shares;
+
+Issued — 7,040 and 7,040 shares, respectively
+
+1,760
+
+1,760
+
+Capital surplus
+
+16,006
+
+15,864
+
+Reinvested earnings
+
+63,150
+
+60,430
+
+Accumulated other comprehensive income (loss)
+
+(10,038
+
+)
+
+(10,305
+
+)
+
+Treasury stock, at cost — 2,781 and 2,781 shares, respectively
+
+(51,268
+
+)
+
+(50,677
+
+)
+
+EQUITY ATTRIBUTABLE TO SHAREOWNERS OF THE COCA-COLA COMPANY
+
+19,610
+
+17,072
+
+EQUITY ATTRIBUTABLE TO NONCONTROLLING INTERESTS
+
+2,007
+
+1,905
+
+TOTAL EQUITY
+
+21,617
+
+18,977
+
+TOTAL LIABILITIES AND EQUITY
+
+$
+
+93,282
+
+$
+
+87,896
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+4
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(UNAUDITED)
+
+(In millions)
+
+Three Months Ended
+
+March 30,
+
+2018
+
+March 31,
+
+2017
+
+OPERATING ACTIVITIES
+
+Consolidated net income
+
+$
+
+1,400
+
+$
+
+1,184
+
+(Income) loss from discontinued operations
+
+(73
+
+)
+
+—
+
+Net income from continuing operations
+
+1,327
+
+1,184
+
+Depreciation and amortization
+
+270
+
+328
+
+Stock-based compensation expense
+
+72
+
+55
+
+Deferred income taxes
+
+(199
+
+)
+
+(34
+
+)
+
+Equity (income) loss — net of dividends
+
+(43
+
+)
+
+(89
+
+)
+
+Foreign currency adjustments
+
+(19
+
+)
+
+72
+
+Significant (gains) losses on sales of assets — net
+
+34
+
+497
+
+Other operating charges
+
+510
+
+269
+
+Other items
+
+(27
+
+)
+
+16
+
+Net change in operating assets and liabilities
+
+(1,312
+
+)
+
+(1,534
+
+)
+
+Net cash provided by operating activities
+
+613
+
+764
+
+INVESTING ACTIVITIES
+
+Purchases of investments
+
+(2,669
+
+)
+
+(3,731
+
+)
+
+Proceeds from disposals of investments
+
+4,379
+
+4,362
+
+Acquisitions of businesses, equity method investments and nonmarketable securities
+
+(183
+
+)
+
+(337
+
+)
+
+Proceeds from disposals of businesses, equity method investments and nonmarketable securities
+
+3
+
+1,430
+
+Purchases of property, plant and equipment
+
+(274
+
+)
+
+(442
+
+)
+
+Proceeds from disposals of property, plant and equipment
+
+43
+
+18
+
+Other investing activities
+
+22
+
+31
+
+Net cash provided by (used in) investing activities
+
+1,321
+
+1,331
+
+FINANCING ACTIVITIES
+
+Issuances of debt
+
+9,576
+
+11,704
+
+Payments of debt
+
+(8,770
+
+)
+
+(9,223
+
+)
+
+Issuances of stock
+
+477
+
+394
+
+Purchases of stock for treasury
+
+(927
+
+)
+
+(1,304
+
+)
+
+Other financing activities
+
+(72
+
+)
+
+(36
+
+)
+
+Net cash provided by (used in) financing activities
+
+284
+
+1,535
+
+CASH FLOWS FROM DISCONTINUED OPERATIONS
+
+Net cash provided by (used in) operating activities from discontinued operations
+
+46
+
+—
+
+Net cash provided by (used in) investing activities from discontinued operations
+
+(24
+
+)
+
+—
+
+Net cash provided by (used in) financing activities from discontinued operations
+
+40
+
+—
+
+Net cash provided by (used in) discontinued operations
+
+62
+
+—
+
+EFFECT OF EXCHANGE RATE CHANGES ON CASH, CASH EQUIVALENTS, RESTRICTED
+
+CASH AND RESTRICTED CASH EQUIVALENTS
+
+95
+
+202
+
+CASH, CASH EQUIVALENTS, RESTRICTED CASH AND RESTRICTED CASH EQUIVALENTS
+
+Net increase (decrease) in cash, cash equivalents, restricted cash and restricted cash equivalents during
+
+the period
+
+2,375
+
+3,832
+
+Cash, cash equivalents, restricted cash and restricted cash equivalents at beginning of period
+
+6,373
+
+8,850
+
+Cash, cash equivalents, restricted cash and restricted cash equivalents at end of period
+
+8,748
+
+12,682
+
+Less: Restricted cash and restricted cash equivalents at end of period
+
+457
+
+562
+
+Cash and cash equivalents at end of period
+
+$
+
+8,291
+
+$
+
+12,120
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+5
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(UNAUDITED)
+
+NOTE 1
+
+:
+
+SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES
+
+Basis of Presentation
+
+The accompanying unaudited Condensed Consolidated Financial Statements have been prepared in accordance with accounting principles generally accepted in the United States ("U.S. GAAP") for interim financial information and with the instructions to Form 10-Q and Rule 10-01 of Regulation S-X. They do not include all information and notes required by U.S. GAAP for complete financial statements. However, except as disclosed herein, there has been no material change in the information disclosed in the Notes to Consolidated Financial Statements included in the Annual Report on Form 10-K of The Coca-Cola Company for the year ended
+
+December 31, 2017
+
+.
+
+When used in these notes, the terms "The Coca-Cola Company," "Company," "we," "us" and "our" mean The Coca-Cola Company and all entities included in our condensed consolidated financial statements. In the opinion of management, all adjustments (including normal recurring accruals) considered necessary for a fair presentation have been included. Operating results for the
+
+three months ended
+
+March 30, 2018
+
+are not necessarily indicative of the results that may be expected for the year ending
+
+December 31, 2018
+
+. Sales of our nonalcoholic ready-to-drink beverages are somewhat seasonal, with the second and third calendar quarters accounting for the highest sales volumes. The volume of sales in the beverage business may be affected by weather conditions.
+
+Each of our interim reporting periods, other than the fourth interim reporting period, ends on the Friday closest to the last day of the corresponding quarterly calendar period. The
+
+first quarter
+
+of
+
+2018
+
+and the
+
+first quarter
+
+of
+
+2017
+
+ended on
+
+March 30, 2018
+
+and
+
+March 31, 2017
+
+, respectively. Our fourth interim reporting period and our fiscal year end on December 31 regardless of the day of the week on which December 31 falls.
+
+Certain prior year amounts in the condensed consolidated financial statements and accompanying notes have been revised to conform to the current year presentation as a result of the adoption of accounting standards that became effective January 1, 2018, as applicable. Refer to the "Recently Adopted Accounting Guidance" section within this note below for further details.
+
+Advertising Costs
+
+The Company's accounting policy related to advertising costs for annual reporting purposes, as disclosed in Note 1 of our
+
+2017
+
+Annual Report on Form 10-K, is to expense production costs of print, radio, television and other advertisements as of the first date the advertisements take place. All other marketing expenditures are expensed in the annual period in which the expenditure is incurred.
+
+For interim reporting purposes, we allocate our estimated full year marketing expenditures that benefit multiple interim periods to each of our interim reporting periods. We use the proportion of each interim period's actual unit case volume to the estimated full year unit case volume as the basis for the allocation. This methodology results in our marketing expenditures being recognized at a standard rate per unit case. At the end of each interim reporting period, we review our estimated full year unit case volume and our estimated full year marketing expenditures that benefit multiple interim periods in order to evaluate if a change in estimate is necessary. The impact of any changes in these full year estimates is recognized in the interim period in which the change in estimate occurs. Our full year marketing expenditures are not impacted by this interim accounting policy.

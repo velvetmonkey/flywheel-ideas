@@ -1,0 +1,2133 @@
+---
+id: idea-Qro1971F
+type: idea
+state: nascent
+title: LOW 2023-08-30 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:19:11.345Z'
+date: '2026-05-03'
+created: '2026-05-03T20:19:11.728Z'
+---
+# LOWES COMPANIES INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2023-08-30
+Source: https://www.sec.gov/Archives/edgar/data/60667/000006066723000139/low-20230804.htm
+
+Risk Factors
+
+23
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+23
+
+Item 5.
+
+Other Information
+
+23
+
+Item 6.
+
+Exhibits
+
+24
+
+Signature
+
+25
+
+i
+
+Table of Contents
+
+FORWARD-LOOKING STATEMENTS
+
+This Form 10-Q includes "forward-looking statements" within the meaning of the Private Securities Litigation Reform Act of 1995. Statements including words such as "believe", "expect", "anticipate", "plan", "desire", "project", "estimate", "intend", "will", "should", "could", "would", "may", "strategy", "potential", "opportunity", "outlook", "scenario", "guidance", and similar expressions are forward-looking statements. Forward-looking statements involve, among other things, expectations, projections, and assumptions about future financial and operating results, objectives (including objectives related to environmental, social, and governance matters), business outlook, priorities, sales growth, shareholder value, capital expenditures, cash flows, the housing market, the home improvement industry, demand for products and services, share repurchases, Lowe's strategic initiatives, including those relating to acquisitions and dispositions and the impact of such transactions on our strategic and operational plans and financial results. Such statements involve risks and uncertainties and we can give no assurance that they will prove to be correct. Actual results may differ materially from those expressed or implied in such statements.
+
+A wide variety of potential risks, uncertainties, and other factors could materially affect our ability to achieve the results either expressed or implied by these forward-looking statements including, but not limited to, changes in general economic conditions, such as volatility and/or lack of liquidity from time to time in U.S. and world financial markets and the consequent reduced availability and/or higher cost of borrowing to Lowe's and its customers, slower rates of growth in real disposable personal income that could affect the rate of growth in consumer spending, inflation and its impacts on discretionary spending and on our costs, shortages, and other disruptions in the labor supply, interest rate and currency fluctuations, home price appreciation or decreasing housing turnover, age of housing stock, the availability of consumer credit and of mortgage financing, trade policy changes or additional tariffs, outbreaks of pandemics, fluctuations in fuel and energy costs, inflation or deflation of commodity prices, natural disasters, armed conflicts, acts of both domestic and international terrorism, and other factors that can negatively affect our customers.
+
+Investors and others should carefully consider the foregoing factors and other uncertainties, risks and potential events including, but not limited to, those described in "Item 1A - Risk Factors" and "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations - Critical Accounting Policies and Estimates" in our most recent Annual Report on Form 10-K and as may be updated from time to time in our quarterly reports on Form 10-Q or other subsequent filings with the SEC. All such forward-looking statements speak only as of the date they are made, and we do not undertake any obligation to update these statements other than as required by law.
+
+ii
+
+Table of Contents
+
+Part I - FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Earnings (Unaudited)
+
+In Millions, Except Per Share and Percentage Data
+
+Three Months Ended
+
+Six Months Ended
+
+August 4, 2023
+
+July 29, 2022
+
+August 4, 2023
+
+July 29, 2022
+
+Current Earnings
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Net sales
+
+$
+
+24,956
+
+100.00
+
+%
+
+$
+
+27,476
+
+100.00
+
+%
+
+$
+
+47,304
+
+100.00
+
+%
+
+$
+
+51,135
+
+100.00
+
+%
+
+Cost of sales
+
+16,557
+
+66.34
+
+18,343
+
+66.76
+
+31,378
+
+66.33
+
+33,952
+
+66.40
+
+Gross margin
+
+8,399
+
+33.66
+
+9,133
+
+33.24
+
+15,926
+
+33.67
+
+17,183
+
+33.60
+
+Expenses:
+
+Selling, general and administrative
+
+4,086
+
+16.38
+
+4,455
+
+16.22
+
+7,912
+
+16.73
+
+8,758
+
+17.12
+
+Depreciation and amortization
+
+427
+
+1.71
+
+449
+
+1.63
+
+841
+
+1.78
+
+894
+
+1.75
+
+Operating income
+
+3,886
+
+15.57
+
+4,229
+
+15.39
+
+7,173
+
+15.16
+
+7,531
+
+14.73
+
+Interest – net
+
+341
+
+1.36
+
+264
+
+0.96
+
+689
+
+1.45
+
+507
+
+0.99
+
+Pre-tax earnings
+
+3,545
+
+14.21
+
+3,965
+
+14.43
+
+6,484
+
+13.71
+
+7,024
+
+13.74
+
+Income tax provision
+
+872
+
+3.50
+
+973
+
+3.54
+
+1,551
+
+3.28
+
+1,699
+
+3.33
+
+Net earnings
+
+$
+
+2,673
+
+10.71
+
+%
+
+$
+
+2,992
+
+10.89
+
+%
+
+$
+
+4,933
+
+10.43
+
+%
+
+$
+
+5,325
+
+10.41
+
+%
+
+Weighted average common shares outstanding – basic
+
+584
+
+638
+
+590
+
+649
+
+Basic earnings per common share
+
+$
+
+4.56
+
+$
+
+4.68
+
+$
+
+8.34
+
+$
+
+8.18
+
+Weighted average common shares outstanding – diluted
+
+585
+
+639
+
+591
+
+651
+
+Diluted earnings per common share
+
+$
+
+4.56
+
+$
+
+4.67
+
+$
+
+8.32
+
+$
+
+8.16
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Comprehensive Income (Unaudited)
+
+In Millions, Except Percentage Data
+
+Three Months Ended
+
+Six Months Ended
+
+August 4, 2023
+
+July 29, 2022
+
+August 4, 2023
+
+July 29, 2022
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Net earnings
+
+$
+
+2,673
+
+10.71
+
+%
+
+$
+
+2,992
+
+10.89
+
+%
+
+$
+
+4,933
+
+10.43
+
+%
+
+$
+
+5,325
+
+10.41
+
+%
+
+Foreign currency translation adjustments – net of tax
+
+5
+
+0.01
+
+12
+
+0.05
+
+5
+
+0.01
+
+(
+
+5
+
+)
+
+(
+
+0.02
+
+)
+
+Cash flow hedges – net of tax
+
+(
+
+3
+
+)
+
+(
+
+0.01
+
+)
+
+(
+
+38
+
+)
+
+(
+
+0.14
+
+)
+
+(
+
+6
+
+)
+
+(
+
+0.02
+
+)
+
+181
+
+0.36
+
+Other
+
+—
+
+—
+
+(
+
+1
+
+)
+
+—
+
+—
+
+—
+
+(
+
+3
+
+)
+
+0.01
+
+Other comprehensive income/(loss)
+
+2
+
+—
+
+(
+
+27
+
+)
+
+(
+
+0.09
+
+)
+
+(
+
+1
+
+)
+
+(
+
+0.01
+
+)
+
+173
+
+0.35
+
+Comprehensive income
+
+$
+
+2,675
+
+10.71
+
+%
+
+$
+
+2,965
+
+10.80
+
+%
+
+$
+
+4,932
+
+10.42
+
+%
+
+$
+
+5,498
+
+10.76
+
+%
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+1
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Balance Sheets (Unaudited)
+
+In Millions, Except Par Value Data
+
+August 4,
+
+2023
+
+July 29,
+
+2022
+
+February 3,
+
+2023
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+3,494
+
+$
+
+1,482
+
+$
+
+1,348
+
+Short-term investments
+
+374
+
+450
+
+384
+
+Merchandise inventory – net
+
+17,422
+
+19,329
+
+18,532
+
+Other current assets
+
+946
+
+1,406
+
+1,178
+
+Total current assets
+
+22,236
+
+22,667
+
+21,442
+
+Property, less accumulated depreciation
+
+17,373
+
+18,713
+
+17,567
+
+Operating lease right-of-use assets
+
+3,650
+
+4,158
+
+3,518
+
+Long-term investments
+
+182
+
+56
+
+121
+
+Deferred income taxes – net
+
+230
+
+104
+
+250
+
+Other assets
+
+850
+
+1,027
+
+810
+
+Total assets
+
+$
+
+44,521
+
+$
+
+46,725
+
+$
+
+43,708
+
+Liabilities and shareholders' deficit
+
+Current liabilities:
+
+Short-term borrowings
+
+$
+
+—
+
+$
+
+—
+
+$
+
+499
+
+Current maturities of long-term debt
+
+592
+
+121
+
+585
+
+Current operating lease liabilities
+
+534
+
+652
+
+522
+
+Accounts payable
+
+10,333
+
+12,631
+
+10,524
+
+Accrued compensation and employee benefits
+
+1,026
+
+1,227
+
+1,109
+
+Deferred revenue
+
+1,566
+
+1,968
+
+1,603
+
+Income taxes payable
+
+91
+
+330
+
+1,181
+
+Other current liabilities
+
+3,470
+
+3,437
+
+3,488
+
+Total current liabilities
+
+17,612
+
+20,366
+
+19,511
+
+Long-term debt, excluding current maturities
+
+35,839
+
+28,763
+
+32,876
+
+Noncurrent operating lease liabilities
+
+3,611
+
+4,069
+
+3,512
+
+Deferred revenue – Lowe's protection plans
+
+1,231
+
+1,169
+
+1,201
+
+Other liabilities
+
+960
+
+800
+
+862
+
+Total liabilities
+
+59,253
+
+55,167
+
+57,962
+
+Shareholders' deficit:
+
+Preferred stock, $
+
+5
+
+par value: Authorized –
+
+5.0
+
+million shares; Issued and outstanding –
+
+no
+
+ne
+
+—
+
+—
+
+—
+
+Common stock, $
+
+0.50
+
+par value: Authorized –
+
+5.6
+
+billion shares; Issued and outstanding –
+
+582
+
+million,
+
+631
+
+million, and
+
+601
+
+million shares, respectively
+
+291
+
+316
+
+301
+
+Capital in excess of par value
+
+12
+
+—
+
+—
+
+Accumulated deficit
+
+(
+
+15,341
+
+)
+
+(
+
+8,895
+
+)
+
+(
+
+14,862
+
+)
+
+Accumulated other comprehensive income
+
+306
+
+137
+
+307
+
+Total shareholders' deficit
+
+(
+
+14,732
+
+)
+
+(
+
+8,442
+
+)
+
+(
+
+14,254
+
+)
+
+Total liabilities and shareholders' deficit
+
+$
+
+44,521
+
+$
+
+46,725
+
+$
+
+43,708
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+2
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Shareholders' Deficit (Unaudited)
+
+In Millions
+
+Three Months Ended August 4, 2023
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Accumulated Deficit
+
+Accumulated Other
+
+Comprehensive Income
+
+Total
+
+Shares
+
+Amount
+
+Balance May 5, 2023
+
+592
+
+$
+
+296
+
+$
+
+—
+
+$
+
+(
+
+15,310
+
+)
+
+$
+
+304
+
+$
+
+(
+
+14,710
+
+)
+
+Net earnings
+
+—
+
+—
+
+—
+
+2,673
+
+—
+
+2,673
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+2
+
+2
+
+Cash dividends declared, $
+
+1.10
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+641
+
+)
+
+—
+
+(
+
+641
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+58
+
+—
+
+—
+
+58
+
+Repurchases of common stock
+
+(
+
+10
+
+)
+
+(
+
+5
+
+)
+
+(
+
+117
+
+)
+
+(
+
+2,063
+
+)
+
+—
+
+(
+
+2,185
+
+)
+
+Issuance of common stock under share-based payment plans
+
+—
+
+—
+
+71
+
+—
+
+—
+
+71
+
+Balance August 4, 2023
+
+582
+
+$
+
+291
+
+$
+
+12
+
+$
+
+(
+
+15,341
+
+)
+
+$
+
+306
+
+$
+
+(
+
+14,732
+
+)
+
+Six Months Ended August 4, 2023
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Accumulated Deficit
+
+Accumulated Other
+
+Comprehensive Income
+
+Total
+
+Shares
+
+Amount
+
+Balance February 3, 2023
+
+601
+
+$
+
+301
+
+$
+
+—
+
+$
+
+(
+
+14,862
+
+)
+
+$
+
+307
+
+$
+
+(
+
+14,254
+
+)
+
+Net earnings
+
+—
+
+—
+
+—
+
+4,933
+
+—
+
+4,933
+
+Other comprehensive loss
+
+—
+
+—
+
+—
+
+—
+
+(
+
+1
+
+)
+
+(
+
+1
+
+)
+
+Cash dividends declared, $
+
+2.15
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+1,266
+
+)
+
+—
+
+(
+
+1,266
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+113
+
+—
+
+—
+
+113
+
+Repurchases of common stock
+
+(
+
+21
+
+)
+
+(
+
+11
+
+)
+
+(
+
+176
+
+)
+
+(
+
+4,146
+
+)
+
+—
+
+(
+
+4,333
+
+)
+
+Issuance of common stock under share-based payment plans
+
+2
+
+1
+
+75
+
+—
+
+—
+
+76
+
+Balance August 4, 2023
+
+582
+
+$
+
+291
+
+$
+
+12
+
+$
+
+(
+
+15,341
+
+)
+
+$
+
+306
+
+$
+
+(
+
+14,732
+
+)
+
+3
+
+Table of Contents
+
+Three Months Ended July 29, 2022
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Accumulated Deficit
+
+Accumulated Other
+
+Comprehensive Income
+
+Total
+
+Shares
+
+Amount
+
+Balance April 29, 2022
+
+652
+
+$
+
+326
+
+$
+
+—
+
+$
+
+(
+
+7,367
+
+)
+
+$
+
+164
+
+$
+
+(
+
+6,877
+
+)
+
+Net earnings
+
+—
+
+—
+
+—
+
+2,992
+
+—
+
+2,992
+
+Other comprehensive loss
+
+—
+
+—
+
+—
+
+—
+
+(
+
+27
+
+)
+
+(
+
+27
+
+)
+
+Cash dividends declared, $
+
+1.05
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+666
+
+)
+
+—
+
+(
+
+666
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+65
+
+—
+
+—
+
+65
+
+Repurchases of common stock
+
+(
+
+22
+
+)
+
+(
+
+11
+
+)
+
+(
+
+137
+
+)
+
+(
+
+3,854
+
+)
+
+—
+
+(
+
+4,002
+
+)
+
+Issuance of common stock under share-based payment plans
+
+1
+
+1
+
+72
+
+—
+
+—
+
+73
+
+Balance July 29, 2022
+
+631
+
+$
+
+316
+
+$
+
+—
+
+$
+
+(
+
+8,895
+
+)
+
+$
+
+137
+
+$
+
+(
+
+8,442
+
+)
+
+Six Months Ended July 29, 2022
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Accumulated Deficit
+
+Accumulated Other
+
+Comprehensive (Loss)/Income
+
+Total
+
+Shares
+
+Amount
+
+Balance January 28, 2022
+
+670
+
+$
+
+335
+
+$
+
+—
+
+$
+
+(
+
+5,115
+
+)
+
+$
+
+(
+
+36
+
+)
+
+$
+
+(
+
+4,816
+
+)
+
+Net earnings
+
+—
+
+—
+
+—
+
+5,325
+
+—
+
+5,325
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+173
+
+173
+
+Cash dividends declared, $
+
+1.85
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+1,190
+
+)
+
+—
+
+(
+
+1,190
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+110
+
+—
+
+—
+
+110
+
+Repurchases of common stock
+
+(
+
+41
+
+)
+
+(
+
+20
+
+)
+
+(
+
+183
+
+)
+
+(
+
+7,915
+
+)
+
+—
+
+(
+
+8,118
+
+)
+
+Issuance of common stock under share-based payment plans
+
+2
+
+1
+
+73
+
+—
+
+—
+
+74
+
+Balance July 29, 2022
+
+631
+
+$
+
+316
+
+$
+
+—
+
+$
+
+(
+
+8,895
+
+)
+
+$
+
+137
+
+$
+
+(
+
+8,442
+
+)
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+4
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Cash Flows (Unaudited)
+
+In Millions
+
+Six Months Ended
+
+August 4, 2023
+
+July 29, 2022
+
+Cash flows from operating activities:
+
+Net earnings
+
+$
+
+4,933
+
+$
+
+5,325
+
+Adjustments to reconcile net earnings to net cash provided by operating activities:
+
+Depreciation and amortization
+
+941
+
+1,007
+
+Noncash lease expense
+
+241
+
+273
+
+Deferred income taxes
+
+23
+
+—
+
+Asset impairment and loss on property – net
+
+23
+
+32
+
+Gain on sale of business
+
+(
+
+67
+
+)
+
+—
+
+Share-based payment expense
+
+113
+
+110
+
+Changes in operating assets and liabilities:
+
+Merchandise inventory – net
+
+1,109
+
+(
+
+1,728
+
+)
+
+Other operating assets
+
+224
+
+(
+
+120
+
+)
+
+Accounts payable
+
+(
+
+191
+
+)
+
+1,279
+
+Deferred revenue
+
+(
+
+6
+
+)
+
+97
+
+Other operating liabilities
+
+(
+
+1,375
+
+)
+
+(
+
+263
+
+)
+
+Net cash provided by operating activities
+
+5,968
+
+6,012
+
+Cash flows from investing activities:
+
+Purchases of investments
+
+(
+
+878
+
+)
+
+(
+
+330
+
+)
+
+Proceeds from sale/maturity of investments
+
+811
+
+290
+
+Capital expenditures
+
+(
+
+765
+
+)
+
+(
+
+687
+
+)
+
+Proceeds from sale of property and other long-term assets
+
+17
+
+19
+
+Proceeds from sale of business
+
+123
+
+—
+
+Other – net
+
+(
+
+23
+
+)
+
+(
+
+1
+
+)
+
+Net cash used in investing activities
+
+(
+
+715
+
+)
+
+(
+
+709
+
+)
+
+Cash flows from financing activities:
+
+Net change in commercial paper
+
+(
+
+499
+
+)
+
+—
+
+Net proceeds from issuance of debt
+
+2,983
+
+4,964
+
+Repayment of debt
+
+(
+
+45
+
+)
+
+(
+
+799
+
+)
+
+Proceeds from issuance of common stock under share-based payment plans
+
+76
+
+72
+
+Cash dividend payments
+
+(
+
+1,257
+
+)
+
+(
+
+1,061
+
+)
+
+Repurchases of common stock
+
+(
+
+4,356
+
+)
+
+(
+
+8,128
+
+)
+
+Other – net
+
+(
+
+9
+
+)
+
+(
+
+2
+
+)
+
+Net cash used in financing activities
+
+(
+
+3,107
+
+)
+
+(
+
+4,954
+
+)
+
+Net increase in cash and cash equivalents
+
+2,146
+
+349
+
+Cash and cash equivalents, beginning of period
+
+1,348
+
+1,133
+
+Cash and cash equivalents, end of period
+
+$
+
+3,494
+
+$
+
+1,482
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+5

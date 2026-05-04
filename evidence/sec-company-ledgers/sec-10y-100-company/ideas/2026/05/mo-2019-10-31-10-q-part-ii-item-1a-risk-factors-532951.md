@@ -1,0 +1,2393 @@
+---
+id: idea-4PZbh7ZK
+type: idea
+state: nascent
+title: MO 2019-10-31 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:42:12.951Z'
+date: '2026-05-03'
+created: '2026-05-03T21:42:13.317Z'
+---
+# ALTRIA GROUP, INC. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2019-10-31
+Source: https://www.sec.gov/Archives/edgar/data/764180/000076418019000083/a2019form10qq32019.htm
+
+Risk Factors
+
+83
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+85
+
+Item 6.
+
+Exhibits
+
+86
+
+Signature
+
+Signature
+
+87
+
+2
+
+Table of Contents
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Financial Statements.
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Balance Sheets
+
+(in millions of dollars)
+
+(Unaudited)
+
+September 30, 2019
+
+December 31, 2018
+
+Assets
+
+Cash and cash equivalents
+
+$
+
+1,604
+
+$
+
+1,333
+
+Receivables
+
+165
+
+142
+
+Inventories:
+
+Leaf tobacco
+
+820
+
+940
+
+Other raw materials
+
+201
+
+186
+
+Work in process
+
+598
+
+647
+
+Finished product
+
+569
+
+558
+
+2,188
+
+2,331
+
+Income taxes
+
+15
+
+167
+
+Other current assets
+
+319
+
+326
+
+Total current assets
+
+4,291
+
+4,299
+
+Property, plant and equipment, at cost
+
+5,009
+
+4,950
+
+Less accumulated depreciation
+
+3,047
+
+3,012
+
+1,962
+
+1,938
+
+Goodwill
+
+5,262
+
+5,196
+
+Other intangible assets, net
+
+12,688
+
+12,279
+
+Investments in equity securities
+
+27,346
+
+30,496
+
+Other assets
+
+1,364
+
+1,430
+
+Total Assets
+
+$
+
+52,913
+
+$
+
+55,638
+
+See notes to condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Balance Sheets (Continued)
+
+(in millions of dollars, except share and per share data)
+
+(Unaudited)
+
+September 30, 2019
+
+December 31, 2018
+
+Liabilities
+
+Short-term borrowings
+
+$
+
+—
+
+$
+
+12,704
+
+Current portion of long-term debt
+
+1,000
+
+1,144
+
+Accounts payable
+
+246
+
+399
+
+Accrued liabilities:
+
+Marketing
+
+554
+
+586
+
+Settlement charges
+
+3,094
+
+3,454
+
+Other
+
+1,195
+
+1,403
+
+Dividends payable
+
+1,573
+
+1,503
+
+Total current liabilities
+
+7,662
+
+21,193
+
+Long-term debt
+
+26,903
+
+11,898
+
+Deferred income taxes
+
+5,240
+
+5,172
+
+Accrued pension costs
+
+352
+
+544
+
+Accrued postretirement health care costs
+
+1,764
+
+1,749
+
+Other liabilities
+
+316
+
+254
+
+Total liabilities
+
+42,237
+
+40,810
+
+Contingencies (Note 13)
+
+Redeemable noncontrolling interest
+
+39
+
+39
+
+Stockholders' Equity
+
+Common stock, par value $0.33 1/3 per share
+
+(2,805,961,317 shares issued)
+
+935
+
+935
+
+Additional paid-in capital
+
+5,960
+
+5,961
+
+Earnings reinvested in the business
+
+39,910
+
+43,962
+
+Accumulated other comprehensive losses
+
+(
+
+2,402
+
+)
+
+(
+
+2,547
+
+)
+
+Cost of repurchased stock
+
+(937,835,860 shares at September 30, 2019 and
+
+931,903,722 shares at December 31, 2018)
+
+(
+
+33,858
+
+)
+
+(
+
+33,524
+
+)
+
+Total stockholders' equity attributable to Altria
+
+10,545
+
+14,787
+
+Noncontrolling interests
+
+92
+
+2
+
+Total stockholders' equity
+
+10,637
+
+14,789
+
+Total Liabilities and Stockholders' Equity
+
+$
+
+52,913
+
+$
+
+55,638
+
+See notes to condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Earnings
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+For the Nine Months Ended September 30,
+
+For the Three Months Ended September 30,
+
+2019
+
+2018
+
+2019
+
+2018
+
+Net revenues
+
+$
+
+19,103
+
+$
+
+19,250
+
+$
+
+6,856
+
+$
+
+6,837
+
+Cost of sales
+
+5,367
+
+5,509
+
+1,915
+
+2,037
+
+Excise taxes on products
+
+4,109
+
+4,409
+
+1,444
+
+1,545
+
+Gross profit
+
+9,627
+
+9,332
+
+3,497
+
+3,255
+
+Marketing, administration and research costs
+
+1,654
+
+1,959
+
+552
+
+700
+
+Asset impairment and exit costs
+
+74
+
+2
+
+1
+
+(
+
+2
+
+)
+
+Operating income
+
+7,899
+
+7,371
+
+2,944
+
+2,557
+
+Interest and other debt expense, net
+
+989
+
+503
+
+293
+
+159
+
+Net periodic benefit income, excluding service cost
+
+(
+
+40
+
+)
+
+(
+
+37
+
+)
+
+(
+
+24
+
+)
+
+(
+
+21
+
+)
+
+Earnings from equity investments
+
+(
+
+866
+
+)
+
+(
+
+759
+
+)
+
+(
+
+333
+
+)
+
+(
+
+189
+
+)
+
+Impairment of JUUL equity securities
+
+4,500
+
+—
+
+4,500
+
+—
+
+Loss on Cronos-related financial instruments
+
+1,327
+
+—
+
+636
+
+—
+
+Loss on ABI/SABMiller business combination
+
+—
+
+33
+
+—
+
+—
+
+Earnings (losses) before income taxes
+
+1,989
+
+7,631
+
+(
+
+2,128
+
+)
+
+2,608
+
+Provision for income taxes
+
+1,473
+
+1,915
+
+474
+
+664
+
+Net earnings (losses)
+
+516
+
+5,716
+
+(
+
+2,602
+
+)
+
+1,944
+
+Net (earnings) losses attributable to noncontrolling interests
+
+—
+
+(
+
+3
+
+)
+
+2
+
+(
+
+1
+
+)
+
+Net earnings (losses) attributable to Altria
+
+$
+
+516
+
+$
+
+5,713
+
+$
+
+(
+
+2,600
+
+)
+
+$
+
+1,943
+
+Per share data:
+
+Basic and diluted earnings (losses) per share attributable to Altria
+
+$
+
+0.27
+
+$
+
+3.02
+
+$
+
+(
+
+1.39
+
+)
+
+$
+
+1.03
+
+See notes to condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Comprehensive Earnings
+
+(in millions of dollars)
+
+(Unaudited)
+
+For the Nine Months Ended September 30,
+
+For the Three Months Ended September 30,
+
+2019
+
+2018
+
+2019
+
+2018
+
+Net earnings (losses)
+
+$
+
+516
+
+$
+
+5,716
+
+$
+
+(
+
+2,602
+
+)
+
+$
+
+1,944
+
+Other comprehensive earnings (losses), net of deferred income taxes:
+
+Benefit plans
+
+84
+
+126
+
+26
+
+39
+
+ABI
+
+53
+
+(
+
+262
+
+)
+
+221
+
+(
+
+422
+
+)
+
+Currency translation adjustments and other
+
+8
+
+(
+
+1
+
+)
+
+(
+
+3
+
+)
+
+1
+
+Other comprehensive earnings (losses), net of deferred
+
+income taxes
+
+145
+
+(
+
+137
+
+)
+
+244
+
+(
+
+382
+
+)
+
+Comprehensive earnings (losses)
+
+661
+
+5,579
+
+(
+
+2,358
+
+)
+
+1,562
+
+Comprehensive (earnings) losses attributable to noncontrolling interests
+
+—
+
+(
+
+3
+
+)
+
+2
+
+(
+
+1
+
+)
+
+Comprehensive earnings (losses) attributable to Altria
+
+$
+
+661
+
+$
+
+5,576
+
+$
+
+(
+
+2,356
+
+)
+
+$
+
+1,561
+
+See notes to condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Stockholders' Equity
+
+for the
+
+Nine Months Ended September 30
+
+,
+
+2019
+
+and
+
+2018
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+Attributable to Altria
+
+Common
+
+Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Earnings
+
+Reinvested
+
+in the
+
+Business
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Losses
+
+Cost of
+
+Repurchased
+
+Stock
+
+Non-controlling
+
+Interests
+
+Total
+
+Stockholders'
+
+Equity
+
+Balances, December 31, 2018
+
+$
+
+935
+
+$
+
+5,961
+
+$
+
+43,962
+
+$
+
+(
+
+2,547
+
+)
+
+$
+
+(
+
+33,524
+
+)
+
+$
+
+2
+
+$
+
+14,789
+
+Net earnings (losses)
+
+(1)
+
+—
+
+—
+
+516
+
+—
+
+—
+
+(
+
+3
+
+)
+
+513
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+145
+
+—
+
+—
+
+145
+
+Stock award activity
+
+—
+
+(
+
+1
+
+)
+
+—
+
+—
+
+12
+
+—
+
+11
+
+Cash dividends declared ($2.44 per share)
+
+—
+
+—
+
+(
+
+4,568
+
+)
+
+—
+
+—
+
+—
+
+(
+
+4,568
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+346
+
+)
+
+—
+
+(
+
+346
+
+)
+
+Issuance of noncontrolling interest in Helix
+
+—
+
+—
+
+—
+
+—
+
+—
+
+88
+
+88
+
+Other
+
+—
+
+—
+
+—
+
+—
+
+—
+
+5
+
+5
+
+Balances, September 30, 2019
+
+$
+
+935
+
+$
+
+5,960
+
+$
+
+39,910
+
+$
+
+(
+
+2,402
+
+)
+
+$
+
+(
+
+33,858
+
+)
+
+$
+
+92
+
+$
+
+10,637
+
+Attributable to Altria
+
+Common
+
+Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Earnings
+
+Reinvested
+
+in the
+
+Business
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Losses
+
+Cost of
+
+Repurchased
+
+Stock
+
+Non-controlling
+
+Interests
+
+Total
+
+Stockholders'
+
+Equity
+
+Balances, December 31, 2017
+
+$
+
+935
+
+$
+
+5,952
+
+$
+
+42,251
+
+$
+
+(
+
+1,897
+
+)
+
+$
+
+(
+
+31,864
+
+)
+
+$
+
+3
+
+$
+
+15,380
+
+Net earnings (losses)
+
+(1)
+
+—
+
+—
+
+5,713
+
+—
+
+—
+
+—
+
+5,713
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+(
+
+137
+
+)
+
+—
+
+—
+
+(
+
+137
+
+)
+
+Stock award activity
+
+—
+
+7
+
+—
+
+—
+
+10
+
+—
+
+17
+
+Cash dividends declared ($2.20 per share)
+
+—
+
+—
+
+(
+
+4,159
+
+)
+
+—
+
+—
+
+—
+
+(
+
+4,159
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+1,317
+
+)
+
+—
+
+(
+
+1,317
+
+)
+
+Other
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+1
+
+)
+
+(
+
+1
+
+)
+
+Balances, September 30, 2018
+
+$
+
+935
+
+$
+
+5,959
+
+$
+
+43,805
+
+$
+
+(
+
+2,034
+
+)
+
+$
+
+(
+
+33,171
+
+)
+
+$
+
+2
+
+$
+
+15,496
+
+(1)
+
+Amounts attributable to noncontrolling interests for the nine months ended
+
+September 30,
+
+2019 and 2018 exclude net earnings of
+
+$
+
+3
+
+million
+
+due to the redeemable noncontrolling interest related to Stag's Leap Wine Cellars
+
+,
+
+which is reported in the mezzanine equity section on the condensed consolidated balance sheets.
+
+See notes to condensed consolidated financial statements.
+
+7
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Stockholders' Equity
+
+for the
+
+Three Months Ended September 30
+
+,
+
+2019
+
+and
+
+2018
+
+(in millions of dollars, except per share data)
+
+(Unaudited)
+
+Attributable to Altria
+
+Common
+
+Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Earnings
+
+Reinvested
+
+in the
+
+Business
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Losses
+
+Cost of
+
+Repurchased
+
+Stock
+
+Non-controlling
+
+Interests
+
+Total
+
+Stockholders'
+
+Equity
+
+Balances, June 30, 2019
+
+$
+
+935
+
+$
+
+5,953
+
+$
+
+44,081
+
+$
+
+(
+
+2,646
+
+)
+
+$
+
+(
+
+33,859
+
+)
+
+$
+
+2
+
+$
+
+14,466
+
+Net earnings (losses)
+
+(1)
+
+—
+
+—
+
+(
+
+2,600
+
+)
+
+—
+
+—
+
+(
+
+3
+
+)
+
+(
+
+2,603
+
+)
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+244
+
+—
+
+—
+
+244
+
+Stock award activity
+
+—
+
+7
+
+—
+
+—
+
+1
+
+—
+
+8
+
+Cash dividends declared ($0.84 per share)
+
+—
+
+—
+
+(
+
+1,571
+
+)
+
+—
+
+—
+
+—
+
+(
+
+1,571
+
+)
+
+Issuance of noncontrolling interest in Helix
+
+—
+
+—
+
+—
+
+—
+
+—
+
+88
+
+88
+
+Other
+
+—
+
+—
+
+—
+
+—
+
+—
+
+5
+
+5
+
+Balances, September 30, 2019
+
+$
+
+935
+
+$
+
+5,960
+
+$
+
+39,910
+
+$
+
+(
+
+2,402
+
+)
+
+$
+
+(
+
+33,858
+
+)
+
+$
+
+92
+
+$
+
+10,637
+
+Attributable to Altria
+
+Common
+
+Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Earnings
+
+Reinvested
+
+in the
+
+Business
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Losses
+
+Cost of
+
+Repurchased
+
+Stock
+
+Non-controlling
+
+Interests
+
+Total
+
+Stockholders'
+
+Equity
+
+Balances, June 30, 2018
+
+$
+
+935
+
+$
+
+5,948
+
+$
+
+43,369
+
+$
+
+(
+
+1,652
+
+)
+
+$
+
+(
+
+32,804
+
+)
+
+$
+
+2
+
+$
+
+15,798
+
+Net earnings (losses)
+
+(1)
+
+—
+
+—
+
+1,943
+
+—
+
+—
+
+—
+
+1,943
+
+Other comprehensive earnings (losses), net of deferred income taxes
+
+—
+
+—
+
+—
+
+(
+
+382
+
+)
+
+—
+
+—
+
+(
+
+382
+
+)
+
+Stock award activity
+
+—
+
+11
+
+—
+
+—
+
+—
+
+—
+
+11
+
+Cash dividends declared ($0.80 per share)
+
+—
+
+—
+
+(
+
+1,507
+
+)
+
+—
+
+—
+
+—
+
+(
+
+1,507
+
+)
+
+Repurchases of common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+367
+
+)
+
+—
+
+(
+
+367
+
+)
+
+Balances, September 30, 2018
+
+$
+
+935
+
+$
+
+5,959
+
+$
+
+43,805
+
+$
+
+(
+
+2,034
+
+)
+
+$
+
+(
+
+33,171
+
+)
+
+$
+
+2
+
+$
+
+15,496
+
+(1)
+
+Amounts attributable to noncontrolling interests for the three months ended September 30, 2019 and 2018 exclude net earnings of
+
+$
+
+1
+
+million
+
+due to the redeemable noncontrolling interest related to Stag's Leap Wine Cellars
+
+,
+
+which is reported in the mezzanine equity section on the condensed consolidated balance sheets.
+
+See notes to condensed consolidated financial statements.
+
+8
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Cash Flows
+
+(in millions of dollars)
+
+(Unaudited)
+
+For the Nine Months Ended
+
+September 30,
+
+2019
+
+2018
+
+Cash Provided by (Used in) Operating Activities
+
+Net earnings (losses)
+
+$
+
+516
+
+$
+
+5,716
+
+Adjustments to reconcile net earnings (losses) to operating cash flows:
+
+Depreciation and amortization
+
+163
+
+168
+
+Deferred income tax provision (benefit)
+
+(
+
+261
+
+)
+
+215
+
+Earnings from equity investments
+
+(
+
+866
+
+)
+
+(
+
+759
+
+)
+
+Dividends from ABI
+
+221
+
+477
+
+Loss on ABI/SABMiller business combination
+
+—
+
+33
+
+Loss on Cronos-related financial instruments
+
+1,327
+
+—
+
+Impairment of JUUL equity securities
+
+4,500
+
+—
+
+Asset impairment and exit costs, net of cash paid
+
+(
+
+33
+
+)
+
+(
+
+24
+
+)
+
+Cash effects of changes:
+
+Receivables
+
+(
+
+21
+
+)
+
+(
+
+45
+
+)
+
+Inventories
+
+147
+
+147
+
+Accounts payable
+
+(
+
+157
+
+)
+
+(
+
+79
+
+)
+
+Income taxes
+
+174
+
+308
+
+Accrued liabilities and other current assets
+
+(
+
+359
+
+)
+
+(
+
+319
+
+)
+
+Accrued settlement charges
+
+(
+
+360
+
+)
+
+757
+
+Pension plan contributions
+
+(
+
+51
+
+)
+
+(
+
+19
+
+)
+
+Pension provisions and postretirement, net
+
+(
+
+42
+
+)
+
+(
+
+19
+
+)
+
+Other, net
+
+376
+
+9
+
+Net cash provided by (used in) operating activities
+
+5,274
+
+6,566
+
+Cash Provided by (Used in) Investing Activities
+
+Capital expenditures
+
+(
+
+160
+
+)
+
+(
+
+132
+
+)
+
+Investment in Cronos
+
+(
+
+1,863
+
+)
+
+—
+
+Acquisitions of businesses and assets
+
+(
+
+421
+
+)
+
+(
+
+15
+
+)
+
+Other, net
+
+32
+
+10
+
+Net cash provided by (used in) investing activities
+
+$
+
+(
+
+2,412
+
+)
+
+$
+
+(
+
+137
+
+)
+
+See notes to condensed consolidated financial statements.
+
+9
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Condensed Consolidated Statements of Cash Flows (Continued)
+
+(in millions of dollars)
+
+(Unaudited)
+
+For the Nine Months Ended
+
+September 30,
+
+2019
+
+2018
+
+Cash Provided by (Used in) Financing Activities
+
+Repayment of short-term borrowings
+
+$
+
+(
+
+12,800
+
+)
+
+$
+
+—
+
+Long-term debt issued
+
+16,265
+
+—
+
+Long-term debt repaid
+
+(
+
+1,144
+
+)
+
+—
+
+Repurchases of common stock
+
+(
+
+346
+
+)
+
+(
+
+1,317
+
+)
+
+Dividends paid on common stock
+
+(
+
+4,498
+
+)
+
+(
+
+3,909
+
+)
+
+Other, net
+
+(
+
+127
+
+)
+
+(
+
+25
+
+)
+
+Net cash provided by (used in) financing activities
+
+(
+
+2,650
+
+)
+
+(
+
+5,251
+
+)
+
+Cash, cash equivalents and restricted cash:
+
+Increase (decrease)
+
+212
+
+1,178
+
+Balance at beginning of period
+
+1,433
+
+1,314
+
+Balance at end of period
+
+$
+
+1,645
+
+$
+
+2,492
+
+The following table provides a reconciliation of cash, cash equivalents and restricted cash to the amounts reported on Altria's condensed consolidated balance sheets:
+
+At September 30, 2019
+
+At December 31, 2018
+
+Cash and cash equivalents
+
+$
+
+1,604
+
+$
+
+1,333
+
+Restricted cash included in other current assets
+
+(1)
+
+1
+
+57
+
+Restricted cash included in other assets
+
+(1)
+
+40
+
+43
+
+Cash, cash equivalents and restricted cash
+
+$
+
+1,645
+
+$
+
+1,433
+
+(1)
+
+Restricted cash consisted of cash deposits collateralizing appeal bonds posted by PM USA to obtain stays of judgments pending appeals. See
+
+Note 13
+
+.
+
+Contingencies
+
+.
+
+See notes to condensed consolidated financial statements.
+
+10
+
+Table of Contents
+
+Altria Group, Inc. and Subsidiaries
+
+Notes to Condensed Consolidated Financial Statements
+
+(Unaudited)
+
+Note 1
+
+.
+
+Background and Basis of Presentation:
+
+Background
+
+At
+
+September 30, 2019
+
+, Altria Group, Inc.'s ("Altria") wholly-owned subsidiaries included Philip Morris USA Inc. ("PM USA"), which is engaged in the manufacture and sale of cigarettes in the United States; John Middleton Co. ("Middleton"), which is engaged in the manufacture and sale of machine-made large cigars and pipe tobacco and is a wholly-owned subsidiary of PM USA; Sherman Group Holdings, LLC and its subsidiaries ("Nat Sherman"), which are engaged in the manufacture and sale of super premium cigarettes and the sale of premium cigars; UST LLC ("UST"), which through its wholly-owned subsidiaries, including U.S. Smokeless Tobacco Company LLC ("USSTC") and Ste. Michelle Wine Estates Ltd. ("Ste. Michelle"), is engaged in the manufacture and sale of smokeless tobacco products and wine; and Philip Morris Capital Corporation ("PMCC"), which maintains a portfolio of finance assets, substantially all of which are leveraged leases. In December 2018, Altria refocused its innovative product efforts, which included the discontinuation of production and distribution of all e-vapor products by Nu Mark LLC ("Nu Mark"). Prior to that time, Nu Mark was engaged in the manufacture and sale of innovative tobacco products. Other Altria wholly-owned subsidiaries included Altria Group Distribution Company, which provides sales and distribution services to certain Altria operating subsidiaries, and Altria Client Services LLC, which provides various support services in areas such as legal, regulatory, consumer engagement, finance, human resources and external affairs to Altria and its subsidiaries. Altria's access to the operating cash flows of its wholly-owned subsidiaries consists of cash received from the payment of dividends and distributions, and the payment of interest on intercompany loans by its subsidiaries. At
+
+September 30, 2019

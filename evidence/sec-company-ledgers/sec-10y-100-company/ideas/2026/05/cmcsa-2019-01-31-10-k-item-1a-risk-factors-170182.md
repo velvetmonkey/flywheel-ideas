@@ -1,0 +1,65 @@
+---
+id: idea-xGxAneA5
+type: idea
+state: nascent
+title: CMCSA 2019-01-31 10-K Item 1A Risk Factors
+created_at: '2026-05-03T21:02:50.182Z'
+date: '2026-05-03'
+created: '2026-05-03T21:02:50.648Z'
+---
+# COMCAST CORP 10-K Item 1A Risk Factors
+
+Filed: 2019-01-31
+Source: https://www.sec.gov/Archives/edgar/data/1166691/000116669119000005/cmcsa-12312018x10k.htm
+
+Our businesses currently face a wide range of competition, and our businesses and results of operations could be adversely affected if we do not compete effectively.
+
+All of our businesses operate in intensely competitive, consumer-driven and rapidly changing environments and compete with a growing number of companies that provide a broad range of communications products and services and entertainment, news and information content to consumers. Online video distribution platforms are further intensifying and complicating the competitive landscape and influencing consumer behavior, which is discussed in the risk factor immediately below under the heading "Changes in consumer behavior driven by online video distribution platforms for viewing content could adversely affect our businesses and challenge existing business models."
+
+Comcast 2018 Annual Report on Form 10-K
+
+21
+
+Table of Contents
+
+Competition for Cable Communications' cable services consists primarily of phone companies with fiber-based networks and DBS providers that typically offer features, pricing and packaging for services comparable to ours. Some of these competitors are also offering smaller packages of channels at price points lower than our standard packages, both through traditional and online video distribution platforms, which could cause us to offer more customized programming packages that may be less profitable. Consolidation between phone companies (which are also wireless distributors) and content providers in the United States provides competitors with the ability to offer free or lower cost streaming services for viewing their content, potentially on an exclusive basis, through unlimited data-usage plans for their internet or wireless phone services. Additional companies, some with significant financial resources, continue to enter or are seeking to enter the video distribution market, either by offering OTT streaming services or selling devices that aggregate viewing of various OTT services.
+
+Sky faces competition in video, high-speed internet and voice services from cable and/or telecommunications providers in each of its European markets. More providers in Europe now offer customers bundles of services, which has increased competition. The intensity of this competition has increased in recent years, including as a result of OTT streaming services.
+
+Cable Communications' and Sky's high-speed internet services compete primarily against phone companies with fiber-based networks offering speeds and pricing comparable to ours. Wireless internet services, such as 4G and 5G wireless broadband services, satellite-delivered internet services and Wi-Fi networks, and devices such as smartphones, tablets, wireless data cards, and mobile wireless routers that connect to such devices, also may compete with our high-speed internet services, particularly as wireless technology evolves. Some municipalities in the United States own and operate their own broadband networks, and additional municipalities may do so as well. Cable Communications' and Sky's wireline voice services are facing increased competition as customers replace wireline phones with wireless and internet-based phone services.
+
+We continue to seek ways to enhance the value of Cable Communications' cable services network, such as by growing high-speed internet services and business services and by launching additional services, such as our security and automation services. Sky also is seeking ways to enhance the value of its services. There can be no assurance that we can execute on these and other initiatives in a manner sufficient to grow or maintain our Cable Communications or Sky segment revenue, maintain Cable Communications or Sky segment operating margins or to compete successfully in the future.
+
+Each of NBCUniversal's businesses and Sky also face substantial and increasing competition from providers of similar types of content, as well as from other forms of entertainment and recreational activities. NBCUniversal and Sky must compete to obtain talent, content and other resources required in operating these businesses.
+
+The ability of all of our businesses to compete effectively depends on our perceived image and reputation among our various constituencies, including our customers, consumers, advertisers, investors and government authorities. Our ability to compete will be negatively affected if we do not provide our customers with a satisfactory customer experience.
+
+There can be no assurance that we will be able to compete effectively against existing or newer competitors or that competition will not have an adverse effect on our businesses. For a more detailed description of the competition facing our businesses, see Item 1: Business and refer to the "Competition" discussion within that section.
+
+Changes in consumer behavior driven by online video distribution platforms for viewing content could adversely affect our businesses and challenge existing business models.
+
+Distribution platforms for viewing and purchasing content over the internet have been, and will likely continue to be, developed that further increase the number of competitors that all our businesses face and challenge existing business models. These distribution platforms are driving changes in consumer behavior as consumers seek more control over when, where and how they consume content and access communications services, and how much they pay for such content.
+
+Consumers are increasingly turning to online sources for viewing and purchasing content, which has and likely will continue to reduce the number of Cable Communications' video customers and subscribers to NBCUniversal's cable networks even as it makes Cable Communications' high-speed internet services more important to consumers. While these changes are primarily affecting our U.S. businesses today, there can be no assurance that they will not also affect Sky's businesses to a similar extent in the future, even with Sky offering a standalone OTT video streaming service. Although we have attempted to adapt our video service offerings to changing consumer behaviors, for example, by deploying the X1 platform and adding apps such as Netflix and Amazon Prime Video on set-top boxes, virtual multichannel video providers, online video distributors and programming networks providing their content directly to consumers over the internet rather than through traditional video distribution services continue to emerge, gain consumer acceptance and disrupt traditional video distribution services. Many of these service offerings charge no fee or a lower fee than traditional video packages for access to their content, which could have an adverse effect on demand for Cable Communications' and Sky's video services, including for expanded video packages, premium networks, and DVR and On Demand services.
+
+22
+
+Comcast 2018 Annual Report on Form 10-K
+
+Table of Contents
+
+An increasing number of companies offering OTT streaming services, including some with exclusive high-quality original video programming, as well as programming networks offering content directly to consumers over the internet, have increased the number of entertainment choices available to consumers, which has intensified audience fragmentation. The increase in entertainment choices adversely affects the audience ratings of NBCUniversal's cable networks and broadcast television programming and Sky's owned television channels. Time-shifting technologies, such as video on demand services and DVR and cloud-based recording services, also reduce the viewing of content through traditional and virtual multichannel video providers, which has caused and likely will continue to cause audience ratings declines for NBCUniversal's cable networks and broadcast television programming and Sky's owned television channels, and may adversely affect the price and amount of advertising that advertisers are willing to purchase from us and the amount NBCUniversal and Sky receive for distribution of their content.
+
+The success of any of these ongoing or future developments or our failure to effectively anticipate or adapt to emerging competitors or changes in consumer behavior, including among younger consumers, could have an adverse effect on our competitive position, businesses and results of operations.
+
+A decline in advertisers' expenditures or changes in advertising markets could negatively impact our businesses.
+
+Our cable communications, cable networks, broadcast television, and Sky businesses compete for the sale of advertising time with other television networks and stations, as well as with all other advertising platforms, such as digital media, radio and print. We derive substantial revenue from the sale of advertising, and a decline in expenditures by advertisers, including through traditional linear television distribution models, could negatively impact our results of operations. Declines can be caused by the economic prospects of specific advertisers or industries, increased competition for the leisure time of viewers, such as from social media and video games, and audience fragmentation, increased viewing of ad-free content through online video distribution platforms, regulatory intervention regarding where advertising may be placed, or the economy in general. In addition, advertisers' willingness to purchase advertising from us may be adversely affected by lower audience ratings, which many of NBCUniversal's networks and Sky's television channels have experienced and likely will continue to experience. Advertising sales and rates also are dependent on the methodology used for audience measurement and could be negatively affected if methodologies do not accurately reflect actual viewership levels. For example, certain methods of viewing content, such as viewing content through many online video distribution platforms or delayed viewing on DVRs, might not be counted in audience measurements or may generate less, if any, revenue than traditional linear television distribution methods, which could have an adverse effect on our advertising revenue.
+
+Our businesses depend on keeping pace with technological developments.
+
+Our success is, to a large extent, dependent on our ability to acquire, develop, adopt and leverage new and existing technologies, and our competitors' use of certain types of technology and equipment may provide them with a competitive advantage. For example, current and new wireless internet technologies such as 4G and 5G wireless broadband services continue to evolve rapidly to allow for greater speed and reliability, and some companies and municipalities are building advanced fiber-based networks that provide very fast internet access speeds. We expect other advances in communications technology to occur in the future. If we choose technology or equipment that is not as effective or attractive to consumers as that employed by our competitors, if we fail to employ technologies desired by consumers before our competitors do so, or if we fail to execute effectively on our technology initiatives, our businesses and results of operations could be adversely affected. We also will continue to incur additional costs as we execute our technology initiatives, such as the U.S. deployment of DOCSIS 3.1 and DOCSIS FDX, our X1 and Sky Q set-top boxes, cloud DVR and wireless gateways. There can be no assurance that we can execute on these and other initiatives in a manner sufficient to grow or maintain our revenue or to compete successfully in the future. We also may generate less revenue or incur increased costs if changes in our competitors' product offerings require that we offer certain of our existing services or enhancements at a lower or no cost to our customers or that we increase our research and development expenditures.
+
+We are subject to regulation by federal, state, local and foreign authorities, which impose additional costs and restrictions on our businesses.
+
+In the United States, federal, state and local governments extensively regulate the high-speed internet, video and voice services industries. Our broadcast television business is also highly regulated by U.S. laws and regulations. NBCUniversal's cable networks, filmed entertainment and theme parks businesses are also subject to various other laws and regulations at the international, federal, state and local levels. Sky's business is subject to various telecommunications and media-specific regulations in most of the countries where it operates. The FCC and certain state attorneys general and foreign governmental authorities also have been active in conducting inquiries

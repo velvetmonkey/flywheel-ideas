@@ -1,0 +1,71 @@
+---
+id: idea-EWk6QSXL
+type: idea
+state: nascent
+title: HD 2025-03-21 10-K Item 1A Risk Factors
+created_at: '2026-05-03T20:02:51.982Z'
+date: '2026-05-03'
+created: '2026-05-03T20:02:52.345Z'
+---
+# HOME DEPOT, INC. 10-K Item 1A Risk Factors
+
+Filed: 2025-03-21
+Source: https://www.sec.gov/Archives/edgar/data/354950/000035495025000085/hd-20250202.htm
+
+Our business, results of operations, cash flows, financial condition and prospects are subject to numerous risks and uncertainties. In connection with any investment decision with respect to our securities, you should carefully consider the following risk factors, as well as the other information contained in this report and our other filings with the SEC. Additional risks and uncertainties not presently known to us or that we currently deem immaterial may also impact our business operations. Should any of these risks materialize, our business, results of operations, cash flows, financial condition and prospects could be negatively impacted, which in turn could affect the trading value of our securities. You should read these Risk Factors in conjunction with
+
+Part II, Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+and our consolidated financial statements and related notes in Item 8.
+
+STRATEGIC RISKS
+
+Strong competition could adversely affect prices and demand for our products and services and could decrease our market share.
+
+Our industry is highly competitive, highly fragmented, and evolving. As a result, we face competition for customers for our products and services from a variety of retailers, suppliers, service providers, and distributors and manufacturers that sell products directly to their respective customer bases.
+
+These competitors range from traditional brick-and-mortar, to multichannel, to exclusively online, and they include a number of other home improvement retailers; local, regional and national hardware stores; electrical, plumbing and building materials supply houses; and lumber yards. With respect to some products and services, we also compete
+
+Fiscal 2024 Form 10-K
+
+9
+
+Table
+
+of
+
+Contents
+
+with specialty design stores, showrooms, discount stores, paint stores, specialty and mass digital retailers, warehouse clubs, MRO distributors, national and local wholesale supply distributors, home décor retailers, and other retailers, as well as with providers of home improvement services and tool and equipment rental. The internet facilitates competitive entry, price transparency, and comparison shopping, increasing the level of competition we face.
+
+We compete primarily based on customer experience; price; quality; product availability, assortment, and innovation; and delivery options and capabilities, both in-store and online. We also compete based on store and branch location and appearance, presentation of merchandise, and ease of shopping experience throughout every step of the project, from inspiration and research to any post-purchase support. Our Pros also look for dedicated sales support, competitive credit and pricing options, project planning tools, product depth and job lot quantities, particularly for their complex purchase needs. Furthermore, with respect to delivery options, customers are seeking faster and/or guaranteed delivery times, low-price or free shipping, and/or convenient pickup options. Our ability to be competitive on delivery and pickup times, options and costs depends on many factors, including leveraging the momentum of our investments in our supply chain and our interconnected retail capabilities to further enhance the customer shopping experience. Failure to successfully manage these factors and offer competitive delivery and pickup options could negatively impact the demand for our products and services and our profit margins.
+
+We use our marketing, advertising and promotional programs to drive customer traffic and compete more effectively, and we must regularly assess and adjust our efforts to address changes in the competitive landscape. Intense competitive pressures from one or more of our competitors, such as through aggressive promotional pricing or liquidation events, or our inability to adapt effectively and quickly to a changing competitive landscape, could adversely affect our prices, our margins, or demand for our products and services. If we are unable to timely and appropriately respond to these competitive pressures, including through the delivery of a superior interconnected customer experience or through maintenance of effective sales and marketing, advertising or promotional programs leveraging both our digital and physical platforms, our market share and our financial performance could be adversely affected. If we experience inflation or deflation at a level beyond our ability to respond effectively, we may not be able to adjust prices to sufficiently offset the effects without negatively impacting demand or margins, as applicable, or it may adversely affect our ability to compete based on price.
+
+We may not timely identify or effectively respond to customer needs, expectations or trends, which could adversely affect our relationship with our customers, the demand for our products and services, and our market share.
+
+The success of our business depends in part on our ability to identify and respond promptly to evolving trends in demographics; shifts in customer preferences, expectations and needs; changes in the macroeconomic or political environment; and unexpected weather conditions, natural disasters, or public health issues (including pandemics and related impacts) that impact our customers, while also managing appropriate inventory levels in our stores, branches and distribution or fulfillment centers and maintaining an excellent customer experience. It is difficult to successfully predict the products and services our customers will demand. As our customers expect a more personalized experience, our ability to collect, use, retain, and protect relevant customer data is important for effectively meeting their expectations. Our ability to collect and use that data, however, is subject to a number of external factors, including the impact of legislation or regulations governing data privacy, data-driven technologies such as artificial intelligence, and data security, as well as customer expectations around data collection, retention, and use. In addition, each of our primary customer groups has different needs and expectations, many of which evolve as the demographics in a particular customer group change. Customer preferences and expectations related to sustainability of products and operations are also changing. If we do not successfully differentiate the shopping experience to attract our customers and meet their individual needs and expectations, it may adversely impact our sales or our market share.
+
+Customer expectations about the methods by which they purchase and receive products or services are also becoming more demanding. Customers routinely and increasingly use technology and a variety of electronic devices and digital platforms to rapidly compare products and prices, read product reviews, determine real-time product availability, and purchase products, and new channels and tools to enhance the customer experience appear and change rapidly. Our Pros also look for additional capabilities, including dedicated sales support, competitive credit and pricing options, project planning tools, and product depth and job lot quantities, particularly for their complex purchase needs. Once products are purchased, customers seek alternate options for delivery of those products, including advance ordering through digital platforms for Pros, and they often expect quick, timely, and low-price or free delivery and/or convenient pickup or delivery options. We must continually anticipate and adapt to these changes in the shopping and purchasing process by continuing to adjust and enhance the online and in-store customer experience as well as our delivery options. The coordinated operation of our network of physical
+
+Fiscal 2024 Form 10-K
+
+10
+
+Table
+
+of
+
+Contents
+
+stores, branches, distribution facilities, and online platforms is fundamental to the success of our interconnected strategy. We cannot guarantee that our current or future fulfillment options will be maintained and implemented successfully or that we will be able to meet customer expectations on delivery or pickup times, options and costs. In addition, as our customers continue to leverage our enhanced interconnected shopping and fulfillment options, a greater concentration of online sales with direct fulfillment could result in a reduction in the amount of traffic in our stores, which would, in turn, reduce the opportunities for cross-selling of merchandise that such traffic creates and could reduce our overall sales and adversely affect our financial performance. A greater concentration of online sales with direct fulfillment could also result in higher costs for delivery, potentially impacting our profit margins.
+
+Failure to provide a relevant and effective customer experience in a timely manner that keeps pace with technological developments and dynamic customer expectations; to maintain appropriate inventory; to provide quick and low-price or free delivery alternatives and convenient pickup options; to differentiate the customer experience for our primary customer groups; to effectively implement an increasingly localized merchandising assortment; or to otherwise timely identify or respond to changing customer preferences, expectations and home improvement needs could adversely affect our relationship with our customers, the demand for our products and services, and our market share.
+
+A positive brand and reputation are critical to our business success, and, if our brand and reputation are damaged, it could negatively impact our relationships with our customers, associates and jobseekers, suppliers, vendors, shareholders, regulators, and the communities we serve, and, consequently, our business, results of operations and the price of our stock.
+
+Our brand and reputation are critical to attracting customers, associates and jobseekers, suppliers and vendors to do business with us. We must continue to manage and protect our brand and reputation. Negative incidents can erode trust and confidence quickly, and adverse publicity about us, regardless of its accuracy or the reputability of its source, could damage our brand and reputation; undermine our customers' confidence in us; reduce demand for our products and services, including as a result of boycotts; affect our ability to recruit, engage, motivate and retain associates; attract regulatory scrutiny, investigations or litigation; and impact our relationships with current and potential suppliers and vendors. Our suppliers' and vendors' business practices and positions may also be attributed to us, regardless of the Company's actions, meaning the actions of third parties pose similar risks to our brand and reputation. Partnerships with celebrities and social media content creators may also expose us to brand and reputational risks. Further, our actual or perceived position or lack of position on social, environmental, governance, political, public policy, economic, geopolitical, or other sensitive issues, and any perceived lack of transparency about those matters, could harm our reputation with certain groups and attract regulatory scrutiny, investigations, litigation, or boycotts. In addition, we could be criticized for the scope or nature of initiatives or goals related to these matters, or for any revisions to or failure to achieve these goals on a timely basis or at all. If data, processes, and reporting related to these matters are incomplete or inaccurate, we could face regulatory scrutiny, litigation and/or adverse reputational impacts. Customers are also increasingly using social media to provide feedback and information about the Company, including our products and services, in a manner that can be quickly and broadly disseminated. Negative sentiment about the Company shared over social media, or misinformation from fraudulent accounts impersonating the Company, could impact our brand and reputation, whether or not it is based in fact.
+
+The execution of initiatives to implement our interconnected retail strategy could adversely impact our business operations or financial results, and these initiatives might not provide the anticipated benefits.
+
+Over the past several years, we have made significant investments to execute our interconnected retail strategy, including enhancing and expanding our supply chain, developing differentiated capabilities for our customers, expanding our store base, and making strategic acquisitions. These investments are designed to streamline our operations to allow our associates to continue to provide high-quality service to our customers; simplify customer interactions; provide our customers with a more interconnected shopping experience; expand our sales to Pros and better address their complex purchase needs; and create the fastest, most efficient, and most reliable delivery network for home improvement products. Executing our interconnected retail strategy requires continual investment in our operations and information technology systems, as well as the development and execution of new processes, systems and support. Investment in our supply chain also involves significant real estate projects as we expand our distribution network, requiring us to identify and secure available locations with appropriate characteristics needed to support the different types of facilities. In addition, our stores are a key element of our interconnected retail strategy, serving as the hub of our customers' interconnected shopping experience. We have an aging store base that requires maintenance, investment, and space reallocation initiatives to deliver the shopping experience that our customers desire. We also need to identify and secure available locations with appropriate characteristics for new stores and branches to ensure we can continue to serve our customers effectively.

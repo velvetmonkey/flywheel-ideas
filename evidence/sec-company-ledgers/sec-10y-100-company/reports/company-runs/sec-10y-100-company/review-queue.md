@@ -1,0 +1,587 @@
+---
+id: company-run-sec-10y-100-company-review-queue
+type: report
+report_kind: company_review_queue
+schema: sec-company-ledger-markdown-v1
+run_id: sec-10y-100-company
+entity_id: company-run-sec-10y-100-company-review-queue
+entity_type: company_review_queue
+source: flywheel-ideas
+date: '2026-05-04'
+created: '2026-05-04T12:28:53.829Z'
+---
+# Human Review Queue sec-10y-100-company
+
+- **NFLX / Demand**: 18 candidate(s).
+  - Candidate IDs: cout-oPtGqLz2, cout-mvJwryY4, cout-S9XgtkYv, cout-8VtB1TTf, cout-2Pe19Uau, cout-BxgbQE6m, cout-UPwoxps4, cout-N2vAe4iJ, cout-B6mR21uo, cout-CJZPRJjt, cout-36FeGpiW, cout-pYPsuKHJ, cout-K4ZwjKRK, cout-nzSNaZpd, cout-rjZXPRvD, cout-oYUceTHj, cout-RMMDndfy, cout-8QDdz3Za
+  - Evidence: Since this launch, we have developed an ecosystem for Internet-connected screens and have added increasing amounts of content that enable consumers to enjoy TV shows and movies directly on their Internet-connected screens. As a result of these efforts, we have experienced growing consumer acceptance
+- **BKNG / Demand, Liquidity**: 10 candidate(s).
+  - Candidate IDs: cout-YXhwm84Z, cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
+  - Evidence: Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
+- **AMD / Demand, Inventory and channel, Supply chain**: 9 candidate(s).
+  - Candidate IDs: cout-kbxfopz5, cout-v6Ty6Zdj, cout-d99mgcRR, cout-QBMjwVwE, cout-j1jeGumr, cout-wLUjMTye, cout-5Yqbggez, cout-kU3Mq2WL, cout-828qFtnQ
+  - Evidence: The semiconductor industry is highly cyclical and has experienced significant downturns, often in conjunction with constant and rapid technological change, wide fluctuations in supply and demand, continuous new product introductions, price erosion and declines in general economic conditions. We have
+- **TSLA / Supply chain**: 9 candidate(s).
+  - Candidate IDs: cout-WRx31iqm, cout-jN4oqgop, cout-xp6TWpoc, cout-4GYhcYtu, cout-KQ9njBd7, cout-rVQCqAvX, cout-wBULifYr, cout-cR6u6CAy, cout-GoaZfWGJ
+  - Evidence: We will also need to hire, train and compensate skilled employees to operate these facilities. Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing proce
+- **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain**: 8 candidate(s).
+  - Candidate IDs: cout-jSPT2XmR, cout-Ce9PXTvY, cout-vDn3jCLs, cout-CogsohKF, cout-pKuDjHb2, cout-hahLCJDZ, cout-T4pvMqQg, cout-w5kcoghf
+  - Evidence: Uncertainty in the worldwide economic environment or other unfavorable changes in economic conditions, such as inflation, interest rates or recession, may negatively impact consumer confidence and spending causing our customers to postpone purchases. For example, we have experienced a decline in our
+- **COST / Liquidity**: 8 candidate(s).
+  - Candidate IDs: cout-nJkW3yT3, cout-rk4WSMF4, cout-W2SZ4da5, cout-3bPeB17x, cout-Zsq2eHMQ, cout-fJjXN6d9, cout-w6ir3tva, cout-NxALTZCX
+  - Evidence: The Company's current financial liabilities have fair values that approximate their carrying values. The Company's long-term financial liabilities consist of long-term debt, which is recorded on the balance sheet at issuance price and adjusted for any applicable unamortized discounts or premiums and
+- **AVGO / Macro and foreign exchange**: 7 candidate(s).
+  - Candidate IDs: cout-HwFSLE7Q, cout-c5Dzq3kJ, cout-Vn8xq8ax, cout-6QiFPUbp, cout-SLWcKgjk, cout-vZBKKL1q, cout-Ddu9L23S
+  - Evidence: A general slowdown in the global economy, including a recession, or in a particular region or industry, an increase in trade tensions with U.S. trading partners, inflation or a tightening of the credit markets could negatively impact our business, financial condition and liquidity. Adverse global ec
+- **CSCO / Supply chain**: 7 candidate(s).
+  - Candidate IDs: cout-HS3YK6Pe, cout-w2zC9TTB, cout-b3v8ZNpH, cout-AhH6jJvj, cout-7LcnP2xS, cout-yMGfyKDt, cout-USGy8doV
+  - Evidence: Our growth and ability to meet customer demands depend in part on our ability to obtain timely deliveries of parts from our suppliers and contract manufacturers. We have experienced component shortages in the past, including shortages caused by manufacturing process issues, that have affected our op
+- **TSLA / Macro and foreign exchange, Supply chain**: 6 candidate(s).
+  - Candidate IDs: cout-JqgZNKCT, cout-y7rUjhBu, cout-XRP3yQYc, cout-et8KJcXt, cout-p2pm3Zfk, cout-VwaAdw5p
+  - Evidence: In addition, we have experienced and are experiencing varying levels of inflation resulting in part from various supply chain disruptions, increased shipping and transportation costs, increased raw material and labor costs and other disruptions caused by the COVID‐19 pandemic and general global econ
+- **COST / Liquidity**: 5 candidate(s).
+  - Candidate IDs: cout-uoG1Fh3k, cout-xZUvpn16, cout-BqotHCgo, cout-EdkkVKh5, cout-ajPwzADX
+  - Evidence: Current financial liabilities have fair values that approximate their carrying values. Long-term financial liabilities include the Company's long-term debt, which are recorded on the balance sheet at issuance price and adjusted for unamortized discounts or premiums and debt issuance costs, which are
+- **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain**: 4 candidate(s).
+  - Candidate IDs: cout-p2tiStYd, cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
+  - Evidence: In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
+- **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain**: 4 candidate(s).
+  - Candidate IDs: cout-b7rv9AWz, cout-PMsTitrS, cout-aSYX3eRq, cout-hV8zfv1P
+  - Evidence: We experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain in the second half of 2022. Uncertain global economic conditions have and may in the future adversely impact our business.
+- **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain**: 4 candidate(s).
+  - Candidate IDs: cout-d3GjJYuM, cout-YuYPEoN7, cout-qkpYLSZB, cout-4WNwfTGT
+  - Evidence: Uncertainty in the economic environment or other unfavorable changes in economic conditions, such as inflation, higher interest rates, recession, slowing growth, increased unemployment, tighter credit markets, changes in fiscal monetary or trade policy, or currency fluctuations, may negatively impac
+- **BKNG / Demand, Liquidity**: 4 candidate(s).
+  - Candidate IDs: cout-DZ3p7ruo, cout-XcU76sW4, cout-5ZoBopYe, cout-HVUCX8iK
+  - Evidence: and the resulting economic conditions and government restrictions have resulted in a material decrease in consumer spending and an unprecedented decline in travel and restaurant activities and consumer demand for related services as compared to 2019 levels. Our results for the year ended December 31
+- **MU / Cloud and data center capacity, Demand, Supply chain**: 4 candidate(s).
+  - Candidate IDs: cout-e5JNJh1D, cout-2pkwi69L, cout-Y5cEmChs, cout-XDbqnDtE
+  - Evidence: To respond to changing market conditions, we have shifted some supply from markets which have experienced declines in demand, such as smartphones, to markets that have experienced demand increases, such as data center markets.
+- **NVDA / Demand, Inventory and channel**: 4 candidate(s).
+  - Candidate IDs: cout-UPCRQmgc, cout-6tc7ybv4, cout-PefEJ6sF, cout-nFWxcCZb
+  - Evidence: In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
+- **PM / Cloud and data center capacity, Supply chain**: 4 candidate(s).
+  - Candidate IDs: cout-8SCxx8o7, cout-6QX8jFUn, cout-bY6agkXD, cout-At33eLMQ
+  - Evidence: As a part of the optimization of our global manufacturing infrastructure, we recorded pre-tax asset impairment and exit costs of
+- **PM / AI, R&D, and technology**: 4 candidate(s).
+  - Candidate IDs: cout-xgHQjHGU, cout-Jak6ys56, cout-DtL1jCTs, cout-ouCKRiW7
+  - Evidence: – During the first quarter of 2024, we recorded an impairment charge of $27 million (representing $20 million net of income tax or $0.01 per share decrease in diluted EPS), primarily reflecting the impairment of non-amortizable intangible assets related to an in-process research and development proj
+- **VZ / Liquidity, Macro and foreign exchange**: 4 candidate(s).
+  - Candidate IDs: cout-A4k3ngJc, cout-i5vDy47t, cout-ckb72vVa, cout-htRx1uSJ
+  - Evidence: Unfavorable economic conditions could also amplify other risk factors discussed in this section, including, but not limited to, our competitive position and margins. Over the last two years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, includ
+- **AAPL / Customer and platform dependency, Geopolitics and tariffs, Supply chain**: 3 candidate(s).
+  - Candidate IDs: cout-vFYN1LWP, cout-uzBxztXV, cout-fGbxc3H7
+  - Evidence: During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
+- **AMD / Demand, Inventory and channel, Supply chain**: 3 candidate(s).
+  - Candidate IDs: cout-jXFysvEZ, cout-fDinEHoF, cout-YN4z4KxU
+  - Evidence: The growth of AI is further creating pressure on the semiconductor industry to timely design, manufacture and deliver semiconductor products and solutions to meet customer demand for computing power and AI infrastructure. We have incurred substantial losses in previous downturns, due to substantial
+- **AMD / Cloud and data center capacity, Geopolitics and tariffs, Inventory and channel**: 3 candidate(s).
+  - Candidate IDs: cout-SpXnm9Zz, cout-tYf3zg4c, cout-pnHkhuYs
+  - Evidence: During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
+- **AVGO / Macro and foreign exchange**: 3 candidate(s).
+  - Candidate IDs: cout-FpF4o6pL, cout-aVcUu1ni, cout-mqMPhdkE
+  - Evidence: A general slowdown in the global economy or in a particular region or industry, other unfavorable changes in economic conditions, such as inflation, higher interest rates, tightening of the credit markets, recession or slowing growth, or an increase in trade tensions with U.S. trading partners could
+- **AVGO / Macro and foreign exchange**: 3 candidate(s).
+  - Candidate IDs: cout-J9BvLgYd, cout-BAHZLqEz, cout-r3mDT1ea
+  - Evidence: A general slowdown in the global economy or in a particular region or industry, uncertainty and volatility in financial markets, efforts of governments to stimulate or stabilize the economy and other unfavorable changes in economic conditions, such as inflation, higher interest rates, tightening of
+- **CSCO / Cloud and data center capacity, Competition, Customer and platform dependency**: 3 candidate(s).
+  - Candidate IDs: cout-7hFUpSPk, cout-cBD2UDns, cout-acaNtDQK
+  - Evidence: We remain focused on accelerating innovation across our portfolio, and we believe that we have made continued progress on our strategic priorities. We continue to operate in a challenging and highly competitive environment, which has negatively impacted certain of our offerings within our Infrastruc
+- **CSCO / Cloud and data center capacity, Competition, Customer and platform dependency**: 3 candidate(s).
+  - Candidate IDs: cout-5thXurJi, cout-sWSpQbqo, cout-oroRackR
+  - Evidence: We experienced solid revenue growth in Security and Applications and modest growth in Infrastructure Platforms, and we continued to make progress in the transition of our business model to increased software and subscriptions. We continue to operate in a challenging and highly competitive environmen
+- **CSCO / Cloud and data center capacity, Competition, Customer and platform dependency**: 3 candidate(s).
+  - Candidate IDs: cout-HaPzmyP7, cout-P8soxuaq, cout-Rq3JGtHe
+  - Evidence: Our product revenue reflected growth in Infrastructure Platforms, Applications and Security, and we continued to make progress in the transition of our business model to increased software and subscriptions. We continue to operate in a challenging and highly competitive environment, which has negati
+- **GOOGL / Demand**: 3 candidate(s).
+  - Candidate IDs: cout-aXo3oret, cout-bRDaCvrd, cout-PkbpmhpP
+  - Evidence: During the course of the quarter ended June 30, 2020, we observed a gradual return in user search activity to more commercial topics, followed by increased spending by our advertisers that continued throughout the second half of 2020. Additionally, over the course of 2020, we experienced variability
+- **META / Demand, Macro and foreign exchange, Regulation and legal**: 3 candidate(s).
+  - Candidate IDs: cout-vRyLikx1, cout-caUZXQdK, cout-64SymR9r
+  - Evidence: Revenue on a constant currency basis was $122.57 billion for 2022, an increase of 4% compared to 2021. Our advertising revenue was impacted by a reduction in advertising demand during 2022 compared to 2021, which we believe was primarily driven by reduced marketer spending as a result of a more chal
+- **PEP / Cloud and data center capacity, Liquidity, Supply chain**: 3 candidate(s).
+  - Candidate IDs: cout-gm2n5fZ6, cout-SeCyjtKd, cout-p4j4yM18
+  - Evidence: n further changes in demand for our products, further increases in operating costs (whether as a result of changes to our supply chain or increases in employee costs, operating costs or otherwise), how they will further impact our supply chain and whether they will result in further reduced availabi
+- **SBUX / Demand, Inventory and channel, Supply chain**: 3 candidate(s).
+  - Candidate IDs: cout-TudjZ5gq, cout-Y4AXKKBg, cout-VTjbMV4T
+  - Evidence: In addition to lost revenues and incremental wages and benefits for our partners, we also incurred higher expenses due to inventory write-offs and honoring supplier obligations. These resulted in significantly lower operating margins for our retail store businesses.
+- **TSLA / Supply chain**: 3 candidate(s).
+  - Candidate IDs: cout-fFcv2QRE, cout-18Mwfa5W, cout-EL5YGpvx
+  - Evidence: We have previously experienced launch, manufacturing, production and delivery ramp delays or other complications in connection with new vehicle models such as Model S, Model X and Model 3, new vehicle features such as the all-wheel drive dual motor drivetrain on Model S and the second version of our
+- **WMT / Inventory and channel**: 3 candidate(s).
+  - Candidate IDs: cout-6CKXnFe2, cout-VZERjRVx, cout-6mXQEfum
+  - Evidence: We bear the risk of losses incurred as a result of physical damage to, or destruction of, any stores, clubs and distribution facilities, loss or spoilage of inventory and business interruption caused by such events. These events and their impacts could otherwise disrupt and adversely affect our oper
+- **AVGO / Macro and foreign exchange**: 2 candidate(s).
+  - Candidate IDs: cout-GorxstR4, cout-KExnj5Yy
+  - Evidence: A general slowdown in the global economy or in a particular region or industry, an increase in trade tensions with U.S. trading partners or a tightening of the credit markets could negatively impact our business, financial condition and liquidity. Adverse global economic conditions have from time to
+- **AVGO / Macro and foreign exchange**: 2 candidate(s).
+  - Candidate IDs: cout-pqPu1pde, cout-RBNMmHMU
+  - Evidence: A general weakening of the economy globally or in a particular region or industry, uncertainty and volatility in financial markets, efforts of governments to stimulate or stabilize the economy or to achieve specific policy objectives such as onshoring of semiconductor manufacturing and other unfavor
+- **COST / Inventory and channel, Supply chain**: 2 candidate(s).
+  - Candidate IDs: cout-DqRGs3wV, cout-KX2Dkq2B
+  - Evidence: We are primarily self-insured as it relates to property damage, due to the substantial premiums required for insurance coverage over physical losses caused by certain natural disasters, as well as the limitations on available coverage for such losses. Although we maintain specific coverages for loss
+- **CSCO / Demand, Geopolitics and tariffs**: 2 candidate(s).
+  - Candidate IDs: cout-kUJDfVZM, cout-VPYbDkb2
+  - Evidence: , led by product revenue growth in Australia and Japan. We experienced revenue declines from many emerging countries, and in particular we experienced product revenue declines in the emerging countries of Mexico, Brazil and China of 31%, 10% and 2%, respectively. In the aggregate, the "BRICM" countr
+- **CSCO / Regulation and legal, Supply chain**: 2 candidate(s).
+  - Candidate IDs: cout-hMKb5Von, cout-vVTczNMn
+  - Evidence: percentage points, driven by unfavorable impacts from pricing, lower productivity benefits driven by an increase in the cost of certain memory components and the $122 million legal and indemnification settlement charge. As a percentage of revenue, research and development, sales and marketing, and g
+- **CSCO / Regulation and legal**: 2 candidate(s).
+  - Candidate IDs: cout-K97f9qWM, cout-wZBsu9Qo
+  - Evidence: percentage points due to unfavorable impacts from pricing and a $127 million legal and indemnification settlement charge, partially offset by productivity benefits and favorable product mix. As a percentage of revenue, research and development, sales and marketing, and general and administrative exp
+- **CSCO / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-keH7qBu3, cout-AVrhdb2A
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector, enterprise and commercial markets, partially offset by a product revenue decline in the service provider market.
+- **CSCO / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-c2k94d6C, cout-5og4P7Uf
+  - Evidence: From a customer market standpoint, we experienced product revenue declines across all customer segments. During the
+- **CSCO / Cloud and data center capacity, Customer and platform dependency**: 2 candidate(s).
+  - Candidate IDs: cout-sR57taCJ, cout-XUSyXCdf
+  - Evidence: respectively. From a product category perspective, we experienced product revenue declines in Infrastructure Platforms and Applications, offset by growth in Security. Total gross margin decreased by
+- **CSCO / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-xkCQQGVH, cout-1Fkd4J6c
+  - Evidence: From a customer market standpoint, we experienced product revenue declines across all customer segments, with the most significant declines in the commercial and enterprise markets. During the first quarter of fiscal 2021, we continued to see a revenue decline in the commercial and enterprise market
+- **CSCO / Cloud and data center capacity, Customer and platform dependency**: 2 candidate(s).
+  - Candidate IDs: cout-RVbFVugF, cout-4hjsLQU5
+  - Evidence: With regard to our geographic segment performance, on a year-over-year basis, revenue in the Americas, EMEA and APJC increased by 8%, 6% and 13%, respectively. From a product category perspective, we experienced product revenue growth in Infrastructure Platforms and Security, offset by declines in A
+- **CSCO / Cloud and data center capacity, Demand**: 2 candidate(s).
+  - Candidate IDs: cout-3U4K3NjM, cout-ARz7qwZn
+  - Evidence: In terms of our geographic segments, revenue from the Americas decreased by $315 million, EMEA revenue decreased by $244 million and APJC revenue decreased by $241 million. From a customer market standpoint, we experienced product revenue declines in the enterprise and service provider and cloud mar
+- **CSCO / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-8wg5cajC, cout-cpRNuuJL
+  - Evidence: Our ability to meet financial expectations could also be negatively impacted if the nonlinear sales pattern seen in some of our past quarters recurs in future periods. During the first nine months of fiscal 2024, we experienced a decline in product demand resulting in a decrease of revenue as custom
+- **DIS / Regulation and legal**: 2 candidate(s).
+  - Candidate IDs: cout-WJsW2rmx, cout-xQoQKayP
+  - Evidence: The impact of these disruptions and the extent of their adverse impact on our financial and operating results will be dictated by the length of time that such disruptions continue, which will, in turn, depend on the currently unknowable duration and severity of the impacts of COVID-19, and among oth
+- **DIS / Regulation and legal**: 2 candidate(s).
+  - Candidate IDs: cout-mKkkGjij, cout-8raEM4Qf
+  - Evidence: Some of our businesses have reopened with limited operations. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we reopened theme parks and retail stores, we incurred and will continue to
+- **DIS / Demand, Macro and foreign exchange**: 2 candidate(s).
+  - Candidate IDs: cout-HDbdsaxF, cout-VdWH7N4c
+  - Evidence: Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
+- **GOOGL / Cloud and data center capacity**: 2 candidate(s).
+  - Candidate IDs: cout-B7tCKAA6, cout-SMcn3y2E
+  - Evidence: TAC was $10.9 billion, an increase of 63% year over year, primarily driven by an increase in revenues subject to TAC. Other cost of revenues were $15.3 billion, an increase of 29% year over year, affected by a reduction in depreciation expense due to the change in the estimated useful life of our se
+- **HD / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-7ZFDNvKH, cout-ehqn8LXh
+  - Evidence: As a result of the pandemic and related quarantines, shelter-in-place orders, and similar restrictions, we have experienced increased demand for online purchases of products. While we have managed this increased volume to date without interruption, there are no assurances that we will continue to be
+- **KO / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-iE9XESqW, cout-rgWVAt2q
+  - Evidence: Geopolitical instability has in the past led, and may in the future lead, to logistical, transportation and supply chain disruptions; business disruptions (including labor shortages); increased risk of cybersecurity incidents or other disruptions to our information systems; reduced availability and
+- **MO / Geopolitics and tariffs, Supply chain**: 2 candidate(s).
+  - Candidate IDs: cout-RgaEKhj2, cout-eoocXEfn
+  - Evidence: Volatility in domestic and global economies and disruptions in the supply and distribution chains continued in the third quarter of 2022, resulting from several factors, including the on-going impacts of inflation, energy shortages in Europe, raw materials availability and the Russian invasion of Uk
+- **MSFT / Cloud and data center capacity, Demand**: 2 candidate(s).
+  - Candidate IDs: cout-61n2QAKz, cout-394FHK5Y
+  - Evidence: Cost of revenue increased $6.2 billion or 13% driven by growth in commercial cloud and Gaming, offset in part by a reduction in depreciation expense due to the change in estimated useful lives of our server and network equipment.
+- **MSFT / AI, R&D, and technology, Cloud and data center capacity**: 2 candidate(s).
+  - Candidate IDs: cout-Q6cRP46M, cout-4jwKiyyY
+  - Evidence: Research and development expenses increased $1.1 billion or 19% driven by investments in cloud engineering, impairment charges resulting from changes to our hardware portfolio, and LinkedIn. Research and development included a favorable foreign currency impact of 2%.
+- **MSFT / AI, R&D, and technology, Cloud and data center capacity**: 2 candidate(s).
+  - Candidate IDs: cout-v6goN1Js, cout-y2cwxyMy
+  - Evidence: Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
+- **MSFT / AI, R&D, and technology, Cloud and data center capacity**: 2 candidate(s).
+  - Candidate IDs: cout-ACZRATjn, cout-zFy7ehnb
+  - Evidence: Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
+- **MU / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-8gqoUGJm, cout-K9aRAKBN
+  - Evidence: Events surrounding the ongoing COVID-19 pandemic initially resulted in a reduction in economic activity across the globe, and the timing and extent of the ongoing economic recovery remains uncertain. As a result, we have experienced volatility in the markets that our products are sold into, driven b
+- **MU / Inventory and channel**: 2 candidate(s).
+  - Candidate IDs: cout-wyjsXWXB, cout-UnymrXZk
+  - Evidence: In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected
+- **NVDA / Customer and platform dependency, Supply chain**: 2 candidate(s).
+  - Candidate IDs: cout-Uf5LXhW8, cout-jBcXDeFd
+  - Evidence: was 61.2%, compared with 59.9% a year earlier, which reflects our continued shift toward higher-value platforms, which more than offset the impact of approximately $128 million in charges for excess DRAM and other components we recorded in the fourth quarter of fiscal year 2019 and a charge of $57 m
+- **NVDA / Inventory and channel**: 2 candidate(s).
+  - Candidate IDs: cout-6ZT2WLHL, cout-2UFfphma
+  - Evidence: We have had to increase prices for our Data Center products as a result of our suppliers' increase in prices, and may need to continue to do so for other products in the future, which may negatively impact demand. We have also written-down our inventory, incurred cancellation penalties, and recorded
+- **NVDA / Inventory and channel**: 2 candidate(s).
+  - Candidate IDs: cout-tKYEUShn, cout-pqPLpbiR
+  - Evidence: We have had to increase prices for certain of our products as a result of our suppliers' increase in prices, and we may need to continue to do so for other products in the future. We have also written-down our inventory, incurred cancellation penalties, and recorded impairments. These impacts were a
+- **NVDA / Demand, Inventory and channel**: 2 candidate(s).
+  - Candidate IDs: cout-bSEduEij, cout-Rusah251
+  - Evidence: On April 9, 2025, the U.S. government, or USG, informed us that it requires a license for export to China (including Hong Kong and Macau) and D:5 countries, or to companies headquartered or with an ultimate parent therein, of our H20 integrated circuits and any other circuits achieving the H20's mem
+- **NVDA / Demand, Inventory and channel**: 2 candidate(s).
+  - Candidate IDs: cout-r8mJxtM1, cout-5f8DcfmB
+  - Evidence: In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the
+- **PEP / Inventory and channel, Liquidity**: 2 candidate(s).
+  - Candidate IDs: cout-XGnBRQuo, cout-EgExKcvj
+  - Evidence: There is considerable uncertainty regarding how current and future health and safety measures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result
+- **PEP / Cloud and data center capacity, Supply chain**: 2 candidate(s).
+  - Candidate IDs: cout-DXzKcfXk, cout-FEQeGt2t
+  - Evidence: ures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result of changes to our supply chain or increases in employee costs, operating costs or otherwi
+- **PM / Demand, Geopolitics and tariffs**: 2 candidate(s).
+  - Candidate IDs: cout-irULbY3m, cout-Hu5JQLVr
+  - Evidence: For the nine months ended September 30, 2020, net revenues, excluding unfavorable currency, decreased by 1.7%, reflecting: unfavorable volume/mix, primarily due to lower cigarette volume (mainly in Argentina, Indonesia, Italy, Japan, Mexico, the Philippines, PMI Duty Free, Poland, Russia, Spain, Tur
+- **PM / Inventory and channel**: 2 candidate(s).
+  - Candidate IDs: cout-FNUnrmaH, cout-fRFDwdDp
+  - Evidence: . On the basis of these decisions and in line with arrangements with the distributors, we recorded a pre-tax charge of $246 million in the second quarter of 2021 (representing $215 million net of income tax and
+- **SBUX / Demand, Geopolitics and tariffs**: 2 candidate(s).
+  - Candidate IDs: cout-n94P4LGQ, cout-unJnxjHV
+  - Evidence: joint venture model, where we recorded only revenues and expenses from products sales to and royalties received from East China, as well as our proportionate share of the joint venture's net profit. The change from equity method to consolidation method lowered the operating margin of our Consolidate
+- **SBUX / Demand, Geopolitics and tariffs**: 2 candidate(s).
+  - Candidate IDs: cout-ANXrdRHG, cout-MXRadGm7
+  - Evidence: As a result of acquiring the remaining interest in our East China joint venture at the end of the first quarter of fiscal 2018, we began recording 100% of its revenues and expenses on our condensed consolidated statements of earnings at the beginning of the second quarter of fiscal 2018. This is in
+- **TMUS / Liquidity**: 2 candidate(s).
+  - Candidate IDs: cout-ujYGRt4f, cout-XnbHCDky
+  - Evidence: Under the new credit loss standard we recognize lifetime expected credit losses at the inception of our credit risk exposures whereas we previously recognized credit losses only when it was probable that they had been incurred. We also recognize expected credit losses on our equipment installment pl
+- **TSLA / Demand**: 2 candidate(s).
+  - Candidate IDs: cout-XhRhqQc4, cout-Myvu4Y9T
+  - Evidence: During the three and six months ended June 30, 2024, we recognized total revenues of $25.50 billion and $46.80 billion, respectively, representing an increase of $573 million and a decrease of $1.46 billion, respectively, compared to the same periods in the prior year. During the three and six month
+- **VZ / Liquidity, Macro and foreign exchange**: 2 candidate(s).
+  - Candidate IDs: cout-kYzqCLkc, cout-HoiWkQmD
+  - Evidence: As a result of the inflationary environment in 2022 to date, we have experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, transportation and labor costs, as well as increased interest expenses related to rising interest rates. We
+- **VZ / Liquidity, Macro and foreign exchange**: 2 candidate(s).
+  - Candidate IDs: cout-ZG6dYPEU, cout-wbcRp2yZ
+  - Evidence: Over the last several years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, and transportation and labor costs, as well as increased interest expense related to ch
+- **WBD / Regulation and legal**: 2 candidate(s).
+  - Candidate IDs: cout-ThgKhmyj, cout-y8H1vjJk
+  - Evidence: These economic disruptions and the resulting effect on the Company slightly eased during the second half of 2020, but the pandemic continued to impact demand through the end of 2020 and this decreased demand is expected to continue into 2021. Many of our third-party production partners that were shu
+- **WBD / Regulation and legal**: 2 candidate(s).
+  - Candidate IDs: cout-VbiHBeHK, cout-j9gPcAuE
+  - Evidence: The Company currently does not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of the Company's third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter
+- **WBD / Regulation and legal**: 2 candidate(s).
+  - Candidate IDs: cout-E4PGKpia, cout-FNuJ7Ujh
+  - Evidence: We currently do not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a res
+- **AAPL / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-KT4QEPaj
+  - Evidence: Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
+- **AAPL / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-Qxnb5fxQ
+  - Evidence: The COVID-19 pandemic and the measures taken by many countries in response have adversely affected and could in the future materially adversely impact the Company's business, results of operations, financial condition and stock price. Following the initial outbreak of the virus, the Company experien
+- **AAPL / Customer and platform dependency**: 1 candidate(s).
+  - Candidate IDs: cout-m6FhuALS
+  - Evidence: During 2020, aspects of the Company's business were adversely affected by the COVID-19 pandemic, with many of the Company's retail stores, as well as channel partner points of sale, temporarily closed at various times, and the vast majority of the Company's employees working remotely. The Company ha
+- **AAPL / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-aRz4uoBR
+  - Evidence: The Company has reopened all of its retail stores and substantially all of its other facilities, subject to operating restrictions to protect public health and the health and safety of employees and customers, and it continues to work on safely reopening the remainder of its facilities, subject to l
+- **ABNB / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-EPQ2ubr3
+  - Evidence: We have previously incurred net losses and our Adjusted EBITDA and Free Cash Flow have declined in prior periods. We may once again incur net losses and experience a decline in Adjusted EBITDA and Free Cash, and we may not be able to sustain profitability.
+- **AMD / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-yF6Bpixu
+  - Evidence: , and $41 million of stock-based compensation expense and a $5 million contingent loss in connection with a legal matter for the
+- **AMD / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-5t5NYrEx
+  - Evidence: During the first quarter of 2020, we experienced some disruptions to parts of our supply chain. We continue to monitor demand signals as we adjust our supply chain requirements based on changing customer needs and demands.
+- **CMCSA / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-Ue9EKZgN
+  - Evidence: Interest expense decreased for the three and six months ended June 30, 2022 compared to the same periods in 2021 primarily due to a decrease in average debt outstanding in the current year periods and a $78 million charge recorded in the prior year periods related to the early redemption of senior n
+- **CMCSA / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-jMXzPt2t
+  - Evidence: Income tax expense for the three and six months ended June 30, 2022 and 2021 reflects an effective income tax rate that differs from the federal statutory rate primarily due to state and foreign income taxes and adjustments associated with uncertain tax positions. The decrease in income tax expense
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-m97Vaazu
+  - Evidence: we experienced product revenue declines in the public sector and enterprise markets. We believe our sales in the enterprise market were impacted by uncertainty in the macro environment, which led to a slowdown in customer spending, and by currency impacts.
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-hKXwsgTh
+  - Evidence: , led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 16% in the aggregate, driven by declines in the emerging countries of China and Mexico of 30% and 36%, respectively, partially of
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-SMFQGgLC
+  - Evidence: Revenue in our APJC segment decreased slightly, led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 8% in the aggregate, driven by declines in the emerging countries of Brazil, China
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-oRDH4nxY
+  - Evidence: From a customer market standpoint, we experienced product revenue declines in the service provider, enterprise and public sector markets, partially offset by product revenue growth in the commercial market.
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-kHpnDRw5
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector and commercial markets, partially offset by a product revenue decline in the service provider market. Product revenue in the enterprise market was flat.
+- **CSCO / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-g7JS1MuB
+  - Evidence: percentage points, driven primarily by unfavorable impacts from pricing, a $127 million legal and indemnification settlement charge, and unfavorable product mix, partially offset by productivity benefits. While productivity was positive to overall product gross margin, the benefit was lower than in
+- **CSCO / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-ab1MgSFU
+  - Evidence: percentage points, driven primarily by productivity improvements and the $122 million legal and indemnification settlement charge recorded in the first quarter of fiscal 2018, partially offset by unfavorable impacts from pricing.
+- **CSCO / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-GqqPpush
+  - Evidence: percentage points due to productivity benefits and a $127 million legal and indemnification settlement charge recorded in the first six months of fiscal 2018, partially offset by unfavorable impacts from pricing. As a percentage of revenue, research and development, sales and marketing, and general
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-FjBCbGzh
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the enterprise, public sector and commercial markets, partially offset by a product revenue decline in the service provider market.
+- **CSCO / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-fqA4TDaB
+  - Evidence: percentage points, driven primarily by productivity benefits partially offset by unfavorable impacts from pricing and mix. Our gross margin also benefited from the sale of our lower margin SPVSS business during the second quarter of fiscal 2019 and the $127 million legal and indemnification settleme
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-iihwv1WH
+  - Evidence: From a customer market standpoint, we experienced a product revenue decline in the service provider market and a slight decline in the enterprise market. These decreases were substantially offset by product revenue growth in the public sector and commercial markets.
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-UCtqyNPZ
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the service provider, public sector and commercial markets, partially offset by a product revenue decline in the enterprise market. We are seeing improvement in business momentum in our customer markets, which we believe was
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-euj24FEW
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector and service provider markets partially offset by declines in the enterprise and commercial markets. As fiscal 2021 progressed, we saw improvement in business momentum in our customer markets, which we belie
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-TQsy9gv1
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the enterprise, commercial and service provider markets, partially offset by a product revenue decline in the public sector market. We continued to see improvement in business momentum in our customer markets.
+- **CSCO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-HpzHr3fz
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the commercial, enterprise and service provider markets partially offset by a decline in the public sector market.
+- **DIS / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-DUvbJ6gn
+  - Evidence: The increase in interest income, investment income and other was due to higher interest income on cash balances and the inclusion of a $27 million benefit related to pension and postretirement benefit costs, other than service cost, partially offset by higher investment impairments. The Company adop
+- **DIS / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-5fSq8aVN
+  - Evidence: Revenues for the quarter decreased 42%, or $8.5 billion, to $11.8 billion; net income attributable to Disney decreased $6.5 billion, to a loss of $4.7 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) decreased to a loss of $2.61 compared to income of $0
+- **DIS / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-DMZbJnsg
+  - Evidence: Some of our businesses have begun to re-open with limited operations. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we open our theme parks and retail stores, we incurred and will con
+- **DIS / Cloud and data center capacity**: 1 candidate(s).
+  - Candidate IDs: cout-7oy12Z8v
+  - Evidence: Cost of services for the quarter decreased 16%, or $1.8 billion, to $8.9 billion due to the closure/reduced operating capacity of our theme parks and resorts, lower production cost amortization and distribution costs at Content Sales/Licensing and Other and to a lesser extent, lower programming and
+- **DIS / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-xFZie49u
+  - Evidence: Revenues for the quarter increased 45%, or $5.2 billion, to $17.0 billion; net income attributable to Disney increased $5.6 billion, to $0.9 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) was $0.50 compared to a loss of $2.61 in the prior-year quarter
+- **DIS / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-p8KnWZgn
+  - Evidence: Most of our businesses have reopened, although some with limited capacity and other restrictions. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we reopened theme parks and retail stor
+- **DIS / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-t2HbMYdh
+  - Evidence: In the current quarter, the Company recognized $436 million in Other expense, net due to a non-cash loss of $432 million to adjust its investment in DraftKings to fair value.
+- **DIS / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-r8Gq1Yqt
+  - Evidence: The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
+- **DIS / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-1RjGvEZj
+  - Evidence: In fiscal 2022, the Company recognized a non-cash loss of $
+- **DIS / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-dR9Wd8qh
+  - Evidence: The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
+- **DIS / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-sb6nTUak
+  - Evidence: Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
+- **DIS / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-W6pLYKH8
+  - Evidence: In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
+- **DIS / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-XQujDkei
+  - Evidence: In the prior-year quarter, the Company recorded charges of $195 million due to the impairment of an intangible asset related to the Disney Channel in Russia.
+- **DIS / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-aWnA41Gu
+  - Evidence: Revenues for the quarter increased 4%, or $0.8 billion, to $22.3 billion; net income (loss) attributable to Disney was a loss of $0.5 billion in the current quarter compared to income of $1.4 billion in the prior-year quarter; and diluted earnings per share from continuing operations attributable to
+- **DIS / Macro and foreign exchange**: 1 candidate(s).
+  - Candidate IDs: cout-feQanEji
+  - Evidence: Cost of services for the quarter increased 5%, or $0.6 billion, to $13.0 billion due to cost inflation and increased volumes at our theme parks and higher programming and production costs. The increase in programming and production costs was due
+- **DIS / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-cvNPXuCE
+  - Evidence: In the prior-year quarter, the Company recorded charges of $42 million primarily due to asset impairments related to exiting our businesses in Russia.
+- **DIS / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-nDNuHLAq
+  - Evidence: Other expense, net of $11 million reflects a charge of $101 million related to a legal ruling, partially offset by a DraftKings gain of $90 million
+- **DIS / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-me3CrjR6
+  - Evidence: In the prior-year quarter, the Company recognized charges of $69 million related to exiting our businesses in Russia.
+- **DIS / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-QVxLjYwb
+  - Evidence: Revenues for the quarter increased 1%, or $0.3 billion, to $22.1 billion; net income attributable to Disney decreased to a loss of $20 million in the current quarter compared to income of $1.3 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney decreased to
+- **DIS / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-YSZorQA6
+  - Evidence: In the prior-year period, the Company recorded charges of $221 million primarily for severance and costs related to exiting our businesses in Russia.
+- **DIS / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-a1YqjZpH
+  - Evidence: Revenues for the quarter increased 4%, or $0.8 billion, to $23.2 billion; net income attributable to Disney increased to income of $2.6 billion in the current quarter compared to a loss of $0.5 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney increased t
+- **DIS / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-LwJcRAi8
+  - Evidence: Other expense, net of $11 million reflecting a charge of $101 million related to a legal ruling, partially offset by a DraftKings Gain of $90 million
+- **DIS / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-jvWQ4oRp
+  - Evidence: In the prior-year period, the Company recorded $2,871 million of charges including the Content Impairment, severance and costs related to exiting our businesses in Russia.
+- **HD / Cybersecurity and privacy**: 1 candidate(s).
+  - Candidate IDs: cout-7eX6i6u9
+  - Evidence: The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
+- **HD / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-xqjTni51
+  - Evidence: Depreciation and amortization for the second quarter of fiscal 2024 increased $85 million, or 13.0%, to $738 million from $653 million for the second quarter of fiscal 2023. As a percentage of net sales, depreciation and amortization was 1.7% for the second quarter of fiscal 2024 compared to 1.5% fo
+- **KO / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-255h14jf
+  - Evidence: During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
+- **KO / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-pLrEFLiU
+  - Evidence: Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
+- **LOW / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-DU3jEqeh
+  - Evidence: Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
+- **LOW / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-c36RGbxD
+  - Evidence: In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
+- **MAR / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-v6UCJTdD
+  - Evidence: we recorded a provision for credit losses of $
+- **MCD / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-UkCnhUp1
+  - Evidence: Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
+- **MCD / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-U6jdNkpE
+  - Evidence: Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
+- **MCD / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-p3G4ipfw
+  - Evidence: The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
+- **META / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-Us6fn245
+  - Evidence: These measures have caused, and are continuing to cause, business slowdowns or shutdowns in affected areas, both regionally and worldwide, which have significantly impacted our business and results of operations. In the first quarter of 2020, our advertising revenue grew 17% year-over-year, which wa
+- **META / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-ob2MQuyh
+  - Evidence: The COVID-19 pandemic has also had a varied impact on the demand for and pricing of our ads from period to period. While we experienced a reduction in demand and a related decline in pricing during the onset of the pandemic, we believe the pandemic subsequently contributed to an acceleration in the
+- **META / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-Yme8HfTY
+  - Evidence: The COVID-19 pandemic has also impacted our business and results of operations, with a varied impact on the demand for and pricing of our ads from period to period. While we experienced a reduction in advertising demand and a related decline in pricing during the onset of the pandemic, we believe th
+- **META / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-KPLfuRTL
+  - Evidence: The COVID-19 pandemic has also impacted our business and results of operations, with a varied impact on user growth and engagement, as well as the demand for and pricing of our ads from period to period. While we experienced a reduction in advertising demand and a related decline in pricing during t
+- **META / Macro and foreign exchange**: 1 candidate(s).
+  - Candidate IDs: cout-UDATax8B
+  - Evidence: , which we believe was primarily driven by reduced marketer spending as a result of a more challenging macroeconomic environment. In addition, because the targeting and measurement challenges associated with iOS changes had already begun in the third quarter of 2021, the impact of these challenges o
+- **META / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-KS31B85q
+  - Evidence: User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
+- **MO / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-Frzywdbu
+  - Evidence: Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
+- **MO / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-5To9n9pZ
+  - Evidence: The economic and business repercussions of COVID-19 have been compounded by the Russian invasion of Ukraine. While our operating companies focus on the manufacture and sale of tobacco products in the United States and have little direct exposure to the impacted regions, we have experienced negative
+- **MO / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-9eweYbvT
+  - Evidence: We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
+- **MO / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-BDUrgiSb
+  - Evidence: became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
+- **MSFT / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-8zSNs1oh
+  - Evidence: Operating income included an unfavorable foreign currency impact of 5%. Gross margin decreased $563 million or 4%, driven by higher cost of revenue. Gross margin included an unfavorable
+- **MSFT / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-quUySYaJ
+  - Evidence: Operating income included an unfavorable foreign currency impact of 3%. Gross margin increased $1.2 billion or 10%, driven by higher revenue, offset in part by higher cost of revenue.
+- **MSFT / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-rNg4Lx8R
+  - Evidence: Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
+- **MSFT / AI, R&D, and technology**: 1 candidate(s).
+  - Candidate IDs: cout-h4HuM9Cw
+  - Evidence: Operating income increased $2.9 billion or 11%, primarily due to higher gross margin and lower impairment and restructuring expenses, offset in part by an increase in research and development and sales and marketing expenses. Operating income included an operating loss of $924 million related to the
+- **MSFT / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-sYG7DHXL
+  - Evidence: Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
+- **MU / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-XaZnFr8J
+  - Evidence: The ultimate severity and duration of these economic repercussions, including any resulting impact on our business, remain largely unknown and ultimately will depend on many factors. As a result, we have experienced volatility in the markets that our products are sold into, driven by the move to a s
+- **MU / Inventory and channel**: 1 candidate(s).
+  - Candidate IDs: cout-svAshmvZ
+  - Evidence: In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net of estimated selling costs, to b
+- **MU / Inventory and channel**: 1 candidate(s).
+  - Candidate IDs: cout-iM8KYY62
+  - Evidence: the expected consideration, net of estimated selling costs, to be realized from the sale of these assets and liabilities. In the second quarter of 2021, we also recognized a charge of $49 million to cost of goods sold to write down 3D XPoint inventory due to our decision to cease further development
+- **MU / Inventory and channel**: 1 candidate(s).
+  - Candidate IDs: cout-tcEdEDqs
+  - Evidence: In 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net o
+- **MU / AI, R&D, and technology**: 1 candidate(s).
+  - Candidate IDs: cout-j3YJZLsU
+  - Evidence: We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
+- **MU / Inventory and channel**: 1 candidate(s).
+  - Candidate IDs: cout-wHdyt5T6
+  - Evidence: As a result of these conditions and increases in our inventory levels, we have reduced wafer starts and capital expenditures. We recognized $27 million of period costs from underutilization in the second quarter of 2023 due to wafer start reductions.
+- **MU / AI, R&D, and technology**: 1 candidate(s).
+  - Candidate IDs: cout-xeiZQQXT
+  - Evidence: We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
+- **MU / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-n8rgakW6
+  - Evidence: We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
+- **MU / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-caydcx3Q
+  - Evidence: These conditions, which began in the fourth quarter of 2022 and persisted into early 2024, led to significant reductions in average selling prices for both DRAM and NAND and reductions in bit shipments for DRAM. We experienced declines in revenue across all our business segments and nearly all our e
+- **NFLX / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-SoKXEF1c
+  - Evidence: The increase in cost of revenues for the three months ended March 31, 2024 as compared to the three months ended March 31, 2023 is primarily due to a $211 million increase in content amortization relating to our existing and new content, partially offset by a $38 million decrease in other cost of re
+- **NFLX / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-tgtYW1HH
+  - Evidence: increased $558 million as compared to the prior comparative period, primarily due to a $714 million increase in operating income, driven by a $1,172 million increase in revenues and partially offset by a $286 million increase in cost of revenues primarily due to the increase in content amortization.
+- **NFLX / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-tuYofcfL
+  - Evidence: r the three months ended June 30, 2025 increased $978 million as compared to the prior comparative period, primarily due to a $1,172 million increase in operating income, driven by a $1,520 million increase in revenues and partially offset by a $151 million increase in cost of revenues primarily due
+- **NFLX / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-ZnjYmKtK
+  - Evidence: r the three months ended September 30, 2025 increased $183 million as compared to the prior comparative period, primarily due to a $339 million increase in operating income, driven by a $1,686 million increase in revenues and partially offset by a $1,044 million increase in cost of revenues primaril
+- **NFLX / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-EdbcVB6t
+  - Evidence: Discovery, Inc. ("WBD") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the "WBD transaction"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil
+- **NVDA / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-eGqEKVbF
+  - Evidence: During the first quarter of fiscal year 2021, we experienced disruptions to our supply chain and logistical services provided by outsourcing partners and component supply, primarily based in Asia. These disruptions adversely impacted our linearity of supply and sales within the quarter.
+- **NVDA / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-pAypMBtb
+  - Evidence: impact, our workforce and operations, the operations of our customers and our partners, and those of our respective vendors and suppliers (including our subcontractors and third-party contract manufacturers). For example, during the first quarter of fiscal year 2021, we experienced disruptions to ou
+- **PM / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-xyWT6D4M
+  - Evidence: In connection with these elements of the Tax Cuts and Jobs Act, we recognized a provisional expense of $1.6 billion, which was included as a component of income tax expense as follows:
+- **PM / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-62y5hiw5
+  - Evidence: r $0.04 per share impact on diluted EPS) during the nine months ended September 30, 2020, related to the organizational design optimization plan primarily in Switzerland. We recorded pre-tax asset impairment and exit costs of $65 million (or $0.03 per share impact on diluted EPS) during the nine mon
+- **PM / AI, R&D, and technology**: 1 candidate(s).
+  - Candidate IDs: cout-ZnU6foWn
+  - Evidence: At the date of acquisition, we determined that the acquired IPR&D had no alternative future use. As a result, we recorded a pre-tax charge of $51 million (representing a $0.03 charge to diluted EPS) to research and development costs within marketing, administration and research costs in the condense
+- **PM / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-yBsxhpgg
+  - Evidence: We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
+- **PM / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-4pUPM9nU
+  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
+- **PM / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-fynsGdQk
+  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
+- **PM / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-Qe5gPhAF
+  - Evidence: As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
+- **PM / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-fHbC6VNw
+  - Evidence: – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
+- **PM / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-gS9pUjHE
+  - Evidence: As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
+- **TJX / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-9x9J3aNz
+  - Evidence: During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
+- **TJX / Liquidity**: 1 candidate(s).
+  - Candidate IDs: cout-CWuPhDfZ
+  - Evidence: A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
+- **TJX / Geopolitics and tariffs**: 1 candidate(s).
+  - Candidate IDs: cout-CFFZUQMx
+  - Evidence: We account for our investment in Familia using the equity method of accounting. As of January 29, 2022, the carrying value of our investment in Familia was $186 million, which reflects the revaluing of the investment from Russian rubles to the U.S. dollar, resulting in a cumulative translation loss
+- **TMUS / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-mibPR2Sf
+  - Evidence: During the quarter ended and subsequent to September 30, 2016, a handset Original Equipment Manufacturer ("OEM") announced recalls on certain of its smartphone devices. As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable
+- **TMUS / Customer and platform dependency**: 1 candidate(s).
+  - Candidate IDs: cout-ybHov4a1
+  - Evidence: As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
+- **TSLA / Supply chain**: 1 candidate(s).
+  - Candidate IDs: cout-61kWsViJ
+  - Evidence: Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing processes and reducing costs. If we are not successful in achieving these goals, we could face delay
+- **TSLA / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-MoYCteWC
+  - Evidence: During the three months ended March 31, 2025, we recognized total revenues of $19.34 billion, representing a decrease of $1.97 billion compared to the same period in the prior year. During the three months ended March 31, 2025, our net income attributable to common stockholders was $409 million, rep
+- **TSLA / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-gWeeZjak
+  - Evidence: During the three and nine months ended September 30, 2025, we recognized total revenues of $28.10 billion and $69.93 billion, respectively, representing an increase of $2.91 billion and a decrease of $2.06 billion, respectively, compared to the same periods in the prior year. During the three and ni
+- **TSLA / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-vC9ssZFm
+  - Evidence: In 2025, we recognized total revenues of $94.83 billion, representing a decrease of $2.86 billion compared to the prior year. In 2025, our net income attributable to common stockholders was $3.79 billion, representing a decrease of $3.30 billion compared to the prior year.
+- **VZ / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-tygeYzjs
+  - Evidence: In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
+- **WBD / Regulation and legal**: 1 candidate(s).
+  - Candidate IDs: cout-JYG4CXqH
+  - Evidence: The pandemic did not have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a result, we have incurred ad
+- **WBD / Demand**: 1 candidate(s).
+  - Candidate IDs: cout-2gso7KJ6
+  - Evidence: Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatrical product revenue and lower payments to partners and participants, and a 66% dec
+- **WMT / Inventory and channel**: 1 candidate(s).
+  - Candidate IDs: cout-22Ztexb6
+  - Evidence: In light of the substantial premiums payable for insurance coverage for losses caused by certain natural disasters, such as hurricanes, cyclones, typhoons, tropical storms, earthquakes, floods and tsunamis, as well as the limitations on available coverage for such losses, we have chosen to be primar
+
+## Flywheel Audit
+
+```flywheel-audit-json
+{
+  "schema": "sec-company-ledger-markdown-v1",
+  "run_id": "sec-10y-100-company",
+  "entity_id": "company-run-sec-10y-100-company-review-queue",
+  "entity_type": "company_review_queue",
+  "path": "reports/company-runs/sec-10y-100-company/review-queue.md"
+}
+```

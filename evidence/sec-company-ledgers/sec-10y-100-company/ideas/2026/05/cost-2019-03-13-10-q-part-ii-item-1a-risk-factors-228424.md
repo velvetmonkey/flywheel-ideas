@@ -1,0 +1,2035 @@
+---
+id: idea-QxwoFT6V
+type: idea
+state: nascent
+title: COST 2019-03-13 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:20:28.424Z'
+date: '2026-05-03'
+created: '2026-05-03T21:20:28.788Z'
+---
+# COSTCO WHOLESALE CORP /NEW 10-Q Part II Item 1A Risk Factors
+
+Filed: 2019-03-13
+Source: https://www.sec.gov/Archives/edgar/data/909832/000090983219000003/cost10q21719.htm
+
+Risk Factors
+
+30
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+30
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+30
+
+Item 4.
+
+Mine Safety Disclosures
+
+30
+
+Item 5.
+
+Other Information
+
+30
+
+Item 6.
+
+Exhibits
+
+31
+
+Signatures
+
+31
+
+2
+
+Table of Contents
+
+PART I—FINANCIAL INFORMATION
+
+Item 1—Financial Statements
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED BALANCE SHEETS
+
+(amounts in millions, except par value and share data)
+
+(unaudited)
+
+February 17,
+
+2019
+
+September 2,
+
+2018
+
+ASSETS
+
+CURRENT ASSETS
+
+Cash and cash equivalents
+
+$
+
+6,080
+
+$
+
+6,055
+
+Short-term investments
+
+1,042
+
+1,204
+
+Receivables, net
+
+1,995
+
+1,669
+
+Merchandise inventories
+
+11,356
+
+11,040
+
+Other current assets
+
+1,175
+
+321
+
+Total current assets
+
+21,648
+
+20,289
+
+PROPERTY AND EQUIPMENT
+
+Land
+
+6,300
+
+6,193
+
+Buildings and improvements
+
+16,533
+
+16,107
+
+Equipment and fixtures
+
+7,704
+
+7,274
+
+Construction in progress
+
+1,165
+
+1,140
+
+31,702
+
+30,714
+
+Less accumulated depreciation and amortization
+
+(11,557
+
+)
+
+(11,033
+
+)
+
+Net property and equipment
+
+20,145
+
+19,681
+
+OTHER ASSETS
+
+1,006
+
+860
+
+TOTAL ASSETS
+
+$
+
+42,799
+
+$
+
+40,830
+
+LIABILITIES AND EQUITY
+
+CURRENT LIABILITIES
+
+Accounts payable
+
+$
+
+10,711
+
+$
+
+11,237
+
+Accrued salaries and benefits
+
+3,173
+
+2,994
+
+Accrued member rewards
+
+1,130
+
+1,057
+
+Deferred membership fees
+
+1,735
+
+1,624
+
+Current portion of long-term debt
+
+1,698
+
+90
+
+Other current liabilities
+
+4,003
+
+2,924
+
+Total current liabilities
+
+22,450
+
+19,926
+
+LONG-TERM DEBT, excluding current portion
+
+4,794
+
+6,487
+
+OTHER LIABILITIES
+
+1,372
+
+1,314
+
+Total liabilities
+
+28,616
+
+27,727
+
+COMMITMENTS AND CONTINGENCIES
+
+EQUITY
+
+Preferred stock $0.01 par value; 100,000,000 shares authorized; no shares issued and outstanding
+
+0
+
+0
+
+Common stock $0.01 par value; 900,000,000 shares authorized; 439,989,000 and 438,189,000 shares issued and outstanding
+
+4
+
+4
+
+Additional paid-in capital
+
+6,218
+
+6,107
+
+Accumulated other comprehensive loss
+
+(1,280
+
+)
+
+(1,199
+
+)
+
+Retained earnings
+
+8,916
+
+7,887
+
+Total Costco stockholders' equity
+
+13,858
+
+12,799
+
+Noncontrolling interests
+
+325
+
+304
+
+Total equity
+
+14,183
+
+13,103
+
+TOTAL LIABILITIES AND EQUITY
+
+$
+
+42,799
+
+$
+
+40,830
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF INCOME
+
+(amounts in millions, except per share data)
+
+(unaudited)
+
+12 Weeks Ended
+
+24 Weeks Ended
+
+February 17,
+
+2019
+
+February 18,
+
+2018
+
+February 17,
+
+2019
+
+February 18,
+
+2018
+
+REVENUE
+
+Net sales
+
+$
+
+34,628
+
+$
+
+32,279
+
+$
+
+68,939
+
+$
+
+63,396
+
+Membership fees
+
+768
+
+716
+
+1,526
+
+1,408
+
+Total revenue
+
+35,396
+
+32,995
+
+70,465
+
+64,804
+
+OPERATING EXPENSES
+
+Merchandise costs
+
+30,720
+
+28,733
+
+61,343
+
+56,350
+
+Selling, general and administrative
+
+3,464
+
+3,234
+
+6,939
+
+6,458
+
+Preopening expenses
+
+9
+
+12
+
+31
+
+29
+
+Operating income
+
+1,203
+
+1,016
+
+2,152
+
+1,967
+
+OTHER INCOME (EXPENSE)
+
+Interest expense
+
+(34
+
+)
+
+(37
+
+)
+
+(70
+
+)
+
+(74
+
+)
+
+Interest income and other, net
+
+46
+
+7
+
+68
+
+29
+
+INCOME BEFORE INCOME TAXES
+
+1,215
+
+986
+
+2,150
+
+1,922
+
+Provision for income taxes
+
+314
+
+273
+
+472
+
+558
+
+Net income including noncontrolling interests
+
+901
+
+713
+
+1,678
+
+1,364
+
+Net income attributable to noncontrolling interests
+
+(12
+
+)
+
+(12
+
+)
+
+(22
+
+)
+
+(23
+
+)
+
+NET INCOME ATTRIBUTABLE TO COSTCO
+
+$
+
+889
+
+$
+
+701
+
+$
+
+1,656
+
+$
+
+1,341
+
+NET INCOME PER COMMON SHARE ATTRIBUTABLE TO COSTCO:
+
+Basic
+
+$
+
+2.02
+
+$
+
+1.60
+
+$
+
+3.77
+
+$
+
+3.06
+
+Diluted
+
+$
+
+2.01
+
+$
+
+1.59
+
+$
+
+3.74
+
+$
+
+3.04
+
+Shares used in calculation (000's):
+
+Basic
+
+440,284
+
+439,022
+
+439,721
+
+438,494
+
+Diluted
+
+442,337
+
+441,568
+
+442,535
+
+441,201
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(amounts in millions)
+
+(unaudited)
+
+12 Weeks Ended
+
+24 Weeks Ended
+
+February 17,
+
+2019
+
+February 18,
+
+2018
+
+February 17,
+
+2019
+
+February 18,
+
+2018
+
+NET INCOME INCLUDING NONCONTROLLING INTERESTS
+
+$
+
+901
+
+$
+
+713
+
+$
+
+1,678
+
+$
+
+1,364
+
+Foreign-currency translation adjustment and other, net
+
+52
+
+150
+
+(82
+
+)
+
+127
+
+Comprehensive income
+
+953
+
+863
+
+1,596
+
+1,491
+
+Less: Comprehensive income attributable to noncontrolling interests
+
+13
+
+22
+
+21
+
+33
+
+COMPREHENSIVE INCOME ATTRIBUTABLE TO COSTCO
+
+$
+
+940
+
+$
+
+841
+
+$
+
+1,575
+
+$
+
+1,458
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF EQUITY
+
+(amounts in millions)
+
+(unaudited)
+
+12 Weeks Ended February 17, 2019
+
+Common Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (Loss)
+
+Retained
+
+Earnings
+
+Total Costco
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares (000's)
+
+Amount
+
+BALANCE AT NOVEMBER 25, 2018
+
+440,546
+
+$
+
+4
+
+$
+
+6,107
+
+$
+
+(1,331
+
+)
+
+$
+
+8,387
+
+$
+
+13,167
+
+$
+
+312
+
+$
+
+13,479
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+889
+
+889
+
+12
+
+901
+
+Foreign-currency translation adjustment and other, net
+
+—
+
+—
+
+—
+
+51
+
+—
+
+51
+
+1
+
+52
+
+Stock-based compensation
+
+—
+
+—
+
+119
+
+—
+
+—
+
+119
+
+—
+
+119
+
+Release of vested restricted stock units (RSUs), including tax effects
+
+4
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Repurchases of common stock
+
+(561
+
+)
+
+—
+
+(8
+
+)
+
+—
+
+(109
+
+)
+
+(117
+
+)
+
+—
+
+(117
+
+)
+
+Cash dividend declared and other
+
+—
+
+—
+
+—
+
+—
+
+(251
+
+)
+
+(251
+
+)
+
+—
+
+(251
+
+)
+
+BALANCE AT FEBRUARY 17, 2019
+
+439,989
+
+$
+
+4
+
+$
+
+6,218
+
+$
+
+(1,280
+
+)
+
+$
+
+8,916
+
+$
+
+13,858
+
+$
+
+325
+
+$
+
+14,183
+
+12 Weeks Ended February 18, 2018
+
+Common Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (Loss)
+
+Retained
+
+Earnings
+
+Total Costco
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares (000's)
+
+Amount
+
+BALANCE AT NOVEMBER 26, 2017
+
+439,185
+
+$
+
+4
+
+$
+
+5,811
+
+$
+
+(1,037
+
+)
+
+$
+
+6,300
+
+$
+
+11,078
+
+$
+
+278
+
+$
+
+11,356
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+701
+
+701
+
+12
+
+713
+
+Foreign-currency translation adjustment and other, net
+
+—
+
+—
+
+—
+
+140
+
+—
+
+140
+
+10
+
+150
+
+Stock-based compensation
+
+—
+
+—
+
+113
+
+—
+
+—
+
+113
+
+—
+
+113
+
+Release of vested RSUs, including tax effects
+
+11
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Repurchases of common stock
+
+(313
+
+)
+
+—
+
+(4
+
+)
+
+—
+
+(55
+
+)
+
+(59
+
+)
+
+—
+
+(59
+
+)
+
+Cash dividend declared and other
+
+—
+
+—
+
+—
+
+—
+
+(219
+
+)
+
+(219
+
+)
+
+(1
+
+)
+
+(220
+
+)
+
+BALANCE AT FEBRUARY 18, 2018
+
+438,883
+
+$
+
+4
+
+$
+
+5,920
+
+$
+
+(897
+
+)
+
+$
+
+6,727
+
+$
+
+11,754
+
+$
+
+299
+
+$
+
+12,053
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF EQUITY
+
+(amounts in millions)
+
+(unaudited)
+
+24 Weeks Ended February 17, 2019
+
+Common Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (Loss)
+
+Retained
+
+Earnings
+
+Total Costco
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares (000's)
+
+Amount
+
+BALANCE AT SEPTEMBER 2, 2018
+
+438,189
+
+$
+
+4
+
+$
+
+6,107
+
+$
+
+(1,199
+
+)
+
+$
+
+7,887
+
+$
+
+12,799
+
+$
+
+304
+
+$
+
+13,103
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,656
+
+1,656
+
+22
+
+1,678
+
+Foreign-currency translation adjustment and other, net
+
+—
+
+—
+
+—
+
+(81
+
+)
+
+—
+
+(81
+
+)
+
+(1
+
+)
+
+(82
+
+)
+
+Stock-based compensation
+
+—
+
+—
+
+391
+
+—
+
+—
+
+391
+
+—
+
+391
+
+Release of vested restricted stock units (RSUs), including tax effects
+
+2,511
+
+—
+
+(270
+
+)
+
+—
+
+—
+
+(270
+
+)
+
+—
+
+(270
+
+)
+
+Repurchases of common stock
+
+(711
+
+)
+
+—
+
+(10
+
+)
+
+—
+
+(141
+
+)
+
+(151
+
+)
+
+—
+
+(151
+
+)
+
+Cash dividend declared and other
+
+—
+
+—
+
+—
+
+—
+
+(486
+
+)
+
+(486
+
+)
+
+—
+
+(486
+
+)
+
+BALANCE AT FEBRUARY 17, 2019
+
+439,989
+
+$
+
+4
+
+$
+
+6,218
+
+$
+
+(1,280
+
+)
+
+$
+
+8,916
+
+$
+
+13,858
+
+$
+
+325
+
+$
+
+14,183
+
+24 Weeks Ended February 18, 2018
+
+Common Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (Loss)
+
+Retained
+
+Earnings
+
+Total Costco
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares (000's)
+
+Amount
+
+BALANCE AT SEPTEMBER 3, 2017
+
+437,204
+
+$
+
+4
+
+$
+
+5,800
+
+$
+
+(1,014
+
+)
+
+$
+
+5,988
+
+$
+
+10,778
+
+$
+
+301
+
+$
+
+11,079
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,341
+
+1,341
+
+23
+
+1,364
+
+Foreign-currency translation adjustment and other, net
+
+—
+
+—
+
+—
+
+117
+
+—
+
+117
+
+10
+
+127
+
+Stock-based compensation
+
+—
+
+—
+
+348
+
+—
+
+—
+
+348
+
+—
+
+348
+
+Release of vested RSUs, including tax effects
+
+2,726
+
+—
+
+(216
+
+)
+
+—
+
+—
+
+(216
+
+)
+
+—
+
+(216
+
+)
+
+Repurchases of common stock
+
+(1,047
+
+)
+
+—
+
+(14
+
+)
+
+—
+
+(164
+
+)
+
+(178
+
+)
+
+—
+
+(178
+
+)
+
+Cash dividend declared and other
+
+—
+
+—
+
+2
+
+—
+
+(438
+
+)
+
+(436
+
+)
+
+(35
+
+)
+
+(471
+
+)
+
+BALANCE AT FEBRUARY 18, 2018
+
+438,883
+
+$
+
+4
+
+$
+
+5,920
+
+$
+
+(897
+
+)
+
+$
+
+6,727
+
+$
+
+11,754
+
+$
+
+299
+
+$
+
+12,053
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+7
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(amounts in millions)
+
+(unaudited)
+
+24 Weeks Ended
+
+February 17,
+
+2019
+
+February 18,
+
+2018
+
+CASH FLOWS FROM OPERATING ACTIVITIES
+
+Net income including noncontrolling interests
+
+$
+
+1,678
+
+$
+
+1,364
+
+Adjustments to reconcile net income including noncontrolling interests to net cash provided by operating activities:
+
+Depreciation and amortization
+
+683
+
+679
+
+Stock-based compensation
+
+389
+
+346
+
+Other non-cash operating activities, net
+
+6
+
+10
+
+Deferred income taxes
+
+(27
+
+)
+
+(64
+
+)
+
+Changes in operating assets and liabilities:
+
+Merchandise inventories
+
+(449
+
+)
+
+(802
+
+)
+
+Accounts payable
+
+(684
+
+)
+
+486
+
+Other operating assets and liabilities, net
+
+362
+
+96
+
+Net cash provided by operating activities
+
+1,958
+
+2,115
+
+CASH FLOWS FROM INVESTING ACTIVITIES
+
+Purchases of short-term investments
+
+(457
+
+)
+
+(407
+
+)
+
+Maturities and sales of short-term investments
+
+621
+
+588
+
+Additions to property and equipment
+
+(1,317
+
+)
+
+(1,328
+
+)
+
+Other investing activities, net
+
+(18
+
+)
+
+(11
+
+)
+
+Net cash used in investing activities
+
+(1,171
+
+)
+
+(1,158
+
+)
+
+CASH FLOWS FROM FINANCING ACTIVITIES
+
+Change in bank payments outstanding
+
+262
+
+(33
+
+)
+
+Repayments of long-term debt
+
+(89
+
+)
+
+(58
+
+)
+
+Tax withholdings on stock-based awards
+
+(270
+
+)
+
+(216
+
+)
+
+Repurchases of common stock
+
+(149
+
+)
+
+(184
+
+)
+
+Cash dividend payments
+
+(501
+
+)
+
+(220
+
+)
+
+Other financing activities, net
+
+(2
+
+)
+
+(37
+
+)
+
+Net cash used in financing activities
+
+(749
+
+)
+
+(748
+
+)
+
+EFFECT OF EXCHANGE RATE CHANGES ON CASH AND CASH EQUIVALENTS
+
+(13
+
+)
+
+26
+
+Net change in cash and cash equivalents
+
+25
+
+235
+
+CASH AND CASH EQUIVALENTS BEGINNING OF YEAR
+
+6,055
+
+4,546
+
+CASH AND CASH EQUIVALENTS END OF PERIOD
+
+$
+
+6,080
+
+$
+
+4,781
+
+SUPPLEMENTAL DISCLOSURE OF CASH FLOW INFORMATION:
+
+Cash paid during the first half of year for:
+
+Interest (reduced by $12 and $7, interest capitalized in 2019 and 2018, respectively)
+
+$
+
+68
+
+$
+
+78
+
+Income taxes, net
+
+$
+
+677
+
+$
+
+661
+
+SUPPLEMENTAL DISCLOSURE OF NON-CASH FINANCING ACTIVITIES:
+
+Cash dividend declared, but not yet paid
+
+$
+
+251
+
+$
+
+219
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+8
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(amounts in millions, except share, per share, and warehouse count data)
+
+(unaudited)
+
+Note 1—Summary of Significant Accounting Policies
+
+Description of Business
+
+Costco Wholesale Corporation (Costco or the Company), a Washington corporation, and its subsidiaries operate membership warehouses based on the concept that offering members low prices on a limited selection of nationally-branded and private-label products in a wide range of merchandise categories will produce high sales volumes and rapid inventory turnover. For the period ended
+
+February 17, 2019
+
+, Costco operated
+
+769
+
+warehouses worldwide:
+
+534
+
+in the United States (U.S.) located in
+
+44
+
+states, Washington, D.C., and Puerto Rico,
+
+100
+
+in Canada,
+
+39
+
+in Mexico,
+
+28
+
+in the United Kingdom (U.K.),
+
+26
+
+in Japan,
+
+15
+
+in Korea,
+
+13
+
+in Taiwan,
+
+10
+
+in Australia,
+
+two
+
+in Spain, and
+
+one
+
+each in Iceland and France. The Company operates e-commerce websites in the U.S., Canada, Mexico, U.K., Korea, and Taiwan.
+
+Basis of Presentation
+
+The condensed consolidated financial statements include the accounts of Costco, its wholly-owned subsidiaries, and subsidiaries in which it has a controlling interest. The Company reports noncontrolling interests in consolidated entities as a component of equity separate from the Company's equity. All material inter-company transactions between and among the Company and its consolidated subsidiaries have been eliminated in consolidation. The Company's net income excludes income attributable to the noncontrolling interest in Taiwan. During the first quarter of
+
+2018
+
+, the Company purchased its former joint venture partner's remaining equity interest in its Korean operations. Unless otherwise noted, references to net income relate to net income attributable to Costco.
+
+These unaudited condensed consolidated financial statements have been prepared in accordance with the instructions to Form 10-Q for interim financial reporting pursuant to the rules and regulations of the Securities and Exchange Commission (SEC). While these statements reflect all normal recurring adjustments that are, in the opinion of management, necessary for fair presentation of the results of the interim period, they do not include all of the information and footnotes required by U.S. generally accepted accounting principles (U.S. GAAP) for complete financial statements. Therefore, the interim condensed consolidated financial statements should be read in conjunction with the consolidated financial statements and notes included in the Company's Annual Report filed on Form 10-K for the fiscal year ended
+
+September 2, 2018

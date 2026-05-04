@@ -1,0 +1,1187 @@
+---
+id: idea-8JwZidhv
+type: idea
+state: nascent
+title: COST 2016-06-01 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:19:31.865Z'
+date: '2026-05-03'
+created: '2026-05-03T21:19:32.224Z'
+---
+# COSTCO WHOLESALE CORP /NEW 10-Q Part II Item 1A Risk Factors
+
+Filed: 2016-06-01
+Source: https://www.sec.gov/Archives/edgar/data/909832/000090983216000028/cost10q50816.htm
+
+Risk Factors
+
+29
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+30
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+30
+
+Item 4.
+
+Mine Safety Disclosures
+
+30
+
+Item 5.
+
+Other Information
+
+30
+
+Item 6.
+
+Exhibits
+
+31
+
+Signatures
+
+32
+
+2
+
+Table of Contents
+
+PART I—FINANCIAL INFORMATION
+
+Item 1—Financial Statements
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED BALANCE SHEETS
+
+(amounts in millions, except par value and share data)
+
+(unaudited)
+
+May 8,
+
+2016
+
+August 30,
+
+2015
+
+ASSETS
+
+CURRENT ASSETS
+
+Cash and cash equivalents
+
+$
+
+4,884
+
+$
+
+4,801
+
+Short-term investments
+
+1,137
+
+1,618
+
+Receivables, net
+
+1,300
+
+1,224
+
+Merchandise inventories
+
+8,927
+
+8,908
+
+Other current assets
+
+294
+
+228
+
+Total current assets
+
+16,542
+
+16,779
+
+PROPERTY AND EQUIPMENT
+
+Land
+
+5,266
+
+4,961
+
+Buildings and improvements
+
+13,645
+
+12,618
+
+Equipment and fixtures
+
+5,834
+
+5,274
+
+Construction in progress
+
+707
+
+811
+
+25,452
+
+23,664
+
+Less accumulated depreciation and amortization
+
+(8,961
+
+)
+
+(8,263
+
+)
+
+Net property and equipment
+
+16,491
+
+15,401
+
+OTHER ASSETS
+
+840
+
+837
+
+TOTAL ASSETS
+
+$
+
+33,873
+
+$
+
+33,017
+
+LIABILITIES AND EQUITY
+
+CURRENT LIABILITIES
+
+Accounts payable
+
+$
+
+8,828
+
+$
+
+9,011
+
+Current portion of long-term debt
+
+1,193
+
+1,283
+
+Accrued salaries and benefits
+
+2,398
+
+2,468
+
+Accrued member rewards
+
+861
+
+813
+
+Deferred membership fees
+
+1,416
+
+1,269
+
+Other current liabilities
+
+2,303
+
+1,695
+
+Total current liabilities
+
+16,999
+
+16,539
+
+LONG-TERM DEBT, excluding current portion
+
+3,921
+
+4,852
+
+OTHER LIABILITIES
+
+1,205
+
+783
+
+Total liabilities
+
+22,125
+
+22,174
+
+COMMITMENTS AND CONTINGENCIES
+
+EQUITY
+
+Preferred stock $.005 par value; 100,000,000 shares authorized; no shares issued and outstanding
+
+0
+
+0
+
+Common stock $.005 par value; 900,000,000 shares authorized; 438,368,000 and 437,952,000 shares issued and outstanding
+
+2
+
+2
+
+Additional paid-in capital
+
+5,404
+
+5,218
+
+Accumulated other comprehensive loss
+
+(1,126
+
+)
+
+(1,121
+
+)
+
+Retained earnings
+
+7,225
+
+6,518
+
+Total Costco stockholders' equity
+
+11,505
+
+10,617
+
+Noncontrolling interests
+
+243
+
+226
+
+Total equity
+
+11,748
+
+10,843
+
+TOTAL LIABILITIES AND EQUITY
+
+$
+
+33,873
+
+$
+
+33,017
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF INCOME
+
+(amounts in millions, except per share data)
+
+(unaudited)
+
+12 Weeks Ended
+
+36 Weeks Ended
+
+May 8,
+
+2016
+
+May 10,
+
+2015
+
+May 8,
+
+2016
+
+May 10,
+
+2015
+
+REVENUE
+
+Net sales
+
+$
+
+26,151
+
+$
+
+25,517
+
+$
+
+80,345
+
+$
+
+78,673
+
+Membership fees
+
+618
+
+584
+
+1,814
+
+1,748
+
+Total revenue
+
+26,769
+
+26,101
+
+82,159
+
+80,421
+
+OPERATING EXPENSES
+
+Merchandise costs
+
+23,162
+
+22,687
+
+71,252
+
+69,969
+
+Selling, general and administrative
+
+2,731
+
+2,579
+
+8,372
+
+7,946
+
+Preopening expenses
+
+18
+
+14
+
+54
+
+38
+
+Operating income
+
+858
+
+821
+
+2,481
+
+2,468
+
+OTHER INCOME (EXPENSE)
+
+Interest expense
+
+(30
+
+)
+
+(31
+
+)
+
+(94
+
+)
+
+(84
+
+)
+
+Interest income and other, net
+
+7
+
+9
+
+51
+
+64
+
+INCOME BEFORE INCOME TAXES
+
+835
+
+799
+
+2,438
+
+2,448
+
+Provision for income taxes
+
+286
+
+280
+
+847
+
+817
+
+Net income including noncontrolling interests
+
+549
+
+519
+
+1,591
+
+1,631
+
+Net income attributable to noncontrolling interests
+
+(4
+
+)
+
+(3
+
+)
+
+(20
+
+)
+
+(21
+
+)
+
+NET INCOME ATTRIBUTABLE TO COSTCO
+
+$
+
+545
+
+$
+
+516
+
+$
+
+1,571
+
+$
+
+1,610
+
+NET INCOME PER COMMON SHARE ATTRIBUTABLE TO COSTCO:
+
+Basic
+
+$
+
+1.24
+
+$
+
+1.17
+
+$
+
+3.58
+
+$
+
+3.66
+
+Diluted
+
+$
+
+1.24
+
+$
+
+1.17
+
+$
+
+3.56
+
+$
+
+3.64
+
+Shares used in calculation (000's):
+
+Basic
+
+438,815
+
+440,070
+
+438,930
+
+439,733
+
+Diluted
+
+441,066
+
+443,132
+
+441,321
+
+442,721
+
+CASH DIVIDENDS DECLARED PER COMMON SHARE
+
+$
+
+0.45
+
+$
+
+0.40
+
+$
+
+1.25
+
+$
+
+6.11
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(amounts in millions)
+
+(unaudited)
+
+12 Weeks Ended
+
+36 Weeks Ended
+
+May 8,
+
+2016
+
+May 10,
+
+2015
+
+May 8,
+
+2016
+
+May 10,
+
+2015
+
+NET INCOME INCLUDING NONCONTROLLING INTERESTS
+
+$
+
+549
+
+$
+
+519
+
+$
+
+1,591
+
+$
+
+1,631
+
+Foreign-currency translation adjustment and other, net
+
+224
+
+76
+
+(5
+
+)
+
+(656
+
+)
+
+Comprehensive income
+
+773
+
+595
+
+1,586
+
+975
+
+Less: Comprehensive income attributable to noncontrolling interests
+
+10
+
+8
+
+20
+
+15
+
+COMPREHENSIVE INCOME ATTRIBUTABLE TO COSTCO
+
+$
+
+763
+
+$
+
+587
+
+$
+
+1,566
+
+$
+
+960
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(amounts in millions)
+
+(unaudited)
+
+36 Weeks Ended
+
+May 8,
+
+2016
+
+May 10,
+
+2015
+
+CASH FLOWS FROM OPERATING ACTIVITIES
+
+Net income including noncontrolling interests
+
+$
+
+1,591
+
+$
+
+1,631
+
+Adjustments to reconcile net income including noncontrolling interests to net cash provided by operating activities:
+
+Depreciation and amortization
+
+847
+
+776
+
+Stock-based compensation
+
+362
+
+301
+
+Excess tax benefits on stock-based awards
+
+(74
+
+)
+
+(84
+
+)
+
+Other non-cash operating activities, net
+
+25
+
+12
+
+Deferred income taxes
+
+158
+
+(42
+
+)
+
+Changes in operating assets and liabilities:
+
+Decrease (increase) in merchandise inventories
+
+8
+
+(680
+
+)
+
+(Decrease) increase in accounts payable
+
+(48
+
+)
+
+786
+
+Other operating assets and liabilities, net
+
+592
+
+557
+
+Net cash provided by operating activities
+
+3,461
+
+3,257
+
+CASH FLOWS FROM INVESTING ACTIVITIES
+
+Purchases of short-term investments
+
+(787
+
+)
+
+(1,033
+
+)
+
+Maturities and sales of short-term investments
+
+1,268
+
+860
+
+Additions to property and equipment
+
+(1,800
+
+)
+
+(1,588
+
+)
+
+Other investing activities, net
+
+(1
+
+)
+
+(14
+
+)
+
+Net cash used in investing activities
+
+(1,320
+
+)
+
+(1,775
+
+)
+
+CASH FLOWS FROM FINANCING ACTIVITIES
+
+Change in bank checks outstanding
+
+(127
+
+)
+
+(128
+
+)
+
+Repayments of short-term borrowings
+
+(102
+
+)
+
+0
+
+Proceeds from short-term borrowings
+
+102
+
+52
+
+Proceeds from issuance of long-term debt
+
+94
+
+1,037
+
+Repayments of long-term debt
+
+(1,200
+
+)
+
+(8
+
+)
+
+Minimum tax withholdings on stock-based awards
+
+(219
+
+)
+
+(178
+
+)
+
+Excess tax benefits on stock-based awards
+
+74
+
+84
+
+Repurchases of common stock
+
+(350
+
+)
+
+(225
+
+)
+
+Cash dividend payments
+
+(352
+
+)
+
+(2,514
+
+)
+
+Other financing activities, net
+
+(8
+
+)
+
+37
+
+Net cash used in financing activities
+
+(2,088
+
+)
+
+(1,843
+
+)
+
+EFFECT OF EXCHANGE RATE CHANGES ON CASH AND CASH EQUIVALENTS
+
+30
+
+(314
+
+)
+
+Net increase (decrease) in cash and cash equivalents
+
+83
+
+(675
+
+)
+
+CASH AND CASH EQUIVALENTS BEGINNING OF YEAR
+
+4,801
+
+5,738
+
+CASH AND CASH EQUIVALENTS END OF PERIOD
+
+$
+
+4,884
+
+$
+
+5,063
+
+SUPPLEMENTAL DISCLOSURE OF CASH FLOW INFORMATION:
+
+Cash paid during the first thirty-six weeks of year for:
+
+Interest (reduced by $12 and $9 interest capitalized in 2016 and 2015, respectively)
+
+$
+
+93
+
+$
+
+93
+
+Income taxes, net
+
+$
+
+545
+
+$
+
+609
+
+SUPPLEMENTAL DISCLOSURE OF NON-CASH FINANCING ACTIVITIES:
+
+Cash dividend declared, but not yet paid
+
+$
+
+197
+
+$
+
+176
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(amounts in millions, except share, per share, and warehouse count data)
+
+(unaudited)
+
+Note 1—Summary of Significant Accounting Policies
+
+Description of Business
+
+Costco Wholesale Corporation (Costco or the Company), a Washington corporation, and its subsidiaries operate membership warehouses based on the concept that offering members low prices on a limited selection of nationally branded and select private-label products in a wide range of merchandise categories will produce high sales volumes and rapid inventory turnover. At
+
+May 8, 2016
+
+, Costco operated
+
+705
+
+warehouses worldwide:
+
+493
+
+United States (U.S.) locations (in
+
+44
+
+states, Washington, D.C., and Puerto Rico),
+
+90
+
+Canada locations,
+
+36
+
+Mexico locations,
+
+27
+
+United Kingdom (U.K.) locations,
+
+25
+
+Japan locations,
+
+12
+
+Korea locations,
+
+12
+
+Taiwan locations,
+
+eight
+
+Australia locations and
+
+two
+
+Spain locations. The Company's online business operates websites in the U.S., Canada, U.K., Mexico, Korea, and Taiwan.
+
+Basis of Presentation
+
+The condensed consolidated financial statements include the accounts of Costco, its wholly-owned subsidiaries, and subsidiaries in which it has a controlling interest. The Company reports noncontrolling interests in consolidated entities as a component of equity separate from the Company's equity. All material inter-company transactions between and among the Company and its consolidated subsidiaries and other consolidated entities have been eliminated in consolidation. The Company's net income excludes income attributable to noncontrolling interests in Taiwan and Korea. Unless otherwise noted, references to net income relate to net income attributable to Costco.
+
+These unaudited condensed consolidated financial statements have been prepared in accordance with the instructions to Form 10-Q for interim financial reporting pursuant to the rules and regulations of the Securities and Exchange Commission (SEC). While these statements reflect all normal recurring adjustments that are, in the opinion of management, necessary for fair presentation of the results of the interim period, they do not include all of the information and footnotes required by U.S. generally accepted accounting principles (U.S. GAAP) for complete financial statements. Therefore, the interim condensed consolidated financial statements should be read in conjunction with the consolidated financial statements and notes included in the Company's Annual Report filed on Form 10-K for the fiscal year ended
+
+August 30, 2015
+
+.
+
+Fiscal Year End
+
+The Company operates on a
+
+52/53
+
+week fiscal year basis, with the fiscal year ending on the Sunday closest to August 31. References to the
+
+third
+
+quarters of
+
+2016
+
+and
+
+2015
+
+relate to the 12-week fiscal quarters ended
+
+May 8, 2016
+
+, and
+
+May 10, 2015
+
+, respectively. References to the
+
+first thirty-six weeks
+
+of
+
+2016
+
+and
+
+2015
+
+relate to the
+
+thirty-six weeks ended
+
+May 8, 2016
+
+, and
+
+May 10, 2015
+
+, respectively.
+
+Use of Estimates
+
+The preparation of financial statements in conformity with U.S. GAAP requires management to make estimates and assumptions that affect the reported amounts of assets and liabilities and the disclosure of contingent assets and liabilities at the date of the financial statements and the reported amounts of revenues and expenses during the reporting period. Actual results could differ from those estimates and assumptions.
+
+Fair Value of Financial Instruments
+
+The Company accounts for certain assets and liabilities at fair value. The carrying value of the Company's financial instruments, including cash and cash equivalents, receivables and accounts payable, approximate fair value due to their short-term nature or variable interest rates. See Notes 2, 3, and 4 for the carrying value and fair value of the Company's investments, derivative instruments, and fixed-rate debt, respectively.
+
+7
+
+Table of Contents
+
+Note 1—Summary of Significant Accounting Policies (Continued)
+
+Fair value is defined as the price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date. Fair value is estimated by applying a fair value hierarchy, which requires maximizing the use of observable inputs when measuring fair value. The three levels of inputs are:
+
+Level 1: Quoted market prices in active markets for identical assets or liabilities.
+
+Level 2: Observable market-based inputs or unobservable inputs that are corroborated by market data.
+
+Level 3: Significant unobservable inputs that are not corroborated by market data.
+
+The Company's current financial liabilities have fair values that approximate their carrying values. The Company's long-term financial liabilities consist of long-term debt, which is recorded on the balance sheet at issuance price and adjusted for any applicable unamortized discounts or premiums and debt issuance costs. There have been no material changes to the valuation techniques utilized in the fair value measurement of assets and liabilities as disclosed in the Company's
+
+2015
+
+Form 10-K.
+
+Merchandise Inventories
+
+Merchandise inventories are valued at the lower of cost or market, as determined primarily by the retail inventory method, and are stated using the last-in, first-out (LIFO) method for substantially all U.S. merchandise inventories. Merchandise inventories for all foreign operations are primarily valued by the retail inventory method and are stated using the first-in, first-out (FIFO) method. The Company believes the LIFO method more fairly presents the results of operations by more closely matching current costs with current revenues. The Company records an adjustment each quarter, if necessary, for the projected annual effect of inflation or deflation, and these estimates are adjusted to actual results determined at year-end, after actual inflation rates and inventory levels for the year have been determined.
+
+Due to overall net deflationary trends in the

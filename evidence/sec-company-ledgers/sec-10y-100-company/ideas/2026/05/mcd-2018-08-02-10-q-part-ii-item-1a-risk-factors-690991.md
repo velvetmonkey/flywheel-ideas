@@ -1,0 +1,1823 @@
+---
+id: idea-QwJ4DsQZ
+type: idea
+state: nascent
+title: MCD 2018-08-02 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:04:50.991Z'
+date: '2026-05-03'
+created: '2026-05-03T20:04:51.377Z'
+---
+# MCDONALDS CORP 10-Q Part II Item 1A Risk Factors
+
+Filed: 2018-08-02
+Source: https://www.sec.gov/Archives/edgar/data/63908/000006390818000049/mcd-6302018x10q.htm
+
+Risk Factors
+
+35
+
+Item 2 –
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+35
+
+Item 6 –
+
+Exhibits
+
+36
+
+Signature
+
+38
+
+All trademarks used herein are the property of their respective owners and are used with permission.
+
+2
+
+Table of Contents
+
+PART I – FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+CONDENSED CONSOLIDATED BALANCE SHEET
+
+(unaudited)
+
+In millions, except per share data
+
+June 30,
+
+2018
+
+December 31,
+
+2017
+
+Assets
+
+Current assets
+
+Cash and equivalents
+
+$
+
+1,623.5
+
+$
+
+2,463.8
+
+Accounts and notes receivable
+
+2,217.2
+
+1,976.2
+
+Inventories, at cost, not in excess of market
+
+49.6
+
+58.8
+
+Prepaid expenses and other current assets
+
+465.3
+
+828.4
+
+Total current assets
+
+4,355.6
+
+5,327.2
+
+Other assets
+
+Investments in and advances to affiliates
+
+1,127.6
+
+1,085.7
+
+Goodwill
+
+2,347.2
+
+2,379.7
+
+Miscellaneous
+
+2,516.8
+
+2,562.8
+
+Total other assets
+
+5,991.6
+
+6,028.2
+
+Property and equipment
+
+Property and equipment, at cost
+
+36,577.3
+
+36,626.4
+
+Accumulated depreciation and amortization
+
+(
+
+14,216.1
+
+)
+
+(
+
+14,178.1
+
+)
+
+Net property and equipment
+
+22,361.2
+
+22,448.3
+
+Total assets
+
+$
+
+32,708.4
+
+$
+
+33,803.7
+
+Liabilities and shareholders' equity
+
+Current liabilities
+
+Accounts payable
+
+$
+
+917.9
+
+$
+
+924.8
+
+Income taxes
+
+211.5
+
+265.8
+
+Other taxes
+
+278.8
+
+275.4
+
+Accrued interest
+
+236.4
+
+278.4
+
+Accrued payroll and other liabilities
+
+1,033.5
+
+1,146.2
+
+Current maturities of long-term debt
+
+292.2
+
+—
+
+Total current liabilities
+
+2,970.3
+
+2,890.6
+
+Long-term debt
+
+30,687.7
+
+29,536.4
+
+Long-term income taxes
+
+1,987.0
+
+2,370.9
+
+Deferred revenues - initial franchise fees
+
+606.7
+
+—
+
+Other long-term liabilities
+
+1,134.6
+
+1,154.4
+
+Deferred income taxes
+
+1,173.1
+
+1,119.4
+
+Shareholders' equity (deficit)
+
+Preferred stock, no par value; authorized – 165.0 million shares; issued – none
+
+—
+
+—
+
+Common stock, $.01 par value; authorized – 3.5 billion shares; issued – 1,660.6 million shares
+
+16.6
+
+16.6
+
+Additional paid-in capital
+
+7,195.2
+
+7,072.4
+
+Retained earnings
+
+49,106.7
+
+48,325.8
+
+Accumulated other comprehensive income (loss)
+
+(
+
+2,435.0
+
+)
+
+(
+
+2,178.4
+
+)
+
+Common stock in treasury, at cost; 884.8 and 866.5 million shares
+
+(
+
+59,734.5
+
+)
+
+(
+
+56,504.4
+
+)
+
+Total shareholders' equity (deficit)
+
+(
+
+5,851.0
+
+)
+
+(
+
+3,268.0
+
+)
+
+Total liabilities and shareholders' equity (deficit)
+
+$
+
+32,708.4
+
+$
+
+33,803.7
+
+See Notes to condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+CONDENSED CONSOLIDATED STATEMENT OF INCOME (UNAUDITED)
+
+Quarters Ended
+
+Six Months Ended
+
+June 30,
+
+June 30,
+
+In millions, except per share data
+
+2018
+
+2017
+
+2018
+
+2017
+
+Revenues
+
+Sales by Company-operated restaurants
+
+$
+
+2,594.9
+
+$
+
+3,569.6
+
+$
+
+5,130.5
+
+$
+
+6,981.5
+
+Revenues from franchised restaurants
+
+2,759.0
+
+2,480.1
+
+5,362.3
+
+4,744.1
+
+Total revenues
+
+5,353.9
+
+6,049.7
+
+10,492.8
+
+11,725.6
+
+Operating costs and expenses
+
+Company-operated restaurant expenses
+
+2,130.5
+
+2,903.3
+
+4,261.4
+
+5,719.7
+
+Franchised restaurants-occupancy expenses
+
+483.9
+
+438.0
+
+964.2
+
+868.1
+
+Selling, general & administrative expenses
+
+542.1
+
+525.4
+
+1,075.2
+
+1,046.7
+
+Other operating (income) expense, net
+
+(
+
+64.9
+
+)
+
+(
+
+112.1
+
+)
+
+(
+
+213.4
+
+)
+
+(
+
+238.0
+
+)
+
+Total operating costs and expenses
+
+3,091.6
+
+3,754.6
+
+6,087.4
+
+7,396.5
+
+Operating income
+
+2,262.3
+
+2,295.1
+
+4,405.4
+
+4,329.1
+
+Interest expense
+
+240.2
+
+230.9
+
+477.0
+
+449.5
+
+Nonoperating (income) expense, net
+
+4.0
+
+2.8
+
+22.4
+
+10.7
+
+Income before provision for income taxes
+
+2,018.1
+
+2,061.4
+
+3,906.0
+
+3,868.9
+
+Provision for income taxes
+
+521.8
+
+666.3
+
+1,034.3
+
+1,259.0
+
+Net income
+
+$
+
+1,496.3
+
+$
+
+1,395.1
+
+$
+
+2,871.7
+
+$
+
+2,609.9
+
+Earnings per common share-basic
+
+$
+
+1.92
+
+$
+
+1.72
+
+$
+
+3.66
+
+$
+
+3.20
+
+Earnings per common share-diluted
+
+$
+
+1.90
+
+$
+
+1.70
+
+$
+
+3.62
+
+$
+
+3.17
+
+Dividends declared per common share
+
+$
+
+1.01
+
+$
+
+0.94
+
+$
+
+2.02
+
+$
+
+1.88
+
+Weighted-average shares outstanding-basic
+
+780.0
+
+811.6
+
+785.4
+
+815.2
+
+Weighted-average shares outstanding-diluted
+
+787.1
+
+819.2
+
+793.0
+
+822.3
+
+See Notes to condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+CONDENSED CONSOLIDATED STATEMENT OF COMPREHENSIVE INCOME (UNAUDITED)
+
+Quarters Ended
+
+Six Months Ended
+
+June 30,
+
+June 30,
+
+In millions
+
+2018
+
+2017
+
+2018
+
+2017
+
+Net income
+
+$
+
+1,496.3
+
+$
+
+1,395.1
+
+$
+
+2,871.7
+
+$
+
+2,609.9
+
+Other comprehensive income (loss), net of tax
+
+Foreign currency translation adjustments:
+
+Gain (loss) recognized in accumulated other comprehensive
+
+income (AOCI), including net investment hedges
+
+(
+
+326.4
+
+)
+
+245.7
+
+(
+
+300.7
+
+)
+
+533.3
+
+Reclassification of (gain) loss to net income
+
+—
+
+(
+
+4.6
+
+)
+
+—
+
+104.4
+
+Foreign currency translation adjustments-net of tax
+
+benefit (expense) of $(143.9), $227.6, $(71.6) and $272.1
+
+(
+
+326.4
+
+)
+
+241.1
+
+(
+
+300.7
+
+)
+
+637.7
+
+Cash flow hedges:
+
+Gain (loss) recognized in AOCI
+
+32.2
+
+(
+
+23.2
+
+)
+
+24.7
+
+(
+
+30.3
+
+)
+
+Reclassification of (gain) loss to net income
+
+3.6
+
+(
+
+2.0
+
+)
+
+15.6
+
+(
+
+5.9
+
+)
+
+Cash flow hedges-net of tax benefit (expense) of $(10.5), $14.3, $(11.7) and $20.5
+
+35.8
+
+(
+
+25.2
+
+)
+
+40.3
+
+(
+
+36.2
+
+)
+
+Defined benefit pension plans:
+
+Gain (loss) recognized in AOCI
+
+—
+
+—
+
+(
+
+1.1
+
+)
+
+(
+
+0.3
+
+)
+
+Reclassification of (gain) loss to net income
+
+2.1
+
+2.7
+
+4.9
+
+5.3
+
+Defined benefit pension plans-net of tax benefit (expense)
+
+of $0.1, $0.0, $(0.8) and $(0.5)
+
+2.1
+
+2.7
+
+3.8
+
+5.0
+
+Total other comprehensive income (loss), net of tax
+
+(
+
+288.5
+
+)
+
+218.6
+
+(
+
+256.6
+
+)
+
+606.5
+
+Comprehensive income (loss)
+
+$
+
+1,207.8
+
+$
+
+1,613.7
+
+$
+
+2,615.1
+
+$
+
+3,216.4
+
+See Notes to condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+CONDENSED CONSOLIDATED STATEMENT OF CASH FLOWS (UNAUDITED)
+
+Quarters Ended
+
+Six Months Ended
+
+June 30,
+
+June 30,
+
+In millions
+
+2018
+
+2017
+
+2018
+
+2017
+
+Operating activities
+
+Net income
+
+$
+
+1,496.3
+
+$
+
+1,395.1
+
+$
+
+2,871.7
+
+$
+
+2,609.9
+
+Adjustments to reconcile to cash provided by operations
+
+Charges and credits:
+
+Depreciation and amortization
+
+365.0
+
+339.5
+
+727.9
+
+664.8
+
+Deferred income taxes
+
+54.4
+
+64.6
+
+83.6
+
+150.5
+
+Share-based compensation
+
+23.9
+
+21.3
+
+63.7
+
+44.0
+
+Other
+
+(
+
+90.7
+
+)
+
+(
+
+76.0
+
+)
+
+(
+
+145.6
+
+)
+
+(
+
+188.7
+
+)
+
+Changes in working capital items
+
+(
+
+510.1
+
+)
+
+(
+
+531.1
+
+)
+
+(
+
+617.3
+
+)
+
+(
+
+523.1
+
+)
+
+Cash provided by operations
+
+1,338.8
+
+1,213.4
+
+2,984.0
+
+2,757.4
+
+Investing activities
+
+Capital expenditures
+
+(
+
+611.3
+
+)
+
+(
+
+368.7
+
+)
+
+(
+
+1,164.1
+
+)
+
+(
+
+796.4
+
+)
+
+Purchases of restaurant businesses
+
+(
+
+11.6
+
+)
+
+(
+
+15.0
+
+)
+
+(
+
+35.3
+
+)
+
+(
+
+18.1
+
+)
+
+Sales of restaurant businesses
+
+143.2
+
+304.1
+
+329.9
+
+849.9
+
+Sales of property
+
+52.8
+
+28.8
+
+124.5
+
+94.1
+
+Other
+
+(
+
+63.9
+
+)
+
+(
+
+96.0
+
+)
+
+(
+
+104.9
+
+)
+
+(
+
+138.2
+
+)
+
+Cash provided by (used for) investing activities
+
+(
+
+490.8
+
+)
+
+(
+
+146.8
+
+)
+
+(
+
+849.9
+
+)
+
+(
+
+8.7
+
+)
+
+Financing activities
+
+Net short-term borrowings
+
+239.7
+
+(
+
+9.3
+
+)
+
+795.7
+
+(
+
+778.5
+
+)
+
+Long-term financing issuances
+
+500.5
+
+537.1
+
+2,000.2
+
+2,530.1
+
+Long-term financing repayments
+
+(
+
+1.2
+
+)
+
+(
+
+1.4
+
+)
+
+(
+
+1,002.8
+
+)
+
+(
+
+403.5
+
+)
+
+Treasury stock purchases
+
+(
+
+1,607.2
+
+)
+
+(
+
+1,107.7
+
+)
+
+(
+
+3,240.1
+
+)
+
+(
+
+1,855.7
+
+)
+
+Common stock dividends
+
+(
+
+786.1
+
+)
+
+(
+
+761.5
+
+)
+
+(
+
+1,583.6
+
+)
+
+(
+
+1,532.1
+
+)
+
+Proceeds from stock option exercises
+
+91.7
+
+174.4
+
+167.0
+
+290.6
+
+Other
+
+(
+
+1.6
+
+)
+
+1.9
+
+(
+
+6.8
+
+)
+
+(
+
+4.6
+
+)
+
+Cash used for financing activities
+
+(
+
+1,564.2
+
+)
+
+(
+
+1,166.5
+
+)
+
+(
+
+2,870.4
+
+)
+
+(
+
+1,753.7
+
+)
+
+Effect of exchange rates on cash and cash equivalents
+
+(
+
+128.3
+
+)
+
+98.7
+
+(
+
+104.0
+
+)
+
+153.4
+
+Cash and equivalents increase (decrease)
+
+(
+
+844.5
+
+)
+
+(
+
+1.2
+
+)
+
+(
+
+840.3
+
+)
+
+1,148.4
+
+Change in cash balances of businesses held for sale
+
+—
+
+(
+
+18.6
+
+)
+
+—
+
+20.6
+
+Cash and equivalents at beginning of period
+
+2,468.0
+
+2,412.2
+
+2,463.8
+
+1,223.4
+
+Cash and equivalents at end of period
+
+$
+
+1,623.5
+
+$
+
+2,392.4
+
+$
+
+1,623.5
+
+$
+
+2,392.4
+
+See Notes to condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+CONDENSED CONSOLIDATED STATEMENT OF SHAREHOLDERS' EQUITY (UNAUDITED)
+
+Common stock
+
+issued
+
+Accumulated other
+
+comprehensive income (loss)
+
+Common stock in
+
+treasury
+
+Total
+
+shareholders'
+
+equity
+
+Additional
+
+paid-in
+
+capital
+
+Retained
+
+earnings
+
+Pensions
+
+Cash flow
+
+hedges
+
+Foreign
+
+currency
+
+translation
+
+In millions, except per share data
+
+Shares
+
+Amount
+
+Shares
+
+Amount
+
+Balance at December 31, 2017
+
+1,660.6
+
+$
+
+16.6
+
+$
+
+7,072.4
+
+$
+
+48,325.8
+
+$
+
+(
+
+190.2
+
+)
+
+$
+
+(
+
+16.5
+
+)
+
+$
+
+(
+
+1,971.7
+
+)
+
+(
+
+866.5
+
+)
+
+$
+
+(
+
+56,504.4
+
+)
+
+$
+
+(
+
+3,268.0
+
+)
+
+Net income
+
+2,871.7
+
+2,871.7
+
+Other comprehensive income (loss), net of tax
+
+3.8
+
+40.3
+
+(
+
+300.7
+
+)
+
+(
+
+256.6
+
+)
+
+Comprehensive income
+
+2,615.1
+
+Adoption of ASC 606
+
+(1)
+
+(
+
+450.2
+
+)
+
+(
+
+450.2
+
+)
+
+Adoption of ASU 2016-16
+
+(2)
+
+(
+
+57.0
+
+)
+
+(
+
+57.0
+
+)
+
+Common stock cash dividends
+
+($2.02 per share)
+
+(
+
+1,583.6
+
+)
+
+(
+
+1,583.6
+
+)
+
+Treasury stock purchases
+
+(
+
+20.8
+
+)
+
+(
+
+3,336.3
+
+)
+
+(
+
+3,336.3
+
+)
+
+Share-based compensation
+
+63.7
+
+63.7
+
+Stock option exercises and other
+
+59.1
+
+2.5
+
+106.2
+
+165.3
+
+Balance at June 30, 2018
+
+1,660.6
+
+16.6
+
+7,195.2
+
+49,106.7
+
+(
+
+186.4
+
+)
+
+23.8
+
+(
+
+2,272.4
+
+)
+
+(
+
+884.8
+
+)
+
+(
+
+59,734.5
+
+)
+
+(
+
+5,851.0
+
+)
+
+(1) Accounting Standards Codification ("ASC") 606, "Revenue Recognition - Revenue from Contracts with Customers." Refer to the
+
+Recent Accounting Pronouncements
+
+footnote on page 8 for further details.
+
+(2) Accounting Standards Update ("ASU") 2016-16, "Income Taxes (Topic 740): Intra-Entity Transfers of Assets Other Than Inventory." Refer to the
+
+Recent Accounting Pronouncements
+
+footnote on page 8 for further details.
+
+See Notes to condensed consolidated financial statements.
+
+7
+
+Table of Contents
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED)
+
+Basis of Presentation
+
+The accompanying condensed consolidated financial statements should be read in conjunction with the consolidated financial statements contained in the Company's
+
+December 31, 2017
+
+Annual Report on Form 10-K. In the opinion of management, all adjustments (consisting of normal recurring accruals) necessary for a fair presentation have been included. The results for the quarter and
+
+six months
+
+ended
+
+June 30, 2018
+
+, do not necessarily indicate the results that may be expected for the full year.
+
+Restaurant Information
+
+The following table presents restaurant information by ownership type:
+
+Restaurants at June 30,
+
+2018
+
+2017
+
+Conventional franchised
+
+21,535
+
+21,317
+
+Developmental licensed
+
+7,013
+
+7,263
+
+Foreign affiliated
+
+5,973
+
+3,356
+
+Total Franchised
+
+34,521
+
+31,936
+
+Company-operated
+
+2,885
+
+5,075
+
+Systemwide restaurants
+
+37,406
+
+37,011
+
+The results of operations of restaurant businesses purchased and sold in transactions with franchisees were not material either individually or in the aggregate to the condensed consolidated financial statements for the periods prior to purchase and sale.
+
+Per Common Share Information
+
+Diluted earnings per common share is calculated using net income divided by diluted weighted-average shares. Diluted weighted-average shares include weighted-average shares outstanding plus the dilutive effect of share-based compensation, calculated using the treasury stock method, of
+
+7.1
+
+million
+
+shares and
+
+7.6
+
+million
+
+shares for the quarters
+
+2018
+
+and
+
+2017
+
+, respectively, and
+
+7.6
+
+million
+
+shares and
+
+7.1
+
+million
+
+shares for the
+
+six months
+
+2018
+
+and
+
+2017
+
+, respectively. Stock options that would have been antidilutive, and therefore were not included in the calculation of diluted weighted-average shares, totaled
+
+2.6
+
+million
+
+shares and
+
+0.1
+
+million
+
+shares for the quarters
+
+2018
+
+and
+
+2017
+
+, respectively, and
+
+2.6
+
+million
+
+shares and
+
+4.0
+
+million
+
+shares for the
+
+six months
+
+2018
+
+and
+
+2017
+
+, respectively.
+
+Recent Accounting Pronouncements
+
+Recently Issued Accounting Standards
+
+Measurement Period - Tax Cuts and Jobs Act of 2017
+
+In December 2017, the Securities and Exchange Commission published Staff Accounting Bulletin No. 118 ("SAB 118"), which provides guidance on reporting for accounting impacts of the Tax Cuts and Jobs Act of 2017 ("Tax Act"). SAB 118 allowed the Company to provide reasonable estimates in its 2017 consolidated financial statements for the income tax effects of the Tax Act and to report those effects as provisional amounts in its financial statements through a limited measurement period. Under SAB 118, the measurement period may not extend beyond one year from the enactment of the Tax Act.
+
+The Company has not completed the accounting for the tax effects of the enactment of the Tax Act, although it has made reasonable estimates of the effects on existing deferred tax balances and on the one-time transition tax on earnings of certain foreign subsidiaries. Certain aspects of the Tax Act are expected to be clarified, and as such, could impact these estimates. A net provisional tax cost of approximately
+
+$
+
+700
+
+million
+
+was originally recognized in the Company's 2017 consolidated financial statements, and subsequently increased by
+
+$
+
+52
+
+million
+
+in the first quarter of 2018.
+
+Lease Accounting
+
+In February 2016, the Financial Accounting Standards Board ("FASB") issued ASU 2016-02, "Leases (Topic 842)," to increase transparency and comparability among organizations by recognizing lease assets and lease liabilities on the balance sheet and disclosing key information about leasing arrangements. Most prominent among the amendments is the recognition of assets and liabilities by lessees for those leases classified as operating leases under current U.S. GAAP. ASU 2016-02 is effective for fiscal years beginning after December 15, 2018, including interim periods within those fiscal years, with early adoption permitted. The Company will adopt the new standard effective January 1, 2019.
+
+At transition, the Company will recognize and measure leases using the required modified retrospective approach. The Company anticipates ASU 2016-02 will have a material impact on the consolidated balance sheet due to the significance of the Company's operating lease portfolio. The Company will elect an optional practical expedient to retain the current classification of leases, and, therefore,

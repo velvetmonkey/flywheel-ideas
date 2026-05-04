@@ -1,0 +1,1453 @@
+---
+id: idea-LNWVVxdA
+type: idea
+state: nascent
+title: VZ 2024-07-25 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:52:37.035Z'
+date: '2026-05-03'
+created: '2026-05-03T20:52:40.268Z'
+---
+# VERIZON COMMUNICATIONS INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2024-07-25
+Source: https://www.sec.gov/Archives/edgar/data/732712/000073271224000052/vz-20240630.htm
+
+Risk Factors
+
+54
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+55
+
+Item 5.
+
+Other Information
+
+55
+
+Item 6.
+
+Exhibits
+
+56
+
+Signature
+
+57
+
+Certifications
+
+Table of Contents
+
+Part I - Financial Information
+
+Item 1. Financial Statements (Unaudited)
+
+Condensed Consolidated Statements of Income
+
+Verizon Communications Inc. and Subsidiaries
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+June 30,
+
+(dollars in millions, except per share amounts) (unaudited)
+
+2024
+
+2023
+
+2024
+
+2023
+
+Operating Revenues
+
+Service revenues and other
+
+$
+
+27,798
+
+$
+
+27,319
+
+$
+
+55,418
+
+$
+
+54,471
+
+Wireless equipment revenues
+
+4,998
+
+5,277
+
+10,359
+
+11,037
+
+Total Operating Revenues
+
+32,796
+
+32,596
+
+65,777
+
+65,508
+
+Operating Expenses
+
+Cost of services (exclusive of items shown below)
+
+6,904
+
+6,986
+
+13,871
+
+14,064
+
+Cost of wireless equipment
+
+5,567
+
+5,778
+
+11,472
+
+12,204
+
+Selling, general and administrative expense
+
+8,024
+
+8,253
+
+16,167
+
+15,759
+
+Depreciation and amortization expense
+
+4,483
+
+4,359
+
+8,928
+
+8,677
+
+Total Operating Expenses
+
+24,978
+
+25,376
+
+50,438
+
+50,704
+
+Operating Income
+
+7,818
+
+7,220
+
+15,339
+
+14,804
+
+Equity in losses of unconsolidated businesses
+
+(
+
+14
+
+)
+
+(
+
+33
+
+)
+
+(
+
+23
+
+)
+
+(
+
+24
+
+)
+
+Other income (expense), net
+
+(
+
+72
+
+)
+
+210
+
+126
+
+324
+
+Interest expense
+
+(
+
+1,698
+
+)
+
+(
+
+1,285
+
+)
+
+(
+
+3,333
+
+)
+
+(
+
+2,492
+
+)
+
+Income Before Provision For Income Taxes
+
+6,034
+
+6,112
+
+12,109
+
+12,612
+
+Provision for income taxes
+
+(
+
+1,332
+
+)
+
+(
+
+1,346
+
+)
+
+(
+
+2,685
+
+)
+
+(
+
+2,828
+
+)
+
+Net Income
+
+$
+
+4,702
+
+$
+
+4,766
+
+$
+
+9,424
+
+$
+
+9,784
+
+Net income attributable to noncontrolling interests
+
+$
+
+109
+
+$
+
+118
+
+$
+
+229
+
+$
+
+227
+
+Net income attributable to Verizon
+
+4,593
+
+4,648
+
+9,195
+
+9,557
+
+Net Income
+
+$
+
+4,702
+
+$
+
+4,766
+
+$
+
+9,424
+
+$
+
+9,784
+
+Basic Earnings Per Common Share
+
+Net income attributable to Verizon
+
+$
+
+1.09
+
+$
+
+1.10
+
+$
+
+2.18
+
+$
+
+2.27
+
+Weighted-average shares outstanding (in millions)
+
+4,215
+
+4,208
+
+4,215
+
+4,207
+
+Diluted Earnings Per Common Share
+
+Net income attributable to Verizon
+
+$
+
+1.09
+
+$
+
+1.10
+
+$
+
+2.18
+
+$
+
+2.27
+
+Weighted-average shares outstanding (in millions)
+
+4,221
+
+4,213
+
+4,220
+
+4,212
+
+See Notes to Condensed Consolidated Financial Statements
+
+4
+
+Table of Contents
+
+Condensed Consolidated Statements of Comprehensive Income
+
+Verizon Communications Inc. and Subsidiaries
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+June 30,
+
+(dollars in millions) (unaudited)
+
+2024
+
+2023
+
+2024
+
+2023
+
+Net Income
+
+$
+
+4,702
+
+$
+
+4,766
+
+$
+
+9,424
+
+$
+
+9,784
+
+Other Comprehensive Income (Loss), Net of Tax (Expense) Benefit
+
+Foreign currency translation adjustments, net of tax of $(
+
+1
+
+), $
+
+1
+
+, $(
+
+6
+
+) and $
+
+4
+
+—
+
+(
+
+6
+
+)
+
+(
+
+50
+
+)
+
+20
+
+Unrealized gain on cash flow hedges, net of tax of $(
+
+7
+
+), $(
+
+8
+
+), $(
+
+18
+
+) and $(
+
+15
+
+)
+
+19
+
+25
+
+54
+
+46
+
+Unrealized gain (loss) on fair value hedges, net of tax of $
+
+36
+
+, $(
+
+100
+
+), $(
+
+32
+
+) and $
+
+3
+
+(
+
+104
+
+)
+
+293
+
+96
+
+(
+
+9
+
+)
+
+Unrealized gain (loss) on marketable securities, net of tax of $
+
+0
+
+, $
+
+0
+
+, $
+
+1
+
+and $(
+
+1
+
+)
+
+(
+
+1
+
+)
+
+(
+
+2
+
+)
+
+(
+
+3
+
+)
+
+2
+
+Defined benefit pension and postretirement plans, net of tax of $
+
+1
+
+, $
+
+21
+
+, $
+
+2
+
+and $
+
+36
+
+(
+
+2
+
+)
+
+(
+
+54
+
+)
+
+(
+
+4
+
+)
+
+(
+
+115
+
+)
+
+Other comprehensive income (loss) attributable to Verizon
+
+(
+
+88
+
+)
+
+256
+
+93
+
+(
+
+56
+
+)
+
+Total Comprehensive Income
+
+$
+
+4,614
+
+$
+
+5,022
+
+$
+
+9,517
+
+$
+
+9,728
+
+Comprehensive income attributable to noncontrolling interests
+
+$
+
+109
+
+$
+
+118
+
+$
+
+229
+
+$
+
+227
+
+Comprehensive income attributable to Verizon
+
+4,505
+
+4,904
+
+9,288
+
+9,501
+
+Total Comprehensive Income
+
+$
+
+4,614
+
+$
+
+5,022
+
+$
+
+9,517
+
+$
+
+9,728
+
+See Notes to Condensed Consolidated Financial Statements
+
+5
+
+Table of Contents
+
+Condensed Consolidated Balance Sheets
+
+Verizon Communications Inc. and Subsidiaries
+
+At June 30,
+
+At December 31,
+
+(dollars in millions, except per share amounts) (unaudited)
+
+2024
+
+2023
+
+Assets
+
+Current assets
+
+Cash and cash equivalents
+
+$
+
+2,432
+
+$
+
+2,065
+
+Accounts receivable
+
+26,702
+
+26,102
+
+Less Allowance for credit losses
+
+1,095
+
+1,017
+
+Accounts receivable, net
+
+25,607
+
+25,085
+
+Inventories
+
+1,841
+
+2,057
+
+Prepaid expenses and other
+
+8,176
+
+7,607
+
+Total current assets
+
+38,056
+
+36,814
+
+Property, plant and equipment
+
+324,978
+
+320,108
+
+Less Accumulated depreciation
+
+217,088
+
+211,798
+
+Property, plant and equipment, net
+
+107,890
+
+108,310
+
+Investments in unconsolidated businesses
+
+908
+
+953
+
+Wireless licenses
+
+156,291
+
+155,667
+
+Goodwill
+
+22,842
+
+22,843
+
+Other intangible assets, net
+
+10,680
+
+11,057
+
+Operating lease right-of-use assets
+
+24,064
+
+24,726
+
+Other assets
+
+18,415
+
+19,885
+
+Total assets
+
+$
+
+379,146
+
+$
+
+380,255
+
+Liabilities and Equity
+
+Current liabilities
+
+Debt maturing within one year
+
+$
+
+23,255
+
+$
+
+12,973
+
+Accounts payable and accrued liabilities
+
+19,727
+
+23,453
+
+Current operating lease liabilities
+
+4,247
+
+4,266
+
+Other current liabilities
+
+13,577
+
+12,531
+
+Total current liabilities
+
+60,806
+
+53,223
+
+Long-term debt
+
+126,022
+
+137,701
+
+Employee benefit obligations
+
+12,812
+
+13,189
+
+Deferred income taxes
+
+46,082
+
+45,781
+
+Non-current operating lease liabilities
+
+19,456
+
+20,002
+
+Other liabilities
+
+16,429
+
+16,560
+
+Total long-term liabilities
+
+220,801
+
+233,233
+
+Commitments and Contingencies (Note 12)
+
+Equity
+
+Series preferred stock ($
+
+0.10
+
+par value;
+
+250,000,000
+
+shares authorized;
+
+none
+
+issued)
+
+—
+
+—
+
+Common stock ($
+
+0.10
+
+par value;
+
+6,250,000,000
+
+shares authorized in each period;
+
+4,291,433,646
+
+shares issued in each period)
+
+429
+
+429
+
+Additional paid in capital
+
+13,539
+
+13,631
+
+Retained earnings
+
+86,504
+
+82,915
+
+Accumulated other comprehensive loss
+
+(
+
+1,287
+
+)
+
+(
+
+1,380
+
+)
+
+Common stock in treasury, at cost (
+
+81,913,650
+
+and
+
+87,172,997
+
+shares outstanding)
+
+(
+
+3,590
+
+)
+
+(
+
+3,821
+
+)
+
+Deferred compensation – employee stock ownership plans (ESOPs) and other
+
+577
+
+656
+
+Noncontrolling interests
+
+1,367
+
+1,369
+
+Total equity
+
+97,539
+
+93,799
+
+Total liabilities and equity
+
+$
+
+379,146
+
+$
+
+380,255
+
+See Notes to Condensed Consolidated Financial Statements
+
+6
+
+Table of Contents
+
+Condensed Consolidated Statements of Cash Flows
+
+Verizon Communications Inc. and Subsidiaries
+
+Six Months Ended
+
+June 30,
+
+(dollars in millions) (unaudited)
+
+2024
+
+2023
+
+Cash Flows from Operating Activities
+
+Net Income
+
+$
+
+9,424
+
+$
+
+9,784
+
+Adjustments to reconcile net income to net cash provided by operating activities:
+
+Depreciation and amortization expense
+
+8,928
+
+8,677
+
+Employee retirement benefits
+
+354
+
+108
+
+Deferred income taxes
+
+282
+
+633
+
+Provision for expected credit losses
+
+1,119
+
+1,061
+
+Equity in losses of unconsolidated businesses, inclusive of dividends received
+
+33
+
+49
+
+Changes in current assets and liabilities, net of effects from acquisition/disposition of businesses
+
+(
+
+3,572
+
+)
+
+(
+
+620
+
+)
+
+Other, net
+
+1
+
+(
+
+1,672
+
+)
+
+Net cash provided by operating activities
+
+16,569
+
+18,020
+
+Cash Flows from Investing Activities
+
+Capital expenditures (including capitalized software)
+
+(
+
+8,071
+
+)
+
+(
+
+10,070
+
+)
+
+Acquisitions of wireless licenses
+
+(
+
+613
+
+)
+
+(
+
+1,085
+
+)
+
+Collateral receipts (payments) related to derivative contracts, net
+
+(
+
+424
+
+)
+
+824
+
+Other, net
+
+(
+
+2
+
+)
+
+131
+
+Net cash used in investing activities
+
+(
+
+9,110
+
+)
+
+(
+
+10,200
+
+)
+
+Cash Flows from Financing Activities
+
+Proceeds from long-term borrowings
+
+3,122
+
+1,503
+
+Proceeds from asset-backed long-term borrowings
+
+5,828
+
+3,705
+
+Net proceeds from (repayments of) short-term commercial paper
+
+603
+
+(
+
+167
+
+)
+
+Repayments of long-term borrowings and finance lease obligations
+
+(
+
+5,719
+
+)
+
+(
+
+2,600
+
+)
+
+Repayments of asset-backed long-term borrowings
+
+(
+
+4,008
+
+)
+
+(
+
+2,383
+
+)
+
+Dividends paid
+
+(
+
+5,598
+
+)
+
+(
+
+5,487
+
+)
+
+Other, net
+
+(
+
+1,290
+
+)
+
+(
+
+157
+
+)
+
+Net cash used in financing activities
+
+(
+
+7,062
+
+)
+
+(
+
+5,586
+
+)
+
+Increase in cash, cash equivalents and restricted cash
+
+397
+
+2,234
+
+Cash, cash equivalents and restricted cash, beginning of period
+
+3,497
+
+4,111
+
+Cash, cash equivalents and restricted cash, end of period (Note 1)
+
+$
+
+3,894
+
+$
+
+6,345
+
+See Notes to Condensed Consolidated Financial Statements
+
+7
+
+Table of Contents
+
+Notes to Condensed Consolidated Financial Statements
+
+(Unaudited)
+
+Verizon Communications Inc. and Subsidiaries
+
+Note 1. Basis of Presentation
+
+Verizon Communications Inc. (the Company) is a holding company that, acting through its subsidiaries (together with the Company, collectively, Verizon), is one of the world's leading providers of communications, technology, information and entertainment products and services to consumers, businesses and government entities. With a presence around the world, we offer data, video and voice services and solutions on our networks and platforms that are designed to meet customers' demand for mobility, reliable network connectivity and security.
+
+The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with generally accepted accounting principles (GAAP) in the United States (U.S.) and based upon Securities and Exchange Commission rules that permit reduced disclosure for interim periods. For a more complete discussion of significant accounting policies and certain other information, you should refer to the financial statements included in the Company's Annual Report on Form 10-K for the year ended December 31, 2023. These financial statements reflect all adjustments that are necessary for a fair presentation of results of operations and financial condition for the interim periods shown, including normal recurring accruals and other items. The results for the interim periods are not necessarily indicative of results for the full year.
+
+Earnings Per Common Share
+
+There were a total of approximately
+
+5.3
+
+million and
+
+4.5
+
+million
+
+outstanding dilutive securities, primarily consisting of performance stock units and restricted stock units, included in the computation of diluted earnings per common share for the three and six months ended June 30, 2024,
+
+respectively.
+
+There were a total of approximately
+
+5.6
+
+million
+
+and
+
+4.6
+
+million
+
+outstanding dilutive securities, primarily consisting of performance stock units and restricted stock units, included in the computation of diluted earnings per common share for the three and six months ended
+
+June 30, 2023, respectively
+
+.
+
+Cash, Cash Equivalents and Restricted Cash
+
+We consider all highly liquid investments with an original maturity of 90 days or less when purchased to be cash equivalents. Cash equivalents are stated at cost, which approximates quoted market value and includes amounts held in money market funds.
+
+Cash collections on the receivables
+
+and on the underlying receivables related to the participation interest
+
+collateralizing our asset-backed debt securities are required at certain specified times to be placed into segregated accounts. Deposits to the segregated accounts are considered restricted cash.
+
+Cash, cash equivalents and restricted cash are included in the following line items in the condensed consolidated balance sheets:
+
+At June 30,
+
+At December 31,
+
+Increase / (Decrease)
+
+(dollars in millions)
+
+2024
+
+2023
+
+Cash and cash equivalents
+
+$
+
+2,432
+
+$
+
+2,065
+
+$
+
+367
+
+Restricted cash:
+
+Prepaid expenses and other
+
+1,354
+
+1,244
+
+110
+
+Other assets
+
+108
+
+188
+
+(
+
+80
+
+)
+
+Cash, cash equivalents and restricted cash
+
+$
+
+3,894
+
+$
+
+3,497
+
+$
+
+397
+
+Note 2. Revenues and Contract Costs
+
+We earn revenue from contracts with customers, primarily through the provision of telecommunications and other services and through the sale of wireless equipment.
+
+Revenue by Category
+
+We have
+
+two
+
+reportable segments that we operate and manage as strategic business units, Consumer and Business. Revenue is disaggregated by products and services within Consumer, and customer groups (Enterprise and Public Sector, Business Markets and Other, and Wholesale) within Business. See Note 10 for additional information on revenue by segment, including Corporate and other.
+
+We also earn revenues that are not accounted for under Topic 606 from leasing arrangements (such as those for towers and equipment), captive reinsurance arrangements primarily related to wireless device insurance and the interest recognized when equipment is sold to the customer by an authorized agent under a device payment plan agreement. We have elected the practical expedient within Topic 842, to combine the lease and non-lease components for those customer arrangements under Topic 606 that involve customer premise equipment where we are the lessor.
+
+During the three and six months ended June 30, 2024 revenues from arrangements that were not accounted for under Topic 606 were approximately $
+
+753
+
+million and $
+
+1.5
+
+billion,
+
+8
+
+Table of Contents
+
+respectively. During the three and six months ended June 30, 2023, revenues from arrangements that were not accounted for under Topic 606 were approximately $
+
+754
+
+million and $

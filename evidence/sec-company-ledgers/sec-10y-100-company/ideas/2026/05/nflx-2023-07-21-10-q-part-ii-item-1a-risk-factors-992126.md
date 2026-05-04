@@ -1,0 +1,1649 @@
+---
+id: idea-VZDpZxGx
+type: idea
+state: nascent
+title: NFLX 2023-07-21 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:43:12.126Z'
+date: '2026-05-03'
+created: '2026-05-03T20:43:12.633Z'
+---
+# NETFLIX INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2023-07-21
+Source: https://www.sec.gov/Archives/edgar/data/1065280/000106528023000198/nflx-20230630.htm
+
+Risk Factors
+
+33
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+33
+
+Item 5.
+
+Other Information
+
+33
+
+Item 6.
+
+Exhibits
+
+33
+
+Exhibit Index
+
+34
+
+Signatures
+
+34
+
+2
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Operations
+
+(unaudited)
+
+(in thousands, except per share data)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+Revenues
+
+$
+
+8,187,301
+
+$
+
+7,970,141
+
+$
+
+16,348,804
+
+$
+
+15,837,908
+
+Cost of revenues
+
+4,673,470
+
+4,690,755
+
+9,477,095
+
+8,975,460
+
+Marketing
+
+627,168
+
+574,960
+
+1,182,530
+
+1,130,938
+
+Technology and development
+
+657,983
+
+716,846
+
+1,345,258
+
+1,374,376
+
+General and administrative
+
+401,497
+
+409,297
+
+802,421
+
+807,225
+
+Operating income
+
+1,827,183
+
+1,578,283
+
+3,541,500
+
+3,549,909
+
+Other income (expense):
+
+Interest expense
+
+(
+
+174,812
+
+)
+
+(
+
+175,455
+
+)
+
+(
+
+349,051
+
+)
+
+(
+
+363,034
+
+)
+
+Interest and other income (expense)
+
+26,961
+
+220,226
+
+(
+
+44,243
+
+)
+
+415,871
+
+Income before income taxes
+
+1,679,332
+
+1,623,054
+
+3,148,206
+
+3,602,746
+
+Provision for income taxes
+
+(
+
+191,722
+
+)
+
+(
+
+182,103
+
+)
+
+(
+
+355,476
+
+)
+
+(
+
+564,348
+
+)
+
+Net income
+
+$
+
+1,487,610
+
+$
+
+1,440,951
+
+$
+
+2,792,730
+
+$
+
+3,038,398
+
+Earnings per share:
+
+Basic
+
+$
+
+3.35
+
+$
+
+3.24
+
+$
+
+6.28
+
+$
+
+6.84
+
+Diluted
+
+$
+
+3.29
+
+$
+
+3.20
+
+$
+
+6.18
+
+$
+
+6.73
+
+Weighted-average shares of common stock outstanding:
+
+Basic
+
+443,881
+
+444,557
+
+444,559
+
+444,352
+
+Diluted
+
+451,572
+
+450,169
+
+451,990
+
+451,578
+
+See accompanying notes to the consolidated financial statements.
+
+3
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Comprehensive Income
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+Net income
+
+$
+
+1,487,610
+
+$
+
+1,440,951
+
+$
+
+2,792,730
+
+$
+
+3,038,398
+
+Other comprehensive income (loss):
+
+Foreign currency translation adjustments
+
+52,429
+
+(
+
+70,306
+
+)
+
+78,040
+
+(
+
+103,981
+
+)
+
+Comprehensive income
+
+$
+
+1,540,039
+
+$
+
+1,370,645
+
+$
+
+2,870,770
+
+$
+
+2,934,417
+
+See accompanying notes to the consolidated financial statements.
+
+4
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Cash Flows
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+1,487,610
+
+$
+
+1,440,951
+
+$
+
+2,792,730
+
+$
+
+3,038,398
+
+Adjustments to reconcile net income to net cash provided by operating activities:
+
+Additions to content assets
+
+(
+
+3,683,007
+
+)
+
+(
+
+4,687,011
+
+)
+
+(
+
+6,141,673
+
+)
+
+(
+
+8,271,175
+
+)
+
+Change in content liabilities
+
+46,119
+
+191,228
+
+(
+
+308,672
+
+)
+
+(
+
+155,921
+
+)
+
+Amortization of content assets
+
+3,410,021
+
+3,261,348
+
+6,870,005
+
+6,427,713
+
+Depreciation and amortization of property, equipment and intangibles
+
+89,385
+
+83,505
+
+179,720
+
+158,107
+
+Stock-based compensation expense
+
+78,030
+
+150,392
+
+177,129
+
+269,601
+
+Foreign currency remeasurement loss (gain) on debt
+
+28,952
+
+(
+
+304,513
+
+)
+
+109,603
+
+(
+
+466,334
+
+)
+
+Other non-cash items
+
+121,483
+
+205,374
+
+241,491
+
+307,342
+
+Deferred income taxes
+
+(
+
+103,172
+
+)
+
+(
+
+115,820
+
+)
+
+(
+
+201,954
+
+)
+
+(
+
+184,726
+
+)
+
+Changes in operating assets and liabilities:
+
+Other current assets
+
+(
+
+183,049
+
+)
+
+123,399
+
+(
+
+271,571
+
+)
+
+164,556
+
+Accounts payable
+
+38,332
+
+(
+
+122,048
+
+)
+
+(
+
+51,336
+
+)
+
+(
+
+337,492
+
+)
+
+Accrued expenses and other liabilities
+
+177,831
+
+(
+
+238,719
+
+)
+
+363,130
+
+112,044
+
+Deferred revenue
+
+49,647
+
+(
+
+10,376
+
+)
+
+47,257
+
+6,367
+
+Other non-current assets and liabilities
+
+(
+
+117,950
+
+)
+
+125,040
+
+(
+
+186,887
+
+)
+
+(
+
+42,891
+
+)
+
+Net cash provided by operating activities
+
+1,440,232
+
+102,750
+
+3,618,972
+
+1,025,589
+
+Cash flows from investing activities:
+
+Purchases of property and equipment
+
+(
+
+100,972
+
+)
+
+(
+
+90,018
+
+)
+
+(
+
+162,991
+
+)
+
+(
+
+211,176
+
+)
+
+Acquisitions
+
+—
+
+(
+
+68,876
+
+)
+
+—
+
+(
+
+193,397
+
+)
+
+Purchases of short-term investments
+
+(
+
+303,228
+
+)
+
+—
+
+(
+
+504,862
+
+)
+
+—
+
+Proceeds from maturities of short-term investments
+
+501,937
+
+—
+
+501,937
+
+—
+
+Net cash provided by (used in) investing activities
+
+97,737
+
+(
+
+158,894
+
+)
+
+(
+
+165,916
+
+)
+
+(
+
+404,573
+
+)
+
+Cash flows from financing activities:
+
+Repayments of debt
+
+—
+
+—
+
+—
+
+(
+
+700,000
+
+)
+
+Proceeds from issuance of common stock
+
+34,717
+
+11,250
+
+60,745
+
+24,928
+
+Repurchases of common stock
+
+(
+
+645,146
+
+)
+
+—
+
+(
+
+1,045,247
+
+)
+
+—
+
+Other financing activities
+
+(
+
+38,920
+
+)
+
+—
+
+(
+
+38,920
+
+)
+
+—
+
+Net cash provided by (used in) financing activities
+
+(
+
+649,349
+
+)
+
+11,250
+
+(
+
+1,023,422
+
+)
+
+(
+
+675,072
+
+)
+
+Effect of exchange rate changes on cash, cash equivalents and restricted cash
+
+39,626
+
+(
+
+145,198
+
+)
+
+66,049
+
+(
+
+156,646
+
+)
+
+Net increase (decrease) in cash, cash equivalents and restricted cash
+
+928,246
+
+(
+
+190,092
+
+)
+
+2,495,683
+
+(
+
+210,702
+
+)
+
+Cash, cash equivalents and restricted cash at beginning of period
+
+6,738,019
+
+6,034,501
+
+5,170,582
+
+6,055,111
+
+Cash, cash equivalents and restricted cash at end of period
+
+$
+
+7,666,265
+
+$
+
+5,844,409
+
+$
+
+7,666,265
+
+$
+
+5,844,409
+
+See accompanying notes to the consolidated financial statements.
+
+5
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Balance Sheets
+
+(in thousands, except share and par value data)
+
+As of
+
+June 30,
+
+2023
+
+December 31,
+
+2022
+
+(unaudited)
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+7,662,788
+
+$
+
+5,147,176
+
+Short-term investments
+
+914,201
+
+911,276
+
+Other current assets
+
+2,929,347
+
+3,208,021
+
+Total current assets
+
+11,506,336
+
+9,266,473
+
+Content assets, net
+
+32,520,774
+
+32,736,713
+
+Property and equipment, net
+
+1,471,968
+
+1,398,257
+
+Other non-current assets
+
+5,318,395
+
+5,193,325
+
+Total assets
+
+$
+
+50,817,473
+
+$
+
+48,594,768
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Current content liabilities
+
+$
+
+4,440,412
+
+$
+
+4,480,150
+
+Accounts payable
+
+615,374
+
+671,513
+
+Accrued expenses and other liabilities
+
+1,908,714
+
+1,514,650
+
+Deferred revenue
+
+1,311,918
+
+1,264,661
+
+Short-term debt
+
+399,387
+
+—
+
+Total current liabilities
+
+8,675,805
+
+7,930,974
+
+Non-current content liabilities
+
+2,849,387
+
+3,081,277
+
+Long-term debt
+
+14,070,151
+
+14,353,076
+
+Other non-current liabilities
+
+2,389,915
+
+2,452,040
+
+Total liabilities
+
+27,985,258
+
+27,817,367
+
+Commitments and contingencies (Note 7)
+
+Stockholders' equity:
+
+Common stock, $
+
+0.001
+
+par value;
+
+4,990,000,000
+
+shares authorized at June 30, 2023 and December 31, 2022;
+
+443,146,751
+
+and
+
+445,346,776
+
+issued and outstanding at June 30, 2023 and December 31, 2022, respectively
+
+4,874,208
+
+4,637,601
+
+Treasury stock at cost (
+
+4,635,858
+
+and
+
+1,564,478
+
+shares at June 30, 2023 and December 31, 2022, respectively)
+
+(
+
+1,876,753
+
+)
+
+(
+
+824,190
+
+)
+
+Accumulated other comprehensive loss
+
+(
+
+139,266
+
+)
+
+(
+
+217,306
+
+)
+
+Retained earnings
+
+19,974,026
+
+17,181,296
+
+Total stockholders' equity
+
+22,832,215
+
+20,777,401
+
+Total liabilities and stockholders' equity
+
+$
+
+50,817,473
+
+$
+
+48,594,768
+
+See accompanying notes to the consolidated financial statements.
+
+6
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Stockholders' Equity
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+Total stockholders' equity, beginning balances
+
+$
+
+21,828,196
+
+$
+
+17,544,039
+
+$
+
+20,777,401
+
+$
+
+15,849,248
+
+Common stock and additional paid-in capital:
+
+Beginning balances
+
+$
+
+4,762,395
+
+$
+
+4,155,580
+
+$
+
+4,637,601
+
+$
+
+4,024,561
+
+Issuance of common stock upon exercise of options
+
+33,783
+
+10,898
+
+59,478
+
+22,708
+
+Stock-based compensation expense
+
+78,030
+
+150,392
+
+177,129
+
+269,601
+
+Ending balances
+
+$
+
+4,874,208
+
+$
+
+4,316,870
+
+$
+
+4,874,208
+
+$
+
+4,316,870
+
+Treasury stock:
+
+Beginning balances
+
+$
+
+(
+
+1,228,920
+
+)
+
+$
+
+(
+
+824,190
+
+)
+
+$
+
+(
+
+824,190
+
+)
+
+$
+
+(
+
+824,190
+
+)
+
+Repurchases of common stock to be held as treasury stock
+
+(
+
+647,833
+
+)
+
+—
+
+(
+
+1,052,563
+
+)
+
+—
+
+Ending balances
+
+$
+
+(
+
+1,876,753
+
+)
+
+$
+
+(
+
+824,190
+
+)
+
+$
+
+(
+
+1,876,753
+
+)
+
+$
+
+(
+
+824,190
+
+)
+
+Accumulated other comprehensive loss:
+
+Beginning balances
+
+$
+
+(
+
+191,695
+
+)
+
+$
+
+(
+
+74,170
+
+)
+
+$
+
+(
+
+217,306
+
+)
+
+$
+
+(
+
+40,495
+
+)
+
+Other comprehensive income (loss)
+
+52,429
+
+(
+
+70,306
+
+)
+
+78,040
+
+(
+
+103,981
+
+)
+
+Ending balances
+
+$
+
+(
+
+139,266
+
+)
+
+$
+
+(
+
+144,476
+
+)
+
+$
+
+(
+
+139,266
+
+)
+
+$
+
+(
+
+144,476
+
+)
+
+Retained earnings:
+
+Beginning balances
+
+$
+
+18,486,416
+
+$
+
+14,286,819
+
+$
+
+17,181,296
+
+$
+
+12,689,372
+
+Net income
+
+1,487,610
+
+1,440,951
+
+2,792,730
+
+3,038,398
+
+Ending balances
+
+$
+
+19,974,026
+
+$
+
+15,727,770
+
+$
+
+19,974,026
+
+$
+
+15,727,770
+
+Total stockholders' equity, ending balances
+
+$
+
+22,832,215
+
+$
+
+19,075,974
+
+$
+
+22,832,215
+
+$
+
+19,075,974
+
+See accompanying notes to the consolidated financial statements.
+
+7
+
+Table of Contents
+
+NETFLIX, INC.
+
+Notes to Consolidated Financial Statements
+
+(unaudited)
+
+1.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+The accompanying interim consolidated financial statements of Netflix, Inc. and its wholly owned subsidiaries (the "Company") have been prepared in conformity with accounting principles generally accepted in the United States ("U.S.") and are consistent in all material respects with those applied in the Company's Annual Report on Form 10-K for the year ended December 31, 2022 filed with the Securities and Exchange Commission (the "SEC") on January 26, 2023.
+
+The preparation of consolidated financial statements in conformity with U.S. generally accepted accounting principles ("GAAP") requires management to make estimates and judgments that affect the amounts reported in the consolidated financial statements and accompanying notes. Significant items subject to such estimates and assumptions include the amortization of content assets and the recognition and measurement of income tax assets and liabilities. The Company bases its estimates on historical experience and on various other assumptions that the Company believes to be reasonable under the circumstances. On a regular basis, the Company evaluates the assumptions, judgments and estimates. Actual results may differ from these estimates.
+
+The interim financial information is unaudited, but reflects all normal recurring adjustments that are, in the opinion of management, necessary to fairly present the information set forth herein. The interim consolidated financial statements should be read in conjunction with the audited consolidated financial statements and related notes included in the Company's Annual Report on Form 10-K for the year ended December 31, 2022. Interim results are not necessarily indicative of the results for a full year.
+
+There have been no material changes in the Company's significant accounting policies as compared to the significant accounting policies described in the Company's Annual Report on Form 10-K for the year ended December 31, 2022.
+
+2.
+
+Revenue Recognition
+
+The Company's primary source of revenues is from monthly membership fees. Members are billed in advance of the start of their monthly membership and revenues are recognized ratably over each monthly membership period. Revenues are presented net of the taxes that are collected from members and remitted to governmental authorities. The Company is the principal in all its relationships where partners, including consumer electronics ("CE") manufacturers, multichannel video programming distributors ("MVPDs"), mobile operators and internet service providers ("ISPs"), provide access to the service as the Company retains control over service delivery to its members. Typically, payments made to the partners, such as for marketing, are expensed. However, if there is no distinct service provided in exchange for the payments made to the partners or if the price that the member pays is established by the partners and there is no standalone price for the Netflix service (for instance, in a bundle), these payments are recognized as a reduction of revenues.
+
+The Company also earns revenue from advertisements presented on its streaming service, consumer products and various other sources. Revenues earned from sources other than monthly membership fees were not material for the three and six months ended June 30, 2023 and June 30, 2022.
+
+The following tables summarize revenues, paid net membership additions (losses), and ending paid memberships by region for the three and six months ended June 30, 2023 and June 30, 2022, respectively:
+
+United States and Canada (UCAN)
+
+As of/ Three Months Ended
+
+As of/ Six Months Ended
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+(in thousands)
+
+Revenues
+
+$
+
+3,599,448
+
+$
+
+3,537,863
+
+$
+
+7,208,093
+
+$
+
+6,888,287
+
+Paid net membership additions (losses)
+
+1,173
+
+(
+
+1,296
+
+)
+
+1,275
+
+(
+
+1,932
+
+)
+
+Paid memberships at end of period (1)
+
+75,571
+
+73,283
+
+75,571
+
+73,283
+
+8
+
+Table of Contents
+
+Europe, Middle East, and Africa (EMEA)
+
+As of/ Three Months Ended
+
+As of/ Six Months Ended
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+June 30,
+
+2023
+
+June 30,
+
+2022
+
+(in thousands)
+
+Revenues
+
+$
+
+2,562,170
+
+$
+
+2,457,235

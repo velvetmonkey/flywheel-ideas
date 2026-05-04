@@ -1,0 +1,1823 @@
+---
+id: idea-JZtgLLrN
+type: idea
+state: nascent
+title: WBD 2020-05-06 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:07:54.921Z'
+date: '2026-05-03'
+created: '2026-05-03T21:07:55.396Z'
+---
+# Warner Bros. Discovery, Inc. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2020-05-06
+Source: https://www.sec.gov/Archives/edgar/data/1437107/000143710720000026/disca-20200331.htm
+
+59
+
+ITEM 2. Unregistered Sales of Equity Securities and Use of Proceeds.
+
+61
+
+ITEM 6. Exhibits.
+
+62
+
+SIGNATURES.
+
+63
+
+3
+
+PART I. FINANCIAL INFORMATION
+
+ITEM 1. Unaudited Financial Statements.
+
+DISCOVERY, INC.
+
+CONSOLIDATED BALANCE SHEETS
+
+(unaudited; in millions, except par value)
+
+March 31, 2020
+
+December 31, 2019
+
+ASSETS
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+1,453
+
+$
+
+1,552
+
+Receivables, net
+
+2,564
+
+2,633
+
+Content rights and prepaid license fees, net
+
+89
+
+579
+
+Prepaid expenses and other current assets
+
+520
+
+453
+
+Total current assets
+
+4,626
+
+5,217
+
+Noncurrent content rights, net
+
+3,756
+
+3,129
+
+Property and equipment, net
+
+1,040
+
+951
+
+Goodwill
+
+12,966
+
+13,050
+
+Intangible assets, net
+
+8,332
+
+8,667
+
+Equity method investments
+
+542
+
+568
+
+Other noncurrent assets
+
+2,128
+
+2,153
+
+Total assets
+
+$
+
+33,390
+
+$
+
+33,735
+
+LIABILITIES AND EQUITY
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+421
+
+$
+
+463
+
+Accrued liabilities
+
+1,471
+
+1,678
+
+Deferred revenues
+
+376
+
+489
+
+Current portion of debt
+
+607
+
+609
+
+Total current liabilities
+
+2,875
+
+3,239
+
+Noncurrent portion of debt
+
+15,267
+
+14,810
+
+Deferred income taxes
+
+1,550
+
+1,691
+
+Other noncurrent liabilities
+
+2,294
+
+2,029
+
+Total liabilities
+
+21,986
+
+21,769
+
+Commitments and contingencies (See Note 16)
+
+Redeemable noncontrolling interests
+
+442
+
+442
+
+Equity:
+
+Discovery, Inc. stockholders' equity:
+
+Series A-1 convertible preferred stock: $0.01 par value; 8 shares authorized, issued and outstanding
+
+—
+
+—
+
+Series C-1 convertible preferred stock: $0.01 par value; 6 shares authorized; 5 shares issued and outstanding
+
+—
+
+—
+
+Series A common stock: $0.01 par value; 1,700 shares authorized; 163 and 161 shares issued; and 160 and 158 shares outstanding
+
+2
+
+2
+
+Series B convertible common stock: $0.01 par value; 100 shares authorized; 7 shares issued and outstanding
+
+—
+
+—
+
+Series C common stock: $0.01 par value; 2,000 shares authorized; 546 and 547 shares issued; and 340 and 360 shares outstanding
+
+5
+
+5
+
+Additional paid-in capital
+
+10,770
+
+10,747
+
+Treasury stock, at cost: 209 and 190 shares
+
+(
+
+7,897
+
+)
+
+(
+
+7,374
+
+)
+
+Retained earnings
+
+7,712
+
+7,333
+
+Accumulated other comprehensive loss
+
+(
+
+1,122
+
+)
+
+(
+
+822
+
+)
+
+Total Discovery, Inc. stockholders' equity
+
+9,470
+
+9,891
+
+Noncontrolling interests
+
+1,492
+
+1,633
+
+Total equity
+
+10,962
+
+11,524
+
+Total liabilities and equity
+
+$
+
+33,390
+
+$
+
+33,735
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+4
+
+DISCOVERY, INC.
+
+CONSOLIDATED STATEMENTS OF OPERATIONS
+
+(unaudited; in millions, except per share amounts)
+
+Three Months Ended March 31,
+
+2020
+
+2019
+
+Revenues:
+
+Advertising
+
+$
+
+1,402
+
+$
+
+1,415
+
+Distribution
+
+1,223
+
+1,224
+
+Other
+
+58
+
+68
+
+Total revenues
+
+2,683
+
+2,707
+
+Costs and expenses:
+
+Costs of revenues, excluding depreciation and amortization
+
+918
+
+930
+
+Selling, general and administrative
+
+645
+
+626
+
+Depreciation and amortization
+
+326
+
+372
+
+Restructuring and other charges
+
+15
+
+5
+
+Total costs and expenses
+
+1,904
+
+1,933
+
+Operating income
+
+779
+
+774
+
+Interest expense, net
+
+(
+
+163
+
+)
+
+(
+
+182
+
+)
+
+Loss on extinguishment of debt
+
+—
+
+(
+
+5
+
+)
+
+(Loss) income from equity investees, net
+
+(
+
+21
+
+)
+
+11
+
+Other expense, net
+
+(
+
+58
+
+)
+
+(
+
+27
+
+)
+
+Income before income taxes
+
+537
+
+571
+
+Income tax expense
+
+(
+
+130
+
+)
+
+(
+
+153
+
+)
+
+Net income
+
+407
+
+418
+
+Net income attributable to noncontrolling interests
+
+(
+
+28
+
+)
+
+(
+
+29
+
+)
+
+Net income attributable to redeemable noncontrolling interests
+
+(
+
+2
+
+)
+
+(
+
+5
+
+)
+
+Net income available to Discovery, Inc.
+
+$
+
+377
+
+$
+
+384
+
+Net income per share allocated to Discovery, Inc. Series A, B and C common stockholders:
+
+Basic
+
+$
+
+0.55
+
+$
+
+0.53
+
+Diluted
+
+$
+
+0.55
+
+$
+
+0.53
+
+Weighted average shares outstanding:
+
+Basic
+
+517
+
+524
+
+Diluted
+
+685
+
+714
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+5
+
+DISCOVERY, INC.
+
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(unaudited; in millions)
+
+Three Months Ended March 31,
+
+2020
+
+2019
+
+Net income
+
+$
+
+407
+
+$
+
+418
+
+Other comprehensive income (loss) adjustments, net of tax:
+
+Currency translation
+
+(
+
+141
+
+)
+
+(
+
+69
+
+)
+
+Derivatives
+
+(
+
+159
+
+)
+
+(
+
+11
+
+)
+
+Comprehensive income
+
+107
+
+338
+
+Comprehensive income attributable to noncontrolling interests
+
+(
+
+28
+
+)
+
+(
+
+29
+
+)
+
+Comprehensive income attributable to redeemable noncontrolling interests
+
+(
+
+2
+
+)
+
+(
+
+5
+
+)
+
+Comprehensive income attributable to Discovery, Inc.
+
+$
+
+77
+
+$
+
+304
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+6
+
+DISCOVERY, INC.
+
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(unaudited; in millions)
+
+Three Months Ended March 31,
+
+2020
+
+2019
+
+Operating Activities
+
+Net income
+
+$
+
+407
+
+$
+
+418
+
+Adjustments to reconcile net income to cash provided by operating activities:
+
+Content rights amortization and impairment
+
+704
+
+697
+
+Depreciation and amortization
+
+326
+
+372
+
+Deferred income taxes
+
+(
+
+75
+
+)
+
+(
+
+43
+
+)
+
+Share-based compensation (benefit) expense
+
+(
+
+4
+
+)
+
+30
+
+Equity in losses of equity method investee companies, including cash distributions
+
+31
+
+3
+
+Unrealized loss from derivative instruments, net
+
+27
+
+—
+
+Remeasurement gain on previously held equity interest
+
+—
+
+(
+
+8
+
+)
+
+Realized gain from derivative instruments, net
+
+(
+
+21
+
+)
+
+—
+
+Other, net
+
+29
+
+44
+
+Changes in operating assets and liabilities, net of acquisitions and dispositions:
+
+Receivables, net
+
+36
+
+(
+
+10
+
+)
+
+Content rights and payables, net
+
+(
+
+899
+
+)
+
+(
+
+816
+
+)
+
+Accounts payable and accrued liabilities
+
+(
+
+202
+
+)
+
+(
+
+211
+
+)
+
+Foreign currency, prepaid expenses and other assets, net
+
+(
+
+24
+
+)
+
+66
+
+Cash provided by operating activities
+
+335
+
+542
+
+Investing Activities
+
+Business acquisitions, net of cash acquired
+
+—
+
+(
+
+22
+
+)
+
+Investments in and advances to equity investments
+
+(
+
+42
+
+)
+
+(
+
+34
+
+)
+
+Purchases of property and equipment
+
+(
+
+105
+
+)
+
+(
+
+44
+
+)
+
+Other investing activities, net
+
+77
+
+6
+
+Cash used in investing activities
+
+(
+
+70
+
+)
+
+(
+
+94
+
+)
+
+Financing Activities
+
+Principal repayments of debt, including discount payment
+
+—
+
+(
+
+453
+
+)
+
+Repurchases of stock
+
+(
+
+527
+
+)
+
+—
+
+Distributions to noncontrolling interests and redeemable noncontrolling interests
+
+(
+
+173
+
+)
+
+(
+
+163
+
+)
+
+Borrowings under revolving credit facility
+
+500
+
+—
+
+Other financing activities, net
+
+(
+
+59
+
+)
+
+(
+
+36
+
+)
+
+Cash used in financing activities
+
+(
+
+259
+
+)
+
+(
+
+652
+
+)
+
+Effect of exchange rate changes on cash, cash equivalents, and restricted cash
+
+(
+
+24
+
+)
+
+(
+
+37
+
+)
+
+Net change in cash, cash equivalents, and restricted cash
+
+(
+
+18
+
+)
+
+(
+
+241
+
+)
+
+Cash, cash equivalents, and restricted cash, beginning of period
+
+1,552
+
+986
+
+Cash, cash equivalents, and restricted cash, end of period
+
+$
+
+1,534
+
+$
+
+745
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+7
+
+DISCOVERY, INC.
+
+CONSOLIDATED STATEMENT OF EQUITY
+
+(unaudited; in millions)
+
+Preferred Stock
+
+Common Stock
+
+Additional
+
+Paid-In
+
+Capital
+
+Treasury
+
+Stock
+
+Retained
+
+Earnings
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Loss
+
+Discovery, Inc. Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares
+
+Par Value
+
+Shares
+
+Par Value
+
+December 31, 2019
+
+13
+
+$
+
+—
+
+715
+
+$
+
+7
+
+$
+
+10,747
+
+$
+
+(
+
+7,374
+
+)
+
+$
+
+7,333
+
+$
+
+(
+
+822
+
+)
+
+$
+
+9,891
+
+$
+
+1,633
+
+$
+
+11,524
+
+Cumulative effect of accounting change (See Note 1)
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+2
+
+—
+
+2
+
+—
+
+2
+
+Net income available to Discovery, Inc. and attributable to noncontrolling interests
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+377
+
+—
+
+377
+
+28
+
+405
+
+Other comprehensive loss
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+300
+
+)
+
+(
+
+300
+
+)
+
+—
+
+(
+
+300
+
+)
+
+Share-based compensation
+
+—
+
+—
+
+—
+
+—
+
+21
+
+—
+
+—
+
+—
+
+21
+
+—
+
+21
+
+Repurchases of stock
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+523
+
+)
+
+—
+
+—
+
+(
+
+523
+
+)
+
+—
+
+(
+
+523
+
+)
+
+Tax settlements associated with share-based plans
+
+—
+
+—
+
+—
+
+—
+
+(
+
+30
+
+)
+
+—
+
+—
+
+—
+
+(
+
+30
+
+)
+
+—
+
+(
+
+30
+
+)
+
+Dividends paid to noncontrolling interests
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+170
+
+)
+
+(
+
+170
+
+)
+
+Issuance of stock in connection with share-based plans
+
+—
+
+—
+
+1
+
+—
+
+32
+
+—
+
+—
+
+—
+
+32
+
+—
+
+32
+
+Other adjustments to stockholders' equity
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+1
+
+1
+
+March 31, 2020
+
+13
+
+$
+
+—
+
+716
+
+$
+
+7
+
+$
+
+10,770
+
+$
+
+(
+
+7,897
+
+)
+
+$
+
+7,712
+
+$
+
+(
+
+1,122
+
+)
+
+$
+
+9,470
+
+$
+
+1,492
+
+$
+
+10,962
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+8
+
+DISCOVERY, INC.
+
+CONSOLIDATED STATEMENT OF EQUITY
+
+(unaudited; in millions)
+
+Preferred Stock
+
+Common Stock
+
+Additional
+
+Paid-In
+
+Capital
+
+Treasury
+
+Stock
+
+Retained
+
+Earnings
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Loss
+
+Discovery,
+
+Inc. Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares
+
+Par Value
+
+Shares
+
+Par Value
+
+December 31, 2018
+
+14
+
+$
+
+—
+
+691
+
+$
+
+7
+
+$
+
+10,647
+
+$
+
+(
+
+6,737
+
+)
+
+$
+
+5,254
+
+$
+
+(
+
+785
+
+)
+
+$
+
+8,386
+
+$
+
+1,716
+
+$
+
+10,102
+
+Cumulative effect of accounting change
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+30
+
+(
+
+30
+
+)
+
+—
+
+—
+
+—
+
+Net income available to Discovery, Inc. and attributable to noncontrolling interests
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+384
+
+—
+
+384
+
+29
+
+413
+
+Other comprehensive loss
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+80
+
+)
+
+(
+
+80
+
+)
+
+—
+
+(
+
+80
+
+)
+
+Share-based compensation
+
+—
+
+—
+
+—
+
+—
+
+38
+
+—
+
+—
+
+—
+
+38
+
+—
+
+38
+
+Tax settlements associated with share-based plans
+
+—
+
+—
+
+—
+
+—
+
+(
+
+21
+
+)
+
+—
+
+—
+
+—
+
+(
+
+21
+
+)
+
+—
+
+(
+
+21
+
+)
+
+Dividends paid to noncontrolling interests
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+153
+
+)
+
+(
+
+153
+
+)
+
+Issuance of stock in connection with share-based plans
+
+—
+
+—
+
+2
+
+—
+
+6
+
+—
+
+—
+
+—
+
+6
+
+—
+
+6
+
+Redeemable noncontrolling interest adjustments to redemption value
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+(
+
+5
+
+)
+
+—
+
+(
+
+5
+
+)
+
+—
+
+(
+
+5
+
+)
+
+March 31, 2019
+
+14
+
+$
+
+—
+
+693
+
+$
+
+7
+
+$
+
+10,670
+
+$
+
+(
+
+6,737
+
+)
+
+$
+
+5,663
+
+$
+
+(
+
+895
+
+)
+
+$
+
+8,708
+
+$
+
+1,592
+
+$
+
+10,300
+
+The accompanying notes are an integral part of these consolidated financial statements.
+
+9
+
+DISCOVERY, INC.
+
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
+
+(unaudited)
+
+NOTE 1.
+
+DESCRIPTION OF BUSINESS AND BASIS OF PRESENTATION
+
+Description of Business
+
+Discovery, Inc. ("Discovery", the "Company", "we", "us" or "our") is a global media company that provides content across multiple distribution platforms, including linear platforms such as pay-television ("pay-TV"), free-to-air ("FTA") and broadcast television, authenticated TV Everywhere ("TVE") applications, digital distribution arrangements, content licensing arrangements and direct-to-consumer ("DTC") subscription products. The Company also operates a production studio.
+
+The Company has organized its operations into
+
+two
+
+reportable segments: U.S. Networks, consisting principally of domestic television networks and digital content services, and International Networks, consisting primarily of international television networks and digital content services.
+
+Principles of Consolidation and Basis of Presentation
+
+The consolidated financial statements include the accounts of Discovery and its majority-owned subsidiaries in which a controlling interest is maintained, including variable interest entities ("VIE") for which the Company is the primary beneficiary. Inter-company accounts and transactions between consolidated entities have been eliminated.
+
+Unaudited Interim Financial Statements
+
+These consolidated financial statements are unaudited; however, in the opinion of management, they reflect all adjustments consisting only of normal recurring adjustments necessary to state fairly the financial position, results of operations and cash flows for the periods presented in conformity with U.S. generally accepted accounting principles ("GAAP") applicable to interim periods. The results of operations for the interim periods presented are not necessarily indicative of results for the full year or future periods. These consolidated financial statements should be read in conjunction with the audited consolidated financial statements and notes thereto included in Discovery's Annual Report on Form 10-K for the year ended December 31, 2019 (the "2019 Form 10-K").
+
+Use of Estimates
+
+The preparation of financial statements in accordance with U.S. generally accepted accounting principles ("GAAP") requires management to make estimates, judgments and assumptions that affect the amounts reported in the consolidated financial statements and accompanying notes. Actual results may differ from these estimates.
+
+Significant estimates and judgments inherent in the preparation of the consolidated financial statements include accounting for asset impairments, revenue recognition, estimated credit losses, content rights, leases, depreciation and amortization, business combinations, share-based compensation, defined benefit plans, income taxes, other financial instruments, contingencies, and the determination of whether the Company should consolidate certain entities.
+
+Impact of COVID-19
+
+On March 11, 2020, the World Health Organization declared the current novel coronavirus ("COVID-19") outbreak to be a global pandemic. COVID-19 continues to spread throughout the world, and the duration and severity of its effects and economic disruption are currently unknown. In response to this declaration and the rapid spread of COVID-19, the United States and other countries throughout the world have imposed varying degrees of restrictions on social and commercial activity in an effort to slow the spread of the illness. These measures have begun to have a significant adverse impact upon many sectors of the economy, including the media industry. The Company is closely monitoring the impact of COVID-19 on all aspects of its business and geographies, including how it will impact its customers, employees, suppliers, vendors, distribution and advertising partners, production facilities, and various third parties.
+
+10

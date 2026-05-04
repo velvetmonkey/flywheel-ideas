@@ -1,0 +1,297 @@
+---
+id: idea-yerEbb5T
+type: idea
+state: nascent
+title: ORCL 2024-06-20 10-K Item 1A Risk Factors
+created_at: '2026-05-03T19:42:43.787Z'
+date: '2026-05-03'
+created: '2026-05-03T19:42:44.146Z'
+---
+# ORACLE CORP 10-K Item 1A Risk Factors
+
+Filed: 2024-06-20
+Source: https://www.sec.gov/Archives/edgar/data/1341439/000095017024075605/orcl-20240531.htm
+
+Risk Factors
+
+19
+
+Item 1B.
+
+Unresolved Staff Comments
+
+33
+
+Item 1C.
+
+Cybersecurity
+
+33
+
+Item 2.
+
+Properties
+
+35
+
+Item 3.
+
+Legal Proceedings
+
+36
+
+Item 4.
+
+Mine Safety Disclosures
+
+36
+
+PART II.
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+37
+
+Item 6.
+
+[Reserved]
+
+38
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+39
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+56
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+58
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+58
+
+Item 9A.
+
+Controls and Procedures
+
+58
+
+PART III.
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+60
+
+Item 11.
+
+Executive Compensation
+
+60
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+60
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+60
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+60
+
+PART IV.
+
+Item 15.
+
+Exhibits and Financial Statement Schedules
+
+61
+
+Item 16.
+
+Form 10-K Summary
+
+106
+
+Signatures
+
+114
+
+Table of Contents
+
+Index to Financial Statements
+
+Cautionary Note on Forward-Looking Statements
+
+For purposes of this Annual Report on Form 10-K (this Annual Report), the terms "Oracle," "we," "us" and "our" refer to Oracle Corporation and its consolidated subsidiaries. This Annual Report contains statements that are not historical in nature, are predictive in nature, or that depend upon or refer to future events or conditions or otherwise contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), and Section 27A of the Securities Act of 1933, as amended (the Securities Act). These include, among other things, statements regarding:
+
+•
+
+our expectation that we may acquire, and realize the anticipated benefits of acquiring, companies, products, services and technologies to further our corporate strategy as compelling opportunities become available;
+
+•
+
+our belief that our acquisitions enhance the products and services that we can offer to customers, expand our customer base, provide greater scale to accelerate innovation, grow our revenues and earnings and increase stockholder value;
+
+•
+
+our expectation that, on a constant currency basis, our total cloud and license revenues generally will continue to increase due to expected growth in our cloud services and continued demand for our cloud license and on-premise license and license support offerings;
+
+•
+
+our belief that our Oracle Cloud Software-as-a-Service (SaaS) and Oracle Cloud Infrastructure (OCI) offerings are opportunities for us to continue to expand our cloud and license business, and that we are in the early stages of what we expect will be a material migration of our existing Oracle customer base from on-premise applications and infrastructure products and services to the Oracle Cloud;
+
+•
+
+our belief that we can market our Oracle SaaS and OCI services (collectively Oracle Cloud Services) to a broader ecosystem of small and medium-sized businesses, non-IT lines of business purchasers, developers and partners due to the highly available, intuitive design, ease of access, low touch and low cost characteristics of the Oracle Cloud;
+
+•
+
+our expectation that substantially all of our customers will renew their license support contracts upon expiration;
+
+•
+
+our belief that Oracle Fusion Cloud Enterprise Resource Planning (ERP) is a strategic suite of applications that is foundational to facilitating and extracting more business value out of the adoption of other Oracle SaaS offerings as customers realize the value of a common data model that spans across core business applications;
+
+•
+
+our belief that our SaaS offerings remove business boundaries between front- and back-office activities;
+
+•
+
+our expectation that current and expected customer demand will require continued growth in our cloud services and license support expenses in order to increase our existing data center capacity and establish additional data centers in new geographic locations;
+
+•
+
+our expectation that our hardware business will have lower operating margins as a percentage of revenues than our cloud and license business;
+
+•
+
+our expectation that we will continue to make significant investments in research and development to maintain and improve our current products and service offerings, and our belief that research and development efforts are essential to maintaining our competitive position;
+
+•
+
+our expectations regarding the financial performance and long-term potential of one of our investment companies;
+
+•
+
+our expectation that our international operations will continue to provide a significant portion of our total revenues and expenses;
+
+•
+
+our expectation that the proportion of our cloud services revenues relative to our total revenues will continue to increase;
+
+•
+
+the sufficiency of our sources of funding for working capital, capital expenditures, contractual obligations, acquisitions, dividends, stock repurchases, debt repayments and other matters;
+
+1
+
+Table of Contents
+
+Index to Financial Statements
+
+•
+
+our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits, that the final outcome of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, and that our net deferred tax assets will likely be realized in the foreseeable future;
+
+•
+
+our belief that the outcome of certain legal proceedings and claims to which we are a party will not, individually or in the aggregate, result in losses that are materially in excess of amounts already recognized, if any;
+
+•
+
+the possibility that certain legal proceedings to which we are a party could have a material impact on our financial position, future cash flows and results of operations;
+
+•
+
+the timing and amount of expenses we expect to incur;
+
+•
+
+the cost savings we expect to realize pursuant to the Fiscal 2024 Oracle Restructuring Plan;
+
+•
+
+declarations of future cash dividend payments and the timing and amount of future stock repurchases, including our expectation that the levels of our future stock repurchase activity may be modified in comparison to past periods in order to use available cash for other purposes and that the amount of stock repurchases will not increase until our gross debt is reduced below certain thresholds;
+
+•
+
+our expectations regarding the impact of recent accounting pronouncements on our consolidated financial statements;
+
+•
+
+our expectations regarding the performance of our investments in marketable and non-marketable equity securities and the timing and amount of changes in fair value of these investments;
+
+•
+
+our ability to predict revenues, particularly certain cloud license and on-premise license revenues and hardware revenues;
+
+•
+
+the percentages of remaining performance obligations that we expect to recognize as revenues over respective future periods;
+
+•
+
+our expectation that the financial impacts of standard warranty or service level provisions in our revenue arrangements will continue to be insignificant;
+
+•
+
+our expectation that supply chain shortages and the risks associated with our response to such shortages, including committing to higher purchases and balances of hardware products, will continue to impact us in the future;
+
+•
+
+our beliefs regarding the retention of employees and how our products help to improve our employees' learning experiences;
+
+as well as other statements regarding our future operations, financial condition and prospects, and business strategies. Forward-looking statements may be preceded by, followed by or include the words "anticipates," "believes," "continues," "could," "endeavors," "estimates," "expects," "intends," "is designed to," "likely," "may," "plans," "potential," "seeks," "shall," "should," "strives," "will" and similar expressions. We claim the protection of the safe harbor for forward-looking statements contained in the Exchange Act and the Securities Act for all forward-looking statements. We have based these forward-looking statements on our current expectations and projections about future events. These forward-looking statements are subject to risks, uncertainties and assumptions about our business that could affect our future results and could cause those results or other outcomes to differ materially from those expressed or implied in the forward-looking statements. Factors that might cause or contribute to such differences include, but are not limited to, those discussed in "Risk Factors" included elsewhere in this Annual Report and as may be updated in filings we make from time to time with the U.S. Securities and Exchange Commission (the SEC), including our Quarterly Reports on Form 10-Q to be filed by us in our fiscal year 2025, which runs from June 1, 2024 to May 31, 2025.
+
+We have no obligation to publicly update or revise any forward-looking statements, whether as a result of new information, future events or risks, except to the extent required by applicable securities laws. If we do update one or more forward-looking statements, no inference should be drawn that we will make additional updates with respect to those or other forward-looking statements. New information, future events or risks could cause the
+
+2
+
+Table of Contents
+
+Index to Financial Statements
+
+forward-looking events we discuss in this Annual Report not to occur. You should not place undue reliance on these forward-looking statements, which reflect our expectations only as of the date of this Annual Report.
+
+3
+
+Table of Contents
+
+Index to Financial Statements
+
+PAR
+
+T I
+
+Item 1.
+
+Business
+
+Oracle provides products and services that address enterprise information technology (IT) needs. Our products and services include enterprise applications and infrastructure offerings that are delivered worldwide through a variety of flexible and interoperable IT deployment models. These models include on-premise, cloud-based and hybrid deployments (an approach that combines both on-premise and cloud-based deployments), such as Oracle Exadata Cloud@Customer and Dedicated Region offerings (instances of Oracle Cloud in a customer's own data center) and multicloud options that enable customers to use Oracle Cloud in conjunction with other public clouds. Accordingly, we offer choice and flexibility to our customers and facilitate the product, service and deployment combinations that best suit our customers' needs. Our customers include businesses of many sizes, government agencies, educational institutions and resellers that we market and sell to directly through our worldwide sales force or indirectly through the Oracle Partner Network. Using Oracle technologies, our customers build, deploy, run, manage and support their internal and external products, services and business operations, including, for example, an artificial intelligence (AI) product company that uses Oracle Cloud Infrastructure (OCI) to build and serve generative AI models; a global technology company that uses OCI to power its logistics and mobile application offerings; a multinational financial institution that runs its banking applications using Oracle Exadata Cloud@Customer; and a global consumer products company that leverages Oracle Fusion Cloud Enterprise Resource Planning (ERP) for its accounting processes, risk management, supply chain and financial planning functions.
+
+Oracle SaaS and OCI (collectively Oracle Cloud Services) offerings provide comprehensive and integrated applications and infrastructure services enabling our customers to choose the best option that meets their specific business needs. Oracle Cloud Services integrate the IT components, including software, hardware and services, in a cloud-based IT environment that Oracle deploys, manages, supports and upgrades for customers and that customers may access utilizing common web browsers via a broad spectrum of devices.

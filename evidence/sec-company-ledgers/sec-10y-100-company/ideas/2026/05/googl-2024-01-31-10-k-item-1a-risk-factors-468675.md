@@ -1,0 +1,313 @@
+---
+id: idea-Z89ntvfA
+type: idea
+state: nascent
+title: GOOGL 2024-01-31 10-K Item 1A Risk Factors
+created_at: '2026-05-03T20:34:28.675Z'
+date: '2026-05-03'
+created: '2026-05-03T20:34:29.053Z'
+---
+# Alphabet Inc. 10-K Item 1A Risk Factors
+
+Filed: 2024-01-31
+Source: https://www.sec.gov/Archives/edgar/data/1652044/000165204424000022/goog-20231231.htm
+
+Risk Factors
+
+11
+
+Item 1B.
+
+Unresolved Staff Comments
+
+24
+
+Item 1C.
+
+Cybersecurity
+
+24
+
+Item 2.
+
+Properties
+
+25
+
+Item 3.
+
+Legal Proceedings
+
+25
+
+Item 4.
+
+Mine Safety Disclosures
+
+25
+
+PART II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters, and Issuer Purchases of Equity Securities
+
+25
+
+Item 6.
+
+[Reserved]
+
+28
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+29
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+45
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+47
+
+Item 9.
+
+Changes in and Disagreements With Accountants on Accounting and Financial Disclosure
+
+88
+
+Item 9A.
+
+Controls and Procedures
+
+88
+
+Item 9B.
+
+Other Information
+
+89
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+89
+
+PART III
+
+Item 10.
+
+Directors, Executive Officers, and Corporate Governance
+
+90
+
+Item 11.
+
+Executive Compensation
+
+90
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+90
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+90
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+90
+
+PART IV
+
+Item 15.
+
+Exhibits, Financial Statement Schedules
+
+91
+
+Item 16.
+
+Form 10-K Summary
+
+94
+
+Signatures
+
+2.
+
+Table of Contents
+
+Alphabet Inc.
+
+Note About Forward-Looking Statements
+
+This Annual Report on Form 10-K contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. These include, among other things, statements regarding:
+
+•
+
+the growth of our business and revenues and our expectations about the factors that influence our success and trends in our business;
+
+•
+
+fluctuations in our revenues and margins and various factors contributing to such fluctuations;
+
+•
+
+our expectation that the continuing shift from an offline to online world will continue to benefit our business;
+
+•
+
+our expectation that the portion of our revenues that we derive beyond advertising will continue to increase and may affect our margins;
+
+•
+
+our expectation that our traffic acquisition costs (TAC) and the associated TAC rate will fluctuate, which could affect our overall margins;
+
+•
+
+our expectation that our monetization trends will fluctuate, which could affect our revenues and margins;
+
+•
+
+fluctuations in paid clicks and cost-per-click as well as impressions and cost-per-impression, and various factors contributing to such fluctuations;
+
+•
+
+our expectation that we will continue to periodically review, refine, and update our methodologies for monitoring, gathering, and counting the number of paid clicks and impressions;
+
+•
+
+our expectation that our results will be affected by our performance in international markets as users in developing economies increasingly come online;
+
+•
+
+our expectation that our foreign exchange risk management program will not fully offset our net exposure to fluctuations in foreign currency exchange rates;
+
+•
+
+the expected variability of gains and losses related to hedging activities under our foreign exchange risk management program;
+
+•
+
+the amount and timing of revenue recognition from customer contracts with commitments for performance obligations, including our estimate of the remaining amount of commitments and when we expect to recognize revenue;
+
+•
+
+our expectation that our capital expenditures will increase, including the expected increase in our technical infrastructure investment to support the growth of our business and our long-term initiatives, in particular in support of artificial intelligence (AI) products and services;
+
+•
+
+our plans to continue to invest in new businesses, products, services and technologies, and systems, as well as to continue to invest in acquisitions and strategic investments;
+
+•
+
+our pace of hiring and our plans to provide competitive compensation programs;
+
+•
+
+our expectation that our cost of revenues, research and development (R&D) expenses, sales and marketing expenses, and general and administrative expenses may increase in amount and/or may increase as a percentage of revenues and may be affected by a number of factors;
+
+•
+
+estimates of our future compensation expenses;
+
+•
+
+our expectation that our other income (expense), net (OI&E), will fluctuate in the future, as it is largely driven by market dynamics;
+
+•
+
+our expectation that our effective tax rate and cash tax payments could increase in future years;
+
+•
+
+seasonal fluctuations in internet usage and advertiser expenditures, underlying business trends such as traditional retail seasonality, which are likely to cause fluctuations in our quarterly results;
+
+•
+
+the sufficiency of our sources of funding;
+
+•
+
+our potential exposure in connection with new and pending investigations, proceedings, and other contingencies, including the possibility that certain legal proceedings to which we are a party could harm our business, financial condition, and operating results;
+
+•
+
+our expectation that we will continue to face heightened regulatory scrutiny and changes in regulatory conditions, laws, and public policies, which could affect our business practices and financial results;
+
+3.
+
+Table of Contents
+
+Alphabet Inc.
+
+•
+
+the expected timing, amount, and effect of Alphabet Inc.'s share repurchases;
+
+•
+
+our long-term sustainability and diversity goals;
+
+as well as other statements regarding our future operations, financial condition and prospects, and business strategies. Forward-looking statements may appear throughout this report and other documents we file with the Securities and Exchange Commission (SEC), including without limitation, the following sections: Part I, Item 1 "Business;" Part I, Item 1A "Risk Factors;" and Part II, Item 7 "Management's Discussion and Analysis of Financial Condition and Results of Operations." Forward-looking statements generally can be identified by words such as "anticipates," "believes," "could," "estimates," "expects," "intends," "may," "plans," "predicts," "projects," "will be," "will continue," "will likely result," and similar expressions. These forward-looking statements are based on current expectations and assumptions that are subject to risks and uncertainties, which could cause our actual results to differ materially from those reflected in the forward-looking statements. Factors that could cause or contribute to such differences include, but are not limited to, those discussed in this Annual Report on Form 10-K, including the risks discussed in Part I, Item 1A "Risk Factors" and the trends discussed in Part II, Item 7 "Management's Discussion and Analysis of Financial Condition and Results of Operations," and those discussed in other documents we file with the SEC. We undertake no obligation to revise or publicly release the results of any revision to these forward-looking statements, except as required by law. Given these risks and uncertainties, readers are cautioned not to place undue reliance on such forward-looking statements.
+
+As used herein, "Alphabet," "the company," "we," "us," "our," and similar terms include Alphabet Inc. and its subsidiaries, unless the context indicates otherwise.
+
+"Alphabet," "Google," and other trademarks of ours appearing in this report are our property. We do not intend our use or display of other companies' trade names or trademarks to imply an endorsement or sponsorship of us by such companies, or any relationship with any of these companies.
+
+PART I
+
+ITEM 1.
+
+BUSINESS
+
+Overview
+
+As our founders Larry and Sergey wrote in the original founders' letter, "Google is not a conventional company. We do not intend to become one." That unconventional spirit has been a driving force throughout our history, inspiring us to tackle big problems and invest in moonshots. It led us to be a pioneer in the development of AI and, since 2016, an AI-first company. We continue this work under the leadership of Alphabet and Google CEO, Sundar Pichai.
+
+Alphabet is a collection of businesses — the largest of which is Google. We report Google in two segments, Google Services and Google Cloud, and all non-Google businesses collectively as Other Bets. Alphabet's structure is about helping each of our businesses prosper through strong leaders and independence.
+
+Access and Technology for Everyone
+
+The Internet is one of the world's most powerful equalizers; it propels ideas, people, and businesses large and small. Our mission to organize the world's information and make it universally accessible and useful is as relevant today as it was when we were founded in 1998. Since then, we have evolved from a company that helps people find answers to a company that also helps people get things done.
+
+We are focused on building an even more helpful Google for everyone, and we aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success. Google Search helps people find information and make sense of the world in more natural and intuitive ways, with trillions of searches on Google every year. YouTube provides people with entertainment, information, and opportunities to learn something new. Google Assistant offers the best way to get things done seamlessly across different devices, providing intelligent help throughout a person's day, no matter where they are. Google Cloud helps customers solve today's business challenges, improve productivity, reduce costs, and unlock new growth engines. We are continually innovating and building new products and features that will help our users, partners, customers, and communities and have invested more than $150 billion in research and development in the last five years in support of these efforts.
+
+Making AI Helpful for Everyone
+
+AI is a transformational technology that can bring meaningful and positive change to people and societies across the world, and for our business. At Google, we have been bringing AI into our products and services for more than a decade and making them available to our users. Our journey began in 2001, when machine learning was first incorporated into Google Search to suggest better spellings to users searching the web. Today, AI in our products is
+
+4.
+
+Table of Contents
+
+Alphabet Inc.
+
+used by billions of people globally through features like autocomplete suggestions in Google Search; translation across 133 languages in Google Translate; and organization, searching, and editing in Google Photos.
+
+Large language models (LLMs) are an exciting aspect of our work in AI based on deep learning architectures, such as the Transformer, a neural network architecture that we introduced in 2017 that helped with language understanding. This led to the Bidirectional Encoder Representations from Transformers, or BERT, in 2019 that helped Search understand the intent of user search queries better than ever before.
+
+Google was a company built in the cloud, and we continue to invest in our Google Cloud offerings, including Google Cloud Platform and Google Workspace, to help organizations stay at the forefront of AI innovation with our AI-optimized infrastructure, mature AI platform and world-class models, and assistive agents.
+
+We believe AI can solve some of the hardest societal, scientific and engineering challenges of our time. For example, in 2020, Google DeepMind's AlphaFold system solved a 50-year-old protein folding challenge. Since then, we have open-sourced to the scientific community 200 million of AlphaFold's protein structures which are used to work on everything from accelerating new malaria vaccines to advancing cancer drug discovery and developing plastic-eating enzymes. As another example, AI can also have a transformative effect on climate progress by providing helpful information, predicting climate-related events, and optimizing climate action. Using advanced AI and geospatial analysis, Google Research has developed flood forecasting models that can provide early warning and real-time flooding information to communities and individuals.
+
+As AI continues to improve rapidly, we are focused on giving helpful features to our users and customers as we deliver on our mission to organize the world's information and make it universally accessible and useful. With a bold and responsible approach, we continue to take the next steps to make this technology even more helpful for everyone.
+
+Deliver the Most Advanced, Safe, and Responsible AI

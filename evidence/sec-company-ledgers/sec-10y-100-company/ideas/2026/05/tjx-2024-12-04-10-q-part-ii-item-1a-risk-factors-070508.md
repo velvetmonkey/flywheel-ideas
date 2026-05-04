@@ -1,0 +1,1949 @@
+---
+id: idea-ktfbCwBH
+type: idea
+state: nascent
+title: TJX 2024-12-04 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:11:10.508Z'
+date: '2026-05-03'
+created: '2026-05-03T20:11:10.871Z'
+---
+# TJX COMPANIES INC /DE/ 10-Q Part II Item 1A Risk Factors
+
+Filed: 2024-12-04
+Source: https://www.sec.gov/Archives/edgar/data/109198/000010919824000059/tjx-20241102.htm
+
+34
+
+ITEM 2. Unregistered Sales of Equity Securities and Use of Proceeds
+
+34
+
+ITEM 5. Other Information
+
+34
+
+ITEM 6. Exhibits
+
+35
+
+SIGNATURE
+
+35
+
+2
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Consolidated Financial Statements
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF INCOME
+
+(UNAUDITED)
+
+IN MILLIONS EXCEPT PER SHARE AMOUNTS
+
+Thirteen Weeks Ended
+
+Thirty-Nine Weeks Ended
+
+November 2,
+
+2024
+
+October 28,
+
+2023
+
+November 2,
+
+2024
+
+October 28,
+
+2023
+
+Net sales
+
+$
+
+14,063
+
+$
+
+13,265
+
+$
+
+40,010
+
+$
+
+37,806
+
+Cost of sales, including buying and occupancy costs
+
+9,622
+
+9,139
+
+27,741
+
+26,423
+
+Selling, general and administrative expenses
+
+2,748
+
+2,578
+
+7,814
+
+7,375
+
+Interest (income) expense, net
+
+(
+
+43
+
+)
+
+(
+
+41
+
+)
+
+(
+
+139
+
+)
+
+(
+
+116
+
+)
+
+Income before income taxes
+
+1,736
+
+1,589
+
+4,594
+
+4,124
+
+Provision for income taxes
+
+439
+
+398
+
+1,128
+
+1,053
+
+Net income
+
+$
+
+1,297
+
+$
+
+1,191
+
+$
+
+3,466
+
+$
+
+3,071
+
+Basic earnings per share
+
+$
+
+1.15
+
+$
+
+1.04
+
+$
+
+3.07
+
+$
+
+2.68
+
+Weighted average common shares – basic
+
+1,127
+
+1,144
+
+1,130
+
+1,148
+
+Diluted earnings per share
+
+$
+
+1.14
+
+$
+
+1.03
+
+$
+
+3.03
+
+$
+
+2.65
+
+Weighted average common shares – diluted
+
+1,141
+
+1,158
+
+1,144
+
+1,161
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+3
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(UNAUDITED)
+
+IN MILLIONS
+
+Thirteen Weeks Ended
+
+November 2,
+
+2024
+
+October 28,
+
+2023
+
+Net income
+
+$
+
+1,297
+
+$
+
+1,191
+
+Additions to other comprehensive (loss), net of tax:
+
+Foreign currency translation adjustments, net of related tax benefits of $
+
+1
+
+in fiscal 2025 and $
+
+4
+
+in fiscal 2024
+
+(
+
+15
+
+)
+
+(
+
+102
+
+)
+
+Reclassifications from other comprehensive (loss), net of tax, to net income:
+
+Amortization of prior service cost and deferred gains, net of related tax provisions of $
+
+0.1
+
+in fiscal 2025 and $
+
+0.2
+
+in fiscal 2024
+
+0
+
+0
+
+Other comprehensive (loss), net of tax
+
+(
+
+15
+
+)
+
+(
+
+102
+
+)
+
+Total comprehensive income
+
+$
+
+1,282
+
+$
+
+1,089
+
+Thirty-Nine Weeks Ended
+
+November 2,
+
+2024
+
+October 28,
+
+2023
+
+Net income
+
+$
+
+3,466
+
+$
+
+3,071
+
+Additions to other comprehensive (loss), net of tax:
+
+Foreign currency translation adjustments, net of related tax benefits of $
+
+4
+
+in fiscal 2025 and $
+
+3
+
+in fiscal 2024
+
+(
+
+15
+
+)
+
+(
+
+48
+
+)
+
+Reclassifications from other comprehensive (loss), net of tax, to net income:
+
+Amortization of prior service cost and deferred gains, net of related tax provisions of $
+
+0.1
+
+in fiscal 2025 and $
+
+0.4
+
+in fiscal 2024
+
+0
+
+1
+
+Other comprehensive (loss), net of tax
+
+(
+
+15
+
+)
+
+(
+
+47
+
+)
+
+Total comprehensive income
+
+$
+
+3,451
+
+$
+
+3,024
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+4
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED BALANCE SHEETS
+
+(UNAUDITED)
+
+IN MILLIONS, EXCEPT SHARE AMOUNTS
+
+November 2,
+
+2024
+
+February 3,
+
+2024
+
+October 28,
+
+2023
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+4,718
+
+$
+
+5,600
+
+$
+
+4,290
+
+Accounts receivable, net
+
+599
+
+529
+
+560
+
+Merchandise inventories
+
+8,371
+
+5,965
+
+8,285
+
+Prepaid expenses and other current assets
+
+546
+
+511
+
+535
+
+Federal, state and foreign income taxes recoverable
+
+118
+
+59
+
+136
+
+Total current assets
+
+14,352
+
+12,664
+
+13,806
+
+Net property at cost
+
+7,136
+
+6,571
+
+6,262
+
+Non-current deferred income taxes, net
+
+142
+
+172
+
+152
+
+Operating lease right of use assets
+
+9,570
+
+9,396
+
+9,289
+
+Goodwill
+
+95
+
+95
+
+94
+
+Other assets
+
+1,141
+
+849
+
+748
+
+Total assets
+
+$
+
+32,436
+
+$
+
+29,747
+
+$
+
+30,351
+
+Liabilities
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+5,617
+
+$
+
+3,862
+
+$
+
+5,425
+
+Accrued expenses and other current liabilities
+
+4,714
+
+4,870
+
+4,482
+
+Current portion of operating lease liabilities
+
+1,642
+
+1,620
+
+1,682
+
+Federal, state and foreign income taxes payable
+
+44
+
+99
+
+51
+
+Total current liabilities
+
+12,017
+
+10,451
+
+11,640
+
+Other long-term liabilities
+
+1,002
+
+924
+
+908
+
+Non-current deferred income taxes, net
+
+172
+
+148
+
+133
+
+Long-term operating lease liabilities
+
+8,207
+
+8,060
+
+7,976
+
+Long-term debt
+
+2,865
+
+2,862
+
+2,861
+
+Commitments and contingencies (See Note K)
+
+Shareholders' equity
+
+Preferred stock, authorized
+
+5,000,000
+
+shares, par value $
+
+1
+
+,
+
+no
+
+shares issued
+
+—
+
+—
+
+—
+
+Common stock, authorized
+
+1,800,000,000
+
+shares, par value $
+
+1
+
+, issued and outstanding
+
+1,124,355,838
+
+;
+
+1,133,586,545
+
+and
+
+1,140,732,746
+
+respectively
+
+1,124
+
+1,134
+
+1,141
+
+Additional paid-in capital
+
+—
+
+—
+
+—
+
+Accumulated other comprehensive (loss) income
+
+(
+
+547
+
+)
+
+(
+
+532
+
+)
+
+(
+
+653
+
+)
+
+Retained earnings
+
+7,596
+
+6,700
+
+6,345
+
+Total shareholders' equity
+
+8,173
+
+7,302
+
+6,833
+
+Total liabilities and shareholders' equity
+
+$
+
+32,436
+
+$
+
+29,747
+
+$
+
+30,351
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+5
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(UNAUDITED)
+
+IN MILLIONS
+
+Thirty-Nine Weeks Ended
+
+November 2,
+
+2024
+
+October 28,
+
+2023
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+3,466
+
+$
+
+3,071
+
+Adjustments to reconcile net income to net cash provided by operating activities:
+
+Depreciation and amortization
+
+795
+
+712
+
+Loss on property disposals and impairment charges
+
+3
+
+46
+
+Deferred income tax provision
+
+58
+
+13
+
+Share-based compensation
+
+131
+
+114
+
+Changes in assets and liabilities:
+
+(Increase) decrease in accounts receivable
+
+(
+
+70
+
+)
+
+1
+
+(Increase) in merchandise inventories
+
+(
+
+2,415
+
+)
+
+(
+
+2,528
+
+)
+
+(Increase) in income taxes recoverable
+
+(
+
+59
+
+)
+
+(
+
+17
+
+)
+
+(Increase) in prepaid expenses and other current assets
+
+(
+
+28
+
+)
+
+(
+
+20
+
+)
+
+Increase in accounts payable
+
+1,760
+
+1,666
+
+(Decrease) increase in accrued expenses and other liabilities
+
+(
+
+85
+
+)
+
+161
+
+(Decrease) in income taxes payable
+
+(
+
+56
+
+)
+
+(
+
+5
+
+)
+
+(Decrease) increase in net operating lease liabilities
+
+(
+
+7
+
+)
+
+75
+
+Other, net
+
+(
+
+81
+
+)
+
+(
+
+32
+
+)
+
+Net cash provided by operating activities
+
+3,412
+
+3,257
+
+Cash flows from investing activities:
+
+Property additions
+
+(
+
+1,404
+
+)
+
+(
+
+1,280
+
+)
+
+Purchase of equity investment
+
+(
+
+192
+
+)
+
+—
+
+Purchases of investments
+
+(
+
+29
+
+)
+
+(
+
+22
+
+)
+
+Sales and maturities of investments
+
+18
+
+21
+
+Net cash (used in) investing activities
+
+(
+
+1,607
+
+)
+
+(
+
+1,281
+
+)
+
+Cash flows from financing activities:
+
+Repayment of debt
+
+—
+
+(
+
+500
+
+)
+
+Payments for repurchase of common stock
+
+(
+
+1,661
+
+)
+
+(
+
+1,687
+
+)
+
+Cash dividends paid
+
+(
+
+1,226
+
+)
+
+(
+
+1,105
+
+)
+
+Proceeds from issuance of common stock
+
+254
+
+203
+
+Other
+
+(
+
+42
+
+)
+
+(
+
+29
+
+)
+
+Net cash (used in) financing activities
+
+(
+
+2,675
+
+)
+
+(
+
+3,118
+
+)
+
+Effect of exchange rate changes on cash
+
+(
+
+12
+
+)
+
+(
+
+45
+
+)
+
+Net (decrease) in cash and cash equivalents
+
+(
+
+882
+
+)
+
+(
+
+1,187
+
+)
+
+Cash and cash equivalents at beginning of year
+
+5,600
+
+5,477
+
+Cash and cash equivalents at end of period
+
+$
+
+4,718
+
+$
+
+4,290
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+6
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY
+
+(UNAUDITED)
+
+IN MILLIONS
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+(Loss) Income
+
+Retained
+
+Earnings
+
+Total
+
+Balance, August 3, 2024
+
+1,128
+
+$
+
+1,128
+
+$
+
+—
+
+$
+
+(
+
+532
+
+)
+
+$
+
+7,186
+
+$
+
+7,782
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,297
+
+1,297
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+15
+
+)
+
+—
+
+(
+
+15
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+422
+
+)
+
+(
+
+422
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+47
+
+—
+
+—
+
+47
+
+Issuance of common stock under stock incentive plan and related tax effect
+
+1
+
+1
+
+62
+
+—
+
+—
+
+63
+
+Common stock repurchased
+
+(
+
+5
+
+)
+
+(
+
+5
+
+)
+
+(
+
+109
+
+)
+
+—
+
+(
+
+465
+
+)
+
+(
+
+579
+
+)
+
+Balance, November 2, 2024
+
+1,124
+
+$
+
+1,124
+
+$
+
+—
+
+$
+
+(
+
+547
+
+)
+
+$
+
+7,596
+
+$
+
+8,173
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+(Loss) Income
+
+Retained
+
+Earnings
+
+Total
+
+Balance, July 29, 2023
+
+1,145
+
+$
+
+1,145
+
+$
+
+—
+
+$
+
+(
+
+551
+
+)
+
+$
+
+6,014
+
+$
+
+6,608
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,191
+
+1,191
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+102
+
+)
+
+—
+
+(
+
+102
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+380
+
+)
+
+(
+
+380
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+44
+
+—
+
+—
+
+44
+
+Issuance of common stock under stock incentive plan and related tax effect
+
+3
+
+3
+
+119
+
+—
+
+—
+
+122
+
+Common stock repurchased
+
+(
+
+7
+
+)
+
+(
+
+7
+
+)
+
+(
+
+163
+
+)
+
+—
+
+(
+
+480
+
+)
+
+(
+
+650
+
+)
+
+Balance, October, 28, 2023
+
+1,141
+
+$
+
+1,141
+
+$
+
+—
+
+$
+
+(
+
+653
+
+)
+
+$
+
+6,345
+
+$
+
+6,833
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+7
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY
+
+(UNAUDITED)
+
+IN MILLIONS
+
+Thirty-Nine Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value $
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+(Loss) Income
+
+Retained
+
+Earnings
+
+Total
+
+Balance, February 3, 2024
+
+1,134
+
+$
+
+1,134
+
+$
+
+—
+
+$
+
+(
+
+532
+
+)
+
+$
+
+6,700
+
+$
+
+7,302
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+3,466
+
+3,466
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+15
+
+)
+
+—
+
+(
+
+15
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+1,271
+
+)
+
+(
+
+1,271
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+131
+
+—
+
+—
+
+131
+
+Issuance of common stock under stock incentive plan and related tax effect
+
+5
+
+5
+
+207
+
+—
+
+—
+
+212
+
+Common stock repurchased
+
+(
+
+15
+
+)
+
+(
+
+15
+
+)
+
+(
+
+338
+
+)
+
+—
+
+(
+
+1,299
+
+)
+
+(
+
+1,652
+
+)
+
+Balance, November 2, 2024
+
+1,124
+
+$
+
+1,124
+
+$
+
+—
+
+$
+
+(
+
+547
+
+)
+
+$
+
+7,596
+
+$
+
+8,173
+
+Thirty-Nine Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value $
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+(Loss) Income
+
+Retained
+
+Earnings
+
+Total
+
+Balance, January 28, 2023
+
+1,155
+
+$
+
+1,155
+
+$
+
+—
+
+$
+
+(
+
+606
+
+)
+
+$
+
+5,815
+
+$
+
+6,364
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+3,071
+
+3,071
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+47
+
+)
+
+—
+
+(
+
+47
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+1,144
+
+)
+
+(
+
+1,144
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+114
+
+—
+
+—
+
+114
+
+Issuance of common stock under stock incentive plan and related tax effect
+
+6
+
+6
+
+170
+
+—
+
+(
+
+1
+
+)
+
+175
+
+Common stock repurchased
+
+(
+
+20
+
+)
+
+(
+
+20
+
+)
+
+(
+
+284
+
+)
+
+—
+
+(
+
+1,396
+
+)
+
+(
+
+1,700
+
+)
+
+Balance, October, 28, 2023
+
+1,141
+
+$
+
+1,141
+
+$
+
+—
+
+$
+
+(
+
+653
+
+)
+
+$
+
+6,345
+
+$
+
+6,833
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+8
+
+THE TJX COMPANIES, INC.
+
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
+
+Note A.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+Basis of Presentation
+
+The Consolidated Financial Statements and Notes thereto have been prepared in accordance with accounting principles generally accepted in the United States of America ("GAAP") for interim financial information. These Consolidated Financial Statements and Notes thereto are unaudited and, in the opinion of management, reflect all normal recurring adjustments, accruals and deferrals among periods required to match costs properly with the related revenue or activity, considered necessary by The TJX Companies, Inc. (together with its subsidiaries, "TJX") for a fair statement of its Consolidated Financial Statements for the periods reported, all in conformity with GAAP consistently applied. The Consolidated Financial Statements and Notes thereto should be read in conjunction with the audited Consolidated Financial Statements, including the related notes, contained in TJX's Annual Report on Form 10-K for the fiscal year ended February 3, 2024 ("fiscal 2024").
+
+These interim results are not necessarily indicative of results for the full fiscal year. TJX's business, in common with the businesses of retailers generally, is subject to seasonal influences, with higher levels of sales and income generally realized in the second half of the year.
+
+The February 3, 2024 balance sheet data was derived from audited Consolidated Financial Statements and does not include all disclosures required by GAAP.
+
+Fiscal Year
+
+TJX's fiscal year ends on the Saturday nearest to the last day of January of each year. The current fiscal year ends February 1, 2025 ("fiscal 2025") and is a 52-week fiscal year. Fiscal 2024 was a 53-week fiscal year. "Fiscal 2026" will be a 52-week fiscal year and will end January 31, 2026. "Fiscal 2027" will be a 52-week fiscal year and will end January 30, 2027.
+
+Use of Estimates
+
+The preparation of financial statements, in conformity with GAAP, requires management to make estimates and assumptions that affect the reported amounts of assets and liabilities and disclosure of contingent liabilities at the date of the financial statements as well as the reported amounts of revenues and expenses during the reporting period. TJX considers its accounting policies relating to inventory valuation, reserves for uncertain tax positions and loss contingencies to be the most significant accounting policies that involve management estimates and judgments. Actual amounts could differ from these estimates, and such differences could be material.
+
+Deferred Gift Card Revenue
+
+The following table presents deferred gift card revenue activity:
+
+In millions

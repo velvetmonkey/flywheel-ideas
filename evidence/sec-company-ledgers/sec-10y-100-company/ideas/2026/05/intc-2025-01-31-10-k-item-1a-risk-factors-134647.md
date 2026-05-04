@@ -1,0 +1,425 @@
+---
+id: idea-U9zvjcGe
+type: idea
+state: nascent
+title: INTC 2025-01-31 10-K Item 1A Risk Factors
+created_at: '2026-05-03T19:38:54.647Z'
+date: '2026-05-03'
+created: '2026-05-03T19:38:55.005Z'
+---
+# INTEL CORP 10-K Item 1A Risk Factors
+
+Filed: 2025-01-31
+Source: https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm
+
+Risk Factors
+
+Pages
+
+31
+
+-
+
+46
+
+Item 1B.
+
+Unresolved Staff Comments
+
+None
+
+Item 1C.
+
+Cybersecurity
+
+Page
+
+48
+
+Item 2.
+
+Properties
+
+Pages
+
+8
+
+,
+
+49
+
+Item 3.
+
+Legal Proceedings
+
+Pages
+
+96
+
+-
+
+99
+
+Item 4.
+
+Mine Safety Disclosures
+
+None
+
+Part II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters, and Issuer Purchases of Equity Securities
+
+Pages
+
+6
+
+,
+
+49
+
+-
+
+50
+
+Item 6.
+
+[Reserved]
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations:
+
+Liquidity and capital resources
+
+Pages
+
+28
+
+-
+
+30
+
+,
+
+30
+
+Results of operations
+
+Pages
+
+13
+
+-
+
+27
+
+Critical accounting estimates
+
+Pages
+
+30
+
+,
+
+62
+
+-
+
+68
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+Pages
+
+47
+
+-
+
+48
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+Pages
+
+53
+
+-
+
+101
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+None
+
+Item 9A.
+
+Controls and Procedures
+
+Page
+
+102
+
+Item 9B.
+
+Other Information
+
+Disclosure pursuant to Section 13(r) of the Securities Exchange Act of 1934
+
+Page
+
+52
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+None
+
+Part III
+
+Item 10.
+
+Directors, Executive Officers, and Corporate Governance
+
+Page
+
+51
+
+(a)
+
+Item 11.
+
+Executive Compensation
+
+(a)
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+(a)
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+(a)
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+(a)
+
+Part IV
+
+Item 15.
+
+Exhibits and Financial Statement Schedules
+
+Pages
+
+53
+
+-
+
+101
+
+,
+
+103
+
+-
+
+107
+
+Item 16.
+
+Form 10-K Summary
+
+None
+
+Signatures
+
+Page
+
+109
+
+(a) Incorporated by reference to the applicable section of the 2025 Proxy Statement.
+
+Supplemental Details
+
+108
+
+Table of Contents
+
+Signatures
+
+Pursuant to the requirements of Section 13 or 15(d) of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized.
+
+INTEL CORPORATION
+
+Registrant
+
+By:
+
+/s/ DAVID ZINSNER
+
+David Zinsner
+
+Interim Co-Chief Executive Officer, Executive Vice President and Chief Financial Officer
+
+January 31, 2025
+
+Pursuant to the requirements of the Securities Exchange Act of 1934, this report has been signed below by the following persons on behalf of the Registrant and in the capacities and on the dates indicated.
+
+/s/ DAVID ZINSNER
+
+/s/ MICHELLE JOHNSTON HOLTHAUS
+
+David Zinsner
+
+Michelle Johnston Holthaus
+
+Interim Co-Chief Executive Officer, Executive Vice President
+
+Interim Co-Chief Executive Officer and Chief Executive Officer,
+
+and Chief Financial Officer
+
+Intel Products
+
+(Co-Principal Executive Officer and Principal Financial Officer)
+
+(Co-Principal Executive Officer)
+
+January 31, 2025
+
+January 31, 2025
+
+/s/ SCOTT GAWEL
+
+Scott Gawel
+
+Corporate Vice President and Chief Accounting Officer
+
+(Principal Accounting Officer)
+
+January 31, 2025
+
+/s/ JAMES J. GOETZ
+
+/s/ DR. ANDREA J. GOLDSMITH
+
+James J. Goetz
+
+Dr. Andrea J. Goldsmith
+
+Director
+
+Director
+
+January 31, 2025
+
+January 31, 2025
+
+/s/ ALYSSA HENRY
+
+/s/ DR. OMAR ISHRAK
+
+Alyssa Henry
+
+Dr. Omar Ishrak
+
+Director
+
+Director
+
+January 31, 2025
+
+January 31, 2025
+
+/s/ DR. TSU-JAE KING LIU
+
+/s/ DR. RISA LAVIZZO-MOUREY
+
+Dr. Tsu-Jae King Liu
+
+Dr. Risa Lavizzo-Mourey
+
+Director
+
+Director
+
+January 31, 2025
+
+January 31, 2025
+
+/s/ ERIC MEURICE
+
+/s/ BARBARA G. NOVICK
+
+Eric Meurice
+
+Barbara G. Novick
+
+Director
+
+Director
+
+January 31, 2025
+
+January 31, 2025
+
+/s/ STEVE SANGHI
+
+/s/ GREGORY D. SMITH
+
+Steve Sanghi
+
+Gregory D. Smith
+
+Director
+
+Director
+
+January 31, 2025
+
+January 31, 2025
+
+/s/ STACY J. SMITH
+
+/s/ DION J. WEISLER
+
+Stacy J. Smith
+
+Dion J. Weisler
+
+Director
+
+Director
+
+January 31, 2025
+
+January 31, 2025
+
+/s/ FRANK D. YEARY
+
+Frank D. Yeary
+
+Interim Executive Chair of the Board and Director
+
+January 31, 2025
+
+Supplemental Details
+
+109

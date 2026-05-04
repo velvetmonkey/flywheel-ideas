@@ -1,0 +1,486 @@
+---
+id: company-run-sec-10y-100-company-disputes
+type: report
+report_kind: company_evaluation_disputes
+schema: sec-company-ledger-markdown-v1
+run_id: sec-10y-100-company
+entity_id: company-run-sec-10y-100-company-disputes
+entity_type: company_evaluation_disputes
+source: flywheel-ideas
+date: '2026-05-04'
+created: '2026-05-04T12:29:01.159Z'
+---
+# Disputes sec-10y-100-company
+
+Items here need human review or council escalation before any canonical action.
+
+- **adjudication_packet / og-018**: needs_more_evidence (0.64)
+  -
+- **adjudication_packet / og-017**: insufficient_evidence (0.78)
+  - To be ready for human accept/reject review, the packet should include the exact SEC filing text supporting each theme and a clear, falsifiable mapping from that text to the proposed thesis assertions. Here, the only excerpt shown is non-specific and could relate to restructuring/footprint optimization rather than capacity constraints, and there is no visible support at all for the cloud/data-center capacity theme.
+- **adjudication_packet / og-014**: insufficient_evidence (0.78)
+  -
+- **adjudication_packet / og-010**: insufficient_evidence (0.74)
+  -
+- **adjudication_packet / og-004**: needs_more_evidence (0.64)
+  -
+- **adjudication_packet / og-001**: insufficient_evidence (0.72)
+  -
+- **cross_sector_pattern / ai-rd-technology:geographic-concentration**: insufficient_evidence (0.78)
+  -
+- **cross_sector_pattern / macro-fx:capacity-investment-opex**: insufficient_evidence (0.66)
+  -
+- **cross_sector_pattern / competition:platform-customer-concentration**: insufficient_evidence (0.68)
+  -
+- **cross_sector_pattern / demand:geographic-concentration**: insufficient_evidence (0.66)
+  - For the claimed mechanism (geographic concentration or local disruption) to be meaningful, the filings should indicate demand sensitivity to specific geographies, local events/regulations, regional economic shocks, or revenue/customer concentration by region. The MAR excerpts focus on competitive dynamics (hotel chains vs. home/apartment sharing) and contractual fee mechanics, not geographic concentration. The WBD excerpts discuss consolidation among distributors and generic forward-looking risk factor language, which is not specific to geography/local disruption. With the current evidence, classifying this as a realized or shared geographic-concentration mechanism would be overreach.
+- **cross_sector_pattern / regulation-legal:geographic-concentration**: insufficient_evidence (0.78)
+  - To classify this pattern as meaningful, the evidence should describe exposure tied to specific geographies (e.g., revenue/user/concentration in certain cities/regions), location-specific regulatory regimes, or localized disruptions (e.g., municipal/state actions materially affecting operations). The CMCSA excerpts are generalized statements about being subject to regulation, and the “Legal Proceedings” items are headings without mechanism detail. The GOOGL excerpts shown are about competition and forward-looking statement boilerplate, not geographic concentration/local disruption. As presented, the snippets do not demonstrate the intended mechanism, so the pattern cannot be validated from this evidence set.
+- **cross_sector_pattern / demand:capacity-investment-opex**: insufficient_evidence (0.78)
+  -
+- **cross_sector_pattern / supply-chain:single-supplier-manufacturing**: ambiguous (0.62)
+  -
+- **cross_sector_pattern / supply-chain:platform-customer-concentration**: ambiguous (0.56)
+  -
+- **cross_sector_pattern / supply-chain:geographic-concentration**: insufficient_evidence (0.78)
+  -
+- **cross_sector_pattern / cloud-data-center-capacity:platform-customer-concentration**: insufficient_evidence (0.77)
+  -
+- **cross_sector_pattern / inventory-channel:platform-customer-concentration**: insufficient_evidence (0.66)
+  -
+- **cross_sector_pattern / macro-fx:geographic-concentration**: ambiguous (0.55)
+  -
+- **cross_sector_pattern / cloud-data-center-capacity:capacity-investment-opex**: insufficient_evidence (0.72)
+  -
+- **cross_sector_pattern / customer-platform-dependency:platform-customer-concentration**: insufficient_evidence (0.74)
+  -
+- **cross_sector_pattern / inventory-channel:capacity-investment-opex**: ambiguous (0.42)
+  -
+- **cross_sector_pattern / supply-chain:capacity-investment-opex**: insufficient_evidence (0.66)
+  -
+- **cross_sector_pattern / demand:consumer-demand-shock**: insufficient_evidence (0.74)
+  -
+- **cross_sector_pattern / macro-fx:consumer-demand-shock**: insufficient_evidence (0.74)
+  -
+- **cross_sector_pattern / geopolitics-tariffs:geographic-concentration**: ambiguous (0.58)
+  -
+- **cross_sector_pattern / liquidity:interest-credit-liquidity**: ambiguous (0.64)
+  -
+- **thesis_delta / MCD**: new_watchpoint (0.62)
+  - Across the cited periods, reported results are repeatedly described as benefiting from stronger operating performance but also being materially affected by strategic charges (including non-cash impairments tied to refranchising and G&A initiatives) and, later, a very large pre-tax gain on a sale partially offset by additional non-cash impairments. This pattern introduces a thesis-relevant monitoring point: changes in liquidity and apparent performance may be significantly shaped by episodic refranchising/asset-sale activity and non-cash charges, complicating trend inference from headline results alone. Because the underlying “thesis” is not explicitly provided, this is framed as a watchpoint rather than a directional strengthen/weaken call.
+- **thesis_delta / TMUS**: insufficient_evidence (0.63)
+  -
+- **thesis_delta / KO**: thesis_unchanged (0.62)
+  -
+- **thesis_delta / HD**: new_watchpoint (0.62)
+  -
+- **thesis_delta / GOOGL**: insufficient_evidence (0.28)
+  -
+- **thesis_delta / MO**: insufficient_evidence (0.66)
+  - A thesis-delta determination requires mapping each outcome to one or more explicit thesis claims (e.g., “MO’s cash generation is resilient,” “reduced-burn/e-vapor investments will be value-accretive,” “balance sheet risk is low,” etc.) and checking whether the new/accumulated evidence contradicts or supports those claims relative to what the thesis already incorporated. The provided excerpts show recurring risk factors (supply chain/geopolitics) and realized value write-downs (impairments), but they do not, on their own, specify which thesis claim(s) they are meant to test or what the prior belief/prior stage outcome was.
+- **thesis_delta / SBUX**: insufficient_evidence (0.72)
+  -
+- **thesis_delta / PEP**: new_watchpoint (0.62)
+  - Across the referenced 2020 disclosures, PepsiCo shifts from general pandemic uncertainty to more concrete operational impacts (e.g., reduced manufacturing capacity at certain facilities due to absenteeism) and explicit incremental COVID-related costs (expanded benefits, frontline incentives, PPE/sanitation). The language also highlights logistics fragility (reduced air/commercial transport availability, port closures, border restrictions) as a mechanism that can impair ability to manufacture/distribute/sell products. This constitutes a thesis-relevant delta primarily as a risk/watchpoint (margin, service levels, and working-capital/liquidity volatility) rather than clear evidence that any pre-existing positive/negative thesis has strengthened or weakened.
+- **thesis_delta / AAPL**: new_watchpoint (0.62)
+  -
+- **thesis_delta / WBD**: new_watchpoint (0.62)
+  -
+- **thesis_delta / VZ**: insufficient_evidence (0.73)
+  -
+- **thesis_delta / MSFT**: new_watchpoint (0.62)
+  -
+- **thesis_delta / BKNG**: ambiguous (0.46)
+  -
+- **thesis_delta / COST**: thesis_unchanged (0.55)
+  - Across the provided evidence refs, the key liquidity outcome language is consistent and explicitly notes no material changes to valuation techniques, which supports a conclusion of continuity rather than a strengthening/weakened liquidity thesis delta based on these excerpts alone.
+- **thesis_delta / MU**: new_watchpoint (0.62)
+  - Across the cited periods, the evidence shifts from short-cycle demand mix management (reallocating supply toward data center) to a prolonged industry/company downcycle characterized by falling DRAM/NAND ASPs and reduced shipments, with management actions (wafer-start reductions, capex cuts, restructuring) that introduce execution/absorption-risk markers (fabrication underutilization costs) and recovery-timing uncertainty. Separately, the CAC cybersecurity review outcome introduces a distinct, falsifiable regulatory/geopolitical risk channel that can affect demand and market access in China.
+- **thesis_delta / AVGO**: new_watchpoint (0.63)
+  -
+- **thesis_delta / PM**: new_watchpoint (0.63)
+  -
+- **thesis_delta / NFLX**: ambiguous (0.62)
+  -
+- **thesis_delta / TSLA**: insufficient_evidence (0.72)
+  -
+- **thesis_delta / DIS**: new_watchpoint (0.56)
+  -
+- **thesis_delta / CSCO**: thesis_unchanged (0.62)
+  -
+- **outcome_validity / cout-c5Dzq3kJ**: insufficient_evidence (0.78)
+  - To qualify as an outcome candidate for a falsifiable ledger, the evidence should describe a concrete realized occurrence (what happened, when, and how it manifested in reported performance/liquidity/forecasting/debt markets). Here, most clauses are conditional (“could negatively impact”, “may make it more difficult”), and the one past-tense clause is non-specific (“from time to time” / “have … adversely affected”), making it hard to treat as a distinct pass/fail outcome rather than generic cautionary disclosure.
+- **outcome_validity / cout-KExnj5Yy**: insufficient_evidence (0.74)
+  -
+- **outcome_validity / cout-GorxstR4**: insufficient_evidence (0.72)
+  - While portions are phrased as past/ongoing impact (e.g., “have adversely affected our business and results of operations” and “In recent periods… have adversely affected market and business conditions in general”), the language remains high-level and non-specific (no dated event, no quantified impact, no direct tie to a measurable KPI or segment performance). This reads closer to generalized risk-factor narrative than a falsifiable outcome instance suitable for pass/fail review on the cited assumption.
+- **outcome_validity / cout-ACZRATjn**: ambiguous (0.62)
+  -
+- **outcome_validity / cout-v6goN1Js**: insufficient_evidence (0.74)
+  - This is a cost-driver attribution (opex up due to R&D investments) rather than evidence of a capacity outcome (e.g., inability to meet demand, provisioning delays, regional constraints, customer churn, SLA impacts, or revenue growth limits) attributable to cloud/data center capacity. Without explicit linkage to a capacity constraint or its operational/customer impact, it is not a falsifiable pass/fail outcome for the capacity thesis on its own.
+- **outcome_validity / cout-4jwKiyyY**: insufficient_evidence (0.78)
+  -
+- **outcome_validity / cout-Q6cRP46M**: ambiguous (0.66)
+  - This is concrete, historical operating evidence (R&D expense increased year-over-year and management attributes drivers). However, the stated drivers—cloud engineering investments, hardware-portfolio impairment charges, and LinkedIn—are broad and only partially overlap with the AI/technology thesis framing. The text does not establish that AI-specific initiatives caused the increase, nor does it provide a thresholded or falsifiable condition (e.g., AI R&D spend up/down, AI program impairment, or measurable AI-related performance impact) that would map cleanly to validation or failure of the assumption.
+- **outcome_validity / cout-61n2QAKz**: ambiguous (0.67)
+  - This is non-boilerplate MD&A-style attribution of an actual financial line-item change (“Cost of revenue increased… driven by growth…”), which is a realized operational/financial effect. However, the stated outcome is primarily a cost/expense driver explanation; while “growth in commercial cloud and Gaming” likely correlates with higher demand/usage, the excerpt does not explicitly describe demand conditions (e.g., demand weakness, demand variability, customer purchasing behavior) or tie the effect to a demand-related risk mechanism. As a result, it is unclear whether this should be treated as a clean demand outcome validation/failure versus a cost-structure/mix/scale outcome.
+- **outcome_validity / cout-uzBxztXV**: ambiguous (0.66)
+  - This is concrete, time-bounded operational impact language (“experienced disruptions… resulting in temporary iPhone supply shortages that affected sales worldwide”), so it qualifies as a realized event suitable for an outcome record under a supply-chain theme. However, without the explicit underlying assumption statement/polarity for this ledger entry, it’s unclear whether to label it as a thesis validation or a failure (it clearly indicates an adverse outcome occurred, but the mapping to pass/fail depends on what the assumption asserted).
+- **outcome_validity / cout-vFYN1LWP**: insufficient_evidence (0.78)
+  -
+- **outcome_validity / cout-nFWxcCZb**: ambiguous (0.72)
+  - This is not boilerplate risk language; it reports an actual incurred charge (excess inventory/purchase obligations) and subsequent realized revenue under granted licenses, making it a concrete, falsifiable operational/financial outcome relevant to inventory/channel dynamics. However, without the underlying assumption text, it is unclear whether this outcome should be scored as a thesis failure vs validation (it is clearly adverse to H20 China shipments, but the assumption’s direction/scope is not provided).
+- **outcome_validity / cout-UPCRQmgc**: ambiguous (0.74)
+  - This is not boilerplate: it reports a specific regulatory change (April 2025), an observed demand effect (“demand for H20 diminished”), and a concrete financial consequence ($4.5B charge in Q1 FY2026) plus operational/revenue status (no shipments/revenue under licenses to date). That makes it a valid realized event suitable to review as an outcome. However, whether it constitutes a thesis pass (validation) or fail depends on the exact assumption being tested (e.g., overall NVDA demand resilience vs. China-specific H20 demand), which is not provided in the evidence.
+- **outcome_validity / cout-jBcXDeFd**: insufficient_evidence (0.74)
+  -
+- **assumption_quality / asm-gHpqF4w1**: insufficient_evidence (0.78)
+  - A falsifiable dependency assumption should specify an identifiable dependency relationship (who/what Amazon depends on), a measurable exposure (e.g., % of revenue/volume, critical counterparties, platform gatekeepers), and an observable failure mode (loss/renegotiation/defection leading to quantified impact). The excerpt is primarily descriptive of offerings to creators and does not provide concentration metrics, reliance statements, or risk language tying business performance to a small set of customers/platforms. As such, it reads as generic business-description language rather than evidence supporting a dependency mechanism.
+- **assumption_quality / asm-Eesv17uF**: ambiguous (0.56)
+  - A falsifiable assumption should specify a concrete, testable claim (e.g., binding capacity/prepay commitments materially pressure margins/opex/cash flow under certain demand scenarios). The evidence set mixes (1) generic risk-factor statements about third-party manufacturing reliance and industry cyclicality, (2) episodic operational commentary (COVID-related disruptions, PC channel inventory correction), and (3) at least one specific contractual datapoint (GF wafer supply agreement amendment with minimum capacity allocation). However, the excerpts do not clearly connect supply-chain arrangements to an explicit, measurable “operating expense drag” (or quantify capacity-investment/prepayment burdens), making the assumption definition under-specified relative to its mechanism.
+- **assumption_quality / asm-UMyfURLG**: assumption_weak (0.63)
+  -
+- **assumption_quality / asm-E1S8hNjw**: insufficient_evidence (0.66)
+  -
+- **assumption_quality / asm-cX6hzDj2**: ambiguous (0.62)
+  -
+- **assumption_quality / asm-Dxy91tHL**: ambiguous (0.62)
+  -
+- **assumption_quality / asm-Dh2ntKH6**: insufficient_evidence (0.78)
+  - A falsifiable capacity thesis needs filing language that ties business outcomes to capacity availability/constraints (or to owned vs. third-party data center dependence), plus a measurable implication. The provided observations are largely boilerplate product/service descriptions (including iCloud) and generic performance drivers (“higher net sales from cloud services”), which do not express a capacity mechanism. Because the evidence does not actually discuss capacity, the assumption theme as labeled (“Cloud and data center capacity”) is not supported strongly enough to judge as sound or weak-on-the-merits; it is primarily missing the required capacity-specific linkage.
+- **filing_section_meaning / filing-2FXdy6XP**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-wEUSmm8H**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-kyGjExS7**: ambiguous (0.58)
+  -
+- **filing_section_meaning / filing-rChCwDxM**: meaningful_signal (0.64)
+  -
+- **filing_section_meaning / filing-kWdPuqyF**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-DKNZKxbr**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-S28HzGRA**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-f3DX7FNN**: ambiguous (0.63)
+  -
+- **filing_section_meaning / filing-2AnCTv7N**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-nQFmx9hL**: insufficient_evidence (0.72)
+  -
+- **filing_section_meaning / filing-hQE5q7qG**: ambiguous (0.62)
+  - Most excerpts describe broad, non-falsifiable risks (competition, macro conditions, FX, regulation) and standard PSLRA forward-looking statement cautions, which typically read as boilerplate rather than incremental evidence. However, at least two excerpts contain concrete, company-specific statements that could support or test a thesis about demand sensitivity, working-capital/commitment risk, or tax/legal exposure: (1) supplier commitments for device components/Whole Foods products based on forecasted customer demand; (2) disclosure of IRS Notices of Proposed Adjustment for 2005–2006 transfer-pricing transactions and ongoing contesting. Without the surrounding context (amounts, materiality, changes vs prior filings, and linkage to current-quarter results), it’s unclear whether these specifics are materially informative signals versus routine disclosures.
+- **filing_section_meaning / filing-NAsEu5KQ**: insufficient_evidence (0.66)
+  -
+- **filing_section_meaning / filing-7rBYQyY9**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-z9xff57D**: ambiguous (0.63)
+  -
+- **filing_section_meaning / filing-FZLWTxF3**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-6ZGf4XcR**: meaningful_signal (0.62)
+  - Item 1A excerpts largely read as standard retail risk framing (adapting to changing shopping habits, cybersecurity/privacy, technology transformation). However, the Item 7 excerpts include more concrete, Lowe’s-specific strategy and capability assertions (Project Specialists as a differentiated omni-channel element for DIFM demand, explicit focus on Pro inventory/digital channel, and specific fulfillment/delivery investments including a new direct fulfillment center and Pick Up In Store improvements). These are more likely to be thesis-relevant because they imply identifiable initiatives and expected benefits that can be checked against later disclosures and performance.
+- **filing_section_meaning / filing-tnEMNpv6**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-tPZC488q**: insufficient_evidence (0.64)
+  -
+- **filing_section_meaning / filing-Q1iVrf1U**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-bPDNyGk2**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-2kvk39g2**: ambiguous (0.62)
+  - Several excerpts are broadly applicable to most consumer/discretionary or online travel businesses (generic risk-factor framing, macro sensitivity, and competition language), which reads as boilerplate. However, there are signals that could be falsifiable in a thesis ledger: explicit mention of FX volatility across USD/EUR/GBP, Brexit-related regulatory/travel restrictions risk (material for a global travel intermediary), named examples of platform/market model disruption, and a direct statement that year-over-year growth rates have generally decelerated (a concrete directional claim). With only short snippets (not full surrounding context), it’s unclear whether the section is predominantly generic or contains additional quantified, company-specific evidence—so the safest classification is ambiguous rather than forcing “meaningful_signal” or “mostly_boilerplate.”
+- **filing_section_meaning / filing-6G8GdDHA**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-XEW7oe4q**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-Ud39hoAL**: ambiguous (0.66)
+  - Most Item 1A excerpts read like standard risk disclosures that are broadly applicable to large telecoms and are not clearly company- or period-differentiating on their own. However, there are discrete statements in Item 1A and Item 7 that could support or falsify a thesis about near-term regulatory exposure (Europe data protection penalties), technology execution/positioning (5G trials with active customers), and demand/credit profile (high postpaid mix). Because the evidence set spans multiple sections and includes both boilerplate and some specific, checkable claims, the overall signal is mixed rather than clearly meaningful or clearly boilerplate.
+- **filing_section_meaning / filing-fCW96n62**: ambiguous (0.66)
+  -
+- **filing_section_meaning / filing-bNBK9K9X**: insufficient_evidence (0.78)
+  -
+- **filing_section_meaning / filing-dmqRQ6Fm**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-9J3tFuDK**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-uuaBNcG2**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-5d1bqw6g**: ambiguous (0.62)
+  - Most provided excerpts are generic framing (risk-factor preface), high-level competitive/growth risks, and standard PSLRA forward-looking-statement disclaimers—typically boilerplate and not strongly falsifiable. However, the India disclosure describes a specific operational/legal structure (marketing/logistics services to third-party sellers; indirect minority interests in seller entities) and flags potential rule changes that could impact that structure, which can be thesis-relevant depending on the ledger’s regulatory-risk hypotheses.
+- **filing_section_meaning / filing-mWtdCGkM**: ambiguous (0.64)
+  - Most excerpts read like reusable disclosure templates: forward-looking statements framing, a general description of products/services and distribution channels, and broadly applicable risks about macro conditions, competition, and market volatility. However, the statement that the company issued "$7.0 billion of U.S. dollar-denominated term debt" is a specific event that could matter for a capital-structure/liquidity thesis. Because the evidence set mixes boilerplate with a limited amount of specific signal (and the debt excerpt is not contextualized with amounts/timing/use of proceeds), the section meaning is not clearly one or the other.
+- **filing_section_meaning / filing-359SjTsr**: ambiguous (0.58)
+  -
+- **filing_section_meaning / filing-9wfYj2UU**: ambiguous (0.56)
+  - Several excerpts are clearly generic (e.g., broad statements about management estimates/assumptions and general revenue category descriptions) and would typically be considered boilerplate for a large software/services issuer. However, the risk-factor excerpts referencing GDPR impacts on demand and legal uncertainty for transatlantic data transfers (Privacy Shield / European court decisions) can be materially relevant to specific theses about enterprise cloud adoption, compliance friction, and regional demand sensitivity. Separately, the disclosure about sole suppliers and component capacity affecting datacenter capacity points to a concrete operational dependency that could matter for cloud growth/availability theses, even if still presented in risk-factor form.
+- **filing_section_meaning / filing-5vZaLkma**: ambiguous (0.63)
+  -
+- **filing_section_meaning / filing-ERkZeZsz**: insufficient_evidence (0.72)
+  -
+- **filing_section_meaning / filing-gBGfwVYD**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-MTTMhPZF**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-x7dxMzNz**: insufficient_evidence (0.72)
+  -
+- **filing_section_meaning / filing-dpT1Z7kZ**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-p3Qwuz1Y**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-pTmGaf93**: meaningful_signal (0.64)
+  - The forward-looking statement framing and RevPAR/occupancy/ADR definitions are generic and recur across filings, offering limited incremental thesis value on their own. In contrast, disclosures tying execution risk to integrating Starwood and negotiating with branded credit card/timeshare partners to move to a single reservation system/loyalty platform are specific and falsifiable (progress or setbacks should appear in later filings). Similarly, explicit mention of geopolitical impacts (including sanctions on Qatar) and hurricane-driven closures provides concrete, time-bounded drivers that can be tracked against subsequent RevPAR/fee growth narratives and segment/region commentary.
+- **filing_section_meaning / filing-p6oLeFKq**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-MBeGnFUm**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-odxAAtxL**: insufficient_evidence (0.66)
+  -
+- **filing_section_meaning / filing-ctMTraeu**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-gUVgVhDU**: ambiguous (0.62)
+  - Several Item 1A excerpts are broad, non-specific risk disclosures (GDPR/data regulation demand risk, talent/immigration constraints, catastrophic events, supply/quality issues, FX/emerging markets) that commonly appear as standardized risk-factor boilerplate rather than new, falsifiable evidence. In contrast, portions attributed to Item 2 (MD&A) include concrete business performance descriptors (e.g., Windows OEM revenue increased 4%, mix/offset explanations across phones/search/surface) that can be thesis-relevant, but the snippets shown are too partial to determine novelty versus routine quarterly narration or whether they materially update a specific thesis assumption.
+- **filing_section_meaning / filing-PHW5CJnM**: insufficient_evidence (0.62)
+  -
+- **filing_section_meaning / filing-NPy9MyV5**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-DVpXYZ5r**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-hYc44opm**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-TBcheoJs**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-9mAkJbdX**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-Lwmsnuo6**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-MqBjSjem**: ambiguous (0.58)
+  -
+- **filing_section_meaning / filing-5C4zkdxa**: ambiguous (0.62)
+  - Most Item 1A snippets are standard macro/competition/supply-chain/liquidity/tax-risk language that is common across large multinationals and is hard to falsify or tie to a specific differentiated thesis. In contrast, several Item 7 excerpts describe specific initiatives ("intent-based"/"intuitive" networking; applying machine learning and advanced analytics; SD-Access/DNA) and an explicit emphasis on delivering technologies through software and services, which can support a falsifiable product/strategy thesis—but without the surrounding context and without a prior-year comparison, it is unclear whether these are new disclosures or ongoing messaging.
+- **filing_section_meaning / filing-mpLFAQbt**: insufficient_evidence (0.74)
+  - The snippets shown (“Legal Proceedings”, “Cash and cash equivalents”, “Merchandise inventory - net”, “Deferred revenue”, “Foreign currency translation adjustments - net of tax”) do not include figures, deltas, explanations, or specific risk/legal/litigation details. The only long excerpt is a common 10-Q boilerplate disclaimer about unaudited interim financial statements and reduced disclosures versus annual GAAP statements. With only these fragments, it’s not possible to determine whether Item 2 MD&A or Item 1A Risk Factors contain a meaningful, falsifiable update versus routine reporting.
+- **filing_section_meaning / filing-xhgsr4qD**: ambiguous (0.63)
+  -
+- **filing_section_meaning / filing-RT4V9uG9**: insufficient_evidence (0.64)
+  -
+- **filing_section_meaning / filing-kowC1uK4**: ambiguous (0.62)
+  - Most observations repeat a generic PSLRA forward-looking-statement paragraph listing broad risks/variables (demand, comps, competition, macro, credit, supply chain, litigation/data breach), which is typically boilerplate and not a differentiated thesis datapoint by itself. Separately, one excerpt indicates ongoing investment in digital platforms and notes online-channel sales increased, and another describes a merchandising transformation/portfolio strategy; these could support a thesis about omnichannel execution or strategic initiatives, but the excerpts are truncated and lack specific metrics, comparative context, or commitments, making the evidentiary weight unclear.
+- **filing_section_meaning / filing-Pn34k3dU**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-iKjCLyh6**: insufficient_evidence (0.62)
+  -
+- **filing_section_meaning / filing-87wWC5KC**: ambiguous (0.62)
+  - Most excerpts read like standard MD&A framing: broad descriptions of products/services, network leadership, capital investment needs, 4G/5G strategy, privacy/security posture, and competitive positioning. However, at least two snippets contain concrete, potentially falsifiable information tied to a specific transaction (acquisition of Yahoo’s operating business; Altaba retaining 50% of certain post-closing liabilities) and a specific cash figure (~$4.83B) described in the context of “the Transaction.” With only these fragments (and no surrounding context), it is unclear whether the section overall delivers material new evidence versus mostly narrative positioning plus a few deal notes.
+- **filing_section_meaning / filing-KwauXCrL**: ambiguous (0.56)
+  - Item 1A snippets largely read as standard large-cap tech risk disclosures (privacy/regulatory evolution, cross-border data transfer, supply chain disruptions, talent/immigration constraints, geopolitical disruption) without a clearly unique, falsifiable claim tied to a discrete operational metric in the excerpted text. In contrast, Item 7 excerpts contain specific, falsifiable period explanations (e.g., quantified impairment/restructuring swing and R&D increase attributed to LinkedIn and cloud engineering), which is more thesis-relevant. The mixed section keys and partial excerpts prevent a clean single-label classification for “this filing section.”
+- **filing_section_meaning / filing-e98YFfkY**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-uW2UfKu1**: ambiguous (0.64)
+  -
+- **filing_section_meaning / filing-dEi48rL9**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-4ssKfEKo**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-M9Q9Nzjk**: insufficient_evidence (0.72)
+  -
+- **filing_section_meaning / filing-foknvqVp**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-wZ7UNBZN**: insufficient_evidence (0.66)
+  - Most observation excerpts are either single-line headings (e.g., “Legal Proceedings”) or generic line-item labels (e.g., “Cash and cash equivalents”, “Merchandise inventory - net”, “Deferred revenue”, “Foreign currency translation adjustments - net of tax”) without the surrounding quantitative values, directional changes, or narrative explanations that would make them falsifiable evidence. The only longer excerpt is a common 10-Q boilerplate statement about unaudited financial statements and SEC disclosure rules, which is typically non-differentiating and not thesis-specific.
+- **filing_section_meaning / filing-RjGxbe6y**: ambiguous (0.62)
+  - Most Item 1A excerpts read like common risk-factor boilerplate that is broadly true for major game publishers and does not, by itself, falsify a differentiated thesis. However, the Item 7 excerpts contain some more concrete, thesis-relevant context about EA’s strategic direction (player network infrastructure, esports division, subscription catalog access) that could support or challenge a thesis about a shift toward live services, direct-to-consumer distribution, and engagement-driven models. Because the evidence set mixes generic boilerplate with limited but potentially meaningful specifics (and some excerpts are truncated), the section meaning is best labeled ambiguous rather than forced into either bucket.
+- **filing_section_meaning / filing-7NdWeEzc**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-7nvNebEB**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-NYTv33Vb**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-bhyomjsY**: insufficient_evidence (0.72)
+  -
+- **filing_section_meaning / filing-oi1wKk6w**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-iWw3BF3D**: meaningful_signal (0.62)
+  - The forward-looking statements disclaimer language is broadly generic and appears in many filings. However, the risk-factor excerpts include concrete contractual mechanics (annual wafer purchase targets through 2020; payments owed if targets are missed; potential for excess inventory or higher unit costs) and manufacturing dependence constraints (GF yield/process competitiveness/capacity; limited exceptions to use alternate foundries). These are thesis-relevant because they define specific downside pathways (launch delays, shortages, higher costs, margin pressure) that can be checked against later outcomes and subsequent disclosures.
+- **filing_section_meaning / filing-a9GKR8Za**: insufficient_evidence (0.62)
+  -
+- **filing_section_meaning / filing-sNutUzzH**: insufficient_evidence (0.78)
+  -
+- **filing_section_meaning / filing-9d2uByAz**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-WDvjGcpM**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-pKfChyxS**: insufficient_evidence (0.46)
+  -
+- **filing_section_meaning / filing-Sa72FHJj**: meaningful_signal (0.6)
+  -
+- **filing_section_meaning / filing-ykGTJ2Eu**: meaningful_signal (0.64)
+  -
+- **filing_section_meaning / filing-gjV9WfmA**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-7WdXmXKq**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-ogvAUWjj**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-WJRY53HH**: meaningful_signal (0.62)
+  - Item 1A snippets are largely standard risk disclosures about adapting to changing customer behavior, technology/omnichannel execution, and cybersecurity/regulatory exposure. However, Item 7 (MD&A) excerpts provide concrete, company- and period-specific signals about strategic focus and execution: 2016 net sales magnitude and growth, explicit attribution to comparable sales and the RONA acquisition, and described initiatives to deepen Pro customer capabilities via LowesForPros.com and ProServices teams. These are falsifiable inputs for a thesis ledger (e.g., whether RONA integration delivered expected competitiveness/profitability in Canada; whether Pro digital/assortment investments translated into share, comp, or margin outcomes).
+- **filing_section_meaning / filing-N6MUguj7**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-EzLzC55A**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-H9ohT711**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-wzZcVRWk**: meaningful_signal (0.62)
+  - Item 1A excerpts largely read as generic risk-factor framing (economic downturn sensitivity, competition, macro uncertainty) and therefore are closer to boilerplate in isolation. However, Item 7 (MD&A) contains a falsifiable operational signal: management explicitly states that year-over-year accommodation growth rates have “generally decelerated,” which can be tested against historical reported growth and forward performance. The vacation-rental discussion also provides a specific mechanism (limited booking opportunities vs. hotels) that could matter for growth/mix assumptions, though it is less directly measurable from the excerpt alone.
+- **filing_section_meaning / filing-BXrQNBXK**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-D8HT2Dhq**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-GP93GWZN**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-v3rA25hf**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-7LxGNpRE**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-9bviN978**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-UkVdgyLM**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-HRYXVnip**: ambiguous (0.62)
+  - Many excerpts are generic framing or headings typical of Item 1A and Item 7 (e.g., 'Please carefully consider the following risk factors', 'We Face Intense Competition', generalized statements about growth strain, competition, and demand sustainability). However, the India-specific description of foreign ownership restrictions in online multi-brand retail and Amazon's described structure (marketing/logistics services to third-party sellers plus an indirect minority interest in a seller), along with mention of possible PRC foreign investment rule changes affecting structures/activities, is a more falsifiable, company-specific disclosure that can inform a regulatory-risk or operating-structure thesis.
+- **filing_section_meaning / filing-vvZAMVQJ**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-8gBwcVgH**: mostly_boilerplate (0.62)
+  -
+- **filing_section_meaning / filing-cnse6kRn**: insufficient_evidence (0.62)
+  -
+- **filing_section_meaning / filing-fiKbspd5**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-Ya64mQB9**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-UozVUR9s**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-bT8qvq7R**: insufficient_evidence (0.78)
+  -
+- **filing_section_meaning / filing-QR41tUov**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-icZb42MA**: ambiguous (0.56)
+  - Most excerpts read as generalized cautions (competitive environment disclaimers; macro sensitivity; forward-looking statement safe-harbor), which are typically boilerplate and do not, by themselves, falsify a specific thesis. However, several passages describe concrete aspects of Starbucks’ business model—reliance on licensees/JVs and third-party manufacturers/distributors (especially internationally and in Channel Development), plus explicit strategy to expand globally and optimize the company-operated vs. licensed mix, including emphasis on higher-growth markets like China. Those points can support or constrain a thesis about unit economics, margin structure, operational control, brand risk transmission via partners, and international execution risk. With only short excerpts (and no quantified disclosures or deltas vs prior filings), the net signal is mixed rather than clearly meaningful.
+- **filing_section_meaning / filing-Ub3sRds9**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-WV2GLPkS**: meaningful_signal (0.62)
+  - In Part I Item 2 (MD&A), Meta explicitly ties its operating roadmap (Facebook app/platform; ecosystems around Messenger/Instagram/WhatsApp/video; long-term initiatives like virtual reality and artificial intelligence) to an expectation of significant expense growth versus 2015 and continued growth in 2017 driven by engineering hiring and data center expansion—statements that can be tracked and falsified against subsequent opex/capex and headcount. The risk-factor excerpts in Part II Item 1A are largely standard for an ad-supported consumer internet platform, though still thematically relevant; the most distinctive signal here is the quantified directionality/scale language on expenses and the named strategic investment areas.
+- **filing_section_meaning / filing-5jZBroJM**: insufficient_evidence (0.72)
+  -
+- **filing_section_meaning / filing-qhW52r9s**: ambiguous (0.66)
+  - Most excerpts are classic PSLRA safe-harbor framing and broad, non-falsifiable risk enumerations (macro/FX, competition, growth management, inventory, legal proceedings) that appear in many issuers’ filings and often persist quarter-to-quarter without conveying a discrete new signal. However, at least one excerpt contains concrete, jurisdiction-specific structural/regulatory detail about Amazon’s India operations and mentions potential rule changes that could impact those structures, which can support falsifiable thesis claims (e.g., regulatory exposure, structural dependency, or geo-specific constraints). A smaller, more operationally specific note about supplier commitments for device components (forecast-demand based) is also more concrete than generic boilerplate, but still limited without surrounding context and materiality.
+- **filing_section_meaning / filing-FPdapgLD**: insufficient_evidence (0.66)
+  -
+- **filing_section_meaning / filing-M3CJ4Yyd**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-CNGFdNVs**: insufficient_evidence (0.78)
+  -
+- **filing_section_meaning / filing-2JXFfrtK**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-acVPcXUD**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-s7pGX1w5**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-dAaxYttz**: insufficient_evidence (0.66)
+  - “Legal Proceedings” is a section header without described matters; “Cash and cash equivalents,” “Merchandise inventory - net,” “Deferred revenue,” and “Foreign currency translation adjustments - net of tax” are line-item labels without accompanying figures or narrative explaining drivers or changes; the longer excerpt in Part II Item 1A is a common boilerplate statement about unaudited interim financials and SEC rules, which is generally not thesis-distinguishing.
+- **filing_section_meaning / filing-5EmcZ6gw**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-sCbfaDHZ**: insufficient_evidence (0.66)
+  -
+- **filing_section_meaning / filing-mrsWuqTv**: insufficient_evidence (0.62)
+  -
+- **filing_section_meaning / filing-sNgMmLvM**: ambiguous (0.58)
+  -
+- **filing_section_meaning / filing-XndANfsr**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-YyWUAcVB**: meaningful_signal (0.62)
+  - While portions read like standard telecom MD&A (e.g., maturing wireless market, need for innovation/spectrum/capacity; generic FX translation language), the section includes concrete performance directionality and a stated forward-looking risk driver: higher total churn in 2Q/1H 2016 and potential future negative impact from losing 2G reseller subscribers and connected devices on the 2G network, alongside explicit mention of competitive pressure. Those statements are more than boilerplate because they assert observable operating outcomes (churn trends) and a specific mechanism (2G reseller/device attrition) that can be checked in later filings.
+- **filing_section_meaning / filing-9FfVmhS2**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-nVRZWeqS**: ambiguous (0.62)
+  - Several excerpts read like standard company description and strategy framing (e.g., “leading providers…”, broad product lists, generic competitive advantage language, generic references to capital investment for spectrum) and appear non-falsifiable without surrounding numbers or commitments. Other excerpts are effectively labels/headers (“backlog”, “Operating Revenues”, “Foreign currency translation adjustments”, “Unrealized loss on cash flow hedges”) that do not, by themselves, provide a claim or change. However, the Frontier transaction reference (“assumption of $0.6 billion of indebtedness…”) is a concrete, company-specific item that may reflect a material transaction structure/cash/debt impact and thus could be meaningful—yet the snippet alone is insufficient to assess magnitude, impact, or whether it is incremental vs previously disclosed.
+- **filing_section_meaning / filing-Utw6B1uj**: ambiguous (0.62)
+  - Most excerpts are generic cautionary statements (PSLRA forward-looking disclaimer; broad lists of macro/competition/operations risks) that appear in many 10-Qs and do not, on their own, falsify or strongly update a company-specific thesis. However, the excerpts also contain (a) supplier component commitments tied to forecast demand and (b) a relatively specific description of India marketplace-related ownership restrictions/structuring risk plus mention of potential rule changes that could impact structures/activities. Without evidence of novelty (e.g., first appearance, material change, quantified exposure, or linkage to a disclosed event), the signal strength remains unclear.
+- **filing_section_meaning / filing-5aXFvmBS**: meaningful_signal (0.63)
+  -
+- **filing_section_meaning / filing-ztHLmZNW**: meaningful_signal (0.64)
+  -
+- **filing_section_meaning / filing-w68Rbdtr**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-K9huUB6X**: insufficient_evidence (0.74)
+  -
+- **filing_section_meaning / filing-sahmaAcs**: insufficient_evidence (0.62)
+  -
+- **filing_section_meaning / filing-rJvjqMRq**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-ieZNhns2**: mostly_boilerplate (0.63)
+  -
+- **filing_section_meaning / filing-RXxfbdTu**: insufficient_evidence (0.77)
+  -
+- **filing_section_meaning / filing-293nkN75**: ambiguous (0.62)
+  - Most excerpts read like broadly applicable boilerplate that is hard to falsify or uniquely differentiate EA (e.g., “hit-driven,” competitive intensity, generic cybersecurity risk, generic PSLRA forward-looking statement language). However, several passages add more concrete, testable angles: (1) acknowledgement of prior development delays causing delayed/canceled releases; (2) explicit note that negative events affecting retailer/consumer buying patterns during the quarter ending in December can disproportionately harm performance (seasonality/key selling period sensitivity); (3) dependence on third-party platform supply and successful transitions between console generations; and (4) a stated long-term initiative in competitive gaming/eSports via an EA Competitive Gaming Division. Because the evidence set mixes boilerplate with a small number of more thesis-relevant specifics, a clear classification either way is not supported from the excerpts alone.
+- **filing_section_meaning / filing-prGrQBN5**: ambiguous (0.62)
+  - Most excerpts are high-level framing common to telecom MD&A (maturing wireless market, need for spectrum/capacity, FX translation exposure) and are hard to operationalize as falsifiable evidence without accompanying quantitative deltas or segment detail. However, at least two snippets are more concrete: (1) a quarter-specific churn change attributed to competitive pressure, and (2) a specifically identified litigation topic (DIRECTV NFL Sunday Ticket). With only the short excerpts provided (and no surrounding context/metrics), it’s unclear whether the section overall delivers a strong, distinct signal versus routine narrative plus standard disclosures.
+- **filing_section_meaning / filing-VcBqxaj6**: meaningful_signal (0.64)
+  -
+- **filing_section_meaning / filing-tkDJorwk**: ambiguous (0.66)
+  -
+- **filing_section_meaning / filing-qeK2ncuM**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-rWnXKiip**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-pPm9WUN8**: ambiguous (0.56)
+  -
+- **filing_section_meaning / filing-GD6SdXFk**: meaningful_signal (0.63)
+  - A specific segment reclassification of major operations (bottling/supply chain) and an explicit statement that prior-period segment information was adjusted affects comparability, segment KPI interpretation, and any thesis relying on segment profitability/margins/capital intensity. By contrast, the interim GAAP preparation statement is standard 10-Q boilerplate, and the remaining excerpts are titles/labels without enough context to determine whether they contain unique thesis evidence.
+- **filing_section_meaning / filing-tpWYcjmn**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-BJwvM4Ft**: ambiguous (0.56)
+  - Most excerpts read like generic business descriptions, forward-looking statement safe-harbor language, and broad risk-factor phrasing typical of large-cap tech 10-Qs. However, several passages are more specific (e.g., data localization/cross-border transfer compliance; jurisdiction-specific royalty pressure; explicit cooperate/compete dynamic with OEM partners plus potential regulatory scrutiny). Without surrounding text and without comparing to prior quarters/10-K risk-factor language, the evidence is insufficient to classify confidently as either clearly thesis-relevant new signal or mostly unchanged boilerplate.
+- **filing_section_meaning / filing-ueQWNm2n**: meaningful_signal (0.62)
+  - Beyond generic forward-looking statement language, the excerpts show (1) a disclosed change in the method used to estimate pension service and interest cost components (shift to a full yield-curve approach), which can change expense recognition and comparability across periods, and (2) a specific note about Venezuela-related cash repatriation/receipt (no USD cash received in Q1 2016), which is a concrete operational/FX/liquidity exposure detail. There is also an explicit revenue recognition presentation note that incentives/discounts are accounted for as a reduction of revenue, relevant when analyzing net revenue trends.
+- **filing_section_meaning / filing-ANA2XBKg**: ambiguous (0.62)
+  - Several excerpts are broad descriptions of the business and standard cautionary language (typical boilerplate that is hard to falsify). However, some risk-factor language includes concrete, thesis-relevant mechanisms—e.g., average selling price declines per gigabit and the possibility of ASPs falling below manufacturing costs; and the linkage between industry capacity additions vs. demand leading to pricing declines. Liquidity/debt excerpts also connect future cash flows to ability to fund capex/R&D and service debt, and reference planned financing for the Inotera transaction. Without seeing whether these statements are new/changed vs. prior filings, or supported by specific quantified disclosures in the same section, it is unclear whether this is a new meaningful signal or recurring boilerplate.
+- **filing_section_meaning / filing-w83SmMfR**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-cgpCCkar**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-kb5ycoJX**: meaningful_signal (0.62)
+  - Several excerpts go beyond generic boilerplate by tying business outcomes (demand, costs, capacity) to identifiable external pressures (public health backlash, potential SSB taxes/marketing-labeling rules, water scarcity/quality). These can directly support or falsify a thesis about secular demand mix shifts and supply/operational constraints. That said, portions (FX, rates, broad competition statements) are standard risk-factor language and are less discriminating without change-over-time or quantified exposure.
+- **filing_section_meaning / filing-Ua3FYVYS**: ambiguous (0.58)
+  -
+- **filing_section_meaning / filing-gBMp9v1J**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-wxDbwvRh**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-aU5dUQ6D**: meaningful_signal (0.63)
+  -
+- **filing_section_meaning / filing-BNKDGDU8**: meaningful_signal (0.62)
+  -
+- **filing_section_meaning / filing-42wMoLDD**: ambiguous (0.62)
+  -
+- **filing_section_meaning / filing-mSv8QkHv**: ambiguous (0.66)
+  -
+- **filing_section_meaning / filing-DWseh8gi**: ambiguous (0.62)
+  - Most excerpts are generic risk-factor framing (competition, growth/management strain, macro, regulation/privacy) that commonly appears across issuers and years, making it hard to treat as a distinct signal. However, the India-related disclosure describes a specific operating/legal structure (marketing/logistics services, indirect minority interest in a third-party seller) and explicitly flags regulatory-change risk (PRC considering foreign investment rule changes), which is more falsifiable and potentially material than boilerplate risk headings.
+- **filing_section_meaning / filing-ocB2HYTt**: ambiguous (0.55)
+  -
+- **filing_section_meaning / filing-eANPPbwE**: ambiguous (0.56)
+  -
+
+## Flywheel Audit
+
+```flywheel-audit-json
+{
+  "schema": "sec-company-ledger-markdown-v1",
+  "run_id": "sec-10y-100-company",
+  "entity_id": "company-run-sec-10y-100-company-disputes",
+  "entity_type": "company_evaluation_disputes",
+  "path": "reports/company-runs/sec-10y-100-company/disputes.md"
+}
+```
