@@ -12,7 +12,7 @@ source: flywheel-ideas
 
 - Companies: CMCSA, DIS, EA, GOOGL, META, NFLX, T, TMUS, VZ, WBD
 - Observations: 5374
-- Staged outcomes: 61
+- Staged outcomes: 57
 
 ## Companies
 
@@ -25,7 +25,7 @@ source: flywheel-ideas
 - [[companies/meta|META]]: 720 observation(s), 6 staged outcome(s).
 - [[companies/wbd|WBD]]: 514 observation(s), 8 staged outcome(s).
 - [[companies/googl|GOOGL]]: 711 observation(s), 2 staged outcome(s).
-- [[companies/dis|DIS]]: 333 observation(s), 29 staged outcome(s).
+- [[companies/dis|DIS]]: 333 observation(s), 25 staged outcome(s).
 
 ## Flywheel Audit
 
