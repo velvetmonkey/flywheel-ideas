@@ -9,8 +9,6 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-inventory-channel-capacity-investment-opex
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:31:47.560Z'
 ---
 # Inventory and channel / Capacity investment and operating expense drag sec-10y-100-company
 

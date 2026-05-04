@@ -28,7 +28,34 @@ For public companies, the main artifact is now a personal-investor thesis report
 
 The next product surface is a compounding SEC ledger: start 10 years back, process 10-K and 10-Q filings in chronological order, and refresh the same ledger instead of creating a fresh dated dataset every time. The point is not a bigger pile of filing summaries. The point is a long-lived memory of what each company appeared to be betting on, where those assumptions accumulated pressure, which failures were accepted by a human, and which lessons should change future review.
 
-## Worked Example: Three Companies Over Ten Years
+## Current Evidence: 37 Companies Over Ten Years
+
+The current SEC proof corpus is a Markdown-only evidence snapshot at [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/). It is generated from a local compounding ledger without committing SQLite state.
+
+Start with the top-down table of contents:
+
+- [`index.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) links the whole run.
+- [`thesis.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md) shows current bets, accepted failures, unresolved review work, and what to watch next.
+- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) shows the remaining human adjudication work.
+- [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md) shows the durable lessons created after outcome review.
+
+```text
+1,468 SEC filings
+  -> 408 current company/theme bets
+  -> 486 shadow LLM evaluations
+  -> 187 human review events
+  -> 363 staged outcome candidates
+  -> 5 accepted failures after curated review
+  -> 5 lesson memos
+```
+
+Those accepted outcomes are not just summaries. The tool linked later filing evidence back to earlier assumptions, staged the possible failures, required explicit human acceptance, changed the assumption status, recorded lesson memos, and regenerated the navigable Markdown reports.
+
+Representative accepted failures now include Apple supply/geographic concentration, AMD PC demand and export-control inventory charges, Booking demand collapse, and NVIDIA H20 export-control demand/inventory risk. The remaining queue is still visible rather than hidden: 358 staged candidates need adjudication before they become accepted outcomes.
+
+This is decision support, not investment advice. The value is the auditable lifecycle: what the thesis depended on, what later evidence challenged, what the human accepted, and what lesson should change future review.
+
+## Earlier Worked Example: Three Companies Over Ten Years
 
 The SEC dogfood run tracked [[aapl]], MSFT, and [[nvda]] across 10 years of 10-K and 10-Q filings.
 
@@ -53,7 +80,7 @@ After accepting three representative review groups, the ledger changed:
 
 See [`docs/sec-lifecycle-dogfood.md`](./docs/sec-lifecycle-dogfood.md) for the run details and [`scripts/sec-lifecycle-dogfood.mjs`](./scripts/sec-lifecycle-dogfood.mjs) for the reproducible driver.
 
-The next SEC proof surface is sector scale: 10 S&P 500 companies across each of the 11 GICS sectors. The reusable driver is [`scripts/sec-sector-lifecycle-bundle.mjs`](./scripts/sec-sector-lifecycle-bundle.mjs). It writes a linked report bundle with sector pages, company pages, theme pages, and cross-sector mechanism patterns so shared assumptions are not just keyword matches.
+The sector-scale SEC driver is [`scripts/sec-sector-lifecycle-bundle.mjs`](./scripts/sec-sector-lifecycle-bundle.mjs). It writes a linked report bundle with sector pages, company pages, theme pages, and cross-sector mechanism patterns so shared assumptions are not just keyword matches. The current committed corpus contains the completed Markdown evidence from the companies that were available before SEC 403 throttling blocked the remaining fetches.
 
 ## Concrete Examples
 

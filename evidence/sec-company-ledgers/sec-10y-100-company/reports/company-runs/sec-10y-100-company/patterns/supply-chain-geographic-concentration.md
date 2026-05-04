@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-pattern-supply-chain-geographic-concentration
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:31:59.767Z'
 ---
 # Supply chain / Geographic concentration or local disruption sec-10y-100-company
 

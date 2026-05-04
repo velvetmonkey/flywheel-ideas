@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-theme-customer-platform-dependency
 entity_type: company_theme_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:31:30.380Z'
 ---
 # Customer and platform dependency sec-10y-100-company
 

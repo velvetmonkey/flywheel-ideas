@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-company-aapl
 entity_type: company_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:29:57.448Z'
 ---
 # AAPL sec-10y-100-company
 
@@ -17,7 +15,7 @@ created: '2026-05-04T12:29:57.448Z'
 - Filings scanned: 42
 - Window: 2016-01-27 to 2026-05-01
 - Observations: 672
-- Staged outcomes: 7
+- Staged outcomes: 6
 
 ## Top Themes
 

@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-company-amd
 entity_type: company_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:29:35.370Z'
 ---
 # AMD sec-10y-100-company
 
@@ -17,7 +15,7 @@ created: '2026-05-04T12:29:35.370Z'
 - Filings scanned: 41
 - Window: 2016-02-18 to 2026-02-04
 - Observations: 794
-- Staged outcomes: 37
+- Staged outcomes: 35
 
 ## Top Themes
 

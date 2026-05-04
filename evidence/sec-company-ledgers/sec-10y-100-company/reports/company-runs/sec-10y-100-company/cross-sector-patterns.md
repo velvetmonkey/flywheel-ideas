@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-cross-sector-patterns
 entity_type: company_cross_sector_patterns
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:51.373Z'
 ---
 # Cross-Sector Patterns sec-10y-100-company
 

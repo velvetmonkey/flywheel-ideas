@@ -7,20 +7,18 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-review-queue
 entity_type: company_review_queue
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:53.829Z'
 ---
 # Human Review Queue sec-10y-100-company
 
 - **NFLX / Demand**: 18 candidate(s).
   - Candidate IDs: cout-oPtGqLz2, cout-mvJwryY4, cout-S9XgtkYv, cout-8VtB1TTf, cout-2Pe19Uau, cout-BxgbQE6m, cout-UPwoxps4, cout-N2vAe4iJ, cout-B6mR21uo, cout-CJZPRJjt, cout-36FeGpiW, cout-pYPsuKHJ, cout-K4ZwjKRK, cout-nzSNaZpd, cout-rjZXPRvD, cout-oYUceTHj, cout-RMMDndfy, cout-8QDdz3Za
   - Evidence: Since this launch, we have developed an ecosystem for Internet-connected screens and have added increasing amounts of content that enable consumers to enjoy TV shows and movies directly on their Internet-connected screens. As a result of these efforts, we have experienced growing consumer acceptance
-- **BKNG / Demand, Liquidity**: 10 candidate(s).
-  - Candidate IDs: cout-YXhwm84Z, cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
-  - Evidence: Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **AMD / Demand, Inventory and channel, Supply chain**: 9 candidate(s).
   - Candidate IDs: cout-kbxfopz5, cout-v6Ty6Zdj, cout-d99mgcRR, cout-QBMjwVwE, cout-j1jeGumr, cout-wLUjMTye, cout-5Yqbggez, cout-kU3Mq2WL, cout-828qFtnQ
   - Evidence: The semiconductor industry is highly cyclical and has experienced significant downturns, often in conjunction with constant and rapid technological change, wide fluctuations in supply and demand, continuous new product introductions, price erosion and declines in general economic conditions. We have
+- **BKNG / Demand, Liquidity**: 9 candidate(s).
+  - Candidate IDs: cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
+  - Evidence: Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **TSLA / Supply chain**: 9 candidate(s).
   - Candidate IDs: cout-WRx31iqm, cout-jN4oqgop, cout-xp6TWpoc, cout-4GYhcYtu, cout-KQ9njBd7, cout-rVQCqAvX, cout-wBULifYr, cout-cR6u6CAy, cout-GoaZfWGJ
   - Evidence: We will also need to hire, train and compensate skilled employees to operate these facilities. Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing proce
@@ -43,9 +41,6 @@ created: '2026-05-04T12:28:53.829Z'
   - Candidate IDs: cout-uoG1Fh3k, cout-xZUvpn16, cout-BqotHCgo, cout-EdkkVKh5, cout-ajPwzADX
   - Evidence: Current financial liabilities have fair values that approximate their carrying values. Long-term financial liabilities include the Company's long-term debt, which are recorded on the balance sheet at issuance price and adjusted for unamortized discounts or premiums and debt issuance costs, which are
 - **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain**: 4 candidate(s).
-  - Candidate IDs: cout-p2tiStYd, cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
-  - Evidence: In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
-- **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain**: 4 candidate(s).
   - Candidate IDs: cout-b7rv9AWz, cout-PMsTitrS, cout-aSYX3eRq, cout-hV8zfv1P
   - Evidence: We experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain in the second half of 2022. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain**: 4 candidate(s).
@@ -57,9 +52,6 @@ created: '2026-05-04T12:28:53.829Z'
 - **MU / Cloud and data center capacity, Demand, Supply chain**: 4 candidate(s).
   - Candidate IDs: cout-e5JNJh1D, cout-2pkwi69L, cout-Y5cEmChs, cout-XDbqnDtE
   - Evidence: To respond to changing market conditions, we have shifted some supply from markets which have experienced declines in demand, such as smartphones, to markets that have experienced demand increases, such as data center markets.
-- **NVDA / Demand, Inventory and channel**: 4 candidate(s).
-  - Candidate IDs: cout-UPCRQmgc, cout-6tc7ybv4, cout-PefEJ6sF, cout-nFWxcCZb
-  - Evidence: In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **PM / Cloud and data center capacity, Supply chain**: 4 candidate(s).
   - Candidate IDs: cout-8SCxx8o7, cout-6QX8jFUn, cout-bY6agkXD, cout-At33eLMQ
   - Evidence: As a part of the optimization of our global manufacturing infrastructure, we recorded pre-tax asset impairment and exit costs of
@@ -69,15 +61,12 @@ created: '2026-05-04T12:28:53.829Z'
 - **VZ / Liquidity, Macro and foreign exchange**: 4 candidate(s).
   - Candidate IDs: cout-A4k3ngJc, cout-i5vDy47t, cout-ckb72vVa, cout-htRx1uSJ
   - Evidence: Unfavorable economic conditions could also amplify other risk factors discussed in this section, including, but not limited to, our competitive position and margins. Over the last two years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, includ
-- **AAPL / Customer and platform dependency, Geopolitics and tariffs, Supply chain**: 3 candidate(s).
-  - Candidate IDs: cout-vFYN1LWP, cout-uzBxztXV, cout-fGbxc3H7
-  - Evidence: During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
+- **AMD / Inventory and channel, Macro and foreign exchange, Supply chain**: 3 candidate(s).
+  - Candidate IDs: cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
+  - Evidence: In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **AMD / Demand, Inventory and channel, Supply chain**: 3 candidate(s).
   - Candidate IDs: cout-jXFysvEZ, cout-fDinEHoF, cout-YN4z4KxU
   - Evidence: The growth of AI is further creating pressure on the semiconductor industry to timely design, manufacture and deliver semiconductor products and solutions to meet customer demand for computing power and AI infrastructure. We have incurred substantial losses in previous downturns, due to substantial
-- **AMD / Cloud and data center capacity, Geopolitics and tariffs, Inventory and channel**: 3 candidate(s).
-  - Candidate IDs: cout-SpXnm9Zz, cout-tYf3zg4c, cout-pnHkhuYs
-  - Evidence: During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **AVGO / Macro and foreign exchange**: 3 candidate(s).
   - Candidate IDs: cout-FpF4o6pL, cout-aVcUu1ni, cout-mqMPhdkE
   - Evidence: A general slowdown in the global economy or in a particular region or industry, other unfavorable changes in economic conditions, such as inflation, higher interest rates, tightening of the credit markets, recession or slowing growth, or an increase in trade tensions with U.S. trading partners could
@@ -99,6 +88,9 @@ created: '2026-05-04T12:28:53.829Z'
 - **META / Demand, Macro and foreign exchange, Regulation and legal**: 3 candidate(s).
   - Candidate IDs: cout-vRyLikx1, cout-caUZXQdK, cout-64SymR9r
   - Evidence: Revenue on a constant currency basis was $122.57 billion for 2022, an increase of 4% compared to 2021. Our advertising revenue was impacted by a reduction in advertising demand during 2022 compared to 2021, which we believe was primarily driven by reduced marketer spending as a result of a more chal
+- **NVDA / Demand, Inventory and channel**: 3 candidate(s).
+  - Candidate IDs: cout-6tc7ybv4, cout-PefEJ6sF, cout-nFWxcCZb
+  - Evidence: In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **PEP / Cloud and data center capacity, Liquidity, Supply chain**: 3 candidate(s).
   - Candidate IDs: cout-gm2n5fZ6, cout-SeCyjtKd, cout-p4j4yM18
   - Evidence: n further changes in demand for our products, further increases in operating costs (whether as a result of changes to our supply chain or increases in employee costs, operating costs or otherwise), how they will further impact our supply chain and whether they will result in further reduced availabi
@@ -111,6 +103,12 @@ created: '2026-05-04T12:28:53.829Z'
 - **WMT / Inventory and channel**: 3 candidate(s).
   - Candidate IDs: cout-6CKXnFe2, cout-VZERjRVx, cout-6mXQEfum
   - Evidence: We bear the risk of losses incurred as a result of physical damage to, or destruction of, any stores, clubs and distribution facilities, loss or spoilage of inventory and business interruption caused by such events. These events and their impacts could otherwise disrupt and adversely affect our oper
+- **AAPL / Customer and platform dependency, Supply chain**: 2 candidate(s).
+  - Candidate IDs: cout-uzBxztXV, cout-fGbxc3H7
+  - Evidence: During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
+- **AMD / Geopolitics and tariffs, Inventory and channel**: 2 candidate(s).
+  - Candidate IDs: cout-tYf3zg4c, cout-pnHkhuYs
+  - Evidence: During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **AVGO / Macro and foreign exchange**: 2 candidate(s).
   - Candidate IDs: cout-GorxstR4, cout-KExnj5Yy
   - Evidence: A general slowdown in the global economy or in a particular region or industry, an increase in trade tensions with U.S. trading partners or a tightening of the credit markets could negatively impact our business, financial condition and liquidity. Adverse global economic conditions have from time to

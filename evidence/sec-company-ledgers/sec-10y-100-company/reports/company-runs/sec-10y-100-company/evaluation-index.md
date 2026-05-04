@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-evaluation-index
 entity_type: company_evaluation_index
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:56.274Z'
 ---
 # Evaluation Index sec-10y-100-company
 

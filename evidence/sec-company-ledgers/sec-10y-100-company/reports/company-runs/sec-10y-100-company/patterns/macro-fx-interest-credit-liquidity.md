@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-pattern-macro-fx-interest-credit-liquidity
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:32:41.350Z'
 ---
 # Macro and foreign exchange / Interest, credit, or liquidity stress sec-10y-100-company
 

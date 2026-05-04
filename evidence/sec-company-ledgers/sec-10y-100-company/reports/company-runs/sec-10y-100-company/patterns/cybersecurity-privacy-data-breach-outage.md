@@ -9,8 +9,6 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-cybersecurity-privacy-data-breach-outage
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:32:14.402Z'
 ---
 # Cybersecurity and privacy / Data breach, outage, or service disruption sec-10y-100-company
 

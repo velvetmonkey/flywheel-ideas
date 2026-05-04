@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-disputes
 entity_type: company_evaluation_disputes
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:29:01.159Z'
 ---
 # Disputes sec-10y-100-company
 

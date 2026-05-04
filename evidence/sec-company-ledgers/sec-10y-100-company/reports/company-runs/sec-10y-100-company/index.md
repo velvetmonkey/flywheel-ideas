@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-index
 entity_type: company_sector_bundle_index
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:34.225Z'
 ---
 # Company Sector Run sec-10y-100-company
 
@@ -82,10 +80,10 @@ A Flywheel-linked table of contents for the company lifecycle bundle.
 
 - Companies requested: 110
 - Filings scanned: 1468
-- Current bets: 413
+- Current bets: 408
 - Review events: 187
 - Shadow LLM evaluations: 486
-- Accepted failures: 0
+- Accepted failures: 5
 
 ## Flywheel Audit
 

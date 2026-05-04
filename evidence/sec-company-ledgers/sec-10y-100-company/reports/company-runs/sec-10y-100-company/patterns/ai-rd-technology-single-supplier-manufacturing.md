@@ -9,8 +9,6 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-ai-rd-technology-single-supplier-manufacturing
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:32:48.759Z'
 ---
 # AI, R&D, and technology / Single supplier or manufacturing concentration sec-10y-100-company
 

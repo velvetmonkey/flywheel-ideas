@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-company-pep
 entity_type: company_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:29:47.649Z'
 ---
 # PEP sec-10y-100-company
 

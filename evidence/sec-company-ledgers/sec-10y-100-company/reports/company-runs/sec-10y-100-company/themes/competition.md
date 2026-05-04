@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-theme-competition
 entity_type: company_theme_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:31:18.184Z'
 ---
 # Competition sec-10y-100-company
 
