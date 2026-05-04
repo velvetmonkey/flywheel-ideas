@@ -15,7 +15,7 @@ source: flywheel-ideas
 - Filings scanned: 42
 - Window: 2016-02-11 to 2026-04-30
 - Observations: 711
-- Staged outcomes: 5
+- Staged outcomes: 2
 
 ## Top Themes
 
