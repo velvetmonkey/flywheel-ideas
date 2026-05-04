@@ -33,6 +33,11 @@ credentials.json
 **/.flywheel/state.db-wal
 **/.flywheel/state.db.backup
 **/.flywheel/state.db.backup.*
+**/.flywheel/ideas.db
+**/.flywheel/ideas.db-shm
+**/.flywheel/ideas.db-wal
+**/.flywheel/ideas.db.backup
+**/.flywheel/ideas.db.backup.*
 **/.claude/flywheel.db
 **/.claude/flywheel.db-shm
 **/.claude/flywheel.db-wal

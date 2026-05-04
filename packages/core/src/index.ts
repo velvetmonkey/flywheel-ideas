@@ -545,6 +545,7 @@ export type { AdapterHooks, GithubStructuredDocsConfig } from './import/adapters
 // Company tracker (Company Adapter v1)
 export {
   applyCompanyOutcomes,
+  exportCompanyMarkdownEvidence,
   readCompanyThesisReport,
   readCompanyRun,
   trackCompanies,
@@ -555,6 +556,8 @@ export {
 export type {
   CompanyApplyOutcomesInput,
   CompanyApplyOutcomesResult,
+  CompanyMarkdownEvidenceExportInput,
+  CompanyMarkdownEvidenceExportResult,
   CompanyMetadata,
   CompanyReportOptions,
   CompanyTrackInput,

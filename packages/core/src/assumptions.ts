@@ -206,7 +206,11 @@ export async function declareAssumption(
     frontmatter.signpost_reason = input.signpost_reason;
   }
 
-  const writeResult = await writeNote(vaultPath, vaultRelPath, frontmatter, text);
+  const writeResult = await writeNote(vaultPath, vaultRelPath, frontmatter, text, {
+    skipWikilinks: false,
+    suggestOutgoingLinks: true,
+    maxSuggestions: 6,
+  });
 
   // 5. Insert DB row. On failure, unlink the orphan markdown before rethrowing.
   try {

@@ -233,7 +233,12 @@ export async function logOutcome(
     undone_at: null,
   };
   const body = renderOutcomeBody(input, refutes, validates);
-  await writeNote(vault_path, vault_rel_path, frontmatter, body, { overwrite: false });
+  await writeNote(vault_path, vault_rel_path, frontmatter, body, {
+    overwrite: false,
+    skipWikilinks: false,
+    suggestOutgoingLinks: true,
+    maxSuggestions: 6,
+  });
 
   // 4. Run atomic transaction
   try {

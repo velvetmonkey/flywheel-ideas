@@ -12,8 +12,18 @@ import type { ApprovalScope } from './approval.js';
 
 export const COMPANY_EVALUATION_PROMPT_VERSION = 'company-eval-v1';
 
-export type CompanyEvaluationStage = 'outcome_validity' | 'thesis_delta';
+export type CompanyEvaluationStage =
+  | 'filing_section_meaning'
+  | 'assumption_quality'
+  | 'outcome_validity'
+  | 'thesis_delta'
+  | 'cross_sector_pattern'
+  | 'adjudication_packet';
 export type CompanyEvaluationDecision =
+  | 'meaningful_signal'
+  | 'mostly_boilerplate'
+  | 'assumption_sound'
+  | 'assumption_weak'
   | 'valid_failure'
   | 'valid_validation'
   | 'not_an_outcome'
@@ -22,7 +32,11 @@ export type CompanyEvaluationDecision =
   | 'thesis_strengthened'
   | 'thesis_weakened'
   | 'thesis_unchanged'
-  | 'new_watchpoint';
+  | 'new_watchpoint'
+  | 'pattern_meaningful'
+  | 'pattern_boilerplate'
+  | 'adjudication_ready'
+  | 'needs_more_evidence';
 
 export interface CompanyEvaluateInput {
   run_id: string;
@@ -232,8 +246,66 @@ export async function writeCompanyEvaluationSummaries(
 }
 
 function selectTargets(run: Record<string, unknown>, input: CompanyEvaluateInput): SelectedTarget[] {
+  if (input.stage === 'filing_section_meaning') return selectFilingSectionTargets(run, input);
+  if (input.stage === 'assumption_quality') return selectAssumptionQualityTargets(run, input);
   if (input.stage === 'outcome_validity') return selectOutcomeTargets(run, input);
-  return selectThesisDeltaTargets(run, input);
+  if (input.stage === 'thesis_delta') return selectThesisDeltaTargets(run, input);
+  if (input.stage === 'cross_sector_pattern') return selectCrossSectorPatternTargets(run, input);
+  return selectAdjudicationPacketTargets(run, input);
+}
+
+function limitRows<T>(rows: T[], input: CompanyEvaluateInput): T[] {
+  return rows.slice(0, input.limit ?? rows.length);
+}
+
+function selectFilingSectionTargets(run: Record<string, unknown>, input: CompanyEvaluateInput): SelectedTarget[] {
+  const observations = run.observations as Array<Record<string, unknown>>;
+  const filings = (run.filings as Array<Record<string, unknown>>)
+    .filter((row) => !input.target_ids || input.target_ids.includes(String(row.id)))
+    .sort((a, b) => String(a.filed_at).localeCompare(String(b.filed_at)) || String(a.accession_no).localeCompare(String(b.accession_no)));
+  return limitRows(filings, input).map((filing, index) => {
+    const filingObservations = observations.filter((row) => row.filing_id === filing.id);
+    const payload: CompanyEvaluationPayload = {
+      run_id: input.run_id,
+      stage: input.stage,
+      target_kind: 'company_filing',
+      target_id: String(filing.id),
+      target_label: `${filing.ticker ?? filing.cik} ${filing.form} ${filing.filed_at}`,
+      selection_reason: 'chronological filing-section meaning review',
+      evidence_refs: [String(filing.filing_url)],
+      evidence: {
+        filing,
+        observations: filingObservations,
+        instruction: 'Decide whether this filing section contains thesis-relevant evidence or mostly boilerplate. Do not recommend trading action.',
+      },
+    };
+    return { rank: index + 1, payload, input_hash: hashPayload(payload) };
+  });
+}
+
+function selectAssumptionQualityTargets(run: Record<string, unknown>, input: CompanyEvaluateInput): SelectedTarget[] {
+  const observations = run.observations as Array<Record<string, unknown>>;
+  const themes = (run.themes as Array<Record<string, unknown>>)
+    .filter((row) => !input.target_ids || input.target_ids.includes(String(row.assumption_id ?? row.id)))
+    .sort((a, b) => String(a.ticker ?? a.cik).localeCompare(String(b.ticker ?? b.cik)) || String(a.theme_key).localeCompare(String(b.theme_key)));
+  return limitRows(themes, input).map((theme, index) => {
+    const themeObservations = observations.filter((row) => row.theme_id === theme.id);
+    const payload: CompanyEvaluationPayload = {
+      run_id: input.run_id,
+      stage: input.stage,
+      target_kind: 'company_assumption_theme',
+      target_id: String(theme.assumption_id ?? theme.id),
+      target_label: `${theme.ticker ?? theme.cik} / ${theme.title}`,
+      selection_reason: 'assumption quality review across accumulated observations',
+      evidence_refs: themeObservations.map((row) => String(row.source_uri)).slice(0, 12),
+      evidence: {
+        theme,
+        observations: themeObservations,
+        instruction: 'Decide whether this is a clear falsifiable company assumption or a weak/generic restatement of filing language.',
+      },
+    };
+    return { rank: index + 1, payload, input_hash: hashPayload(payload) };
+  });
 }
 
 function selectOutcomeTargets(run: Record<string, unknown>, input: CompanyEvaluateInput): SelectedTarget[] {
@@ -243,7 +315,7 @@ function selectOutcomeTargets(run: Record<string, unknown>, input: CompanyEvalua
     .sort((a, b) => Number(b.confidence ?? 0) - Number(a.confidence ?? 0));
   const themes = new Map((run.themes as Array<Record<string, unknown>>).map((row) => [String(row.id), row]));
   const filings = new Map((run.filings as Array<Record<string, unknown>>).map((row) => [String(row.id), row]));
-  return outcomes.slice(0, input.limit ?? 25).map((outcome, index) => {
+  return limitRows(outcomes, input).map((outcome, index) => {
     const theme = themes.get(String(outcome.theme_id));
     const filing = filings.get(String(outcome.filing_id));
     const evidenceRefs = [String(outcome.source_uri)];
@@ -271,7 +343,7 @@ function selectThesisDeltaTargets(run: Record<string, unknown>, input: CompanyEv
     .filter((row) => !input.target_ids || input.target_ids.includes(String(row.ticker ?? row.cik)))
     .sort((a, b) => Number(b.staged_outcome_count ?? 0) - Number(a.staged_outcome_count ?? 0) || String(a.ticker ?? a.cik).localeCompare(String(b.ticker ?? b.cik)));
   const outcomes = run.outcome_groups as Array<Record<string, unknown>>;
-  return summaries.slice(0, input.limit ?? 10).map((summary, index) => {
+  return limitRows(summaries, input).map((summary, index) => {
     const company = String(summary.ticker ?? summary.cik);
     const companyOutcomes = outcomes.filter((group) => String(group.company) === company);
     const payload: CompanyEvaluationPayload = {
@@ -286,6 +358,51 @@ function selectThesisDeltaTargets(run: Record<string, unknown>, input: CompanyEv
         company_summary: summary,
         staged_review_events: companyOutcomes,
         instruction: 'Identify what changed in the company thesis from the accumulated filing evidence. Classify whether the thesis strengthened, weakened, stayed unchanged, or needs a new watchpoint. Do not recommend trading action.',
+      },
+    };
+    return { rank: index + 1, payload, input_hash: hashPayload(payload) };
+  });
+}
+
+function selectCrossSectorPatternTargets(run: Record<string, unknown>, input: CompanyEvaluateInput): SelectedTarget[] {
+  const patterns = (run.cross_sector_patterns as Array<Record<string, unknown>>)
+    .filter((row) => !input.target_ids || input.target_ids.includes(String(row.pattern_key)))
+    .sort((a, b) => Number(b.realized_candidate_count ?? 0) - Number(a.realized_candidate_count ?? 0) || Number(b.observation_count ?? 0) - Number(a.observation_count ?? 0));
+  return limitRows(patterns, input).map((pattern, index) => {
+    const examples = pattern.examples as Array<Record<string, unknown>> | undefined;
+    const payload: CompanyEvaluationPayload = {
+      run_id: input.run_id,
+      stage: input.stage,
+      target_kind: 'company_cross_sector_pattern',
+      target_id: String(pattern.pattern_key),
+      target_label: `${pattern.theme_title} / ${pattern.mechanism_title}`,
+      selection_reason: 'cross-sector pattern validation ranked by realized candidates and observations',
+      evidence_refs: (examples ?? []).map((example) => `${example.company}:${example.observed_at}`).slice(0, 12),
+      evidence: {
+        pattern,
+        instruction: 'Decide whether this cross-sector pattern is a meaningful shared mechanism or mostly SEC boilerplate.',
+      },
+    };
+    return { rank: index + 1, payload, input_hash: hashPayload(payload) };
+  });
+}
+
+function selectAdjudicationPacketTargets(run: Record<string, unknown>, input: CompanyEvaluateInput): SelectedTarget[] {
+  const groups = (run.outcome_groups as Array<Record<string, unknown>>)
+    .filter((row) => !input.target_ids || input.target_ids.includes(String(row.id)))
+    .sort((a, b) => Number(b.candidate_count ?? 0) - Number(a.candidate_count ?? 0) || String(a.company).localeCompare(String(b.company)));
+  return limitRows(groups, input).map((group, index) => {
+    const payload: CompanyEvaluationPayload = {
+      run_id: input.run_id,
+      stage: input.stage,
+      target_kind: 'company_adjudication_packet',
+      target_id: String(group.id),
+      target_label: `${group.company} / ${(group.themes as string[] | undefined)?.join(', ') ?? 'unknown themes'}`,
+      selection_reason: 'human adjudication packet review ranked by grouped staged outcomes',
+      evidence_refs: (group.source_uris as string[] | undefined) ?? [],
+      evidence: {
+        review_group: group,
+        instruction: 'Decide whether this packet is ready for human accept/reject review or needs more evidence.',
       },
     };
     return { rank: index + 1, payload, input_hash: hashPayload(payload) };
@@ -421,13 +538,20 @@ function buildEvaluationPrompt(payload: CompanyEvaluationPayload): { system: str
       id: payload.target_id,
       label: payload.target_label,
     },
-    allowed_decisions: payload.stage === 'outcome_validity'
-      ? ['valid_failure', 'valid_validation', 'not_an_outcome', 'ambiguous', 'insufficient_evidence']
-      : ['thesis_strengthened', 'thesis_weakened', 'thesis_unchanged', 'new_watchpoint', 'ambiguous', 'insufficient_evidence'],
+    allowed_decisions: allowedDecisionsForStage(payload.stage),
     evidence_refs: payload.evidence_refs,
     evidence: payload.evidence,
   }, null, 2);
   return { system, user };
+}
+
+function allowedDecisionsForStage(stage: CompanyEvaluationStage): CompanyEvaluationDecision[] {
+  if (stage === 'filing_section_meaning') return ['meaningful_signal', 'mostly_boilerplate', 'ambiguous', 'insufficient_evidence'];
+  if (stage === 'assumption_quality') return ['assumption_sound', 'assumption_weak', 'ambiguous', 'insufficient_evidence'];
+  if (stage === 'outcome_validity') return ['valid_failure', 'valid_validation', 'not_an_outcome', 'ambiguous', 'insufficient_evidence'];
+  if (stage === 'thesis_delta') return ['thesis_strengthened', 'thesis_weakened', 'thesis_unchanged', 'new_watchpoint', 'ambiguous', 'insufficient_evidence'];
+  if (stage === 'cross_sector_pattern') return ['pattern_meaningful', 'pattern_boilerplate', 'ambiguous', 'insufficient_evidence'];
+  return ['adjudication_ready', 'needs_more_evidence', 'ambiguous', 'insufficient_evidence'];
 }
 
 function parseEvaluationOutput(stdout: string, fallbackRefs: string[]): CompanyEvaluationOutput {
@@ -490,6 +614,10 @@ function parseJsonish(text: string): Record<string, unknown> {
 
 function normalizeDecision(value: unknown): CompanyEvaluationDecision {
   const allowed: CompanyEvaluationDecision[] = [
+    'meaningful_signal',
+    'mostly_boilerplate',
+    'assumption_sound',
+    'assumption_weak',
     'valid_failure',
     'valid_validation',
     'not_an_outcome',
@@ -499,6 +627,10 @@ function normalizeDecision(value: unknown): CompanyEvaluationDecision {
     'thesis_weakened',
     'thesis_unchanged',
     'new_watchpoint',
+    'pattern_meaningful',
+    'pattern_boilerplate',
+    'adjudication_ready',
+    'needs_more_evidence',
   ];
   return allowed.includes(value as CompanyEvaluationDecision)
     ? value as CompanyEvaluationDecision

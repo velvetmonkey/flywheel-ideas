@@ -54,7 +54,11 @@ export async function createIdea(
     created_at: new Date(now).toISOString(),
   };
 
-  const writeResult = await writeNote(vaultPath, relPath, frontmatter, body);
+  const writeResult = await writeNote(vaultPath, relPath, frontmatter, body, {
+    skipWikilinks: false,
+    suggestOutgoingLinks: true,
+    maxSuggestions: 6,
+  });
 
   db.prepare(
     `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)

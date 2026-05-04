@@ -26,9 +26,11 @@ The product value is not "AI reads documents." The value is a durable trail from
 
 For public companies, the main artifact is now a personal-investor thesis report. It does not say "buy" or "sell." It shows the live assumptions your company thesis depends on, where similar assumptions failed before, what needs review, and what to watch next.
 
+The next product surface is a compounding SEC ledger: start 10 years back, process 10-K and 10-Q filings in chronological order, and refresh the same ledger instead of creating a fresh dated dataset every time. The point is not a bigger pile of filing summaries. The point is a long-lived memory of what each company appeared to be betting on, where those assumptions accumulated pressure, which failures were accepted by a human, and which lessons should change future review.
+
 ## Worked Example: Three Companies Over Ten Years
 
-The SEC dogfood run tracked AAPL, MSFT, and NVDA across 10 years of 10-K and 10-Q filings.
+The SEC dogfood run tracked [[aapl]], MSFT, and [[nvda]] across 10 years of 10-K and 10-Q filings.
 
 ```text
 125 filings
@@ -89,6 +91,29 @@ Existing tools can search filings, summarize documents, manage notes, or run an 
 - The report separates current bets, pending review work, accepted failures, and missing lessons.
 
 In short: it compounds judgment. The database is not just a pile of notes; it remembers what you believed, what reality later said, and what else that should cause you to revisit.
+
+## Compounding SEC Ledger Mode
+
+The company tracker now supports stable ledgers through `ledger_id` and `compound: true`.
+
+```ts
+await company.track({
+  ledger_id: "sec-10y-100-company",
+  compound: true,
+  companies: ["AAPL", "MSFT", "NVDA"],
+  years: 10,
+  forms: ["10-K", "10-Q"],
+  confirm: true,
+});
+```
+
+In compound mode, refreshes reuse prior filings, assumptions, observations, and outcome candidates by source keys. New filings extend the ledger; unchanged filings are not duplicated.
+
+Generated bundle Markdown now includes a linked top-down index, a Markdown manifest, run history, rebuild instructions, and structured `flywheel-audit-json` blocks for Markdown-only evidence snapshots.
+
+Generated idea, assumption, outcome, evaluation, and report notes request Flywheel wikilink markup and outgoing-link suggestions at write time. The SEC corpus does not depend on a later background markup pass to become navigable.
+
+Git evidence snapshots should commit Markdown artifacts only. SQLite databases, JSON reports, JSONL logs, SEC caches, WAL/SHM files, and backups remain local operational state.
 
 ## What It Is Not
 
@@ -206,7 +231,7 @@ reports/company-thesis-<run_id>.json
 reports/company-runs/<run_id>/index.md
 ```
 
-The Markdown reports are Flywheel notes with `type: report`; tracker reports use `report_kind: sec_company_tracker`, thesis reports use `report_kind: company_thesis`, and sector bundles use `company_*` report kinds. Production writes go through flywheel-memory markup/linking. JSON reports remain raw machine-readable artifacts.
+The Markdown reports are Flywheel notes with `type: report`; tracker reports use `report_kind: sec_company_tracker`, thesis reports use `report_kind: company_thesis`, and sector bundles use `company_*` report kinds. Production writes request flywheel-memory markup/linking during the write. JSON reports remain raw local machine-readable artifacts and are not part of the committed SEC evidence corpus.
 
 SEC ledger visibility is available through `idea.report({ report_kind: "sec_company" })`.
 
@@ -214,7 +239,7 @@ Decision portfolio exports are written through `idea.export`.
 
 Private idea context is stored in the DB sidecar and is excluded from exports unless `include_private_context: true` is passed.
 
-The May 2026 SEC dogfood generated local raw report bundles under `/home/ben/sec-dogfood/`. The full 2026-05-03 real SEC + LLM lifecycle E2E evidence bundle is checked in under [`evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z`](./evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z/), including the generated vault Markdown and SQLite state.
+The May 2026 SEC dogfood generated local raw report bundles under `/home/ben/sec-dogfood/`. The public SEC evidence target is now the stable Markdown-only ledger snapshot at [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/), generated from the local compounding ledger without committing SQLite state.
 
 ## Evidence And Limits
 
@@ -223,7 +248,7 @@ The original decision-loop claim was tested against public historical corpora:
 - Python 2 to 3 cite-rate pilot: [`pilot/RESULT.md`](./pilot/RESULT.md)
 - SEC and ADR readability wedges: [`pilot/RESULT.wedges.md`](./pilot/RESULT.wedges.md)
 - SEC lifecycle dogfood: [`docs/sec-lifecycle-dogfood.md`](./docs/sec-lifecycle-dogfood.md)
-- Full SEC + LLM lifecycle E2E evidence: [`evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z`](./evidence/sec-lifecycle-runs/2026-05-03T14-04-54-838Z/)
+- SEC company ledger evidence target: [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/)
 
 Those evaluations show that the system can identify and track load-bearing assumptions in known decision records and public filings. They do not prove market demand, investment value, or that the system improves every real-world decision.
 
