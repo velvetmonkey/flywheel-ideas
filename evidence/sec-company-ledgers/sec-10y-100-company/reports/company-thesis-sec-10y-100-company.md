@@ -128,24 +128,15 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 - Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Filings scanned: 1468
-- Current thesis dependencies: 385 open bet(s).
-- Human review queue: 151 event(s), 192 staged candidate(s).
-- Accepted failures: 29; lessons recorded: 29; missing lesson memos: 0.
+- Current thesis dependencies: 382 open bet(s).
+- Human review queue: 139 event(s), 168 staged candidate(s).
+- Accepted failures: 32; lessons recorded: 32; missing lesson memos: 0.
 - Posture: evidence needs human review before thesis confidence should increase.
 
 ## Current Thesis Dependencies
 
-- **CSCO / Demand** - fresh, review pressure 21, 82 observation(s), latest 2026-02-17
-  - Assumption: asm-apaexpGF
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **DIS / Regulation and legal** - fresh, review pressure 10, 46 observation(s), latest 2026-02-02
-  - Assumption: asm-K8rwQyCS
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **WBD / Regulation and legal** - fresh, review pressure 7, 58 observation(s), latest 2026-02-27
   - Assumption: asm-iVeAyyNH
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **CSCO / Regulation and legal** - fresh, review pressure 7, 60 observation(s), latest 2026-02-17
-  - Assumption: asm-g69CFqyf
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **DIS / Geopolitics and tariffs** - fresh, review pressure 7, 24 observation(s), latest 2026-02-02
   - Assumption: asm-xakuDdYD
@@ -171,9 +162,30 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **MSFT / AI, R&D, and technology** - fresh, review pressure 4, 83 observation(s), latest 2026-04-29
   - Assumption: asm-e7XCszRn
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **MSFT / Cloud and data center capacity** - fresh, review pressure 4, 83 observation(s), latest 2026-04-29
+  - Assumption: asm-YKKrQv95
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **KO / Demand** - fresh, review pressure 3, 84 observation(s), latest 2026-04-30
+  - Assumption: asm-5B3UtjSr
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **MO / Liquidity** - fresh, review pressure 3, 83 observation(s), latest 2026-04-30
+  - Assumption: asm-kZQCFeFw
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 
 ## Prior Failures And Lessons
 
+- **Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.**
+  - Evidence: 1 accepted failure verdict(s) across DIS / Regulation and legal
+  - Representative context: The filing disclosed that reopening or closure of Disney businesses depended on changing government requirements and that reopened businesses incurred additional costs to address regulations and safety of employees, talent, and guests.
+  - Outcomes: out-HR8ZaBsU
+- **Infrastructure demand assumptions should track customer digestion of prior shipments because channel absorption can turn apparent backlog strength into later revenue weakness.**
+  - Evidence: 1 accepted failure verdict(s) across CSCO / Demand
+  - Representative context: During the first nine months of fiscal 2024, Cisco disclosed a decline in product demand and revenue as customers scrutinized spend and worked through elevated product shipments received in prior quarters.
+  - Outcomes: out-TiY265ie
+- **Regulation and legal assumptions should track settlement charges when management connects them to margin movement, not only litigation headlines or final judgments.**
+  - Evidence: 1 accepted failure verdict(s) across CSCO / Regulation and legal
+  - Representative context: The filing disclosed gross-margin pressure driven by unfavorable pricing, lower productivity benefits from higher memory-component costs, and a $122 million legal and indemnification settlement charge.
+  - Outcomes: out-4D4Rto1C
 - **Semiconductor geopolitics assumptions should track export-control inventory charges because policy changes can immediately convert product roadmaps into stranded assets.**
   - Evidence: 1 accepted failure verdict(s) across AMD / Geopolitics and tariffs
   - Representative context: The fiscal 2025 filing disclosed approximately $800 million of inventory and related charges on MI308 Data Center GPU products due to new U.S. export restrictions to China.
@@ -293,96 +305,92 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## What Needs Human Review
 
-- **CSCO / Demand, Geopolitics and tariffs** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-kUJDfVZM, cout-VPYbDkb2
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kUJDfVZM","cout-VPYbDkb2"], confirm: true })`
-  - Evidence: , led by product revenue growth in Australia and Japan. We experienced revenue declines from many emerging countries, and in particular we experienced product revenue declines in the emerging countries of Mexico, Brazil and China of 31%, 10% and 2%, respectively. In the aggregate, the "BRICM" countr
-- **CSCO / Regulation and legal, Supply chain** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-hMKb5Von, cout-vVTczNMn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-hMKb5Von","cout-vVTczNMn"], confirm: true })`
-  - Evidence: percentage points, driven by unfavorable impacts from pricing, lower productivity benefits driven by an increase in the cost of certain memory components and the $122 million legal and indemnification settlement charge. As a percentage of revenue, research and development, sales and marketing, and g
-- **CSCO / Regulation and legal** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-K97f9qWM, cout-wZBsu9Qo
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-K97f9qWM","cout-wZBsu9Qo"], confirm: true })`
-  - Evidence: percentage points due to unfavorable impacts from pricing and a $127 million legal and indemnification settlement charge, partially offset by productivity benefits and favorable product mix. As a percentage of revenue, research and development, sales and marketing, and general and administrative exp
-- **CSCO / Demand** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-keH7qBu3, cout-AVrhdb2A
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-keH7qBu3","cout-AVrhdb2A"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector, enterprise and commercial markets, partially offset by a product revenue decline in the service provider market.
-- **CSCO / Demand** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-c2k94d6C, cout-5og4P7Uf
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-c2k94d6C","cout-5og4P7Uf"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced product revenue declines across all customer segments. During the
-- **CSCO / Cloud and data center capacity, Customer and platform dependency** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-sR57taCJ, cout-XUSyXCdf
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sR57taCJ","cout-XUSyXCdf"], confirm: true })`
-  - Evidence: respectively. From a product category perspective, we experienced product revenue declines in Infrastructure Platforms and Applications, offset by growth in Security. Total gross margin decreased by
-- **CSCO / Demand** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-xkCQQGVH, cout-1Fkd4J6c
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xkCQQGVH","cout-1Fkd4J6c"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced product revenue declines across all customer segments, with the most significant declines in the commercial and enterprise markets. During the first quarter of fiscal 2021, we continued to see a revenue decline in the commercial and enterprise market
-- **CSCO / Cloud and data center capacity, Customer and platform dependency** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-RVbFVugF, cout-4hjsLQU5
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-RVbFVugF","cout-4hjsLQU5"], confirm: true })`
-  - Evidence: With regard to our geographic segment performance, on a year-over-year basis, revenue in the Americas, EMEA and APJC increased by 8%, 6% and 13%, respectively. From a product category perspective, we experienced product revenue growth in Infrastructure Platforms and Security, offset by declines in A
-- **CSCO / Cloud and data center capacity, Demand** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-3U4K3NjM, cout-ARz7qwZn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-3U4K3NjM","cout-ARz7qwZn"], confirm: true })`
-  - Evidence: In terms of our geographic segments, revenue from the Americas decreased by $315 million, EMEA revenue decreased by $244 million and APJC revenue decreased by $241 million. From a customer market standpoint, we experienced product revenue declines in the enterprise and service provider and cloud mar
-- **CSCO / Demand** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-8wg5cajC, cout-cpRNuuJL
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-8wg5cajC","cout-cpRNuuJL"], confirm: true })`
-  - Evidence: Our ability to meet financial expectations could also be negatively impacted if the nonlinear sales pattern seen in some of our past quarters recurs in future periods. During the first nine months of fiscal 2024, we experienced a decline in product demand resulting in a decrease of revenue as custom
-- **DIS / Regulation and legal** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-WJsW2rmx, cout-xQoQKayP
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-WJsW2rmx","cout-xQoQKayP"], confirm: true })`
-  - Evidence: The impact of these disruptions and the extent of their adverse impact on our financial and operating results will be dictated by the length of time that such disruptions continue, which will, in turn, depend on the currently unknowable duration and severity of the impacts of COVID-19, and among oth
-- **DIS / Regulation and legal** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-mKkkGjij, cout-8raEM4Qf
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-mKkkGjij","cout-8raEM4Qf"], confirm: true })`
-  - Evidence: Some of our businesses have reopened with limited operations. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we reopened theme parks and retail stores, we incurred and will continue to
+- **DIS / Demand, Macro and foreign exchange** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-HDbdsaxF, cout-VdWH7N4c
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-HDbdsaxF","cout-VdWH7N4c"], confirm: true })`
+  - Evidence: Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
+- **GOOGL / Cloud and data center capacity** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-B7tCKAA6, cout-SMcn3y2E
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-B7tCKAA6","cout-SMcn3y2E"], confirm: true })`
+  - Evidence: TAC was $10.9 billion, an increase of 63% year over year, primarily driven by an increase in revenues subject to TAC. Other cost of revenues were $15.3 billion, an increase of 29% year over year, affected by a reduction in depreciation expense due to the change in the estimated useful life of our se
+- **HD / Demand** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-7ZFDNvKH, cout-ehqn8LXh
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7ZFDNvKH","cout-ehqn8LXh"], confirm: true })`
+  - Evidence: As a result of the pandemic and related quarantines, shelter-in-place orders, and similar restrictions, we have experienced increased demand for online purchases of products. While we have managed this increased volume to date without interruption, there are no assurances that we will continue to be
+- **KO / Demand** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-iE9XESqW, cout-rgWVAt2q
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iE9XESqW","cout-rgWVAt2q"], confirm: true })`
+  - Evidence: Geopolitical instability has in the past led, and may in the future lead, to logistical, transportation and supply chain disruptions; business disruptions (including labor shortages); increased risk of cybersecurity incidents or other disruptions to our information systems; reduced availability and
+- **MO / Geopolitics and tariffs, Supply chain** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-RgaEKhj2, cout-eoocXEfn
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-RgaEKhj2","cout-eoocXEfn"], confirm: true })`
+  - Evidence: Volatility in domestic and global economies and disruptions in the supply and distribution chains continued in the third quarter of 2022, resulting from several factors, including the on-going impacts of inflation, energy shortages in Europe, raw materials availability and the Russian invasion of Uk
+- **MSFT / Cloud and data center capacity, Demand** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-61n2QAKz, cout-394FHK5Y
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-61n2QAKz","cout-394FHK5Y"], confirm: true })`
+  - Evidence: Cost of revenue increased $6.2 billion or 13% driven by growth in commercial cloud and Gaming, offset in part by a reduction in depreciation expense due to the change in estimated useful lives of our server and network equipment.
+- **MSFT / AI, R&D, and technology, Cloud and data center capacity** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-Q6cRP46M, cout-4jwKiyyY
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Q6cRP46M","cout-4jwKiyyY"], confirm: true })`
+  - Evidence: Research and development expenses increased $1.1 billion or 19% driven by investments in cloud engineering, impairment charges resulting from changes to our hardware portfolio, and LinkedIn. Research and development included a favorable foreign currency impact of 2%.
+- **MSFT / AI, R&D, and technology, Cloud and data center capacity** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-v6goN1Js, cout-y2cwxyMy
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-v6goN1Js","cout-y2cwxyMy"], confirm: true })`
+  - Evidence: Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
+- **MSFT / AI, R&D, and technology, Cloud and data center capacity** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-ACZRATjn, cout-zFy7ehnb
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ACZRATjn","cout-zFy7ehnb"], confirm: true })`
+  - Evidence: Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
+- **MU / Demand** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-8gqoUGJm, cout-K9aRAKBN
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-8gqoUGJm","cout-K9aRAKBN"], confirm: true })`
+  - Evidence: Events surrounding the ongoing COVID-19 pandemic initially resulted in a reduction in economic activity across the globe, and the timing and extent of the ongoing economic recovery remains uncertain. As a result, we have experienced volatility in the markets that our products are sold into, driven b
+- **MU / Inventory and channel** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-wyjsXWXB, cout-UnymrXZk
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-wyjsXWXB","cout-UnymrXZk"], confirm: true })`
+  - Evidence: In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected
+- **NVDA / Customer and platform dependency, Supply chain** - 2 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-Uf5LXhW8, cout-jBcXDeFd
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Uf5LXhW8","cout-jBcXDeFd"], confirm: true })`
+  - Evidence: was 61.2%, compared with 59.9% a year earlier, which reflects our continued shift toward higher-value platforms, which more than offset the impact of approximately $128 million in charges for excess DRAM and other components we recorded in the fourth quarter of fiscal year 2019 and a charge of $57 m
 
 ## Cross-Company Patterns
 
-- **Demand**: 31 open bet(s) across AAPL, ABNB, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, PM, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2286 observation(s), review pressure 52, latest 2026-05-01
-- **Regulation and legal**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2299 observation(s), review pressure 26, latest 2026-05-01
+- **Demand**: 30 open bet(s) across AAPL, ABNB, AMZN, AVGO, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, PM, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2204 observation(s), review pressure 31, latest 2026-05-01
 - **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 22, latest 2026-05-01
-- **Geopolitics and tariffs**: 35 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1243 observation(s), review pressure 19, latest 2026-04-30
-- **Cloud and data center capacity**: 35 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 11, latest 2026-05-01
+- **Geopolitics and tariffs**: 35 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1243 observation(s), review pressure 18, latest 2026-04-30
 - **Inventory and channel**: 33 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, ORCL, PEP, PG, PM, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 10, latest 2026-05-01
+- **Regulation and legal**: 34 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2193 observation(s), review pressure 9, latest 2026-05-01
+- **Cloud and data center capacity**: 35 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 8, latest 2026-05-01
 - **Supply chain**: 31 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1499 observation(s), review pressure 7, latest 2026-05-01
 - **AI, R&D, and technology**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1440 observation(s), review pressure 6, latest 2026-05-01
-- **Customer and platform dependency**: 35 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1232 observation(s), review pressure 4, latest 2026-05-01
 - **Macro and foreign exchange**: 32 open bet(s) across AAPL, ABNB, AMZN, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, WBD, WMT, 1824 observation(s), review pressure 2, latest 2026-05-01
+- **Customer and platform dependency**: 35 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1232 observation(s), review pressure 2, latest 2026-05-01
 - **Cybersecurity and privacy**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, VZ, WBD, WMT, 844 observation(s), review pressure 1, latest 2026-05-01
 - **Competition**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1640 observation(s), review pressure 0, latest 2026-05-01
 
 ## What To Watch Next
 
-- **CSCO / Demand, Geopolitics and tariffs**
+- **DIS / Demand, Macro and foreign exchange**
   - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kUJDfVZM","cout-VPYbDkb2"], confirm: true })
-  - Evidence: , led by product revenue growth in Australia and Japan. We experienced revenue declines from many emerging countries, and in particular we experienced product revenue declines in the emerging countries of Mexico, Brazil and China of 31%, 10% and 2%, respectively. In the aggregate, the "BRICM" countr
-- **CSCO / Regulation and legal, Supply chain**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-HDbdsaxF","cout-VdWH7N4c"], confirm: true })
+  - Evidence: Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
+- **GOOGL / Cloud and data center capacity**
   - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-hMKb5Von","cout-vVTczNMn"], confirm: true })
-  - Evidence: percentage points, driven by unfavorable impacts from pricing, lower productivity benefits driven by an increase in the cost of certain memory components and the $122 million legal and indemnification settlement charge. As a percentage of revenue, research and development, sales and marketing, and g
-- **CSCO / Regulation and legal**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-B7tCKAA6","cout-SMcn3y2E"], confirm: true })
+  - Evidence: TAC was $10.9 billion, an increase of 63% year over year, primarily driven by an increase in revenues subject to TAC. Other cost of revenues were $15.3 billion, an increase of 29% year over year, affected by a reduction in depreciation expense due to the change in the estimated useful life of our se
+- **HD / Demand**
   - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-K97f9qWM","cout-wZBsu9Qo"], confirm: true })
-  - Evidence: percentage points due to unfavorable impacts from pricing and a $127 million legal and indemnification settlement charge, partially offset by productivity benefits and favorable product mix. As a percentage of revenue, research and development, sales and marketing, and general and administrative exp
-- **CSCO / Demand**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7ZFDNvKH","cout-ehqn8LXh"], confirm: true })
+  - Evidence: As a result of the pandemic and related quarantines, shelter-in-place orders, and similar restrictions, we have experienced increased demand for online purchases of products. While we have managed this increased volume to date without interruption, there are no assurances that we will continue to be
+- **KO / Demand**
   - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-keH7qBu3","cout-AVrhdb2A"], confirm: true })
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector, enterprise and commercial markets, partially offset by a product revenue decline in the service provider market.
-- **CSCO / Demand**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iE9XESqW","cout-rgWVAt2q"], confirm: true })
+  - Evidence: Geopolitical instability has in the past led, and may in the future lead, to logistical, transportation and supply chain disruptions; business disruptions (including labor shortages); increased risk of cybersecurity incidents or other disruptions to our information systems; reduced availability and
+- **MO / Geopolitics and tariffs, Supply chain**
   - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-c2k94d6C","cout-5og4P7Uf"], confirm: true })
-  - Evidence: From a customer market standpoint, we experienced product revenue declines across all customer segments. During the
-- **DIS / Regulation and legal**
-  - Reason: Open assumption has review pressure 10.
-  - Next action: Review staged candidates linked to assumption asm-K8rwQyCS before carrying this bet forward.
-  - Evidence: 46 observation(s), latest 2026-02-02.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-RgaEKhj2","cout-eoocXEfn"], confirm: true })
+  - Evidence: Volatility in domestic and global economies and disruptions in the supply and distribution chains continued in the third quarter of 2022, resulting from several factors, including the on-going impacts of inflation, energy shortages in Europe, raw materials availability and the Russian invasion of Uk
 - **WBD / Regulation and legal**
   - Reason: Open assumption has review pressure 7.
   - Next action: Review staged candidates linked to assumption asm-iVeAyyNH before carrying this bet forward.
@@ -391,6 +399,10 @@ A deterministic decision-support view of current company bets, prior failures, u
   - Reason: Open assumption has review pressure 7.
   - Next action: Review staged candidates linked to assumption asm-xakuDdYD before carrying this bet forward.
   - Evidence: 24 observation(s), latest 2026-02-02.
+- **MU / Inventory and channel**
+  - Reason: Open assumption has review pressure 6.
+  - Next action: Review staged candidates linked to assumption asm-mohAyweE before carrying this bet forward.
+  - Evidence: 55 observation(s), latest 2026-03-19.
 
 ## Limits
 

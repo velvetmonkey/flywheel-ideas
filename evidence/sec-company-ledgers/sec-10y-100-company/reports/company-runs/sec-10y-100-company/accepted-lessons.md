@@ -10,6 +10,18 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.**
+  - Companies: DIS
+  - Themes: Regulation and legal
+  - Outcomes: out-HR8ZaBsU
+- **Infrastructure demand assumptions should track customer digestion of prior shipments because channel absorption can turn apparent backlog strength into later revenue weakness.**
+  - Companies: CSCO
+  - Themes: Demand
+  - Outcomes: out-TiY265ie
+- **Regulation and legal assumptions should track settlement charges when management connects them to margin movement, not only litigation headlines or final judgments.**
+  - Companies: CSCO
+  - Themes: Regulation and legal
+  - Outcomes: out-4D4Rto1C
 - **Semiconductor geopolitics assumptions should track export-control inventory charges because policy changes can immediately convert product roadmaps into stranded assets.**
   - Companies: AMD
   - Themes: Geopolitics and tariffs
