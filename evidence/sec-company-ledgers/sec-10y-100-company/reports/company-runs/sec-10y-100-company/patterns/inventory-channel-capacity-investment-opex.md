@@ -17,7 +17,7 @@ source: flywheel-ideas
 - Sectors: Communication Services, Information Technology
 - Companies: AMD, GOOGL
 - Observations: 116
-- Realized candidates: 10
+- Realized candidates: 4
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn

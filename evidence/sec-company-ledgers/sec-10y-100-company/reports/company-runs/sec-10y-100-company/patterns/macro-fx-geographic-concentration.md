@@ -15,7 +15,7 @@ source: flywheel-ideas
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - Companies: ABNB, AMZN, EA, KO, LOW, MAR, NFLX, ORCL, T, TJX, TSLA, VZ
 - Observations: 741
-- Realized candidates: 7
+- Realized candidates: 5
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn

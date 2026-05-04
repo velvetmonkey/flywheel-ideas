@@ -12,7 +12,7 @@ source: flywheel-ideas
 
 - Companies: ABNB, AMZN, BKNG, HD, LOW, MAR, MCD, SBUX, TJX, TSLA
 - Observations: 5501
-- Staged outcomes: 58
+- Staged outcomes: 34
 
 ## Companies
 
@@ -23,8 +23,8 @@ source: flywheel-ideas
 - [[companies/sbux|SBUX]]: 541 observation(s), 7 staged outcome(s).
 - [[companies/amzn|AMZN]]: 810 observation(s), 0 staged outcome(s).
 - [[companies/mar|MAR]]: 598 observation(s), 1 staged outcome(s).
-- [[companies/bkng|BKNG]]: 501 observation(s), 13 staged outcome(s).
-- [[companies/tsla|TSLA]]: 679 observation(s), 24 staged outcome(s).
+- [[companies/bkng|BKNG]]: 501 observation(s), 4 staged outcome(s).
+- [[companies/tsla|TSLA]]: 679 observation(s), 9 staged outcome(s).
 - [[companies/abnb|ABNB]]: 342 observation(s), 1 staged outcome(s).
 
 ## Flywheel Audit

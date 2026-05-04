@@ -10,6 +10,34 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Channel inventory corrections can convert end-market weakness into a distinct company-level revenue failure signal.**
+  - Companies: AMD
+  - Themes: Inventory and channel
+  - Outcomes: out-a6jEU45k
+- **Semiconductor macro assumptions should be tested against segment-level revenue deterioration, not only company-wide demand language.**
+  - Companies: AMD
+  - Themes: Macro and foreign exchange
+  - Outcomes: out-vm5Za9Qq
+- **Macro assumptions for manufacturers should connect inflation language to pricing actions and margin pressure, not treat macro risk as abstract background noise.**
+  - Companies: TSLA
+  - Themes: Macro and foreign exchange
+  - Outcomes: out-9gcDshGU
+- **Manufacturing scale assumptions should track whether supply-chain disruption is forcing price increases, not only whether production volumes continue growing.**
+  - Companies: TSLA
+  - Themes: Supply chain
+  - Outcomes: out-99MnKT3H
+- **Supply-chain assumptions should be downgraded when shortage language moves from possible supplier dependency to disclosed effects on lead times, cost, and customer demand fulfilment.**
+  - Companies: CSCO
+  - Themes: Supply chain
+  - Outcomes: out-X2u99tro
+- **Macro assumptions for diversified semiconductor companies should track management's disclosed forecasting impairment, not just reported revenue declines.**
+  - Companies: AVGO
+  - Themes: Macro and foreign exchange
+  - Outcomes: out-Thryg6qv
+- **Marketplace liquidity assumptions should be reviewed when transaction volume collapses, not only when debt or cash-balance stress appears.**
+  - Companies: BKNG
+  - Themes: Liquidity
+  - Outcomes: out-VoaZ4Yv9
 - **Platform demand assumptions for travel marketplaces can fail quickly when the underlying activity is externally restricted; review should focus on transaction-volume collapse before balance-sheet stress appears.**
   - Companies: BKNG
   - Themes: Demand
