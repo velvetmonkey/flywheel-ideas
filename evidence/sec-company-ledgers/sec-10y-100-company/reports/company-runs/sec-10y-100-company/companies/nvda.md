@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-company-nvda
 entity_type: company_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:30:26.798Z'
 ---
 # NVDA sec-10y-100-company
 
@@ -17,7 +15,7 @@ created: '2026-05-04T12:30:26.798Z'
 - Filings scanned: 41
 - Window: 2016-03-17 to 2026-02-25
 - Observations: 704
-- Staged outcomes: 16
+- Staged outcomes: 15
 
 ## Top Themes
 

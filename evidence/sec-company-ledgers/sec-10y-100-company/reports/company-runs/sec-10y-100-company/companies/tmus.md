@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-company-tmus
 entity_type: company_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:30:38.989Z'
 ---
 # TMUS sec-10y-100-company
 

@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-thesis
 entity_type: company_sector_bundle_thesis
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:43.966Z'
 ---
 # Company Thesis Report sec-10y-100-company
 
@@ -18,9 +16,9 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 - Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Filings scanned: 1468
-- Current thesis dependencies: 413 open bet(s).
-- Human review queue: 187 event(s), 363 staged candidate(s).
-- Accepted failures: 0; lessons recorded: 0; missing lesson memos: 0.
+- Current thesis dependencies: 408 open bet(s).
+- Human review queue: 187 event(s), 358 staged candidate(s).
+- Accepted failures: 5; lessons recorded: 5; missing lesson memos: 0.
 - Posture: evidence needs human review before thesis confidence should increase.
 
 ## Current Thesis Dependencies
@@ -49,22 +47,41 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **DIS / Regulation and legal** - fresh, review pressure 10, 46 observation(s), latest 2026-02-02
   - Assumption: asm-K8rwQyCS
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **AMD / Demand** - fresh, review pressure 9, 82 observation(s), latest 2026-02-04
-  - Assumption: asm-MM6Hc6gr
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **NVDA / Inventory and channel** - fresh, review pressure 8, 61 observation(s), latest 2026-02-25
   - Assumption: asm-XtUoWXU4
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **CSCO / Supply chain** - fresh, review pressure 8, 60 observation(s), latest 2026-02-17
   - Assumption: asm-SrGYCsLi
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **BKNG / Demand** - fresh, review pressure 7, 84 observation(s), latest 2026-04-28
-  - Assumption: asm-SzfgJvKs
+- **BKNG / Liquidity** - fresh, review pressure 7, 77 observation(s), latest 2026-04-28
+  - Assumption: asm-r3YunLyG
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **WBD / Regulation and legal** - fresh, review pressure 7, 58 observation(s), latest 2026-02-27
+  - Assumption: asm-iVeAyyNH
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 
 ## Prior Failures And Lessons
 
-No accepted failure lessons have been recorded yet.
+- **Platform demand assumptions for travel marketplaces can fail quickly when the underlying activity is externally restricted; review should focus on transaction-volume collapse before balance-sheet stress appears.**
+  - Evidence: 1 accepted failure verdict(s) across BKNG / Demand
+  - Representative context: The May 2020 10-Q disclosed material declines in gross travel bookings, room nights, total revenues, net income, operating cash flow, and April newly-booked room reservations down over 85% year over year.
+  - Outcomes: out-A5GENqAJ
+- **Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Cloud and data center capacity
+  - Representative context: The 2026 10-K disclosed approximately $800 million of inventory and related charges on AMD Instinct MI308 products due to new export restrictions on China shipments.
+  - Outcomes: out-dkrWjofL
+- **For semiconductor companies, demand assumptions should be tested against channel inventory corrections, not just end-customer demand language.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Demand
+  - Representative context: The November 2022 10-Q disclosed a Client revenue decline caused by weak PC macro conditions and inventory correction across the PC supply chain.
+  - Outcomes: out-8fYekrdT
+- **Geographic concentration is not just abstract geopolitical boilerplate; when a shock closes factories, logistics, and retail channels together, it can directly impair supply and demand in the same quarter.**
+  - Evidence: 1 accepted failure verdict(s) across AAPL / Geopolitics and tariffs
+  - Representative context: The May 2020 10-Q disclosed manufacturing, supply-chain, logistics, retail, and channel disruptions that caused temporary iPhone shortages and hurt China sales.
+  - Outcomes: out-XVDcouNG
+- **Regulatory permission is not equivalent to realized demand; export-control reviews should track revenue and shipment evidence after licenses are granted.**
+  - Evidence: 1 accepted failure verdict(s) across NVDA / Demand
+  - Representative context: The August 2025 10-Q disclosed a $4.5 billion H20 charge, diminished H20 demand, and no revenue or shipments under later-granted licenses as of the filing.
+  - Outcomes: out-4GsRMjM5
 
 ## What Needs Human Review
 
@@ -72,14 +89,14 @@ No accepted failure lessons have been recorded yet.
   - Candidate IDs: cout-oPtGqLz2, cout-mvJwryY4, cout-S9XgtkYv, cout-8VtB1TTf, cout-2Pe19Uau, cout-BxgbQE6m, cout-UPwoxps4, cout-N2vAe4iJ, cout-B6mR21uo, cout-CJZPRJjt, cout-36FeGpiW, cout-pYPsuKHJ, cout-K4ZwjKRK, cout-nzSNaZpd, cout-rjZXPRvD, cout-oYUceTHj, cout-RMMDndfy, cout-8QDdz3Za
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-oPtGqLz2","cout-mvJwryY4","cout-S9XgtkYv","cout-8VtB1TTf","cout-2Pe19Uau","cout-BxgbQE6m","cout-UPwoxps4","cout-N2vAe4iJ","cout-B6mR21uo","cout-CJZPRJjt","cout-36FeGpiW","cout-pYPsuKHJ","cout-K4ZwjKRK","cout-nzSNaZpd","cout-rjZXPRvD","cout-oYUceTHj","cout-RMMDndfy","cout-8QDdz3Za"], confirm: true })`
   - Evidence: Since this launch, we have developed an ecosystem for Internet-connected screens and have added increasing amounts of content that enable consumers to enjoy TV shows and movies directly on their Internet-connected screens. As a result of these efforts, we have experienced growing consumer acceptance
-- **BKNG / Demand, Liquidity** - 10 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-YXhwm84Z, cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-YXhwm84Z","cout-yhix48Sp","cout-LhXvMm8P","cout-Satn2WvP","cout-e4PxmHyN","cout-sfL2mhjW","cout-agp7CCTX","cout-NibTzGns","cout-pZRQmYjJ","cout-y8JXQgmy"], confirm: true })`
-  - Evidence: Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **AMD / Demand, Inventory and channel, Supply chain** - 9 candidate(s), confidence up to 0.92
   - Candidate IDs: cout-kbxfopz5, cout-v6Ty6Zdj, cout-d99mgcRR, cout-QBMjwVwE, cout-j1jeGumr, cout-wLUjMTye, cout-5Yqbggez, cout-kU3Mq2WL, cout-828qFtnQ
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kbxfopz5","cout-v6Ty6Zdj","cout-d99mgcRR","cout-QBMjwVwE","cout-j1jeGumr","cout-wLUjMTye","cout-5Yqbggez","cout-kU3Mq2WL","cout-828qFtnQ"], confirm: true })`
   - Evidence: The semiconductor industry is highly cyclical and has experienced significant downturns, often in conjunction with constant and rapid technological change, wide fluctuations in supply and demand, continuous new product introductions, price erosion and declines in general economic conditions. We have
+- **BKNG / Demand, Liquidity** - 9 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yhix48Sp","cout-LhXvMm8P","cout-Satn2WvP","cout-e4PxmHyN","cout-sfL2mhjW","cout-agp7CCTX","cout-NibTzGns","cout-pZRQmYjJ","cout-y8JXQgmy"], confirm: true })`
+  - Evidence: Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **TSLA / Supply chain** - 9 candidate(s), confidence up to 0.92
   - Candidate IDs: cout-WRx31iqm, cout-jN4oqgop, cout-xp6TWpoc, cout-4GYhcYtu, cout-KQ9njBd7, cout-rVQCqAvX, cout-wBULifYr, cout-cR6u6CAy, cout-GoaZfWGJ
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-WRx31iqm","cout-jN4oqgop","cout-xp6TWpoc","cout-4GYhcYtu","cout-KQ9njBd7","cout-rVQCqAvX","cout-wBULifYr","cout-cR6u6CAy","cout-GoaZfWGJ"], confirm: true })`
@@ -109,24 +126,24 @@ No accepted failure lessons have been recorded yet.
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-uoG1Fh3k","cout-xZUvpn16","cout-BqotHCgo","cout-EdkkVKh5","cout-ajPwzADX"], confirm: true })`
   - Evidence: Current financial liabilities have fair values that approximate their carrying values. Long-term financial liabilities include the Company's long-term debt, which are recorded on the balance sheet at issuance price and adjusted for unamortized discounts or premiums and debt issuance costs, which are
 - **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain** - 4 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-p2tiStYd, cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p2tiStYd","cout-tXU6E8yr","cout-kV489Jk1","cout-FvAvtfT6"], confirm: true })`
-  - Evidence: In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
-- **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain** - 4 candidate(s), confidence up to 0.92
   - Candidate IDs: cout-b7rv9AWz, cout-PMsTitrS, cout-aSYX3eRq, cout-hV8zfv1P
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-b7rv9AWz","cout-PMsTitrS","cout-aSYX3eRq","cout-hV8zfv1P"], confirm: true })`
   - Evidence: We experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain in the second half of 2022. Uncertain global economic conditions have and may in the future adversely impact our business.
+- **AMD / Demand, Inventory and channel, Macro and foreign exchange, Supply chain** - 4 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-d3GjJYuM, cout-YuYPEoN7, cout-qkpYLSZB, cout-4WNwfTGT
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-d3GjJYuM","cout-YuYPEoN7","cout-qkpYLSZB","cout-4WNwfTGT"], confirm: true })`
+  - Evidence: Uncertainty in the economic environment or other unfavorable changes in economic conditions, such as inflation, higher interest rates, recession, slowing growth, increased unemployment, tighter credit markets, changes in fiscal monetary or trade policy, or currency fluctuations, may negatively impac
 
 ## Cross-Company Patterns
 
-- **Demand**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2785 observation(s), review pressure 106, latest 2026-05-01
+- **Demand**: 34 open bet(s) across AAPL, ABNB, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2537 observation(s), review pressure 86, latest 2026-05-01
 - **Supply chain**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1858 observation(s), review pressure 53, latest 2026-05-01
 - **Liquidity**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2606 observation(s), review pressure 47, latest 2026-05-01
 - **Macro and foreign exchange**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2109 observation(s), review pressure 33, latest 2026-05-01
 - **Inventory and channel**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1438 observation(s), review pressure 33, latest 2026-05-01
 - **Regulation and legal**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2374 observation(s), review pressure 27, latest 2026-05-01
-- **Geopolitics and tariffs**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1350 observation(s), review pressure 21, latest 2026-05-01
-- **Cloud and data center capacity**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1357 observation(s), review pressure 19, latest 2026-05-01
+- **Geopolitics and tariffs**: 36 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1293 observation(s), review pressure 20, latest 2026-04-30
+- **Cloud and data center capacity**: 35 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 18, latest 2026-05-01
 - **AI, R&D, and technology**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1459 observation(s), review pressure 11, latest 2026-05-01
 - **Customer and platform dependency**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1293 observation(s), review pressure 9, latest 2026-05-01
 - **Competition**: 37 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1713 observation(s), review pressure 3, latest 2026-05-01
@@ -138,14 +155,14 @@ No accepted failure lessons have been recorded yet.
   - Reason: 18 staged outcome candidate(s) need human review.
   - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-oPtGqLz2","cout-mvJwryY4","cout-S9XgtkYv","cout-8VtB1TTf","cout-2Pe19Uau","cout-BxgbQE6m","cout-UPwoxps4","cout-N2vAe4iJ","cout-B6mR21uo","cout-CJZPRJjt","cout-36FeGpiW","cout-pYPsuKHJ","cout-K4ZwjKRK","cout-nzSNaZpd","cout-rjZXPRvD","cout-oYUceTHj","cout-RMMDndfy","cout-8QDdz3Za"], confirm: true })
   - Evidence: Since this launch, we have developed an ecosystem for Internet-connected screens and have added increasing amounts of content that enable consumers to enjoy TV shows and movies directly on their Internet-connected screens. As a result of these efforts, we have experienced growing consumer acceptance
-- **BKNG / Demand, Liquidity**
-  - Reason: 10 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-YXhwm84Z","cout-yhix48Sp","cout-LhXvMm8P","cout-Satn2WvP","cout-e4PxmHyN","cout-sfL2mhjW","cout-agp7CCTX","cout-NibTzGns","cout-pZRQmYjJ","cout-y8JXQgmy"], confirm: true })
-  - Evidence: Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **AMD / Demand, Inventory and channel, Supply chain**
   - Reason: 9 staged outcome candidate(s) need human review.
   - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kbxfopz5","cout-v6Ty6Zdj","cout-d99mgcRR","cout-QBMjwVwE","cout-j1jeGumr","cout-wLUjMTye","cout-5Yqbggez","cout-kU3Mq2WL","cout-828qFtnQ"], confirm: true })
   - Evidence: The semiconductor industry is highly cyclical and has experienced significant downturns, often in conjunction with constant and rapid technological change, wide fluctuations in supply and demand, continuous new product introductions, price erosion and declines in general economic conditions. We have
+- **BKNG / Demand, Liquidity**
+  - Reason: 9 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yhix48Sp","cout-LhXvMm8P","cout-Satn2WvP","cout-e4PxmHyN","cout-sfL2mhjW","cout-agp7CCTX","cout-NibTzGns","cout-pZRQmYjJ","cout-y8JXQgmy"], confirm: true })
+  - Evidence: Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **TSLA / Supply chain**
   - Reason: 9 staged outcome candidate(s) need human review.
   - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-WRx31iqm","cout-jN4oqgop","cout-xp6TWpoc","cout-4GYhcYtu","cout-KQ9njBd7","cout-rVQCqAvX","cout-wBULifYr","cout-cR6u6CAy","cout-GoaZfWGJ"], confirm: true })

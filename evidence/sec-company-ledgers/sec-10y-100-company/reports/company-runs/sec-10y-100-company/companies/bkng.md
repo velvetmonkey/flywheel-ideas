@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-company-bkng
 entity_type: company_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:30:34.114Z'
 ---
 # BKNG sec-10y-100-company
 
@@ -17,7 +15,7 @@ created: '2026-05-04T12:30:34.114Z'
 - Filings scanned: 42
 - Window: 2016-02-17 to 2026-04-28
 - Observations: 501
-- Staged outcomes: 14
+- Staged outcomes: 13
 
 ## Top Themes
 

@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-theme-regulation-legal
 entity_type: company_theme_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:31:10.789Z'
 ---
 # Regulation and legal sec-10y-100-company
 

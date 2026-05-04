@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-pattern-macro-fx-consumer-demand-shock
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:31:40.150Z'
 ---
 # Macro and foreign exchange / Consumer or end-market demand shock sec-10y-100-company
 

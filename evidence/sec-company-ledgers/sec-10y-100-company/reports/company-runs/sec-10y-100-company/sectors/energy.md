@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-sector-energy
 entity_type: company_sector_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:29:15.807Z'
 ---
 # Energy sec-10y-100-company
 

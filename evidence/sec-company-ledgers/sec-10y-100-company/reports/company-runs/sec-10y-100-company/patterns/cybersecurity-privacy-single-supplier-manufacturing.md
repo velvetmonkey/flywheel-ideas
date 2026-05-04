@@ -9,8 +9,6 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-cybersecurity-privacy-single-supplier-manufacturing
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:32:34.023Z'
 ---
 # Cybersecurity and privacy / Single supplier or manufacturing concentration sec-10y-100-company
 

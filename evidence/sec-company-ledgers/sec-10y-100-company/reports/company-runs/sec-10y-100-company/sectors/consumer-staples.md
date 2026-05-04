@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-sector-consumer-staples
 entity_type: company_sector_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:29:13.368Z'
 ---
 # Consumer Staples sec-10y-100-company
 

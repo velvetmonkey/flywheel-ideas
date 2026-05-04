@@ -9,8 +9,6 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-geopolitics-tariffs-export-controls-sanctions
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:32:38.909Z'
 ---
 # Geopolitics and tariffs / Export controls or sanctions sec-10y-100-company
 

@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-sector-matrix
 entity_type: company_sector_matrix
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:48.935Z'
 ---
 # Sector Assumption Matrix sec-10y-100-company
 
@@ -17,13 +15,13 @@ created: '2026-05-04T12:28:48.935Z'
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Themes |
 |---|---:|---:|---:|---:|---|
 | Communication Services | 10 | 12 | 5374 | 89 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
-| Consumer Discretionary | 10 | 12 | 5501 | 59 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
+| Consumer Discretionary | 10 | 12 | 5501 | 58 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
 | Consumer Staples | 10 | 12 | 3899 | 57 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 158 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 154 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |

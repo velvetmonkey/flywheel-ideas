@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-thesis-deltas
 entity_type: company_thesis_deltas
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:58.718Z'
 ---
 # Thesis Deltas sec-10y-100-company
 

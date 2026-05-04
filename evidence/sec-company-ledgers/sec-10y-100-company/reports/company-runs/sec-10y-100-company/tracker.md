@@ -7,8 +7,6 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-tracker
 entity_type: company_sector_bundle_tracker
 source: flywheel-ideas
-date: '2026-05-04'
-created: '2026-05-04T12:28:46.490Z'
 ---
 # Company Tracker sec-10y-100-company
 
@@ -17,8 +15,8 @@ created: '2026-05-04T12:28:46.490Z'
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 363
-- Applied outcomes: 0
+- Staged outcomes: 358
+- Applied outcomes: 5
 
 ## SEC Company Lifecycle Report
 
@@ -27,11 +25,11 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 ## Lifecycle Snapshot
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
-- Current bets: 413 open company/theme assumption(s) still being carried.
-- Review queue: 187 event(s), 363 staged candidate(s) awaiting human judgment.
-- Accepted outcomes: 0 failure(s), 0 validation(s).
-- Lessons: 0 recorded memo(s), 0 missing memo(s).
-- Triage completion: 0/363 candidate(s) applied (0%).
+- Current bets: 408 open company/theme assumption(s) still being carried.
+- Review queue: 187 event(s), 358 staged candidate(s) awaiting human judgment.
+- Accepted outcomes: 5 failure(s), 0 validation(s).
+- Lessons: 5 recorded memo(s), 0 missing memo(s).
+- Triage completion: 5/363 candidate(s) applied (1%).
 
 ## Operator Next Step
 
@@ -39,11 +37,30 @@ Review the highest-pressure event and apply only if the evidence really refutes 
 
 ## Lifecycle Status
 
-Visibility only so far: the system has evidence and 187 review event(s), but no pass/fail outcome enters the ledger until a human applies candidates.
+5 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
 
 ## Lessons Captured
 
-No lesson memos recorded yet.
+- **Platform demand assumptions for travel marketplaces can fail quickly when the underlying activity is externally restricted; review should focus on transaction-volume collapse before balance-sheet stress appears.**
+  - Evidence: 1 accepted failure verdict(s) across BKNG / Demand
+  - Representative context: The May 2020 10-Q disclosed material declines in gross travel bookings, room nights, total revenues, net income, operating cash flow, and April newly-booked room reservations down over 85% year over year.
+  - Outcomes: out-A5GENqAJ
+- **Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Cloud and data center capacity
+  - Representative context: The 2026 10-K disclosed approximately $800 million of inventory and related charges on AMD Instinct MI308 products due to new export restrictions on China shipments.
+  - Outcomes: out-dkrWjofL
+- **For semiconductor companies, demand assumptions should be tested against channel inventory corrections, not just end-customer demand language.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Demand
+  - Representative context: The November 2022 10-Q disclosed a Client revenue decline caused by weak PC macro conditions and inventory correction across the PC supply chain.
+  - Outcomes: out-8fYekrdT
+- **Geographic concentration is not just abstract geopolitical boilerplate; when a shock closes factories, logistics, and retail channels together, it can directly impair supply and demand in the same quarter.**
+  - Evidence: 1 accepted failure verdict(s) across AAPL / Geopolitics and tariffs
+  - Representative context: The May 2020 10-Q disclosed manufacturing, supply-chain, logistics, retail, and channel disruptions that caused temporary iPhone shortages and hurt China sales.
+  - Outcomes: out-XVDcouNG
+- **Regulatory permission is not equivalent to realized demand; export-control reviews should track revenue and shipment evidence after licenses are granted.**
+  - Evidence: 1 accepted failure verdict(s) across NVDA / Demand
+  - Representative context: The August 2025 10-Q disclosed a $4.5 billion H20 charge, diminished H20 demand, and no revenue or shipments under later-granted licenses as of the filing.
+  - Outcomes: out-4GsRMjM5
 
 ## Current Bets
 
@@ -65,14 +82,14 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-cX6hzDj2
 - **DIS / Regulation and legal** — fresh, 46 observation(s), review pressure 10, latest 2026-02-02
   - Assumption: asm-K8rwQyCS
-- **AMD / Demand** — fresh, 82 observation(s), review pressure 9, latest 2026-02-04
-  - Assumption: asm-MM6Hc6gr
 - **NVDA / Inventory and channel** — fresh, 61 observation(s), review pressure 8, latest 2026-02-25
   - Assumption: asm-XtUoWXU4
 - **CSCO / Supply chain** — fresh, 60 observation(s), review pressure 8, latest 2026-02-17
   - Assumption: asm-SrGYCsLi
-- **BKNG / Demand** — fresh, 84 observation(s), review pressure 7, latest 2026-04-28
-  - Assumption: asm-SzfgJvKs
+- **BKNG / Liquidity** — fresh, 77 observation(s), review pressure 7, latest 2026-04-28
+  - Assumption: asm-r3YunLyG
+- **WBD / Regulation and legal** — fresh, 58 observation(s), review pressure 7, latest 2026-02-27
+  - Assumption: asm-iVeAyyNH
 
 ## Outcome Review Queue
 
@@ -81,16 +98,16 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-oPtGqLz2","cout-mvJwryY4","cout-S9XgtkYv","cout-8VtB1TTf","cout-2Pe19Uau","cout-BxgbQE6m","cout-UPwoxps4","cout-N2vAe4iJ","cout-B6mR21uo","cout-CJZPRJjt","cout-36FeGpiW","cout-pYPsuKHJ","cout-K4ZwjKRK","cout-nzSNaZpd","cout-rjZXPRvD","cout-oYUceTHj","cout-RMMDndfy","cout-8QDdz3Za"], confirm: true })`
   - Source: sec-company://0001065280/0001065280-16-000047#item-1a:theme:demand:outcome
   - Since this launch, we have developed an ecosystem for Internet-connected screens and have added increasing amounts of content that enable consumers to enjoy TV shows and movies directly on their Internet-connected screens. As a result of these efforts, we have experienced growing consumer acceptance
-- **BKNG** 2020-05-07 to 2021-02-24: 10 candidate(s), Demand, Liquidity
-  - Candidate IDs: cout-YXhwm84Z, cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-YXhwm84Z","cout-yhix48Sp","cout-LhXvMm8P","cout-Satn2WvP","cout-e4PxmHyN","cout-sfL2mhjW","cout-agp7CCTX","cout-NibTzGns","cout-pZRQmYjJ","cout-y8JXQgmy"], confirm: true })`
-  - Source: sec-company://0001075531/0001075531-20-000027#part-i-item-2:theme:demand:outcome
-  - Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **AMD** 2024-05-01 to 2025-11-05: 9 candidate(s), Demand, Inventory and channel, Supply chain
   - Candidate IDs: cout-kbxfopz5, cout-v6Ty6Zdj, cout-d99mgcRR, cout-QBMjwVwE, cout-j1jeGumr, cout-wLUjMTye, cout-5Yqbggez, cout-kU3Mq2WL, cout-828qFtnQ
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kbxfopz5","cout-v6Ty6Zdj","cout-d99mgcRR","cout-QBMjwVwE","cout-j1jeGumr","cout-wLUjMTye","cout-5Yqbggez","cout-kU3Mq2WL","cout-828qFtnQ"], confirm: true })`
   - Source: sec-company://0000002488/0000002488-24-000056#part-ii-item-1a:theme:demand:outcome
   - The semiconductor industry is highly cyclical and has experienced significant downturns, often in conjunction with constant and rapid technological change, wide fluctuations in supply and demand, continuous new product introductions, price erosion and declines in general economic conditions. We have
+- **BKNG** 2020-05-07 to 2021-02-24: 9 candidate(s), Demand, Liquidity
+  - Candidate IDs: cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yhix48Sp","cout-LhXvMm8P","cout-Satn2WvP","cout-e4PxmHyN","cout-sfL2mhjW","cout-agp7CCTX","cout-NibTzGns","cout-pZRQmYjJ","cout-y8JXQgmy"], confirm: true })`
+  - Source: sec-company://0001075531/0001075531-20-000027#part-i-item-2:theme:liquidity:outcome
+  - Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **TSLA** 2021-04-28 to 2026-01-29: 9 candidate(s), Supply chain
   - Candidate IDs: cout-WRx31iqm, cout-jN4oqgop, cout-xp6TWpoc, cout-4GYhcYtu, cout-KQ9njBd7, cout-rVQCqAvX, cout-wBULifYr, cout-cR6u6CAy, cout-GoaZfWGJ
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-WRx31iqm","cout-jN4oqgop","cout-xp6TWpoc","cout-4GYhcYtu","cout-KQ9njBd7","cout-rVQCqAvX","cout-wBULifYr","cout-cR6u6CAy","cout-GoaZfWGJ"], confirm: true })`
@@ -126,11 +143,6 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-uoG1Fh3k","cout-xZUvpn16","cout-BqotHCgo","cout-EdkkVKh5","cout-ajPwzADX"], confirm: true })`
   - Source: sec-company://0000909832/0000909832-17-000022#part-ii-item-1a:theme:liquidity:outcome
   - Current financial liabilities have fair values that approximate their carrying values. Long-term financial liabilities include the Company's long-term debt, which are recorded on the balance sheet at issuance price and adjusted for unamortized discounts or premiums and debt issuance costs, which are
-- **AMD** 2022-11-02: 4 candidate(s), Demand, Inventory and channel, Macro and foreign exchange, Supply chain
-  - Candidate IDs: cout-p2tiStYd, cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p2tiStYd","cout-tXU6E8yr","cout-kV489Jk1","cout-FvAvtfT6"], confirm: true })`
-  - Source: sec-company://0000002488/0000002488-22-000170#part-ii-item-1a:theme:demand:outcome
-  - In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **AMD** 2023-02-27: 4 candidate(s), Demand, Inventory and channel, Macro and foreign exchange, Supply chain
   - Candidate IDs: cout-b7rv9AWz, cout-PMsTitrS, cout-aSYX3eRq, cout-hV8zfv1P
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-b7rv9AWz","cout-PMsTitrS","cout-aSYX3eRq","cout-hV8zfv1P"], confirm: true })`
@@ -151,11 +163,6 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-e5JNJh1D","cout-2pkwi69L","cout-Y5cEmChs","cout-XDbqnDtE"], confirm: true })`
   - Source: sec-company://0000723125/0000723125-20-000067#part-i-item-2:theme:cloud-data-center-capacity:outcome
   - To respond to changing market conditions, we have shifted some supply from markets which have experienced declines in demand, such as smartphones, to markets that have experienced demand increases, such as data center markets.
-- **NVDA** 2025-08-27 to 2025-11-19: 4 candidate(s), Demand, Inventory and channel
-  - Candidate IDs: cout-UPCRQmgc, cout-6tc7ybv4, cout-PefEJ6sF, cout-nFWxcCZb
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UPCRQmgc","cout-6tc7ybv4","cout-PefEJ6sF","cout-nFWxcCZb"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-25-000209#part-i-item-2:theme:demand:outcome
-  - In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **PM** 2019-07-25 to 2019-10-24: 4 candidate(s), Cloud and data center capacity, Supply chain
   - Candidate IDs: cout-8SCxx8o7, cout-6QX8jFUn, cout-bY6agkXD, cout-At33eLMQ
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-8SCxx8o7","cout-6QX8jFUn","cout-bY6agkXD","cout-At33eLMQ"], confirm: true })`
@@ -171,21 +178,16 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-A4k3ngJc","cout-i5vDy47t","cout-ckb72vVa","cout-htRx1uSJ"], confirm: true })`
   - Source: sec-company://0000732712/0000732712-23-000012#item-1a:theme:liquidity:outcome
   - Unfavorable economic conditions could also amplify other risk factors discussed in this section, including, but not limited to, our competitive position and margins. Over the last two years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, includ
-- **AAPL** 2020-05-01: 3 candidate(s), Customer and platform dependency, Geopolitics and tariffs, Supply chain
-  - Candidate IDs: cout-vFYN1LWP, cout-uzBxztXV, cout-fGbxc3H7
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-vFYN1LWP","cout-uzBxztXV","cout-fGbxc3H7"], confirm: true })`
-  - Source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:customer-platform-dependency:outcome
-  - During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
+- **AMD** 2022-11-02: 3 candidate(s), Inventory and channel, Macro and foreign exchange, Supply chain
+  - Candidate IDs: cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tXU6E8yr","cout-kV489Jk1","cout-FvAvtfT6"], confirm: true })`
+  - Source: sec-company://0000002488/0000002488-22-000170#part-ii-item-1a:theme:inventory-channel:outcome
+  - In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **AMD** 2026-02-04: 3 candidate(s), Demand, Inventory and channel, Supply chain
   - Candidate IDs: cout-jXFysvEZ, cout-fDinEHoF, cout-YN4z4KxU
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-jXFysvEZ","cout-fDinEHoF","cout-YN4z4KxU"], confirm: true })`
   - Source: sec-company://0000002488/0000002488-26-000018#item-1a:theme:demand:outcome
   - The growth of AI is further creating pressure on the semiconductor industry to timely design, manufacture and deliver semiconductor products and solutions to meet customer demand for computing power and AI infrastructure. We have incurred substantial losses in previous downturns, due to substantial
-- **AMD** 2026-02-04: 3 candidate(s), Cloud and data center capacity, Geopolitics and tariffs, Inventory and channel
-  - Candidate IDs: cout-SpXnm9Zz, cout-tYf3zg4c, cout-pnHkhuYs
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-SpXnm9Zz","cout-tYf3zg4c","cout-pnHkhuYs"], confirm: true })`
-  - Source: sec-company://0000002488/0000002488-26-000018#item-7:theme:cloud-data-center-capacity:outcome
-  - During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **AVGO** 2024-06-13 to 2024-12-20: 3 candidate(s), Macro and foreign exchange
   - Candidate IDs: cout-FpF4o6pL, cout-aVcUu1ni, cout-mqMPhdkE
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-FpF4o6pL","cout-aVcUu1ni","cout-mqMPhdkE"], confirm: true })`
@@ -221,6 +223,11 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-vRyLikx1","cout-caUZXQdK","cout-64SymR9r"], confirm: true })`
   - Source: sec-company://0001326801/0001326801-23-000013#item-7:theme:demand:outcome
   - Revenue on a constant currency basis was $122.57 billion for 2022, an increase of 4% compared to 2021. Our advertising revenue was impacted by a reduction in advertising demand during 2022 compared to 2021, which we believe was primarily driven by reduced marketer spending as a result of a more chal
+- **NVDA** 2025-08-27 to 2025-11-19: 3 candidate(s), Demand, Inventory and channel
+  - Candidate IDs: cout-6tc7ybv4, cout-PefEJ6sF, cout-nFWxcCZb
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-6tc7ybv4","cout-PefEJ6sF","cout-nFWxcCZb"], confirm: true })`
+  - Source: sec-company://0001045810/0001045810-25-000209#part-i-item-2:theme:inventory-channel:outcome
+  - In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **PEP** 2020-10-01: 3 candidate(s), Cloud and data center capacity, Liquidity, Supply chain
   - Candidate IDs: cout-gm2n5fZ6, cout-SeCyjtKd, cout-p4j4yM18
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gm2n5fZ6","cout-SeCyjtKd","cout-p4j4yM18"], confirm: true })`
@@ -241,6 +248,16 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-6CKXnFe2","cout-VZERjRVx","cout-6mXQEfum"], confirm: true })`
   - Source: sec-company://0000104169/0000104169-18-000028#item-1a:theme:inventory-channel:outcome
   - We bear the risk of losses incurred as a result of physical damage to, or destruction of, any stores, clubs and distribution facilities, loss or spoilage of inventory and business interruption caused by such events. These events and their impacts could otherwise disrupt and adversely affect our oper
+- **AAPL** 2020-05-01: 2 candidate(s), Customer and platform dependency, Supply chain
+  - Candidate IDs: cout-uzBxztXV, cout-fGbxc3H7
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-uzBxztXV","cout-fGbxc3H7"], confirm: true })`
+  - Source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:customer-platform-dependency:outcome
+  - During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
+- **AMD** 2026-02-04: 2 candidate(s), Geopolitics and tariffs, Inventory and channel
+  - Candidate IDs: cout-tYf3zg4c, cout-pnHkhuYs
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tYf3zg4c","cout-pnHkhuYs"], confirm: true })`
+  - Source: sec-company://0000002488/0000002488-26-000018#item-7:theme:geopolitics-tariffs:outcome
+  - During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **AVGO** 2019-09-13 to 2020-03-13: 2 candidate(s), Macro and foreign exchange
   - Candidate IDs: cout-GorxstR4, cout-KExnj5Yy
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-GorxstR4","cout-KExnj5Yy"], confirm: true })`
@@ -1014,7 +1031,26 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
 
 ## Accepted Pass/Fail Verdicts
 
-No accepted verdicts yet. Staged review events above are not pass/fail until applied.
+- **FAIL** NVDA / Demand: asm-QncdPdYh via out-4GsRMjM5
+  - In the context of **NVDA disclosed demand risk in 10-K 2016-03-17.**, facing **If we are unable to successfully compete in our target markets, our revenue and financial results will be adversely impacted**, we assume **NVDA can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Regulatory permission is not equivalent to realized demand; export-control reviews should track revenue and shipment evidence after licenses are granted.
+- **FAIL** AAPL / Geopolitics and tariffs: asm-6eLPnrAX via out-XVDcouNG
+  - In the context of **AAPL disclosed geopolitics and tariffs risk in 10-Q 2016-01-27.**, facing **Greater China**, we assume **AAPL can manage geopolitics and tariffs risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Geographic concentration is not just abstract geopolitical boilerplate; when a shock closes factories, logistics, and retail channels together, it can directly impair supply and demand in the same quarter.
+- **FAIL** AMD / Demand: asm-MM6Hc6gr via out-8fYekrdT
+  - In the context of **AMD disclosed demand risk in 10-K 2016-02-18.**, facing **Intel's market share, margins and significant financial resources enable it to market its products aggressively, to target our customers and our channel partners with special incentives and to influence customers who do business with us. These aggressive activities have in the past and are likely in the future to result in lower unit sales and a lower average selling price for many of our products and adversely affect our margins and profitability.**, we assume **AMD can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: For semiconductor companies, demand assumptions should be tested against channel inventory corrections, not just end-customer demand language.
+- **FAIL** AMD / Cloud and data center capacity: asm-Vc3UnXrd via out-dkrWjofL
+  - In the context of **AMD disclosed cloud and data center capacity risk in 10-K 2016-02-18.**, facing **Pursuant to the WSA, we are required to purchase all of our microprocessor and APU product requirements, and a certain portion of our GPU product requirements, from GF with limited exceptions. If GF is unable to achieve anticipated manufacturing yields, remain competitive using or implementing advanced leading-edge process technologies needed to manufacture future generations of our products, manufacture our products on a timely basis at competitive prices or meet our capacity requirements, then we may experience delays in product launches, supply shortages for certain products or increased costs and our business could be materially adversely affected.**, we assume **AMD can manage cloud and data center capacity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.
+- **FAIL** BKNG / Demand: asm-SzfgJvKs via out-A5GENqAJ
+  - In the context of **BKNG disclosed demand risk in 10-K 2016-02-17.**, facing **Travel, including accommodation (including hotels, bed and breakfasts, hostels, apartments, vacation rentals and other properties), rental car and airline ticket reservations, is dependent on discretionary spending levels. As a result, sales of travel services tend to decline during general economic downturns and recessions when consumers engage in less discretionary spending, are concerned about unemployment or inflation, have reduced access to credit or experience other concerns or effects that reduce their ability or willingness to travel. For example, the recent worldwide recession led to a weakening in the fundamental demand for our travel reservation services and an increase in the number of consumers who canceled existing travel reservations with us.**, we assume **BKNG can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Platform demand assumptions for travel marketplaces can fail quickly when the underlying activity is externally restricted; review should focus on transaction-volume collapse before balance-sheet stress appears.
 
 ## Dependent Ideas Needing Review
 
@@ -1025,7 +1061,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 363 staged, 0 applied.
+- Realized outcome candidates: 358 staged, 5 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -1036,7 +1072,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-18 to 2026-02-04
 - Themes tracked: 12
 - Observations: 794
-- Staged outcomes: 37
+- Staged outcomes: 35
 
 - **Demand**: 82 observation(s), latest 2026-02-04, assumption asm-MM6Hc6gr
 - **Regulation and legal**: 82 observation(s), latest 2026-02-04, assumption asm-UMyfURLG
@@ -1189,7 +1225,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-27 to 2026-05-01
 - Themes tracked: 12
 - Observations: 672
-- Staged outcomes: 7
+- Staged outcomes: 6
 
 - **Demand**: 84 observation(s), latest 2026-05-01, assumption asm-mB3Z4msd
 - **Liquidity**: 77 observation(s), latest 2026-05-01, assumption asm-Ci3UyXkx
@@ -1393,7 +1429,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-03-17 to 2026-02-25
 - Themes tracked: 12
 - Observations: 704
-- Staged outcomes: 16
+- Staged outcomes: 15
 
 - **Demand**: 82 observation(s), latest 2026-02-25, assumption asm-QncdPdYh
 - **AI, R&D, and technology**: 77 observation(s), latest 2026-02-25, assumption asm-GDaMBKx5
@@ -1444,7 +1480,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-17 to 2026-04-28
 - Themes tracked: 12
 - Observations: 501
-- Staged outcomes: 14
+- Staged outcomes: 13
 
 - **Demand**: 84 observation(s), latest 2026-04-28, assumption asm-SzfgJvKs
 - **Macro and foreign exchange**: 83 observation(s), latest 2026-04-28, assumption asm-SZ1og8By
@@ -1681,13 +1717,13 @@ No dependent ideas are currently flagged by accepted refutations.
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
 | Communication Services | 10 | 12 | 5374 | 89 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
-| Consumer Discretionary | 10 | 12 | 5501 | 59 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
+| Consumer Discretionary | 10 | 12 | 5501 | 58 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
 | Consumer Staples | 10 | 12 | 3899 | 57 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 158 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 154 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |
@@ -1758,20 +1794,20 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-363 staged candidate(s) grouped into 187 review event(s). Apply still operates on candidate IDs; groups are for review only.
+358 staged candidate(s) grouped into 187 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
 - **NFLX** 2016-01-28 to 2022-04-21: 18 candidate(s), Demand
   - Candidate IDs: cout-oPtGqLz2, cout-mvJwryY4, cout-S9XgtkYv, cout-8VtB1TTf, cout-2Pe19Uau, cout-BxgbQE6m, cout-UPwoxps4, cout-N2vAe4iJ, cout-B6mR21uo, cout-CJZPRJjt, cout-36FeGpiW, cout-pYPsuKHJ, cout-K4ZwjKRK, cout-nzSNaZpd, cout-rjZXPRvD, cout-oYUceTHj, cout-RMMDndfy, cout-8QDdz3Za
   - Representative source: sec-company://0001065280/0001065280-16-000047#item-1a:theme:demand:outcome
   - Since this launch, we have developed an ecosystem for Internet-connected screens and have added increasing amounts of content that enable consumers to enjoy TV shows and movies directly on their Internet-connected screens. As a result of these efforts, we have experienced growing consumer acceptance
-- **BKNG** 2020-05-07 to 2021-02-24: 10 candidate(s), Demand, Liquidity
-  - Candidate IDs: cout-YXhwm84Z, cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
-  - Representative source: sec-company://0001075531/0001075531-20-000027#part-i-item-2:theme:demand:outcome
-  - Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **AMD** 2024-05-01 to 2025-11-05: 9 candidate(s), Demand, Inventory and channel, Supply chain
   - Candidate IDs: cout-kbxfopz5, cout-v6Ty6Zdj, cout-d99mgcRR, cout-QBMjwVwE, cout-j1jeGumr, cout-wLUjMTye, cout-5Yqbggez, cout-kU3Mq2WL, cout-828qFtnQ
   - Representative source: sec-company://0000002488/0000002488-24-000056#part-ii-item-1a:theme:demand:outcome
   - The semiconductor industry is highly cyclical and has experienced significant downturns, often in conjunction with constant and rapid technological change, wide fluctuations in supply and demand, continuous new product introductions, price erosion and declines in general economic conditions. We have
+- **BKNG** 2020-05-07 to 2021-02-24: 9 candidate(s), Demand, Liquidity
+  - Candidate IDs: cout-yhix48Sp, cout-LhXvMm8P, cout-Satn2WvP, cout-e4PxmHyN, cout-sfL2mhjW, cout-agp7CCTX, cout-NibTzGns, cout-pZRQmYjJ, cout-y8JXQgmy
+  - Representative source: sec-company://0001075531/0001075531-20-000027#part-i-item-2:theme:liquidity:outcome
+  - Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Although it is impossible to accurately predict the ultimate impact of the COVID-19 pandemic and any resurgences of the pandemic on our business, our results for the three mo
 - **TSLA** 2021-04-28 to 2026-01-29: 9 candidate(s), Supply chain
   - Candidate IDs: cout-WRx31iqm, cout-jN4oqgop, cout-xp6TWpoc, cout-4GYhcYtu, cout-KQ9njBd7, cout-rVQCqAvX, cout-wBULifYr, cout-cR6u6CAy, cout-GoaZfWGJ
   - Representative source: sec-company://0001318605/0000950170-21-000046#part-ii-item-1a:theme:supply-chain:outcome
@@ -1800,10 +1836,6 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-uoG1Fh3k, cout-xZUvpn16, cout-BqotHCgo, cout-EdkkVKh5, cout-ajPwzADX
   - Representative source: sec-company://0000909832/0000909832-17-000022#part-ii-item-1a:theme:liquidity:outcome
   - Current financial liabilities have fair values that approximate their carrying values. Long-term financial liabilities include the Company's long-term debt, which are recorded on the balance sheet at issuance price and adjusted for unamortized discounts or premiums and debt issuance costs, which are
-- **AMD** 2022-11-02: 4 candidate(s), Demand, Inventory and channel, Macro and foreign exchange, Supply chain
-  - Candidate IDs: cout-p2tiStYd, cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
-  - Representative source: sec-company://0000002488/0000002488-22-000170#part-ii-item-1a:theme:demand:outcome
-  - In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **AMD** 2023-02-27: 4 candidate(s), Demand, Inventory and channel, Macro and foreign exchange, Supply chain
   - Candidate IDs: cout-b7rv9AWz, cout-PMsTitrS, cout-aSYX3eRq, cout-hV8zfv1P
   - Representative source: sec-company://0000002488/0000002488-23-000047#item-1a:theme:demand:outcome
@@ -1820,10 +1852,6 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-e5JNJh1D, cout-2pkwi69L, cout-Y5cEmChs, cout-XDbqnDtE
   - Representative source: sec-company://0000723125/0000723125-20-000067#part-i-item-2:theme:cloud-data-center-capacity:outcome
   - To respond to changing market conditions, we have shifted some supply from markets which have experienced declines in demand, such as smartphones, to markets that have experienced demand increases, such as data center markets.
-- **NVDA** 2025-08-27 to 2025-11-19: 4 candidate(s), Demand, Inventory and channel
-  - Candidate IDs: cout-UPCRQmgc, cout-6tc7ybv4, cout-PefEJ6sF, cout-nFWxcCZb
-  - Representative source: sec-company://0001045810/0001045810-25-000209#part-i-item-2:theme:demand:outcome
-  - In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **PM** 2019-07-25 to 2019-10-24: 4 candidate(s), Cloud and data center capacity, Supply chain
   - Candidate IDs: cout-8SCxx8o7, cout-6QX8jFUn, cout-bY6agkXD, cout-At33eLMQ
   - Representative source: sec-company://0001413329/0001413329-19-000055#part-i-item-2:theme:supply-chain:outcome
@@ -1836,18 +1864,14 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-A4k3ngJc, cout-i5vDy47t, cout-ckb72vVa, cout-htRx1uSJ
   - Representative source: sec-company://0000732712/0000732712-23-000012#item-1a:theme:macro-fx:outcome
   - Unfavorable economic conditions could also amplify other risk factors discussed in this section, including, but not limited to, our competitive position and margins. Over the last two years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, includ
-- **AAPL** 2020-05-01: 3 candidate(s), Customer and platform dependency, Geopolitics and tariffs, Supply chain
-  - Candidate IDs: cout-vFYN1LWP, cout-uzBxztXV, cout-fGbxc3H7
-  - Representative source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
+- **AMD** 2022-11-02: 3 candidate(s), Inventory and channel, Macro and foreign exchange, Supply chain
+  - Candidate IDs: cout-tXU6E8yr, cout-kV489Jk1, cout-FvAvtfT6
+  - Representative source: sec-company://0000002488/0000002488-22-000170#part-ii-item-1a:theme:macro-fx:outcome
+  - In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **AMD** 2026-02-04: 3 candidate(s), Demand, Inventory and channel, Supply chain
   - Candidate IDs: cout-jXFysvEZ, cout-fDinEHoF, cout-YN4z4KxU
   - Representative source: sec-company://0000002488/0000002488-26-000018#item-1a:theme:demand:outcome
   - The growth of AI is further creating pressure on the semiconductor industry to timely design, manufacture and deliver semiconductor products and solutions to meet customer demand for computing power and AI infrastructure. We have incurred substantial losses in previous downturns, due to substantial
-- **AMD** 2026-02-04: 3 candidate(s), Cloud and data center capacity, Geopolitics and tariffs, Inventory and channel
-  - Candidate IDs: cout-SpXnm9Zz, cout-tYf3zg4c, cout-pnHkhuYs
-  - Representative source: sec-company://0000002488/0000002488-26-000018#item-7:theme:cloud-data-center-capacity:outcome
-  - During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **AVGO** 2024-06-13 to 2024-12-20: 3 candidate(s), Macro and foreign exchange
   - Candidate IDs: cout-FpF4o6pL, cout-aVcUu1ni, cout-mqMPhdkE
   - Representative source: sec-company://0001730168/0001730168-24-000080#part-ii-item-1a:theme:macro-fx:outcome
@@ -1876,6 +1900,10 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-vRyLikx1, cout-caUZXQdK, cout-64SymR9r
   - Representative source: sec-company://0001326801/0001326801-23-000013#item-7:theme:demand:outcome
   - Revenue on a constant currency basis was $122.57 billion for 2022, an increase of 4% compared to 2021. Our advertising revenue was impacted by a reduction in advertising demand during 2022 compared to 2021, which we believe was primarily driven by reduced marketer spending as a result of a more chal
+- **NVDA** 2025-08-27 to 2025-11-19: 3 candidate(s), Demand, Inventory and channel
+  - Candidate IDs: cout-6tc7ybv4, cout-PefEJ6sF, cout-nFWxcCZb
+  - Representative source: sec-company://0001045810/0001045810-25-000209#part-i-item-2:theme:inventory-channel:outcome
+  - In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **PEP** 2020-10-01: 3 candidate(s), Cloud and data center capacity, Liquidity, Supply chain
   - Candidate IDs: cout-gm2n5fZ6, cout-SeCyjtKd, cout-p4j4yM18
   - Representative source: sec-company://0000077476/0000077476-20-000068#part-i-item-2:theme:supply-chain:outcome
@@ -1892,6 +1920,14 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-6CKXnFe2, cout-VZERjRVx, cout-6mXQEfum
   - Representative source: sec-company://0000104169/0000104169-18-000028#item-1a:theme:inventory-channel:outcome
   - We bear the risk of losses incurred as a result of physical damage to, or destruction of, any stores, clubs and distribution facilities, loss or spoilage of inventory and business interruption caused by such events. These events and their impacts could otherwise disrupt and adversely affect our oper
+- **AAPL** 2020-05-01: 2 candidate(s), Customer and platform dependency, Supply chain
+  - Candidate IDs: cout-uzBxztXV, cout-fGbxc3H7
+  - Representative source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:supply-chain:outcome
+  - During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
+- **AMD** 2026-02-04: 2 candidate(s), Geopolitics and tariffs, Inventory and channel
+  - Candidate IDs: cout-tYf3zg4c, cout-pnHkhuYs
+  - Representative source: sec-company://0000002488/0000002488-26-000018#item-7:theme:geopolitics-tariffs:outcome
+  - During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **AVGO** 2019-09-13 to 2020-03-13: 2 candidate(s), Macro and foreign exchange
   - Candidate IDs: cout-GorxstR4, cout-KExnj5Yy
   - Representative source: sec-company://0001730168/0001730168-19-000118#part-ii-item-1a:theme:macro-fx:outcome
@@ -2533,8 +2569,6 @@ These candidates are staged for human review. Applying them requires company.app
   - On April 9, 2025, the U.S. government, or USG, informed us that it requires a license for export to China (including Hong Kong and Macau) and D:5 countries, or to companies headquartered or with an ultimate parent therein, of our H20 integrated circuits and any other circuits achieving the H20's mem
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-25-000116#part-i-item-2:theme:inventory-channel:outcome)
   - On April 9, 2025, the U.S. government, or USG, informed us that it requires a license for export to China (including Hong Kong and Macau) and D:5 countries, or to companies headquartered or with an ultimate parent therein, of our H20 integrated circuits and any other circuits achieving the H20's mem
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-25-000209#part-i-item-2:theme:demand:outcome)
-  - In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-25-000209#part-i-item-2:theme:inventory-channel:outcome)
   - In April 2025, the U.S. government, or USG, informed us that a license is required for exports of our H20 product into the China market. As a result of these new requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purc
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-25-000230#part-i-item-2:theme:demand:outcome)
@@ -2547,8 +2581,6 @@ These candidates are staged for human review. Applying them requires company.app
   - In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:demand:outcome)
   - Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:supply-chain:outcome)
   - During February 2020, following the initial outbreak of the virus in China, the Company experienced disruptions to its manufacturing, supply chain and logistical services provided by outsourcing partners, resulting in temporary iPhone supply shortages that affected sales worldwide. Also, the Company
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:customer-platform-dependency:outcome)
@@ -2657,8 +2689,6 @@ These candidates are staged for human review. Applying them requires company.app
   - , and $41 million of stock-based compensation expense and a $5 million contingent loss in connection with a legal matter for the
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-20-000051#part-i-item-2:theme:supply-chain:outcome)
   - During the first quarter of 2020, we experienced some disruptions to parts of our supply chain. We continue to monitor demand signals as we adjust our supply chain requirements based on changing customer needs and demands.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-22-000170#part-ii-item-1a:theme:demand:outcome)
-  - In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-22-000170#part-ii-item-1a:theme:macro-fx:outcome)
   - In the third quarter of 2022, we experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain. Uncertain global economic conditions have and may in the future adversely impact our business.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-22-000170#part-ii-item-1a:theme:supply-chain:outcome)
@@ -2721,8 +2751,6 @@ These candidates are staged for human review. Applying them requires company.app
   - The growth of AI is further creating pressure on the semiconductor industry to timely design, manufacture and deliver semiconductor products and solutions to meet customer demand for computing power and AI infrastructure. We have incurred substantial losses in previous downturns, due to substantial
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-26-000018#item-1a:theme:inventory-channel:outcome)
   - The growth of AI is further creating pressure on the semiconductor industry to timely design, manufacture and deliver semiconductor products and solutions to meet customer demand for computing power and AI infrastructure. We have incurred substantial losses in previous downturns, due to substantial
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-26-000018#item-7:theme:cloud-data-center-capacity:outcome)
-  - During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-26-000018#item-7:theme:geopolitics-tariffs:outcome)
   - During the second quarter of fiscal year 2025, the Company recorded approximately $800 million of inventory and related charges on AMD Instinct MI308 Data Center GPU products due to new U.S. export restrictions on certain semiconductors to China. We applied for and were granted some licenses by the
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-26-000018#item-7:theme:inventory-channel:outcome)
@@ -2897,8 +2925,6 @@ These candidates are staged for human review. Applying them requires company.app
   - A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000109198/0000109198-22-000008#item-7:theme:geopolitics-tariffs:outcome)
   - We account for our investment in Familia using the equity method of accounting. As of January 29, 2022, the carrying value of our investment in Familia was $186 million, which reflects the revaluing of the investment from Russian rubles to the U.S. dollar, resulting in a cumulative translation loss
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001075531/0001075531-20-000027#part-i-item-2:theme:demand:outcome)
-  - Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Our results for the quarter ended March 31, 2020 have been significantly and negatively impacted, with a material decline in gross travel bookings, room nights booked, total
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001075531/0001075531-20-000027#part-i-item-2:theme:liquidity:outcome)
   - Our financial results and prospects are almost entirely dependent on the sale of such travel and restaurant-related services. Our results for the quarter ended March 31, 2020 have been significantly and negatively impacted, with a material decline in gross travel bookings, room nights booked, total
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001075531/0001075531-20-000050#part-i-item-2:theme:demand:outcome)
