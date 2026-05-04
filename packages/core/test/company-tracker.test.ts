@@ -49,8 +49,22 @@ beforeEach(async () => {
 afterEach(async () => {
   db.close();
   deleteIdeasDbFiles(vault);
-  await fsp.rm(vault, { recursive: true, force: true });
+  await rmWithRetries(vault);
 });
+
+async function rmWithRetries(target: string): Promise<void> {
+  for (let attempt = 0; attempt < 8; attempt++) {
+    try {
+      await fsp.rm(target, { recursive: true, force: true });
+      return;
+    } catch (err) {
+      const code = (err as NodeJS.ErrnoException).code;
+      if (code !== 'EBUSY' && code !== 'EPERM') throw err;
+      await new Promise((resolve) => setTimeout(resolve, 100 * (attempt + 1)));
+    }
+  }
+  await fsp.rm(target, { recursive: true, force: true });
+}
 
 async function createFiveSectorFixtureDir(root: string): Promise<string> {
   const out = path.join(root, 'five-sector-fixtures');
