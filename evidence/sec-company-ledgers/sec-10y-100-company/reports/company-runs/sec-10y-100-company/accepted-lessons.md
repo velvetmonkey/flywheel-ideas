@@ -10,6 +10,34 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Semiconductor supply-chain assumptions should track architecture-transition inventory because component commitments can become charges when product platforms shift.**
+  - Companies: NVDA
+  - Themes: Supply chain
+  - Outcomes: out-QuoB6Xk9
+- **Memory inventory assumptions should track product-line exits because technology discontinuation can convert both assets and inventory into charges.**
+  - Companies: MU
+  - Themes: Inventory and channel
+  - Outcomes: out-ckuQwvui
+- **AI/R&D assumptions should separate productive investment from impairment-backed cost pressure; both can rise together and change the risk profile.**
+  - Companies: MSFT
+  - Themes: AI, R&D, and technology
+  - Outcomes: out-JiCcBcGp
+- **Technology-platform assumptions should track impairment charges inside R&D because they identify product or portfolio bets that failed to compound.**
+  - Companies: MSFT
+  - Themes: AI, R&D, and technology
+  - Outcomes: out-4u23dr9z
+- **Supply-chain assumptions should track availability of component parts and alternative sourcing work because mitigation language often reveals operational pressure already being felt.**
+  - Companies: MO
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-nojVhWNc
+- **Domestic-business geopolitics assumptions should still track indirect input exposure because conflict can reach companies through supplier cost and availability rather than direct revenue.**
+  - Companies: MO
+  - Themes: Supply chain
+  - Outcomes: out-pHzkjaqp
+- **Experience-business macro assumptions should track cost inflation in guest-facing merchandise, food, and beverage because demand recovery can still carry margin pressure.**
+  - Companies: DIS
+  - Themes: Macro and foreign exchange
+  - Outcomes: out-oGp6QiUf
 - **Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.**
   - Companies: DIS
   - Themes: Regulation and legal

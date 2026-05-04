@@ -17,12 +17,12 @@ source: flywheel-ideas
 - Sectors: Communication Services, Information Technology
 - Companies: CMCSA, MSFT, MU, NVDA
 - Observations: 245
-- Realized candidates: 4
-- Signal: shared mechanism with realized-risk evidence
+- Realized candidates: 0
+- Signal: emerging cross-sector mechanism
 
 ## What We Can Learn
 
-Cloud and data center capacity is not just recurring boilerplate: the platform or customer concentration mechanism has already produced realized-risk candidates in this run, so related open bets in other sectors deserve review.
+Cloud and data center capacity appears through the platform or customer concentration mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
 
 ## Evidence Examples
 
