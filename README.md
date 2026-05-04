@@ -142,6 +142,38 @@ Generated idea, assumption, outcome, evaluation, and report notes request Flywhe
 
 Git evidence snapshots should commit Markdown artifacts only. SQLite databases, JSON reports, JSONL logs, SEC caches, WAL/SHM files, and backups remain local operational state.
 
+## SEC Adjudication Batches
+
+The remaining review queue should be processed in batches, not by hand-picking isolated examples.
+
+```bash
+npm run build -w @velvetmonkey/flywheel-ideas-core
+node scripts/sec-adjudication-batch.mjs \
+  --run-id sec-10y-100-company \
+  --limit 20 \
+  --batch-id adj-sec-001
+```
+
+That writes a Flywheel-linked packet under:
+
+```text
+reports/company-runs/sec-10y-100-company/adjudication-batches/<batch-id>.md
+```
+
+Add `--export` if you want packet-only generation to refresh the Markdown evidence snapshot immediately. Applying decisions refreshes the export by default.
+
+The packet includes a decisions JSON template. A reviewer fills each group as `accept`, `reject`, or `defer`. Accepted candidates require a structured lesson memo:
+
+```bash
+node scripts/sec-adjudication-batch.mjs \
+  --run-id sec-10y-100-company \
+  --batch-id adj-sec-001 \
+  --decisions /path/to/decisions.json \
+  --confirm
+```
+
+Applying decisions regenerates company reports, writes a decision log Markdown note, refreshes the Markdown-only evidence export, and keeps the remaining staged queue visible.
+
 ## What It Is Not
 
 - Not a stock picker.
