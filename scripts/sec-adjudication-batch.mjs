@@ -161,34 +161,61 @@ async function applyDecisions(db, vault, runId, batchId, decisionsFile, confirm)
   for (const decision of decisions) {
     const action = String(decision.action ?? '').toLowerCase();
     const candidateIds = normalizeCandidateIds(decision.candidate_ids);
-    assertCandidates(db, runId, candidateIds);
+    const candidates = getCandidates(db, runId, candidateIds);
     if (action === 'accept') {
-      const result = await applyCompanyOutcomes(db, vault, {
-        run_id: runId,
-        outcome_candidate_ids: candidateIds,
-        confirm: true,
-      });
-      for (const applied of result.applied) {
+      const stagedIds = candidates.filter((row) => row.state === 'staged').map((row) => row.id);
+      const alreadyApplied = candidates
+        .filter((row) => row.state === 'applied' && row.applied_outcome_id)
+        .map((row) => ({
+          candidate_id: row.id,
+          outcome_id: row.applied_outcome_id,
+          assumption_id: row.assumption_id,
+          resumed: true,
+        }));
+      const invalid = candidates.filter((row) => row.state !== 'staged' && row.state !== 'applied');
+      if (invalid.length > 0) {
+        throw new Error(`accept decision cannot use non-staged/non-applied candidates: ${invalid.map((row) => `${row.id}:${row.state}`).join(', ')}`);
+      }
+      const result = stagedIds.length > 0
+        ? await applyCompanyOutcomes(db, vault, {
+          run_id: runId,
+          outcome_candidate_ids: stagedIds,
+          confirm: true,
+        })
+        : { applied: [] };
+      const appliedRows = [...alreadyApplied, ...result.applied];
+      for (const applied of appliedRows) {
         const memo = memoForApplied(decision, applied);
         recordOutcomeMemo(db, applied.outcome_id, memo);
       }
       summary.accepted.push({
         candidate_ids: candidateIds,
         reason: stringOrEmpty(decision.reason),
-        applied: result.applied,
+        applied: appliedRows,
       });
     } else if (action === 'reject') {
+      const invalid = candidates.filter((row) => row.state === 'applied');
+      if (invalid.length > 0) {
+        throw new Error(`reject decision cannot use applied candidates: ${invalid.map((row) => row.id).join(', ')}`);
+      }
+      const stagedIds = candidates.filter((row) => row.state === 'staged').map((row) => row.id);
       const now = Date.now();
-      db.prepare(
-        `UPDATE ideas_company_outcome_candidates
-            SET state = 'rejected', applied_at = ?
-          WHERE run_id = ? AND state = 'staged' AND id IN (${candidateIds.map(() => '?').join(',')})`,
-      ).run(now, runId, ...candidateIds);
+      if (stagedIds.length > 0) {
+        db.prepare(
+          `UPDATE ideas_company_outcome_candidates
+              SET state = 'rejected', applied_at = ?
+            WHERE run_id = ? AND state = 'staged' AND id IN (${stagedIds.map(() => '?').join(',')})`,
+        ).run(now, runId, ...stagedIds);
+      }
       summary.rejected.push({
         candidate_ids: candidateIds,
         reason: requiredString(decision.reason, 'reject decisions require reason'),
       });
     } else if (action === 'defer') {
+      const invalid = candidates.filter((row) => row.state !== 'staged');
+      if (invalid.length > 0) {
+        throw new Error(`defer decision requires staged candidates: ${invalid.map((row) => `${row.id}:${row.state}`).join(', ')}`);
+      }
       summary.deferred.push({
         candidate_ids: candidateIds,
         reason: requiredString(decision.reason, 'defer decisions require reason'),
@@ -292,17 +319,17 @@ function renderDecisionMarkdown(summary) {
   return lines.join('\n');
 }
 
-function assertCandidates(db, runId, candidateIds) {
+function getCandidates(db, runId, candidateIds) {
   if (candidateIds.length === 0) throw new Error('decision requires at least one candidate id');
   const rows = db.prepare(
-    `SELECT id, state FROM ideas_company_outcome_candidates
+    `SELECT id, state, assumption_id, applied_outcome_id FROM ideas_company_outcome_candidates
       WHERE run_id = ? AND id IN (${candidateIds.map(() => '?').join(',')})`,
   ).all(runId, ...candidateIds);
-  const found = new Map(rows.map((row) => [row.id, row.state]));
+  const found = new Map(rows.map((row) => [row.id, row]));
   for (const id of candidateIds) {
     if (!found.has(id)) throw new Error(`candidate ${id} not found in run ${runId}`);
-    if (found.get(id) !== 'staged') throw new Error(`candidate ${id} is ${found.get(id)}, expected staged`);
   }
+  return candidateIds.map((id) => found.get(id));
 }
 
 function memoForApplied(decision, applied) {

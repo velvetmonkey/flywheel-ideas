@@ -80,10 +80,10 @@ A Flywheel-linked table of contents for the company lifecycle bundle.
 
 - Companies requested: 110
 - Filings scanned: 1468
-- Current bets: 408
-- Review events: 187
+- Current bets: 401
+- Review events: 175
 - Shadow LLM evaluations: 486
-- Accepted failures: 5
+- Accepted failures: 12
 
 ## Flywheel Audit
 
