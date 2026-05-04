@@ -293,7 +293,7 @@ function needsQuoting(s: string): boolean {
   // Boolean/null lookalikes
   if (/^(true|false|null|yes|no|on|off|~)$/i.test(s)) return true;
   // Numeric lookalikes
-  if (/^[+-]?(\d+(\.\d+)?|\.\d+)([eE][+-]?\d+)?$/.test(s)) return true;
+  if (/^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$/.test(s)) return true;
   // Colons inside (would be parsed as map keys)
   if (/:/.test(s)) return true;
   // Comments
