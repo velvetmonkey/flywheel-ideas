@@ -1,0 +1,1115 @@
+---
+id: idea-cMfqf5Qd
+type: idea
+state: nascent
+title: ORCL 2017-03-17 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T19:40:17.446Z'
+date: '2026-05-03'
+created: '2026-05-03T19:40:17.820Z'
+---
+# ORACLE CORP 10-Q Part II Item 1A Risk Factors
+
+Filed: 2017-03-17
+Source: https://www.sec.gov/Archives/edgar/data/1341439/000119312517087309/d353998d10q.htm
+
+Risk Factors
+
+53
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+53
+
+Item 5.
+
+Other Information
+
+53
+
+Item 6.
+
+Exhibits
+
+54
+
+Signatures
+
+55
+
+Table of Contents
+
+Cautionary Note on Forward-Looking Statements
+
+For purposes of this Quarterly Report, the terms Oracle, we, us and our refer to Oracle Corporation and
+
+its consolidated subsidiaries. This Quarterly Report on Form
+
+10-Q
+
+contains statements that are not historical in nature, are predictive in nature, or that depend upon or refer to future events or conditions or
+
+otherwise contain forward-looking statements within the meaning of Section 21 of the Securities Exchange Act of 1934, as amended, and the Private Securities Litigation Reform Act of 1995. These include, among other things, statements regarding:
+
+
+
+our expectation that we will continue to acquire companies, products, services and technologies to further our corporate strategy;
+
+
+
+our belief that our acquisitions should allow us to grow and continue to make investments in research and development;
+
+
+
+our expectation that the total revenues of our cloud and
+
+on-premise
+
+software business on a constant currency
+
+basis generally will continue to increase due to demand for our
+
+on-premise
+
+software products and software license updates and product support offerings, expected growth from our cloud software as a service
+
+(SaaS), platform as a service (PaaS) and infrastructure as a service (IaaS) offerings, and contributions from acquisitions;
+
+
+
+our belief that our Oracle Cloud IaaS offerings complement our cloud SaaS and PaaS offerings and allow us to offer customers additional opportunities
+
+to access Oracle technologies through the Oracle Cloud;
+
+
+
+our expectation that we will continue to place significant strategic emphasis on growing our SaaS, PaaS and IaaS offerings, which will affect the
+
+growth of our cloud SaaS, PaaS and IaaS revenues and our new software license revenues and the related expenses;
+
+
+
+our intention that we will renew our cloud SaaS, PaaS and IaaS contracts when they are eligible for renewal;
+
+
+
+our belief that software license updates and product support revenues and margins will grow;
+
+
+
+our expectation that our hardware business will have lower operating margins as a percentage of revenues than our cloud and
+
+on-premise
+
+software business;
+
+
+
+our expectation that we will continue to make significant investments in research and development and related product opportunities, including those
+
+related to hardware products and services, and our belief that research and development efforts are essential to maintaining our competitive position;
+
+
+
+our international operations providing a significant portion of our total revenues and expenses;
+
+
+
+the sufficiency of our sources of funding for working capital, capital expenditures, contractual obligations, acquisitions, dividends, stock
+
+repurchases, debt repayments and other matters;
+
+
+
+our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the
+
+final outcome of our tax related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, and our belief that our net deferred tax assets will be realized in the foreseeable future;
+
+
+
+our estimates and projections regarding potential future goodwill impairment losses;
+
+
+
+our belief that the outcome of certain legal proceedings and claims to which we are a party will not, individually or in the aggregate, result in
+
+losses that are materially in excess of amounts already recognized, if any;
+
+
+
+the possibility that certain legal proceedings to which we are a party could have a material impact to our future cash flows and results of operations;
+
+
+
+our expectations regarding the timing and amount of expenses relating to the Fiscal 2017 Oracle Restructuring Plan and the improved efficiencies in our
+
+operations that such plan will create;
+
+1
+
+Table of Contents
+
+
+
+the timing and amount of our stock repurchases;
+
+
+
+our expectations regarding the impact of recent accounting pronouncements on our consolidated financial statements;
+
+
+
+our expectation that to the extent customers renew support contracts or cloud SaaS, PaaS and IaaS contracts from companies that we have acquired, we
+
+will recognize revenues for the full contracts values over the respective renewal periods;
+
+
+
+our ability to predict quarterly hardware revenues;
+
+
+
+the timing of customer orders and delays in our ability to manufacture or deliver a few large transactions substantially affecting the amount of
+
+hardware products revenues, expenses and operating margins that we will report;
+
+as well as other statements regarding our
+
+future operations, financial condition and prospects, and business strategies. Forward-looking statements may be preceded by, followed by or include the words expects, anticipates, intends, plans,
+
+believes, seeks, strives, estimates, will, should, is designed to and similar expressions. We claim the protection of the safe harbor for forward-looking statements
+
+contained in the Private Securities Litigation Reform Act of 1995 for all forward-looking statements. We have based these forward-looking statements on our current expectations and projections about future events. These forward-looking statements
+
+are subject to risks, uncertainties and assumptions about our business that could affect our future results and could cause those results or other outcomes to differ materially from those expressed or implied in the forward-looking statements.
+
+Factors that might cause or contribute to such differences include, but are not limited to, those discussed in Risk Factors included in documents we file from time to time with the U.S. Securities and Exchange Commission (the SEC),
+
+including our Annual Report on Form
+
+10-K
+
+for our fiscal year ended May 31, 2016 and our other Quarterly Reports on Form
+
+10-Q
+
+filed by us in our fiscal year 2017,
+
+which runs from June 1, 2016 to May 31, 2017.
+
+We have no obligation to publicly update or revise any forward-looking statements,
+
+whether as a result of new information, future events or risks, except to the extent required by applicable securities laws. If we do update one or more forward-looking statements, no inference should be drawn that we will make additional updates
+
+with respect to those or other forward-looking statements. New information, future events or risks could cause the forward-looking events we discuss in this Quarterly Report not to occur. You should not place undue reliance on these forward-looking
+
+statements, which reflect our expectations only as of the date of this Quarterly Report.
+
+2
+
+Table of Contents
+
+PART I.
+
+FINANCIAL INFORMATION
+
+Item 1.
+
+Financial Statements (Unaudited)
+
+ORACLE CORPORATION
+
+CONDENSED CONSOLIDATED
+
+BALANCE SHEETS
+
+As of February 28, 2017 and May 31, 2016
+
+(Unaudited)
+
+(in millions, except per share data)
+
+February 28,
+
+2017
+
+May 31,
+
+2016
+
+ASSETS
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+19,748
+
+$
+
+20,152
+
+Marketable securities
+
+39,604
+
+35,973
+
+Trade receivables, net of allowances for doubtful accounts of $300 and $327 as of February 28, 2017 and May 31, 2016,
+
+respectively
+
+3,721
+
+5,385
+
+Inventories
+
+391
+
+212
+
+Prepaid expenses and other current assets
+
+2,547
+
+2,591
+
+Total current assets
+
+66,011
+
+64,313
+
+Non-current
+
+assets:
+
+Property, plant and equipment, net
+
+5,070
+
+4,000
+
+Intangible assets, net
+
+7,788
+
+4,943
+
+Goodwill, net
+
+42,504
+
+34,590
+
+Deferred tax assets
+
+918
+
+1,291
+
+Other assets
+
+3,091
+
+3,043
+
+Total
+
+non-current
+
+assets
+
+59,371
+
+47,867
+
+Total assets
+
+$
+
+125,382
+
+$
+
+112,180
+
+LIABILITIES AND EQUITY
+
+Current liabilities:
+
+Notes payable and other borrowings, current
+
+$
+
+3,498
+
+$
+
+3,750
+
+Accounts payable
+
+481
+
+504
+
+Accrued compensation and related benefits
+
+1,516
+
+1,966
+
+Deferred revenues
+
+7,388
+
+7,655
+
+Other current liabilities
+
+2,907
+
+3,333
+
+Total current liabilities
+
+15,790
+
+17,208
+
+Non-current
+
+liabilities:
+
+Notes payable and other borrowings,
+
+non-current
+
+50,469
+
+40,105
+
+Income taxes payable
+
+5,162
+
+4,908
+
+Other
+
+non-current
+
+liabilities
+
+2,938
+
+2,169
+
+Total
+
+non-current
+
+liabilities
+
+58,569
+
+47,182
+
+Commitments and contingencies
+
+Oracle Corporation stockholders equity:
+
+Preferred stock, $0.01 par valueauthorized: 1.0 shares; outstanding: none
+
+
+
+
+
+Common stock, $0.01 par value and additional paid in capitalauthorized: 11,000 shares; outstanding: 4,115 shares and 4,131
+
+shares as of February 28, 2017 and May 31, 2016, respectively
+
+25,970
+
+24,217
+
+Retained earnings
+
+25,576
+
+23,888
+
+Accumulated other comprehensive loss
+
+(931
+
+)
+
+(816
+
+)
+
+Total Oracle Corporation stockholders equity
+
+50,615
+
+47,289
+
+Noncontrolling interests
+
+408
+
+501
+
+Total equity
+
+51,023
+
+47,790
+
+Total liabilities and equity
+
+$
+
+125,382
+
+$
+
+112,180
+
+See notes to condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+ORACLE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS
+
+For the Three and Nine Months Ended February 28, 2017 and February 29, 2016
+
+(Unaudited)
+
+Three Months Ended
+
+Nine Months Ended
+
+(in millions, except per share data)
+
+February 28,
+
+2017
+
+February 29,
+
+2016
+
+February 28,
+
+2017
+
+February 29,
+
+2016
+
+Revenues:
+
+Cloud software as a service and platform as a service
+
+$
+
+1,011
+
+$
+
+583
+
+$
+
+2,686
+
+$
+
+1,517
+
+Cloud infrastructure as a service
+
+178
+
+152
+
+525
+
+477
+
+Total cloud revenues
+
+1,189
+
+735
+
+3,211
+
+1,994
+
+New software licenses
+
+1,414
+
+1,680
+
+3,792
+
+4,509
+
+Software license updates and product support
+
+4,762
+
+4,669
+
+14,331
+
+14,048
+
+Total
+
+on-premise
+
+software revenues
+
+6,176
+
+6,349
+
+18,123
+
+18,557
+
+Total cloud and
+
+on-premise
+
+software revenues
+
+7,365
+
+7,084
+
+21,334
+
+20,551
+
+Hardware products
+
+520
+
+604
+
+1,478
+
+1,746
+
+Hardware support
+
+508
+
+531
+
+1,559
+
+1,639
+
+Total hardware revenues
+
+1,028
+
+1,135
+
+3,037
+
+3,385
+
+Total services revenues
+
+812
+
+793
+
+2,464
+
+2,517
+
+Total revenues
+
+9,205
+
+9,012
+
+26,835
+
+26,453
+
+Operating expenses:
+
+Sales and marketing
+
+(1)
+
+2,004
+
+1,903
+
+5,883
+
+5,578
+
+Cloud software as a service and platform as a service
+
+(1)
+
+380
+
+292
+
+1,060
+
+847
+
+Cloud infrastructure as a service
+
+(1)
+
+125
+
+88
+
+333
+
+268
+
+Software license updates and product support
+
+(1)
+
+270
+
+293
+
+786
+
+877
+
+Hardware products
+
+(1)
+
+290
+
+338
+
+775
+
+967
+
+Hardware support
+
+(1)
+
+147
+
+171
+
+439
+
+526
+
+Services
+
+(1)
+
+680
+
+657
+
+2,073
+
+2,058
+
+Research and development
+
+1,521
+
+1,419
+
+4,551
+
+4,253
+
+General and administrative
+
+241
+
+290
+
+859
+
+832
+
+Amortization of intangible assets
+
+397
+
+408
+
+1,010
+
+1,283
+
+Acquisition related and other
+
+30
+
+11
+
+84
+
+35
+
+Restructuring
+
+161
+
+115
+
+346
+
+293
+
+Total operating expenses
+
+6,246
+
+5,985
+
+18,199
+
+17,817
+
+Operating income
+
+2,959
+
+3,027
+
+8,636
+
+8,636
+
+Interest expense
+
+(450
+
+)
+
+(360
+
+)
+
+(1,317
+
+)
+
+(1,105
+
+)
+
+Non-operating
+
+income, net
+
+189
+
+65
+
+437
+
+179
+
+Income before provision for income taxes
+
+2,698
+
+2,732
+
+7,756
+
+7,710
+
+Provision for income taxes
+
+459
+
+590
+
+1,653
+
+1,623
+
+Net income
+
+$
+
+2,239
+
+$
+
+2,142
+
+$
+
+6,103
+
+$
+
+6,087
+
+Earnings per share:
+
+Basic
+
+$
+
+0.55
+
+$
+
+0.51
+
+$
+
+1.49
+
+$
+
+1.43
+
+Diluted
+
+$
+
+0.53
+
+$
+
+0.50
+
+$
+
+1.45
+
+$
+
+1.41
+
+Weighted average common shares outstanding:
+
+Basic
+
+4,107
+
+4,182
+
+4,110
+
+4,246
+
+Diluted
+
+4,204
+
+4,256
+
+4,207
+
+4,328
+
+Dividends declared per common share
+
+$
+
+0.15
+
+$
+
+0.15
+
+$
+
+0.45
+
+$
+
+0.45
+
+(1)
+
+Exclusive of amortization of intangible assets, which is shown separately.
+
+See notes to condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+ORACLE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+For the Three and Nine Months Ended February 28, 2017 and February 29, 2016
+
+(Unaudited)
+
+Three Months Ended
+
+Nine Months Ended
+
+(in millions)
+
+February 28,
+
+2017
+
+February 29,
+
+2016
+
+February 28,
+
+2017
+
+February 29,
+
+2016
+
+Net income
+
+$
+
+2,239
+
+$
+
+2,142
+
+$
+
+6,103
+
+$
+
+6,087
+
+Other comprehensive income (loss), net of tax:
+
+Net foreign currency translation gains (losses)
+
+32
+
+142
+
+(39
+
+)
+
+9
+
+Net unrealized gains on defined benefit plans
+
+9
+
+5
+
+16
+
+25
+
+Net unrealized gains (losses) on marketable securities
+
+96
+
+69
+
+(117
+
+)
+
+(47
+
+)
+
+Net unrealized gains (losses) on cash flow hedges
+
+4
+
+(23
+
+)
+
+25
+
+(37
+
+)
+
+Total other comprehensive income (loss), net
+
+141
+
+193
+
+(115
+
+)
+
+(50
+
+)
+
+Comprehensive income
+
+$
+
+2,380
+
+$
+
+2,335
+
+$
+
+5,988
+
+$
+
+6,037
+
+See notes to condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+ORACLE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+For the Nine Months Ended February 28, 2017 and February 29, 2016
+
+(Unaudited)

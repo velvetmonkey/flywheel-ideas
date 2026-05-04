@@ -1,0 +1,413 @@
+---
+id: idea-4nbRQBo3
+type: idea
+state: nascent
+title: MU 2025-10-03 10-K Item 1A Risk Factors
+created_at: '2026-05-03T19:31:27.284Z'
+date: '2026-05-03'
+created: '2026-05-03T19:31:27.647Z'
+---
+# MICRON TECHNOLOGY INC 10-K Item 1A Risk Factors
+
+Filed: 2025-10-03
+Source: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+
+Risk Factors
+
+22
+
+Item 1B.
+
+Unresolved Staff Comments
+
+45
+
+Item 1C.
+
+Cybersecurity
+
+45
+
+Item 2
+
+.
+
+Properties
+
+47
+
+Item 3.
+
+Legal Proceedings
+
+48
+
+Item 4.
+
+Mine Safety Disclosures
+
+48
+
+PART II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters, and Issuer Purchases of Equity Securities
+
+49
+
+Item 6.
+
+[Reserved]
+
+50
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+51
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+61
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+63
+
+Item 9.
+
+Changes in and Disagreements With Accountants on Accounting and Financial Disclosure
+
+102
+
+Item 9A.
+
+Controls and Procedures
+
+102
+
+Item 9B.
+
+Other Information
+
+103
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+103
+
+PART III
+
+Item 10.
+
+Directors, Executive Officers, and Corporate Governance
+
+103
+
+Item 11.
+
+Executive Compensation
+
+103
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+103
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+103
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+103
+
+PART IV
+
+Item 15.
+
+Exhibits and Financial Statement Schedule
+
+104
+
+Item 16.
+
+Form 10-K Summary
+
+108
+
+Signatures
+
+109
+
+4
+
+Table of Contents
+
+Definitions of Commonly Used Terms
+
+As used herein, "we," "our," "us," and similar terms include Micron Technology, Inc. and its consolidated subsidiaries, unless the context indicates otherwise. Abbreviations, acronyms, or terms that are commonly used or found in multiple locations throughout this report and include the following:
+
+Term
+
+Definition
+
+Term
+
+Definition
+
+2024 Term Loan A
+
+Senior Term Loan A due October 2024, repaid January 2024
+
+2035 B Notes
+
+6.050% Senior Notes due November 2035
+
+2025 Term Loan A
+
+Senior Term Loan A due November 2025, repaid May 2024
+
+2041 Notes
+
+3.366% Senior Notes due November 2041
+
+2026 Notes
+
+4.975% Senior Notes due February 2026, repaid February 2025
+
+2051 Notes
+
+3.477% Senior Notes due November 2051
+
+2026 Term Loan A
+
+Senior Term Loan A due November 2026, repaid January 2025
+
+AI
+
+Artificial intelligence
+
+2027 Notes
+
+4.185% Senior Notes due February 2027, repaid May 2025
+
+CAC
+
+China's Cyberspace Administration
+
+2027 Term Loan A
+
+Senior Term Loan A due November 2027, repaid January 2025
+
+CHIPS Act
+
+U.S. CHIPS and Science Act of 2022
+
+2028 Notes
+
+5.375% Senior Notes due April 2028
+
+DDR
+
+Double data rate DRAM
+
+2029 A Notes
+
+5.327% Senior Notes due February 2029
+
+EBITDA
+
+Earnings before interest, taxes, depreciation, and amortization
+
+2029 B Notes
+
+6.750% Senior Notes due November 2029
+
+EUV
+
+Extreme ultraviolet lithography
+
+2029 Term Loan A
+
+Senior Term Loan A due January 2029
+
+HBM
+
+High-bandwidth memory
+
+2030 Notes
+
+4.663% Senior Notes due February 2030
+
+Micron
+
+Micron Technology, Inc. (Parent Company)
+
+2031 Notes
+
+5.300% Senior Notes due January 2031
+
+NRV
+
+Net realizable value
+
+2032 Green Bonds
+
+2.703% Senior Notes due April 2032
+
+OEM
+
+Original equipment manufacturer
+
+2032 Notes
+
+5.650% Senior Notes due November 2032
+
+R&D
+
+Research and development
+
+2033 A Notes
+
+5.875% Senior Notes due February 2033
+
+Revolving Credit Facility
+
+$3.5 billion Revolving Credit Facility due March 2030
+
+2033 B Notes
+
+5.875% Senior Notes due September 2033
+
+SOFR
+
+Secured Overnight Financing Rate
+
+2035 A Notes
+
+5.800% Senior Notes due January 2035
+
+SSD
+
+Solid state drive
+
+Micron, Crucial, any associated logos, and all other Micron trademarks are the property of Micron. Other product names or trademarks that are not owned by Micron are for identification purposes only and may be the trademarks of their respective owners.
+
+All period references are to our fiscal periods unless otherwise indicated. Our fiscal year is the 52- or 53-week period ending on the Thursday closest to August 31. Fiscal 2025, 2024, and 2023 each contained 52 weeks.
+
+5 |
+
+2025 10-K
+
+Table of Contents
+
+Forward-Looking Statements
+
+This Annual Report on Form 10-K contains trend information and other forward-looking statements that involve a number of risks and uncertainties. Such forward-looking statements may be identified by words such as "anticipate," "expect," "intend," "pledge," "committed," "plan," "opportunities," "future," "believe," "target," "on track," "estimate," "continue," "likely," "may," "will," "would," "should," "could," and variations of such words and similar expressions. However, the absence of these words or similar expressions does not mean that a statement is not forward-looking. Specific forward-looking statements include, but are not limited to, statements regarding expected production ramp of certain products; plans to invest in research and development, including the plans to implement EUV lithography; anticipated technological developments; potential change and impact in our effective tax rate; the timing for construction, expansion, and ramping of production for our facilities, including new memory manufacturing fabs in the United States; receipt, timing, and utilization of government incentives and our ability to satisfy conditions attached to these incentives; the payment of future cash dividends; market conditions and profitability in our industry; future demand for our products and factors that may impact such demand, including developments in AI; DRAM bit shipments in future periods; actions to align our NAND business supply growth and technology node cadence with our projections of the demand environment; the impact of the Cyberspace Administration of China ("CAC") decision; capital spending in 2026; the potential impact of business, economic, political, legal, and regulatory developments upon our global operations, including tariffs and trade regulations; and the sufficiency of our cash and investments. Our actual results could differ materially from our historical results and those discussed in the forward-looking statements. Factors that could cause actual results to differ materially include, but are not limited to, those identified in Part I, Item 1A. Risk Factors.
+
+6
+
+Table of Contents
+
+PART I
+
+ITEM 1. BUSINESS
+
+Overview
+
+We are an industry leader in innovative memory and storage solutions transforming how the world uses information to enrich life
+
+for all
+
+. With a relentless focus on our customers, technology leadership, and manufacturing and operational excellence, Micron delivers a rich portfolio of high-performance DRAM, NAND, and NOR memory and storage products through our Micron® and Crucial® brands. Every day, the innovations that our people create fuel the data economy, enabling advances in artificial intelligence (AI) and compute-intensive applications that unleash opportunities — from the data center to the intelligent edge and across the client and mobile user experience.
+
+We manufacture our products at wholly-owned facilities and also utilize subcontractors for certain manufacturing processes. Our global network of manufacturing centers of excellence not only allows us to benefit from scale while streamlining processes and operations, but it also brings together some of the world's brightest talent to work on the most advanced memory technology. Centers of excellence bring expertise together in one location, providing an efficient support structure for end-to-end manufacturing, with quicker cycle times, in partnership with teams, such as R&D, product development, human resources, procurement, and supply chain. For our locations in Singapore and Taiwan, this is also a combination of bringing fabrication and back-end manufacturing together. We continue to make significant investments to develop proprietary product and process technology, which generally increases bit density per wafer and reduces per-bit manufacturing costs of each generation of product. We continue to introduce new generations of products that offer improved performance characteristics, including higher data transfer rates, advanced packaging solutions, lower power consumption, improved read/write reliability, and increased memory density.
+
+We face intense competition in the semiconductor memory and storage markets. To remain competitive, we must continuously develop and implement new products and technologies and decrease manufacturing costs in spite of inflationary pressures, changing technologies, rapid market changes, and regulatory uncertainty. Our success is largely dependent on obtaining returns on our R&D investments, efficient utilization of our manufacturing infrastructure, development and integration of advanced product and process technologies, market acceptance of our diversified portfolio of semiconductor-based memory and storage solutions, and efficient capital spending.
+
+Business Segments
+
+In the fourth quarter of 2025, we reorganized our business units. All prior-period segment amounts have been retrospectively adjusted to reflect this reorganization. We have the following four business units, which are our reportable segments:
+
+•
+
+Cloud Memory Business Unit ("CMBU"):
+
+Focused on memory solutions for large hyperscale cloud customers, and HBM for all data center customers.
+
+•
+
+Core Data Center Business Unit ("CDBU"):
+
+Focused on memory solutions for mid-tier cloud, enterprise, and OEM data center customers and storage solutions for all data center customers.
+
+•
+
+Mobile and Client Business Unit ("MCBU"):
+
+Focused on memory and storage solutions for the mobile and client segments.
+
+•
+
+Automotive and Embedded Business Unit ("AEBU"):
+
+Focused on memory and storage solutions for the automotive, industrial, and consumer segments.
+
+7 |
+
+2025 10-K
+
+Table of Contents
+
+Products, Market, and Sales
+
+Product Technologies
+
+Our product portfolio of memory and storage solutions, advanced solutions, and storage platforms is based on our high-performance semiconductor memory and storage technologies, including DRAM, NAND, and NOR. We sell our products through our business units into various markets in numerous forms, including components, modules, SSDs, managed NAND, multi-chip packages, and wafers. Many of our system-level solutions combine NAND, a controller, firmware, and in some cases DRAM.
+
+DRAM:
+
+DRAM products are dynamic random access memory semiconductor devices with low latency that provide high-speed data retrieval with a variety of performance characteristics. DRAM products lose content when power is turned off ("volatile") and are most commonly used in the data center, client PC, graphics, industrial, mobile, and automotive markets.
+
+In 2025, we began shipping the industry's first 1γ (1-gamma) production node, which is our first DRAM node incorporating EUV lithography and offers further improvements in power efficiency, performance, and bit density compared to our prior DRAM node products. The majority of our DRAM bit production in 2025 was on our leading-edge 1ß (1-beta) node.
+
+High-Bandwidth Memory ("HBM")
+
+:
+
+A 3D stacked DRAM architecture that utilizes through-silicon via ("TSV") connections for more efficient communication giving it the ability to achieve a higher bandwidth while consuming less power compared to other memory types. This makes it ideal for applications that require high data throughput and energy efficiency, such as AI applications and high-performance computing.
+
+Double Data Rate ("DDR")
+
+:
+
+DDR memory transfers data twice per clock cycle resulting in improved speeds, power efficiency, and storage density. DDR5 is the fifth generation of this technology and offers the critical improvements in bandwidth and power efficiency necessary to meet the growing needs of high-performance computing, AI, and data-intensive applications.
+
+Low-Power DRAM ("LPDDR")
+
+:
+
+Engineered for mobile devices and applications requiring low power consumption. LPDDR products generally operate at a lower voltage than standard DRAM products and are beneficial to any power conscious application. The benefits of LPDDR memory are being realized by many market segments, including mobile, PC, automotive, and data center.
+
+Graphics DRAM ("GDDR")
+
+:
+
+High-performance memory solution designed for graphics cards, gaming consoles, and high-performance computing applications. GDDR memory is optimized for high-bandwidth workloads encountered by graphics processing units, offering faster data rates and efficient data processing capabilities.
+
+Total reported DRAM

@@ -1,0 +1,339 @@
+---
+id: idea-hux9on2b
+type: idea
+state: nascent
+title: ORCL 2016-06-22 10-K Item 1A Risk Factors
+created_at: '2026-05-03T19:40:00.744Z'
+date: '2026-05-03'
+created: '2026-05-03T19:40:01.097Z'
+---
+# ORACLE CORP 10-K Item 1A Risk Factors
+
+Filed: 2016-06-22
+Source: https://www.sec.gov/Archives/edgar/data/1341439/000119312516628942/d203801d10k.htm
+
+Risk Factors
+
+21
+
+Item 1B.
+
+Unresolved Staff Comments
+
+36
+
+Item 2.
+
+Properties
+
+36
+
+Item 3.
+
+Legal Proceedings
+
+36
+
+Item 4.
+
+Mine Safety Disclosures
+
+36
+
+PART II.
+
+Item 5.
+
+Market for Registrants Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+37
+
+Item 6.
+
+Selected Financial Data
+
+39
+
+Item 7.
+
+Managements Discussion and Analysis of Financial Condition and Results of Operations
+
+40
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+77
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+80
+
+Item 9.
+
+Changes In and Disagreements with Accountants on Accounting and Financial Disclosure
+
+80
+
+Item 9A.
+
+Controls and Procedures
+
+80
+
+Item 9B.
+
+Other Information
+
+81
+
+PART III.
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+82
+
+Item 11.
+
+Executive Compensation
+
+82
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+82
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+82
+
+Item 14.
+
+Principal Accounting Fees and Services
+
+82
+
+PART IV.
+
+Item 15.
+
+Exhibits and Financial Statement Schedules
+
+83
+
+Signatures
+
+137
+
+Table of Contents
+
+Cautionary Note on Forward-Looking Statements
+
+For purposes of this Annual Report, the terms Oracle, we, us and our refer to Oracle Corporation and its
+
+consolidated subsidiaries. This Annual Report on Form 10-K contains statements that are not historical in nature, are predictive in nature, or that depend upon or refer to future events or conditions or otherwise contain forward-looking statements
+
+within the meaning of Section 21 of the Securities Exchange Act of 1934, as amended, and the Private Securities Litigation Reform Act of 1995. These include, among other things, statements regarding:
+
+
+
+our expectation that we will continue to acquire companies, products, services and technologies to further our corporate strategy;
+
+
+
+our belief that our acquisitions should allow us to grow and continue to make investments in research and development;
+
+
+
+our expectation that the total revenues of our cloud and on-premise software business generally will continue to increase due to continued demand for
+
+our software products, expected growth in our cloud and software license updates and product support offerings, and contributions from acquisitions;
+
+
+
+our expectation that we will continue to place significant strategic emphasis on growing our cloud software as a service (SaaS) and platform as a
+
+service (PaaS) business, which will affect the growth of our cloud SaaS and PaaS revenues and our new software license revenues and the related expenses;
+
+
+
+our intention that we will renew our cloud SaaS and PaaS contracts when they are eligible for renewal;
+
+
+
+our belief that software license updates and product support revenues and margins will grow;
+
+
+
+our belief that our PaaS offerings are a large opportunity for us to expand our cloud and on-premise software business;
+
+
+
+our expectation that our hardware business will have lower operating margins as a percentage of revenues than our cloud and on-premise software
+
+business;
+
+
+
+our expectation that we will continue to make significant investments in research and development and related product opportunities, including those
+
+related to hardware products and services, and our belief that research and development efforts are essential to maintaining our competitive position;
+
+
+
+our international operations providing a significant portion of our total revenues and expenses;
+
+
+
+continued realization of gains or losses with respect to our foreign currency exposures;
+
+
+
+the sufficiency of our sources of funding for working capital, capital expenditures, contractual obligations, acquisitions, dividends, stock
+
+repurchases, debt repayments and other matters;
+
+
+
+our expectation that we will continue paying comparable cash dividends on a quarterly basis;
+
+
+
+our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the
+
+final outcome of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, our assumptions regarding the potential U.S. income tax liability associated with any repatriation of our
+
+undistributed earnings held by our foreign subsidiaries, and our belief that our net deferred tax assets will be realized in the foreseeable future;
+
+
+
+our estimates and current intentions regarding potential future goodwill impairment losses, if any;
+
+
+
+our belief that the outcome of certain legal proceedings and claims to which we are a party will not, individually or in the aggregate, result in
+
+losses that are materially in excess of amounts already recognized, if any;
+
+
+
+the timing and amount of our stock repurchases;
+
+
+
+our expectation that seasonal trends will continue in the future;
+
+
+
+our expectations regarding the impact of recent accounting pronouncements on our consolidated financial statements;
+
+1
+
+Table of Contents
+
+
+
+our expectation that to the extent customers renew support contracts or cloud SaaS and PaaS contracts from companies that we have acquired, we will
+
+recognize revenues for the full contracts values over the respective renewal periods;
+
+
+
+our ability to predict quarterly hardware revenues;
+
+
+
+the timing of customer orders and delays in our ability to manufacture or deliver a few large transactions substantially affecting the amount of
+
+hardware products revenues, expenses and operating margins that we will report;
+
+as well as other statements regarding our
+
+future operations, financial condition and prospects, and business strategies. Forward-looking statements may be preceded by, followed by or include the words expects, anticipates, intends, plans,
+
+believes, seeks, strives, estimates, will, should, is designed to and similar expressions. We claim the protection of the safe harbor for forward-looking statements
+
+contained in the Private Securities Litigation Reform Act of 1995 for all forward-looking statements. We have based these forward-looking statements on our current expectations and projections about future events. These forward-looking statements
+
+are subject to risks, uncertainties and assumptions about our business that could affect our future results and could cause those results or other outcomes to differ materially from those expressed or implied in the forward-looking statements.
+
+Factors that might cause or contribute to such differences include, but are not limited to, those discussed in Risk Factors included elsewhere in this Annual Report and as may be updated in filings we make from time to time with the U.S.
+
+Securities and Exchange Commission, including the Quarterly Reports on Form 10-Q to be filed by us in our fiscal year 2017, which runs from June 1, 2016 to May 31, 2017.
+
+We have no obligation to publicly update or revise any forward-looking statements, whether as a result of new information, future events or risks, except to the extent required by applicable securities
+
+laws. If we do update one or more forward-looking statements, no inference should be drawn that we will make additional updates with respect to those or other forward-looking statements. New information, future events or risks could cause the
+
+forward-looking events we discuss in this Annual Report not to occur. You should not place undue reliance on these forward-looking statements, which reflect our expectations only as of the date of this Annual Report.
+
+2
+
+Table of Contents
+
+PART I
+
+Item 1. Business
+
+Oracle Corporation
+
+provides products and services that address all aspects of corporate information technology (IT) environmentsapplication, platform and infrastructure. Our Oracle Cloud offerings provide a comprehensive and fully integrated stack of
+
+application, platform, compute and storage services in all three primary layers of the cloud: Software as a Service (SaaS), Platform as a Service (PaaS) and Infrastructure as a Service (IaaS). Our on-premise offerings include Oracle database and
+
+middleware software, application software, hardware (Oracle Engineered Systems, servers, storage, networking and industry-specific products), and related support and services. We provide our cloud and on-premise offerings to over 400,000 worldwide
+
+customers via deployment models that best suit their needs.
+
+Our comprehensive and fully integrated stack of SaaS, PaaS and IaaS offerings
+
+integrate the software, hardware and services on the customers behalf in IT environments that we deploy, support and manage for the customer. Our integrated Oracle Cloud offerings are designed to be rapidly deployable to enable customers
+
+shorter time to innovation; easily maintainable to reduce integration and testing work; connectable among differing deployment models to enable interchangeability and extendibility between cloud and on-premise IT environments; compatible to easily
+
+move workloads between on-premise IT environments and the Oracle Cloud; cost-effective by requiring lower upfront customer investment; and secure, standards-based and reliable. We are a leader in the core technologies of cloud IT environments,
+
+including database and middleware software as well as enterprise applications, virtualization, clustering, large-scale systems management and related infrastructure. Our products and services are the building blocks of our Oracle Cloud services, our
+
+partners cloud services and our customers cloud IT environments.
+
+In addition to providing a broad spectrum of cloud offerings, we
+
+develop and sell our products and services to our customers worldwide for use in their global data centers and on-premise IT environments. An important element of our corporate strategy is to continue our investments in, and innovation with respect
+
+to, our products and services that we offer through our cloud and on-premise software, hardware and services businesses. In fiscal 2016, 2015 and 2014, we invested $5.8 billion, $5.5 billion and $5.2 billion, respectively, in research and
+
+development to enhance our existing portfolio of offerings and products and to develop new technologies and services. We have a deep understanding as to how all components within IT environmentsapplication, platform and
+
+infrastructureinteract and function with one another. We focus our development efforts on improving the performance, security, operation and integration of these differing technologies to make them more cost-effective and easier to deploy,
+
+manage and maintain for our customers and to improve their computing performance relative to our competitors. After the initial purchase of Oracle products and services, our customers can continue to take advantage of our research and development
+
+investments and deep IT expertise by purchasing and renewing Oracle support offerings, which may include product enhancements that we periodically deliver to our Oracle E-Business Suite, Siebel, PeopleSoft and JD Edwards application software
+
+products, among others, or by renewing their SaaS, PaaS and IaaS contracts with us.
+
+As customers deploy with the Oracle Cloud, many are
+
+adopting a hybrid IT model whereby certain of their IT resources are deployed and managed through the Oracle Cloud, while other of their IT resources are deployed and managed on-premise, and both sets of resources can be managed as one. Our recently
+
+introduced Oracle Cloud at Customer provides an additional deployment model that customers may opt for and utilizes the Oracle Cloud Machine to bring certain Oracle Cloud PaaS and IaaS offerings to a customers on-premise IT environment to meet
+
+data sovereignty, data residency, data protection and regulatory business policy requirements, among others. We focus the engineering of our products and services to best connect different deployment models to enable flexibility, ease, agility,
+
+compatibility, extensibility and seamlessness.
+
+A selective and active acquisition program is another important element of our corporate
+
+strategy. We believe our acquisitions enhance the products and services that we can offer to customers, expand our customer base, provide greater scale to accelerate innovation, grow our revenues and earnings, and increase stockholder value. In
+
+recent years, we have invested billions of dollars to acquire a number of companies, products, services and technologies that add to, are complementary to, or have otherwise enhanced our existing offerings. We expect to continue to acquire

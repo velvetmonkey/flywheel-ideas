@@ -1,0 +1,1929 @@
+---
+id: idea-WBG9snc3
+type: idea
+state: nascent
+title: EA 2023-02-07 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:13:20.916Z'
+date: '2026-05-03'
+created: '2026-05-03T21:13:21.279Z'
+---
+# ELECTRONIC ARTS INC. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2023-02-07
+Source: https://www.sec.gov/Archives/edgar/data/712515/000071251523000008/ea-20221231.htm
+
+Risk Factors
+
+46
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+58
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+58
+
+Item 4.
+
+Mine Safety Disclosures
+
+58
+
+Item 6.
+
+Exhibits
+
+58
+
+Exhibit Index
+
+59
+
+Signature
+
+60
+
+2
+
+Table of Contents
+
+PART I – FINANCIAL INFORMATION
+
+Item 1.
+
+Condensed Consolidated Financial Statements (Unaudited)
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED BALANCE SHEETS
+
+(Unaudited)
+
+(In millions, except par value data)
+
+December 31, 2022
+
+March 31, 2022
+
+(a)
+
+ASSETS
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+2,202
+
+$
+
+2,732
+
+Short-term investments
+
+351
+
+330
+
+Receivables, net
+
+836
+
+650
+
+Other current assets
+
+453
+
+439
+
+Total current assets
+
+3,842
+
+4,151
+
+Property and equipment, net
+
+553
+
+550
+
+Goodwill
+
+5,380
+
+5,387
+
+Acquisition-related intangibles, net
+
+735
+
+962
+
+Deferred income taxes, net
+
+2,443
+
+2,243
+
+Other assets
+
+517
+
+507
+
+TOTAL ASSETS
+
+$
+
+13,470
+
+$
+
+13,800
+
+LIABILITIES AND STOCKHOLDERS' EQUITY
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+62
+
+$
+
+101
+
+Accrued and other current liabilities
+
+1,243
+
+1,388
+
+Deferred net revenue (online-enabled games)
+
+1,808
+
+2,024
+
+Total current liabilities
+
+3,113
+
+3,513
+
+Senior notes, net
+
+1,879
+
+1,878
+
+Income tax obligations
+
+525
+
+386
+
+Deferred income taxes, net
+
+1
+
+1
+
+Other liabilities
+
+401
+
+397
+
+Total liabilities
+
+5,919
+
+6,175
+
+Commitments and contingencies (See
+
+Note 11
+
+)
+
+Stockholders' equity:
+
+Common stock, $
+
+0.01
+
+par value.
+
+1,000
+
+shares authorized;
+
+275
+
+and
+
+280
+
+shares issued and outstanding, respectively
+
+3
+
+3
+
+Additional paid-in capital
+
+—
+
+—
+
+Retained earnings
+
+7,585
+
+7,607
+
+Accumulated other comprehensive income (loss)
+
+(
+
+37
+
+)
+
+15
+
+Total stockholders' equity
+
+7,551
+
+7,625
+
+TOTAL LIABILITIES AND STOCKHOLDERS' EQUITY
+
+$
+
+13,470
+
+$
+
+13,800
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+(a)
+
+Derived from audited Consolidated Financial Statements.
+
+3
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS
+
+(Unaudited)
+
+Three Months Ended
+
+December 31,
+
+Nine Months Ended
+
+December 31,
+
+(In millions, except per share data)
+
+2022
+
+2021
+
+2022
+
+2021
+
+Net revenue
+
+$
+
+1,881
+
+$
+
+1,789
+
+$
+
+5,552
+
+$
+
+5,166
+
+Cost of revenue
+
+568
+
+631
+
+1,344
+
+1,440
+
+Gross profit
+
+1,313
+
+1,158
+
+4,208
+
+3,726
+
+Operating expenses:
+
+Research and development
+
+556
+
+539
+
+1,693
+
+1,607
+
+Marketing and sales
+
+256
+
+293
+
+723
+
+716
+
+General and administrative
+
+162
+
+163
+
+503
+
+508
+
+Amortization and impairment of intangibles
+
+50
+
+61
+
+132
+
+131
+
+Total operating expenses
+
+1,024
+
+1,056
+
+3,051
+
+2,962
+
+Operating income
+
+289
+
+102
+
+1,157
+
+764
+
+Interest and other income (expense), net
+
+(
+
+7
+
+)
+
+(
+
+11
+
+)
+
+(
+
+12
+
+)
+
+(
+
+39
+
+)
+
+Income before provision for income taxes
+
+282
+
+91
+
+1,145
+
+725
+
+Provision for income taxes
+
+78
+
+25
+
+331
+
+161
+
+Net income
+
+$
+
+204
+
+$
+
+66
+
+$
+
+814
+
+$
+
+564
+
+Earnings per share:
+
+Basic
+
+$
+
+0.74
+
+$
+
+0.23
+
+$
+
+2.93
+
+$
+
+1.99
+
+Diluted
+
+$
+
+0.73
+
+$
+
+0.23
+
+$
+
+2.92
+
+$
+
+1.97
+
+Number of shares used in computation:
+
+Basic
+
+276
+
+283
+
+278
+
+284
+
+Diluted
+
+278
+
+285
+
+279
+
+287
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+4
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(Unaudited)
+
+Three Months Ended
+
+December 31,
+
+Nine Months Ended
+
+December 31,
+
+(In millions)
+
+2022
+
+2021
+
+2022
+
+2021
+
+Net income
+
+$
+
+204
+
+$
+
+66
+
+$
+
+814
+
+$
+
+564
+
+Other comprehensive income (loss), net of tax:
+
+Net gains (losses) on available-for-sale securities
+
+2
+
+(
+
+1
+
+)
+
+1
+
+(
+
+1
+
+)
+
+Net gains (losses) on derivative instruments
+
+(
+
+199
+
+)
+
+10
+
+—
+
+66
+
+Foreign currency translation adjustments
+
+23
+
+(
+
+1
+
+)
+
+(
+
+53
+
+)
+
+(
+
+9
+
+)
+
+Total other comprehensive income (loss), net of tax
+
+(
+
+174
+
+)
+
+8
+
+(
+
+52
+
+)
+
+56
+
+Total comprehensive income
+
+$
+
+30
+
+$
+
+74
+
+$
+
+762
+
+$
+
+620
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+5
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF STOCKHOLDERS' EQUITY
+
+(Unaudited)
+
+Common Stock
+
+Additional Paid-in
+
+Capital
+
+Retained
+
+Earnings
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (loss)
+
+Total
+
+Stockholders'
+
+Equity
+
+(In millions, except share data in thousands)
+
+Shares
+
+Amount
+
+Balances as of March 31, 2022
+
+280,051
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,607
+
+$
+
+15
+
+$
+
+7,625
+
+Total comprehensive income
+
+—
+
+—
+
+—
+
+311
+
+56
+
+367
+
+Stock-based compensation
+
+—
+
+—
+
+125
+
+—
+
+—
+
+125
+
+Issuance of common stock
+
+1,413
+
+—
+
+(
+
+103
+
+)
+
+—
+
+—
+
+(
+
+103
+
+)
+
+Repurchase and retirement of common stock
+
+(
+
+2,512
+
+)
+
+—
+
+(
+
+22
+
+)
+
+(
+
+298
+
+)
+
+—
+
+(
+
+320
+
+)
+
+Cash dividends declared ($0.19 per common share)
+
+—
+
+—
+
+—
+
+(
+
+53
+
+)
+
+—
+
+(
+
+53
+
+)
+
+Balances as of June 30, 2022
+
+278,952
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,567
+
+$
+
+71
+
+$
+
+7,641
+
+Total comprehensive income
+
+—
+
+—
+
+—
+
+299
+
+66
+
+365
+
+Stock-based compensation
+
+—
+
+—
+
+140
+
+—
+
+—
+
+140
+
+Issuance of common stock
+
+641
+
+—
+
+30
+
+—
+
+—
+
+30
+
+Repurchase and retirement of common stock
+
+(
+
+2,569
+
+)
+
+—
+
+(
+
+170
+
+)
+
+(
+
+155
+
+)
+
+—
+
+(
+
+325
+
+)
+
+Cash dividends declared ($0.19 per common share)
+
+—
+
+—
+
+—
+
+(
+
+53
+
+)
+
+—
+
+(
+
+53
+
+)
+
+Balances as of September 30, 2022
+
+277,024
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,658
+
+$
+
+137
+
+$
+
+7,798
+
+Total comprehensive income
+
+—
+
+—
+
+—
+
+204
+
+(
+
+174
+
+)
+
+30
+
+Stock-based compensation
+
+—
+
+—
+
+141
+
+—
+
+—
+
+141
+
+Issuance of common stock
+
+705
+
+—
+
+(
+
+41
+
+)
+
+—
+
+—
+
+(
+
+41
+
+)
+
+Repurchase and retirement of common stock
+
+(
+
+2,593
+
+)
+
+—
+
+(
+
+100
+
+)
+
+(
+
+225
+
+)
+
+—
+
+(
+
+325
+
+)
+
+Cash dividends declared ($0.19 per common share)
+
+—
+
+—
+
+—
+
+(
+
+52
+
+)
+
+—
+
+(
+
+52
+
+)
+
+Balances as of December 31, 2022
+
+275,136
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,585
+
+$
+
+(
+
+37
+
+)
+
+$
+
+7,551
+
+(Unaudited)
+
+Common Stock
+
+Additional Paid-in
+
+Capital
+
+Retained
+
+Earnings
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (loss)
+
+Total
+
+Stockholders'
+
+Equity
+
+(In millions, except share data in thousands)
+
+Shares
+
+Amount
+
+Balances as of March 31, 2021
+
+286,465
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,887
+
+$
+
+(
+
+50
+
+)
+
+$
+
+7,840
+
+Total comprehensive income
+
+—
+
+—
+
+—
+
+204
+
+15
+
+219
+
+Stock-based compensation
+
+—
+
+—
+
+125
+
+—
+
+—
+
+125
+
+Awards assumed upon acquisition
+
+—
+
+—
+
+23
+
+—
+
+—
+
+23
+
+Issuance of common stock
+
+1,209
+
+—
+
+(
+
+105
+
+)
+
+—
+
+—
+
+(
+
+105
+
+)
+
+Repurchase and retirement of common stock
+
+(
+
+2,292
+
+)
+
+—
+
+(
+
+43
+
+)
+
+(
+
+282
+
+)
+
+—
+
+(
+
+325
+
+)
+
+Cash dividends declared ($
+
+0.17
+
+per common share)
+
+—
+
+—
+
+—
+
+(
+
+49
+
+)
+
+—
+
+(
+
+49
+
+)
+
+Balances as of June 30, 2021
+
+285,382
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,760
+
+$
+
+(
+
+35
+
+)
+
+$
+
+7,728
+
+Total comprehensive income
+
+—
+
+—
+
+—
+
+294
+
+33
+
+327
+
+Stock-based compensation
+
+—
+
+—
+
+149
+
+—
+
+—
+
+149
+
+Issuance of common stock
+
+602
+
+—
+
+25
+
+—
+
+—
+
+25
+
+Repurchase and retirement of common stock
+
+(
+
+2,318
+
+)
+
+—
+
+(
+
+174
+
+)
+
+(
+
+151
+
+)
+
+—
+
+(
+
+325
+
+)
+
+Cash dividends declared ($0.17 per common share)
+
+—
+
+—
+
+—
+
+(
+
+48
+
+)
+
+—
+
+(
+
+48
+
+)
+
+Balances as of September 30, 2021
+
+283,666
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,855
+
+$
+
+(
+
+2
+
+)
+
+$
+
+7,856
+
+Total comprehensive income
+
+—
+
+—
+
+—
+
+66
+
+8
+
+74
+
+Stock-based compensation
+
+—
+
+—
+
+129
+
+—
+
+—
+
+129
+
+Issuance of common stock
+
+866
+
+—
+
+(
+
+69
+
+)
+
+—
+
+—
+
+(
+
+69
+
+)
+
+Repurchase and retirement of common stock
+
+(
+
+2,415
+
+)
+
+—
+
+(
+
+60
+
+)
+
+(
+
+265
+
+)
+
+—
+
+(
+
+325
+
+)
+
+Cash dividends declared ($0.17 per common share)
+
+—
+
+—
+
+—
+
+(
+
+48
+
+)
+
+—
+
+(
+
+48
+
+)
+
+Balances as of December 31, 2021
+
+282,117
+
+$
+
+3
+
+$
+
+—
+
+$
+
+7,608
+
+$
+
+6
+
+$
+
+7,617
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+6
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(Unaudited)
+
+Nine Months Ended
+
+December 31,
+
+(In millions)
+
+2022
+
+2021
+
+OPERATING ACTIVITIES
+
+Net income
+
+$
+
+814
+
+$
+
+564
+
+Adjustments to reconcile net income to net cash provided by operating activities:
+
+Depreciation, amortization, accretion and impairment
+
+363
+
+345
+
+Stock-based compensation
+
+406
+
+403
+
+Change in assets and liabilities:
+
+Receivables, net
+
+(
+
+186
+
+)
+
+(
+
+390
+
+)
+
+Other assets
+
+(
+
+53
+
+)
+
+(
+
+75
+
+)
+
+Accounts payable
+
+(
+
+21
+
+)
+
+(
+
+9
+
+)
+
+Accrued and other liabilities
+
+28
+
+183
+
+Deferred income taxes, net
+
+(
+
+203
+
+)
+
+(
+
+140
+
+)
+
+Deferred net revenue (online-enabled games)
+
+(
+
+215
+
+)
+
+574
+
+Net cash provided by operating activities
+
+933
+
+1,455
+
+INVESTING ACTIVITIES
+
+Capital expenditures
+
+(
+
+160
+
+)
+
+(
+
+135
+
+)
+
+Proceeds from maturities and sales of short-term investments
+
+243
+
+1,193
+
+Purchase of short-term investments
+
+(
+
+263
+
+)
+
+(
+
+438
+
+)
+
+Acquisitions, net of cash acquired
+
+—
+
+(
+
+3,391
+
+)
+
+Net cash used in investing activities
+
+(
+
+180
+
+)
+
+(
+
+2,771
+
+)
+
+FINANCING ACTIVITIES
+
+Proceeds from issuance of common stock
+
+47
+
+44
+
+Cash dividends paid
+
+(
+
+158
+
+)
+
+(
+
+145
+
+)
+
+Cash paid to taxing authorities for shares withheld from employees
+
+(
+
+161
+
+)
+
+(
+
+193
+
+)
+
+Repurchase and retirement of common stock
+
+(
+
+970
+
+)
+
+(
+
+975
+
+)
+
+Net cash used in financing activities
+
+(
+
+1,242
+
+)
+
+(
+
+1,269
+
+)
+
+Effect of foreign exchange on cash and cash equivalents
+
+(
+
+41
+
+)
+
+(
+
+5
+
+)
+
+Increase (decrease) in cash and cash equivalents
+
+(
+
+530
+
+)
+
+(
+
+2,590
+
+)
+
+Beginning cash and cash equivalents
+
+2,732
+
+5,260
+
+Ending cash and cash equivalents
+
+$
+
+2,202
+
+$
+
+2,670
+
+Supplemental cash flow information:
+
+Cash paid during the period for income taxes, net
+
+$
+
+457
+
+$
+
+374
+
+Cash paid during the period for interest
+
+28
+
+28
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+7
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(Unaudited)
+
+(1) DESCRIPTION OF BUSINESS AND BASIS OF PRESENTATION
+
+Electronic Arts is a global leader in digital interactive entertainment. We develop, market, publish and deliver games, content and services that can be experienced on game consoles, PCs, mobile phones and tablets. At our core is a portfolio of intellectual property from which we create innovative games and content that enable us to build on-going and meaningful relationships with a community of players, creators and viewers. Our portfolio includes brands that we either wholly own (such as
+
+Apex Legends
+
+, Battlefield, and The Sims) or license from others (such as Madden, Star Wars, and the 300+ licenses within our global football ecosystem). Through our live services offerings, we offer our players high-quality experiences designed to provide value to players and extend and enhance gameplay. These live services include extra content, subscription offerings and other revenue generated in addition to the sale of our base games and free-to-play games. In addition, we are focused on reaching more players whenever and wherever they want to play. We believe that we can add value to our network by making it easier for players to connect to a world of play by offering choice of business model, distribution channel and device.
+
+Our fiscal year is reported on a 52- or 53-week period that ends on the Saturday nearest March 31. Our results of operations for the fiscal year ending March 31, 2023 contains 52 weeks and ends on April 1, 2023. Our results of operations for the fiscal year ended March 31, 2022 contained 52 weeks and ended on April 2, 2022. Our results of operations for the three and nine months ended December 31, 2022 contained 13 weeks and 39 weeks, respectively, and ended on December 31, 2022. Our results of operations for the three and nine months ended December 31, 2021 contained 13 weeks and 39 weeks, respectively, and ended on January 1, 2022. For simplicity of disclosure, all fiscal periods are referred to as ending on a calendar month end.
+
+The Condensed Consolidated Financial Statements are unaudited and reflect all adjustments (consisting only of normal recurring accruals unless otherwise indicated) that, in the opinion of management, are necessary for a fair presentation of the results for the interim periods presented. The preparation of these Condensed Consolidated Financial Statements requires management to make estimates and assumptions that affect the amounts reported in these Condensed Consolidated Financial Statements and accompanying notes. Actual results could differ materially from those estimates. The results of operations for the current interim periods are not necessarily indicative of results to be expected for the current year or any other period.
+
+These Condensed Consolidated Financial Statements should be read in conjunction with the Consolidated Financial Statements and Notes thereto included in our Annual Report on Form 10-K for the fiscal year ended March 31, 2022, as filed with the United States Securities and Exchange Commission ("SEC") on May 25, 2022.
+
+Recently Adopted Accounting Standards
+
+In November 2021, the FASB issued ASU 2021-10,
+
+Disclosures by Business Entities about Government Assistance
+
+(Topic 832). The amendments in this update establish Topic 832 and require additional disclosures regarding government grants and money contributions when entities accounted for transactions with a government by analogizing to a grant or contribution accounting model. We adopted ASU 2021-10 in the first quarter of fiscal year 2023 and elected to apply the amendments prospectively to all transactions within the scope of the amendment that are reflected in the financial statements at the date of adoption. The adoption did not have a material impact on our Condensed Consolidated Financial Statements and related disclosures.
+
+Other Recently Issued Accounting Standard

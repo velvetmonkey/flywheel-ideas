@@ -1,0 +1,1185 @@
+---
+id: idea-1t4P8PpL
+type: idea
+state: nascent
+title: LOW 2018-06-05 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:17:23.465Z'
+date: '2026-05-03'
+created: '2026-05-03T20:17:23.848Z'
+---
+# LOWES COMPANIES INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2018-06-05
+Source: https://www.sec.gov/Archives/edgar/data/60667/000006066718000117/form10q_05042018.htm
+
+Risk Factors
+
+24
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+24
+
+Item 5.
+
+Other Information
+
+25
+
+Item 6.
+
+Exhibits
+
+26
+
+Signature
+
+27
+
+Table of Contents
+
+Part I - FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+Lowe's Companies, Inc.
+
+Consolidated Balance Sheets
+
+In Millions, Except Par Value Data
+
+(Unaudited)
+
+(Unaudited)
+
+May 4, 2018
+
+May 5, 2017
+
+February 2, 2018
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+1,565
+
+$
+
+1,963
+
+$
+
+588
+
+Short-term investments
+
+205
+
+84
+
+102
+
+Merchandise inventory - net
+
+13,204
+
+12,254
+
+11,393
+
+Other current assets
+
+1,059
+
+975
+
+689
+
+Total current assets
+
+16,033
+
+15,276
+
+12,772
+
+Property, less accumulated depreciation
+
+19,500
+
+19,748
+
+19,721
+
+Long-term investments
+
+321
+
+477
+
+408
+
+Deferred income taxes - net
+
+199
+
+272
+
+168
+
+Goodwill
+
+1,288
+
+1,081
+
+1,307
+
+Other assets
+
+896
+
+759
+
+915
+
+Total assets
+
+$
+
+38,237
+
+$
+
+37,613
+
+$
+
+35,291
+
+Liabilities and shareholders' equity
+
+Current liabilities:
+
+Short-term borrowings
+
+$
+
+—
+
+$
+
+—
+
+$
+
+1,137
+
+Current maturities of long-term debt
+
+896
+
+295
+
+294
+
+Accounts payable
+
+10,104
+
+9,905
+
+6,590
+
+Accrued compensation and employee benefits
+
+715
+
+725
+
+747
+
+Deferred revenue
+
+1,439
+
+1,415
+
+1,378
+
+Other current liabilities
+
+2,620
+
+2,346
+
+1,950
+
+Total current liabilities
+
+15,774
+
+14,686
+
+12,096
+
+Long-term debt, excluding current maturities
+
+14,948
+
+15,770
+
+15,564
+
+Deferred revenue - extended protection plans
+
+808
+
+769
+
+803
+
+Other liabilities
+
+962
+
+857
+
+955
+
+Total liabilities
+
+32,492
+
+32,082
+
+29,418
+
+Shareholders' equity:
+
+Preferred stock - $5 par value, none issued
+
+—
+
+—
+
+—
+
+Common stock - $0.50 par value;
+
+Shares issued and outstanding
+
+May 4, 2018
+
+822
+
+May 5, 2017
+
+853
+
+February 2, 2018
+
+830
+
+411
+
+426
+
+415
+
+Capital in excess of par value
+
+—
+
+—
+
+22
+
+Retained earnings
+
+5,405
+
+5,346
+
+5,425
+
+Accumulated other comprehensive income/(loss)
+
+(71
+
+)
+
+(241
+
+)
+
+11
+
+Total shareholders' equity
+
+5,745
+
+5,531
+
+5,873
+
+Total liabilities and shareholders' equity
+
+$
+
+38,237
+
+$
+
+37,613
+
+$
+
+35,291
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+3
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Current and Retained Earnings (Unaudited)
+
+In Millions, Except Per Share and Percentage Data
+
+Three Months Ended
+
+May 4, 2018
+
+May 5, 2017
+
+Current Earnings
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Net sales
+
+$
+
+17,360
+
+100.00
+
+$
+
+16,860
+
+100.00
+
+Cost of sales
+
+11,348
+
+65.37
+
+11,060
+
+65.60
+
+Gross margin
+
+6,012
+
+34.63
+
+5,800
+
+34.40
+
+Expenses:
+
+Selling, general and administrative
+
+4,187
+
+24.12
+
+3,876
+
+22.99
+
+Depreciation and amortization
+
+360
+
+2.07
+
+365
+
+2.16
+
+Operating income
+
+1,465
+
+8.44
+
+1,559
+
+9.25
+
+Interest - net
+
+160
+
+0.92
+
+161
+
+0.96
+
+Loss on extinguishment of debt
+
+—
+
+—
+
+464
+
+2.75
+
+Pre-tax earnings
+
+1,305
+
+7.52
+
+934
+
+5.54
+
+Income tax provision
+
+317
+
+1.83
+
+332
+
+1.97
+
+Net earnings
+
+$
+
+988
+
+5.69
+
+$
+
+602
+
+3.57
+
+Weighted average common shares outstanding - basic
+
+825
+
+857
+
+Basic earnings per common share
+
+$
+
+1.19
+
+$
+
+0.70
+
+Weighted average common shares outstanding - diluted
+
+826
+
+858
+
+Diluted earnings per common share
+
+$
+
+1.19
+
+$
+
+0.70
+
+Cash dividends per share
+
+$
+
+0.41
+
+$
+
+0.35
+
+Retained Earnings
+
+Beginning balance
+
+$
+
+5,425
+
+$
+
+6,241
+
+Cumulative effect of accounting change
+
+33
+
+—
+
+Net earnings
+
+988
+
+602
+
+Cash dividends declared
+
+(338
+
+)
+
+(299
+
+)
+
+Share repurchases
+
+(703
+
+)
+
+(1,198
+
+)
+
+Balance at end of period
+
+$
+
+5,405
+
+$
+
+5,346
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Comprehensive Income (Unaudited)
+
+In Millions, Except Percentage Data
+
+Three Months Ended
+
+May 4, 2018
+
+May 5, 2017
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Net earnings
+
+$
+
+988
+
+5.69
+
+$
+
+602
+
+3.57
+
+Foreign currency translation adjustments - net of tax
+
+(83
+
+)
+
+(0.48
+
+)
+
+(1
+
+)
+
+—
+
+Other comprehensive loss
+
+(83
+
+)
+
+(0.48
+
+)
+
+(1
+
+)
+
+—
+
+Comprehensive income
+
+$
+
+905
+
+5.21
+
+$
+
+601
+
+3.57
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+4
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Cash Flows (Unaudited)
+
+In Millions
+
+Three Months Ended
+
+May 4, 2018
+
+May 5, 2017
+
+Cash flows from operating activities:
+
+Net earnings
+
+$
+
+988
+
+$
+
+602
+
+Adjustments to reconcile net earnings to net cash provided by operating activities:
+
+Depreciation and amortization
+
+387
+
+389
+
+Deferred income taxes
+
+(21
+
+)
+
+(64
+
+)
+
+Loss on property and other assets - net
+
+6
+
+11
+
+Loss on extinguishment of debt
+
+—
+
+464
+
+Loss on cost method and equity method investments
+
+—
+
+7
+
+Share-based payment expense
+
+24
+
+26
+
+Changes in operating assets and liabilities:
+
+Merchandise inventory - net
+
+(1,846
+
+)
+
+(1,808
+
+)
+
+Other operating assets
+
+(234
+
+)
+
+(64
+
+)
+
+Accounts payable
+
+3,521
+
+3,291
+
+Other operating liabilities
+
+604
+
+441
+
+Net cash provided by operating activities
+
+3,429
+
+3,295
+
+Cash flows from investing activities:
+
+Purchases of investments
+
+(573
+
+)
+
+(153
+
+)
+
+Proceeds from sale/maturity of investments
+
+556
+
+59
+
+Capital expenditures
+
+(224
+
+)
+
+(202
+
+)
+
+Proceeds from sale of property and other long-term assets
+
+5
+
+6
+
+Other - net
+
+—
+
+(1
+
+)
+
+Net cash used in investing activities
+
+(236
+
+)
+
+(291
+
+)
+
+Cash flows from financing activities:
+
+Net change in short-term borrowings
+
+(1,140
+
+)
+
+(511
+
+)
+
+Net proceeds from issuance of long-term debt
+
+—
+
+2,968
+
+Repayment of long-term debt
+
+(13
+
+)
+
+(2,558
+
+)
+
+Proceeds from issuance of common stock under share-based payment plans
+
+8
+
+38
+
+Cash dividend payments
+
+(340
+
+)
+
+(304
+
+)
+
+Repurchase of common stock
+
+(728
+
+)
+
+(1,237
+
+)
+
+Other - net
+
+(2
+
+)
+
+(1
+
+)
+
+Net cash used in financing activities
+
+(2,215
+
+)
+
+(1,605
+
+)
+
+Effect of exchange rate changes on cash
+
+(1
+
+)
+
+6
+
+Net increase in cash and cash equivalents
+
+977
+
+1,405
+
+Cash and cash equivalents, beginning of period
+
+588
+
+558
+
+Cash and cash equivalents, end of period
+
+$
+
+1,565
+
+$
+
+1,963
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+5
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Notes to Consolidated Financial Statements (Unaudited)
+
+Note
+
+1
+
+:
+
+Summary of Significant Accounting Policies
+
+Basis of Presentation
+
+The accompanying consolidated financial statements (unaudited) and notes to the consolidated financial statements (unaudited) are presented in accordance with the rules and regulations of the Securities and Exchange Commission and do not include all the disclosures normally required in annual consolidated financial statements prepared in accordance with accounting principles generally accepted in the United States of America (GAAP). During the first quarter of fiscal year 2018, the Company conformed the financial reporting calendar of a subsidiary, which did not have a significant effect on the consolidated financial statements. The consolidated financial statements (unaudited), in the opinion of management, contain all adjustments necessary to present fairly the financial position as of
+
+May 4, 2018
+
+, and
+
+May 5, 2017
+
+, and the results of operations and comprehensive income for the
+
+three months ended
+
+May 4, 2018
+
+, and
+
+May 5, 2017
+
+, and cash flows for the
+
+three months ended
+
+May 4, 2018
+
+and
+
+May 5, 2017
+
+.
+
+These interim consolidated financial statements (unaudited) should be read in conjunction with the audited consolidated financial statements and notes thereto included in the Lowe's Companies, Inc. (the Company) Annual Report on Form 10-K for the fiscal year ended
+
+February 2, 2018
+
+(the Annual Report). The financial results for the interim periods may not be indicative of the financial results for the entire fiscal year.
+
+Accounting Pronouncements Recently Adopted
+
+Effective February 3, 2018, the Company adopted Accounting Standards Update 2014-09 (ASU 2014-09),
+
+Revenue from Contracts with Customers (Topic 606)
+
+, and all the related amendments, using the modified retrospective method. ASU 2014-09 requires a company to recognize revenue to depict the transfer of goods or services to customers in an amount that reflects the consideration to which the entity expects to be entitled in exchange for those goods or services.
+
+Upon adoption of ASU 2014-09, the Company recorded an immaterial adjustment to the opening balance of retained earnings as of February 3, 2018, with related adjustments to deferred revenue, accounts payable and related tax effects. The adjustment to retained earnings primarily relates to the change in revenue recognition related to gift card breakage. The adoption of the guidance also required a change in the timing of how installation services are recognized, the presentation of sales return reserve on the consolidated balance sheet, and a change in the presentation of the Company's profit sharing income from its proprietary credit program. We applied ASU 2014-09 only to contracts that were not completed prior to fiscal 2018. Results for reporting periods beginning after February 2, 2018 are presented under ASU 2014-09, while comparative prior period amounts have not been restated and continue to be presented under accounting standards in effect in those periods. See Note 2 for additional details of the Company's revenues.
+
+6
+
+Table of Contents
+
+The impact of adopting the new revenue recognition guidance on our consolidated statement of earnings is as follows:
+
+Three Months Ended May 4, 2018
+
+Consolidated Statements of Earnings
+
+(in millions)
+
+As Reported
+
+Under Historical Guidance
+
+Impact of Adopting ASU 2014-09
+
+Net sales
+
+$
+
+17,360
+
+$
+
+17,231
+
+$
+
+129
+
+Cost of sales
+
+11,348
+
+11,364
+
+(16
+
+)
+
+Gross margin
+
+6,012
+
+5,867
+
+145
+
+Selling, general and administrative
+
+4,187
+
+4,043
+
+144
+
+Operating income
+
+1,465
+
+1,464
+
+1
+
+Pre-tax earnings
+
+1,305
+
+1,304
+
+1
+
+Net earnings
+
+$
+
+988
+
+$
+
+987
+
+$
+
+1
+
+The impacts of adopting the new revenue recognition guidance to assets and liabilities on our consolidated balance sheets are as follows:
+
+Balance at May 4, 2018
+
+Consolidated Balance Sheets
+
+(in millions)
+
+As Reported
+
+Under Historical Guidance
+
+Impact of Adopting ASU 2014-09
+
+Assets
+
+Other current assets
+
+$
+
+1,059
+
+$
+
+862
+
+$
+
+197
+
+Liabilities
+
+Accounts payable
+
+10,104
+
+10,092
+
+12
+
+Deferred revenue
+
+1,439
+
+1,517
+
+(78
+
+)
+
+Other current liabilities
+
+2,620
+
+2,406
+
+214
+
+Accounting Pronouncements Not Yet Adopted
+
+In January 2017, the Financial Accounting Standards Board (FASB) issued ASU 2017-04,
+
+Intangibles-Goodwill and Other (Topic 350)
+
+. The ASU eliminates Step 2 of the goodwill impairment test, which requires a hypothetical purchase price allocation to the identified assets and liabilities of the reporting unit to measure goodwill impairment. Under the amendments in this update, a goodwill impairment test is performed by comparing the fair value of the reporting unit with its carrying amount. An impairment charge is recognized for the amount by which the carrying amount exceeds the reporting unit's fair value; however, the loss recognized should not exceed the total amount of goodwill allocated to that reporting unit. This ASU is effective for fiscal years beginning after December 15, 2019, and interim periods within those fiscal years, with early adoption permitted. The adoption of this guidance by the Company is not expected to have a material impact on its consolidated financial statements.
+
+In February 2016, the FASB issued ASU 2016-02,
+
+Leases (Topic 842)
+
+. The guidance in this ASU supersedes the leasing guidance in Topic 840,
+
+Leases
+
+. Under the new guidance, lessees are required to recognize lease assets and lease liabilities on the balance sheet for those leases previously classified as operating leases. For leases with a term of 12 months or less, a lessee is permitted to make an accounting policy election by class of underlying asset not to recognize lease assets and lease liabilities. If a lessee makes this election, it should recognize lease expense for such leases generally on a straight-line basis over the lease term. This ASU is effective for fiscal years beginning after December 15, 2018, and interim periods within those fiscal years, with early adoption permitted. The Company is currently evaluating the impact of adopting this ASU on its consolidated financial statements but expects the ASU to have a material impact on its consolidated balance sheets, as a result of the requirement to recognize right-of-use assets and lease liabilities.
+
+7
+
+Table of Contents
+
+Note
+
+2
+
+: Net Sales
+
+Net sales consists primarily of revenue, net of sales tax, associated with contracts with customers for the sale of goods and services in amounts that reflect consideration the Company is entitled to in exchange for those goods and services.
+
+The following table presents the Company's sources of revenue:
+
+(In millions)

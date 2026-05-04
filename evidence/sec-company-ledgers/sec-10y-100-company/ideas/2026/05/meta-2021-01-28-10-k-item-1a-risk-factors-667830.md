@@ -1,0 +1,183 @@
+---
+id: idea-qXu42rsZ
+type: idea
+state: nascent
+title: META 2021-01-28 10-K Item 1A Risk Factors
+created_at: '2026-05-03T20:37:47.830Z'
+date: '2026-05-03'
+created: '2026-05-03T20:37:48.203Z'
+---
+# Meta Platforms, Inc. 10-K Item 1A Risk Factors
+
+Filed: 2021-01-28
+Source: https://www.sec.gov/Archives/edgar/data/1326801/000132680121000014/fb-20201231.htm
+
+Risk Factors
+
+12
+
+Item 1B.
+
+Unresolved Staff Comments
+
+45
+
+Item 2.
+
+Properties
+
+45
+
+Item 3.
+
+Legal Proceedings
+
+45
+
+Item 4.
+
+Mine Safety Disclosures
+
+47
+
+PART II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+48
+
+Item 6.
+
+Selected Financial Data
+
+50
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+52
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+76
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+77
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+112
+
+Item 9A.
+
+Controls and Procedures
+
+112
+
+Item 9B.
+
+Other Information
+
+112
+
+PART III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+113
+
+Item 11.
+
+Executive Compensation
+
+113
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+113
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+113
+
+Item 14.
+
+Principal Accounting Fees and Services
+
+113
+
+PART IV
+
+Item 15.
+
+Exhibits, Financial Statement Schedules
+
+114
+
+Item 16.
+
+Form 10-K Summary
+
+116
+
+Signatures
+
+2
+
+Table of Contents
+
+NOTE ABOUT FORWARD-LOOKING STATEMENTS
+
+This Annual Report on Form 10-K contains forward-looking statements. All statements contained in this Annual Report on Form 10-K other than statements of historical fact, including statements regarding our future results of operations and financial position, our business strategy and plans, and our objectives for future operations, are forward-looking statements. The words "believe," "may," "will," "estimate," "continue," "anticipate," "intend," "expect," and similar expressions are intended to identify forward-looking statements. We have based these forward-looking statements largely on our current expectations and projections about future events and trends that we believe may affect our financial condition, results of operations, business strategy, short-term and long-term business operations and objectives, and financial needs. These forward-looking statements are subject to a number of risks, uncertainties and assumptions, including those described in Part I, Item 1A, "Risk Factors" in this Annual Report on Form 10-K. Moreover, we operate in a very competitive and rapidly changing environment. New risks emerge from time to time. It is not possible for our management to predict all risks, nor can we assess the impact of all factors on our business or the extent to which any factor, or combination of factors, may cause actual results to differ materially from those contained in any forward-looking statements we may make. In light of these risks, uncertainties and assumptions, the future events and trends discussed in this Annual Report on Form 10-K may not occur and actual results could differ materially and adversely from those anticipated or implied in the forward-looking statements.
+
+We undertake no obligation to revise or publicly release the results of any revision to these forward-looking statements, except as required by law. Given these risks and uncertainties, readers are cautioned not to place undue reliance on such forward-looking statements.
+
+Unless expressly indicated or the context requires otherwise, the terms "Facebook," "company," "we," "us," and "our" in this document refer to Facebook, Inc., a Delaware corporation, and, where appropriate, its subsidiaries. The term "Facebook" may also refer to our products, regardless of the manner in which they are accessed. The term "Family" refers to our Facebook, Instagram, Messenger, and WhatsApp products. For references to accessing Facebook or our other products on the "web" or via a "website," such terms refer to accessing such products on personal computers. For references to accessing Facebook or our other products on "mobile," such term refers to accessing such products via a mobile application or via a mobile-optimized version of our websites such as m.facebook.com, whether on a mobile phone or tablet.
+
+3
+
+Table of Contents
+
+LIMITATIONS OF KEY METRICS AND OTHER DATA
+
+The numbers for our key metrics are calculated using internal company data based on the activity of user accounts. We have historically reported the numbers of our daily active users (DAUs), monthly active users (MAUs), and average revenue per user (ARPU) (collectively, our "Facebook metrics") based on user activity only on Facebook and Messenger and not on our other products. Beginning with our Annual Report on Form 10-K for the year ended December 31, 2019, we also report our estimates of the numbers of our daily active people (DAP), monthly active people (MAP), and average revenue per person (ARPP) (collectively, our "Family metrics") based on the activity of users who visited at least one of Facebook, Instagram, Messenger, and WhatsApp (collectively, our "Family" of products) during the applicable period of measurement. We believe our Family metrics better reflect the size of our community and the fact that many people are using more than one of our products. As a result, over time we intend to report our Family metrics as key metrics in place of DAUs, MAUs, and ARPU in our periodic reports filed with the Securities and Exchange Commission.
+
+While these numbers are based on what we believe to be reasonable estimates of our user base for the applicable period of measurement, there are inherent challenges in measuring usage of our products across large online and mobile populations around the world. The methodologies used to measure these metrics require significant judgment and are also susceptible to algorithm or other technical errors. In addition, we are continually seeking to improve our estimates of our user base, and such estimates may change due to improvements or changes in our methodology. We regularly review our processes for calculating these metrics, and from time to time we discover inaccuracies in our metrics or make adjustments to improve their accuracy, which can result in adjustments to our historical metrics. Our ability to recalculate our historical metrics may be impacted by data limitations or other factors that require us to apply different methodologies for such adjustments. We generally do not intend to update previously disclosed Family metrics for any such inaccuracies or adjustments that are within the error margins disclosed below.
+
+In addition, our Facebook metrics and Family metrics estimates will differ from estimates published by third parties due to differences in methodology.
+
+Facebook Metrics
+
+We regularly evaluate our Facebook metrics to estimate the number of "duplicate" and "false" accounts among our MAUs. A duplicate account is one that a user maintains in addition to his or her principal account. We divide "false" accounts into two categories: (1) user-misclassified accounts, where users have created personal profiles for a business, organization, or non-human entity such as a pet (such entities are permitted on Facebook using a Page rather than a personal profile under our terms of service); and (2) violating accounts, which represent user profiles that we believe are intended to be used for purposes that violate our terms of service, such as bots and spam. The estimates of duplicate and false accounts are based on an internal review of a limited sample of accounts, and we apply significant judgment in making this determination. For example, to identify duplicate accounts we use data signals such as identical IP addresses and similar user names, and to identify false accounts we look for names that appear to be fake or other behavior that appears inauthentic to the reviewers. Any loss of access to data signals we use in this process, whether as a result of our own product decisions, actions by third-party browser or mobile platforms, regulatory or legislative requirements, limitations while our personnel work remotely during the COVID-19 pandemic, or other factors, also may impact the stability or accuracy of our estimates of duplicate and false accounts. Our estimates also may change as our methodologies evolve, including through the application of new data signals or technologies or product changes that may allow us to identify previously undetected duplicate or false accounts and may improve our ability to evaluate a broader population of our users. Duplicate and false accounts are very difficult to measure at our scale, and it is possible that the actual number of duplicate and false accounts may vary significantly from our estimates.
+
+In the fourth quarter of 2020, we estimated that duplicate accounts may have represented approximately 11% of our worldwide MAUs. We believe the percentage of duplicate accounts is meaningfully higher in developing markets such as the Philippines and Vietnam, as compared to more developed markets. In the fourth quarter of 2020, we estimated that false accounts may have represented approximately 5% of our worldwide MAUs. Our estimation of false accounts can vary as a result of episodic spikes in the creation of such accounts, which we have seen originate more frequently in specific countries such as Indonesia and Vietnam. From time to time, we disable certain user accounts, make product changes, or take other actions to reduce the number of duplicate or false accounts among our users, which may also reduce our DAU and MAU estimates in a particular period. We intend to disclose our estimates of the number of duplicate and false accounts among our MAUs on an annual basis.
+
+4
+
+Table of Contents
+
+The numbers of DAUs and MAUs discussed in this Annual Report on Form 10-K, as well as ARPU, do not include users on Instagram, WhatsApp, or our other products, unless they would otherwise qualify as DAUs or MAUs, respectively, based on their other activities on Facebook.
+
+Family Metrics
+
+Many people in our community have user accounts on more than one of our products, and some people have multiple user accounts within an individual product. Accordingly, for our Family metrics, we do not seek to count the total number of user accounts across our products because we believe that would not reflect the actual size of our community. Rather, our Family metrics represent our estimates of the number of unique people using at least one of Facebook, Instagram, Messenger, and WhatsApp. We do not require people to use a common identifier or link their accounts to use multiple products in our Family, and therefore must seek to attribute multiple user accounts within and across products to individual people. To calculate these metrics, we rely upon complex techniques, algorithms and machine learning models that seek to count the individual people behind user accounts, including by matching multiple user accounts within an individual product and across multiple products when we believe they are attributable to a single person, and counting such group of accounts as one person. These techniques and models require significant judgment, are subject to data and other limitations discussed below, and inherently are subject to statistical variances and uncertainties. We estimate the potential error in our Family metrics primarily based on user survey data, which itself is subject to error as well. While we expect the error margin for our Family metrics to vary from period to period, we estimate that such margin generally will be approximately 4% of our worldwide MAP. At our scale, it is very difficult to attribute multiple user accounts within and across products to individual people, and it is possible that the actual numbers of unique people using our products may vary significantly from our estimates, potentially beyond our estimated error margins. As a result, it is also possible that our Family metrics may indicate changes or trends in user numbers that do not match actual changes or trends.
+
+To calculate our estimates of Family DAP and MAP, we currently use a series of machine learning models that are developed based on internal reviews of limited samples of user accounts and calibrated against user survey data. We apply significant judgment in designing these models and calculating these estimates. For example, to match user accounts within individual products and across multiple products, we use data signals such as similar device information, IP addresses, and user names. We also calibrate our models against data from periodic user surveys of varying sizes and frequency across our products, which are inherently subject to error. The timing and results of such user surveys have in the past contributed, and may in the future contribute, to changes in our reported Family metrics from period to period. In addition, our data limitations may affect our understanding of certain details of our business and increase the risk of error for our Family metrics estimates. Our techniques and models rely on a variety of data signals from different products, and we rely on more limited data signals for some products compared to others. For example, as a result of limited visibility into encrypted products, we have fewer data signals from WhatsApp user accounts and primarily rely on phone numbers and device information to match WhatsApp user accounts with accounts on our other products. Similarly, although Messenger Kids users are included in our Family metrics, we do not seek to match their accounts with accounts on our other applications for purposes of calculating DAP and MAP. Any loss of access to data signals we use in our process for calculating Family metrics, whether as a result of our own product decisions, actions by third-party browser or mobile platforms, regulatory or legislative requirements, limitations while our personnel work remotely during the COVID-19 pandemic, or other factors, also may impact the stability or accuracy of our reported Family metrics. Our estimates of Family metrics also may change as our methodologies evolve, including through the application of new data signals or technologies, product changes, or other improvements in our user surveys, algorithms, or machine learning that may improve our ability to match accounts within and across our products or otherwise evaluate the broad population of our users. In addition, such evolution may allow us to identify previously undetected violating accounts (as defined below).
+
+We regularly evaluate our Family metrics to estimate the percentage of our MAP consisting solely of "violating" accounts. We define "violating" accounts as accounts which we believe are intended to be used for purposes that violate our terms of service, including bots and spam. In the fourth quarter of 2020, we estimated that approximately 3% of our worldwide MAP consisted solely of violating accounts. Such estimation is based on an internal review of a limited sample of accounts, and we apply significant judgment in making this determination. For example, we look for account information and behaviors associated with Facebook and Instagram accounts that appear to be inauthentic to the reviewers, but we have limited visibility into WhatsApp user activity due to encryption. In addition, if we believe an individual person has one or more violating accounts, we do not include such person in our violating accounts estimation as long as we believe they have one account that does not constitute a violating account. From time to time, we disable certain user accounts, make product changes, or take other actions to reduce the number of violating accounts among our users, which may also reduce our DAP and MAP estimates in a particular period. We intend to disclose our estimates of the percentage of our MAP consisting solely

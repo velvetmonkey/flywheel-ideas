@@ -1,0 +1,1965 @@
+---
+id: idea-wyXKVyKW
+type: idea
+state: nascent
+title: TJX 2020-08-28 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:09:41.113Z'
+date: '2026-05-03'
+created: '2026-05-03T20:09:41.472Z'
+---
+# TJX COMPANIES INC /DE/ 10-Q Part II Item 1A Risk Factors
+
+Filed: 2020-08-28
+Source: https://www.sec.gov/Archives/edgar/data/109198/000010919820000019/tjx-20200801.htm
+
+38
+
+ITEM 2. Unregistered Sales of Equity Securities and Use of Proceeds
+
+39
+
+ITEM 6. Exhibits
+
+40
+
+SIGNATURES
+
+41
+
+2
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF (LOSS) INCOME
+
+(UNAUDITED)
+
+IN THOUSANDS EXCEPT PER SHARE AMOUNTS
+
+Thirteen Weeks Ended
+
+Twenty-Six Weeks Ended
+
+August 1,
+
+2020
+
+August 3,
+
+2019
+
+August 1,
+
+2020
+
+August 3,
+
+2019
+
+Net sales
+
+$
+
+6,667,575
+
+$
+
+9,781,596
+
+$
+
+11,076,463
+
+$
+
+19,059,181
+
+Cost of sales, including buying and occupancy costs
+
+5,174,490
+
+7,026,057
+
+9,588,955
+
+13,663,942
+
+Selling, general and administrative expenses
+
+1,527,768
+
+1,731,335
+
+2,841,688
+
+3,433,736
+
+Interest expense, net
+
+57,336
+
+2,897
+
+80,687
+
+3,714
+
+(Loss) income before income taxes
+
+(
+
+92,019
+
+)
+
+1,021,307
+
+(
+
+1,434,867
+
+)
+
+1,957,789
+
+(Provision) benefit for income taxes
+
+(
+
+122,201
+
+)
+
+(
+
+262,345
+
+)
+
+333,158
+
+(
+
+498,649
+
+)
+
+Net (loss) income
+
+$
+
+(
+
+214,220
+
+)
+
+$
+
+758,962
+
+$
+
+(
+
+1,101,709
+
+)
+
+$
+
+1,459,140
+
+Basic (loss) earnings per share
+
+$
+
+(
+
+0.18
+
+)
+
+$
+
+0.63
+
+$
+
+(
+
+0.92
+
+)
+
+$
+
+1.20
+
+Weighted average common shares – basic
+
+1,198,634
+
+1,210,525
+
+1,198,222
+
+1,212,528
+
+Diluted (loss) earnings per share
+
+$
+
+(
+
+0.18
+
+)
+
+$
+
+0.62
+
+$
+
+(
+
+0.92
+
+)
+
+$
+
+1.19
+
+Weighted average common shares – diluted
+
+1,198,634
+
+1,228,986
+
+1,198,222
+
+1,231,211
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+3
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE (LOSS) INCOME
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Thirteen Weeks Ended
+
+August 1,
+
+2020
+
+August 3,
+
+2019
+
+Net (loss) income
+
+$
+
+(
+
+214,220
+
+)
+
+$
+
+758,962
+
+Additions to other comprehensive (loss) income:
+
+Foreign currency translation adjustments, net of related tax provisions of $
+
+5,462
+
+in fiscal 2021 and $
+
+1,681
+
+in fiscal 2020
+
+69,378
+
+(
+
+83,743
+
+)
+
+Reclassifications from other comprehensive income (loss) to net (loss) income:
+
+Amortization of prior service cost and deferred gains/losses, net of related tax provisions of $
+
+1,746
+
+in fiscal 2021 and $
+
+1,453
+
+in fiscal 2020
+
+4,797
+
+3,992
+
+Amortization of loss on cash flow hedge, net of related tax provisions of $
+
+76
+
+in fiscal 2021 and $
+
+76
+
+in fiscal 2020
+
+208
+
+208
+
+Other comprehensive income (loss), net of tax
+
+74,383
+
+(
+
+79,543
+
+)
+
+Total comprehensive (loss) income
+
+$
+
+(
+
+139,837
+
+)
+
+$
+
+679,419
+
+Twenty-Six Weeks Ended
+
+August 1,
+
+2020
+
+August 3,
+
+2019
+
+Net (loss) income
+
+$
+
+(
+
+1,101,709
+
+)
+
+$
+
+1,459,140
+
+Additions to other comprehensive (loss) income:
+
+Foreign currency translation adjustments, net of related tax benefit of $
+
+1,486
+
+in fiscal 2021 and $
+
+952
+
+in fiscal 2020
+
+(
+
+59,780
+
+)
+
+(
+
+90,904
+
+)
+
+Reclassifications from other comprehensive loss to net (loss) income:
+
+Amortization of prior service cost and deferred gains/losses, net of related tax provisions of $
+
+3,492
+
+in fiscal 2021 and $
+
+2,906
+
+in fiscal 2020
+
+9,594
+
+7,984
+
+Amortization of loss on cash flow hedge, net of related tax provisions of $
+
+152
+
+in fiscal 2021 and $
+
+152
+
+in fiscal 2020
+
+416
+
+416
+
+Other comprehensive (loss), net of tax
+
+(
+
+49,770
+
+)
+
+(
+
+82,504
+
+)
+
+Total comprehensive (loss) income
+
+$
+
+(
+
+1,151,479
+
+)
+
+$
+
+1,376,636
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+4
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED BALANCE SHEETS
+
+(UNAUDITED)
+
+IN THOUSANDS, EXCEPT SHARE DATA
+
+August 1,
+
+2020
+
+February 1,
+
+2020
+
+August 3,
+
+2019
+
+ASSETS
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+6,620,411
+
+$
+
+3,216,752
+
+$
+
+2,186,382
+
+Accounts receivable, net
+
+444,229
+
+386,261
+
+377,057
+
+Merchandise inventories
+
+3,744,062
+
+4,872,592
+
+5,087,046
+
+Prepaid expenses and other current assets
+
+403,621
+
+368,048
+
+438,994
+
+Federal, state and foreign income taxes recoverable
+
+305,624
+
+46,969
+
+179,125
+
+Total current assets
+
+11,517,947
+
+8,890,622
+
+8,268,604
+
+Net property at cost
+
+5,100,411
+
+5,325,048
+
+5,041,878
+
+Non-current deferred income taxes, net
+
+48,600
+
+12,132
+
+5,642
+
+Operating lease right of use assets
+
+9,063,854
+
+9,060,332
+
+8,944,302
+
+Goodwill
+
+97,131
+
+95,546
+
+95,938
+
+Other assets
+
+740,459
+
+761,323
+
+498,615
+
+TOTAL ASSETS
+
+$
+
+26,568,402
+
+$
+
+24,145,003
+
+$
+
+22,854,979
+
+LIABILITIES
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+2,422,140
+
+$
+
+2,672,557
+
+$
+
+2,607,651
+
+Accrued expenses and other current liabilities
+
+2,884,826
+
+3,041,774
+
+2,601,851
+
+Current portion of operating lease liabilities
+
+1,591,076
+
+1,411,216
+
+1,353,721
+
+Current portion of long-term debt
+
+749,209
+
+—
+
+—
+
+Federal, state and foreign income taxes payable
+
+—
+
+24,700
+
+37,518
+
+Total current liabilities
+
+7,647,251
+
+7,150,247
+
+6,600,741
+
+Other long-term liabilities
+
+848,253
+
+851,116
+
+776,654
+
+Non-current deferred income taxes, net
+
+91,770
+
+142,170
+
+196,985
+
+Long-term operating lease liabilities
+
+7,875,234
+
+7,816,633
+
+7,742,866
+
+Long-term debt
+
+5,445,325
+
+2,236,625
+
+2,235,121
+
+Commitments and contingencies (See Note L)
+
+SHAREHOLDERS' EQUITY
+
+Preferred stock, authorized
+
+5,000,000
+
+shares, par value $
+
+1
+
+,
+
+no
+
+shares issued
+
+—
+
+—
+
+—
+
+Common stock, authorized
+
+1,800,000,000
+
+shares, par value $
+
+1
+
+, issued and outstanding
+
+1,199,061,133
+
+;
+
+1,199,099,768
+
+and
+
+1,208,932,667
+
+respectively
+
+1,199,061
+
+1,199,100
+
+1,208,933
+
+Additional paid-in capital
+
+68,532
+
+—
+
+—
+
+Accumulated other comprehensive loss
+
+(
+
+722,941
+
+)
+
+(
+
+673,171
+
+)
+
+(
+
+712,825
+
+)
+
+Retained earnings
+
+4,115,917
+
+5,422,283
+
+4,806,504
+
+Total shareholders' equity
+
+4,660,569
+
+5,948,212
+
+5,302,612
+
+TOTAL LIABILITIES AND SHAREHOLDERS' EQUITY
+
+$
+
+26,568,402
+
+$
+
+24,145,003
+
+$
+
+22,854,979
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+5
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Twenty-Six Weeks Ended
+
+August 1,
+
+2020
+
+August 3,
+
+2019
+
+Cash flows from operating activities:
+
+Net (loss) income
+
+$
+
+(
+
+1,101,709
+
+)
+
+$
+
+1,459,140
+
+Adjustments to reconcile net (loss) income to cash provided by operating activities:
+
+Depreciation and amortization
+
+439,525
+
+427,834
+
+Loss on property disposals and impairment charges
+
+38,970
+
+3,215
+
+Deferred income tax (benefit) provision
+
+(
+
+88,562
+
+)
+
+37,855
+
+Share-based compensation
+
+27,647
+
+55,400
+
+Changes in assets and liabilities:
+
+(Increase) in accounts receivable
+
+(
+
+56,041
+
+)
+
+(
+
+35,848
+
+)
+
+Decrease (increase) in merchandise inventories
+
+1,111,612
+
+(
+
+560,386
+
+)
+
+(Increase) in income taxes recoverable
+
+(
+
+258,655
+
+)
+
+(
+
+166,333
+
+)
+
+(Increase) in prepaid expenses and other current assets
+
+(
+
+40,032
+
+)
+
+(
+
+73,770
+
+)
+
+(Decrease) in accounts payable
+
+(
+
+240,356
+
+)
+
+(
+
+6,823
+
+)
+
+Increase (decrease) in accrued expenses and other liabilities
+
+153,502
+
+(
+
+113,799
+
+)
+
+(Decrease) in income taxes payable
+
+(
+
+25,254
+
+)
+
+(
+
+116,460
+
+)
+
+Increase in net operating lease liabilities
+
+209,071
+
+25,284
+
+Other, net
+
+27,057
+
+(
+
+36,065
+
+)
+
+Net cash provided by operating activities
+
+196,775
+
+899,244
+
+Cash flows from investing activities:
+
+Property additions
+
+(
+
+309,910
+
+)
+
+(
+
+578,018
+
+)
+
+Purchase of investments
+
+(
+
+19,411
+
+)
+
+(
+
+18,994
+
+)
+
+Sales and maturities of investments
+
+10,503
+
+9,374
+
+Other
+
+—
+
+7,419
+
+Net cash (used in) investing activities
+
+(
+
+318,818
+
+)
+
+(
+
+580,219
+
+)
+
+Cash flows from financing activities:
+
+Cash payments on revolving credit facilities
+
+(
+
+1,000,000
+
+)
+
+—
+
+Proceeds from long-term debt including revolving credit facilities
+
+4,988,452
+
+—
+
+Cash payments for debt issuance expenses
+
+(
+
+33,872
+
+)
+
+—
+
+Cash payments for repurchase of common stock
+
+(
+
+201,500
+
+)
+
+(
+
+699,751
+
+)
+
+Cash dividends paid
+
+(
+
+278,250
+
+)
+
+(
+
+517,448
+
+)
+
+Proceeds from issuance of common stock
+
+59,532
+
+102,475
+
+Cash payments of employee tax withholdings for performance based stock awards
+
+(
+
+21,843
+
+)
+
+(
+
+23,297
+
+)
+
+Net cash provided by (used in) financing activities
+
+3,512,519
+
+(
+
+1,138,021
+
+)
+
+Effect of exchange rate changes on cash
+
+13,183
+
+(
+
+24,851
+
+)
+
+Net increase (decrease) in cash and cash equivalents
+
+3,403,659
+
+(
+
+843,847
+
+)
+
+Cash and cash equivalents at beginning of year
+
+3,216,752
+
+3,030,229
+
+Cash and cash equivalents at end of period
+
+$
+
+6,620,411
+
+$
+
+2,186,382
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+6
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENT OF SHAREHOLDERS' EQUITY
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance, May 2, 2020
+
+1,197,877
+
+$
+
+1,197,877
+
+$
+
+8,104
+
+$
+
+(
+
+797,324
+
+)
+
+$
+
+4,330,561
+
+$
+
+4,739,218
+
+Net loss
+
+—
+
+—
+
+—
+
+—
+
+(
+
+214,220
+
+)
+
+(
+
+214,220
+
+)
+
+Other comprehensive income, net of tax
+
+—
+
+—
+
+—
+
+74,383
+
+—
+
+74,383
+
+Recognition of share-based compensation
+
+—
+
+—
+
+39,178
+
+—
+
+—
+
+39,178
+
+Issuance of common stock under Stock Incentive Plan, net of shares used to pay tax withholdings
+
+1,184
+
+1,184
+
+21,250
+
+—
+
+(
+
+424
+
+)
+
+22,010
+
+Balance, August 1, 2020
+
+1,199,061
+
+$
+
+1,199,061
+
+$
+
+68,532
+
+$
+
+(
+
+722,941
+
+)
+
+$
+
+4,115,917
+
+$
+
+4,660,569
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance, May 4, 2019
+
+1,212,668
+
+$
+
+1,212,668
+
+$
+
+—
+
+$
+
+(
+
+633,282
+
+)
+
+$
+
+4,552,509
+
+$
+
+5,131,895
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+758,962
+
+758,962
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+79,543
+
+)
+
+—
+
+(
+
+79,543
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+278,624
+
+)
+
+(
+
+278,624
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+29,668
+
+—
+
+—
+
+29,668
+
+Issuance of common stock under Stock Incentive Plan, net of shares used to pay tax withholdings
+
+1,952
+
+1,952
+
+40,759
+
+—
+
+—
+
+42,711
+
+Common stock repurchased and retired
+
+(
+
+5,687
+
+)
+
+(
+
+5,687
+
+)
+
+(
+
+70,427
+
+)
+
+—
+
+(
+
+226,343
+
+)
+
+(
+
+302,457
+
+)
+
+Balance, August 3, 2019
+
+1,208,933
+
+$
+
+1,208,933
+
+$
+
+—
+
+$
+
+(
+
+712,825
+
+)
+
+$
+
+4,806,504
+
+$
+
+5,302,612
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+7
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENT OF SHAREHOLDERS' EQUITY
+
+(UNAUDITED)
+
+IN THOUSANDS
+
+Twenty-Six Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance, February 1, 2020
+
+1,199,100
+
+$
+
+1,199,100
+
+$
+
+—
+
+$
+
+(
+
+673,171
+
+)
+
+$
+
+5,422,283
+
+$
+
+5,948,212
+
+Net loss
+
+—
+
+—
+
+—
+
+—
+
+(
+
+1,101,709
+
+)
+
+(
+
+1,101,709
+
+)
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+49,770
+
+)
+
+—
+
+(
+
+49,770
+
+)
+
+Recognition (reversal) of share-based compensation
+
+—
+
+—
+
+59,482
+
+—
+
+(
+
+31,835
+
+)
+
+27,647
+
+Issuance of common stock under Stock Incentive Plan, net of shares used to pay tax withholdings
+
+3,348
+
+3,348
+
+34,765
+
+—
+
+(
+
+424
+
+)
+
+37,689
+
+Common stock repurchased and retired
+
+(
+
+3,387
+
+)
+
+(
+
+3,387
+
+)
+
+(
+
+25,715
+
+)
+
+—
+
+(
+
+172,398
+
+)
+
+(
+
+201,500
+
+)
+
+Balance, August 1, 2020
+
+1,199,061
+
+$
+
+1,199,061
+
+$
+
+68,532
+
+$
+
+(
+
+722,941
+
+)
+
+$
+
+4,115,917
+
+$
+
+4,660,569
+
+Twenty-Six Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+Loss
+
+Retained
+
+Earnings
+
+Total
+
+Balance February 2, 2019
+
+1,217,183
+
+$
+
+1,217,183
+
+$
+
+—
+
+$
+
+(
+
+630,321
+
+)
+
+$
+
+4,461,744
+
+$
+
+5,048,606
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,459,140
+
+1,459,140
+
+Cumulative effect of accounting change
+
+—
+
+—
+
+—
+
+—
+
+403
+
+403
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+82,504
+
+)
+
+—
+
+(
+
+82,504
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+557,860
+
+)
+
+(
+
+557,860
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+55,400
+
+—
+
+—
+
+55,400
+
+Issuance of common stock under Stock Incentive Plan, net of shares used to pay tax withholdings
+
+5,094
+
+5,094
+
+74,084
+
+—
+
+—
+
+79,178
+
+Common stock repurchased and retired
+
+(
+
+13,344
+
+)
+
+(
+
+13,344
+
+)
+
+(
+
+129,484
+
+)
+
+—
+
+(
+
+556,923
+
+)
+
+(
+
+699,751
+
+)
+
+Balance, August 3, 2019
+
+1,208,933
+
+$
+
+1,208,933
+
+$
+
+—
+
+$
+
+(
+
+712,825
+
+)
+
+$
+
+4,806,504
+
+$
+
+5,302,612
+
+The accompanying notes are an integral part of the unaudited consolidated financial statements.
+
+8
+
+THE TJX COMPANIES, INC.
+
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
+
+Note A.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+Basis of Presentation
+
+The Consolidated Financial Statements and Notes thereto have been prepared in accordance with accounting principles generally accepted in the United States of America ("GAAP") for interim financial information. These Consolidated Financial Statements and Notes thereto are unaudited and, in the opinion of management, reflect all normal recurring adjustments, accruals and deferrals among periods required to match costs properly with the related revenue or activity, considered necessary by The TJX Companies, Inc. (together with its subsidiaries, "TJX") for a fair statement of its Consolidated Financial Statements for the periods reported, all in conformity with GAAP consistently applied. Investments for which the Company exercises significant influence but does not have control are accounted for under the equity method. The Consolidated Financial Statements and Notes thereto should be read in conjunction with the audited Consolidated Financial Statements, including the related notes, contained in TJX's Annual Report on Form 10-K for the fiscal year ended February 1, 2020 ("fiscal 2020").
+
+These interim results are not necessarily indicative of results for the full fiscal year. TJX's business, in common with the businesses of retailers generally, is subject to seasonal influences, with higher levels of sales and income generally realized in the second half of the year. TJX is also impacted by the uncertainty surrounding the financial impact of the novel coronavirus ("COVID-19") pandemic as discussed in Note B—Impact of the COVID-19 Pandemic.

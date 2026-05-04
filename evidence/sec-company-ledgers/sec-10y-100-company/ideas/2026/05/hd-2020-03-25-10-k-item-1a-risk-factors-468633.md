@@ -1,0 +1,461 @@
+---
+id: idea-HfGGc6cz
+type: idea
+state: nascent
+title: HD 2020-03-25 10-K Item 1A Risk Factors
+created_at: '2026-05-03T20:01:08.633Z'
+date: '2026-05-03'
+created: '2026-05-03T20:01:09.022Z'
+---
+# HOME DEPOT, INC. 10-K Item 1A Risk Factors
+
+Filed: 2020-03-25
+Source: https://www.sec.gov/Archives/edgar/data/354950/000035495020000015/hd10k02022020.htm
+
+Risk Factors
+
+.
+
+8
+
+Item 1B.
+
+Unresolved Staff Comments
+
+.
+
+16
+
+Item 2.
+
+Properties
+
+.
+
+17
+
+Item 3.
+
+Legal Proceedings
+
+.
+
+18
+
+Item 4.
+
+Mine Safety Disclosures
+
+.
+
+19
+
+PART II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+.
+
+19
+
+Item 6.
+
+Selected Financial Data
+
+.
+
+20
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+.
+
+21
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+.
+
+28
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+.
+
+29
+
+Item 9.
+
+Changes in and Disagreements With Accountants on Accounting and Financial Disclosure
+
+.
+
+61
+
+Item 9A.
+
+Controls and Procedures
+
+.
+
+61
+
+Item 9B.
+
+Other Information
+
+.
+
+63
+
+PART III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+.
+
+63
+
+Item 11.
+
+Executive Compensation
+
+.
+
+64
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+.
+
+64
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+.
+
+64
+
+Item 14.
+
+Principal Accounting Fees and Services
+
+.
+
+65
+
+PART IV
+
+Item 15.
+
+Exhibits, Financial Statement Schedules
+
+.
+
+65
+
+Item 16.
+
+Form 10-K Summary
+
+.
+
+69
+
+SIGNATURES
+
+70
+
+i
+
+Table of Contents
+
+COMMONLY USED OR DEFINED TERMS
+
+Term
+
+Definition
+
+ASR
+
+Accelerated share repurchase
+
+ASU
+
+Accounting Standards Update
+
+ASU No. 2014-09
+
+Revenue from Contracts with Customers (Topic 606)
+
+BODFS
+
+Buy Online, Deliver From Store
+
+BOPIS
+
+Buy Online, Pick-up In Store
+
+BORIS
+
+Buy Online, Return In Store
+
+BOSS
+
+Buy Online, Ship to Store
+
+CDP
+
+The not-for-profit organization formerly known as the Carbon Disclosure Project
+
+CFL
+
+Compact fluorescent light
+
+Comparable sales
+
+As defined in the
+
+Results of Operations and Non-GAAP Financial Measures
+
+section of MD&A
+
+DIFM
+
+Do-It-For-Me
+
+DIY
+
+Do-It-Yourself
+
+EH&S
+
+Environmental, Health, and Safety
+
+EPA
+
+U.S. Environmental Protection Agency
+
+ESPP
+
+Employee Stock Purchase Plan
+
+Exchange Act
+
+Securities Exchange Act of 1934, as amended
+
+FASB
+
+Financial Accounting Standards Board
+
+FIRST phone
+
+Web-enabled handheld device used by associates in our stores
+
+fiscal 2014
+
+Fiscal year ended February 1, 2015 (includes 52 weeks)
+
+fiscal 2015
+
+Fiscal year ended January 31, 2016 (includes 52 weeks)
+
+fiscal 2016
+
+Fiscal year ended January 29, 2017 (includes 52 weeks)
+
+fiscal 2017
+
+Fiscal year ended January 28, 2018 (includes 52 weeks)
+
+fiscal 2018
+
+Fiscal year ended February 3, 2019 (includes 53 weeks)
+
+fiscal 2019
+
+Fiscal year ended February 2, 2020 (includes 52 weeks)
+
+fiscal 2020
+
+Fiscal year ended January 31, 2021 (includes 52 weeks)
+
+FSC
+
+Forest Stewardship Council
+
+GAAP
+
+U.S. generally accepted accounting principles
+
+Interline
+
+The legacy Interline Brands business, now operating as a part of The Home Depot Pro
+
+IRS
+
+Internal Revenue Service
+
+LIBOR
+
+London interbank offered rate
+
+MD&A
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+MRO
+
+Maintenance, repair, and operations
+
+NOPAT
+
+Net operating profit after tax
+
+NYSE
+
+New York Stock Exchange
+
+PLCC
+
+Private label credit card
+
+Pro
+
+Professional customer
+
+Restoration Plan
+
+Home Depot FutureBuilder Restoration Plan
+
+ROIC
+
+Return on invested capital
+
+SEC
+
+Securities and Exchange Commission
+
+Securities Act
+
+Securities Act of 1933, as amended
+
+SG&A
+
+Selling, general, and administrative
+
+Tax Act
+
+Tax Cuts and Jobs Act of 2017
+
+ii
+
+Table of Contents
+
+CAUTIONARY STATEMENT PURSUANT TO THE
+
+PRIVATE SECURITIES LITIGATION REFORM ACT OF 1995
+
+Certain statements contained herein, as well as in other filings we make with the SEC and other written and oral information we release, regarding our future performance constitute "forward-looking statements" as defined in the Private Securities Litigation Reform Act of 1995. Forward-looking statements may relate to, among other things, the demand for our products and services; net sales growth; comparable sales; effects of competition; implementation of store, interconnected retail, supply chain and technology initiatives; inventory and in-stock positions; state of the economy; state of the housing and home improvement markets; state of the credit markets, including mortgages, home equity loans, and consumer credit; impact of tariffs; issues related to the payment methods we accept; demand for credit offerings; management of relationships with our associates, suppliers and vendors; international trade disputes, natural disasters, public health issues (including pandemics and quarantines), and other business interruptions that could disrupt supply or delivery of, or demand for, the Company's products; continuation of share repurchase programs; net earnings performance; earnings per share; dividend targets; capital allocation and expenditures; liquidity; return on invested capital; expense leverage; stock-based compensation expense; commodity price inflation and deflation; the ability to issue debt on terms and at rates acceptable to us; the impact and expected outcome of investigations, inquiries, claims, and litigation; the effect of accounting charges; the effect of adopting certain accounting standards; the impact of the Tax Act and other regulatory changes; store openings and closures; financial outlook; and the integration of acquired companies into our organization and the ability to recognize the anticipated synergies and benefits of those acquisitions.
+
+Forward-looking statements are based on currently available information and our current assumptions, expectations and projections about future events. You should not rely on our forward-looking statements. These statements are not guarantees of future performance and are subject to future events, risks and uncertainties – many of which are beyond our control, dependent on actions of third parties, or currently unknown to us – as well as potentially inaccurate assumptions that could cause actual results to differ materially from our expectations and projections. These risks and uncertainties include, but are not limited to, those described in Item 1A, "Risk Factors," and elsewhere in this report and also as may be described from time to time in future reports we file with the SEC.
+
+Forward-looking statements speak only as of the date they are made, and we do not undertake to update these statements other than as required by law. You are advised, however, to review any further disclosures we make on related subjects in our filings with the SEC.
+
+iii
+
+Table of Contents
+
+PART I
+
+Item 1. Business.
+
+Introduction
+
+The Home Depot, Inc. is the world's largest home improvement retailer based on net sales for fiscal
+
+2019
+
+. We offer our customers a wide assortment of building materials, home improvement products, lawn and garden products, and décor products and provide a number of services, including home improvement installation services and tool and equipment rental. As of the end of fiscal
+
+2019
+
+, we had
+
+2,291
+
+The Home Depot stores located throughout the U.S. (including the Commonwealth of Puerto Rico and the territories of the U.S. Virgin Islands and Guam), Canada, and Mexico. The Home Depot stores average approximately 104,000 square feet of enclosed space, with approximately 24,000 additional square feet of outside garden area. We also maintain a network of distribution and fulfillment centers, as well as a number of e-commerce websites. When we refer to "The Home Depot," the "Company," "we," "us" or "our" in this report, we are referring to The Home Depot, Inc. and its consolidated subsidiaries.
+
+The Home Depot, Inc. is a Delaware corporation that was incorporated in 1978. Our Store Support Center (corporate office) is located at 2455 Paces Ferry Road, Atlanta, Georgia 30339. Our telephone number at that address is (770) 433-8211.
+
+Our Business
+
+Our Strategy
+
+The retail landscape has changed rapidly over the past several years, with customer expectations regarding how, when and where they want to shop constantly evolving. To meet this challenge, we have had to become more agile in our response to the changing competitive environment and customer preferences. As a result, in late 2017, we launched our transformational journey to create the One Home Depot experience, our vision of an interconnected, frictionless shopping experience that enables our customers to seamlessly blend the digital and physical worlds. We are now two years into our multi-year, approximately $11 billion accelerated investment program to create this experience. We are investing in our stores, associates, interconnected and digital experience, Pro customer experience, services business, supply chain, and product and innovation to drive value for our customers, our associates, our suppliers, and our shareholders. We are guided in our investments by a "customer-back" approach, focusing on the customer experience as we invest. This focus has driven investments aimed at providing an interconnected shopping experience, featuring curated and innovative product choices, personalized for the individual shopper's needs, which are then delivered in a fast and cost-efficient manner. To accomplish this, we are executing against five key strategies designed to drive growth in our business:
+
+•
+
+Connect associates to customer needs
+
+•
+
+Interconnected experience: connect stores to online, and online to stores
+
+•
+
+Connect products and services to customer needs
+
+•
+
+Connect product to shelf, site and customer
+
+•
+
+Innovate our business model and value chain
+
+Taken together, these strategies are helping us to leverage our competitive advantages and create the One Home Depot experience that our customers demand. To highlight our evolution and the capabilities we have developed for the benefit of our customers along this journey, we also changed our tagline in fiscal
+
+2019
+
+to "How Doers Get More Done™", with a corresponding marketing campaign designed to show our customers the ways we are making home improvement easier, faster and more convenient for them. We discuss below many of our efforts and investments in the context of our five key strategies.
+
+Connect Associates to Customer Needs
+
+As noted above, we have been guided by a focus on our customers in our development of the One Home Depot experience, and we leverage our knowledgeable and engaged associates, guided by our culture and values, to address customer needs. We serve two primary customer groups and have developed different approaches to meet their diverse needs:
+
+•
+
+DIY Customers.
+
+These customers are typically home owners who purchase products and complete their own projects and installations. Our associates assist these customers both in our stores and through online resources and other media designed to provide product and project knowledge. We also offer a variety of
+
+1
+
+Table of Contents
+
+clinics and workshops both to share this knowledge and to build an emotional connection with our DIY customers.
+
+•
+
+Professional Customers (or "Pros")
+
+. These customers are primarily professional renovators/remodelers, general contractors, handymen, property managers, building service contractors and specialty tradesmen, such as electricians, plumbers and painters. These customers build, renovate, remodel, repair and maintain residential properties, multifamily properties, hospitality properties and commercial facilities, including education facilities, healthcare facilities, government buildings and office buildings. We recognize the great value our Pro customers provide to their clients, and we strive to make the Pros' job easier and help them grow their business. We believe that investments aimed at deepening our relationships with our Pro customers are yielding increased engagement and will continue to translate into incremental spend. As part of our continued commitment to invest in Pro customer relationships and the significant market opportunity these customers represent, we have created an enhanced Pro customer experience, both online and in-store.
+
+At the end of 2018, we announced a new consolidated, go-to-market strategy for all of our Pro initiatives, including our MRO business (formerly known as Interline), under "The Home Depot Pro" banner. The Home Depot Pro serves a number of business customers, including hotels, hospitals, apartment/condominium property managers, educational institutions, government agencies, commercial property managers and housing authorities. With The Home Depot Pro, Pros have access to a comprehensive offering that includes a combination of our vast store network, a best-in-class dedicated sales force, quality and affordable products from trusted brands, an extensive delivery network, and online business solutions that comprise our Pro ecosystem. Within this Pro ecosystem, we also provide specialized programs such as an expanded MRO assortment, inventory management solutions, custom product offerings, in-store Pro desk and Pro services, and enhanced credit programs. We also provide and are continuously working to improve our delivery options for Pros, including pick up in-store, direct to job site delivery, or ship-to home, to allow us to deliver when, where and how our customers demand. Online, with our B2B website, our Pros receive a personalized experience based on their business, their needs, their industry, and their purchasing behavior.
+
+Pro customers are not one-size-fits-all, and The Home Depot Pro offers the level of value-added services that our diverse Pro customers demand. Our Pro loyalty program, Pro Xtra, provides Pros with benefits related to useful business services, exclusive product offers, and a purchase monitoring tool to enable receipt lookup and job tracking of purchases across all forms of payment. We will continue to invest in the Pro customer experience to provide the services, solutions, support, and online tools they need to grow their businesses.

@@ -1,0 +1,953 @@
+---
+id: idea-quYz3UMr
+type: idea
+state: nascent
+title: EA 2016-08-09 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:10:58.871Z'
+date: '2026-05-03'
+created: '2026-05-03T21:10:59.386Z'
+---
+# ELECTRONIC ARTS INC. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2016-08-09
+Source: https://www.sec.gov/Archives/edgar/data/712515/000071251516000138/ea6302016-q1fy1710qdoc.htm
+
+Risk Factors
+
+47
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+56
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+56
+
+Item 4.
+
+Mine Safety Disclosures
+
+56
+
+Item 6.
+
+Exhibits
+
+56
+
+Signature
+
+57
+
+Exhibit Index
+
+58
+
+2
+
+Table of Contents
+
+PART I – FINANCIAL INFORMATION
+
+Item 1.
+
+Condensed Consolidated Financial Statements (Unaudited)
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED BALANCE SHEETS
+
+(Unaudited)
+
+(In millions, except par value data)
+
+June 30, 2016
+
+March 31, 2016
+
+(a)
+
+ASSETS
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+2,042
+
+$
+
+2,493
+
+Short-term investments
+
+1,385
+
+1,341
+
+Receivables, net of allowances of $135 and $159, respectively
+
+246
+
+233
+
+Inventories
+
+26
+
+33
+
+Other current assets
+
+273
+
+254
+
+Total current assets
+
+3,972
+
+4,354
+
+Property and equipment, net
+
+435
+
+439
+
+Goodwill
+
+1,708
+
+1,710
+
+Acquisition-related intangibles, net
+
+42
+
+57
+
+Deferred income taxes, net
+
+343
+
+387
+
+Other assets
+
+105
+
+103
+
+TOTAL ASSETS
+
+$
+
+6,605
+
+$
+
+7,050
+
+LIABILITIES AND STOCKHOLDERS' EQUITY
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+44
+
+$
+
+89
+
+Accrued and other current liabilities
+
+597
+
+710
+
+0.75% convertible senior notes due 2016, net
+
+136
+
+161
+
+Deferred net revenue (online-enabled games)
+
+873
+
+1,458
+
+Total current liabilities
+
+1,650
+
+2,418
+
+Senior notes, net
+
+989
+
+989
+
+Income tax obligations
+
+88
+
+80
+
+Deferred income taxes, net
+
+2
+
+2
+
+Other liabilities
+
+160
+
+163
+
+Total liabilities
+
+2,889
+
+3,652
+
+Commitments and contingencies (See Note 11)
+
+0.75% convertible senior notes due 2016 (See Note 10)
+
+—
+
+2
+
+Stockholders' equity:
+
+Common stock, $0.01 par value. 1,000 shares authorized; 301 and 301 shares issued and outstanding, respectively
+
+3
+
+3
+
+Additional paid-in capital
+
+1,210
+
+1,349
+
+Retained earnings
+
+2,500
+
+2,060
+
+Accumulated other comprehensive income (loss)
+
+3
+
+(16
+
+)
+
+Total stockholders' equity
+
+3,716
+
+3,396
+
+TOTAL LIABILITIES AND STOCKHOLDERS' EQUITY
+
+$
+
+6,605
+
+$
+
+7,050
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+(a) Derived from audited Consolidated Financial Statements.
+
+3
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS
+
+(Unaudited)
+
+Three Months Ended
+
+June 30,
+
+(In millions, except per share data)
+
+2016
+
+2015
+
+Net revenue:
+
+Product
+
+$
+
+684
+
+$
+
+743
+
+Service and other
+
+587
+
+460
+
+Total net revenue
+
+1,271
+
+1,203
+
+Cost of revenue:
+
+Product
+
+90
+
+94
+
+Service and other
+
+89
+
+79
+
+Total cost of revenue
+
+179
+
+173
+
+Gross profit
+
+1,092
+
+1,030
+
+Operating expenses:
+
+Research and development
+
+294
+
+296
+
+Marketing and sales
+
+128
+
+123
+
+General and administrative
+
+108
+
+98
+
+Amortization of intangibles
+
+2
+
+1
+
+Total operating expenses
+
+532
+
+518
+
+Operating income
+
+560
+
+512
+
+Interest and other income (expense), net
+
+(8
+
+)
+
+(3
+
+)
+
+Income before provision for income taxes
+
+552
+
+509
+
+Provision for income taxes
+
+112
+
+67
+
+Net income
+
+$
+
+440
+
+$
+
+442
+
+Earnings per share:
+
+Basic
+
+$
+
+1.46
+
+$
+
+1.42
+
+Diluted
+
+$
+
+1.40
+
+$
+
+1.32
+
+Number of shares used in computation:
+
+Basic
+
+301
+
+311
+
+Diluted
+
+315
+
+335
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+4
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (LOSS)
+
+(Unaudited)
+
+Three Months Ended
+
+June 30,
+
+(In millions)
+
+2016
+
+2015
+
+Net income
+
+$
+
+440
+
+$
+
+442
+
+Other comprehensive income (loss), net of tax:
+
+Change in unrealized net gains and losses on available-for-sale securities
+
+2
+
+(1
+
+)
+
+Change in unrealized net gains and losses on derivative instruments
+
+28
+
+(13
+
+)
+
+Reclassification adjustment for net realized gains and losses on derivative instruments
+
+(6
+
+)
+
+(3
+
+)
+
+Foreign currency translation adjustments
+
+(5
+
+)
+
+1
+
+Total other comprehensive income (loss), net of tax
+
+19
+
+(16
+
+)
+
+Total comprehensive income
+
+$
+
+459
+
+$
+
+426
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+5
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(Unaudited)
+
+Three Months Ended
+
+June 30,
+
+(In millions)
+
+2016
+
+2015
+
+OPERATING ACTIVITIES
+
+Net income
+
+$
+
+440
+
+$
+
+442
+
+Adjustments to reconcile net income to net cash used in operating activities:
+
+Depreciation, amortization and accretion
+
+46
+
+49
+
+Stock-based compensation
+
+48
+
+45
+
+Change in assets and liabilities:
+
+Receivables, net
+
+(12
+
+)
+
+219
+
+Inventories
+
+7
+
+3
+
+Other assets
+
+(1
+
+)
+
+26
+
+Accounts payable
+
+(32
+
+)
+
+(16
+
+)
+
+Accrued and other liabilities
+
+(202
+
+)
+
+(331
+
+)
+
+Deferred income taxes, net
+
+43
+
+—
+
+Deferred net revenue (online-enabled games)
+
+(585
+
+)
+
+(508
+
+)
+
+Net cash used in operating activities
+
+(248
+
+)
+
+(71
+
+)
+
+INVESTING ACTIVITIES
+
+Capital expenditures
+
+(40
+
+)
+
+(24
+
+)
+
+Proceeds from maturities and sales of short-term investments
+
+276
+
+249
+
+Purchase of short-term investments
+
+(317
+
+)
+
+(365
+
+)
+
+Net cash used in investing activities
+
+(81
+
+)
+
+(140
+
+)
+
+FINANCING ACTIVITIES
+
+Payment of convertible notes
+
+(27
+
+)
+
+—
+
+Proceeds from issuance of common stock
+
+4
+
+45
+
+Excess tax benefit from stock-based compensation
+
+33
+
+40
+
+Repurchase and retirement of common stock
+
+(129
+
+)
+
+(132
+
+)
+
+Net cash used in financing activities
+
+(119
+
+)
+
+(47
+
+)
+
+Effect of foreign exchange on cash and cash equivalents
+
+(3
+
+)
+
+—
+
+Decrease in cash and cash equivalents
+
+(451
+
+)
+
+(258
+
+)
+
+Beginning cash and cash equivalents
+
+2,493
+
+2,068
+
+Ending cash and cash equivalents
+
+$
+
+2,042
+
+$
+
+1,810
+
+Supplemental cash flow information:
+
+Cash paid during the period for income taxes, net
+
+$
+
+10
+
+$
+
+21
+
+Cash paid during the period for interest
+
+$
+
+—
+
+$
+
+3
+
+Non-cash investing activities:
+
+Change in accrued capital expenditures
+
+$
+
+(13
+
+)
+
+$
+
+(9
+
+)
+
+See accompanying Notes to Condensed Consolidated Financial Statements (unaudited).
+
+6
+
+Table of Contents
+
+ELECTRONIC ARTS INC. AND SUBSIDIARIES
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(Unaudited)
+
+(1) DESCRIPTION OF BUSINESS AND BASIS OF PRESENTATION
+
+We are a global leader in digital interactive entertainment. We develop, market, publish and distribute games, content and services that can be played by consumers on a variety of platforms, which include consoles (such as the PlayStation from Sony, and the Xbox from Microsoft), PCs, mobile phones and tablets. Some of our games are based on our wholly-owned intellectual property (
+
+e.g.
+
+, Battlefield, Mass Effect, Need for Speed, The Sims and Plants vs. Zombies), and some of our games leverage content that we license from others (
+
+e.g.
+
+, FIFA, Madden NFL and Star Wars). We also publish and distribute games developed by third parties (
+
+e.g.,
+
+Titanfall). Our products and services may be purchased through multiple distribution channels, including physical and online retailers, platform providers such as console manufacturers, providers of free-to-download PC games, mobile carriers and directly through Origin, our own digital distribution platform.
+
+Our fiscal year is reported on a
+
+52
+
+- or
+
+53
+
+-week period that ends on the Saturday nearest March 31. Our results of operations for the fiscal year ending
+
+March 31, 2017
+
+contains
+
+52
+
+weeks and ends on April 1, 2017. Our results of operations for the fiscal year ended
+
+March 31, 2016
+
+contained
+
+53
+
+weeks and ended on April 2, 2016. Our results of operations for the
+
+three months ended June 30, 2016
+
+contained
+
+13
+
+weeks and ended on
+
+July 2, 2016
+
+. Our results of operations for the
+
+three months ended June 30, 2015
+
+contained
+
+14
+
+weeks and ended on
+
+July 4, 2015
+
+. For simplicity of disclosure, all fiscal periods are referred to as ending on a calendar month end.
+
+The Condensed Consolidated Financial Statements are unaudited and reflect all adjustments (consisting only of normal recurring accruals unless otherwise indicated) that, in the opinion of management, are necessary for a fair presentation of the results for the interim periods presented. The preparation of these Condensed Consolidated Financial Statements requires management to make estimates and assumptions that affect the amounts reported in these Condensed Consolidated Financial Statements and accompanying notes. Actual results could differ materially from those estimates. The results of operations for the current interim periods are not necessarily indicative of results to be expected for the current year or any other period.
+
+These Condensed Consolidated Financial Statements should be read in conjunction with the Consolidated Financial Statements and Notes thereto included in our Annual Report on Form 10-K for the fiscal year ended
+
+March 31, 2016
+
+, as filed with the United States Securities and Exchange Commission ("SEC") on
+
+May 27, 2016
+
+.
+
+Recently Adopted Accounting Standards
+
+In April 2015, the FASB issued ASU 2015-05,
+
+Intangibles - Goodwill and Other - Internal-Use Software
+
+(Topic 350-40). The amendments of this ASU help entities evaluate the accounting for fees paid by a customer in a cloud computing arrangement by providing guidance as to whether an arrangement includes the sale or license of software. The requirements will be effective for annual periods (and interim periods within those annual periods) beginning after December 15, 2015. The amendment may be adopted either prospectively to all arrangements entered into or materially modified after the effective date or retrospectively. We adopted ASU 2015-05 in the first quarter of fiscal year 2017. The adoption did not have a material impact on our Consolidated Financial Statements.
+
+Impact of Recently Issued Accounting Standards
+
+In March 2016, the FASB issued ASU 2016-09,
+
+Compensation - Stock Compensation
+
+(Topic 718)
+
+: Improvements to Employee Share-Based Payment Accounting
+
+, related to simplifications of employee share-based payment accounting. This pronouncement eliminates the APIC pool concept and requires that excess tax benefits and tax deficiencies be recorded in the income statement when awards are settled. The pronouncement also addresses simplifications related to statement of cash flows classification, accounting for forfeitures, and minimum statutory tax withholding requirements. The pronouncement is effective for annual periods (and for interim periods within those annual periods) beginning after December 15, 2016. We are currently evaluating the timing and the impact of this new standard on our Consolidated Financial Statements and related disclosures.
+
+In January 2016, the FASB issued ASU 2016-01,
+
+Financial Instruments
+
+(Topic 825-10), which requires that most equity investments be measured at fair value, with subsequent changes in fair value recognized in net income. The ASU also impacts financial liabilities under the fair value option and the presentation and disclosure requirements for financial instruments.
+
+The requirements will be effective for annual periods (and interim periods within those annual periods) beginning after December 15, 2017. We are currently evaluating the impact of this new standard on our Consolidated Financial Statements and related disclosures.
+
+7
+
+Table of Contents
+
+In March 2016, the FASB issued ASU 2016-04,
+
+Liabilities – Extinguishments of Liabilities
+
+(Subtopic 405-20):
+
+Recognition of Breakage for Certain Prepaid Stored-Value Products
+
+. The amendments in the ASU are designed to provide guidance and eliminate diversity in the accounting for derecognition of prepaid stored-value product liabilities. Typically, a prepaid stored-value product liability is to be derecognized when it is probable that a significant reversal of the recognized breakage amount will not subsequently occur. This is when the likelihood of the product holder exercising its remaining rights becomes remote. This estimate shall be updated at the end of each period. The amendments in this ASU are effective for annual periods (and interim periods within those annual periods) beginning after December 15, 2017. Early adoption is permitted. We are currently evaluating the timing of adoption and impact of this new standard on our Consolidated Financial Statements and related disclosures.
+
+In May 2014, the FASB issued ASU 2014-09,
+
+Revenue from Contracts with Customers
+
+(Topic 606), which requires an entity to recognize the amount of revenue to which it expects to be entitled for the transfer of promised goods or services to customers. The ASU will replace most existing revenue recognition guidance in U.S. GAAP when it becomes effective. The standard permits the use of either the retrospective or cumulative effect transition method. This new revenue standard, as amended by ASU 2015-14, is effective in the first quarter of fiscal year 2019. In March 2016, the FASB issued ASU 2016-08,
+
+Revenue from Contracts with Customers: Principal versus Agent Considerations (Reporting Revenue Gross versus Net)

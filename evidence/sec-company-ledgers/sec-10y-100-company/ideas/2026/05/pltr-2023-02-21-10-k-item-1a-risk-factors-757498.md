@@ -1,0 +1,321 @@
+---
+id: idea-E7C7RZDd
+type: idea
+state: nascent
+title: PLTR 2023-02-21 10-K Item 1A Risk Factors
+created_at: '2026-05-03T19:49:17.498Z'
+date: '2026-05-03'
+created: '2026-05-03T19:49:17.948Z'
+---
+# Palantir Technologies Inc. 10-K Item 1A Risk Factors
+
+Filed: 2023-02-21
+Source: https://www.sec.gov/Archives/edgar/data/1321655/000132165523000011/pltr-20221231.htm
+
+Risk Factors
+
+13
+
+Item 1B.
+
+Unresolved Staff Comments
+
+61
+
+Item 2.
+
+Properties
+
+61
+
+Item 3.
+
+Legal Proceedings
+
+61
+
+Item 4.
+
+Mine Safety Disclosures
+
+61
+
+PART II
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+62
+
+Item 6.
+
+[Reserved]
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+63
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+78
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+80
+
+Item 9
+
+.
+
+Changes in and Disagreements With Accountants on Accounting and Financial Disclosure
+
+117
+
+Item 9A.
+
+Controls and Procedures
+
+117
+
+Item 9B.
+
+Other Information
+
+118
+
+Item 9C.
+
+Disclosure Regarding Foreign Jurisdictions that Prevent Inspections
+
+118
+
+PART III
+
+Item 10.
+
+Directors, Executive Officers
+
+an
+
+d Corporate Governance
+
+118
+
+Item 11.
+
+Executive Compensation
+
+118
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+118
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+118
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+118
+
+PART IV
+
+Item 15.
+
+Exhibit and Financial Statement Schedules
+
+118
+
+Item 16
+
+.
+
+Form 10-K Summary
+
+120
+
+3
+
+Table of Contents
+
+SPECIAL NOTE REGARDING FORWARD-LOOKING STATEMENTS
+
+This Annual Report on Form 10-K contains forward-looking statements within the meaning of the federal securities laws, which statements involve substantial risks and uncertainties. Forward-looking statements generally relate to future events or our future financial or operating performance. In some cases, you can identify forward-looking statements because they contain words such as "may," "will," "should," "expect," "plan," "anticipate," "could," "can," "would," "intend," "target," "goal," "outlook," "project," "contemplate," "believe," "estimate," "predict," "potential," "future," or "continue" or the negative of these words or other similar terms or expressions that concern our expectations, strategy, plans, or intentions. Forward-looking statements contained in this Annual Report on Form 10-K include, but are not limited to, statements about:
+
+•
+
+our expectations regarding financial performance and liquidity, including but not limited to our expectations regarding revenue, cost of revenue, operating expenses, stock-based compensation, our ability to achieve and maintain future profitability and cash flows;
+
+•
+
+our ability to successfully execute our business and growth strategy;
+
+•
+
+the sufficiency of our cash and cash equivalents to meet our liquidity needs;
+
+•
+
+the demand for our platforms in general;
+
+•
+
+our ability to increase our number of customers and revenue generated from customers;
+
+•
+
+our expectations regarding the future contribution margin of our existing and future customers;
+
+•
+
+our expectations regarding our ability to quickly and effectively integrate our platforms for our existing and future customers;
+
+•
+
+our ability to develop new platforms, and enhancements to existing platforms, and bring them to market in a timely manner;
+
+•
+
+our market share, category positions, and market trends, including our ability to grow our business in large government and commercial organizations, including our expectations regarding the impact of Federal Acquisition Streamlining Act of 1994 ("FASA");
+
+•
+
+our ability to compete with existing and new competitors in existing and new markets and products;
+
+•
+
+our expectations regarding anticipated technology needs and developments and our ability to address those needs and developments with our platforms;
+
+•
+
+our expectations regarding litigation and legal and regulatory matters;
+
+•
+
+our expectations regarding our ability to meet existing performance obligations and maintain the operability of our products;
+
+•
+
+our expectations regarding the effects of existing and developing laws and regulations, including with respect to taxation, privacy, data protection, and cybersecurity;
+
+•
+
+our expectations regarding new and evolving markets;
+
+•
+
+our ability to develop and protect our brand;
+
+•
+
+our ability to maintain the security and availability of our platforms;
+
+•
+
+our expectations and management of future growth;
+
+•
+
+our expectations concerning relationships with third parties, including our customers, equity method investment partners, and vendors;
+
+•
+
+our expectations regarding our investments in, and enterprise agreements with, various entities, including special purpose acquisition companies and/or other privately-held or publicly-traded entities;
+
+•
+
+our ability to maintain, protect, and enhance our intellectual property;
+
+•
+
+our expectations regarding our multi-class stock and governance structure and the benefits thereof;
+
+•
+
+our expectations regarding macroeconomic conditions, including rising inflation and interest rates and monetary policy changes;
+
+•
+
+the impacts of the ongoing coronavirus ("COVID-19") pandemic and the ongoing Russia-Ukraine conflict, including on our and our customers', vendors', and partners' respective businesses and the markets in which we and our customers, vendors, and partners operate;
+
+4
+
+Table of Contents
+
+•
+
+the impacts of the volatility and fluctuations in currency exchange rates, including an increase in the strength of the U.S. dollar, on the costs of our products outside of the United States and on customer demand; and
+
+•
+
+the increased expenses associated with being a public company.
+
+We caution you that the foregoing list may not contain all of the forward-looking statements made in this Annual Report on Form 10-K.
+
+You should not rely upon forward-looking statements as predictions of future events. We have based the forward-looking statements contained in this Annual Report on Form 10-K primarily on our current expectations and projections about future events and trends that we believe may affect our business, financial condition, results of operations, and prospects. The outcome of the events described in these forward-looking statements is subject to risks, uncertainties, and other factors, including those described in the section titled
+
+"Risk Factors"
+
+and elsewhere in this Annual Report on Form 10-K. Moreover, we operate in a very competitive and rapidly changing environment. New risks and uncertainties emerge from time to time and it is not possible for us to predict all risks and uncertainties that could have an impact on any forward-looking statements contained in this Annual Report on Form 10-K. We cannot assure you that the results, events, and circumstances reflected in the forward-looking statements will be achieved or occur, and actual results, events, or circumstances could differ materially from those described in such forward-looking statements.
+
+Neither we nor any other person assumes responsibility for the accuracy and completeness of any of these forward-looking statements. Moreover, the forward-looking statements made in this Annual Report on Form 10-K relate only to events as of the date on which the statements are made. We undertake no obligation to update any forward-looking statements made in this Annual Report on Form 10-K to reflect events or circumstances after the date of this Annual Report on Form 10-K or to reflect new information or the occurrence of unanticipated events, except as required by law. We may not actually achieve the plans, intentions, or expectations disclosed in our forward-looking statements, and you should not place undue reliance on our forward-looking statements. Our forward-looking statements do not reflect the potential impact of any future acquisitions, mergers, dispositions, restructurings, joint ventures, partnerships, channel sales relationships, or investments we may make.
+
+In addition, statements that "we believe" and similar statements reflect our beliefs and opinions on the relevant subject. These statements are based upon information available to us as of the date of this Annual Report on Form 10-K, and while we believe such information forms a reasonable basis for such statements, such information may be limited or incomplete, and our statements should not be read to indicate that we have conducted an exhaustive inquiry into, or review of, all potentially available relevant information. These statements are inherently uncertain and investors are cautioned not to unduly rely upon these statements.
+
+PART I
+
+ITEM 1. BUSINESS
+
+Overview
+
+We build software that empowers organizations to effectively integrate their data, decisions, and operations at scale.
+
+We were founded in 2003 and started building software for the intelligence community in the United States to assist in counterterrorism investigations and operations. We later began working with commercial enterprises, who often faced fundamentally similar challenges in working with data.
+
+We have built three principal software platforms, Palantir Gotham ("Gotham"), Palantir Foundry ("Foundry"), and Palantir Apollo ("Apollo"). Gotham and Foundry enable institutions to transform massive amounts of information into an integrated data asset that reflects their operations. For over a decade, Gotham has surfaced insights for global defense agencies, the intelligence community, disaster relief organizations and beyond. And Foundry is becoming a central operating system not only for individual institutions but also for entire industries. Apollo is a cloud-agnostic, single control layer that coordinates ongoing delivery of new features, security updates, and platform configurations, helping to ensure the continuous operation of critical systems and allowing our customers to run their software in virtually any environment.
+
+Recent crises and systemic shocks, such as the ongoing COVID-19 pandemic and the ongoing Russia-Ukraine conflict, have made clear to many of our customers that accommodating the extended timelines ordinarily required to realize results from implementing new software solutions is not a viable option. As a result, customers are increasingly adopting our software, which can be ready in days, over internal software development efforts, which may take months or years. See further discussion
+
+5
+
+Table of Contents
+
+in the section titled
+
+"Management's Discussion and Analysis of Financial Condition and Results of Operations—Macroeconomic Trends
+
+.
+
+"
+
+Our Platforms
+
+We have built three principal software platforms: Gotham, Foundry, and Apollo. Our software platforms provide the critical infrastructure needed to integrate our customers' data and operations and run their software in virtually any environment.
+
+The vertically integrated nature of Gotham and Foundry allows users of varying technical abilities to collaborate effectively in our platforms. Data engineers can integrate new data sources, analysts can clean and transform data, data scientists can write models, business users can conduct daily workflows, and senior leaders can make critical decisions. The two platforms can either be used separately or bundled together as a single ecosystem.
+
+Data, analyses, decisions, and the metadata around each are secured with fine-grained access controls that propagate from source data to shared analyses. Each platform is comprised of user-facing applications that are targeted to the specific industries and sectors in which they are used.
+
+Despite their differences, Gotham and Foundry both serve as central operating systems for our customers. Where they vary in specific functionality, they align in approach. Both platforms, backed by Apollo, can be deployed in almost any environment.
+
+Similarly, customers can now use Apollo to enable continuous deployment, configuration management, and central software operations management across almost any environment for their own software products.
+
+Gotham
+
+Gotham enables users to identify patterns hidden deep within datasets, ranging from signals intelligence sources to reports from confidential informants. It also facilitates the hand-off between analysts and operational users, helping operators plan and execute real-world responses to threats that have been identified within the platform. Gotham is now used broadly across government functions.
+
+We also offer Gotham to our commercial customers, including to those in the financial services industry in connection with fraud investigations.

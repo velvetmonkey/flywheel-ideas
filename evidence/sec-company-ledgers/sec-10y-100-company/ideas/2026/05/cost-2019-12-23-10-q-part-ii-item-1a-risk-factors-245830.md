@@ -1,0 +1,1563 @@
+---
+id: idea-HwMxinxv
+type: idea
+state: nascent
+title: COST 2019-12-23 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:20:45.830Z'
+date: '2026-05-03'
+created: '2026-05-03T21:20:46.213Z'
+---
+# COSTCO WHOLESALE CORP /NEW 10-Q Part II Item 1A Risk Factors
+
+Filed: 2019-12-23
+Source: https://www.sec.gov/Archives/edgar/data/909832/000090983219000033/cost10q112419.htm
+
+Risk Factors
+
+29
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+29
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+29
+
+Item 4.
+
+Mine Safety Disclosures
+
+29
+
+Item 5.
+
+Other Information
+
+29
+
+Item 6.
+
+Exhibits
+
+30
+
+Signatures
+
+31
+
+2
+
+Table of Contents
+
+PART I—FINANCIAL INFORMATION
+
+Item 1—Financial Statements
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF INCOME
+
+(amounts in millions, except per share data) (unaudited)
+
+12 Weeks Ended
+
+November 24,
+
+2019
+
+November 25,
+
+2018
+
+REVENUE
+
+Net sales
+
+$
+
+36,236
+
+$
+
+34,311
+
+Membership fees
+
+804
+
+758
+
+Total revenue
+
+37,040
+
+35,069
+
+OPERATING EXPENSES
+
+Merchandise costs
+
+32,233
+
+30,623
+
+Selling, general and administrative
+
+3,732
+
+3,475
+
+Preopening expenses
+
+14
+
+22
+
+Operating income
+
+1,061
+
+949
+
+OTHER INCOME (EXPENSE)
+
+Interest expense
+
+(
+
+38
+
+)
+
+(
+
+36
+
+)
+
+Interest income and other, net
+
+35
+
+22
+
+INCOME BEFORE INCOME TAXES
+
+1,058
+
+935
+
+Provision for income taxes
+
+202
+
+158
+
+Net income including noncontrolling interests
+
+856
+
+777
+
+Net income attributable to noncontrolling interests
+
+(
+
+12
+
+)
+
+(
+
+10
+
+)
+
+NET INCOME ATTRIBUTABLE TO COSTCO
+
+$
+
+844
+
+$
+
+767
+
+NET INCOME PER COMMON SHARE ATTRIBUTABLE TO COSTCO:
+
+Basic
+
+$
+
+1.91
+
+$
+
+1.75
+
+Diluted
+
+$
+
+1.90
+
+$
+
+1.73
+
+Shares used in calculation (000s):
+
+Basic
+
+441,818
+
+439,157
+
+Diluted
+
+443,680
+
+442,749
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(amounts in millions) (unaudited)
+
+12 Weeks Ended
+
+November 24,
+
+2019
+
+November 25,
+
+2018
+
+NET INCOME INCLUDING NONCONTROLLING INTERESTS
+
+$
+
+856
+
+$
+
+777
+
+Foreign-currency translation adjustment and other, net
+
+125
+
+(
+
+134
+
+)
+
+Comprehensive income
+
+981
+
+643
+
+Less: Comprehensive income attributable to noncontrolling interests
+
+22
+
+8
+
+COMPREHENSIVE INCOME ATTRIBUTABLE TO COSTCO
+
+$
+
+959
+
+$
+
+635
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED BALANCE SHEETS
+
+(amounts in millions, except par value and share data) (unaudited)
+
+November 24,
+
+2019
+
+September 1,
+
+2019
+
+ASSETS
+
+CURRENT ASSETS
+
+Cash and cash equivalents
+
+$
+
+9,027
+
+$
+
+8,384
+
+Short-term investments
+
+993
+
+1,060
+
+Receivables, net
+
+1,711
+
+1,535
+
+Merchandise inventories
+
+13,818
+
+11,395
+
+Other current assets
+
+1,094
+
+1,111
+
+Total current assets
+
+26,643
+
+23,485
+
+PROPERTY AND EQUIPMENT
+
+Land
+
+6,533
+
+6,417
+
+Buildings and improvements
+
+17,732
+
+17,136
+
+Equipment and fixtures
+
+8,243
+
+7,801
+
+Construction in progress
+
+803
+
+1,272
+
+Accumulated depreciation and amortization
+
+(
+
+12,074
+
+)
+
+(
+
+11,736
+
+)
+
+Net property and equipment
+
+21,237
+
+20,890
+
+OTHER ASSETS
+
+Operating lease right-of-use assets
+
+2,597
+
+0
+
+Other long-term assets
+
+954
+
+1,025
+
+TOTAL ASSETS
+
+$
+
+51,431
+
+$
+
+45,400
+
+LIABILITIES AND EQUITY
+
+CURRENT LIABILITIES
+
+Accounts payable
+
+$
+
+14,440
+
+$
+
+11,679
+
+Accrued salaries and benefits
+
+3,159
+
+3,176
+
+Accrued member rewards
+
+1,193
+
+1,180
+
+Deferred membership fees
+
+1,817
+
+1,711
+
+Current portion of long-term debt
+
+1,700
+
+1,699
+
+Other current liabilities
+
+3,956
+
+3,792
+
+Total current liabilities
+
+26,265
+
+23,237
+
+OTHER LIABILITIES
+
+Long-term debt, excluding current portion
+
+5,107
+
+5,124
+
+Long-term operating lease liabilities
+
+2,442
+
+0
+
+Other long-term liabilities
+
+1,393
+
+1,455
+
+TOTAL LIABILITIES
+
+35,207
+
+29,816
+
+COMMITMENTS AND CONTINGENCIES
+
+EQUITY
+
+Preferred stock $0.01 par value; 100,000,000 shares authorized; no shares issued and outstanding
+
+0
+
+0
+
+Common stock $0.01 par value; 900,000,000 shares authorized; 441,778,000 and 439,625,000 shares issued and outstanding
+
+4
+
+4
+
+Additional paid-in capital
+
+6,391
+
+6,417
+
+Accumulated other comprehensive loss
+
+(
+
+1,321
+
+)
+
+(
+
+1,436
+
+)
+
+Retained earnings
+
+10,787
+
+10,258
+
+Total Costco stockholders' equity
+
+15,861
+
+15,243
+
+Noncontrolling interests
+
+363
+
+341
+
+TOTAL EQUITY
+
+16,224
+
+15,584
+
+TOTAL LIABILITIES AND EQUITY
+
+$
+
+51,431
+
+$
+
+45,400
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+5
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF EQUITY
+
+(amounts in millions) (unaudited)
+
+12 Weeks Ended November 24, 2019
+
+Common Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (Loss)
+
+Retained
+
+Earnings
+
+Total Costco
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares (000s)
+
+Amount
+
+BALANCE AT SEPTEMBER 1, 2019
+
+439,625
+
+$
+
+4
+
+$
+
+6,417
+
+$
+
+(
+
+1,436
+
+)
+
+$
+
+10,258
+
+$
+
+15,243
+
+$
+
+341
+
+$
+
+15,584
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+844
+
+844
+
+12
+
+856
+
+Foreign-currency translation adjustment and other, net
+
+—
+
+—
+
+—
+
+115
+
+—
+
+115
+
+10
+
+125
+
+Stock-based compensation
+
+—
+
+—
+
+302
+
+—
+
+—
+
+302
+
+—
+
+302
+
+Release of vested restricted stock units (RSUs), including tax effects
+
+2,253
+
+—
+
+(
+
+326
+
+)
+
+—
+
+—
+
+(
+
+326
+
+)
+
+—
+
+(
+
+326
+
+)
+
+Repurchases of common stock
+
+(
+
+100
+
+)
+
+—
+
+(
+
+2
+
+)
+
+—
+
+(
+
+28
+
+)
+
+(
+
+30
+
+)
+
+—
+
+(
+
+30
+
+)
+
+Cash dividend declared
+
+—
+
+—
+
+—
+
+—
+
+(
+
+287
+
+)
+
+(
+
+287
+
+)
+
+—
+
+(
+
+287
+
+)
+
+BALANCE AT NOVEMBER 24, 2019
+
+441,778
+
+$
+
+4
+
+$
+
+6,391
+
+$
+
+(
+
+1,321
+
+)
+
+$
+
+10,787
+
+$
+
+15,861
+
+$
+
+363
+
+$
+
+16,224
+
+12 Weeks Ended November 25, 2018
+
+Common Stock
+
+Additional
+
+Paid-in
+
+Capital
+
+Accumulated
+
+Other
+
+Comprehensive
+
+Income (Loss)
+
+Retained
+
+Earnings
+
+Total Costco
+
+Stockholders'
+
+Equity
+
+Noncontrolling
+
+Interests
+
+Total
+
+Equity
+
+Shares (000s)
+
+Amount
+
+BALANCE AT SEPTEMBER 2, 2018
+
+438,189
+
+$
+
+4
+
+$
+
+6,107
+
+$
+
+(
+
+1,199
+
+)
+
+$
+
+7,887
+
+$
+
+12,799
+
+$
+
+304
+
+$
+
+13,103
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+767
+
+767
+
+10
+
+777
+
+Foreign-currency translation adjustment and other, net
+
+—
+
+—
+
+—
+
+(
+
+132
+
+)
+
+—
+
+(
+
+132
+
+)
+
+(
+
+2
+
+)
+
+(
+
+134
+
+)
+
+Stock-based compensation
+
+—
+
+—
+
+272
+
+—
+
+—
+
+272
+
+—
+
+272
+
+Release of vested RSUs, including tax effects
+
+2,507
+
+—
+
+(
+
+270
+
+)
+
+—
+
+—
+
+(
+
+270
+
+)
+
+—
+
+(
+
+270
+
+)
+
+Repurchases of common stock
+
+(
+
+150
+
+)
+
+—
+
+(
+
+2
+
+)
+
+—
+
+(
+
+32
+
+)
+
+(
+
+34
+
+)
+
+—
+
+(
+
+34
+
+)
+
+Cash dividend declared and other
+
+—
+
+—
+
+—
+
+—
+
+(
+
+235
+
+)
+
+(
+
+235
+
+)
+
+—
+
+(
+
+235
+
+)
+
+BALANCE AT NOVEMBER 25, 2018
+
+440,546
+
+$
+
+4
+
+$
+
+6,107
+
+$
+
+(
+
+1,331
+
+)
+
+$
+
+8,387
+
+$
+
+13,167
+
+$
+
+312
+
+$
+
+13,479
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+6
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(amounts in millions) (unaudited)
+
+12 Weeks Ended
+
+November 24,
+
+2019
+
+November 25,
+
+2018
+
+CASH FLOWS FROM OPERATING ACTIVITIES
+
+Net income including noncontrolling interests
+
+$
+
+856
+
+$
+
+777
+
+Adjustments to reconcile net income including noncontrolling interests to net cash provided by operating activities:
+
+Depreciation and amortization
+
+369
+
+331
+
+Non-cash lease expense
+
+39
+
+0
+
+Stock-based compensation
+
+301
+
+270
+
+Other non-cash operating activities, net
+
+16
+
+(
+
+4
+
+)
+
+Deferred income taxes
+
+5
+
+(
+
+31
+
+)
+
+Changes in operating assets and liabilities:
+
+Merchandise inventories
+
+(
+
+2,384
+
+)
+
+(
+
+1,324
+
+)
+
+Accounts payable
+
+2,664
+
+1,822
+
+Other operating assets and liabilities, net
+
+236
+
+336
+
+Net cash provided by operating activities
+
+2,102
+
+2,177
+
+CASH FLOWS FROM INVESTING ACTIVITIES
+
+Purchases of short-term investments
+
+(
+
+321
+
+)
+
+(
+
+316
+
+)
+
+Maturities and sales of short-term investments
+
+397
+
+340
+
+Additions to property and equipment
+
+(
+
+715
+
+)
+
+(
+
+730
+
+)
+
+Other investing activities, net
+
+9
+
+(
+
+31
+
+)
+
+Net cash used in investing activities
+
+(
+
+630
+
+)
+
+(
+
+737
+
+)
+
+CASH FLOWS FROM FINANCING ACTIVITIES
+
+Change in bank payments outstanding
+
+122
+
+193
+
+Repayments of long-term debt
+
+0
+
+(
+
+89
+
+)
+
+Tax withholdings on stock-based awards
+
+(
+
+326
+
+)
+
+(
+
+270
+
+)
+
+Repurchases of common stock
+
+(
+
+30
+
+)
+
+(
+
+32
+
+)
+
+Cash dividend payments
+
+(
+
+573
+
+)
+
+(
+
+501
+
+)
+
+Other financing activities, net
+
+(
+
+29
+
+)
+
+(
+
+1
+
+)
+
+Net cash used in financing activities
+
+(
+
+836
+
+)
+
+(
+
+700
+
+)
+
+EFFECT OF EXCHANGE RATE CHANGES ON CASH AND CASH EQUIVALENTS
+
+7
+
+(
+
+17
+
+)
+
+Net change in cash and cash equivalents
+
+643
+
+723
+
+CASH AND CASH EQUIVALENTS BEGINNING OF YEAR
+
+8,384
+
+6,055
+
+CASH AND CASH EQUIVALENTS END OF PERIOD
+
+$
+
+9,027
+
+$
+
+6,778
+
+SUPPLEMENTAL DISCLOSURE OF CASH FLOW INFORMATION:
+
+Cash paid during the first 12 weeks of the year for:
+
+Interest
+
+$
+
+50
+
+$
+
+49
+
+Income taxes, net
+
+$
+
+97
+
+$
+
+133
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+7
+
+Table of Contents
+
+COSTCO WHOLESALE CORPORATION
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(amounts in millions, except share, per share, and warehouse count data)
+
+(unaudited)
+
+Note 1—Summary of Significant Accounting Policies
+
+Description of Business
+
+Costco Wholesale Corporation (Costco or the Company), a Washington corporation, and its subsidiaries operate membership warehouses based on the concept that offering members low prices on a limited selection of nationally branded and private-label products in a wide range of merchandise categories will produce high sales volumes and rapid inventory turnover. For the period ended
+
+November 24, 2019
+
+, Costco operated
+
+785
+
+warehouses worldwide:
+
+546
+
+in the United States (U.S.) located in
+
+44
+
+states, Washington, D.C., and Puerto Rico,
+
+100
+
+in Canada,
+
+39
+
+in Mexico,
+
+29
+
+in the United Kingdom (U.K.),
+
+26
+
+in Japan,
+
+16
+
+in Korea,
+
+13
+
+in Taiwan,
+
+11
+
+in Australia,
+
+two
+
+in Spain, and
+
+one
+
+each in Iceland, France and China. The Company operates e-commerce websites in the U.S., Canada, Mexico, U.K., Korea, Taiwan, and Japan.
+
+Basis of Presentation
+
+The condensed consolidated financial statements include the accounts of Costco, its wholly owned subsidiaries, and subsidiaries in which it has a controlling interest. The Company reports noncontrolling interests in consolidated entities as a component of equity separate from the Company's equity. All material intercompany transactions between and among the Company and its consolidated subsidiaries have been eliminated in consolidation. The Company's net income excludes income attributable to the noncontrolling interest in Taiwan. Unless otherwise noted, references to net income relate to net income attributable to Costco.
+
+These unaudited condensed consolidated financial statements have been prepared in accordance with the instructions to Form 10-Q for interim financial reporting pursuant to the rules and regulations of the Securities and Exchange Commission (SEC). While these statements reflect all normal recurring adjustments that are, in the opinion of management, necessary for fair presentation of the results of the interim period, they do not include all of the information and footnotes required by U.S. generally accepted accounting principles (U.S. GAAP) for complete financial statements. Therefore, the interim condensed consolidated financial statements should be read in conjunction with the consolidated financial statements and notes included in the Company's Annual Report filed on Form 10-K for the fiscal year ended
+
+September 1, 2019
+
+.
+
+Fiscal Year End
+
+The Company operates on a 52/53 week fiscal year basis, with the fiscal year ending on the Sunday closest to August 31. Fiscal 2020 is a 52-week year ending on
+
+August 30, 2020
+
+. References to the
+
+first
+
+quarter of
+
+2020
+
+and
+
+2019
+
+relate to the 12-week fiscal quarters ended
+
+November 24, 2019
+
+, and
+
+November 25, 2018
+
+, respectively.
+
+Use of Estimates
+
+The preparation of financial statements in conformity with U.S. GAAP requires management to make estimates and assumptions that affect the reported amounts of assets and liabilities and the disclosure of contingent assets and liabilities at the date of the financial statements and the reported amounts of revenues and expenses during the reporting period. Actual results could differ from those estimates and assumptions.
+
+8
+
+Table of Contents
+
+Leases
+
+The Company leases land and/or buildings at warehouses and certain other office and distribution facilities. Leases generally contain one or more of the following options, which the Company can exercise at the end of the initial term: (a) renew the lease for a defined number of years at the then-fair market rental rate or rate stipulated in the lease agreement; (b) purchase the property at the then-fair market value; or (c) a right of first refusal in the event of a third-party offer.
+
+Some leases include free rent periods and step-rent provisions, which are recognized on a straight-line basis over the original term of the lease and any extension options that the Company more likely than not expects to exercise from the date the Company has control of the property. Certain leases provide for periodic rent increases based on price indices or the greater of minimum guaranteed amounts or sales volume. Our leases do not contain any material residual value guarantees or material restrictive covenants.
+
+The Company determines at inception of a contract whether the contract is or contains a lease. The Company initially records right-of-use (ROU) assets and lease obligations for its finance and operating leases based on the discounted future minimum lease payments over the term. As the rate implicit in the Company's leases is not easily determinable, the present value of the sum of the lease payments is calculated by using the Company's incremental borrowing rate. The rate is determined using a portfolio approach based on the rate of interest the Company would pay to borrow an amount equal to the lease payments on a collateralized basis over a similar term. The Company uses quoted interest rates from financial institutions to derive the incremental borrowing rate. The lease term is defined as the noncancelable period of the lease plus any options to extend when it is reasonably certain that the Company will exercise the option.

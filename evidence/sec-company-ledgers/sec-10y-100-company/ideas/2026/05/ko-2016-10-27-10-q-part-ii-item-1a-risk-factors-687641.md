@@ -1,0 +1,1107 @@
+---
+id: idea-FPypECrK
+type: idea
+state: nascent
+title: KO 2016-10-27 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T21:28:07.641Z'
+date: '2026-05-03'
+created: '2026-05-03T21:28:08.020Z'
+---
+# COCA COLA CO 10-Q Part II Item 1A Risk Factors
+
+Filed: 2016-10-27
+Source: https://www.sec.gov/Archives/edgar/data/21344/000002134416000076/a2016093010-q.htm
+
+Risk Factors
+
+67
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+67
+
+Item 6.
+
+Exhibits
+
+67
+
+FORWARD-LOOKING STATEMENTS
+
+This report contains information that may constitute "forward-looking statements." Generally, the words "believe," "expect," "intend," "estimate," "anticipate," "project," "will" and similar expressions identify forward-looking statements, which generally are not historical in nature. However, the absence of these words or similar expressions does not mean that a statement is not forward-looking. All statements that address operating performance, events or developments that we expect or anticipate will occur in the future — including statements relating to volume growth, share of sales and earnings per share growth, and statements expressing general views about future operating results — are forward-looking statements. Management believes that these forward-looking statements are reasonable as and when made. However, caution should be taken not to place undue reliance on any such forward-looking statements because such statements speak only as of the date when made. Our Company undertakes no obligation to publicly update or revise any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by law. In addition, forward-looking statements are subject to certain risks and uncertainties that could cause actual results to differ materially from our Company's historical experience and our present expectations or projections. These risks and uncertainties include, but are not limited to, those described in Part II, "Item 1A. Risk Factors" and elsewhere in this report and in our Annual Report on Form 10-K for the year ended
+
+December 31, 2015
+
+, and those described from time to time in our future reports filed with the Securities and Exchange Commission.
+
+1
+
+Part I. Financial Information
+
+Item 1. Financial Statements (Unaudited)
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF INCOME
+
+(UNAUDITED)
+
+(In millions except per share data)
+
+Three Months Ended
+
+Nine Months Ended
+
+September 30,
+
+2016
+
+October 2,
+
+2015
+
+September 30,
+
+2016
+
+October 2,
+
+2015
+
+NET OPERATING REVENUES
+
+$
+
+10,633
+
+$
+
+11,427
+
+$
+
+32,454
+
+$
+
+34,294
+
+Cost of goods sold
+
+4,131
+
+4,577
+
+12,671
+
+13,428
+
+GROSS PROFIT
+
+6,502
+
+6,850
+
+19,783
+
+20,866
+
+Selling, general and administrative expenses
+
+4,009
+
+4,207
+
+11,682
+
+12,490
+
+Other operating charges
+
+222
+
+264
+
+830
+
+1,166
+
+OPERATING INCOME
+
+2,271
+
+2,379
+
+7,271
+
+7,210
+
+Interest income
+
+164
+
+155
+
+472
+
+459
+
+Interest expense
+
+182
+
+138
+
+485
+
+713
+
+Equity income (loss) — net
+
+281
+
+200
+
+678
+
+402
+
+Other income (loss) — net
+
+(1,106
+
+)
+
+(871
+
+)
+
+(315
+
+)
+
+709
+
+INCOME BEFORE INCOME TAXES
+
+1,428
+
+1,725
+
+7,621
+
+8,067
+
+Income taxes
+
+378
+
+272
+
+1,618
+
+1,937
+
+CONSOLIDATED NET INCOME
+
+1,050
+
+1,453
+
+6,003
+
+6,130
+
+Less: Net income (loss) attributable to noncontrolling interests
+
+4
+
+4
+
+26
+
+16
+
+NET INCOME ATTRIBUTABLE TO SHAREOWNERS OF
+
+THE COCA-COLA COMPANY
+
+$
+
+1,046
+
+$
+
+1,449
+
+$
+
+5,977
+
+$
+
+6,114
+
+BASIC NET INCOME PER SHARE
+
+1
+
+$
+
+0.24
+
+$
+
+0.33
+
+$
+
+1.38
+
+$
+
+1.40
+
+DILUTED NET INCOME PER SHARE
+
+1
+
+$
+
+0.24
+
+$
+
+0.33
+
+$
+
+1.37
+
+$
+
+1.39
+
+DIVIDENDS PER SHARE
+
+$
+
+0.35
+
+$
+
+0.33
+
+$
+
+1.05
+
+$
+
+0.99
+
+AVERAGE SHARES OUTSTANDING
+
+4,315
+
+4,349
+
+4,322
+
+4,357
+
+Effect of dilutive securities
+
+49
+
+50
+
+52
+
+53
+
+AVERAGE SHARES OUTSTANDING ASSUMING DILUTION
+
+4,364
+
+4,399
+
+4,374
+
+4,410
+
+1
+
+Calculated based on net income attributable to shareowners of The Coca-Cola Company.
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+2
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(UNAUDITED)
+
+(In millions)
+
+Three Months Ended
+
+Nine Months Ended
+
+September 30,
+
+2016
+
+October 2,
+
+2015
+
+September 30,
+
+2016
+
+October 2,
+
+2015
+
+CONSOLIDATED NET INCOME
+
+$
+
+1,050
+
+$
+
+1,453
+
+$
+
+6,003
+
+$
+
+6,130
+
+Other comprehensive income:
+
+Net foreign currency translation adjustment
+
+86
+
+(1,266
+
+)
+
+415
+
+(3,544
+
+)
+
+Net gain (loss) on derivatives
+
+(101
+
+)
+
+(236
+
+)
+
+(666
+
+)
+
+65
+
+Net unrealized gain (loss) on available-for-sale securities
+
+(82
+
+)
+
+(608
+
+)
+
+79
+
+(1,701
+
+)
+
+Net change in pension and other benefit liabilities
+
+39
+
+24
+
+128
+
+129
+
+TOTAL COMPREHENSIVE INCOME (LOSS)
+
+992
+
+(633
+
+)
+
+5,959
+
+1,079
+
+Less: Comprehensive income (loss) attributable to noncontrolling interests
+
+2
+
+(5
+
+)
+
+17
+
+1
+
+TOTAL COMPREHENSIVE INCOME (LOSS) ATTRIBUTABLE TO SHAREOWNERS OF THE COCA-COLA COMPANY
+
+$
+
+990
+
+$
+
+(628
+
+)
+
+$
+
+5,942
+
+$
+
+1,078
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+3
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED BALANCE SHEETS
+
+(UNAUDITED)
+
+(In millions except par value)
+
+September 30,
+
+2016
+
+December 31,
+
+2015
+
+ASSETS
+
+CURRENT ASSETS
+
+Cash and cash equivalents
+
+$
+
+11,147
+
+$
+
+7,309
+
+Short-term investments
+
+11,265
+
+8,322
+
+TOTAL CASH, CASH EQUIVALENTS AND SHORT-TERM INVESTMENTS
+
+22,412
+
+15,631
+
+Marketable securities
+
+3,157
+
+4,269
+
+Trade accounts receivable, less allowances of $472 and $352, respectively
+
+4,082
+
+3,941
+
+Inventories
+
+2,751
+
+2,902
+
+Prepaid expenses and other assets
+
+3,091
+
+2,752
+
+Assets held for sale
+
+2,463
+
+3,900
+
+TOTAL CURRENT ASSETS
+
+37,956
+
+33,395
+
+EQUITY METHOD INVESTMENTS
+
+16,917
+
+12,318
+
+OTHER INVESTMENTS
+
+1,110
+
+3,470
+
+OTHER ASSETS
+
+4,526
+
+4,110
+
+PROPERTY, PLANT AND EQUIPMENT, less accumulated depreciation of
+
+$10,122 and $9,783, respectively
+
+11,172
+
+12,571
+
+TRADEMARKS WITH INDEFINITE LIVES
+
+6,183
+
+5,989
+
+BOTTLERS' FRANCHISE RIGHTS WITH INDEFINITE LIVES
+
+4,438
+
+6,000
+
+GOODWILL
+
+10,865
+
+11,289
+
+OTHER INTANGIBLE ASSETS
+
+760
+
+854
+
+TOTAL ASSETS
+
+$
+
+93,927
+
+$
+
+89,996
+
+LIABILITIES AND EQUITY
+
+CURRENT LIABILITIES
+
+Accounts payable and accrued expenses
+
+$
+
+11,153
+
+$
+
+9,660
+
+Loans and notes payable
+
+12,088
+
+13,129
+
+Current maturities of long-term debt
+
+3,473
+
+2,676
+
+Accrued income taxes
+
+396
+
+331
+
+Liabilities held for sale
+
+682
+
+1,133
+
+TOTAL CURRENT LIABILITIES
+
+27,792
+
+26,929
+
+LONG-TERM DEBT
+
+31,663
+
+28,311
+
+OTHER LIABILITIES
+
+3,984
+
+4,301
+
+DEFERRED INCOME TAXES
+
+4,243
+
+4,691
+
+THE COCA-COLA COMPANY SHAREOWNERS' EQUITY
+
+Common stock, $0.25 par value; Authorized — 11,200 shares;
+
+Issued — 7,040 and 7,040 shares, respectively
+
+1,760
+
+1,760
+
+Capital surplus
+
+14,882
+
+14,016
+
+Reinvested earnings
+
+66,457
+
+65,018
+
+Accumulated other comprehensive income (loss)
+
+(10,209
+
+)
+
+(10,174
+
+)
+
+Treasury stock, at cost — 2,727 and 2,716 shares, respectively
+
+(46,814
+
+)
+
+(45,066
+
+)
+
+EQUITY ATTRIBUTABLE TO SHAREOWNERS OF THE COCA-COLA COMPANY
+
+26,076
+
+25,554
+
+EQUITY ATTRIBUTABLE TO NONCONTROLLING INTERESTS
+
+169
+
+210
+
+TOTAL EQUITY
+
+26,245
+
+25,764
+
+TOTAL LIABILITIES AND EQUITY
+
+$
+
+93,927
+
+$
+
+89,996
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+4
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(UNAUDITED)
+
+(In millions)
+
+Nine Months Ended
+
+September 30,
+
+2016
+
+October 2,
+
+2015
+
+OPERATING ACTIVITIES
+
+Consolidated net income
+
+$
+
+6,003
+
+$
+
+6,130
+
+Depreciation and amortization
+
+1,323
+
+1,443
+
+Stock-based compensation expense
+
+191
+
+171
+
+Deferred income taxes
+
+(98
+
+)
+
+212
+
+Equity (income) loss — net of dividends
+
+(417
+
+)
+
+(150
+
+)
+
+Foreign currency adjustments
+
+193
+
+(76
+
+)
+
+Significant (gains) losses on sales of assets — net
+
+364
+
+(550
+
+)
+
+Other operating charges
+
+277
+
+697
+
+Other items
+
+(205
+
+)
+
+859
+
+Net change in operating assets and liabilities
+
+(908
+
+)
+
+(346
+
+)
+
+Net cash provided by operating activities
+
+6,723
+
+8,390
+
+INVESTING ACTIVITIES
+
+Purchases of investments
+
+(12,733
+
+)
+
+(12,006
+
+)
+
+Proceeds from disposals of investments
+
+13,210
+
+10,403
+
+Acquisitions of businesses, equity method investments and nonmarketable securities
+
+(767
+
+)
+
+(2,489
+
+)
+
+Proceeds from disposals of businesses, equity method investments and nonmarketable securities
+
+745
+
+416
+
+Purchases of property, plant and equipment
+
+(1,561
+
+)
+
+(1,670
+
+)
+
+Proceeds from disposals of property, plant and equipment
+
+92
+
+50
+
+Other investing activities
+
+(319
+
+)
+
+(117
+
+)
+
+Net cash provided by (used in) investing activities
+
+(1,333
+
+)
+
+(5,413
+
+)
+
+FINANCING ACTIVITIES
+
+Issuances of debt
+
+22,667
+
+34,298
+
+Payments of debt
+
+(20,406
+
+)
+
+(30,159
+
+)
+
+Issuances of stock
+
+1,295
+
+732
+
+Purchases of stock for treasury
+
+(2,509
+
+)
+
+(1,966
+
+)
+
+Dividends
+
+(3,028
+
+)
+
+(4,313
+
+)
+
+Other financing activities
+
+198
+
+230
+
+Net cash provided by (used in) financing activities
+
+(1,783
+
+)
+
+(1,178
+
+)
+
+EFFECT OF EXCHANGE RATE CHANGES ON CASH AND CASH EQUIVALENTS
+
+231
+
+(774
+
+)
+
+CASH AND CASH EQUIVALENTS
+
+Net increase (decrease) during the period
+
+3,838
+
+1,025
+
+Balance at beginning of period
+
+7,309
+
+8,958
+
+Balance at end of period
+
+$
+
+11,147
+
+$
+
+9,983
+
+Refer to Notes to Condensed Consolidated Financial Statements.
+
+5
+
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+
+NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS
+
+(UNAUDITED)
+
+NOTE 1
+
+:
+
+SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES
+
+Basis of Presentation
+
+The accompanying unaudited Condensed Consolidated Financial Statements have been prepared in accordance with accounting principles generally accepted in the United States ("U.S. GAAP") for interim financial information and with the instructions to Form 10-Q and Rule 10-01 of Regulation S-X. They do not include all information and notes required by generally accepted accounting principles for complete financial statements. However, except as disclosed herein, there has been no material change in the information disclosed in the Notes to Consolidated Financial Statements included in the Annual Report on Form 10-K of The Coca-Cola Company for the year ended
+
+December 31, 2015
+
+.
+
+When used in these notes, the terms "The Coca-Cola Company," "Company," "we," "us" or "our" mean The Coca-Cola Company and all entities included in our condensed consolidated financial statements. In the opinion of management, all adjustments (including normal recurring accruals) considered necessary for a fair presentation have been included. Operating results for the
+
+three and nine months ended
+
+September 30, 2016
+
+are not necessarily indicative of the results that may be expected for the year ending
+
+December 31, 2016
+
+. Sales of our nonalcoholic ready-to-drink beverages are somewhat seasonal, with the second and third calendar quarters accounting for the highest sales volumes. The volume of sales in the beverage business may be affected by weather conditions.
+
+Each of our interim reporting periods, other than the fourth interim reporting period, ends on the Friday closest to the last day of the corresponding quarterly calendar period. The
+
+third quarter
+
+of
+
+2016
+
+and
+
+2015
+
+ended on
+
+September 30, 2016
+
+and
+
+October 2, 2015
+
+, respectively. Our fourth interim reporting period and our fiscal year end on December 31 regardless of the day of the week on which December 31 falls.
+
+Effective January 1, 2016, we transferred Coca-Cola Refreshments' ("CCR") bottling and associated supply chain operations in the United States and Canada from our North America segment to our Bottling Investments segment. Additionally, effective August 1, 2016, the Company formed a new Europe, Middle East and Africa operating group consisting of the business units that were previously included in the Europe and the Eurasia and Africa operating groups. As a result, our organizational structure consists of the following operating segments: Europe, Middle East and Africa; Latin America; North America; Asia Pacific; Bottling Investments; and Corporate. Accordingly, all prior period segment information presented herein has been revised to reflect these changes in our organizational structure.
+
+Advertising Costs
+
+The Company's accounting policy related to advertising costs for annual reporting purposes, as disclosed in Note 1 of our
+
+2015
+
+Annual Report on Form 10-K, is to expense production costs of print, radio, television and other advertisements as of the first date the advertisements take place. All other marketing expenditures are expensed in the annual period in which the expenditure is incurred.
+
+For interim reporting purposes, we allocate our estimated full year marketing expenditures that benefit multiple interim periods to each of our interim reporting periods. We use the proportion of each interim period's actual unit case volume to the estimated full year unit case volume as the basis for the allocation. This methodology results in our marketing expenditures being recognized at a standard rate per unit case. At the end of each interim reporting period, we review our estimated full year unit case volume and our estimated full year marketing expenditures that benefit multiple interim periods in order to evaluate if a change in estimate is necessary. The impact of any changes in these full year estimates is recognized in the interim period in which the change in estimate occurs. Our full year marketing expenditures are not impacted by this interim accounting policy.
+
+Hyperinflationary Economies

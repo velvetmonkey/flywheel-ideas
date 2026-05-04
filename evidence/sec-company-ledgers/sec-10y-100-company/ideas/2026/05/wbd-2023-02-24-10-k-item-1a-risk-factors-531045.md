@@ -1,0 +1,221 @@
+---
+id: idea-23neGj56
+type: idea
+state: nascent
+title: WBD 2023-02-24 10-K Item 1A Risk Factors
+created_at: '2026-05-03T21:08:51.045Z'
+date: '2026-05-03'
+created: '2026-05-03T21:08:51.501Z'
+---
+# Warner Bros. Discovery, Inc. 10-K Item 1A Risk Factors
+
+Filed: 2023-02-24
+Source: https://www.sec.gov/Archives/edgar/data/1437107/000143710723000019/disca-20221231.htm
+
+13
+
+ITEM 1B. Unresolved Staff Comments.
+
+27
+
+ITEM 2. Properties.
+
+27
+
+ITEM 3. Legal Proceedings.
+
+28
+
+ITEM 4. Mine Safety Disclosures.
+
+29
+
+PART II
+
+31
+
+ITEM 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.
+
+31
+
+ITEM 6. [Reserved.]
+
+32
+
+ITEM 7. Management's Discussion and Analysis of Financial Condition and Results of Operations.
+
+33
+
+ITEM 7A. Quantitative and Qualitative Disclosures about Market Risk.
+
+54
+
+ITEM 8. Financial Statements and Supplementary Data.
+
+57
+
+ITEM 9. Changes in and Disagreements With Accountants on Accounting and Financial Disclosure.
+
+124
+
+ITEM 9A. Controls and Procedures.
+
+124
+
+ITEM 9B. Other Information.
+
+124
+
+ITEM 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections.
+
+124
+
+PART III
+
+125
+
+ITEM 10. Directors, Executive Officers and Corporate Governance.
+
+125
+
+ITEM 11. Executive Compensation.
+
+125
+
+ITEM 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters.
+
+125
+
+ITEM 13. Certain Relationships and Related Transactions, and Director Independence.
+
+125
+
+ITEM 14. Principal Accountant Fees and Services.
+
+125
+
+PART IV
+
+126
+
+ITEM 15. Exhibits and Financial Statement Schedules.
+
+126
+
+ITEM 16. Form 10-K Summary.
+
+135
+
+SIGNATURES
+
+136
+
+3
+
+PART I
+
+CAUTIONARY NOTE CONCERNING FORWARD-LOOKING STATEMENTS
+
+Certain statements in this Annual Report on Form 10-K constitute forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, including statements regarding our business, marketing and operating strategies, integration of acquired businesses, new service offerings, financial prospects and anticipated sources and uses of capital. Words such as "anticipate," "assume," "believe," "continue," "estimate," "expect," "forecast," "future," "intend," "plan," "potential," "predict," "project," "strategy," "target" and similar terms, and future or conditional tense verbs like "could," "may," "might," "should," "will" and "would," among other terms of similar substance used in connection with any discussion of future operating or financial performance identify forward-looking statements. Where, in any forward-looking statement, we express an expectation or belief as to future results or events, such expectation or belief is expressed in good faith and believed to have a reasonable basis, but there can be no assurance that the expectation or belief will result or be accomplished. The following is a list of some, but not all, of the factors that could cause actual results or events to differ materially from those anticipated:
+
+•
+
+potential unknown liabilities, adverse consequences or unforeseen increased expenses associated with the WarnerMedia Business or our efforts to integrate the WarnerMedia Business;
+
+•
+
+inherent uncertainties involved in the estimates and assumptions used in the preparation of financial forecasts;
+
+•
+
+our level of debt, including the significant indebtedness incurred in connection with the acquisition of the WarnerMedia Business, and our future compliance with debt covenants;
+
+•
+
+more intense competitive pressure from existing or new competitors in the industries in which we operate;
+
+•
+
+reduced spending on domestic and foreign television advertising, due to macroeconomic trends, industry trends or unexpected reductions in our number of subscribers;
+
+•
+
+industry trends, including the timing of, and spending on, sports programming, feature film, television and television commercial production;
+
+•
+
+market demand for foreign first-run and existing content libraries;
+
+•
+
+negative publicity or damage to our brands, reputation or talent;
+
+•
+
+uncertainties associated with product and service development and market acceptance, including the development and provision of programming for new television and telecommunications technologies, and the success of our HBO Max and discovery+ streaming products;
+
+•
+
+realizing direct-to-consumer subscriber goals;
+
+•
+
+general economic and business conditions, including the impact of the ongoing COVID-19 pandemic, fluctuations in foreign currency exchange rates, and political unrest in the international markets in which we operate;
+
+•
+
+the possibility or duration of an industry-wide strike, player lock-outs or other job action affecting a major entertainment industry union, athletes or others involved in the development and production of our sports programming, television programming, feature films and interactive entertainment (e.g., games) who are covered by collective bargaining agreements;
+
+•
+
+disagreements with our distributors or other business partners;
+
+•
+
+continued consolidation of distribution customers and production studios;
+
+•
+
+theft of our content and unauthorized duplication, distribution and exhibition of such content;
+
+•
+
+threatened or actual cyber-attacks and cybersecurity breaches; and
+
+•
+
+changes in, or failure or inability to comply with, laws and government regulations, including, without limitation, regulations of the Federal Communications Commission and similar authorities internationally and data privacy regulations and adverse outcomes from regulatory proceedings.
+
+Forward-looking statements are subject to various risks and uncertainties which change over time, are based on management's expectations and assumptions at the time the statements are made and are not guarantees of future results.
+
+4
+
+These risks have the potential to impact the recoverability of the assets recorded on our balance sheets, including goodwill or other intangibles. Additionally, many of these risks are amplified by and may, in the future, continue to be amplified by the prolonged impact of the COVID-19 pandemic. Management's expectations and assumptions, and the continued validity of any forward-looking statements we make, cannot be foreseen with certainty and are subject to change due to a broad range of factors affecting the U.S. and global economies and regulatory environment, factors specific to Warner Bros. Discovery and other factors described below under Item 1A, "Risk Factors" and elsewhere in this Annual Report on Form 10-K, including under Item 7, "Management's Discussion and Analysis of Financial Condition and Results of Operations."
+
+Actual outcomes and results may differ materially from what is expressed in our forward-looking statements and from our historical financial results due to the factors discussed in this section and elsewhere in this Annual Report on Form 10-K or disclosed in our other SEC filings. These forward-looking statements and such risks, uncertainties, and other factors speak only as of the date of this Annual Report on Form 10-K, and we expressly disclaim any obligation or undertaking to disseminate any updates or revisions to any forward-looking statement contained herein, to reflect any change in our expectations with regard thereto, or any other change in events, conditions or circumstances on which any such statement is based.
+
+ITEM 1. Business.
+
+For convenience, the terms "Warner Bros. Discovery", "WBD", the "Company," "we," "us" or "our" are used in this Annual Report on Form 10-K to refer to both Warner Bros. Discovery, Inc. and collectively to Warner Bros. Discovery, Inc. and one or more of its consolidated subsidiaries, unless the context otherwise requires.
+
+Merger with the WarnerMedia Business of AT&T
+
+On April 8, 2022 (the "Closing Date"), Discovery, Inc. ("Discovery") completed its merger (the "Merger") with the WarnerMedia business (the "WarnerMedia Business", "WM Business" or "WM") of AT&T Inc. ("AT&T") and changed its name to Warner Bros. Discovery, Inc. On April 11, 2022, the Company's shares started trading on the Nasdaq Global Select Market ("Nasdaq") under the trading symbol WBD.
+
+The Merger was executed through a Reverse Morris Trust type transaction, under which WM was distributed to AT&T's shareholders via a pro rata distribution, and immediately thereafter, combined with Discovery. (See Note 3 and Note 4 to the accompanying consolidated financial statements). Prior to the Merger, WarnerMedia Holdings, Inc. distributed $40.5 billion to AT&T (subject to working capital and other adjustments) in a combination of cash, debt securities, and WM's retention of certain debt. Discovery transferred purchase consideration of $42.4 billion in equity to AT&T shareholders in the Merger. In August 2022, the Company and AT&T finalized the post-closing working capital settlement process, pursuant to section 1.3 of the Separation and Distribution Agreement, which resulted in the Company receiving a $1.2 billion payment from AT&T in the third quarter of 2022 in lieu of adjusting the equity issued as consideration in the Merger. AT&T shareholders received shares of WBD Series A common stock ("WBD common stock") in the Merger representing 71% of the combined Company and the Company's pre-Merger shareholders continued to own 29% of the combined Company, in each case on a fully diluted basis.
+
+Discovery was deemed to be the accounting acquirer of the WM Business for accounting purposes under U.S. generally accepted accounting principles ("U.S. GAAP"); therefore, Discovery is considered the Company's predecessor and the historical financial statements of Discovery prior to April 8, 2022, are reflected in this Annual Report on Form 10-K as the Company's historical financial statements. Accordingly, the financial results of the Company as of and for any periods prior to April 8, 2022 do not include the financial results of the WM Business and current and future results will not be comparable to historical results.
+
+Description of Business
+
+Warner Bros. Discovery is a premier global media and entertainment company that combines the WarnerMedia Business's premium entertainment, sports and news assets with Discovery's leading non-fiction and international entertainment and sports businesses, thus offering audiences a differentiated portfolio of content, brands and franchises across television, film, streaming and gaming. Some of our iconic brands and franchises include Warner Bros. Pictures Group, Warner Bros. Television Group, DC, HBO, HBO Max, Discovery Channel, discovery+, CNN, HGTV, Food Network, TNT, TBS, TLC, OWN, Warner Bros. Games, Batman, Superman, Wonder Woman, Harry Potter, Looney Tunes, Hanna-Barbera, Game of Thrones, and The Lord of the Rings.
+
+We are home to a powerful creative engine and one of the largest collections of owned content in the world and have one of the strongest hands in the industry in terms of the completeness and quality of assets and intellectual property across sports, news, lifestyle, and entertainment in virtually every region of the globe and in most languages. Additionally, we serve audiences and consumers around the world with content that informs, entertains, and, when at its best, inspires.
+
+Our asset mix positions us to drive a balanced approach to creating long-term value for shareholders. It represents the full entertainment eco-system, and the ability to serve consumers across the entire spectrum of offerings from domestic and international networks, premium pay-TV, streaming, production and release of feature films and original series, related consumer products and themed experience licensing, and interactive gaming.
+
+5
+
+We generate revenue from the sale of advertising on our networks and digital platforms (advertising revenue); fees charged to distributors that carry our network brands and programming, including cable, direct-to-home ("DTH") satellite, telecommunication and digital service providers, as well as through direct-to-consumer ("DTC") subscription services (distribution revenue); the release of feature films for initial exhibition in theaters, the licensing of feature films and television programs to various television, subscription video on demand ("SVOD") and other digital markets, distribution of feature films and television programs in the physical and digital home entertainment market, sales of console games and mobile in-game content, sublicensing of sports rights, and licensing of intellectual property such as characters and brands (content revenue); and other sources such as studio tours and production services (other revenue).
+
+Impact of COVID-19

@@ -1,0 +1,211 @@
+---
+id: idea-UpffD4B3
+type: idea
+state: nascent
+title: TSLA 2020-02-13 10-K Item 1A Risk Factors
+created_at: '2026-05-03T19:56:49.918Z'
+date: '2026-05-03'
+created: '2026-05-03T19:56:50.292Z'
+---
+# Tesla, Inc. 10-K Item 1A Risk Factors
+
+Filed: 2020-02-13
+Source: https://www.sec.gov/Archives/edgar/data/1318605/000156459020004475/tsla-10k_20191231.htm
+
+Risk Factors
+
+15
+
+Item 1B.
+
+Unresolved Staff Comments
+
+34
+
+Item 2.
+
+Properties
+
+35
+
+Item 3.
+
+Legal Proceedings
+
+35
+
+Item 4.
+
+Mine Safety Disclosures
+
+35
+
+PART II.
+
+Item 5.
+
+Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+
+36
+
+Item 6.
+
+Selected Consolidated Financial Data
+
+38
+
+Item 7.
+
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+39
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+60
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+61
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+127
+
+Item 9A.
+
+Controls and Procedures
+
+127
+
+Item 9B.
+
+Other Information
+
+128
+
+PART III.
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+129
+
+Item 11.
+
+Executive Compensation
+
+129
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+129
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+129
+
+Item 14.
+
+Principal Accountant Fees and Services
+
+129
+
+PART IV.
+
+Item 15.
+
+Exhibits and Financial Statement Schedules
+
+129
+
+Item 16.
+
+Summary
+
+155
+
+Signatures
+
+156
+
+i
+
+Forward-Looking Statements
+
+The discussions in this Annual Report on Form 10-K contain forward-looking statements reflecting our current expectations that involve risks and uncertainties. These forward-looking statements include, but are not limited to, statements concerning our strategy, future operations, future financial position, future revenues, projected costs, profitability, expected cost reductions, capital adequacy, expectations regarding demand and acceptance for our technologies, growth opportunities and trends in the market in which we operate, prospects and plans and objectives of management. The words "anticipates," "believes," "could," "estimates," "expects," "intends," "may," "plans," "projects," "will," "would" and similar expressions are intended to identify forward-looking statements, although not all forward-looking statements contain these identifying words. We may not actually achieve the plans, intentions or expectations disclosed in our forward-looking statements and you should not place undue reliance on our forward-looking statements. Actual results or events could differ materially from the plans, intentions and expectations disclosed in the forward-looking statements that we make. These forward-looking statements involve risks and uncertainties that could cause our actual results to differ materially from those in the forward-looking statements, including, without limitation, the risks set forth in Part I, Item 1A, "Risk Factors" in this Annual Report on Form 10-K and in our other filings with the Securities and Exchange Commission. We do not assume any obligation to update any forward-looking statements.
+
+PART I
+
+ITEM 1.
+
+BUSINESS
+
+Overview
+
+We design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy generation and storage systems, and offer services related to our products. We are the world's first vertically integrated sustainable energy company, offering end-to-end clean energy products, including generation, storage and consumption. We generally sell our products directly to customers, including through our website and retail locations. We also continue to grow our customer-facing infrastructure through a global network of vehicle service centers, Mobile Service technicians, body shops, Supercharger stations and Destination Chargers to accelerate the widespread adoption of our products. We emphasize performance, attractive styling and the safety of our users and workforce in the design and manufacture of our products, and are continuing to develop full self-driving technology for improved safety. We also strive to lower the cost of ownership for our customers through continuous efforts to reduce manufacturing costs and by offering financial services tailored to our vehicles. Our sustainable energy products, engineering expertise, intense focus to accelerate the world's transition to sustainable energy and achieve the benefits of autonomous driving, and business model differentiate us from other companies.
+
+We currently offer or are planning to introduce electric vehicles to address a wide range of consumer and commercial vehicle markets, including Model 3, Model Y, Model S, Model X, Cybertruck, Tesla Semi and a new Tesla Roadster. In order to meet customers' range, functionality and performance expectations, we have employed our considerable design and vehicle engineering capabilities to overcome the design, styling and performance issues that have historically limited broad adoption of electric vehicles. Combined with technical advancements in our powertrain system, Autopilot and Full Self-Driving ("FSD") hardware, and neural net, our electric vehicles boast advantages such as leading range and recharging flexibility; superior acceleration, handling and safety characteristics; a unique suite of user convenience and infotainment features; the ability to have additional features enabled through over-the-air updates; and savings in charging, maintenance and other costs of ownership.
+
+In furtherance of our mission to accelerate the world's transition to sustainable energy, we have also developed an expertise in solar energy systems. We sell and lease retrofit solar energy systems for residential and commercial customers, and alternatively provide certain customers with access to our solar energy systems through power purchase or subscription-based arrangements. We also offer the Solar Roof, which features attractive and durable glass roof tiles integrated with solar energy generation. Our approach to the solar business emphasizes simplicity, standardization and accessibility to make it easy and cost-effective for customers to adopt clean energy, while reducing our customer acquisition costs.
+
+Finally, we have leveraged our technological expertise in batteries, energy management, power electronics, and integrated systems from our vehicle powertrain systems to develop and manufacture energy storage products, including Powerwall, Powerpack and Megapack. These scalable systems may be used in homes, commercial facilities and on the utility grid, and are capable of numerous applications including backup or off-grid power, peak demand reduction, demand response, reducing intermittency of renewable energy generation, facilitation of the use of renewable energy generation over fossil fuel generation, and other grid services and wholesale electric market services. Drawing on our solar business expertise, we can also offer integrated systems combining energy generation and storage. Like our vehicles, our energy storage products can be remotely updated over-the-air with software or firmware improvements.
+
+Segment Information
+
+We operate as two reportable segments: (i) automotive and (ii) energy generation and storage.
+
+The automotive segment includes the design, development, manufacturing, sales, and leasing of electric vehicles as well as sales of automotive regulatory credits. Additionally, the automotive segment is also comprised of services and other, which includes non-warranty after-sales vehicle services, sales of used vehicles, retail merchandise, sales by our acquired subsidiaries to third party customers, and vehicle insurance revenue. The energy generation and storage segment includes the design, manufacture, installation, sales, and leasing of solar energy generation and energy storage products, services related to such products, and sales of solar energy system incentives.
+
+1
+
+Our Products and Services
+
+Automotive
+
+Model 3
+
+Model 3 is a four-door mid-size sedan that we designed for manufacturability with a base price for mass-market appeal, which we began delivering in July 2017. We currently manufacture Model 3 at the Fremont Factory as well as at Gigafactory Shanghai, where we are ramping production with an installed annual production capacity for 150,000 Model 3 vehicles. We currently offer Model 3 in rear-wheel drive and dual motor all-wheel drive variants, including a Performance version of the latter.
+
+Model Y
+
+Model Y is a compact sport utility vehicle ("SUV") built on the Model 3 platform with the capability for seating for up to seven adults, which we began producing in January 2020 and expect to commence delivering in the first quarter of 2020. We currently manufacture Model Y at the Fremont Factory, and are further ramping production there and making preparations for production next at Gigafactory Shanghai. We currently offer Model Y in dual motor all-wheel drive Long Range and Performance versions.
+
+Model S and Model X
+
+Model S is a four-door full-size sedan that we began delivering in June 2012. Model S introduced Tesla vehicle mainstays such as a large touchscreen driver interface, Autopilot hardware, over-the-air software updates, and fast charging through our Supercharger network.
+
+Model X is a mid-size SUV with seating for up to seven adults, which we began delivering in September 2015. Model X introduced features including unique falcon wing doors for easy access to passenger seating and an all-glass panoramic windshield.
+
+Model S and Model X feature the highest performance characteristics and longest ranges that we offer in a sedan and SUV, respectively. These vehicles are equipped with a standard dual motor all-wheel drive powertrain, and are also available in Performance versions with enhanced acceleration and/or top speed and styling. We manufacture Model S and Model X at the Fremont Factory.
+
+Future Consumer and Commercial Electric Vehicles
+
+In addition, we have unveiled a number of planned electric vehicles to address a broader cross-section of the vehicle market, including specialized consumer electric vehicles in Cybertruck and the new Tesla Roadster and a commercial electric vehicle in Tesla Semi.
+
+Energy Generation and Storage
+
+Energy Storage Products
+
+We began deliveries of the current generations of our Powerwall and Powerpack products in late 2016 and 2017, respectively, and of our Megapack product in late 2019. Powerwall is a 13.5 kilowatt hour ("kWh") rechargeable lithium-ion battery with integrated inverter, designed to store energy at a home or small commercial facility. Powerpack and Megapack are fully integrated energy storage solutions for commercial, industrial, utility and energy generation customers, comprised of up to 232kWh (AC) battery packs and up to 700 kilovolt-ampere (at 480V) inverters for Powerpack and up to 3 megawatt hour ("MWh") (AC) battery packs and up to 1.54 megavolt-ampere inverters for Megapack, multiple units of which may be grouped together to form larger installations, capable of reaching gigawatt hours ("GWh") or greater. Powerpack and Megapack can also be combined with renewable energy generation sources to create microgrids that provide communities with clean, resilient and affordable power.
+
+We also develop and advance our software capabilities for the control and optimal dispatch of energy storage systems across a wide range of markets and applications, which can be sent to our systems through over-the-air updates.
+
+2
+
+Solar Energy Offerings
+
+The major components of our retrofit solar energy systems include solar panels that convert sunlight into electrical current, inverters that convert the electrical output from the panels to a usable current compatible with the electric grid, racking that attaches the solar panels to the roof or ground, electrical hardware that connects the solar energy system to the electric grid, and our monitoring device. We purchase the majority of these components, and we do so from multiple sources to ensure competitive pricing and adequate supply. We also design and manufacture certain components for our solar energy products. In addition to selling retrofit solar energy systems to customers and certain channel partners, we also make them available through lease and power purchase agreement ("PPA") arrangements, currently with 20-year terms and typically with renewal options, and a subscription-based sale of solar power, which is currently available in California.
+
+In 2019, we commenced direct customer and channel partner sales of the third generation of our Solar Roof, which features aesthetically pleasing and durable glass roofing tiles designed to complement the architecture of homes and commercial buildings while turning sunlight into electricity. We are ramping the volume production of this version of the Solar Roof at Gigafactory New York, and are increasing our installation capabilities by training our personnel and third party partners.

@@ -1,0 +1,805 @@
+---
+id: idea-o9xDokvG
+type: idea
+state: nascent
+title: ABNB 2023-08-03 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:30:06.104Z'
+date: '2026-05-03'
+created: '2026-05-03T20:30:06.509Z'
+---
+# Airbnb, Inc. 10-Q Part II Item 1A Risk Factors
+
+Filed: 2023-08-03
+Source: https://www.sec.gov/Archives/edgar/data/1559720/000155972023000015/abnb-20230630.htm
+
+Risk Factors
+
+35
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+36
+
+Item 3.
+
+Defaults Upon Senior Securities
+
+36
+
+Item 4.
+
+Mine Safety Disclosures
+
+36
+
+Item 5.
+
+Other Information
+
+36
+
+Item 6.
+
+Exhibits
+
+36
+
+Signatures
+
+38
+
+Table of Contents
+
+Special Note Regarding Forward-Looking Statements
+
+This Quarterly Report on Form 10-Q contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, about us and our industry that involve substantial risks and uncertainties. All statements other than statements of historical facts contained in this Quarterly Report on Form 10-Q, including statements regarding our strategy, future financial condition, future operations, projected costs, prospects, plans, objectives of management, and expected market growth, are forward-looking statements. In some cases, you can identify forward-looking statements because they contain words such as "may," "will," "shall," "should," "expects," "plans," "anticipates," "could," "intends," "target," "projects," "contemplates," "believes," "estimates," "predicts," "potential," "goal," "objective," "seeks," or "continue" or the negative of these words or other similar terms or expressions that concern our expectations, strategy, plans, or intentions. Forward-looking statements contained in this Quarterly Report on Form 10-Q include, but are not limited to, statements about:
+
+•
+
+the effects of macroeconomic conditions, including inflation, slower growth or recession, higher interest rates, high unemployment and foreign currency fluctuations, on the demand for travel or similar experiences;
+
+•
+
+the effects of supply constraints on availability of Host homes;
+
+•
+
+our ability to effectively manage our exposure to fluctuations in foreign currency exchange rates;
+
+•
+
+the continued effects of the COVID-19 pandemic, including as a result of new strains or variants of the virus, as well as other highly infectious diseases, on our business, the travel industry, travel trends, and the global economy generally;
+
+•
+
+our expectations regarding our financial performance, including our revenue, costs, Adjusted Earnings Before Interest, Taxes, Depreciation and Amortization ("EBITDA"), and Free Cash Flow;
+
+•
+
+our expectations regarding future operating performance, including Nights and Experiences Booked, Gross Booking Value ("GBV"), Average Daily Rate, and GBV per Night and Experience Booked;
+
+•
+
+our ability to attract and retain Hosts and guests;
+
+•
+
+our ability to compete in our industry;
+
+•
+
+our expectations regarding the resilience of our model, including in areas such as domestic travel, short-distance travel, travel outside of top cities, and long-term stays;
+
+•
+
+seasonality, including the return of pre-COVID-19 pandemic patterns of seasonality, and the effects of seasonal trends on our results of operations;
+
+•
+
+our expectations regarding the impact of our marketing strategy, and our ability to continue to attract guests and Hosts to our platform through direct and unpaid channels;
+
+•
+
+anticipated trends, developments, and challenges in our industry, business, and the highly competitive markets in which we operate;
+
+•
+
+our ability to anticipate market needs or develop new or enhanced offerings and services to meet those needs;
+
+•
+
+our ability to manage expansion into international markets and new businesses;
+
+•
+
+our ability to stay in compliance with laws and regulations that currently apply or may become applicable to our business both in the United States and internationally and our expectations regarding various laws and restrictions that relate to our business;
+
+•
+
+our expectations regarding our income tax liabilities, including anticipated increases in foreign taxes, valuation allowances, and the adequacy of our reserves;
+
+•
+
+our ability to effectively manage our growth and expand our infrastructure and maintain our corporate culture, and our employee initiatives;
+
+•
+
+our ability to identify, recruit, and retain skilled personnel, including key members of senior management;
+
+•
+
+the safety, affordability, and convenience of our platform and our offerings;
+
+•
+
+our ability to successfully defend litigation brought against us;
+
+•
+
+the sufficiency of our cash, cash equivalents, and investments to meet our liquidity needs;
+
+•
+
+our ability to maintain, protect, and enhance our intellectual property;
+
+•
+
+our ability to make required payments under our credit agreement and to comply with the various requirements of our indebtedness;
+
+•
+
+the impact of the ongoing military action between Russia and Ukraine on our business;
+
+•
+
+human capital management, including our Live and Work Anywhere policy and diversity and belonging initiatives and commitments;
+
+•
+
+environmental, social, and governance matters, including our Net Zero emissions and climate-related initiatives and commitments; and
+
+•
+
+our plan to make distributions to our Host Endowment Fund.
+
+We caution you that the foregoing list does not contain all of the forward-looking statements made in this Quarterly Report on Form 10-Q. You should not rely upon forward-looking statements as predictions of future events. We have based the forward-looking statements contained in this Quarterly Report on Form 10-Q primarily on our current expectations, estimates, forecasts, and projections about future events and trends that we believe may affect our business, results of operations, financial condition, and prospects. Although we believe that we have a reasonable basis for each forward-looking statement contained in this Quarterly Report on Form 10-Q, we cannot guarantee that the future results, levels of activity, performance, or events and circumstances reflected in the forward-looking statements will be achieved or occur at all. The outcome of the events described in these forward-looking statements is subject to risks, uncertainties, and other factors described in the section titled "Risk Factors" and elsewhere in our Annual Report on Form 10-K for the fiscal year ended December 31, 2022. Moreover, we operate in a very competitive and rapidly changing environment. New risks and uncertainties emerge from time to time, and it is not possible for us to predict all risks and uncertainties that could have an impact on the forward-looking statements contained in this Quarterly Report on Form 10-Q. The results, events, and circumstances reflected in the forward-looking statements may not be achieved or occur, and actual results, events, or circumstances could differ materially from those described in the forward-looking statements.
+
+The forward-looking statements made in this Quarterly Report on Form 10-Q relate only to events as of the date on which the statements are made available. We undertake no obligation to update any forward-looking statements made in this Quarterly Report on Form 10-Q to reflect events or circumstances after the date of this Quarterly Report on Form 10-Q or to reflect new information or the occurrence of unanticipated events, except as required by law. We may not actually achieve the plans, intentions, or expectations disclosed in our
+
+1
+
+Table of Contents
+
+forward-looking statements, and you should not place undue reliance on our forward-looking statements. Our forward-looking statements do not reflect the potential impact of any future acquisitions, mergers, dispositions, joint ventures, or investments we may make.
+
+In addition, statements that "we believe" and similar statements reflect our beliefs and opinions on the relevant subject. These statements are based upon information available to us as of the date of this Quarterly Report on Form 10-Q, and while we believe such information forms a reasonable basis for such statements, such information may be limited or incomplete, and our statements should not be read to indicate that we have conducted an exhaustive inquiry into, or review of, all potentially available relevant information. These statements are inherently uncertain, and you are cautioned not to unduly rely upon these statements.
+
+You should read this Quarterly Report on Form 10-Q and the documents that we reference in this Quarterly Report on Form 10-Q and have filed as exhibits to this Quarterly Report on Form 10-Q, completely and with the understanding that our actual future results may be materially different from what we expect. We qualify all of the forward-looking statements in this Quarterly Report on Form 10-Q by these cautionary statements.
+
+2
+
+Table of Contents
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Condensed Consolidated Financial Statements
+
+Airbnb, Inc.
+
+Condensed Consolidated Balance Sheets
+
+(in millions, except par value)
+
+(unaudited)
+
+December 31,
+
+2022
+
+June 30,
+
+2023
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+7,378
+
+$
+
+7,905
+
+Short-term investments (including assets reported at fair value of $
+
+2,224
+
+and $
+
+1,945
+
+, respectively)
+
+2,244
+
+2,435
+
+Funds receivable and amounts held on behalf of customers
+
+4,783
+
+9,144
+
+Prepaids and other current assets (including customer receivables of $
+
+200
+
+and $
+
+264
+
+and allowances of $
+
+39
+
+and $
+
+46
+
+, respectively)
+
+456
+
+568
+
+Total current assets
+
+14,861
+
+20,052
+
+Property and equipment, net
+
+121
+
+132
+
+Operating lease right-of-use assets
+
+138
+
+131
+
+Goodwill and intangible assets, net
+
+684
+
+679
+
+Other assets, noncurrent
+
+234
+
+194
+
+Total assets
+
+$
+
+16,038
+
+$
+
+21,188
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+137
+
+$
+
+100
+
+Accrued expenses and other current liabilities
+
+1,876
+
+2,033
+
+Funds payable and amounts payable to customers
+
+4,783
+
+9,144
+
+Unearned fees
+
+1,182
+
+2,347
+
+Total current liabilities
+
+7,978
+
+13,624
+
+Long-term debt
+
+1,987
+
+1,989
+
+Operating lease liabilities, noncurrent
+
+295
+
+285
+
+Other liabilities, noncurrent
+
+218
+
+231
+
+Total liabilities
+
+10,478
+
+16,129
+
+Commitments and contingencies (Note 9)
+
+Stockholders' equity:
+
+Common stock, $
+
+0.0001
+
+par value:
+
+Class A - authorized
+
+2,000
+
+shares;
+
+408
+
+and
+
+422
+
+shares issued and outstanding, respectively;
+
+Class B - authorized
+
+710
+
+shares;
+
+223
+
+and
+
+212
+
+shares issued and outstanding, respectively;
+
+Class C - authorized
+
+2,000
+
+shares;
+
+zero
+
+shares of Class C common stock issued and outstanding, respectively;
+
+Class H - authorized
+
+26
+
+shares;
+
+9
+
+shares issued and
+
+zero
+
+shares outstanding, respectively
+
+—
+
+—
+
+Additional paid-in capital
+
+11,557
+
+11,290
+
+Accumulated other comprehensive loss
+
+(
+
+32
+
+)
+
+(
+
+33
+
+)
+
+Accumulated deficit
+
+(
+
+5,965
+
+)
+
+(
+
+6,198
+
+)
+
+Total stockholders' equity
+
+5,560
+
+5,059
+
+Total liabilities and stockholders' equity
+
+$
+
+16,038
+
+$
+
+21,188
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+3
+
+Table of Contents
+
+Airbnb, Inc.
+
+Condensed Consolidated Statements of Operations
+
+(in millions, except per share amounts)
+
+(unaudited)
+
+Three Months Ended June 30,
+
+Six Months Ended June 30,
+
+2022
+
+2023
+
+2022
+
+2023
+
+Revenue
+
+$
+
+2,104
+
+$
+
+2,484
+
+$
+
+3,613
+
+$
+
+4,302
+
+Costs and expenses:
+
+Cost of revenue
+
+390
+
+432
+
+753
+
+860
+
+Operations and support
+
+258
+
+317
+
+491
+
+599
+
+Product development
+
+375
+
+451
+
+738
+
+871
+
+Sales and marketing
+
+379
+
+486
+
+724
+
+936
+
+General and administrative
+
+244
+
+275
+
+454
+
+518
+
+Restructuring charges
+
+89
+
+—
+
+89
+
+—
+
+Total costs and expenses
+
+1,735
+
+1,961
+
+3,249
+
+3,784
+
+Income from operations
+
+369
+
+523
+
+364
+
+518
+
+Interest income
+
+20
+
+191
+
+25
+
+337
+
+Interest expense
+
+(
+
+8
+
+)
+
+(
+
+2
+
+)
+
+(
+
+14
+
+)
+
+(
+
+6
+
+)
+
+Other income (expense), net
+
+2
+
+(
+
+36
+
+)
+
+—
+
+(
+
+43
+
+)
+
+Income before income taxes
+
+383
+
+676
+
+375
+
+806
+
+Provision for income taxes
+
+4
+
+26
+
+15
+
+39
+
+Net income
+
+$
+
+379
+
+$
+
+650
+
+$
+
+360
+
+$
+
+767
+
+Net income per share attributable to Class A and Class B common stockholders:
+
+Basic
+
+$
+
+0.59
+
+$
+
+1.02
+
+$
+
+0.57
+
+$
+
+1.21
+
+Diluted
+
+$
+
+0.56
+
+$
+
+0.98
+
+$
+
+0.53
+
+$
+
+1.15
+
+Weighted-average shares used in computing net income per share attributable to Class A and Class B common stockholders:
+
+Basic
+
+638
+
+635
+
+637
+
+634
+
+Diluted
+
+684
+
+665
+
+684
+
+667
+
+The accompanying notes are an integral part of these condensed consolidated financial statements.
+
+4
+
+Table of Contents
+
+Airbnb, Inc.
+
+Condensed Consolidated Statements of Comprehensive Income
+
+(in millions)
+
+(unaudited)
+
+Three Months Ended June 30,
+
+Six Months Ended June 30,
+
+2022
+
+2023
+
+2022
+
+2023
+
+Net income
+
+$
+
+379
+
+$
+
+650
+
+$
+
+360
+
+$
+
+767
+
+Other comprehensive loss:
+
+Net unrealized loss on available-for-sale marketable securities, net of tax
+
+(

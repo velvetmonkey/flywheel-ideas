@@ -1,0 +1,1455 @@
+---
+id: idea-LSYyMTQy
+type: idea
+state: nascent
+title: TJX 2025-05-30 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:11:20.168Z'
+date: '2026-05-03'
+created: '2026-05-03T20:11:20.527Z'
+---
+# TJX COMPANIES INC /DE/ 10-Q Part II Item 1A Risk Factors
+
+Filed: 2025-05-30
+Source: https://www.sec.gov/Archives/edgar/data/109198/000010919825000043/tjx-20250503.htm
+
+33
+
+ITEM 2. Unregistered Sales of Equity Securities and Use of Proceeds
+
+33
+
+ITEM 5. Other Information
+
+33
+
+ITEM 6. Exhibits
+
+34
+
+SIGNATURE
+
+34
+
+2
+
+PART I - FINANCIAL INFORMATION
+
+Item 1. Consolidated Financial Statements
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF INCOME
+
+(UNAUDITED)
+
+IN MILLIONS EXCEPT PER SHARE AMOUNTS
+
+Thirteen Weeks Ended
+
+May 3,
+
+2025
+
+May 4,
+
+2024
+
+Net sales
+
+$
+
+13,111
+
+$
+
+12,479
+
+Cost of sales, including buying and occupancy costs
+
+9,246
+
+8,739
+
+Selling, general and administrative expenses
+
+2,549
+
+2,400
+
+Interest (income) expense, net
+
+(
+
+30
+
+)
+
+(
+
+50
+
+)
+
+Income before income taxes
+
+1,346
+
+1,390
+
+Provision for income taxes
+
+310
+
+320
+
+Net income
+
+$
+
+1,036
+
+$
+
+1,070
+
+Basic earnings per share
+
+$
+
+0.93
+
+$
+
+0.95
+
+Weighted average common shares – basic
+
+1,118
+
+1,132
+
+Diluted earnings per share
+
+$
+
+0.92
+
+$
+
+0.93
+
+Weighted average common shares – diluted
+
+1,132
+
+1,146
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+3
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+
+(UNAUDITED)
+
+IN MILLIONS
+
+Thirteen Weeks Ended
+
+May 3,
+
+2025
+
+May 4,
+
+2024
+
+Net income
+
+$
+
+1,036
+
+$
+
+1,070
+
+Additions to other comprehensive income (loss), net of tax:
+
+Foreign currency translation adjustments, net of related tax provision of $
+
+4
+
+in fiscal 2026 and tax benefit of $
+
+1
+
+in fiscal 2025
+
+145
+
+(
+
+18
+
+)
+
+Reclassifications from other comprehensive income (loss), net of tax, to net income:
+
+Amortization of prior service cost and deferred (losses), net of related tax benefits of $
+
+0.1
+
+in fiscal 2026 and $
+
+0.0
+
+in fiscal 2025
+
+(
+
+0
+
+)
+
+(
+
+0
+
+)
+
+Other comprehensive income (loss), net of tax
+
+145
+
+(
+
+18
+
+)
+
+Total comprehensive income
+
+$
+
+1,181
+
+$
+
+1,052
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+4
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED BALANCE SHEETS
+
+(UNAUDITED)
+
+IN MILLIONS, EXCEPT SHARE AMOUNTS
+
+May 3,
+
+2025
+
+February 1,
+
+2025
+
+May 4,
+
+2024
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+4,255
+
+$
+
+5,335
+
+$
+
+5,059
+
+Accounts receivable, net
+
+594
+
+549
+
+542
+
+Merchandise inventories
+
+7,127
+
+6,421
+
+6,218
+
+Prepaid expenses and other current assets
+
+575
+
+617
+
+528
+
+Federal, state and foreign income taxes recoverable
+
+44
+
+69
+
+62
+
+Total current assets
+
+12,595
+
+12,991
+
+12,409
+
+Net property at cost
+
+7,554
+
+7,346
+
+6,622
+
+Non-current deferred income taxes, net
+
+141
+
+148
+
+156
+
+Operating lease right of use assets
+
+9,924
+
+9,641
+
+9,499
+
+Goodwill
+
+95
+
+94
+
+95
+
+Other assets
+
+1,549
+
+1,529
+
+898
+
+Total assets
+
+$
+
+31,858
+
+$
+
+31,749
+
+$
+
+29,679
+
+Liabilities
+
+Current liabilities:
+
+Accounts payable
+
+$
+
+4,414
+
+$
+
+4,257
+
+$
+
+4,072
+
+Accrued expenses and other current liabilities
+
+4,492
+
+5,040
+
+4,115
+
+Current portion of operating lease liabilities
+
+1,660
+
+1,636
+
+1,615
+
+Federal, state and foreign income taxes payable
+
+261
+
+75
+
+298
+
+Total current liabilities
+
+10,827
+
+11,008
+
+10,100
+
+Other long-term liabilities
+
+972
+
+1,050
+
+894
+
+Non-current deferred income taxes, net
+
+154
+
+156
+
+156
+
+Long-term operating lease liabilities
+
+8,535
+
+8,276
+
+8,164
+
+Long-term debt
+
+2,867
+
+2,866
+
+2,863
+
+Commitments and contingencies (See Note K)
+
+Shareholders' equity
+
+Preferred stock, authorized
+
+5,000,000
+
+shares, par value $
+
+1
+
+,
+
+no
+
+shares issued
+
+—
+
+—
+
+—
+
+Common stock, authorized
+
+1,800,000,000
+
+shares, par value $
+
+1
+
+, issued and outstanding
+
+1,115,814,224
+
+;
+
+1,119,333,622
+
+and
+
+1,130,829,890
+
+respectively
+
+1,116
+
+1,119
+
+1,131
+
+Additional paid-in capital
+
+—
+
+—
+
+—
+
+Accumulated other comprehensive (loss) income
+
+(
+
+464
+
+)
+
+(
+
+609
+
+)
+
+(
+
+550
+
+)
+
+Retained earnings
+
+7,851
+
+7,883
+
+6,921
+
+Total shareholders' equity
+
+8,503
+
+8,393
+
+7,502
+
+Total liabilities and shareholders' equity
+
+$
+
+31,858
+
+$
+
+31,749
+
+$
+
+29,679
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+5
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+
+(UNAUDITED)
+
+IN MILLIONS
+
+Thirteen Weeks Ended
+
+May 3,
+
+2025
+
+May 4,
+
+2024
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+1,036
+
+$
+
+1,070
+
+Adjustments to reconcile net income to net cash provided by operating activities:
+
+Depreciation and amortization
+
+296
+
+264
+
+Loss on property disposals and impairment charges
+
+—
+
+3
+
+Deferred income tax provision
+
+8
+
+24
+
+Share-based compensation
+
+33
+
+38
+
+Changes in assets and liabilities:
+
+(Increase) in accounts receivable
+
+(
+
+38
+
+)
+
+(
+
+13
+
+)
+
+(Increase) in merchandise inventories
+
+(
+
+604
+
+)
+
+(
+
+266
+
+)
+
+Decrease (increase) in income taxes recoverable
+
+25
+
+(
+
+3
+
+)
+
+Decrease (increase) in prepaid expenses and other current assets
+
+4
+
+(
+
+19
+
+)
+
+Increase in accounts payable
+
+101
+
+219
+
+(Decrease) in accrued expenses and other liabilities
+
+(
+
+723
+
+)
+
+(
+
+741
+
+)
+
+Increase in income taxes payable
+
+183
+
+199
+
+(Decrease) in net operating lease liabilities
+
+(
+
+8
+
+)
+
+(
+
+4
+
+)
+
+Other, net
+
+81
+
+(
+
+34
+
+)
+
+Net cash provided by operating activities
+
+394
+
+737
+
+Cash flows from investing activities:
+
+Property additions
+
+(
+
+497
+
+)
+
+(
+
+419
+
+)
+
+Purchases of investments
+
+(
+
+17
+
+)
+
+(
+
+16
+
+)
+
+Sales and maturities of investments
+
+11
+
+8
+
+Net cash (used in) investing activities
+
+(
+
+503
+
+)
+
+(
+
+427
+
+)
+
+Cash flows from financing activities:
+
+Payments for repurchase of common stock
+
+(
+
+613
+
+)
+
+(
+
+509
+
+)
+
+Cash dividends paid
+
+(
+
+424
+
+)
+
+(
+
+380
+
+)
+
+Proceeds from issuance of common stock
+
+50
+
+90
+
+Other
+
+(
+
+61
+
+)
+
+(
+
+41
+
+)
+
+Net cash (used in) financing activities
+
+(
+
+1,048
+
+)
+
+(
+
+840
+
+)
+
+Effect of exchange rate changes on cash
+
+77
+
+(
+
+11
+
+)
+
+Net (decrease) in cash and cash equivalents
+
+(
+
+1,080
+
+)
+
+(
+
+541
+
+)
+
+Cash and cash equivalents at beginning of year
+
+5,335
+
+5,600
+
+Cash and cash equivalents at end of period
+
+$
+
+4,255
+
+$
+
+5,059
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+6
+
+THE TJX COMPANIES, INC.
+
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY
+
+(UNAUDITED)
+
+IN MILLIONS
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+(Loss) Income
+
+Retained
+
+Earnings
+
+Total
+
+Balance, February 1, 2025
+
+1,119
+
+$
+
+1,119
+
+$
+
+—
+
+$
+
+(
+
+609
+
+)
+
+$
+
+7,883
+
+$
+
+8,393
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,036
+
+1,036
+
+Other comprehensive income, net of tax
+
+—
+
+—
+
+—
+
+145
+
+—
+
+145
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+475
+
+)
+
+(
+
+475
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+33
+
+—
+
+—
+
+33
+
+Issuance of common stock under stock incentive plan and related tax effect
+
+2
+
+2
+
+(
+
+13
+
+)
+
+—
+
+—
+
+(
+
+11
+
+)
+
+Common stock repurchased
+
+(
+
+5
+
+)
+
+(
+
+5
+
+)
+
+(
+
+20
+
+)
+
+—
+
+(
+
+593
+
+)
+
+(
+
+618
+
+)
+
+Balance, May 3, 2025
+
+1,116
+
+$
+
+1,116
+
+$
+
+—
+
+$
+
+(
+
+464
+
+)
+
+$
+
+7,851
+
+$
+
+8,503
+
+Thirteen Weeks Ended
+
+Common Stock
+
+Shares
+
+Par Value
+
+$
+
+1
+
+Additional Paid-In
+
+Capital
+
+Accumulated Other Comprehensive
+
+(Loss) Income
+
+Retained
+
+Earnings
+
+Total
+
+Balance, February 3, 2024
+
+1,134
+
+$
+
+1,134
+
+$
+
+—
+
+$
+
+(
+
+532
+
+)
+
+$
+
+6,700
+
+$
+
+7,302
+
+Net income
+
+—
+
+—
+
+—
+
+—
+
+1,070
+
+1,070
+
+Other comprehensive (loss), net of tax
+
+—
+
+—
+
+—
+
+(
+
+18
+
+)
+
+—
+
+(
+
+18
+
+)
+
+Cash dividends declared on common stock
+
+—
+
+—
+
+—
+
+—
+
+(
+
+426
+
+)
+
+(
+
+426
+
+)
+
+Recognition of share-based compensation
+
+—
+
+—
+
+38
+
+—
+
+—
+
+38
+
+Issuance of common stock under stock incentive plan and related tax effect
+
+2
+
+2
+
+46
+
+—
+
+—
+
+48
+
+Common stock repurchased
+
+(
+
+5
+
+)
+
+(
+
+5
+
+)
+
+(
+
+84
+
+)
+
+—
+
+(
+
+423
+
+)
+
+(
+
+512
+
+)
+
+Balance, May 4, 2024
+
+1,131
+
+$
+
+1,131
+
+$
+
+—
+
+$
+
+(
+
+550
+
+)
+
+$
+
+6,921
+
+$
+
+7,502
+
+The accompanying notes are an integral part of the unaudited Consolidated Financial Statements.
+
+7
+
+THE TJX COMPANIES, INC.
+
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
+
+Note A.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+Basis of Presentation
+
+The Consolidated Financial Statements and Notes thereto have been prepared in accordance with accounting principles generally accepted in the United States of America ("GAAP") for interim financial information. These Consolidated Financial Statements and Notes thereto are unaudited and, in the opinion of management, reflect all normal recurring adjustments, accruals and deferrals among periods required to match costs properly with the related revenue or activity, considered necessary by The TJX Companies, Inc. (together with its subsidiaries, "TJX") for a fair statement of its Consolidated Financial Statements for the periods reported, all in conformity with GAAP consistently applied. All intercompany transactions have been eliminated in consolidation. Investments for which the Company exercises significant influence but does not have control are accounted for under the equity method. The Consolidated Financial Statements and Notes thereto should be read in conjunction with the audited Consolidated Financial Statements, including the related notes, contained in TJX's Annual Report on Form 10-K for the fiscal year ended February 1, 2025 ("fiscal 2025").
+
+These interim results are not necessarily indicative of results for the full fiscal year. TJX's business, in common with the businesses of retailers generally, is subject to seasonal influences, with higher levels of sales and income generally realized in the second half of the year.
+
+The February 1, 2025 balance sheet data was derived from audited Consolidated Financial Statements and does not include all disclosures required by GAAP.
+
+Fiscal Year
+
+TJX's fiscal year ends on the Saturday nearest to the last day of January of each year. The current fiscal year ends January 31, 2026 ("fiscal 2026") and is a 52-week fiscal year. Fiscal 2025 was a 52-week fiscal year. "Fiscal 2027" and "fiscal 2028" will both be 52-week fiscal years and will end January 30, 2027 and January 29, 2028, respectively.
+
+Use of Estimates
+
+The preparation of financial statements, in conformity with GAAP, requires management to make estimates and assumptions that affect the reported amounts of assets and liabilities and disclosure of contingent liabilities at the date of the financial statements as well as the reported amounts of revenues and expenses during the reporting period. TJX considers its accounting policies relating to inventory valuation, reserves for uncertain tax positions and loss contingencies to be the most significant accounting policies that involve management estimates and judgments. Actual amounts could differ from these estimates, and such differences could be material.
+
+Deferred Gift Card Revenue
+
+The following table presents deferred gift card revenue activity:
+
+In millions
+
+May 3,
+
+2025
+
+May 4,
+
+2024
+
+Balance, beginning of year
+
+$
+
+824
+
+$
+
+773
+
+Deferred revenue
+
+387
+
+400
+
+Effect of exchange rate changes on deferred revenue
+
+9
+
+(
+
+2
+
+)
+
+Revenue recognized
+
+(
+
+444
+
+)
+
+(
+
+455
+
+)
+
+Balance, end of period
+
+$
+
+776
+
+$
+
+716
+
+TJX recognized $
+
+444
+
+million in gift card revenue for the three months ended May 3, 2025 and $
+
+455
+
+million for the three months ended May 4, 2024. Gift cards are combined in one homogeneous pool and are not separately identifiable. As such, the revenue recognized consists of gift cards that were part of the deferred revenue balance at the beginning of the period as well as gift cards that were issued during the period.
+
+8
+
+Equity Investments
+
+Multibrand Outlet Stores
+
+During fiscal 2025, the Company completed an investment for a
+
+49
+
+% ownership stake in Multibrand Outlet Stores S.A.P.I. de C.V. ("MOS"), through a joint venture with Grupo Axo, S.A.P.I de C.V. ("Axo"). MOS is Axo's off-price, physical store business in Mexico and includes a total of over
+
+200
+
+stores for its Promoda, Reduced, and Urban Store banners. TJX has the option to increase its ownership interest in the joint venture over the long term. TJX completed this investment for $
+
+193
+
+million, inclusive of acquisition costs, during the third quarter of fiscal 2025.
+
+For the three months ended May 3, 2025, the carrying value of the Company's equity investment in MOS was $
+
+177
+
+million, which exceeds its share of MOS' net assets by approximately $
+
+140
+
+million. This difference primarily consists of goodwill and tradenames. Tradenames are definite-lived intangible assets and are amortized straight-line over their useful lives of
+
+10
+
+years. As of May 3, 2025, the revaluation of the investment from Mexican Pesos to the U.S. dollar resulted in an immaterial cumulative translation adjustment, which is recorded in the Consolidated Balance Sheets as a component of Accumulated other comprehensive (loss) income.
+
+Brands for Less
+
+During fiscal 2025, the Company completed an investment for a
+
+35
+
+% ownership stake in privately held Brands for Less ("BFL"), representing a non-controlling, minority position. BFL currently operates over
+
+100
+
+stores, primarily in the UAE and Saudi Arabia, as well as an e-commerce business, and is the region's only major off-price branded apparel, toys and home fashions retailer. TJX completed this investment for $
+
+358

@@ -1,0 +1,1137 @@
+---
+id: idea-AucDX8Tg
+type: idea
+state: nascent
+title: NFLX 2017-10-18 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:41:07.950Z'
+date: '2026-05-03'
+created: '2026-05-03T20:41:08.365Z'
+---
+# NETFLIX INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2017-10-18
+Source: https://www.sec.gov/Archives/edgar/data/1065280/000106528017000180/nflx-093017x10qxdoc.htm
+
+Risk Factors
+
+33
+
+Item 6.
+
+Exhibits
+
+33
+
+Signatures
+
+34
+
+Exhibit Index
+
+35
+
+2
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Operations
+
+(unaudited)
+
+(in thousands, except per share data)
+
+Three Months Ended
+
+Nine Months Ended
+
+September 30,
+
+2017
+
+September 30,
+
+2016
+
+September 30,
+
+2017
+
+September 30,
+
+2016
+
+Revenues
+
+$
+
+2,984,859
+
+$
+
+2,290,188
+
+$
+
+8,406,958
+
+$
+
+6,353,128
+
+Cost of revenues
+
+1,992,980
+
+1,532,844
+
+5,552,312
+
+4,375,482
+
+Marketing
+
+312,490
+
+282,043
+
+858,083
+
+706,082
+
+Technology and development
+
+255,236
+
+216,099
+
+779,427
+
+626,907
+
+General and administrative
+
+215,526
+
+153,166
+
+623,760
+
+418,798
+
+Operating income
+
+208,627
+
+106,036
+
+593,376
+
+225,859
+
+Other income (expense):
+
+Interest expense
+
+(60,688
+
+)
+
+(35,536
+
+)
+
+(162,912
+
+)
+
+(106,528
+
+)
+
+Interest and other income (expense)
+
+(31,702
+
+)
+
+8,627
+
+(76,473
+
+)
+
+50,907
+
+Income before income taxes
+
+116,237
+
+79,127
+
+353,991
+
+170,238
+
+Provision for (benefit from) income taxes
+
+(13,353
+
+)
+
+27,610
+
+(19,421
+
+)
+
+50,308
+
+Net income
+
+$
+
+129,590
+
+$
+
+51,517
+
+$
+
+373,412
+
+$
+
+119,930
+
+Earnings per share:
+
+Basic
+
+$
+
+0.30
+
+$
+
+0.12
+
+$
+
+0.87
+
+$
+
+0.28
+
+Diluted
+
+$
+
+0.29
+
+$
+
+0.12
+
+$
+
+0.84
+
+$
+
+0.27
+
+Weighted-average common shares outstanding:
+
+Basic
+
+432,404
+
+428,937
+
+431,473
+
+428,514
+
+Diluted
+
+447,362
+
+438,389
+
+446,367
+
+438,180
+
+See accompanying notes to the consolidated financial statements.
+
+3
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Comprehensive Income
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Nine Months Ended
+
+September 30,
+
+2017
+
+September 30,
+
+2016
+
+September 30,
+
+2017
+
+September 30,
+
+2016
+
+Net income
+
+$
+
+129,590
+
+$
+
+51,517
+
+$
+
+373,412
+
+$
+
+119,930
+
+Other comprehensive income (loss):
+
+Foreign currency translation adjustments
+
+5,678
+
+2,357
+
+22,604
+
+5,453
+
+Change in unrealized gains (losses) on available-for-sale securities, net of tax of $212, $(412), $378, and $810, respectively
+
+328
+
+(676
+
+)
+
+599
+
+1,325
+
+Total other comprehensive income
+
+6,006
+
+1,681
+
+23,203
+
+6,778
+
+Comprehensive income
+
+$
+
+135,596
+
+$
+
+53,198
+
+$
+
+396,615
+
+$
+
+126,708
+
+See accompanying notes to the consolidated financial statements.
+
+4
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Cash Flows
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Nine Months Ended
+
+September 30,
+
+2017
+
+September 30,
+
+2016
+
+September 30,
+
+2017
+
+September 30,
+
+2016
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+129,590
+
+$
+
+51,517
+
+$
+
+373,412
+
+$
+
+119,930
+
+Adjustments to reconcile net income to net cash used in operating activities:
+
+Additions to streaming content assets
+
+(2,315,017
+
+)
+
+(2,442,080
+
+)
+
+(7,328,104
+
+)
+
+(6,550,445
+
+)
+
+Change in streaming content liabilities
+
+(34,587
+
+)
+
+529,885
+
+846,560
+
+1,674,125
+
+Amortization of streaming content assets
+
+1,627,477
+
+1,224,108
+
+4,483,954
+
+3,457,990
+
+Amortization of DVD content assets
+
+13,259
+
+19,284
+
+48,368
+
+59,746
+
+Depreciation and amortization of property, equipment and intangibles
+
+19,238
+
+14,410
+
+52,838
+
+43,339
+
+Stock-based compensation expense
+
+44,763
+
+43,495
+
+133,679
+
+130,029
+
+Excess tax benefits from stock-based compensation
+
+—
+
+(12,762
+
+)
+
+—
+
+(37,401
+
+)
+
+Other non-cash items
+
+9,896
+
+9,682
+
+43,081
+
+31,479
+
+Foreign currency remeasurement loss on long-term debt
+
+50,830
+
+—
+
+115,050
+
+—
+
+Deferred taxes
+
+(57,090
+
+)
+
+14,338
+
+(104,556
+
+)
+
+(20,141
+
+)
+
+Changes in operating assets and liabilities:
+
+Other current assets
+
+(41,399
+
+)
+
+10,250
+
+(147,000
+
+)
+
+48,649
+
+Accounts payable
+
+34,029
+
+27,810
+
+10,590
+
+16,707
+
+Accrued expenses
+
+74,006
+
+28,957
+
+119,506
+
+72,288
+
+Deferred revenue
+
+32,947
+
+30,230
+
+94,777
+
+80,485
+
+Other non-current assets and liabilities
+
+(7,549
+
+)
+
+(11,065
+
+)
+
+(40,146
+
+)
+
+(43,604
+
+)
+
+Net cash used in operating activities
+
+(419,607
+
+)
+
+(461,941
+
+)
+
+(1,297,991
+
+)
+
+(916,824
+
+)
+
+Cash flows from investing activities:
+
+Acquisitions of DVD content assets
+
+(10,217
+
+)
+
+(17,249
+
+)
+
+(43,213
+
+)
+
+(58,380
+
+)
+
+Purchases of property and equipment
+
+(33,963
+
+)
+
+(27,366
+
+)
+
+(151,717
+
+)
+
+(46,605
+
+)
+
+Change in other assets
+
+(1,107
+
+)
+
+125
+
+(2,940
+
+)
+
+676
+
+Purchases of short-term investments
+
+(2,799
+
+)
+
+(128,136
+
+)
+
+(74,819
+
+)
+
+(181,590
+
+)
+
+Proceeds from sale of short-term investments
+
+250,278
+
+171,747
+
+320,154
+
+198,687
+
+Proceeds from maturities of short-term investments
+
+—
+
+24,855
+
+22,705
+
+112,555
+
+Net cash provided by investing activities
+
+202,192
+
+23,976
+
+70,170
+
+25,343
+
+Cash flows from financing activities:
+
+Proceeds from issuance of debt
+
+—
+
+—
+
+1,420,510
+
+—
+
+Issuance costs
+
+(312
+
+)
+
+—
+
+(15,325
+
+)
+
+—
+
+Proceeds from issuance of common stock
+
+34,669
+
+3,819
+
+73,673
+
+11,587
+
+Excess tax benefits from stock-based compensation
+
+—
+
+12,762
+
+—
+
+37,401
+
+Other financing activities
+
+65
+
+58
+
+189
+
+170
+
+Net cash provided by financing activities
+
+34,422
+
+16,639
+
+1,479,047
+
+49,158
+
+Effect of exchange rate changes on cash and cash equivalents
+
+10,685
+
+(441
+
+)
+
+27,667
+
+2,151
+
+Net increase (decrease) in cash and cash equivalents
+
+(172,308
+
+)
+
+(421,767
+
+)
+
+278,893
+
+(840,172
+
+)
+
+Cash and cash equivalents, beginning of period
+
+1,918,777
+
+1,390,925
+
+1,467,576
+
+1,809,330
+
+Cash and cash equivalents, end of period
+
+$
+
+1,746,469
+
+$
+
+969,158
+
+$
+
+1,746,469
+
+$
+
+969,158
+
+Supplemental disclosure:
+
+Change in investing activities included in liabilities
+
+$
+
+(6,876
+
+)
+
+$
+
+17,243
+
+$
+
+(27,041
+
+)
+
+$
+
+15,486
+
+See accompanying notes to the consolidated financial statements.
+
+5
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Balance Sheets
+
+(in thousands, except share and par value data)
+
+As of
+
+September 30,
+
+2017
+
+December 31,
+
+2016
+
+(unaudited)
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+1,746,469
+
+$
+
+1,467,576
+
+Short-term investments
+
+—
+
+266,206
+
+Current content assets, net
+
+4,223,387
+
+3,726,307
+
+Other current assets
+
+415,492
+
+260,202
+
+Total current assets
+
+6,385,348
+
+5,720,291
+
+Non-current content assets, net
+
+9,739,704
+
+7,274,501
+
+Property and equipment, net
+
+322,421
+
+250,395
+
+Other non-current assets
+
+504,067
+
+341,423
+
+Total assets
+
+$
+
+16,951,540
+
+$
+
+13,586,610
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Current content liabilities
+
+$
+
+4,142,086
+
+$
+
+3,632,711
+
+Accounts payable
+
+301,443
+
+312,842
+
+Accrued expenses
+
+331,723
+
+197,632
+
+Deferred revenue
+
+535,425
+
+443,472
+
+Total current liabilities
+
+5,310,677
+
+4,586,657
+
+Non-current content liabilities
+
+3,296,504
+
+2,894,654
+
+Long-term debt
+
+4,888,783
+
+3,364,311
+
+Other non-current liabilities
+
+128,215
+
+61,188
+
+Total liabilities
+
+13,624,179
+
+10,906,810
+
+Commitments and contingencies (Note 6)
+
+Stockholders' equity:
+
+Common stock, $0.001 par value; 4,990,000,000 shares authorized at September 30, 2017 and December 31, 2016; 432,731,130 and 430,054,212 issued and outstanding at September 30, 2017 and December 31, 2016, respectively
+
+1,807,123
+
+1,599,762
+
+Accumulated other comprehensive loss
+
+(25,362
+
+)
+
+(48,565
+
+)
+
+Retained earnings
+
+1,545,600
+
+1,128,603
+
+Total stockholders' equity
+
+3,327,361
+
+2,679,800
+
+Total liabilities and stockholders' equity
+
+$
+
+16,951,540
+
+$
+
+13,586,610
+
+See accompanying notes to the consolidated financial statements.
+
+6
+
+Table of Contents
+
+NETFLIX, INC.
+
+Notes to Consolidated Financial Statements
+
+(unaudited)
+
+1. Basis of Presentation and Summary of Significant Accounting Policies
+
+The accompanying interim consolidated financial statements of Netflix, Inc. and its wholly owned subsidiaries (the "Company") have been prepared in conformity with accounting principles generally accepted in the United States ("U.S.") and are consistent in all material respects with those applied in the Company's Annual Report on Form 10-K for the year ended
+
+December 31, 2016
+
+filed with the Securities and Exchange Commission (the "SEC") on January 27, 2017. The preparation of consolidated financial statements in conformity with U.S. generally accepted accounting principles ("GAAP") requires management to make estimates and judgments that affect the amounts reported in the consolidated financial statements and accompanying notes. Significant items subject to such estimates and assumptions include the streaming content asset amortization policy; the recognition and measurement of income tax assets and liabilities; and the valuation of stock-based compensation. The Company bases its estimates on historical experience and on various other assumptions that the Company believes to be reasonable under the circumstances. On a regular basis, the Company evaluates the assumptions, judgments and estimates. Actual results may differ from these estimates.
+
+The interim financial information is unaudited, but reflects all normal recurring adjustments that are, in the opinion of management, necessary to fairly present the information set forth herein. The interim consolidated financial statements should be read in conjunction with the audited consolidated financial statements and related notes included in the Company's Annual Report on Form 10-K for the year ended
+
+December 31, 2016
+
+. Interim results are not necessarily indicative of the results for a full year.
+
+The Company has
+
+three
+
+reportable segments: Domestic streaming, International streaming and Domestic DVD, all of which derive revenue from monthly membership fees. See Note 10 for further detail on the Company's segments.
+
+There have been no material changes in the Company's significant accounting policies, other than the adoption of Accounting Standards Update ("ASU") 2016-09 described below and in Note 9 and ASU 2017-01 described below, as compared to the significant accounting policies described in the Company's Annual Report on Form 10-K for the year ended
+
+December 31, 2016
+
+.
+
+Recently adopted accounting pronouncements
+
+In March 2016, the Financial Accounting Standards Board ("FASB") issued ASU 2016-09,
+
+Improvements to Employee Share-Based Payment Accounting
+
+, which amends Accounting Standards Codification ("ASC")
+
+Topic 718, Compensation - Stock Compensation
+
+. ASU 2016-09 simplifies several aspects of the accounting for share-based payment transactions, including the income tax consequences, classification of awards as either equity or liabilities, and classification on the statement of cash flows. Under the new standard, all excess tax benefits and tax deficiencies are recorded as a component of the provision for income taxes in the reporting period in which they occur. Additionally, ASU 2016-09 requires that the Company present excess tax benefits on the Statement of Cash Flows as an operating activity. ASU 2016-09 is effective for fiscal years beginning after December 15, 2016. The Company adopted ASU 2016-09 in the first quarter of 2017 and elected to apply this adoption prospectively. Prior periods have not been adjusted. See Note 9 for information regarding the impact on the Company's financial statements.
+
+In January 2017, the FASB issued ASU 2017-01,
+
+Business Combinations (Topic 805):
+
+Clarifying the Definition of a Business.
+
+The standard provides guidance to assist entities with evaluating whether transactions should be accounted for as acquisitions (or disposals) of assets or businesses. If substantially all of the fair value of the gross assets acquired (or disposed of) is concentrated in a single asset or a group of similar assets, the assets acquired (or disposed of) are not considered a business. ASU 2017-01 is effective for fiscal periods beginning after December 15, 2017 (including interim periods within those periods) with early adoption permitted. The Company early adopted the standard in the third quarter of 2017 on a prospective basis and the impact on its consolidated financial statements was not material.
+
+Recently issued accounting pronouncements not yet adopted
+
+In May 2014, the FASB issued ASU 2014-09,
+
+Revenue from Contracts with Customers (Topic 606)
+
+which amended the existing accounting standards for revenue recognition. ASU 2014-09 establishes principles for recognizing revenue upon the transfer of promised goods or services to customers, in an amount that reflects the expected consideration received in exchange for those goods or services. In July 2015, the FASB deferred the effective date for annual reporting periods beginning after December 15, 2017 (including interim reporting periods within those periods). Early adoption is permitted to the original effective date for annual reporting periods beginning after December 15, 2016 (including interim reporting periods within those periods). The amendments may be applied retrospectively to each prior period (full retrospective) or retrospectively with the cumulative effect recognized as of the date of initial application (modified retrospective). The Company will adopt ASU 2014-09 in the first quarter of 2018 using the modified retrospective approach. Because the Company's primary source of revenues is from monthly membership fees which are recognized ratably over each monthly membership period, the Company does not expect the impact on its consolidated financial statements to be material.
+
+In February 2016, the FASB issued ASU 2016-02,

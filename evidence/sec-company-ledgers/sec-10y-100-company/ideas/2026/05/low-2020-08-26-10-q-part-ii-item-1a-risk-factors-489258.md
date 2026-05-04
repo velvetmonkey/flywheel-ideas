@@ -1,0 +1,2069 @@
+---
+id: idea-2CKhmYdR
+type: idea
+state: nascent
+title: LOW 2020-08-26 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:18:09.258Z'
+date: '2026-05-03'
+created: '2026-05-03T20:18:09.631Z'
+---
+# LOWES COMPANIES INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2020-08-26
+Source: https://www.sec.gov/Archives/edgar/data/60667/000006066720000138/low-20200731.htm
+
+Risk Factors
+
+30
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+30
+
+Item 6.
+
+Exhibits
+
+31
+
+Signature
+
+32
+
+Table of Contents
+
+FORWARD-LOOKING STATEMENTS
+
+This Form 10-Q includes "forward-looking statements" within the meaning of the Private Securities Litigation Reform Act of 1995. Statements including words such as "believe", "expect", "anticipate", "plan", "desire", "project", "estimate", "intend", "will", "should", "could", "would", "may", "strategy", "potential", "opportunity", "outlook", "guidance", and similar expressions are forward-looking statements. Forward-looking statements involve, among other things, expectations, projections, and assumptions about future financial and operating results, objectives, business outlook, priorities, sales growth, shareholder value, capital expenditures, cash flows, the housing market, the home improvement industry, demand for products and services, share repurchases, Lowe's strategic initiatives, including those relating to acquisitions and dispositions and the impact of such transactions on our strategic and operational plans and financial results. Such statements involve risks and uncertainties and we can give no assurance that they will prove to be correct. Actual results may differ materially from those expressed or implied in such statements.
+
+A wide variety of potential risks, uncertainties, and other factors could materially affect our ability to achieve the results either expressed or implied by these forward-looking statements including, but not limited to, changes in general economic conditions, such as the rate of unemployment, interest rate and currency fluctuations, fuel and other energy costs, slower growth in personal income, changes in consumer spending, changes in the rate of housing turnover, the availability of consumer credit and of mortgage financing, changes in commodity prices, changes or threatened changes in tariffs, outbreak of public health crises, such as the COVID-19 pandemic, availability and cost of goods from suppliers, changes in our management and key personnel, and other factors that can negatively affect our customers.
+
+Investors and others should carefully consider the foregoing factors and other uncertainties, risks and potential events including, but not limited to, those described in "Item 1A - Risk Factors" in our most recent Annual Report on Form 10-K and as may be updated from time to time in Item 1A in our quarterly reports on Form 10-Q or other subsequent filings with the SEC, and in "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations - Critical Accounting Policies and Estimates" of this report on Form 10-Q. All such forward-looking statements speak only as of the date they are made, and we do not undertake any obligation to update these statements other than as required by law.
+
+3
+
+Table of Contents
+
+Part I - FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+Lowe's Companies, Inc.
+
+Consolidated Balance Sheets (Unaudited)
+
+In Millions, Except Par Value Data
+
+July 31,
+
+2020
+
+August 2,
+
+2019
+
+January 31, 2020
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+11,641
+
+$
+
+1,796
+
+$
+
+716
+
+Short-term investments
+
+1,085
+
+275
+
+160
+
+Merchandise inventory – net
+
+13,831
+
+13,730
+
+13,179
+
+Other current assets
+
+1,160
+
+995
+
+1,263
+
+Total current assets
+
+27,717
+
+16,796
+
+15,318
+
+Property, less accumulated depreciation
+
+18,612
+
+18,203
+
+18,669
+
+Operating lease right-of-use assets
+
+3,798
+
+3,967
+
+3,891
+
+Long-term investments
+
+326
+
+179
+
+372
+
+Deferred income taxes – net
+
+267
+
+512
+
+216
+
+Other assets
+
+1,043
+
+1,038
+
+1,005
+
+Total assets
+
+$
+
+51,763
+
+$
+
+40,695
+
+$
+
+39,471
+
+Liabilities and shareholders' equity
+
+Current liabilities:
+
+Short-term borrowings
+
+$
+
+1,000
+
+$
+
+—
+
+$
+
+1,941
+
+Current maturities of long-term debt
+
+609
+
+1,009
+
+597
+
+Current operating lease liabilities
+
+520
+
+492
+
+501
+
+Accounts payable
+
+12,916
+
+9,499
+
+7,659
+
+Accrued compensation and employee benefits
+
+1,139
+
+717
+
+684
+
+Deferred revenue
+
+1,715
+
+1,324
+
+1,219
+
+Other current liabilities
+
+3,471
+
+2,794
+
+2,581
+
+Total current liabilities
+
+21,370
+
+15,835
+
+15,182
+
+Long-term debt, excluding current maturities
+
+20,197
+
+16,538
+
+16,768
+
+Noncurrent operating lease liabilities
+
+3,859
+
+4,055
+
+3,943
+
+Deferred revenue – extended protection plans
+
+981
+
+868
+
+894
+
+Other liabilities
+
+1,000
+
+759
+
+712
+
+Total liabilities
+
+47,407
+
+38,055
+
+37,499
+
+Shareholders' equity:
+
+Preferred stock, $
+
+5
+
+par value: Authorized –
+
+5.0
+
+million shares; Issued and
+
+outstanding –
+
+no
+
+ne
+
+—
+
+—
+
+—
+
+Common stock, $
+
+0.50
+
+par value: Authorized –
+
+5.6
+
+billion shares; Issued and
+
+outstanding –
+
+756
+
+million,
+
+776
+
+million, and
+
+763
+
+million shares, respectively
+
+378
+
+388
+
+381
+
+Capital in excess of par value
+
+129
+
+—
+
+—
+
+Retained earnings
+
+4,134
+
+2,439
+
+1,727
+
+Accumulated other comprehensive loss
+
+(
+
+285
+
+)
+
+(
+
+187
+
+)
+
+(
+
+136
+
+)
+
+Total shareholders' equity
+
+4,356
+
+2,640
+
+1,972
+
+Total liabilities and shareholders' equity
+
+$
+
+51,763
+
+$
+
+40,695
+
+$
+
+39,471
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+4
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Earnings (Unaudited)
+
+In Millions, Except Per Share and Percentage Data
+
+Three Months Ended
+
+Six Months Ended
+
+July 31, 2020
+
+August 2, 2019
+
+July 31, 2020
+
+August 2, 2019
+
+Current Earnings
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Net sales
+
+$
+
+27,302
+
+100.00
+
+%
+
+$
+
+20,992
+
+100.00
+
+%
+
+$
+
+46,977
+
+100.00
+
+%
+
+$
+
+38,733
+
+100.00
+
+%
+
+Cost of sales
+
+17,998
+
+65.92
+
+14,252
+
+67.89
+
+31,161
+
+66.33
+
+26,412
+
+68.19
+
+Gross margin
+
+9,304
+
+34.08
+
+6,740
+
+32.11
+
+15,816
+
+33.67
+
+12,321
+
+31.81
+
+Expenses:
+
+Selling, general and administrative
+
+5,020
+
+18.39
+
+4,048
+
+19.29
+
+9,215
+
+19.62
+
+7,909
+
+20.42
+
+Depreciation and amortization
+
+327
+
+1.20
+
+311
+
+1.48
+
+653
+
+1.39
+
+614
+
+1.58
+
+Operating income
+
+3,957
+
+14.49
+
+2,381
+
+11.34
+
+5,948
+
+12.66
+
+3,798
+
+9.81
+
+Interest – net
+
+219
+
+0.80
+
+169
+
+0.80
+
+423
+
+0.90
+
+331
+
+0.86
+
+Pre-tax earnings
+
+3,738
+
+13.69
+
+2,212
+
+10.54
+
+5,525
+
+11.76
+
+3,467
+
+8.95
+
+Income tax provision
+
+910
+
+3.33
+
+536
+
+2.56
+
+1,360
+
+2.89
+
+745
+
+1.92
+
+Net earnings
+
+$
+
+2,828
+
+10.36
+
+%
+
+$
+
+1,676
+
+7.98
+
+%
+
+$
+
+4,165
+
+8.87
+
+%
+
+$
+
+2,722
+
+7.03
+
+%
+
+Weighted average common shares outstanding
+
+–
+
+basic
+
+752
+
+781
+
+754
+
+788
+
+Basic earnings per common share
+
+$
+
+3.74
+
+$
+
+2.14
+
+$
+
+5.50
+
+$
+
+3.44
+
+Weighted average common shares outstanding
+
+–
+
+diluted
+
+753
+
+781
+
+755
+
+789
+
+Diluted earnings per common share
+
+$
+
+3.74
+
+$
+
+2.14
+
+$
+
+5.50
+
+$
+
+3.44
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Comprehensive Income (Unaudited)
+
+In Millions, Except Percentage Data
+
+Three Months Ended
+
+Six Months Ended
+
+July 31, 2020
+
+August 2, 2019
+
+July 31, 2020
+
+August 2, 2019
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Amount
+
+% Sales
+
+Net earnings
+
+$
+
+2,828
+
+10.36
+
+%
+
+$
+
+1,676
+
+7.98
+
+%
+
+$
+
+4,165
+
+8.87
+
+%
+
+$
+
+2,722
+
+7.03
+
+%
+
+Foreign currency translation adjustments
+
+–
+
+net of tax
+
+114
+
+0.41
+
+69
+
+0.33
+
+(
+
+45
+
+)
+
+(
+
+0.10
+
+)
+
+36
+
+0.09
+
+Cash flow hedges
+
+–
+
+net of tax
+
+(
+
+5
+
+)
+
+(
+
+0.02
+
+)
+
+—
+
+—
+
+(
+
+108
+
+)
+
+(
+
+0.23
+
+)
+
+(
+
+16
+
+)
+
+(
+
+0.04
+
+)
+
+Other
+
+(
+
+1
+
+)
+
+—
+
+—
+
+—
+
+4
+
+0.01
+
+2
+
+—
+
+Other comprehensive income/(loss)
+
+108
+
+0.39
+
+69
+
+0.33
+
+(
+
+149
+
+)
+
+(
+
+0.32
+
+)
+
+22
+
+0.05
+
+Comprehensive income
+
+$
+
+2,936
+
+10.75
+
+%
+
+$
+
+1,745
+
+8.31
+
+%
+
+$
+
+4,016
+
+8.55
+
+%
+
+$
+
+2,744
+
+7.08
+
+%
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+5
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Shareholders' Equity (Unaudited)
+
+In Millions
+
+Three Months Ended July 31, 2020
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Retained Earnings
+
+Accumulated Other Comprehensive
+
+Loss
+
+Total Shareholders' Equity
+
+Shares
+
+Amount
+
+Balance May 1, 2020
+
+755
+
+$
+
+377
+
+$
+
+10
+
+$
+
+1,722
+
+$
+
+(
+
+393
+
+)
+
+$
+
+1,716
+
+Net earnings
+
+—
+
+—
+
+—
+
+2,828
+
+—
+
+2,828
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+108
+
+108
+
+Cash dividends declared, $
+
+0.55
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+416
+
+)
+
+—
+
+(
+
+416
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+41
+
+—
+
+—
+
+41
+
+Issuance of common stock under share-based payment plans
+
+1
+
+1
+
+78
+
+—
+
+—
+
+79
+
+Balance July 31, 2020
+
+756
+
+$
+
+378
+
+$
+
+129
+
+$
+
+4,134
+
+$
+
+(
+
+285
+
+)
+
+$
+
+4,356
+
+Six Months Ended July 31, 2020
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Retained Earnings
+
+Accumulated Other Comprehensive
+
+Loss
+
+Total Shareholders' Equity
+
+Shares
+
+Amount
+
+Balance January 31, 2020
+
+763
+
+$
+
+381
+
+$
+
+—
+
+$
+
+1,727
+
+$
+
+(
+
+136
+
+)
+
+$
+
+1,972
+
+Net earnings
+
+—
+
+—
+
+—
+
+4,165
+
+—
+
+4,165
+
+Other comprehensive loss
+
+—
+
+—
+
+—
+
+—
+
+(
+
+149
+
+)
+
+(
+
+149
+
+)
+
+Cash dividends declared, $
+
+1.10
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+831
+
+)
+
+—
+
+(
+
+831
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+64
+
+—
+
+—
+
+64
+
+Repurchases of common stock
+
+(
+
+10
+
+)
+
+(
+
+5
+
+)
+
+(
+
+15
+
+)
+
+(
+
+927
+
+)
+
+—
+
+(
+
+947
+
+)
+
+Issuance of common stock under share-based payment plans
+
+3
+
+2
+
+80
+
+—
+
+—
+
+82
+
+Balance July 31, 2020
+
+756
+
+$
+
+378
+
+$
+
+129
+
+$
+
+4,134
+
+$
+
+(
+
+285
+
+)
+
+$
+
+4,356
+
+6
+
+Table of Contents
+
+Three Months Ended August 2, 2019
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Retained Earnings
+
+Accumulated Other Comprehensive
+
+Loss
+
+Total Shareholders' Equity
+
+Shares
+
+Amount
+
+Balance May 3, 2019
+
+795
+
+$
+
+397
+
+$
+
+—
+
+$
+
+3,095
+
+$
+
+(
+
+256
+
+)
+
+$
+
+3,236
+
+Net earnings
+
+—
+
+—
+
+—
+
+1,676
+
+—
+
+1,676
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+69
+
+69
+
+Cash dividends declared, $
+
+0.55
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+428
+
+)
+
+—
+
+(
+
+428
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+13
+
+—
+
+—
+
+13
+
+Repurchases of common stock
+
+(
+
+20
+
+)
+
+(
+
+9
+
+)
+
+(
+
+51
+
+)
+
+(
+
+1,904
+
+)
+
+—
+
+(
+
+1,964
+
+)
+
+Issuance of common stock under share-based payment plans
+
+1
+
+—
+
+38
+
+—
+
+—
+
+38
+
+Balance August 2, 2019
+
+776
+
+$
+
+388
+
+$
+
+—
+
+$
+
+2,439
+
+$
+
+(
+
+187
+
+)
+
+$
+
+2,640
+
+Six Months Ended August 2, 2019
+
+Common Stock
+
+Capital in Excess
+
+of Par Value
+
+Retained Earnings
+
+Accumulated Other Comprehensive
+
+Loss
+
+Total Shareholders' Equity
+
+Shares
+
+Amount
+
+Balance February 1, 2019
+
+801
+
+$
+
+401
+
+$
+
+—
+
+$
+
+3,452
+
+$
+
+(
+
+209
+
+)
+
+$
+
+3,644
+
+Cumulative effect of accounting change
+
+—
+
+—
+
+—
+
+(
+
+263
+
+)
+
+—
+
+(
+
+263
+
+)
+
+Net earnings
+
+—
+
+—
+
+—
+
+2,722
+
+—
+
+2,722
+
+Other comprehensive income
+
+—
+
+—
+
+—
+
+—
+
+22
+
+22
+
+Cash dividends declared, $
+
+1.03
+
+per share
+
+—
+
+—
+
+—
+
+(
+
+810
+
+)
+
+—
+
+(
+
+810
+
+)
+
+Share-based payment expense
+
+—
+
+—
+
+52
+
+—
+
+—
+
+52
+
+Repurchases of common stock
+
+(
+
+28
+
+)
+
+(
+
+14
+
+)
+
+(
+
+121
+
+)
+
+(
+
+2,662
+
+)
+
+—
+
+(
+
+2,797
+
+)
+
+Issuance of common stock under share-based payment plans
+
+3
+
+1
+
+69
+
+—
+
+—
+
+70
+
+Balance August 2, 2019
+
+776
+
+$
+
+388
+
+$
+
+—
+
+$
+
+2,439
+
+$
+
+(
+
+187
+
+)
+
+$
+
+2,640
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+7
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Consolidated Statements of Cash Flows (Unaudited)
+
+In Millions
+
+Six Months Ended
+
+July 31, 2020
+
+August 2, 2019
+
+Cash flows from operating activities:
+
+Net earnings
+
+$
+
+4,165
+
+$
+
+2,722
+
+Adjustments to reconcile net earnings to net cash provided by operating activities:
+
+Depreciation and amortization
+
+747
+
+684
+
+Noncash lease expense
+
+234
+
+228
+
+Deferred income taxes
+
+(
+
+14
+
+)
+
+(
+
+121
+
+)
+
+Loss on property and other assets – net
+
+80
+
+38
+
+Share-based payment expense
+
+64
+
+51
+
+Changes in operating assets and liabilities:
+
+Merchandise inventory – net
+
+(
+
+674
+
+)
+
+(
+
+1,153
+
+)
+
+Other operating assets
+
+66
+
+(
+
+104
+
+)
+
+Accounts payable
+
+5,259
+
+1,202
+
+Other operating liabilities
+
+1,825
+
+36
+
+Net cash provided by operating activities
+
+11,752
+
+3,583
+
+Cash flows from investing activities:
+
+Purchases of investments
+
+(
+
+1,132
+
+)
+
+(
+
+245
+
+)
+
+Proceeds from sale/maturity of investments
+
+260
+
+272
+
+Capital expenditures
+
+(
+
+710
+
+)
+
+(
+
+526
+
+)
+
+Proceeds from sale of property and other long-term assets
+
+46
+
+42
+
+Other – net
+
+(
+
+24
+
+)
+
+(
+
+1
+
+)
+
+Net cash used in investing activities
+
+(
+
+1,560
+
+)
+
+(
+
+458
+
+)
+
+Cash flows from financing activities:
+
+Net change in commercial paper
+
+(
+
+941
+
+)
+
+(
+
+722
+
+)
+
+Net proceeds from issuance of debt
+
+3,961
+
+2,972
+
+Repayment of long-term debt
+
+(
+
+568
+
+)
+
+(
+
+629
+
+)
+
+Proceeds from issuance of common stock under share-based payment plans
+
+83
+
+72
+
+Cash dividend payments
+
+(
+
+836
+
+)
+
+(
+
+767
+
+)
+
+Repurchases of common stock
+
+(
+
+966
+
+)
+
+(
+
+2,770
+
+)
+
+Other – net
+
+(
+
+4
+
+)
+
+(
+
+7
+
+)
+
+Net cash provided by (used in) financing activities
+
+729
+
+(
+
+1,851
+
+)
+
+Effect of exchange rate changes on cash
+
+4
+
+(
+
+1
+
+)
+
+Net increase in cash and cash equivalents, including cash classified within current assets
+
+held for sale
+
+10,925
+
+1,273
+
+Less: Net decrease in cash classified within current assets held for sale
+
+—
+
+12
+
+Net increase in cash and cash equivalents
+
+10,925
+
+1,285
+
+Cash and cash equivalents, beginning of period
+
+716
+
+511
+
+Cash and cash equivalents, end of period
+
+$
+
+11,641
+
+$
+
+1,796
+
+See accompanying notes to the consolidated financial statements (unaudited).
+
+8
+
+Table of Contents
+
+Lowe's Companies, Inc.
+
+Notes to Consolidated Financial Statements (Unaudited)
+
+Note 1:
+
+Summary of Significant Accounting Policies
+
+Basis of Presentation
+
+The accompanying condensed consolidated financial statements (unaudited) and notes to the condensed consolidated financial statements (unaudited) are presented in accordance with the rules and regulations of the Securities and Exchange Commission and do not include all the disclosures normally required in annual consolidated financial statements prepared in accordance with accounting principles generally accepted in the United States of America (GAAP). The condensed consolidated financial statements (unaudited), in the opinion of management, contain all normal recurring adjustments necessary to present fairly the financial position as of July 31, 2020, and August 2, 2019, the results of operations, comprehensive income, and shareholders' equity for the three and six months ended July 31, 2020, and August 2, 2019, and cash flows for the six months ended July 31, 2020, and August 2, 2019. The January 31, 2020 consolidated balance sheet was derived from the audited financial statements.
+
+These interim condensed consolidated financial statements (unaudited) should be read in conjunction with the audited consolidated financial statements and notes thereto included in the Lowe's Companies, Inc. (the Company) Annual Report on Form 10-K for the fiscal year ended January 31, 2020 (the Annual Report). The financial results for the interim periods may not be indicative of the financial results for the entire fiscal year.

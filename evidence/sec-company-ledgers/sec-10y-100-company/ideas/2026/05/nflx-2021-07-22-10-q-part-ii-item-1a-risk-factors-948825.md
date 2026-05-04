@@ -1,0 +1,1539 @@
+---
+id: idea-Gi5DtFX7
+type: idea
+state: nascent
+title: NFLX 2021-07-22 10-Q Part II Item 1A Risk Factors
+created_at: '2026-05-03T20:42:28.825Z'
+date: '2026-05-03'
+created: '2026-05-03T20:42:29.280Z'
+---
+# NETFLIX INC 10-Q Part II Item 1A Risk Factors
+
+Filed: 2021-07-22
+Source: https://www.sec.gov/Archives/edgar/data/1065280/000106528021000250/nflx-20210630.htm
+
+Risk Factors
+
+35
+
+Item 2.
+
+Unregistered Sales of Equity Securities and Use of Proceeds
+
+35
+
+Item 6.
+
+Exhibits
+
+35
+
+Exhibit Index
+
+36
+
+Signatures
+
+36
+
+2
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Operations
+
+(unaudited)
+
+(in thousands, except per share data)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+Revenues
+
+$
+
+7,341,777
+
+$
+
+6,148,286
+
+$
+
+14,505,059
+
+$
+
+11,915,977
+
+Cost of revenues
+
+4,018,008
+
+3,643,707
+
+7,886,519
+
+7,243,408
+
+Marketing
+
+603,973
+
+434,370
+
+1,116,485
+
+938,200
+
+Technology and development
+
+537,321
+
+435,045
+
+1,062,528
+
+888,862
+
+General and administrative
+
+334,845
+
+277,236
+
+632,041
+
+529,323
+
+Operating income
+
+1,847,630
+
+1,357,928
+
+3,807,486
+
+2,316,184
+
+Other income (expense):
+
+Interest expense
+
+(
+
+191,322
+
+)
+
+(
+
+189,151
+
+)
+
+(
+
+385,762
+
+)
+
+(
+
+373,234
+
+)
+
+Interest and other income (expense)
+
+(
+
+62,519
+
+)
+
+(
+
+133,175
+
+)
+
+206,567
+
+(
+
+111,478
+
+)
+
+Income before income taxes
+
+1,593,789
+
+1,035,602
+
+3,628,291
+
+1,831,472
+
+Provision for income taxes
+
+(
+
+240,776
+
+)
+
+(
+
+315,406
+
+)
+
+(
+
+568,563
+
+)
+
+(
+
+402,209
+
+)
+
+Net income
+
+$
+
+1,353,013
+
+$
+
+720,196
+
+$
+
+3,059,728
+
+$
+
+1,429,263
+
+Earnings per share:
+
+Basic
+
+$
+
+3.05
+
+$
+
+1.63
+
+$
+
+6.90
+
+$
+
+3.25
+
+Diluted
+
+$
+
+2.97
+
+$
+
+1.59
+
+$
+
+6.72
+
+$
+
+3.15
+
+Weighted-average shares of common stock outstanding:
+
+Basic
+
+443,159
+
+440,569
+
+443,192
+
+439,961
+
+Diluted
+
+455,129
+
+453,945
+
+455,385
+
+453,220
+
+See accompanying notes to the consolidated financial statements.
+
+3
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Comprehensive Income
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+Net income
+
+$
+
+1,353,013
+
+$
+
+720,196
+
+$
+
+3,059,728
+
+$
+
+1,429,263
+
+Other comprehensive income (loss):
+
+Foreign currency translation adjustments
+
+5,638
+
+12,982
+
+(
+
+34,623
+
+)
+
+(
+
+10,551
+
+)
+
+Comprehensive income
+
+$
+
+1,358,651
+
+$
+
+733,178
+
+$
+
+3,025,105
+
+$
+
+1,418,712
+
+See accompanying notes to the consolidated financial statements.
+
+4
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Cash Flows
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+Cash flows from operating activities:
+
+Net income
+
+$
+
+1,353,013
+
+$
+
+720,196
+
+$
+
+3,059,728
+
+$
+
+1,429,263
+
+Adjustments to reconcile net income to net cash provided by (used in) operating activities:
+
+Additions to content assets
+
+(
+
+4,096,750
+
+)
+
+(
+
+2,510,782
+
+)
+
+(
+
+7,381,326
+
+)
+
+(
+
+5,805,057
+
+)
+
+Change in content liabilities
+
+(
+
+312,208
+
+)
+
+(
+
+108,432
+
+)
+
+(
+
+578,248
+
+)
+
+150,513
+
+Amortization of content assets
+
+2,806,803
+
+2,607,159
+
+5,525,999
+
+5,090,544
+
+Depreciation and amortization of property, equipment and intangibles
+
+38,434
+
+26,661
+
+74,175
+
+55,178
+
+Stock-based compensation expense
+
+101,583
+
+104,210
+
+208,813
+
+201,229
+
+Foreign currency remeasurement loss (gain) on debt
+
+63,074
+
+119,161
+
+(
+
+190,256
+
+)
+
+26,101
+
+Other non-cash items
+
+108,103
+
+70,301
+
+180,760
+
+135,749
+
+Deferred income taxes
+
+51,127
+
+223,308
+
+210,860
+
+269,927
+
+Changes in operating assets and liabilities:
+
+Other current assets
+
+(
+
+52,373
+
+)
+
+3,066
+
+(
+
+273,928
+
+)
+
+(
+
+124,287
+
+)
+
+Accounts payable
+
+72,313
+
+(
+
+112,027
+
+)
+
+(
+
+65,000
+
+)
+
+(
+
+261,180
+
+)
+
+Accrued expenses and other liabilities
+
+(
+
+171,430
+
+)
+
+(
+
+105,450
+
+)
+
+6,467
+
+108,741
+
+Deferred revenue
+
+47,093
+
+42,508
+
+69,372
+
+104,516
+
+Other non-current assets and liabilities
+
+(
+
+72,543
+
+)
+
+(
+
+38,803
+
+)
+
+(
+
+133,911
+
+)
+
+(
+
+80,249
+
+)
+
+Net cash provided by (used in) operating activities
+
+(
+
+63,761
+
+)
+
+1,041,076
+
+713,505
+
+1,300,988
+
+Cash flows from investing activities:
+
+Purchases of property and equipment
+
+(
+
+110,278
+
+)
+
+(
+
+141,741
+
+)
+
+(
+
+191,279
+
+)
+
+(
+
+239,756
+
+)
+
+Change in other assets
+
+(
+
+1,000
+
+)
+
+(
+
+260
+
+)
+
+(
+
+5,615
+
+)
+
+(
+
+548
+
+)
+
+Net cash used in investing activities
+
+(
+
+111,278
+
+)
+
+(
+
+142,001
+
+)
+
+(
+
+196,894
+
+)
+
+(
+
+240,304
+
+)
+
+Cash flows from financing activities:
+
+Proceeds from issuance of debt
+
+—
+
+1,009,464
+
+—
+
+1,009,464
+
+Debt issuance costs
+
+—
+
+(
+
+7,559
+
+)
+
+—
+
+(
+
+7,559
+
+)
+
+Repayments of debt
+
+—
+
+—
+
+(
+
+500,000
+
+)
+
+—
+
+Proceeds from issuance of common stock
+
+19,749
+
+89,060
+
+67,820
+
+132,754
+
+Repurchases of common stock
+
+(
+
+500,022
+
+)
+
+—
+
+(
+
+500,022
+
+)
+
+—
+
+Net cash provided by (used in) financing activities
+
+(
+
+480,273
+
+)
+
+1,090,965
+
+(
+
+932,202
+
+)
+
+1,134,659
+
+Effect of exchange rate changes on cash, cash equivalents and restricted cash
+
+23,477
+
+11,819
+
+(
+
+18,661
+
+)
+
+(
+
+59,083
+
+)
+
+Net increase (decrease) in cash, cash equivalents and restricted cash
+
+(
+
+631,835
+
+)
+
+2,001,859
+
+(
+
+434,252
+
+)
+
+2,136,260
+
+Cash, cash equivalents and restricted cash at beginning of period
+
+8,436,453
+
+5,178,187
+
+8,238,870
+
+5,043,786
+
+Cash, cash equivalents and restricted cash at end of period
+
+$
+
+7,804,618
+
+$
+
+7,180,046
+
+$
+
+7,804,618
+
+$
+
+7,180,046
+
+See accompanying notes to the consolidated financial statements.
+
+5
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Balance Sheets
+
+(in thousands, except share and par value data)
+
+As of
+
+June 30,
+
+2021
+
+December 31,
+
+2020
+
+(unaudited)
+
+Assets
+
+Current assets:
+
+Cash and cash equivalents
+
+$
+
+7,777,530
+
+$
+
+8,205,550
+
+Other current assets
+
+1,826,746
+
+1,556,030
+
+Total current assets
+
+9,604,276
+
+9,761,580
+
+Content assets, net
+
+27,291,640
+
+25,383,950
+
+Property and equipment, net
+
+1,107,437
+
+960,183
+
+Other non-current assets
+
+2,967,616
+
+3,174,646
+
+Total assets
+
+$
+
+40,970,969
+
+$
+
+39,280,359
+
+Liabilities and Stockholders' Equity
+
+Current liabilities:
+
+Current content liabilities
+
+$
+
+4,197,874
+
+$
+
+4,429,536
+
+Accounts payable
+
+622,931
+
+656,183
+
+Accrued expenses and other liabilities
+
+1,125,591
+
+1,102,196
+
+Deferred revenue
+
+1,187,364
+
+1,117,992
+
+Short-term debt
+
+699,128
+
+499,878
+
+Total current liabilities
+
+7,832,888
+
+7,805,785
+
+Non-current content liabilities
+
+2,265,286
+
+2,618,084
+
+Long-term debt
+
+14,926,889
+
+15,809,095
+
+Other non-current liabilities
+
+2,082,035
+
+1,982,155
+
+Total liabilities
+
+27,107,098
+
+28,215,119
+
+Commitments and contingencies (Note 7)
+
+Stockholders' equity:
+
+Common stock, $
+
+0.001
+
+par value;
+
+4,990,000,000
+
+shares authorized at June 30, 2021 and December 31, 2020;
+
+442,595,888
+
+and
+
+442,895,261
+
+issued and outstanding at June 30, 2021 and December 31, 2020, respectively
+
+3,721,246
+
+3,447,698
+
+Treasury stock at cost (
+
+1,001,565
+
+shares at June 30, 2021)
+
+(
+
+500,022
+
+)
+
+—
+
+Accumulated other comprehensive income
+
+9,775
+
+44,398
+
+Retained earnings
+
+10,632,872
+
+7,573,144
+
+Total stockholders' equity
+
+13,863,871
+
+11,065,240
+
+Total liabilities and stockholders' equity
+
+$
+
+40,970,969
+
+$
+
+39,280,359
+
+See accompanying notes to the consolidated financial statements.
+
+6
+
+Table of Contents
+
+NETFLIX, INC.
+
+Consolidated Statements of Stockholders' Equity
+
+(unaudited)
+
+(in thousands)
+
+Three Months Ended
+
+Six Months Ended
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+June 30,
+
+2021
+
+June 30,
+
+2020
+
+Total stockholders' equity, beginning balances
+
+$
+
+12,884,080
+
+$
+
+8,409,294
+
+$
+
+11,065,240
+
+$
+
+7,582,157
+
+Common stock and additional paid-in capital:
+
+Beginning balances
+
+$
+
+3,600,084
+
+$
+
+2,935,532
+
+$
+
+3,447,698
+
+$
+
+2,793,929
+
+Issuance of common stock upon exercise of options
+
+19,579
+
+88,071
+
+64,735
+
+132,655
+
+Stock-based compensation expense
+
+101,583
+
+104,210
+
+208,813
+
+201,229
+
+Ending balances
+
+$
+
+3,721,246
+
+$
+
+3,127,813
+
+$
+
+3,721,246
+
+$
+
+3,127,813
+
+Treasury stock:
+
+Beginning balances
+
+$
+
+—
+
+$
+
+—
+
+$
+
+—
+
+$
+
+—
+
+Repurchases of common stock to be held as treasury stock
+
+(
+
+500,022
+
+)
+
+—
+
+(
+
+500,022
+
+)
+
+—
+
+Ending balances
+
+$
+
+(
+
+500,022
+
+)
+
+$
+
+—
+
+$
+
+(
+
+500,022
+
+)
+
+$
+
+—
+
+Accumulated other comprehensive income (loss):
+
+Beginning balances
+
+$
+
+4,137
+
+$
+
+(
+
+47,054
+
+)
+
+$
+
+44,398
+
+$
+
+(
+
+23,521
+
+)
+
+Other comprehensive income (loss)
+
+5,638
+
+12,982
+
+(
+
+34,623
+
+)
+
+(
+
+10,551
+
+)
+
+Ending balances
+
+$
+
+9,775
+
+$
+
+(
+
+34,072
+
+)
+
+$
+
+9,775
+
+$
+
+(
+
+34,072
+
+)
+
+Retained earnings:
+
+Beginning balances
+
+$
+
+9,279,859
+
+$
+
+5,520,816
+
+$
+
+7,573,144
+
+$
+
+4,811,749
+
+Net income
+
+1,353,013
+
+720,196
+
+3,059,728
+
+1,429,263
+
+Ending balances
+
+$
+
+10,632,872
+
+$
+
+6,241,012
+
+$
+
+10,632,872
+
+$
+
+6,241,012
+
+Total stockholders' equity, ending balances
+
+$
+
+13,863,871
+
+$
+
+9,334,753
+
+$
+
+13,863,871
+
+$
+
+9,334,753
+
+See accompanying notes to the consolidated financial statements.
+
+7
+
+Table of Contents
+
+NETFLIX, INC.
+
+Notes to Consolidated Financial Statements
+
+(unaudited)
+
+1.
+
+Basis of Presentation and Summary of Significant Accounting Policies
+
+The accompanying interim consolidated financial statements of Netflix, Inc. and its wholly owned subsidiaries (the "Company") have been prepared in conformity with accounting principles generally accepted in the United States ("U.S.") and are consistent in all material respects with those applied in the Company's Annual Report on Form 10-K for the year ended December 31, 2020 filed with the Securities and Exchange Commission (the "SEC") on January 28, 2021.
+
+The preparation of consolidated financial statements in conformity with U.S. generally accepted accounting principles ("GAAP") requires management to make estimates and judgments that affect the amounts reported in the consolidated financial statements and accompanying notes. Significant items subject to such estimates and assumptions include the content asset amortization policy and the recognition and measurement of income tax assets and liabilities. The Company bases its estimates on historical experience and on various other assumptions that the Company believes to be reasonable under the circumstances. On a regular basis, the Company evaluates the assumptions, judgments and estimates. Actual results may differ from these estimates.
+
+The interim financial information is unaudited, but reflects all normal recurring adjustments that are, in the opinion of management, necessary to fairly present the information set forth herein. The interim consolidated financial statements should be read in conjunction with the audited consolidated financial statements and related notes included in the Company's Annual Report on Form 10-K for the year ended December 31, 2020. Interim results are not necessarily indicative of the results for a full year.
+
+There have been no material changes in the Company's significant accounting policies as compared to the significant accounting policies described in the Company's Annual Report on Form 10-K for the year ended December 31, 2020.
+
+Recently adopted accounting pronouncements
+
+In December 2019, the Financial Accounting Standards Board ("FASB") issued Accounting Standards Update ("ASU") 2019-12,
+
+Simplifying the Accounting for Income Taxes (Topic 740)
+
+. ASU 2019-12 removes certain exceptions for performing intraperiod tax allocations, recognizing deferred taxes for investments, and calculating income taxes in interim periods. The guidance also simplifies the accounting for franchise taxes, transactions that result in a step-up in the tax basis of goodwill, and the effect of enacted changes in tax laws or rates in interim periods. The Company adopted ASU 2019-12 in the first quarter of 2021 and the adoption had no material impact to the Company's consolidated financial statements.
+
+2.
+
+Revenue Recognition
+
+The Company's primary source of revenues is from monthly membership fees. Members are billed in advance of the start of their monthly membership and revenues are recognized ratably over each monthly membership period. Revenues are presented net of the taxes that are collected from members and remitted to governmental authorities. The Company is the principal in all its relationships where partners, including consumer electronics ("CE") manufacturers, multichannel video programming distributors ("MVPDs"), mobile operators and internet service providers ("ISPs"), provide access to the service as the Company retains control over service delivery to its members. Typically, payments made to the partners, such as for marketing, are expensed. However, if there is no distinct service provided in exchange for the payments made to the partners or if the price that the member pays is established by the partners and there is no standalone price for the Netflix service (for instance, in a bundle), these payments are recognized as a reduction of revenues.
+
+The following tables summarize streaming revenue, paid net membership additions (losses), and paid memberships at end of period by region for the three and six months ended June 30, 2021 and June 30, 2020, respectively:
+
+United States and Canada (UCAN)
+
+As of/ Three Months Ended
+
+As of/ Six Months Ended
+
+June 30, 2021
+
+June 30, 2020
+
+June 30, 2021
+
+June 30, 2020
+
+(in thousands)
+
+Revenues
+
+$
+
+3,234,643
+
+$
+
+2,839,670
+
+$
+
+6,405,615
+
+$
+
+5,542,446
+
+Paid net membership additions (losses)
+
+(
+
+433
+
+)
+
+2,935
+
+15
+
+5,242
+
+Paid memberships at end of period (1)
+
+73,951
+
+72,904
+
+73,951
+
+72,904
+
+8
+
+Table of Contents
+
+Europe, Middle East, and Africa (EMEA)
+
+As of/ Three Months Ended

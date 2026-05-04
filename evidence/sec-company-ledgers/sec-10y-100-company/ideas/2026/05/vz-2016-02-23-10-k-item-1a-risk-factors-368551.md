@@ -1,0 +1,311 @@
+---
+id: idea-iqgq8vQn
+type: idea
+state: nascent
+title: VZ 2016-02-23 10-K Item 1A Risk Factors
+created_at: '2026-05-03T20:49:28.551Z'
+date: '2026-05-03'
+created: '2026-05-03T20:49:29.007Z'
+---
+# VERIZON COMMUNICATIONS INC 10-K Item 1A Risk Factors
+
+Filed: 2016-02-23
+Source: https://www.sec.gov/Archives/edgar/data/732712/000119312516473367/d35513d10k.htm
+
+Risk Factors
+
+17
+
+Item 1B.
+
+Unresolved Staff Comments
+
+20
+
+Item 2.
+
+Properties
+
+20
+
+Item 3.
+
+Legal Proceedings
+
+20
+
+Item 4.
+
+Mine Safety Disclosures
+
+20
+
+PART II
+
+Item 5.
+
+Market for Registrants Common Equity, Related Stockholder Matters and Issuer Purchases of
+
+Equity Securities
+
+21
+
+Item 6.
+
+Selected Financial Data
+
+21
+
+Item 7.
+
+Managements Discussion and Analysis of Financial Condition and Results of Operations
+
+21
+
+Item 7A.
+
+Quantitative and Qualitative Disclosures About Market Risk
+
+21
+
+Item 8.
+
+Financial Statements and Supplementary Data
+
+22
+
+Item 9.
+
+Changes in and Disagreements with Accountants on Accounting and Financial Disclosure
+
+22
+
+Item 9A.
+
+Controls and Procedures
+
+22
+
+Item 9B.
+
+Other Information
+
+22
+
+PART III
+
+Item 10.
+
+Directors, Executive Officers and Corporate Governance
+
+22
+
+Item 11.
+
+Executive Compensation
+
+23
+
+Item 12.
+
+Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
+
+23
+
+Item 13.
+
+Certain Relationships and Related Transactions, and Director Independence
+
+24
+
+Item 14.
+
+Principal Accounting Fees and Services
+
+24
+
+PART IV
+
+Item 15.
+
+Exhibits, Financial Statement Schedules
+
+24
+
+Signatures
+
+29
+
+Certifications
+
+Table of Contents
+
+PART
+
+I
+
+Item 1. Business
+
+General
+
+Verizon Communications Inc. (Verizon, or the Company) is a holding company that, acting through its
+
+subsidiaries, is one of the worlds leading providers of communications, information and entertainment products and services to consumers, businesses and governmental agencies. With a presence around the world, we offer voice, data and video
+
+services and solutions on our wireless and wireline networks that are designed to meet customers demand for mobility, reliable network connectivity, security and control. Formerly known as Bell Atlantic Corporation, we were incorporated in
+
+1983 under the laws of the State of Delaware. We began doing business as Verizon on June 30, 2000 following our merger with GTE Corporation. We have a highly diverse workforce of approximately 177,700 employees.
+
+Our principal executive offices are located at 1095 Avenue of the Americas, New York, New York 10036 (telephone number 212-395-1000).
+
+We have two reportable segments, Wireless and Wireline, which we operate and manage as strategic business segments and
+
+organize by products and services.
+
+Wireless
+
+Wireless communications products and services include wireless voice and data services and equipment sales, which are provided to consumer, business and
+
+government customers across the United States.
+
+Wireline
+
+Wirelines voice, data and video communications products and enhanced services include broadband video and data, corporate networking solutions, data center
+
+and cloud services, security and managed network services and local and long distance voice services. We provide these products and services to consumers in the United States, as well as to carriers, businesses and government customers both in the
+
+United States and around the world.
+
+The following portions of the 2015 Verizon Annual Report to Shareowners are incorporated into this
+
+report:
+
+
+
+Overview on pages 10 through 13; and,
+
+
+
+Segment Results of Operations on pages 19 through 24 and in Note 13 to the consolidated financial statements on pages 71 through 73.
+
+Wireless
+
+Background
+
+Our Wireless segment, doing business as Verizon Wireless, provides wireless communications services across one of the most extensive wireless networks in the United States (U.S.). Verizon Wireless is the
+
+largest wireless service provider in the U.S. as measured by retail connections and revenue. At December 31, 2015, Verizon Wireless had 112.1 million retail connections and 2015 revenues of approximately $91.7 billion, representing
+
+approximately 70% of Verizons aggregate revenues.
+
+Verizon Wireless was formed as a joint venture in April 2000 by the
+
+combination of the U.S. wireless operations and interests of Verizon and Vodafone Group Plc (Vodafone). On September 2, 2013, Verizon entered into a stock purchase agreement with Vodafone and Vodafone 4 Limited, pursuant to which Verizon agreed
+
+to acquire all of Vodafones indirect 45% interest in Verizon Wireless for aggregate consideration of approximately $130 billion (the Wireless Transaction). We completed the Wireless Transaction on February 21, 2014 and, as a result, we
+
+acquired 100% ownership of Verizon Wireless. The consideration paid was primarily comprised of cash and Verizon common stock.
+
+We have the largest fourth-generation (4G) Long-Term Evolution (LTE) technology and third-generation (3G) Evolution - Data
+
+Optimized (EV-DO) networks of any U.S. wireless service provider. Our 4G LTE network is available to over 98% of the U.S. population in more than 500 markets covering approximately 312 million people, including those in areas served by our LTE
+
+in Rural America partners. Under this program, we are working with wireless carriers in rural areas to collaboratively build and operate a 4G LTE network using each carriers network assets and our core 4G LTE equipment and 700 MHz C Block and
+
+Advanced Wireless Services (AWS) spectrum.
+
+We are focusing our wireless capital spending on adding capacity and density to
+
+our 4G LTE network. In 2015, we announced our commitment to developing and deploying fifth-generation (5G) wireless technology. We are working with key partners to ensure the aggressive pace of innovation, standards development and appropriate
+
+requirements for this next generation of wireless technology.
+
+3
+
+Table of Contents
+
+Wireless Service and Product Offerings
+
+Our wireless services are available to our customers receiving service under the Verizon Wireless brand. In addition, customers can obtain
+
+wireless products and services that operate on our network from resellers that purchase network access from us on a wholesale basis.
+
+Wireless Services
+
+We offer our wireless services on a postpaid and prepaid basis. Retail (non-wholesale) postpaid accounts primarily represent retail
+
+customers with Verizon Wireless that are directly served and managed by Verizon Wireless and use its branded services. A single account may include monthly wireless services for a variety of connected devices. A postpaid retail connection represents
+
+an individual line of service for a wireless device for which a customer is billed in advance a monthly access charge in return for a monthly network service allowance, and usage beyond the allowance is billed in arrears. Approximately 95% of our
+
+retail connections received our wireless services on a postpaid basis as of December 31, 2015. Our prepaid service enables individuals to obtain wireless services without credit verification by paying for all services in advance.
+
+We offer various postpaid account service plans, including shared data plans, single connection plans and plans tailored to the needs of
+
+our business customers. Our shared data plans feature domestic unlimited voice minutes, unlimited domestic and international text, video and picture messaging, cloud storage and a single data allowance that can be shared among up to 10 devices on a
+
+customers account. For an additional monthly access fee, our customers have the option of sharing long distance and roaming minutes among their devices for calls from the United States to, and calls while within, Canada and Mexico. Shared data
+
+plans also include our Mobile Hotspot service at no additional charge. This service enables a customer to activate a personal Wi-Fi hotspot via their smartphone that can provide Internet access to multiple Wi-Fi enabled devices. We also offer
+
+various voice and shared data plans for small and large businesses.
+
+Customers on our fixed-term service plans have
+
+historically paid higher fees for their wireless service in exchange for the ability to purchase their wireless devices at subsidized prices. Under the Verizon device payment program (formerly known as Verizon Edge), our eligible wireless customers
+
+purchase phones or tablets at unsubsidized prices on an installment basis (a device installment plan). Customers that activate service on devices purchased under the device payment program or on a compatible device that they already own pay lower
+
+service fees (unsubsidized service pricing) as compared to those under our fixed-term service plans. Generally, customers entering into device installment agreements on or after June 1, 2015 are required to repay all amounts due under their
+
+device installment agreement before being eligible to upgrade their device. However, certain devices are subject to promotions that allow customers to upgrade to a new device after paying down the minimum percentage of their device installment plan
+
+and trading in their device.
+
+In August 2015, we launched a simplified shared data plan, the Verizon Plan, that offers
+
+customers various sizes of data packages that can be shared among up to 10 devices on a customers account. New customers who wish to participate in this new plan can do so by purchasing a device from Verizon either under our device payment
+
+program or at full retail, or by using their own compatible device. In addition, our current customers have the option of either moving to the Verizon Plan, subject to certain restrictions, or keeping their existing plan.
+
+We offer our customers a wide variety of wireless services accessible on a broad range of our devices. Our messaging
+
+services enable our customers to send and receive text, picture and video messages. In addition, access to the Internet is available on all of our smartphones and nearly all of our basic phones. We also offer service that enables our customers to
+
+access the Internet wirelessly at broadband speeds on notebook computers and tablets that either have embedded 4G LTE or 3G EV-DO modules or that are used in conjunction with separate devices that enable access to this service, such as USB modems,
+
+Jetpacks
+
+TM
+
+and other dedicated devices that provide a
+
+mobile Wi-Fi connection.
+
+Our customers can access multimedia offerings, provided by Verizon and by third parties, consisting
+
+of applications providing music, video, gaming, news and other content. Our business-focused offerings, which are designed to increase productivity, include solutions that enable customers to access the Internet, their corporate intranets and e-mail
+
+across our diverse portfolio of wireless devices. Our location-based services provide our customers with directions to their destination and enable our business customers to locate, monitor and communicate with their mobile field workers. Our global
+
+data services allow our customers to access data services and the Internet on all of our smartphones and many of our tablets and basic phones from hundreds of international destinations. In addition, depending upon their wireless devices
+
+operating system, our customers have access to more than one million applications and services offered by Google Inc. (Google) via Google Play, Apple Inc. (Apple) via iTunes, Microsoft Inc. (Microsoft) via its Windows Phone operating system and
+
+BlackBerry Limited (BlackBerry) via its BlackBerry App World webstore.
+
+Our customers can make and receive calls on their home
+
+phone handsets using our wireless network through our Home Phone Connect service or Verizon 4G LTE Broadband Router with Voice service. We also offer LTE Internet (Installed), a high-speed Internet service that provides customers with Internet
+
+connections in their homes using our 4G LTE network.
+
+In addition, we provide network access and, in some cases, enhanced
+
+value added services to support wireless connections for the Internet of Things (IoT). Our IoT services support devices that are used by a variety of vertical market segments, including health monitoring, education, manufacturing, utilities,
+
+distribution and consumer products. For example, companies purchase network access and, in some cases, enhanced services from us in order to connect with and monitor equipment, such as medical devices used to monitor patients, fleet management
+
+devices used to monitor company-operated vehicles and utility monitoring devices used for smart grid applications. Other companies purchase network access from us to support devices that are included in a service they, in turn, sell to end users. We
+
+also support telematics services for some of the largest automotive manufacturers. We expect that consumer use of IoT wireless connections, such as telematics, home monitoring, health monitoring, energy management and utilities management, will
