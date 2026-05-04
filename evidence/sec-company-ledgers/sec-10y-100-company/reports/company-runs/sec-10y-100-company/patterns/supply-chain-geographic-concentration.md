@@ -15,7 +15,7 @@ source: flywheel-ideas
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
 - Companies: AMZN, DIS, PM, SBUX
 - Observations: 214
-- Realized candidates: 5
+- Realized candidates: 4
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn

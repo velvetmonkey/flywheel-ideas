@@ -12,7 +12,7 @@ source: flywheel-ideas
 
 - Companies: CL, COST, KO, MDLZ, MNST, MO, PEP, PG, PM, WMT
 - Observations: 3899
-- Staged outcomes: 44
+- Staged outcomes: 36
 
 ## Companies
 
@@ -22,7 +22,7 @@ source: flywheel-ideas
 - [[companies/wmt|WMT]]: 615 observation(s), 4 staged outcome(s).
 - [[companies/mo|MO]]: 471 observation(s), 6 staged outcome(s).
 - [[companies/cost|COST]]: 610 observation(s), 2 staged outcome(s).
-- [[companies/pm|PM]]: 536 observation(s), 21 staged outcome(s).
+- [[companies/pm|PM]]: 536 observation(s), 13 staged outcome(s).
 
 ## Flywheel Audit
 

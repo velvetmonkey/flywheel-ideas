@@ -17,7 +17,7 @@ source: flywheel-ideas
 - Sectors: Communication Services, Information Technology
 - Companies: CMCSA, MSFT, MU, NVDA
 - Observations: 245
-- Realized candidates: 5
+- Realized candidates: 4
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn
