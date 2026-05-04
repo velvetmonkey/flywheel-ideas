@@ -182,8 +182,10 @@ describe('server startup — v0.4.0 required-bridge', () => {
     });
     const elapsed = Date.now() - start;
     expect(initResponse).not.toBeNull();
-    // No bridge spawn — should be <2s start (allow CI overhead)
-    expect(elapsed).toBeLessThan(2000);
+    // No bridge spawn. Windows CI process startup is noisier than Linux/macOS;
+    // this guard catches accidental bridge startup without pretending to be a
+    // strict performance benchmark.
+    expect(elapsed).toBeLessThan(process.platform === 'win32' ? 5000 : 2000);
   }, 10_000);
 
   // Skip the POSIX symlink test on Windows. Symlink creation on Windows
