@@ -479,7 +479,7 @@ describe('company tracker', () => {
     });
 
     expect(exported.copied_markdown).toBeGreaterThan(5);
-    const files = await listFiles(destination);
+    const files = (await listFiles(destination)).map((file) => file.split(path.sep).join('/'));
     expect(files.length).toBe(exported.copied_markdown);
     expect(files.every((file) => file.endsWith('.md'))).toBe(true);
     expect(files.some((file) => file.startsWith('ideas/'))).toBe(true);

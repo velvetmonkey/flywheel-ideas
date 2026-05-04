@@ -122,6 +122,13 @@ export async function writeNoteDirectFs(
     } finally {
       await tmpHandle.close();
     }
+    if (options.overwrite) {
+      try {
+        await fsp.unlink(full);
+      } catch (err) {
+        if ((err as NodeJS.ErrnoException).code !== 'ENOENT') throw err;
+      }
+    }
     await fsp.rename(tmpPath, full);
   } catch (err) {
     // Best-effort cleanup of both tmp and the reserved zero-byte file (if we
