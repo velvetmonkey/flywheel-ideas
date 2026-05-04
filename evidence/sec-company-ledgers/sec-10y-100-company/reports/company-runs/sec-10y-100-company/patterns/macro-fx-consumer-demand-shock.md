@@ -15,7 +15,7 @@ source: flywheel-ideas
 - Sectors: Consumer Staples, Information Technology
 - Companies: AVGO, NVDA, WMT
 - Observations: 146
-- Realized candidates: 5
+- Realized candidates: 1
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn

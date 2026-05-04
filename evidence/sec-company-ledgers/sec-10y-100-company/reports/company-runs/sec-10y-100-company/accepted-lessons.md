@@ -10,6 +10,50 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Semiconductor geopolitics assumptions should track export-control inventory charges because policy changes can immediately convert product roadmaps into stranded assets.**
+  - Companies: AMD
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-BqJTAbxZ
+- **Channel-dependency assumptions should treat retail and partner access as load-bearing when regional shutdowns can directly suppress sales.**
+  - Companies: AAPL
+  - Themes: Customer and platform dependency
+  - Outcomes: out-yu9stwSH
+- **Hardware supply-chain assumptions should track outsourcing-partner geography because localized disruptions can create global product shortages.**
+  - Companies: AAPL
+  - Themes: Supply chain
+  - Outcomes: out-1ZsB57E2
+- **Retail supply-chain assumptions should include supplier-obligation rigidity because fixed commitments can amplify demand shocks.**
+  - Companies: SBUX
+  - Themes: Supply chain
+  - Outcomes: out-xsQzN5r7
+- **Perishable retail inventory assumptions should watch write-off language because demand shocks can convert quickly into margin losses.**
+  - Companies: SBUX
+  - Themes: Inventory and channel
+  - Outcomes: out-P9gZXJq1
+- **Retail demand assumptions should connect store disruption to margin impact, not only same-store sales or traffic changes.**
+  - Companies: SBUX
+  - Themes: Demand
+  - Outcomes: out-urqMFWZx
+- **Consumer-staples supply-chain assumptions should include labor availability and plant operating capacity, not only logistics and input availability.**
+  - Companies: PEP
+  - Themes: Supply chain
+  - Outcomes: out-gHyrXMxQ
+- **AI accelerator inventory assumptions should treat export-control shocks as channel-risk events because regulatory access can instantly impair demand and purchase commitments.**
+  - Companies: NVDA
+  - Themes: Inventory and channel
+  - Outcomes: out-VxXuqAUS
+- **Platform macro assumptions should translate broad economic pressure into customer budget behavior, especially ad-spend elasticity.**
+  - Companies: META
+  - Themes: Macro and foreign exchange
+  - Outcomes: out-NwPZo75s
+- **Regulatory and platform-policy assumptions should track measurement and targeting degradation because tooling limits can become revenue pressure before direct fines or bans appear.**
+  - Companies: META
+  - Themes: Regulation and legal
+  - Outcomes: out-bbr3AY3V
+- **Advertising demand assumptions should track marketer budget pullbacks separately from user engagement because revenue can weaken even when the platform remains central.**
+  - Companies: META
+  - Themes: Demand
+  - Outcomes: out-jUaaxLu9
 - **Competition assumptions should be reviewed when management ties category weakness to competitive pressure and named customer-market weakness.**
   - Companies: CSCO
   - Themes: Competition
