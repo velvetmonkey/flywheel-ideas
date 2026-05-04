@@ -51,7 +51,7 @@ afterEach(async () => {
 });
 
 async function rmWithRetries(target: string): Promise<void> {
-  for (let attempt = 0; attempt < 20; attempt++) {
+  for (let attempt = 0; attempt < 8; attempt++) {
     try {
       await fsp.rm(target, { recursive: true, force: true });
       return;
