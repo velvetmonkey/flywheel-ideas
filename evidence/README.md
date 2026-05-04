@@ -1,18 +1,38 @@
 # Evidence
 
-This directory contains checked-in evidence bundles from real dogfood runs.
+This directory contains checked-in, browsable proof surfaces from dogfood runs.
 
-## SEC Lifecycle Runs
+## Python Decision Pilot
 
-- `sec-lifecycle-runs/2026-05-03T16-00-58-257Z/` is the expanded full real SEC + LLM lifecycle E2E run from 2026-05-03.
-- `sec-lifecycle-runs/2026-05-03T14-04-54-838Z/` is the full real SEC + LLM lifecycle E2E run from 2026-05-03.
+The Python 2 to 3 [[pilot]] evidence remains the baseline non-SEC corpus:
 
-Those bundles include:
+- [`../pilot/RESULT.md`](../pilot/RESULT.md)
+- [`../pilot/RESULT.wedges.md`](../pilot/RESULT.wedges.md)
+- [`../docs/pilot.md`](../docs/pilot.md)
 
-- `README.md` and `manifest.json` for the run summary and machine-readable assertions.
-- `vault/reports/company-runs/<run-id>/index.md` as the top-level Flywheel-linked report table of contents.
-- Generated company, sector, theme, pattern, review queue, accepted lesson, [[thesis]] delta, and run delta Markdown.
-- Council output Markdown under `vault/councils/`.
-- Raw SQLite state under `vault/.flywheel/ideas.db`.
+## SEC Company Ledgers
 
-Transient SQLite `-wal` and `-shm` files are intentionally omitted because they are process-local lock/journal artifacts, not durable evidence.
+SEC evidence now uses a stable compounding ledger instead of dated run folders.
+
+The target corpus is:
+
+```text
+evidence/sec-company-ledgers/sec-10y-100-company/
+```
+
+Generate it with:
+
+```bash
+export FLYWHEEL_IDEAS_IMPORT_NETWORK=1
+export FLYWHEEL_IDEAS_SEC_USER_AGENT="your-app-name contact: you@example.com"
+npm run build -w @velvetmonkey/flywheel-ideas-core
+node scripts/sec-sector-lifecycle-bundle.mjs
+```
+
+That runner scans a 10-year SEC 10-K/10-Q window for the sector cohort, compounds refreshes into the same ledger id, and exports the generated vault Markdown as repository evidence.
+
+## Commit Policy
+
+Commit Markdown artifacts only. Do not commit SQLite databases, JSON/JSONL reports, raw SEC caches, WAL/SHM journals, or backup files.
+
+The local working ledger under `/home/ben/sec-dogfood/company-ledgers/` may contain runtime state needed for refreshes. The committed evidence directory is the public, rebuildable Markdown corpus.

@@ -31,8 +31,15 @@ import { writeNote } from './write/index.js';
 
 export interface CompanyTrackInput {
   run_id?: string;
+  ledger_id?: string;
+  refresh_id?: string;
+  compound?: boolean;
+  retry_failed_only?: boolean;
   companies: string[];
   years?: number;
+  start_date?: string;
+  end_date?: string;
+  stop_on_sec_cooldown?: boolean;
   forms?: string[];
   confirm: boolean;
   fixture_dir?: string;
@@ -51,8 +58,12 @@ export interface CompanyMetadata {
 
 export interface CompanyTrackResult {
   run_id: string;
+  ledger_id: string | null;
+  refresh_id: string | null;
   companies: string[];
   years: number;
+  start_date: string | null;
+  end_date: string | null;
   forms: string[];
   sources: string[];
   promoted_ideas: number;
@@ -86,6 +97,20 @@ export interface CompanyApplyOutcomesResult {
   applied: Array<{ candidate_id: string; outcome_id: string; assumption_id: string }>;
 }
 
+export interface CompanyMarkdownEvidenceExportInput {
+  run_id: string;
+  destination_dir: string;
+  include_top_level_reports?: boolean;
+  confirm: boolean;
+}
+
+export interface CompanyMarkdownEvidenceExportResult {
+  run_id: string;
+  destination_dir: string;
+  copied_markdown: number;
+  copied_paths: string[];
+}
+
 export class CompanyInputError extends Error {
   constructor(message: string) {
     super(message);
@@ -106,7 +131,10 @@ export async function trackCompanies(
 
   const years = input.years ?? 10;
   const forms = input.forms ?? ['10-K', '10-Q'];
-  const runId = input.run_id ?? generateCompanyRunId();
+  const ledgerId = input.ledger_id?.trim() || null;
+  const refreshId = input.refresh_id?.trim() || null;
+  const compound = input.compound === true || ledgerId !== null;
+  const runId = input.run_id ?? ledgerId ?? generateCompanyRunId();
   const now = Date.now();
   const existingRun = db.prepare(`SELECT id FROM ideas_company_runs WHERE id = ?`).get(runId);
   if (!existingRun) {
@@ -130,7 +158,17 @@ export async function trackCompanies(
   for (const company of companies) {
     const metadata = resolveCompanyMetadata(input.company_metadata, company);
     const member = ensureRunMember(db, runId, company, metadata);
-    if (member.status === 'completed') {
+    if (input.retry_failed_only && member.status !== 'failed' && member.status !== 'running') {
+      if (member.status === 'completed') {
+        if (member.source_id) sources.push(member.source_id);
+        promotedIdeas += member.promoted_ideas;
+        promotedAssumptions += member.promoted_assumptions;
+        stagedOutcomes += member.staged_outcomes;
+        completedCompanies++;
+      }
+      continue;
+    }
+    if (!compound && member.status === 'completed') {
       if (member.source_id) sources.push(member.source_id);
       promotedIdeas += member.promoted_ideas;
       promotedAssumptions += member.promoted_assumptions;
@@ -152,13 +190,15 @@ export async function trackCompanies(
           forms,
           fixture_dir: fixtureDir,
           limit_filings: input.limit_filings,
+          start_date: input.start_date,
+          end_date: input.end_date,
         },
-        dedup: false,
+        dedup: compound ? undefined : false,
       });
       sources.push(summary.source_id);
       const candidates = listCandidates(db, { source_id: summary.source_id, limit: 5000 })
         .sort((a, b) => a.scanned_at - b.scanned_at);
-      const promoted = await promoteCompanyCandidates(db, vaultPath, runId, candidates);
+      const promoted = await promoteCompanyCandidates(db, vaultPath, runId, candidates, { compound });
       promotedIdeas += promoted.ideas;
       promotedAssumptions += promoted.assumptions;
       stagedOutcomes += promoted.outcomes;
@@ -168,6 +208,9 @@ export async function trackCompanies(
       const error = err instanceof Error ? err.message : String(err);
       failedCompanies.push({ company, error });
       markRunMemberFailed(db, member.id, error);
+      if (input.stop_on_sec_cooldown !== false && isSecCooldownError(error)) {
+        break;
+      }
     }
   }
 
@@ -191,8 +234,12 @@ export async function trackCompanies(
 
   return {
     run_id: runId,
+    ledger_id: ledgerId,
+    refresh_id: refreshId,
     companies,
     years,
+    start_date: input.start_date ?? null,
+    end_date: input.end_date ?? null,
     forms,
     sources,
     promoted_ideas: promotedIdeas,
@@ -207,19 +254,31 @@ export async function trackCompanies(
   };
 }
 
+function isSecCooldownError(error: string): boolean {
+  return error.includes('SEC_COOLDOWN:');
+}
+
 async function promoteCompanyCandidates(
   db: IdeasDatabase,
   vaultPath: string,
   runId: string,
   candidates: ImportCandidateRow[],
+  options: { compound?: boolean } = {},
 ): Promise<{ ideas: number; assumptions: number; outcomes: number }> {
   const ideaBySourceUri = new Map<string, string>();
-  const themeByKey = new Map<string, { themeId: string; assumptionId: string }>();
+  const themeByKey = loadExistingThemes(db, runId);
   let ideas = 0;
   let assumptions = 0;
   let outcomes = 0;
 
   for (const row of candidates.filter((c) => c.candidate_kind === 'idea')) {
+    const existingIdea = options.compound ? existingImportedEntityForSource(db, row.source_uri, 'idea') : null;
+    if (existingIdea) {
+      ideaBySourceUri.set(row.source_uri, existingIdea);
+      recordFilingIfNeeded(db, runId, row);
+      markCandidateRejected(db, row.id);
+      continue;
+    }
     const res = await promoteCandidate(db, vaultPath, {
       candidate_id: row.id,
       as: 'idea',
@@ -272,8 +331,7 @@ async function promoteCompanyCandidates(
       continue;
     }
     const filingId = recordFilingIfNeeded(db, runId, row);
-    recordOutcomeCandidate(db, runId, matched.themeId, matched.assumptionId, filingId, row);
-    outcomes++;
+    if (recordOutcomeCandidate(db, runId, matched.themeId, matched.assumptionId, filingId, row)) outcomes++;
   }
 
   return { ideas, assumptions, outcomes };
@@ -357,7 +415,10 @@ export async function writeCompanyBundleReports(
         id: page.id,
         type: 'report',
         report_kind: page.kind,
+        schema: 'sec-company-ledger-markdown-v1',
         run_id: run.id,
+        entity_id: page.id,
+        entity_type: page.kind,
         source: 'flywheel-ideas',
       },
       page.body,
@@ -366,6 +427,83 @@ export async function writeCompanyBundleReports(
     writtenPaths.push(result.vault_path);
   }
   return { indexPath: `${baseDir}/index.md`, writtenPaths };
+}
+
+export async function exportCompanyMarkdownEvidence(
+  db: IdeasDatabase,
+  vaultPath: string,
+  input: CompanyMarkdownEvidenceExportInput,
+): Promise<CompanyMarkdownEvidenceExportResult> {
+  if (!input.confirm) throw new CompanyInputError('company.export_markdown_evidence requires confirm: true');
+  const data = readCompanyRun(db, input.run_id);
+  const run = data.run as Record<string, unknown>;
+  await fsp.rm(input.destination_dir, { recursive: true, force: true });
+  await writeCompanyBundleReports(db, vaultPath, input.run_id);
+  const relPaths = new Set<string>(await listVaultMarkdownArtifacts(vaultPath, input.destination_dir));
+  if (input.include_top_level_reports !== false) {
+    for (const key of ['report_md_path', 'thesis_report_md_path']) {
+      const rel = run[key];
+      if (typeof rel === 'string' && rel.endsWith('.md')) relPaths.add(rel);
+    }
+  }
+
+  const copiedPaths: string[] = [];
+  for (const relPath of [...relPaths].sort()) {
+    const src = path.join(vaultPath, relPath);
+    const dest = path.join(input.destination_dir, relPath);
+    await fsp.mkdir(path.dirname(dest), { recursive: true });
+    await fsp.copyFile(src, dest);
+    copiedPaths.push(relPath);
+  }
+  await fsp.writeFile(
+    path.join(input.destination_dir, 'README.md'),
+    [
+      `# Markdown Evidence Snapshot ${input.run_id}`,
+      '',
+      'This snapshot intentionally contains Markdown artifacts only.',
+      '',
+      `- Copied Markdown files: ${copiedPaths.length}`,
+      `- Source run: ${input.run_id}`,
+      '',
+      'SQLite, JSON, JSONL, raw SEC cache files, WAL/SHM journals, and backups are intentionally excluded.',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+  copiedPaths.unshift('README.md');
+  return {
+    run_id: input.run_id,
+    destination_dir: input.destination_dir,
+    copied_markdown: copiedPaths.length,
+    copied_paths: copiedPaths,
+  };
+}
+
+async function listVaultMarkdownArtifacts(vaultPath: string, excludedRoot?: string): Promise<string[]> {
+  const out: string[] = [];
+  const vaultRoot = path.resolve(vaultPath);
+  const excluded = excludedRoot ? path.resolve(excludedRoot) : null;
+  const excludedPrefix = excluded ? `${excluded}${path.sep}` : null;
+
+  async function walk(relDir: string): Promise<void> {
+    const absDir = path.join(vaultRoot, relDir);
+    if (excluded && (absDir === excluded || absDir.startsWith(excludedPrefix ?? ''))) return;
+    const entries = await fsp.readdir(absDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.name === '.flywheel' || entry.name === '.git' || entry.name === 'node_modules') continue;
+      const relPath = path.join(relDir, entry.name);
+      const absPath = path.join(vaultRoot, relPath);
+      if (excluded && (absPath === excluded || absPath.startsWith(excludedPrefix ?? ''))) continue;
+      if (entry.isDirectory()) {
+        await walk(relPath);
+      } else if (entry.isFile() && entry.name.endsWith('.md')) {
+        out.push(relPath.split(path.sep).join('/'));
+      }
+    }
+  }
+
+  await walk('');
+  return out.sort();
 }
 
 export async function writeCompanyReports(
@@ -656,6 +794,9 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
     `- [[${baseDir}/review-queue|Human review queue]]`,
     `- [[${baseDir}/accepted-lessons|Accepted lessons]]`,
     `- [[${baseDir}/run-delta|Run delta]]`,
+    `- [[${baseDir}/manifest|Markdown manifest]]`,
+    `- [[${baseDir}/run-history|Run history]]`,
+    `- [[${baseDir}/rebuild|Rebuild instructions]]`,
   ];
   for (const sector of sectorMatrix) {
     indexLinks.push(`- [[${baseDir}/sectors/${slugify(String(sector.sector))}|${sector.sector}]]`);
@@ -686,6 +827,24 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
       `- Accepted failures: ${secLedgerReport.executive_summary.accepted_failures}`,
       '',
     ].join('\n'),
+  });
+  pages.push({
+    id: `company-run-${runId}-manifest`,
+    kind: 'company_ledger_manifest',
+    path: `${baseDir}/manifest.md`,
+    body: renderLedgerManifestPage(data, baseDir),
+  });
+  pages.push({
+    id: `company-run-${runId}-run-history`,
+    kind: 'company_ledger_run_history',
+    path: `${baseDir}/run-history.md`,
+    body: renderRunHistoryPage(runId, run),
+  });
+  pages.push({
+    id: `company-run-${runId}-rebuild`,
+    kind: 'company_ledger_rebuild_instructions',
+    path: `${baseDir}/rebuild.md`,
+    body: renderRebuildPage(runId),
   });
   pages.push({
     id: `company-run-${runId}-thesis`,
@@ -779,7 +938,16 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
       body: renderCrossSectorPatternPage(runId, pattern),
     });
   }
-  return pages;
+  return pages.map((page) => ({
+    ...page,
+    body: appendAuditBlock(page.body, {
+      schema: 'sec-company-ledger-markdown-v1',
+      run_id: runId,
+      entity_id: page.id,
+      entity_type: page.kind,
+      path: page.path,
+    }),
+  }));
 }
 
 function renderSectorMatrixPage(
@@ -805,6 +973,62 @@ function renderSectorMatrixPage(
     lines.push(`- **${row.title ?? row.theme_key}** appears across ${companies.join(', ')} with ${row.observation_count} observation(s).`);
   }
   return `${lines.join('\n')}\n`;
+}
+
+function renderLedgerManifestPage(data: Record<string, unknown>, baseDir: string): string {
+  const run = data.run as Record<string, unknown>;
+  const filings = data.filings as Array<Record<string, unknown>>;
+  const themes = data.themes as Array<Record<string, unknown>>;
+  const observations = data.observations as Array<Record<string, unknown>>;
+  const outcomes = data.outcomes as Array<Record<string, unknown>>;
+  const evaluations = data.evaluation_attempts as Array<Record<string, unknown>>;
+  return [
+    `# Ledger Manifest ${run.id}`,
+    '',
+    `- Ledger run: [[${baseDir}/index|${run.id}]]`,
+    `- Companies: ${parseJsonArray(run.companies_json).length}`,
+    `- Years: ${run.years}`,
+    `- Forms: ${parseJsonArray(run.forms_json).join(', ')}`,
+    `- Filings: ${filings.length}`,
+    `- Assumptions: ${themes.length}`,
+    `- Observations: ${observations.length}`,
+    `- Outcome candidates: ${outcomes.length}`,
+    `- LLM evaluations: ${evaluations.length}`,
+    '',
+    'This Markdown manifest is the git-safe audit surface. Operational SQLite and raw SEC caches stay local.',
+    '',
+  ].join('\n');
+}
+
+function renderRunHistoryPage(runId: string, run: Record<string, unknown>): string {
+  return [
+    `# Run History ${runId}`,
+    '',
+    `- Started at: ${run.started_at}`,
+    `- Completed at: ${run.completed_at ?? 'running'}`,
+    `- Status: ${run.status}`,
+    `- Stable run id: ${runId}`,
+    '',
+    'Compounding ledgers reuse the same stable run id and append new filing/evaluation evidence when refreshes find changed inputs.',
+    '',
+  ].join('\n');
+}
+
+function renderRebuildPage(runId: string): string {
+  return [
+    `# Rebuild Instructions ${runId}`,
+    '',
+    'The committed evidence snapshot is Markdown-only by policy.',
+    '',
+    'To rebuild operational state, parse Markdown files that contain `flywheel-audit-json` blocks and restore entities by `entity_id`, `entity_type`, `run_id`, and source hashes.',
+    '',
+    'Do not expect SQLite, JSON, JSONL, WAL/SHM, or raw SEC cache files in git evidence snapshots.',
+    '',
+  ].join('\n');
+}
+
+function appendAuditBlock(body: string, audit: Record<string, unknown>): string {
+  return `${body.trimEnd()}\n\n## Flywheel Audit\n\n\`\`\`flywheel-audit-json\n${JSON.stringify(audit, null, 2)}\n\`\`\`\n`;
 }
 
 function renderReviewQueuePage(runId: string, outcomeGroups: Array<Record<string, unknown>>): string {
@@ -1632,6 +1856,36 @@ function recordFilingIfNeeded(db: IdeasDatabase, runId: string, row: ImportCandi
   return id;
 }
 
+function loadExistingThemes(
+  db: IdeasDatabase,
+  runId: string,
+): Map<string, { themeId: string; assumptionId: string }> {
+  const rows = db.prepare(
+    `SELECT id, cik, theme_key, assumption_id
+       FROM ideas_company_themes
+      WHERE run_id = ? AND assumption_id IS NOT NULL`,
+  ).all(runId) as Array<{ id: string; cik: string; theme_key: string; assumption_id: string }>;
+  return new Map(rows.map((row) => [`${row.cik}:${row.theme_key}`, { themeId: row.id, assumptionId: row.assumption_id }]));
+}
+
+function existingImportedEntityForSource(
+  db: IdeasDatabase,
+  sourceUri: string,
+  kind: string,
+): string | null {
+  const row = db.prepare(
+    `SELECT imported_entity_id
+       FROM ideas_import_candidates
+      WHERE source_uri = ?
+        AND candidate_kind = ?
+        AND state = 'imported'
+        AND imported_entity_id IS NOT NULL
+      ORDER BY imported_at ASC
+      LIMIT 1`,
+  ).get(sourceUri, kind) as { imported_entity_id: string } | undefined;
+  return row?.imported_entity_id ?? null;
+}
+
 function recordTheme(db: IdeasDatabase, runId: string, row: ImportCandidateRow, assumptionId: string): string {
   const fields = parseExtractedFields(row);
   const sec = objectField(fields, 'sec_company');
@@ -1663,10 +1917,17 @@ function recordObservation(
   themeId: string,
   filingId: string,
   row: ImportCandidateRow,
-): void {
+): boolean {
   const fields = parseExtractedFields(row);
   const sec = objectField(fields, 'sec_company');
   const observedAt = stringField(sec, 'filed_at') ?? '';
+  const excerptHash = stringField(fields, 'excerpt_hash') ?? '';
+  const existing = db.prepare(
+    `SELECT id FROM ideas_company_observations
+      WHERE run_id = ? AND theme_id = ? AND source_uri = ? AND excerpt_hash = ?
+      LIMIT 1`,
+  ).get(runId, themeId, row.source_uri, excerptHash) as { id: string } | undefined;
+  if (existing) return false;
   db.prepare(
     `INSERT INTO ideas_company_observations
        (id, run_id, theme_id, filing_id, section_key, source_uri, excerpt_hash, excerpt, observed_at)
@@ -1678,13 +1939,14 @@ function recordObservation(
     filingId,
     stringField(fields, 'section_key') ?? '',
     row.source_uri,
-    stringField(fields, 'excerpt_hash') ?? '',
+    excerptHash,
     row.body_md.slice(0, 2000),
     observedAt,
   );
   db.prepare(
     `UPDATE ideas_company_themes SET latest_seen_at = ? WHERE id = ? AND latest_seen_at < ?`,
   ).run(observedAt, themeId, observedAt);
+  return true;
 }
 
 function recordOutcomeCandidate(
@@ -1694,8 +1956,14 @@ function recordOutcomeCandidate(
   assumptionId: string,
   filingId: string,
   row: ImportCandidateRow,
-): void {
+): boolean {
   const fields = parseExtractedFields(row);
+  const existing = db.prepare(
+    `SELECT id FROM ideas_company_outcome_candidates
+      WHERE run_id = ? AND theme_id = ? AND source_uri = ?
+      LIMIT 1`,
+  ).get(runId, themeId, row.source_uri) as { id: string } | undefined;
+  if (existing) return false;
   db.prepare(
     `INSERT INTO ideas_company_outcome_candidates
        (id, run_id, theme_id, assumption_id, filing_id, source_uri, excerpt, confidence, rationale, created_at)
@@ -1712,6 +1980,7 @@ function recordOutcomeCandidate(
     stringField(fields, 'rationale') ?? 'Explicit realized-risk language detected.',
     Date.now(),
   );
+  return true;
 }
 
 function objectField(obj: Record<string, unknown> | null, key: string): Record<string, unknown> | null {

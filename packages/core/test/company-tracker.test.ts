@@ -7,6 +7,7 @@ import {
   applyCompanyOutcomes,
   evaluateCompanyRun,
   deleteIdeasDbFiles,
+  exportCompanyMarkdownEvidence,
   generateCouncilSessionId,
   generateCouncilViewId,
   generateIdeaId,
@@ -104,6 +105,36 @@ function buildFiveSectorMetadata(): Record<string, { sector: string; display_nam
     });
   }
   return metadata;
+}
+
+function tableCounts(): { filings: number; themes: number; observations: number; outcomes: number } {
+  const filings = db.prepare(`SELECT COUNT(*) as n FROM ideas_company_filings`).get() as { n: number };
+  const themes = db.prepare(`SELECT COUNT(*) as n FROM ideas_company_themes`).get() as { n: number };
+  const observations = db.prepare(`SELECT COUNT(*) as n FROM ideas_company_observations`).get() as { n: number };
+  const outcomes = db.prepare(`SELECT COUNT(*) as n FROM ideas_company_outcome_candidates`).get() as { n: number };
+  return {
+    filings: filings.n,
+    themes: themes.n,
+    observations: observations.n,
+    outcomes: outcomes.n,
+  };
+}
+
+async function listFiles(root: string): Promise<string[]> {
+  const out: string[] = [];
+  async function walk(dir: string): Promise<void> {
+    const entries = await fsp.readdir(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const abs = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        await walk(abs);
+      } else {
+        out.push(path.relative(root, abs));
+      }
+    }
+  }
+  await walk(root);
+  return out.sort();
 }
 
 async function seedDependentIdeaCitingAssumption(
@@ -362,6 +393,144 @@ describe('company tracker', () => {
     const patterns = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/cross-sector-patterns.md`), 'utf8');
     expect(patterns).toContain('# Cross-Sector Patterns');
     expect(patterns).toContain('Mechanism-level comparison');
+    expect(index).toContain('[[reports/company-runs/');
+    expect(index).toContain('Markdown manifest');
+    expect(index).toContain('Rebuild instructions');
+    expect(index).toContain('```flywheel-audit-json');
+    const manifest = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/manifest.md`), 'utf8');
+    expect(manifest).toContain('schema: sec-company-ledger-markdown-v1');
+    expect(manifest).toContain('```flywheel-audit-json');
+  }, 30_000);
+
+  it('supports stable compounding ledger refreshes without duplicating prior artifacts', async () => {
+    const first = await trackCompanies(db, vault, {
+      ledger_id: 'sec-10y-pilot',
+      refresh_id: 'refresh-001',
+      compound: true,
+      companies: ['AAPL'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      start_date: '2022-01-01',
+      end_date: '2025-12-31',
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+    });
+
+    expect(first.run_id).toBe('sec-10y-pilot');
+    expect(first.ledger_id).toBe('sec-10y-pilot');
+    expect(first.refresh_id).toBe('refresh-001');
+    expect(first.start_date).toBe('2022-01-01');
+    expect(first.end_date).toBe('2025-12-31');
+
+    const countsAfterFirst = tableCounts();
+    expect(countsAfterFirst.filings).toBe(2);
+
+    const second = await trackCompanies(db, vault, {
+      ledger_id: 'sec-10y-pilot',
+      refresh_id: 'refresh-002',
+      compound: true,
+      companies: ['AAPL'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      start_date: '2022-01-01',
+      end_date: '2026-12-31',
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+    });
+
+    expect(second.run_id).toBe(first.run_id);
+    const countsAfterSecond = tableCounts();
+    expect(countsAfterSecond.filings).toBeGreaterThan(countsAfterFirst.filings);
+    expect(countsAfterSecond.filings).toBe(3);
+    expect(countsAfterSecond.themes).toBe(countsAfterFirst.themes);
+    expect(countsAfterSecond.observations).toBeGreaterThanOrEqual(countsAfterFirst.observations);
+
+    const third = await trackCompanies(db, vault, {
+      ledger_id: 'sec-10y-pilot',
+      refresh_id: 'refresh-003',
+      compound: true,
+      companies: ['AAPL'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      start_date: '2022-01-01',
+      end_date: '2026-12-31',
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+    });
+    expect(third.run_id).toBe(first.run_id);
+    expect(tableCounts()).toEqual(countsAfterSecond);
+  }, 30_000);
+
+  it('exports markdown-only rebuildable evidence snapshots', async () => {
+    const result = await trackCompanies(db, vault, {
+      ledger_id: 'sec-10y-markdown-only',
+      compound: true,
+      companies: ['AAPL', 'MSFT'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+    });
+    const destination = path.join(vault, 'markdown-export');
+    const exported = await exportCompanyMarkdownEvidence(db, vault, {
+      run_id: result.run_id,
+      destination_dir: destination,
+      confirm: true,
+    });
+
+    expect(exported.copied_markdown).toBeGreaterThan(5);
+    const files = await listFiles(destination);
+    expect(files.length).toBe(exported.copied_markdown);
+    expect(files.every((file) => file.endsWith('.md'))).toBe(true);
+    expect(files.some((file) => file.startsWith('ideas/'))).toBe(true);
+    expect(files.some((file) => file.startsWith('assumptions/'))).toBe(true);
+    expect(files.some((file) => file.endsWith('manifest.md'))).toBe(true);
+    expect(files.some((file) => file.endsWith('rebuild.md'))).toBe(true);
+    expect(files.some((file) => file.endsWith('.json'))).toBe(false);
+    expect(files.some((file) => file.includes('.flywheel') || file.endsWith('.db'))).toBe(false);
+    const manifest = await fsp.readFile(path.join(destination, `reports/company-runs/${result.run_id.toLowerCase()}/manifest.md`), 'utf8');
+    expect(manifest).toContain('```flywheel-audit-json');
+    expect(manifest).toContain('"schema": "sec-company-ledger-markdown-v1"');
+  }, 30_000);
+
+  it('retries interrupted running members in failed-only resume mode', async () => {
+    const first = await trackCompanies(db, vault, {
+      ledger_id: 'sec-10y-interrupted-resume',
+      compound: true,
+      companies: ['AAPL', 'MSFT'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+    });
+    const countsAfterFirst = tableCounts();
+    db.prepare(
+      `UPDATE ideas_company_run_members
+          SET status = 'running', error = NULL, completed_at = NULL
+        WHERE run_id = ? AND company = 'MSFT'`,
+    ).run(first.run_id);
+
+    const resumed = await trackCompanies(db, vault, {
+      ledger_id: 'sec-10y-interrupted-resume',
+      compound: true,
+      retry_failed_only: true,
+      companies: ['AAPL', 'MSFT'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+    });
+
+    expect(resumed.run_id).toBe(first.run_id);
+    expect(resumed.failed_companies).toEqual([]);
+    expect(tableCounts()).toEqual(countsAfterFirst);
+    const members = db.prepare(
+      `SELECT company, status FROM ideas_company_run_members WHERE run_id = ? ORDER BY company`,
+    ).all(first.run_id) as Array<{ company: string; status: string }>;
+    expect(members).toEqual([
+      { company: 'AAPL', status: 'completed' },
+      { company: 'MSFT', status: 'completed' },
+    ]);
   }, 30_000);
 
   it('bulk applies reviewed staged outcomes through outcome.log', async () => {
@@ -552,6 +721,65 @@ describe('company tracker', () => {
     });
     expect(resumed.evaluated_targets).toBe(0);
     expect(resumed.skipped_targets).toBe(evaluated.selected_targets);
+  }, 30_000);
+
+  it('selects every SEC lifecycle artifact category for exhaustive mock LLM evaluation', async () => {
+    const result = await trackCompanies(db, vault, {
+      companies: ['AAPL', 'MSFT', 'NVDA'],
+      years: 10,
+      forms: ['10-K', '10-Q'],
+      confirm: true,
+      fixture_dir: FIXTURE_DIR,
+      company_metadata: {
+        AAPL: { sector: 'Information Technology' },
+        MSFT: { sector: 'Information Technology' },
+        NVDA: { sector: 'Information Technology' },
+      },
+    });
+    const run = readCompanyRun(db, result.run_id) as {
+      filings: unknown[];
+      themes: unknown[];
+      outcomes: unknown[];
+      company_summaries: unknown[];
+      cross_sector_patterns: unknown[];
+      outcome_groups: unknown[];
+    };
+    const stages = [
+      ['filing_section_meaning', run.filings.length, 'meaningful_signal'],
+      ['assumption_quality', run.themes.length, 'assumption_sound'],
+      ['outcome_validity', run.outcomes.length, 'valid_failure'],
+      ['thesis_delta', run.company_summaries.length, 'thesis_weakened'],
+      ['cross_sector_pattern', run.cross_sector_patterns.length, 'pattern_meaningful'],
+      ['adjudication_packet', run.outcome_groups.length, 'adjudication_ready'],
+    ] as const;
+
+    for (const [stage, expected, decision] of stages) {
+      const evaluated = await evaluateCompanyRun(db, vault, {
+        run_id: result.run_id,
+        stage,
+        confirm: true,
+      }, {
+        model: 'mock-exhaustive-evaluator',
+        evaluator: async (payload) => ({
+          decision,
+          confidence: 0.8,
+          summary: `Reviewed ${payload.target_kind}`,
+          rationale: `Mock exhaustive ${stage} review.`,
+          evidence_refs: payload.evidence_refs,
+        }),
+      });
+      expect(evaluated.selected_targets).toBe(expected);
+      expect(evaluated.evaluated_targets).toBe(expected);
+    }
+
+    const attempts = db.prepare(
+      `SELECT stage, COUNT(*) as n FROM ideas_company_evaluation_attempts GROUP BY stage`,
+    ).all() as Array<{ stage: string; n: number }>;
+    const byStage = new Map(attempts.map((row) => [row.stage, row.n]));
+    for (const [stage, expected] of stages) {
+      if (expected === 0) expect(byStage.has(stage)).toBe(false);
+      else expect(byStage.get(stage)).toBe(expected);
+    }
   }, 30_000);
 
   it('runs the full SEC product loop across 5 sectors with 3 companies each', async () => {

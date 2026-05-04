@@ -16,15 +16,23 @@ const DEFAULT_YEARS = 10;
 const SEC_SUBMISSIONS = 'https://data.sec.gov/submissions';
 const SEC_ARCHIVES = 'https://www.sec.gov/Archives/edgar/data';
 const TICKER_URL = 'https://www.sec.gov/files/company_tickers.json';
-const SEC_REQUEST_SPACING_MS = 150;
+const SEC_REQUEST_SPACING_MS = Number(process.env.FLYWHEEL_IDEAS_SEC_REQUEST_SPACING_MS ?? 1_000);
+const SEC_HOST_REQUEST_SPACING_MS = Number(process.env.FLYWHEEL_IDEAS_SEC_HOST_REQUEST_SPACING_MS ?? 2_000);
+const SEC_COOLDOWN_MS = Number(process.env.FLYWHEEL_IDEAS_SEC_COOLDOWN_MS ?? 30 * 60 * 1000);
+const SEC_RETRY_STATUSES = new Set([403, 408, 425, 429, 500, 502, 503, 504]);
+const SEC_RETRY_DELAYS_MS = [2_000, 5_000, 15_000, 45_000, 120_000];
 const MIN_SECTION_CHARS = 500;
 let lastSecRequestAt = 0;
+const lastSecRequestByHost = new Map<string, number>();
+const secCooldownUntilByHost = new Map<string, number>();
 
 export interface SecCompanyConfig {
   years: number;
   forms: string[];
   fixtureDir?: string;
   limit_filings?: number;
+  start_date?: string;
+  end_date?: string;
 }
 
 export interface SecCompanyFilingFixture {
@@ -114,6 +122,7 @@ async function* scanFixtureDir(
   }
   const filings = (manifest.filings ?? [])
     .filter((f) => config.forms.includes(f.form))
+    .filter((f) => withinDateWindow(f.filed_at, config))
     .sort((a, b) => a.filed_at.localeCompare(b.filed_at))
     .slice(0, config.limit_filings ?? Number.POSITIVE_INFINITY);
 
@@ -165,6 +174,7 @@ async function fetchCompanyFilings(
       const filedAt = batch.filingDate[i];
       if (!config.forms.includes(form)) continue;
       if (Number(filedAt.slice(0, 4)) < cutoffYear) continue;
+      if (!withinDateWindow(filedAt, config)) continue;
       const accessionNo = batch.accessionNumber[i];
       const primaryDocument = batch.primaryDocument[i];
       const filingUrl = filingDocumentUrl(identity.cik, accessionNo, primaryDocument);
@@ -518,7 +528,15 @@ function mergeConfig(
     forms: forms.filter((f) => DEFAULT_FORMS.includes(f)),
     fixtureDir: typeof scanConfig?.fixture_dir === 'string' ? scanConfig.fixture_dir : sourceConfig.fixtureDir,
     limit_filings: typeof scanConfig?.limit_filings === 'number' ? Math.max(1, Math.floor(scanConfig.limit_filings)) : undefined,
+    start_date: typeof scanConfig?.start_date === 'string' ? scanConfig.start_date : undefined,
+    end_date: typeof scanConfig?.end_date === 'string' ? scanConfig.end_date : undefined,
   };
+}
+
+function withinDateWindow(filedAt: string, config: SecCompanyConfig): boolean {
+  if (config.start_date && filedAt < config.start_date) return false;
+  if (config.end_date && filedAt > config.end_date) return false;
+  return true;
 }
 
 async function resolveCompanyIdentity(source: string, cacheDir: string): Promise<CompanyIdentity> {
@@ -541,9 +559,7 @@ function filingDocumentUrl(cik: string, accessionNo: string, doc: string): strin
 async function fetchJson<T>(url: string, userAgent: string, cacheDir?: string): Promise<T> {
   const cached = cacheDir ? await readCache(cacheDir, 'json', url) : null;
   if (cached) return JSON.parse(cached) as T;
-  await throttleSecRequest();
-  const res = await fetch(url, { headers: { 'User-Agent': userAgent, Accept: 'application/json' } });
-  if (!res.ok) throw new Error(`SEC fetch failed ${res.status}: ${url}`);
+  const res = await fetchSecWithRetry(url, { 'User-Agent': userAgent, Accept: 'application/json' }, 'SEC fetch failed');
   const text = await res.text();
   if (cacheDir) await writeCache(cacheDir, 'json', url, text);
   return JSON.parse(text) as T;
@@ -552,12 +568,72 @@ async function fetchJson<T>(url: string, userAgent: string, cacheDir?: string): 
 async function fetchText(url: string, userAgent: string, cacheDir?: string): Promise<string> {
   const cached = cacheDir ? await readCache(cacheDir, 'text', url) : null;
   if (cached) return cached;
-  await throttleSecRequest();
-  const res = await fetch(url, { headers: { 'User-Agent': userAgent, Accept: 'text/html,text/plain' } });
-  if (!res.ok) throw new Error(`SEC filing fetch failed ${res.status}: ${url}`);
+  const res = await fetchSecWithRetry(url, { 'User-Agent': userAgent, Accept: 'text/html,text/plain' }, 'SEC filing fetch failed');
   const text = await res.text();
   if (cacheDir) await writeCache(cacheDir, 'text', url, text);
   return text;
+}
+
+async function fetchSecWithRetry(url: string, headers: Record<string, string>, label: string): Promise<Response> {
+  let lastStatus = 0;
+  for (let attempt = 0; attempt <= SEC_RETRY_DELAYS_MS.length; attempt++) {
+    await throttleSecRequest(url);
+    let res: Response;
+    try {
+      res = await fetch(url, { headers });
+    } catch (err) {
+      if (attempt >= SEC_RETRY_DELAYS_MS.length) {
+        throw new Error(`${label}: network error after ${attempt + 1} attempt(s): ${url}: ${err instanceof Error ? err.message : String(err)}`);
+      }
+      await sleep(retryDelayMs(attempt));
+      continue;
+    }
+    if (res.ok) return res;
+    lastStatus = res.status;
+    if (!SEC_RETRY_STATUSES.has(res.status) || attempt >= SEC_RETRY_DELAYS_MS.length) {
+      if (res.status === 403 || res.status === 429) throw secCooldownError(url, label, res.status, attempt + 1);
+      throw new Error(`${label} ${res.status} after ${attempt + 1} attempt(s): ${url}`);
+    }
+    await drainResponse(res);
+    await sleep(retryDelayFromHeader(res) ?? retryDelayMs(attempt));
+  }
+  throw new Error(`${label} ${lastStatus}: ${url}`);
+}
+
+function secCooldownError(url: string, label: string, status: number, attempts: number): Error {
+  const host = new URL(url).host;
+  const until = Date.now() + SEC_COOLDOWN_MS;
+  secCooldownUntilByHost.set(host, until);
+  return new Error(
+    `SEC_COOLDOWN: ${label} ${status} after ${attempts} attempt(s): ${url}; ` +
+      `host=${host}; retry_after=${new Date(until).toISOString()}`,
+  );
+}
+
+function retryDelayFromHeader(res: Response): number | null {
+  const raw = res.headers.get('retry-after');
+  if (!raw) return null;
+  const seconds = Number(raw);
+  if (Number.isFinite(seconds)) return Math.max(1_000, seconds * 1_000);
+  const dateMs = Date.parse(raw);
+  return Number.isFinite(dateMs) ? Math.max(1_000, dateMs - Date.now()) : null;
+}
+
+function retryDelayMs(attempt: number): number {
+  const base = SEC_RETRY_DELAYS_MS[Math.min(attempt, SEC_RETRY_DELAYS_MS.length - 1)];
+  return base + Math.floor(Math.random() * 1_000);
+}
+
+async function drainResponse(res: Response): Promise<void> {
+  try {
+    await res.arrayBuffer();
+  } catch {
+    /* ignore */
+  }
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function readCache(cacheDir: string, kind: 'json' | 'text', url: string): Promise<string | null> {
@@ -578,11 +654,20 @@ function cachePath(cacheDir: string, kind: 'json' | 'text', url: string): string
   return path.join(cacheDir, 'sec-company', kind, `${hashText(url)}.${kind === 'json' ? 'json' : 'txt'}`);
 }
 
-async function throttleSecRequest(): Promise<void> {
+async function throttleSecRequest(url: string): Promise<void> {
+  const host = new URL(url).host;
+  const cooldownUntil = secCooldownUntilByHost.get(host) ?? 0;
+  if (cooldownUntil > Date.now()) {
+    throw new Error(`SEC_COOLDOWN: host=${host}; retry_after=${new Date(cooldownUntil).toISOString()}; url=${url}`);
+  }
   const now = Date.now();
   const wait = Math.max(0, lastSecRequestAt + SEC_REQUEST_SPACING_MS - now);
   if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+  const hostNow = Date.now();
+  const hostWait = Math.max(0, (lastSecRequestByHost.get(host) ?? 0) + SEC_HOST_REQUEST_SPACING_MS - hostNow);
+  if (hostWait > 0) await new Promise((resolve) => setTimeout(resolve, hostWait));
   lastSecRequestAt = Date.now();
+  lastSecRequestByHost.set(host, lastSecRequestAt);
 }
 
 function resolveUserAgent(): string {
