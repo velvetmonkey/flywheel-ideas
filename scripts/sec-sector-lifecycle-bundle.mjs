@@ -6,6 +6,7 @@ import {
   exportCompanyMarkdownEvidence,
   openIdeasDb,
   probeWritePath,
+  resolveSecUserAgent,
   runCouncil,
   runMigrations,
   trackCompanies,
@@ -114,9 +115,7 @@ if (args.dryRun) {
 if (process.env.FLYWHEEL_IDEAS_IMPORT_NETWORK !== '1') {
   throw new Error('set FLYWHEEL_IDEAS_IMPORT_NETWORK=1 before running live SEC scans');
 }
-if (!process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT) {
-  throw new Error('set FLYWHEEL_IDEAS_SEC_USER_AGENT to an SEC-compliant app/contact user agent');
-}
+process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT = resolveSecUserAgent();
 
 await fsp.mkdir(outDir, { recursive: true });
 await fsp.mkdir(vault, { recursive: true });

@@ -5,10 +5,12 @@ import {
   openInMemoryIdeasDb,
   runMigrations,
   SecCompanyAdapter,
+  assertSecUserAgent,
   extractEligibleSections,
   extractThemeHits,
   type ImportContext,
   type RawCandidate,
+  resolveSecUserAgent,
 } from '../src/index.js';
 
 const FIXTURE_DIR = path.join(
@@ -46,6 +48,34 @@ async function collect(adapter: SecCompanyAdapter, fixtureDir = FIXTURE_DIR): Pr
 }
 
 describe('sec-company adapter', () => {
+  it('uses a realistic SEC user agent fallback with a contact email', () => {
+    const previousUserAgent = process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT;
+    const previousContact = process.env.FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL;
+    delete process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT;
+    delete process.env.FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL;
+    try {
+      const userAgent = resolveSecUserAgent();
+      expect(userAgent).toContain('flywheel-ideas/0.4.0');
+      expect(userAgent).toContain('github.com/velvetmonkey/flywheel-ideas');
+      expect(userAgent).toMatch(/@/);
+      expect(userAgent).not.toContain('contact@example.com');
+    } finally {
+      if (previousUserAgent === undefined) delete process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT;
+      else process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT = previousUserAgent;
+      if (previousContact === undefined) delete process.env.FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL;
+      else process.env.FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL = previousContact;
+    }
+  });
+
+  it('rejects placeholder SEC user agent contacts', () => {
+    expect(() => assertSecUserAgent('flywheel-ideas/0.4.0 contact@example.com')).toThrow(
+      /placeholder contact/,
+    );
+    expect(() => assertSecUserAgent('your-app-name contact: you@example.com')).toThrow(
+      /placeholder contact/,
+    );
+  });
+
   it('extracts eligible 10-K and 10-Q sections', () => {
     const tenK = [
       'Item 1A. Risk Factors',

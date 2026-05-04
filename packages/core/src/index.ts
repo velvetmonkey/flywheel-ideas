@@ -520,6 +520,8 @@ export {
   SEC_COMPANY_NAME,
   extractEligibleSections,
   extractThemeHits,
+  resolveSecUserAgent,
+  assertSecUserAgent,
   BUILTIN_ADAPTER_NAMES,
 } from './import/index.js';
 export type {
