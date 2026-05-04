@@ -17,7 +17,7 @@ source: flywheel-ideas
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - Companies: ABNB, AMD, AVGO, BKNG, CSCO, KO, LOW, MAR, MCD, MO, PLTR, PM, SBUX, VZ, WMT
 - Observations: 480
-- Realized candidates: 9
+- Realized candidates: 4
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn

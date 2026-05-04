@@ -10,6 +10,30 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Competition assumptions should be reviewed when management ties category weakness to competitive pressure and named customer-market weakness.**
+  - Companies: CSCO
+  - Themes: Competition
+  - Outcomes: out-v6eDv9xd
+- **Liquidity assumptions for capital-intensive telecoms should track interest-expense sensitivity when rates rise, not only near-term cash availability.**
+  - Companies: VZ
+  - Themes: Liquidity
+  - Outcomes: out-Ei2WCFV6
+- **Telecom macro assumptions should connect inflation to network operating costs, margin compression, and guidance revisions.**
+  - Companies: VZ
+  - Themes: Macro and foreign exchange
+  - Outcomes: out-sbU8GNki
+- **Adjacent R&D bets should be tracked through impairment language because small charges can reveal which innovation options failed to compound.**
+  - Companies: PM
+  - Themes: AI, R&D, and technology
+  - Outcomes: out-cS3hKxNW
+- **Manufacturing-footprint assumptions should track restructuring and exit-cost language, not only raw-material or logistics disruptions.**
+  - Companies: PM
+  - Themes: Supply chain
+  - Outcomes: out-umHxDk8F
+- **Memory demand assumptions should track end-market mix shifts; aggregate demand can hide painful reallocations between weakening and strengthening markets.**
+  - Companies: MU
+  - Themes: Demand
+  - Outcomes: out-T3eXcgML
 - **Channel inventory corrections can convert end-market weakness into a distinct company-level revenue failure signal.**
   - Companies: AMD
   - Themes: Inventory and channel
