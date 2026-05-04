@@ -6,7 +6,6 @@ import { fileURLToPath } from 'node:url';
 import {
   applyCompanyOutcomes,
   evaluateCompanyRun,
-  deleteIdeasDbFiles,
   exportCompanyMarkdownEvidence,
   generateCouncilSessionId,
   generateCouncilViewId,
@@ -48,7 +47,6 @@ beforeEach(async () => {
 
 afterEach(async () => {
   db.close();
-  deleteIdeasDbFiles(vault);
   await rmWithRetries(vault);
 });
 
