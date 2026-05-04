@@ -216,8 +216,10 @@ For live SEC scans:
 
 ```bash
 export FLYWHEEL_IDEAS_IMPORT_NETWORK=1
-export FLYWHEEL_IDEAS_SEC_USER_AGENT="your-app-name contact: you@example.com"
+export FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL="you@your-domain.example"
 ```
+
+`FLYWHEEL_IDEAS_SEC_USER_AGENT` can still override the full header when needed, but it must include a real contact email or project URL. Placeholder agents such as `contact@example.com` are rejected.
 
 ## Reports And Artifacts
 

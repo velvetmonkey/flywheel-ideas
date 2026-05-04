@@ -18,13 +18,14 @@ const SEC_SUBMISSIONS = 'https://data.sec.gov/submissions';
 const SEC_ARCHIVES = 'https://www.sec.gov/Archives/edgar/data';
 const TICKER_URL = 'https://www.sec.gov/files/company_tickers.json';
 const SEC_REQUEST_SPACING_MS = 200;
+const DEFAULT_SEC_CONTACT_EMAIL = '9402464+velvetmonkey@users.noreply.github.com';
 let lastSecRequestAt = 0;
 
-const userAgent = process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT;
-if (!userAgent || !/contact:|@/.test(userAgent)) {
+const userAgent = process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT?.trim()
+  ?? `flywheel-ideas fixture-refresh (+https://github.com/velvetmonkey/flywheel-ideas; contact: ${process.env.FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL?.trim() ?? DEFAULT_SEC_CONTACT_EMAIL})`;
+if (!/@/.test(userAgent) || /(contact@example\.com|you@example\.com|example\.com|your-app-name)/i.test(userAgent)) {
   throw new Error(
-    'Set FLYWHEEL_IDEAS_SEC_USER_AGENT with contact text, e.g. ' +
-      '"flywheel-ideas fixture refresh contact: you@example.com"',
+    'Set FLYWHEEL_IDEAS_SEC_USER_AGENT or FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL with a real SEC contact',
   );
 }
 
@@ -158,16 +159,23 @@ function renderSnapshot(sections) {
 
 async function fetchJson(url) {
   await throttleSecRequest();
-  const res = await fetch(url, { headers: { 'User-Agent': userAgent, Accept: 'application/json' } });
+  const res = await fetch(url, { headers: secHeaders('application/json') });
   if (!res.ok) throw new Error(`SEC fetch failed ${res.status}: ${url}`);
   return res.json();
 }
 
 async function fetchText(url) {
   await throttleSecRequest();
-  const res = await fetch(url, { headers: { 'User-Agent': userAgent, Accept: 'text/html,text/plain' } });
+  const res = await fetch(url, { headers: secHeaders('text/html,text/plain') });
   if (!res.ok) throw new Error(`SEC filing fetch failed ${res.status}: ${url}`);
   return res.text();
+}
+
+function secHeaders(accept) {
+  const headers = { 'User-Agent': userAgent, Accept: accept };
+  const email = userAgent.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
+  if (email) headers.From = email;
+  return headers;
 }
 
 async function throttleSecRequest() {

@@ -22,6 +22,9 @@ const SEC_COOLDOWN_MS = Number(process.env.FLYWHEEL_IDEAS_SEC_COOLDOWN_MS ?? 30 
 const SEC_RETRY_STATUSES = new Set([403, 408, 425, 429, 500, 502, 503, 504]);
 const SEC_RETRY_DELAYS_MS = [2_000, 5_000, 15_000, 45_000, 120_000];
 const MIN_SECTION_CHARS = 500;
+const DEFAULT_SEC_CONTACT_EMAIL = '9402464+velvetmonkey@users.noreply.github.com';
+const DEFAULT_SEC_USER_AGENT =
+  `flywheel-ideas/0.4.0 (+https://github.com/velvetmonkey/flywheel-ideas; contact: ${DEFAULT_SEC_CONTACT_EMAIL})`;
 let lastSecRequestAt = 0;
 const lastSecRequestByHost = new Map<string, number>();
 const secCooldownUntilByHost = new Map<string, number>();
@@ -559,7 +562,7 @@ function filingDocumentUrl(cik: string, accessionNo: string, doc: string): strin
 async function fetchJson<T>(url: string, userAgent: string, cacheDir?: string): Promise<T> {
   const cached = cacheDir ? await readCache(cacheDir, 'json', url) : null;
   if (cached) return JSON.parse(cached) as T;
-  const res = await fetchSecWithRetry(url, { 'User-Agent': userAgent, Accept: 'application/json' }, 'SEC fetch failed');
+  const res = await fetchSecWithRetry(url, secHeaders(userAgent, 'application/json'), 'SEC fetch failed');
   const text = await res.text();
   if (cacheDir) await writeCache(cacheDir, 'json', url, text);
   return JSON.parse(text) as T;
@@ -568,10 +571,20 @@ async function fetchJson<T>(url: string, userAgent: string, cacheDir?: string): 
 async function fetchText(url: string, userAgent: string, cacheDir?: string): Promise<string> {
   const cached = cacheDir ? await readCache(cacheDir, 'text', url) : null;
   if (cached) return cached;
-  const res = await fetchSecWithRetry(url, { 'User-Agent': userAgent, Accept: 'text/html,text/plain' }, 'SEC filing fetch failed');
+  const res = await fetchSecWithRetry(url, secHeaders(userAgent, 'text/html,text/plain'), 'SEC filing fetch failed');
   const text = await res.text();
   if (cacheDir) await writeCache(cacheDir, 'text', url, text);
   return text;
+}
+
+function secHeaders(userAgent: string, accept: string): Record<string, string> {
+  const headers: Record<string, string> = {
+    'User-Agent': userAgent,
+    Accept: accept,
+  };
+  const contactEmail = extractContactEmail(userAgent);
+  if (contactEmail) headers.From = contactEmail;
+  return headers;
 }
 
 async function fetchSecWithRetry(url: string, headers: Record<string, string>, label: string): Promise<Response> {
@@ -670,8 +683,60 @@ async function throttleSecRequest(url: string): Promise<void> {
   lastSecRequestByHost.set(host, lastSecRequestAt);
 }
 
+export function resolveSecUserAgent(): string {
+  const explicit = process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT?.trim();
+  if (explicit) {
+    assertSecUserAgent(explicit);
+    return explicit;
+  }
+  const contact = process.env.FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL?.trim() ?? DEFAULT_SEC_CONTACT_EMAIL;
+  assertContactEmail(contact);
+  if (contact === DEFAULT_SEC_CONTACT_EMAIL) return DEFAULT_SEC_USER_AGENT;
+  return `flywheel-ideas/0.4.0 (+https://github.com/velvetmonkey/flywheel-ideas; contact: ${contact})`;
+}
+
 function resolveUserAgent(): string {
-  return process.env.FLYWHEEL_IDEAS_SEC_USER_AGENT ?? 'flywheel-ideas/0.4.0 contact@example.com';
+  return resolveSecUserAgent();
+}
+
+export function assertSecUserAgent(userAgent: string): void {
+  const normalized = userAgent.trim();
+  if (normalized.length < 20) {
+    throw new ImportAdapterError(
+      'SEC user agent is too short; include app name plus contact email or project URL',
+      SEC_COMPANY_NAME,
+      'sec-user-agent',
+    );
+  }
+  if (/(contact@example\.com|you@example\.com|example\.com|your-app-name|test@example\.com)/i.test(normalized)) {
+    throw new ImportAdapterError(
+      'SEC user agent uses placeholder contact text; set FLYWHEEL_IDEAS_SEC_USER_AGENT or FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL to a real contact',
+      SEC_COMPANY_NAME,
+      'sec-user-agent',
+    );
+  }
+  if (!extractContactEmail(normalized) && !/https?:\/\/\S+/i.test(normalized)) {
+    throw new ImportAdapterError(
+      'SEC user agent must include a contact email or project URL',
+      SEC_COMPANY_NAME,
+      'sec-user-agent',
+    );
+  }
+}
+
+function assertContactEmail(email: string): void {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || /example\.com$/i.test(email)) {
+    throw new ImportAdapterError(
+      'SEC contact email must be a real email-like address, not an example placeholder',
+      SEC_COMPANY_NAME,
+      'sec-user-agent',
+    );
+  }
+}
+
+function extractContactEmail(input: string): string | null {
+  const match = input.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+  return match?.[0] ?? null;
 }
 
 function padCik(cik: string): string {

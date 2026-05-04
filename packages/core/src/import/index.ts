@@ -45,6 +45,8 @@ export {
   SEC_COMPANY_NAME,
   extractEligibleSections,
   extractThemeHits,
+  resolveSecUserAgent,
+  assertSecUserAgent,
 } from './adapters/sec-company.js';
 
 // Register built-in adapters once per process. `registerAdapter` guards
