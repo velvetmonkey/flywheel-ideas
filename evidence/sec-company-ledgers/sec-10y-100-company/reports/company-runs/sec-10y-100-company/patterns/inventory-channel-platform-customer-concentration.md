@@ -17,7 +17,7 @@ source: flywheel-ideas
 - Sectors: Consumer Discretionary, Information Technology
 - Companies: ABNB, MU
 - Observations: 58
-- Realized candidates: 6
+- Realized candidates: 5
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn

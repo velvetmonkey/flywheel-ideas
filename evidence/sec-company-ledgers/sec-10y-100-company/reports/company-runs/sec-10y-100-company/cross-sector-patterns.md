@@ -15,14 +15,13 @@ Mechanism-level comparison prevents generic SEC boilerplate from looking more me
 | Pattern | Sectors | Companies | Observations | Realized Candidates | Signal |
 |---|---:|---:|---:|---:|---|
 | [[patterns/geopolitics-tariffs-geographic-concentration|Geopolitics and tariffs / Geographic concentration or local disruption]] | 4 | 25 | 896 | 17 | shared mechanism with realized-risk evidence |
-| [[patterns/demand-consumer-demand-shock|Demand / Consumer or end-market demand shock]] | 4 | 6 | 408 | 8 | shared mechanism with realized-risk evidence |
-| [[patterns/inventory-channel-platform-customer-concentration|Inventory and channel / Platform or customer concentration]] | 2 | 2 | 58 | 6 | shared mechanism with realized-risk evidence |
+| [[patterns/demand-consumer-demand-shock|Demand / Consumer or end-market demand shock]] | 4 | 6 | 408 | 7 | shared mechanism with realized-risk evidence |
 | [[patterns/liquidity-interest-credit-liquidity|Liquidity / Interest, credit, or liquidity stress]] | 4 | 13 | 925 | 5 | shared mechanism with realized-risk evidence |
-| [[patterns/customer-platform-dependency-platform-customer-concentration|Customer and platform dependency / Platform or customer concentration]] | 4 | 26 | 1011 | 4 | shared mechanism with realized-risk evidence |
+| [[patterns/inventory-channel-platform-customer-concentration|Inventory and channel / Platform or customer concentration]] | 2 | 2 | 58 | 5 | shared mechanism with realized-risk evidence |
 | [[patterns/macro-fx-geographic-concentration|Macro and foreign exchange / Geographic concentration or local disruption]] | 4 | 12 | 741 | 4 | shared mechanism with realized-risk evidence |
 | [[patterns/supply-chain-geographic-concentration|Supply chain / Geographic concentration or local disruption]] | 3 | 4 | 214 | 4 | shared mechanism with realized-risk evidence |
-| [[patterns/cloud-data-center-capacity-platform-customer-concentration|Cloud and data center capacity / Platform or customer concentration]] | 2 | 4 | 245 | 4 | shared mechanism with realized-risk evidence |
 | [[patterns/supply-chain-capacity-investment-opex|Supply chain / Capacity investment and operating expense drag]] | 2 | 4 | 203 | 4 | shared mechanism with realized-risk evidence |
+| [[patterns/customer-platform-dependency-platform-customer-concentration|Customer and platform dependency / Platform or customer concentration]] | 4 | 26 | 1011 | 3 | shared mechanism with realized-risk evidence |
 | [[patterns/supply-chain-single-supplier-manufacturing|Supply chain / Single supplier or manufacturing concentration]] | 2 | 3 | 142 | 3 | shared mechanism with realized-risk evidence |
 | [[patterns/demand-capacity-investment-opex|Demand / Capacity investment and operating expense drag]] | 2 | 2 | 128 | 3 | shared mechanism with realized-risk evidence |
 | [[patterns/regulation-legal-regulatory-investigation-litigation|Regulation and legal / Regulatory investigation or litigation]] | 4 | 9 | 615 | 1 | shared mechanism with realized-risk evidence |
@@ -36,6 +35,7 @@ Mechanism-level comparison prevents generic SEC boilerplate from looking more me
 | [[patterns/cybersecurity-privacy-regulatory-investigation-litigation|Cybersecurity and privacy / Regulatory investigation or litigation]] | 3 | 4 | 103 | 0 | emerging cross-sector mechanism |
 | [[patterns/customer-platform-dependency-geographic-concentration|Customer and platform dependency / Geographic concentration or local disruption]] | 3 | 4 | 89 | 0 | emerging cross-sector mechanism |
 | [[patterns/cybersecurity-privacy-geographic-concentration|Cybersecurity and privacy / Geographic concentration or local disruption]] | 3 | 4 | 52 | 0 | emerging cross-sector mechanism |
+| [[patterns/cloud-data-center-capacity-platform-customer-concentration|Cloud and data center capacity / Platform or customer concentration]] | 2 | 4 | 245 | 0 | emerging cross-sector mechanism |
 | [[patterns/competition-platform-customer-concentration|Competition / Platform or customer concentration]] | 2 | 3 | 160 | 0 | emerging cross-sector mechanism |
 | [[patterns/macro-fx-capacity-investment-opex|Macro and foreign exchange / Capacity investment and operating expense drag]] | 2 | 2 | 109 | 0 | emerging cross-sector mechanism |
 | [[patterns/cybersecurity-privacy-single-supplier-manufacturing|Cybersecurity and privacy / Single supplier or manufacturing concentration]] | 2 | 4 | 101 | 0 | emerging cross-sector mechanism |

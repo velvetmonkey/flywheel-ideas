@@ -15,8 +15,8 @@ source: flywheel-ideas
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 168
-- Applied outcomes: 32
+- Staged outcomes: 144
+- Applied outcomes: 39
 
 ## SEC Company Lifecycle Report
 
@@ -25,22 +25,50 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 ## Lifecycle Snapshot
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
-- Current bets: 382 open company/theme assumption(s) still being carried.
-- Review queue: 139 event(s), 168 staged candidate(s) awaiting human judgment.
-- Accepted outcomes: 32 failure(s), 0 validation(s).
-- Lessons: 32 recorded memo(s), 0 missing memo(s).
-- Triage completion: 32/363 candidate(s) applied (9%).
+- Current bets: 376 open company/theme assumption(s) still being carried.
+- Review queue: 127 event(s), 144 staged candidate(s) awaiting human judgment.
+- Accepted outcomes: 39 failure(s), 0 validation(s).
+- Lessons: 39 recorded memo(s), 0 missing memo(s).
+- Triage completion: 39/363 candidate(s) applied (11%).
 
 ## Operator Next Step
 
-Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-HDbdsaxF","cout-VdWH7N4c"], confirm: true })`
+Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-6ZT2WLHL","cout-2UFfphma"], confirm: true })`
 
 ## Lifecycle Status
 
-32 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
+39 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
 
 ## Lessons Captured
 
+- **Semiconductor supply-chain assumptions should track architecture-transition inventory because component commitments can become charges when product platforms shift.**
+  - Evidence: 1 accepted failure verdict(s) across NVDA / Supply chain
+  - Representative context: The filing disclosed approximately $128 million in excess DRAM and other component charges plus a $57 million charge for prior-architecture components and chips.
+  - Outcomes: out-QuoB6Xk9
+- **Memory inventory assumptions should track product-line exits because technology discontinuation can convert both assets and inventory into charges.**
+  - Evidence: 1 accepted failure verdict(s) across MU / Inventory and channel
+  - Representative context: In 2021, Micron recognized a $435 million restructure and asset-impairment charge related to assets held for sale and a $49 million cost-of-goods-sold charge to write down 3D XPoint inventory.
+  - Outcomes: out-ckuQwvui
+- **AI/R&D assumptions should separate productive investment from impairment-backed cost pressure; both can rise together and change the risk profile.**
+  - Evidence: 1 accepted failure verdict(s) across MSFT / AI, R&D, and technology
+  - Representative context: The filing disclosed operating expenses increased $236 million, driven by Gaming impairment charges and R&D investments in compute capacity and AI talent.
+  - Outcomes: out-JiCcBcGp
+- **Technology-platform assumptions should track impairment charges inside R&D because they identify product or portfolio bets that failed to compound.**
+  - Evidence: 1 accepted failure verdict(s) across MSFT / AI, R&D, and technology
+  - Representative context: The filing disclosed R&D expenses increased $1.1 billion, driven partly by impairment charges resulting from changes to the hardware portfolio.
+  - Outcomes: out-4u23dr9z
+- **Supply-chain assumptions should track availability of component parts and alternative sourcing work because mitigation language often reveals operational pressure already being felt.**
+  - Evidence: 1 accepted failure verdict(s) across MO / Geopolitics and tariffs
+  - Representative context: The filing disclosed continued domestic and global supply and distribution chain disruptions and negative effects on raw-material and component cost and availability.
+  - Outcomes: out-nojVhWNc
+- **Domestic-business geopolitics assumptions should still track indirect input exposure because conflict can reach companies through supplier cost and availability rather than direct revenue.**
+  - Evidence: 1 accepted failure verdict(s) across MO / Supply chain
+  - Representative context: The filing disclosed negative effects on the cost and availability of certain raw materials and component parts despite little direct Russia/Ukraine exposure.
+  - Outcomes: out-pHzkjaqp
+- **Experience-business macro assumptions should track cost inflation in guest-facing merchandise, food, and beverage because demand recovery can still carry margin pressure.**
+  - Evidence: 1 accepted failure verdict(s) across DIS / Macro and foreign exchange
+  - Representative context: The filing disclosed cost of products increased 4% to $1.7 billion due to higher sales volumes and cost inflation at theme parks and resorts.
+  - Outcomes: out-oGp6QiUf
 - **Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.**
   - Evidence: 1 accepted failure verdict(s) across DIS / Regulation and legal
   - Representative context: The filing disclosed that reopening or closure of Disney businesses depended on changing government requirements and that reopened businesses incurred additional costs to address regulations and safety of employees, talent, and guests.
@@ -178,89 +206,29 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-iVeAyyNH
 - **DIS / Geopolitics and tariffs** — fresh, 24 observation(s), review pressure 7, latest 2026-02-02
   - Assumption: asm-xakuDdYD
-- **MU / Inventory and channel** — fresh, 55 observation(s), review pressure 6, latest 2026-03-19
-  - Assumption: asm-mohAyweE
-- **DIS / Demand** — fresh, 53 observation(s), review pressure 6, latest 2026-02-02
-  - Assumption: asm-6o8MAEsY
 - **PM / Geopolitics and tariffs** — fresh, 54 observation(s), review pressure 5, latest 2026-04-24
   - Assumption: asm-qsuv2tV3
 - **TSLA / Demand** — fresh, 84 observation(s), review pressure 5, latest 2026-04-23
   - Assumption: asm-jRQLiAWW
 - **NFLX / Demand** — fresh, 84 observation(s), review pressure 5, latest 2026-04-17
   - Assumption: asm-bmBJ3gyo
-- **MSFT / Demand** — fresh, 84 observation(s), review pressure 4, latest 2026-04-29
-  - Assumption: asm-GpdfFh1C
-- **MSFT / AI, R&D, and technology** — fresh, 83 observation(s), review pressure 4, latest 2026-04-29
-  - Assumption: asm-e7XCszRn
-- **MSFT / Cloud and data center capacity** — fresh, 83 observation(s), review pressure 4, latest 2026-04-29
-  - Assumption: asm-YKKrQv95
-- **KO / Demand** — fresh, 84 observation(s), review pressure 3, latest 2026-04-30
-  - Assumption: asm-5B3UtjSr
+- **DIS / Demand** — fresh, 53 observation(s), review pressure 5, latest 2026-02-02
+  - Assumption: asm-6o8MAEsY
 - **MO / Liquidity** — fresh, 83 observation(s), review pressure 3, latest 2026-04-30
   - Assumption: asm-kZQCFeFw
+- **MSFT / Demand** — fresh, 84 observation(s), review pressure 3, latest 2026-04-29
+  - Assumption: asm-GpdfFh1C
+- **DIS / Liquidity** — fresh, 39 observation(s), review pressure 3, latest 2026-02-02
+  - Assumption: asm-cAuLNidr
+- **MCD / Liquidity** — fresh, 68 observation(s), review pressure 3, latest 2025-11-05
+  - Assumption: asm-sfuU8h2r
+- **TMUS / Liquidity** — fresh, 84 observation(s), review pressure 2, latest 2026-04-28
+  - Assumption: asm-CJ5Kd9BY
+- **SBUX / Geopolitics and tariffs** — fresh, 50 observation(s), review pressure 2, latest 2026-04-28
+  - Assumption: asm-dM8YjiES
 
 ## Outcome Review Queue
 
-- **DIS** 2024-02-07: 2 candidate(s), Demand, Macro and foreign exchange
-  - Candidate IDs: cout-HDbdsaxF, cout-VdWH7N4c
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-HDbdsaxF","cout-VdWH7N4c"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:demand:outcome
-  - Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
-- **GOOGL** 2021-07-28 to 2021-10-27: 2 candidate(s), Cloud and data center capacity
-  - Candidate IDs: cout-B7tCKAA6, cout-SMcn3y2E
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-B7tCKAA6","cout-SMcn3y2E"], confirm: true })`
-  - Source: sec-company://0001652044/0001652044-21-000047#part-i-item-2:theme:cloud-data-center-capacity:outcome
-  - TAC was $10.9 billion, an increase of 63% year over year, primarily driven by an increase in revenues subject to TAC. Other cost of revenues were $15.3 billion, an increase of 29% year over year, affected by a reduction in depreciation expense due to the change in the estimated useful life of our se
-- **HD** 2020-08-25 to 2020-11-24: 2 candidate(s), Demand
-  - Candidate IDs: cout-7ZFDNvKH, cout-ehqn8LXh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7ZFDNvKH","cout-ehqn8LXh"], confirm: true })`
-  - Source: sec-company://0000354950/0000354950-20-000068#part-ii-item-1a:theme:demand:outcome
-  - As a result of the pandemic and related quarantines, shelter-in-place orders, and similar restrictions, we have experienced increased demand for online purchases of products. While we have managed this increased volume to date without interruption, there are no assurances that we will continue to be
-- **KO** 2025-02-20 to 2026-02-20: 2 candidate(s), Demand
-  - Candidate IDs: cout-iE9XESqW, cout-rgWVAt2q
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iE9XESqW","cout-rgWVAt2q"], confirm: true })`
-  - Source: sec-company://0000021344/0000021344-25-000011#item-1a:theme:demand:outcome
-  - Geopolitical instability has in the past led, and may in the future lead, to logistical, transportation and supply chain disruptions; business disruptions (including labor shortages); increased risk of cybersecurity incidents or other disruptions to our information systems; reduced availability and
-- **MO** 2022-10-27: 2 candidate(s), Geopolitics and tariffs, Supply chain
-  - Candidate IDs: cout-RgaEKhj2, cout-eoocXEfn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-RgaEKhj2","cout-eoocXEfn"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - Volatility in domestic and global economies and disruptions in the supply and distribution chains continued in the third quarter of 2022, resulting from several factors, including the on-going impacts of inflation, energy shortages in Europe, raw materials availability and the Russian invasion of Uk
-- **MSFT** 2021-07-29: 2 candidate(s), Cloud and data center capacity, Demand
-  - Candidate IDs: cout-61n2QAKz, cout-394FHK5Y
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-61n2QAKz","cout-394FHK5Y"], confirm: true })`
-  - Source: sec-company://0000789019/0001564590-21-039151#item-7:theme:cloud-data-center-capacity:outcome
-  - Cost of revenue increased $6.2 billion or 13% driven by growth in commercial cloud and Gaming, offset in part by a reduction in depreciation expense due to the change in estimated useful lives of our server and network equipment.
-- **MSFT** 2023-01-24: 2 candidate(s), AI, R&D, and technology, Cloud and data center capacity
-  - Candidate IDs: cout-Q6cRP46M, cout-4jwKiyyY
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Q6cRP46M","cout-4jwKiyyY"], confirm: true })`
-  - Source: sec-company://0000789019/0001564590-23-000733#part-i-item-2:theme:ai-rd-technology:outcome
-  - Research and development expenses increased $1.1 billion or 19% driven by investments in cloud engineering, impairment charges resulting from changes to our hardware portfolio, and LinkedIn. Research and development included a favorable foreign currency impact of 2%.
-- **MSFT** 2026-01-28: 2 candidate(s), AI, R&D, and technology, Cloud and data center capacity
-  - Candidate IDs: cout-v6goN1Js, cout-y2cwxyMy
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-v6goN1Js","cout-y2cwxyMy"], confirm: true })`
-  - Source: sec-company://0000789019/0001193125-26-027207#part-i-item-2:theme:ai-rd-technology:outcome
-  - Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
-- **MSFT** 2026-04-29: 2 candidate(s), AI, R&D, and technology, Cloud and data center capacity
-  - Candidate IDs: cout-ACZRATjn, cout-zFy7ehnb
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ACZRATjn","cout-zFy7ehnb"], confirm: true })`
-  - Source: sec-company://0000789019/0001193125-26-191507#part-i-item-2:theme:ai-rd-technology:outcome
-  - Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
-- **MU** 2021-07-01 to 2021-10-08: 2 candidate(s), Demand
-  - Candidate IDs: cout-8gqoUGJm, cout-K9aRAKBN
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-8gqoUGJm","cout-K9aRAKBN"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-21-000052#part-i-item-2:theme:demand:outcome
-  - Events surrounding the ongoing COVID-19 pandemic initially resulted in a reduction in economic activity across the globe, and the timing and extent of the ongoing economic recovery remains uncertain. As a result, we have experienced volatility in the markets that our products are sold into, driven b
-- **MU** 2022-03-30 to 2022-07-01: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-wyjsXWXB, cout-UnymrXZk
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-wyjsXWXB","cout-UnymrXZk"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-22-000016#part-i-item-2:theme:inventory-channel:outcome
-  - In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected
-- **NVDA** 2019-02-21: 2 candidate(s), Customer and platform dependency, Supply chain
-  - Candidate IDs: cout-Uf5LXhW8, cout-jBcXDeFd
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Uf5LXhW8","cout-jBcXDeFd"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-19-000023#item-7:theme:customer-platform-dependency:outcome
-  - was 61.2%, compared with 59.9% a year earlier, which reflects our continued shift toward higher-value platforms, which more than offset the impact of approximately $128 million in charges for excess DRAM and other components we recorded in the fourth quarter of fiscal year 2019 and a charge of $57 m
 - **NVDA** 2022-08-31 to 2022-11-18: 2 candidate(s), Inventory and channel
   - Candidate IDs: cout-6ZT2WLHL, cout-2UFfphma
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-6ZT2WLHL","cout-2UFfphma"], confirm: true })`
@@ -1027,6 +995,34 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - In the context of **DIS disclosed regulation and legal risk in 10-Q 2019-05-08.**, facing **in the prior-year quarter was due to insurance recoveries related to a legal matter.**, we assume **DIS can manage regulation and legal risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
 
   - Lesson: Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.
+- **FAIL** DIS / Macro and foreign exchange: asm-13tyLWKi via out-oGp6QiUf
+  - In the context of **DIS disclosed macro and foreign exchange risk in 10-Q 2019-05-08.**, facing **due to the consolidation of 21CF and Hulu, higher affiliate fees and growth in guest spending at our theme parks and resorts, partially offset by lower theatrical distribution revenue and a decrease in program sales at our Media Networks segment. Service revenues reflected an approximate 1 percentage point decrease due to an unfavorable movement of the U.S. dollar against major currencies including the impact of our hedging program (FX Impact).**, we assume **DIS can manage macro and foreign exchange risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Experience-business macro assumptions should track cost inflation in guest-facing merchandise, food, and beverage because demand recovery can still carry margin pressure.
+- **FAIL** MO / Supply chain: asm-BmMCyKey via out-pHzkjaqp
+  - In the context of **MO disclosed supply chain risk in 10-K 2016-02-25.**, facing **in Item 7, may impact the consumer acceptability of tobacco products, limit adult tobacco consumer choices, delay or prevent the launch of new or modified tobacco products or products with claims of reduced risk, require the recall or other removal of tobacco products from the marketplace (for example as a result of product contamination or a determination by the FDA that one or more tobacco products do not satisfy the statutory requirements for substantial equivalence), restrict communications to adult tobacco consumers, restrict the ability to differentiate tobacco products, create a competitive advantage or disadvantage for certain tobacco companies, impose additional manufacturing, labeling or packing requirements, interrupt manufacturing or otherwise significantly increase the cost of doing business, or restrict or prevent the use of specified tobacco products in certain locations o**, we assume **MO can manage supply chain risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Domestic-business geopolitics assumptions should still track indirect input exposure because conflict can reach companies through supplier cost and availability rather than direct revenue.
+- **FAIL** MO / Geopolitics and tariffs: asm-jyPd6Wjg via out-nojVhWNc
+  - In the context of **MO disclosed geopolitics and tariffs risk in 10-Q 2020-04-30.**, facing **To date, Altria believes it has experienced minimal impact to productivity due to the remote working and its critical information technology systems have remained operational. Although Altria temporarily suspended operations at Philip Morris USA Inc.'s ("PM USA") Richmond, Virginia-area manufacturing facilities, John Middleton Co.'s (Middleton) King of Prussia, Pennsylvania manufacturing facility, as well as U.S. Smokeless Tobacco Company LLC's ("USSTC") Nashville, Tennessee-area manufacturing facilities in March 2020, Altria resumed operations at those facilities under enhanced safety protocols in April 2020 and all of Altria's manufacturing facilities are currently operational.**, we assume **MO can manage geopolitics and tariffs risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Supply-chain assumptions should track availability of component parts and alternative sourcing work because mitigation language often reveals operational pressure already being felt.
+- **FAIL** MSFT / AI, R&D, and technology: asm-e7XCszRn via out-4u23dr9z
+  - In the context of **MSFT disclosed ai, r&d, and technology risk in 10-Q 2016-01-28.**, facing **can further transform the industry and our business. At Microsoft, we push the boundaries of what is possible through a broad range of research and development activities that seek to identify and address the changing demands of customers, industry**, we assume **MSFT can manage ai, r&d, and technology risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Technology-platform assumptions should track impairment charges inside R&D because they identify product or portfolio bets that failed to compound.
+- **FAIL** MSFT / AI, R&D, and technology: asm-e7XCszRn via out-JiCcBcGp
+  - In the context of **MSFT disclosed ai, r&d, and technology risk in 10-Q 2016-01-28.**, facing **can further transform the industry and our business. At Microsoft, we push the boundaries of what is possible through a broad range of research and development activities that seek to identify and address the changing demands of customers, industry**, we assume **MSFT can manage ai, r&d, and technology risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: AI/R&D assumptions should separate productive investment from impairment-backed cost pressure; both can rise together and change the risk profile.
+- **FAIL** MU / Inventory and channel: asm-mohAyweE via out-ckuQwvui
+  - In the context of **MU disclosed inventory and channel risk in 10-Q 2016-01-08.**, facing **Our memory solutions enable the world's most innovative computing, consumer, enterprise storage, networking, mobile, embedded, and automotive applications. We market our products through our internal sales force, independent sales representatives, and distributors, primarily to OEMs and retailers located around the world. Our success is largely dependent on the market acceptance of our diversified portfolio of semiconductor products, efficient utilization of our manufacturing infrastructure, successful ongoing development of advanced product and process technologies, and generating a return on R&D investments.**, we assume **MU can manage inventory and channel risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Memory inventory assumptions should track product-line exits because technology discontinuation can convert both assets and inventory into charges.
+- **FAIL** NVDA / Supply chain: asm-iGQnHDHS via out-QuoB6Xk9
+  - In the context of **NVDA disclosed supply chain risk in 10-K 2016-03-17.**, facing **Our competitors' products, services and technologies may be less costly, or may offer superior functionality or different features than ours. In addition, many of our competitors operate and maintain their own fabrication facilities and have longer operating histories, greater name recognition, larger customer bases, and greater financial, sales, marketing and distribution resources than we do. These competitors may be able to more effectively identify and capitalize upon opportunities in new markets and end user customer trends, quickly transition their semiconductor products to increasingly smaller line width geometries and obtain sufficient foundry capacity and packaging materials, which could harm our business.**, we assume **NVDA can manage supply chain risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Semiconductor supply-chain assumptions should track architecture-transition inventory because component commitments can become charges when product platforms shift.
 
 ## Dependent Ideas Needing Review
 
@@ -1037,7 +1033,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 168 staged, 32 applied.
+- Realized outcome candidates: 144 staged, 39 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -1065,7 +1061,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-25 to 2026-04-30
 - Themes tracked: 12
 - Observations: 520
-- Staged outcomes: 4
+- Staged outcomes: 2
 
 - **Demand**: 84 observation(s), latest 2026-04-30, assumption asm-5B3UtjSr
 - **Regulation and legal**: 84 observation(s), latest 2026-04-30, assumption asm-pzkApQ3D
@@ -1218,7 +1214,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-03-24 to 2026-03-18
 - Themes tracked: 12
 - Observations: 683
-- Staged outcomes: 4
+- Staged outcomes: 2
 
 - **Demand**: 82 observation(s), latest 2026-03-18, assumption asm-XBSku9xU
 - **Liquidity**: 81 observation(s), latest 2026-03-18, assumption asm-TFmHzJEj
@@ -1252,7 +1248,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-08 to 2026-03-19
 - Themes tracked: 12
 - Observations: 790
-- Staged outcomes: 13
+- Staged outcomes: 9
 
 - **Supply chain**: 84 observation(s), latest 2026-03-19, assumption asm-TN54hhrX
 - **AI, R&D, and technology**: 83 observation(s), latest 2026-03-19, assumption asm-o5RkVgmn
@@ -1303,7 +1299,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-25 to 2026-04-30
 - Themes tracked: 12
 - Observations: 471
-- Staged outcomes: 6
+- Staged outcomes: 4
 
 - **Demand**: 84 observation(s), latest 2026-04-30, assumption asm-GzBCvRcp
 - **Liquidity**: 83 observation(s), latest 2026-04-30, assumption asm-kZQCFeFw
@@ -1320,7 +1316,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-28 to 2026-04-29
 - Themes tracked: 12
 - Observations: 816
-- Staged outcomes: 13
+- Staged outcomes: 5
 
 - **Demand**: 84 observation(s), latest 2026-04-29, assumption asm-GpdfFh1C
 - **AI, R&D, and technology**: 83 observation(s), latest 2026-04-29, assumption asm-e7XCszRn
@@ -1405,7 +1401,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-03-17 to 2026-02-25
 - Themes tracked: 12
 - Observations: 704
-- Staged outcomes: 12
+- Staged outcomes: 10
 
 - **Demand**: 82 observation(s), latest 2026-02-25, assumption asm-QncdPdYh
 - **AI, R&D, and technology**: 77 observation(s), latest 2026-02-25, assumption asm-GDaMBKx5
@@ -1626,7 +1622,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-11 to 2026-04-30
 - Themes tracked: 12
 - Observations: 711
-- Staged outcomes: 2
+- Staged outcomes: 0
 
 - **AI, R&D, and technology**: 84 observation(s), latest 2026-04-30, assumption asm-aWH7uZAE
 - **Demand**: 84 observation(s), latest 2026-04-30, assumption asm-ZdUnXqPQ
@@ -1660,7 +1656,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2019-05-08 to 2026-02-02
 - Themes tracked: 12
 - Observations: 333
-- Staged outcomes: 25
+- Staged outcomes: 23
 
 - **Demand**: 53 observation(s), latest 2026-02-02, assumption asm-6o8MAEsY
 - **Regulation and legal**: 46 observation(s), latest 2026-02-02, assumption asm-K8rwQyCS
@@ -1692,14 +1688,14 @@ No dependent ideas are currently flagged by accepted refutations.
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 57 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
-| Consumer Discretionary | 10 | 12 | 5501 | 24 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
-| Consumer Staples | 10 | 12 | 3899 | 28 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
+| Communication Services | 10 | 12 | 5374 | 53 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Consumer Discretionary | 10 | 12 | 5501 | 22 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
+| Consumer Staples | 10 | 12 | 3899 | 24 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 59 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 45 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |
@@ -1708,22 +1704,20 @@ No dependent ideas are currently flagged by accepted refutations.
 
 - **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 17 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 8 realized candidate(s).
+- **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 7 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 6 realized candidate(s).
-  - Sectors: Consumer Discretionary, Information Technology
 - **Liquidity / Interest, credit, or liquidity stress**: 4 sector(s), 13 company(ies), 925 observation(s), 5 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Customer and platform dependency / Platform or customer concentration**: 4 sector(s), 26 company(ies), 1011 observation(s), 4 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
+- **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 5 realized candidate(s).
+  - Sectors: Consumer Discretionary, Information Technology
 - **Macro and foreign exchange / Geographic concentration or local disruption**: 4 sector(s), 12 company(ies), 741 observation(s), 4 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 214 observation(s), 4 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
-- **Cloud and data center capacity / Platform or customer concentration**: 2 sector(s), 4 company(ies), 245 observation(s), 4 realized candidate(s).
-  - Sectors: Communication Services, Information Technology
 - **Supply chain / Capacity investment and operating expense drag**: 2 sector(s), 4 company(ies), 203 observation(s), 4 realized candidate(s).
   - Sectors: Communication Services, Information Technology
+- **Customer and platform dependency / Platform or customer concentration**: 4 sector(s), 26 company(ies), 1011 observation(s), 3 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Single supplier or manufacturing concentration**: 2 sector(s), 3 company(ies), 142 observation(s), 3 realized candidate(s).
   - Sectors: Consumer Staples, Information Technology
 - **Demand / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 128 observation(s), 3 realized candidate(s).
@@ -1745,6 +1739,8 @@ No dependent ideas are currently flagged by accepted refutations.
 - **Inventory and channel / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 116 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Information Technology
 - **Cybersecurity and privacy / Regulatory investigation or litigation**: 3 sector(s), 4 company(ies), 103 observation(s), 0 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
+- **Customer and platform dependency / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 89 observation(s), 0 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
 
 ## Observation Evidence Examples
@@ -1770,56 +1766,8 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-168 staged candidate(s) grouped into 139 review event(s). Apply still operates on candidate IDs; groups are for review only.
+144 staged candidate(s) grouped into 127 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
-- **DIS** 2024-02-07: 2 candidate(s), Demand, Macro and foreign exchange
-  - Candidate IDs: cout-HDbdsaxF, cout-VdWH7N4c
-  - Representative source: sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:demand:outcome
-  - Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
-- **GOOGL** 2021-07-28 to 2021-10-27: 2 candidate(s), Cloud and data center capacity
-  - Candidate IDs: cout-B7tCKAA6, cout-SMcn3y2E
-  - Representative source: sec-company://0001652044/0001652044-21-000047#part-i-item-2:theme:cloud-data-center-capacity:outcome
-  - TAC was $10.9 billion, an increase of 63% year over year, primarily driven by an increase in revenues subject to TAC. Other cost of revenues were $15.3 billion, an increase of 29% year over year, affected by a reduction in depreciation expense due to the change in the estimated useful life of our se
-- **HD** 2020-08-25 to 2020-11-24: 2 candidate(s), Demand
-  - Candidate IDs: cout-7ZFDNvKH, cout-ehqn8LXh
-  - Representative source: sec-company://0000354950/0000354950-20-000068#part-ii-item-1a:theme:demand:outcome
-  - As a result of the pandemic and related quarantines, shelter-in-place orders, and similar restrictions, we have experienced increased demand for online purchases of products. While we have managed this increased volume to date without interruption, there are no assurances that we will continue to be
-- **KO** 2025-02-20 to 2026-02-20: 2 candidate(s), Demand
-  - Candidate IDs: cout-iE9XESqW, cout-rgWVAt2q
-  - Representative source: sec-company://0000021344/0000021344-25-000011#item-1a:theme:demand:outcome
-  - Geopolitical instability has in the past led, and may in the future lead, to logistical, transportation and supply chain disruptions; business disruptions (including labor shortages); increased risk of cybersecurity incidents or other disruptions to our information systems; reduced availability and
-- **MO** 2022-10-27: 2 candidate(s), Geopolitics and tariffs, Supply chain
-  - Candidate IDs: cout-RgaEKhj2, cout-eoocXEfn
-  - Representative source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:supply-chain:outcome
-  - Volatility in domestic and global economies and disruptions in the supply and distribution chains continued in the third quarter of 2022, resulting from several factors, including the on-going impacts of inflation, energy shortages in Europe, raw materials availability and the Russian invasion of Uk
-- **MSFT** 2021-07-29: 2 candidate(s), Cloud and data center capacity, Demand
-  - Candidate IDs: cout-61n2QAKz, cout-394FHK5Y
-  - Representative source: sec-company://0000789019/0001564590-21-039151#item-7:theme:demand:outcome
-  - Cost of revenue increased $6.2 billion or 13% driven by growth in commercial cloud and Gaming, offset in part by a reduction in depreciation expense due to the change in estimated useful lives of our server and network equipment.
-- **MSFT** 2023-01-24: 2 candidate(s), AI, R&D, and technology, Cloud and data center capacity
-  - Candidate IDs: cout-Q6cRP46M, cout-4jwKiyyY
-  - Representative source: sec-company://0000789019/0001564590-23-000733#part-i-item-2:theme:ai-rd-technology:outcome
-  - Research and development expenses increased $1.1 billion or 19% driven by investments in cloud engineering, impairment charges resulting from changes to our hardware portfolio, and LinkedIn. Research and development included a favorable foreign currency impact of 2%.
-- **MSFT** 2026-01-28: 2 candidate(s), AI, R&D, and technology, Cloud and data center capacity
-  - Candidate IDs: cout-v6goN1Js, cout-y2cwxyMy
-  - Representative source: sec-company://0000789019/0001193125-26-027207#part-i-item-2:theme:cloud-data-center-capacity:outcome
-  - Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
-- **MSFT** 2026-04-29: 2 candidate(s), AI, R&D, and technology, Cloud and data center capacity
-  - Candidate IDs: cout-ACZRATjn, cout-zFy7ehnb
-  - Representative source: sec-company://0000789019/0001193125-26-191507#part-i-item-2:theme:cloud-data-center-capacity:outcome
-  - Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
-- **MU** 2021-07-01 to 2021-10-08: 2 candidate(s), Demand
-  - Candidate IDs: cout-8gqoUGJm, cout-K9aRAKBN
-  - Representative source: sec-company://0000723125/0000723125-21-000052#part-i-item-2:theme:demand:outcome
-  - Events surrounding the ongoing COVID-19 pandemic initially resulted in a reduction in economic activity across the globe, and the timing and extent of the ongoing economic recovery remains uncertain. As a result, we have experienced volatility in the markets that our products are sold into, driven b
-- **MU** 2022-03-30 to 2022-07-01: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-wyjsXWXB, cout-UnymrXZk
-  - Representative source: sec-company://0000723125/0000723125-22-000016#part-i-item-2:theme:inventory-channel:outcome
-  - In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected
-- **NVDA** 2019-02-21: 2 candidate(s), Customer and platform dependency, Supply chain
-  - Candidate IDs: cout-Uf5LXhW8, cout-jBcXDeFd
-  - Representative source: sec-company://0001045810/0001045810-19-000023#item-7:theme:customer-platform-dependency:outcome
-  - was 61.2%, compared with 59.9% a year earlier, which reflects our continued shift toward higher-value platforms, which more than offset the impact of approximately $128 million in charges for excess DRAM and other components we recorded in the fourth quarter of fiscal year 2019 and a charge of $57 m
 - **NVDA** 2022-08-31 to 2022-11-18: 2 candidate(s), Inventory and channel
   - Candidate IDs: cout-6ZT2WLHL, cout-2UFfphma
   - Representative source: sec-company://0001045810/0001045810-22-000147#part-ii-item-1a:theme:inventory-channel:outcome
@@ -2333,10 +2281,6 @@ No dependent ideas are currently flagged by accepted refutations.
 
 These candidates are staged for human review. Applying them requires company.apply_outcomes.
 
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-19-000023#item-7:theme:customer-platform-dependency:outcome)
-  - was 61.2%, compared with 59.9% a year earlier, which reflects our continued shift toward higher-value platforms, which more than offset the impact of approximately $128 million in charges for excess DRAM and other components we recorded in the fourth quarter of fiscal year 2019 and a charge of $57 m
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-19-000023#item-7:theme:supply-chain:outcome)
-  - was 61.2%, compared with 59.9% a year earlier, which reflects our continued shift toward higher-value platforms, which more than offset the impact of approximately $128 million in charges for excess DRAM and other components we recorded in the fourth quarter of fiscal year 2019 and a charge of $57 m
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-20-000065#part-i-item-2:theme:supply-chain:outcome)
   - During the first quarter of fiscal year 2021, we experienced disruptions to our supply chain and logistical services provided by outsourcing partners and component supply, primarily based in Asia. These disruptions adversely impacted our linearity of supply and sales within the quarter.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-20-000065#part-ii-item-1a:theme:supply-chain:outcome)
@@ -2375,36 +2319,12 @@ These candidates are staged for human review. Applying them requires company.app
   - Operating income increased $2.9 billion or 11%, primarily due to higher gross margin and lower impairment and restructuring expenses, offset in part by an increase in research and development and sales and marketing expenses. Operating income included an operating loss of $924 million related to the
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:liquidity:outcome)
   - Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-21-039151#item-7:theme:demand:outcome)
-  - Cost of revenue increased $6.2 billion or 13% driven by growth in commercial cloud and Gaming, offset in part by a reduction in depreciation expense due to the change in estimated useful lives of our server and network equipment.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-21-039151#item-7:theme:cloud-data-center-capacity:outcome)
-  - Cost of revenue increased $6.2 billion or 13% driven by growth in commercial cloud and Gaming, offset in part by a reduction in depreciation expense due to the change in estimated useful lives of our server and network equipment.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-23-000733#part-i-item-2:theme:ai-rd-technology:outcome)
-  - Research and development expenses increased $1.1 billion or 19% driven by investments in cloud engineering, impairment charges resulting from changes to our hardware portfolio, and LinkedIn. Research and development included a favorable foreign currency impact of 2%.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-23-000733#part-i-item-2:theme:cloud-data-center-capacity:outcome)
-  - Research and development expenses increased $1.1 billion or 19% driven by investments in cloud engineering, impairment charges resulting from changes to our hardware portfolio, and LinkedIn. Research and development included a favorable foreign currency impact of 2%.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001193125-26-027207#part-i-item-2:theme:cloud-data-center-capacity:outcome)
-  - Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001193125-26-027207#part-i-item-2:theme:ai-rd-technology:outcome)
-  - Operating expenses increased $236 million or 6% driven by impairment charges in our Gaming business and research and development investments in compute capacity and AI talent.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001193125-26-191507#part-i-item-2:theme:cloud-data-center-capacity:outcome)
-  - Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001193125-26-191507#part-i-item-2:theme:ai-rd-technology:outcome)
-  - Operating expenses increased $628 million or 6% driven by impairment and other related expenses in our Gaming business and continued investments in research and development compute capacity, AI talent, and data to support product development that benefits the entire portfolio.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-21-000012#part-i-item-2:theme:demand:outcome)
   - The ultimate severity and duration of these economic repercussions, including any resulting impact on our business, remain largely unknown and ultimately will depend on many factors. As a result, we have experienced volatility in the markets that our products are sold into, driven by the move to a s
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-21-000052#part-i-item-2:theme:demand:outcome)
-  - Events surrounding the ongoing COVID-19 pandemic initially resulted in a reduction in economic activity across the globe, and the timing and extent of the ongoing economic recovery remains uncertain. As a result, we have experienced volatility in the markets that our products are sold into, driven b
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-21-000052#part-i-item-2:theme:inventory-channel:outcome)
   - In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net of estimated selling costs, to b
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-21-000065#item-7:theme:inventory-channel:outcome)
   - the expected consideration, net of estimated selling costs, to be realized from the sale of these assets and liabilities. In the second quarter of 2021, we also recognized a charge of $49 million to cost of goods sold to write down 3D XPoint inventory due to our decision to cease further development
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-21-000065#item-7:theme:demand:outcome)
-  - Events surrounding the ongoing COVID-19 pandemic initially resulted in a reduction in economic activity across the globe, and the timing and extent of the ongoing economic recovery remains uncertain. As a result, we have experienced volatility in the markets that our products are sold into, driven b
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-22-000016#part-i-item-2:theme:inventory-channel:outcome)
-  - In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-22-000036#part-i-item-2:theme:inventory-channel:outcome)
-  - In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-22-000048#item-7:theme:inventory-channel:outcome)
   - In 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net o
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:ai-rd-technology:outcome)
@@ -2465,10 +2385,6 @@ These candidates are staged for human review. Applying them requires company.app
   - In 2025, we recognized total revenues of $94.83 billion, representing a decrease of $2.86 billion compared to the prior year. In 2025, our net income attributable to common stockholders was $3.79 billion, representing a decrease of $3.30 billion compared to the prior year.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome)
   - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000354950/0000354950-20-000068#part-ii-item-1a:theme:demand:outcome)
-  - As a result of the pandemic and related quarantines, shelter-in-place orders, and similar restrictions, we have experienced increased demand for online purchases of products. While we have managed this increased volume to date without interruption, there are no assurances that we will continue to be
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000354950/0000354950-20-000103#part-ii-item-1a:theme:demand:outcome)
-  - As a result of the pandemic and related quarantines, shelter-in-place orders, and similar restrictions, we have experienced increased demand for online purchases of products. While we have managed this increased volume to date without interruption, there are no assurances that we will continue to be
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000354950/0000354950-24-000201#part-i-item-2:theme:demand:outcome)
   - Depreciation and amortization for the second quarter of fiscal 2024 increased $85 million, or 13.0%, to $738 million from $653 million for the second quarter of fiscal 2023. As a percentage of net sales, depreciation and amortization was 1.7% for the second quarter of fiscal 2024 compared to 1.5% fo
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome)
@@ -2499,10 +2415,6 @@ These candidates are staged for human review. Applying them requires company.app
   - we recorded a provision for credit losses of $
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001559720/0001559720-23-000003#item-7:theme:liquidity:outcome)
   - We have previously incurred net losses and our Adjusted EBITDA and Free Cash Flow have declined in prior periods. We may once again incur net losses and experience a decline in Adjusted EBITDA and Free Cash, and we may not be able to sustain profitability.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001652044/0001652044-21-000047#part-i-item-2:theme:cloud-data-center-capacity:outcome)
-  - TAC was $10.9 billion, an increase of 63% year over year, primarily driven by an increase in revenues subject to TAC. Other cost of revenues were $15.3 billion, an increase of 29% year over year, affected by a reduction in depreciation expense due to the change in the estimated useful life of our se
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001652044/0001652044-21-000057#part-i-item-2:theme:cloud-data-center-capacity:outcome)
-  - TAC was $11.5 billion, an increase of 41% year over year, primarily driven by an increase in revenues subject to TAC. Other cost of revenues were $16.1 billion, an increase of 24% year over year, affected by a reduction in depreciation expense due to the change in the estimated useful life of our se
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001326801/0001326801-20-000048#part-ii-item-1a:theme:demand:outcome)
   - These measures have caused, and are continuing to cause, business slowdowns or shutdowns in affected areas, both regionally and worldwide, which have significantly impacted our business and results of operations. In the first quarter of 2020, our advertising revenue grew 17% year-over-year, which wa
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001326801/0001326801-22-000018#item-7:theme:demand:outcome)
@@ -2577,10 +2489,6 @@ These candidates are staged for human review. Applying them requires company.app
   - In the prior-year quarter, the Company recorded charges of $42 million primarily due to asset impairments related to exiting our businesses in Russia.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:regulation-legal:outcome)
   - Other expense, net of $11 million reflects a charge of $101 million related to a legal ruling, partially offset by a DraftKings gain of $90 million
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:demand:outcome)
-  - Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:macro-fx:outcome)
-  - Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:geopolitics-tariffs:outcome)
   - In the prior-year quarter, the Company recognized charges of $69 million related to exiting our businesses in Russia.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000152#part-i-item-2:theme:demand:outcome)
@@ -2619,10 +2527,6 @@ These candidates are staged for human review. Applying them requires company.app
   - During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000021344/0000021344-24-000009#item-1a:theme:demand:outcome)
   - Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000021344/0000021344-25-000011#item-1a:theme:demand:outcome)
-  - Geopolitical instability has in the past led, and may in the future lead, to logistical, transportation and supply chain disruptions; business disruptions (including labor shortages); increased risk of cybersecurity incidents or other disruptions to our information systems; reduced availability and
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000021344/0001628280-26-010047#item-1a:theme:demand:outcome)
-  - Geopolitical instability has in the past led, and may in the future lead, to logistical, transportation and supply chain disruptions; business disruptions (including labor shortages); increased risk of cybersecurity incidents or other disruptions to our information systems; reduced availability and
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-18-000007#item-7:theme:supply-chain:outcome)
   - In connection with these elements of the Tax Cuts and Jobs Act, we recognized a provisional expense of $1.6 billion, which was included as a component of income tax expense as follows:
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:supply-chain:outcome)
@@ -2661,10 +2565,6 @@ These candidates are staged for human review. Applying them requires company.app
   - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-22-000044#part-i-item-2:theme:supply-chain:outcome)
   - The economic and business repercussions of COVID-19 have been compounded by the Russian invasion of Ukraine. While our operating companies focus on the manufacture and sale of tobacco products in the United States and have little direct exposure to the impacted regions, we have experienced negative
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:supply-chain:outcome)
-  - Volatility in domestic and global economies and disruptions in the supply and distribution chains continued in the third quarter of 2022, resulting from several factors, including the on-going impacts of inflation, energy shortages in Europe, raw materials availability and the Russian invasion of Uk
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - Volatility in domestic and global economies and disruptions in the supply and distribution chains continued in the third quarter of 2022, resulting from several factors, including the on-going impacts of inflation, energy shortages in Europe, raw materials availability and the Russian invasion of Uk
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome)
   - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome)
