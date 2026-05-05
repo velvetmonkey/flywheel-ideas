@@ -10,6 +10,18 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.**
+  - Companies: TSLA
+  - Themes: Demand
+  - Outcomes: out-dRsn956z
+- **Channel assumptions should track distributor-arrangement charges because route-to-market decisions can create direct P&L costs even when underlying consumer demand is stable.**
+  - Companies: PM
+  - Themes: Inventory and channel
+  - Outcomes: out-PJAxG7yK
+- **Tobacco demand assumptions should track volume/mix by market because pricing can mask broad volume pressure until it appears in net revenue.**
+  - Companies: PM
+  - Themes: Demand
+  - Outcomes: out-srjsEnMV
 - **Semiconductor supply-chain assumptions should track architecture-transition inventory because component commitments can become charges when product platforms shift.**
   - Companies: NVDA
   - Themes: Supply chain
