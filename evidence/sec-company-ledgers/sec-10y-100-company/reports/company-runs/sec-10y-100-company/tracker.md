@@ -15,8 +15,8 @@ source: flywheel-ideas
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 120
-- Applied outcomes: 42
+- Staged outcomes: 103
+- Applied outcomes: 46
 
 ## SEC Company Lifecycle Report
 
@@ -25,22 +25,38 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 ## Lifecycle Snapshot
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
-- Current bets: 374 open company/theme assumption(s) still being carried.
-- Review queue: 115 event(s), 120 staged candidate(s) awaiting human judgment.
-- Accepted outcomes: 42 failure(s), 0 validation(s).
-- Lessons: 42 recorded memo(s), 0 missing memo(s).
-- Triage completion: 42/363 candidate(s) applied (12%).
+- Current bets: 370 open company/theme assumption(s) still being carried.
+- Review queue: 103 event(s), 103 staged candidate(s) awaiting human judgment.
+- Accepted outcomes: 46 failure(s), 0 validation(s).
+- Lessons: 46 recorded memo(s), 0 missing memo(s).
+- Triage completion: 46/363 candidate(s) applied (13%).
 
 ## Operator Next Step
 
-Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kYzqCLkc","cout-HoiWkQmD"], confirm: true })`
+Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Ue9EKZgN"], confirm: true })`
 
 ## Lifecycle Status
 
-42 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
+46 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
 
 ## Lessons Captured
 
+- **Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Supply chain
+  - Representative context: The filing disclosed AMD experienced some disruptions to parts of its supply chain during the first quarter of 2020 and continued adjusting supply-chain requirements based on changing customer needs and demand.
+  - Outcomes: out-AiaZth1U
+- **Semiconductor legal assumptions should track contingent-loss language because even small legal reserves mark realized friction that can recur or compound around transactions.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Regulation and legal
+  - Representative context: The filing disclosed a $5 million contingent loss in connection with a legal matter, alongside other transaction-related expense items.
+  - Outcomes: out-PzSBYfnX
+- **Hardware demand assumptions should track channel availability because temporary closures can weaken demand even when supply-chain issues are the more visible shock.**
+  - Evidence: 1 accepted failure verdict(s) across AAPL / Demand
+  - Representative context: The filing disclosed many channel partner points of sale outside China temporarily closed and Apple experienced weakened demand for products and services outside China during the last three weeks of the quarter.
+  - Outcomes: out-ziDKD8UB
+- **Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.**
+  - Evidence: 1 accepted failure verdict(s) across WBD / Regulation and legal
+  - Representative context: The filing disclosed third-party production partners were shut down during most of the second quarter of 2020 due to COVID-19 restrictions, and after reopening the company incurred additional costs to comply with governmental regulations and safety measures.
+  - Outcomes: out-sTpYBDUQ
 - **EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.**
   - Evidence: 1 accepted failure verdict(s) across TSLA / Demand
   - Representative context: During the three and six months ended June 30, 2025, Tesla disclosed total revenues of $22.50 billion and $41.83 billion, representing year-over-year decreases of $3.00 billion and $4.97 billion.
@@ -214,8 +230,6 @@ Review the highest-pressure event and apply only if the evidence really refutes 
 
 Open company/theme assumptions. Staged evidence raises review pressure; it does not count as failure.
 
-- **WBD / Regulation and legal** — fresh, 58 observation(s), review pressure 7, latest 2026-02-27
-  - Assumption: asm-iVeAyyNH
 - **DIS / Geopolitics and tariffs** — fresh, 24 observation(s), review pressure 7, latest 2026-02-02
   - Assumption: asm-xakuDdYD
 - **NFLX / Demand** — fresh, 84 observation(s), review pressure 5, latest 2026-04-17
@@ -238,69 +252,11 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-YS9U4MTJ
 - **LOW / Liquidity** — fresh, 76 observation(s), review pressure 2, latest 2026-03-23
   - Assumption: asm-c1UaX4xS
+- **MU / AI, R&D, and technology** — fresh, 83 observation(s), review pressure 2, latest 2026-03-19
+  - Assumption: asm-o5RkVgmn
 
 ## Outcome Review Queue
 
-- **VZ** 2022-10-25: 2 candidate(s), Liquidity, Macro and foreign exchange
-  - Candidate IDs: cout-kYzqCLkc, cout-HoiWkQmD
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kYzqCLkc","cout-HoiWkQmD"], confirm: true })`
-  - Source: sec-company://0000732712/0000732712-22-000050#part-i-item-2:theme:liquidity:outcome
-  - As a result of the inflationary environment in 2022 to date, we have experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, transportation and labor costs, as well as increased interest expenses related to rising interest rates. We
-- **VZ** 2025-02-12: 2 candidate(s), Liquidity, Macro and foreign exchange
-  - Candidate IDs: cout-ZG6dYPEU, cout-wbcRp2yZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ZG6dYPEU","cout-wbcRp2yZ"], confirm: true })`
-  - Source: sec-company://0000732712/0000732712-25-000006#item-1a:theme:liquidity:outcome
-  - Over the last several years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, and transportation and labor costs, as well as increased interest expense related to ch
-- **WBD** 2021-02-22: 2 candidate(s), Regulation and legal
-  - Candidate IDs: cout-ThgKhmyj, cout-y8H1vjJk
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ThgKhmyj","cout-y8H1vjJk"], confirm: true })`
-  - Source: sec-company://0001437107/0001437107-21-000018#item-1a:theme:regulation-legal:outcome
-  - These economic disruptions and the resulting effect on the Company slightly eased during the second half of 2020, but the pandemic continued to impact demand through the end of 2020 and this decreased demand is expected to continue into 2021. Many of our third-party production partners that were shu
-- **WBD** 2021-04-29: 2 candidate(s), Regulation and legal
-  - Candidate IDs: cout-VbiHBeHK, cout-j9gPcAuE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-VbiHBeHK","cout-j9gPcAuE"], confirm: true })`
-  - Source: sec-company://0001437107/0001437107-21-000088#part-i-item-2:theme:regulation-legal:outcome
-  - The Company currently does not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of the Company's third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter
-- **WBD** 2021-08-03 to 2021-11-03: 2 candidate(s), Regulation and legal
-  - Candidate IDs: cout-E4PGKpia, cout-FNuJ7Ujh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-E4PGKpia","cout-FNuJ7Ujh"], confirm: true })`
-  - Source: sec-company://0001437107/0001437107-21-000166#part-i-item-2:theme:regulation-legal:outcome
-  - We currently do not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a res
-- **AAPL** 2020-05-01: 1 candidate(s), Demand
-  - Candidate IDs: cout-KT4QEPaj
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KT4QEPaj"], confirm: true })`
-  - Source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:demand:outcome
-  - Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
-- **AAPL** 2020-10-30: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-Qxnb5fxQ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qxnb5fxQ"], confirm: true })`
-  - Source: sec-company://0000320193/0000320193-20-000096#item-1a:theme:supply-chain:outcome
-  - The COVID-19 pandemic and the measures taken by many countries in response have adversely affected and could in the future materially adversely impact the Company's business, results of operations, financial condition and stock price. Following the initial outbreak of the virus, the Company experien
-- **AAPL** 2020-10-30: 1 candidate(s), Customer and platform dependency
-  - Candidate IDs: cout-m6FhuALS
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-m6FhuALS"], confirm: true })`
-  - Source: sec-company://0000320193/0000320193-20-000096#item-7:theme:customer-platform-dependency:outcome
-  - During 2020, aspects of the Company's business were adversely affected by the COVID-19 pandemic, with many of the Company's retail stores, as well as channel partner points of sale, temporarily closed at various times, and the vast majority of the Company's employees working remotely. The Company ha
-- **AAPL** 2021-10-29: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-aRz4uoBR
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-aRz4uoBR"], confirm: true })`
-  - Source: sec-company://0000320193/0000320193-21-000105#item-7:theme:supply-chain:outcome
-  - The Company has reopened all of its retail stores and substantially all of its other facilities, subject to operating restrictions to protect public health and the health and safety of employees and customers, and it continues to work on safely reopening the remainder of its facilities, subject to l
-- **ABNB** 2023-02-17: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-EPQ2ubr3
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-EPQ2ubr3"], confirm: true })`
-  - Source: sec-company://0001559720/0001559720-23-000003#item-7:theme:liquidity:outcome
-  - We have previously incurred net losses and our Adjusted EBITDA and Free Cash Flow have declined in prior periods. We may once again incur net losses and experience a decline in Adjusted EBITDA and Free Cash, and we may not be able to sustain profitability.
-- **AMD** 2020-04-29: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-yF6Bpixu
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yF6Bpixu"], confirm: true })`
-  - Source: sec-company://0000002488/0000002488-20-000051#part-i-item-2:theme:regulation-legal:outcome
-  - , and $41 million of stock-based compensation expense and a $5 million contingent loss in connection with a legal matter for the
-- **AMD** 2020-04-29: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-5t5NYrEx
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-5t5NYrEx"], confirm: true })`
-  - Source: sec-company://0000002488/0000002488-20-000051#part-i-item-2:theme:supply-chain:outcome
-  - During the first quarter of 2020, we experienced some disruptions to parts of our supply chain. We continue to monitor demand signals as we adjust our supply chain requirements based on changing customer needs and demands.
 - **CMCSA** 2022-07-28: 1 candidate(s), Liquidity
   - Candidate IDs: cout-Ue9EKZgN
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Ue9EKZgN"], confirm: true })`
@@ -987,6 +943,22 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - In the context of **TSLA disclosed demand risk in 10-K 2016-02-24.**, facing **The discussions in this Annual Report on Form 10-K contain forward-looking statements reflecting our current expectations that involve risks and uncertainties. These forward-looking statements include, but are not limited to, statements concerning our strategy, future operations, future financial position, future revenues, projected costs, profitability, expected cost reductions, capital adequacy, expectations regarding demand and acceptance for our technologies, growth opportunities and trends in the market in which we operate, prospects and plans and objectives of management. The words "anticipates", "believes", "estimates", "expects", "intends", "may", "plans", "projects", "will", "would" and similar expressions are intended to identify forward-looking statements, although not all forward-looking statements contain these identifying words.**, we assume **TSLA can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
 
   - Lesson: EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.
+- **FAIL** WBD / Regulation and legal: asm-iVeAyyNH via out-sTpYBDUQ
+  - In the context of **WBD disclosed regulation and legal risk in 10-K 2016-02-18.**, facing **We face cybersecurity and similar risks, which could result in the disclosure of confidential information, disruption of our programming services, damage to our brands and reputation, legal exposure and financial losses.**, we assume **WBD can manage regulation and legal risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.
+- **FAIL** AAPL / Demand: asm-mB3Z4msd via out-ziDKD8UB
+  - In the context of **AAPL disclosed demand risk in 10-Q 2016-01-27.**, facing **, a portfolio of consumer and professional software applications, iOS, OS X**, we assume **AAPL can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Hardware demand assumptions should track channel availability because temporary closures can weaken demand even when supply-chain issues are the more visible shock.
+- **FAIL** AMD / Regulation and legal: asm-UMyfURLG via out-PzSBYfnX
+  - In the context of **AMD disclosed regulation and legal risk in 10-K 2016-02-18.**, facing **Other risks associated with our dependence on third-party manufacturers include limited control over delivery schedules and quality assurance, lack of capacity in periods of excess demand, misappropriation of our intellectual property, dependence on several small undercapitalized subcontractors and limited ability to manage inventory and parts. Moreover, if any of our third-party manufacturers suffer any damage to facilities, lose benefits under material agreements, experience power outages, lack sufficient capacity to manufacture our products, encounter financial difficulties, are unable to secure necessary raw materials from their suppliers or suffer any other disruption or reduction in efficiency, we may encounter supply delays or disruptions.**, we assume **AMD can manage regulation and legal risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Semiconductor legal assumptions should track contingent-loss language because even small legal reserves mark realized friction that can recur or compound around transactions.
+- **FAIL** AMD / Supply chain: asm-Eesv17uF via out-AiaZth1U
+  - In the context of **AMD disclosed supply chain risk in 10-K 2016-02-18.**, facing **Intel exerts substantial influence over computer manufacturers and their channels of distribution through various brand and other marketing programs. As a result of Intel's position in the microprocessor market, Intel has been able to control x86 microprocessor and computer system standards and benchmarks and to dictate the type of products the microprocessor market requires of us.**, we assume **AMD can manage supply chain risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.
 
 ## Dependent Ideas Needing Review
 
@@ -997,7 +969,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 120 staged, 42 applied.
+- Realized outcome candidates: 103 staged, 46 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -1008,7 +980,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-18 to 2026-02-04
 - Themes tracked: 12
 - Observations: 794
-- Staged outcomes: 2
+- Staged outcomes: 0
 
 - **Demand**: 82 observation(s), latest 2026-02-04, assumption asm-MM6Hc6gr
 - **Regulation and legal**: 82 observation(s), latest 2026-02-04, assumption asm-UMyfURLG
@@ -1161,7 +1133,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-27 to 2026-05-01
 - Themes tracked: 12
 - Observations: 672
-- Staged outcomes: 4
+- Staged outcomes: 0
 
 - **Demand**: 84 observation(s), latest 2026-05-01, assumption asm-mB3Z4msd
 - **Liquidity**: 77 observation(s), latest 2026-05-01, assumption asm-Ci3UyXkx
@@ -1229,7 +1201,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-23 to 2026-05-01
 - Themes tracked: 12
 - Observations: 522
-- Staged outcomes: 5
+- Staged outcomes: 1
 
 - **Demand**: 84 observation(s), latest 2026-05-01, assumption asm-ktbpwdZ5
 - **Liquidity**: 79 observation(s), latest 2026-05-01, assumption asm-grGzqr3M
@@ -1552,7 +1524,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-18 to 2026-02-27
 - Themes tracked: 12
 - Observations: 514
-- Staged outcomes: 8
+- Staged outcomes: 2
 
 - **Demand**: 82 observation(s), latest 2026-02-27, assumption asm-GY8sY5ge
 - **Liquidity**: 82 observation(s), latest 2026-02-27, assumption asm-CKkzkocd
@@ -1569,7 +1541,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2021-02-26 to 2026-02-12
 - Themes tracked: 12
 - Observations: 342
-- Staged outcomes: 1
+- Staged outcomes: 0
 
 - **Competition**: 42 observation(s), latest 2026-02-12, assumption asm-sDdgHQR7
 - **Customer and platform dependency**: 42 observation(s), latest 2026-02-12, assumption asm-VaQDKpNC
@@ -1652,14 +1624,14 @@ No dependent ideas are currently flagged by accepted refutations.
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 51 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
-| Consumer Discretionary | 10 | 12 | 5501 | 16 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
+| Communication Services | 10 | 12 | 5374 | 41 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Consumer Discretionary | 10 | 12 | 5501 | 15 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
 | Consumer Staples | 10 | 12 | 3899 | 16 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 37 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 31 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |
@@ -1672,17 +1644,17 @@ No dependent ideas are currently flagged by accepted refutations.
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 5 realized candidate(s).
   - Sectors: Consumer Discretionary, Information Technology
-- **Macro and foreign exchange / Geographic concentration or local disruption**: 4 sector(s), 12 company(ies), 741 observation(s), 4 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 214 observation(s), 4 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
-- **Supply chain / Capacity investment and operating expense drag**: 2 sector(s), 4 company(ies), 203 observation(s), 4 realized candidate(s).
-  - Sectors: Communication Services, Information Technology
-- **Customer and platform dependency / Platform or customer concentration**: 4 sector(s), 26 company(ies), 1011 observation(s), 3 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Single supplier or manufacturing concentration**: 2 sector(s), 3 company(ies), 142 observation(s), 3 realized candidate(s).
   - Sectors: Consumer Staples, Information Technology
-- **Liquidity / Interest, credit, or liquidity stress**: 4 sector(s), 13 company(ies), 925 observation(s), 2 realized candidate(s).
+- **Customer and platform dependency / Platform or customer concentration**: 4 sector(s), 26 company(ies), 1011 observation(s), 2 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
+- **Macro and foreign exchange / Geographic concentration or local disruption**: 4 sector(s), 12 company(ies), 741 observation(s), 2 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
+- **Supply chain / Capacity investment and operating expense drag**: 2 sector(s), 4 company(ies), 203 observation(s), 2 realized candidate(s).
+  - Sectors: Communication Services, Information Technology
+- **Liquidity / Interest, credit, or liquidity stress**: 4 sector(s), 13 company(ies), 925 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Regulation and legal / Regulatory investigation or litigation**: 4 sector(s), 9 company(ies), 615 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
@@ -1730,56 +1702,8 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-120 staged candidate(s) grouped into 115 review event(s). Apply still operates on candidate IDs; groups are for review only.
+103 staged candidate(s) grouped into 103 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
-- **VZ** 2022-10-25: 2 candidate(s), Liquidity, Macro and foreign exchange
-  - Candidate IDs: cout-kYzqCLkc, cout-HoiWkQmD
-  - Representative source: sec-company://0000732712/0000732712-22-000050#part-i-item-2:theme:liquidity:outcome
-  - As a result of the inflationary environment in 2022 to date, we have experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, transportation and labor costs, as well as increased interest expenses related to rising interest rates. We
-- **VZ** 2025-02-12: 2 candidate(s), Liquidity, Macro and foreign exchange
-  - Candidate IDs: cout-ZG6dYPEU, cout-wbcRp2yZ
-  - Representative source: sec-company://0000732712/0000732712-25-000006#item-1a:theme:macro-fx:outcome
-  - Over the last several years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, and transportation and labor costs, as well as increased interest expense related to ch
-- **WBD** 2021-02-22: 2 candidate(s), Regulation and legal
-  - Candidate IDs: cout-ThgKhmyj, cout-y8H1vjJk
-  - Representative source: sec-company://0001437107/0001437107-21-000018#item-1a:theme:regulation-legal:outcome
-  - These economic disruptions and the resulting effect on the Company slightly eased during the second half of 2020, but the pandemic continued to impact demand through the end of 2020 and this decreased demand is expected to continue into 2021. Many of our third-party production partners that were shu
-- **WBD** 2021-04-29: 2 candidate(s), Regulation and legal
-  - Candidate IDs: cout-VbiHBeHK, cout-j9gPcAuE
-  - Representative source: sec-company://0001437107/0001437107-21-000088#part-i-item-2:theme:regulation-legal:outcome
-  - The Company currently does not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of the Company's third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter
-- **WBD** 2021-08-03 to 2021-11-03: 2 candidate(s), Regulation and legal
-  - Candidate IDs: cout-E4PGKpia, cout-FNuJ7Ujh
-  - Representative source: sec-company://0001437107/0001437107-21-000166#part-i-item-2:theme:regulation-legal:outcome
-  - We currently do not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a res
-- **AAPL** 2020-05-01: 1 candidate(s), Demand
-  - Candidate IDs: cout-KT4QEPaj
-  - Representative source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:demand:outcome
-  - Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
-- **AAPL** 2020-10-30: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-Qxnb5fxQ
-  - Representative source: sec-company://0000320193/0000320193-20-000096#item-1a:theme:supply-chain:outcome
-  - The COVID-19 pandemic and the measures taken by many countries in response have adversely affected and could in the future materially adversely impact the Company's business, results of operations, financial condition and stock price. Following the initial outbreak of the virus, the Company experien
-- **AAPL** 2020-10-30: 1 candidate(s), Customer and platform dependency
-  - Candidate IDs: cout-m6FhuALS
-  - Representative source: sec-company://0000320193/0000320193-20-000096#item-7:theme:customer-platform-dependency:outcome
-  - During 2020, aspects of the Company's business were adversely affected by the COVID-19 pandemic, with many of the Company's retail stores, as well as channel partner points of sale, temporarily closed at various times, and the vast majority of the Company's employees working remotely. The Company ha
-- **AAPL** 2021-10-29: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-aRz4uoBR
-  - Representative source: sec-company://0000320193/0000320193-21-000105#item-7:theme:supply-chain:outcome
-  - The Company has reopened all of its retail stores and substantially all of its other facilities, subject to operating restrictions to protect public health and the health and safety of employees and customers, and it continues to work on safely reopening the remainder of its facilities, subject to l
-- **ABNB** 2023-02-17: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-EPQ2ubr3
-  - Representative source: sec-company://0001559720/0001559720-23-000003#item-7:theme:liquidity:outcome
-  - We have previously incurred net losses and our Adjusted EBITDA and Free Cash Flow have declined in prior periods. We may once again incur net losses and experience a decline in Adjusted EBITDA and Free Cash, and we may not be able to sustain profitability.
-- **AMD** 2020-04-29: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-yF6Bpixu
-  - Representative source: sec-company://0000002488/0000002488-20-000051#part-i-item-2:theme:regulation-legal:outcome
-  - , and $41 million of stock-based compensation expense and a $5 million contingent loss in connection with a legal matter for the
-- **AMD** 2020-04-29: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-5t5NYrEx
-  - Representative source: sec-company://0000002488/0000002488-20-000051#part-i-item-2:theme:supply-chain:outcome
-  - During the first quarter of 2020, we experienced some disruptions to parts of our supply chain. We continue to monitor demand signals as we adjust our supply chain requirements based on changing customer needs and demands.
 - **CMCSA** 2022-07-28: 1 candidate(s), Liquidity
   - Candidate IDs: cout-Ue9EKZgN
   - Representative source: sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:liquidity:outcome
@@ -2201,14 +2125,6 @@ These candidates are staged for human review. Applying them requires company.app
   - During the first quarter of fiscal year 2021, we experienced disruptions to our supply chain and logistical services provided by outsourcing partners and component supply, primarily based in Asia. These disruptions adversely impacted our linearity of supply and sales within the quarter.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-20-000065#part-ii-item-1a:theme:supply-chain:outcome)
   - impact, our workforce and operations, the operations of our customers and our partners, and those of our respective vendors and suppliers (including our subcontractors and third-party contract manufacturers). For example, during the first quarter of fiscal year 2021, we experienced disruptions to ou
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:demand:outcome)
-  - Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000096#item-1a:theme:supply-chain:outcome)
-  - The COVID-19 pandemic and the measures taken by many countries in response have adversely affected and could in the future materially adversely impact the Company's business, results of operations, financial condition and stock price. Following the initial outbreak of the virus, the Company experien
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000096#item-7:theme:customer-platform-dependency:outcome)
-  - During 2020, aspects of the Company's business were adversely affected by the COVID-19 pandemic, with many of the Company's retail stores, as well as channel partner points of sale, temporarily closed at various times, and the vast majority of the Company's employees working remotely. The Company ha
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-21-000105#item-7:theme:supply-chain:outcome)
-  - The Company has reopened all of its retail stores and substantially all of its other facilities, subject to operating restrictions to protect public health and the health and safety of employees and customers, and it continues to work on safely reopening the remainder of its facilities, subject to l
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001193125-16-742796#part-i-item-2:theme:demand:outcome)
   - Operating income included an unfavorable foreign currency impact of 5%. Gross margin decreased $563 million or 4%, driven by higher cost of revenue. Gross margin included an unfavorable
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-17-007547#part-i-item-2:theme:demand:outcome)
@@ -2237,10 +2153,6 @@ These candidates are staged for human review. Applying them requires company.app
   - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-24-000027#item-7:theme:demand:outcome)
   - These conditions, which began in the fourth quarter of 2022 and persisted into early 2024, led to significant reductions in average selling prices for both DRAM and NAND and reductions in bit shipments for DRAM. We experienced declines in revenue across all our business segments and nearly all our e
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-20-000051#part-i-item-2:theme:regulation-legal:outcome)
-  - , and $41 million of stock-based compensation expense and a $5 million contingent loss in connection with a legal matter for the
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000002488/0000002488-20-000051#part-i-item-2:theme:supply-chain:outcome)
-  - During the first quarter of 2020, we experienced some disruptions to parts of our supply chain. We continue to monitor demand signals as we adjust our supply chain requirements based on changing customer needs and demands.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-16-000090#part-i-item-2:theme:demand:outcome)
   - we experienced product revenue declines in the public sector and enterprise markets. We believe our sales in the enterprise market were impacted by uncertainty in the macro environment, which led to a slowdown in customer spending, and by currency impacts.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-17-000004#part-i-item-2:theme:demand:outcome)
@@ -2301,8 +2213,6 @@ These candidates are staged for human review. Applying them requires company.app
   - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome)
   - we recorded a provision for credit losses of $
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001559720/0001559720-23-000003#item-7:theme:liquidity:outcome)
-  - We have previously incurred net losses and our Adjusted EBITDA and Free Cash Flow have declined in prior periods. We may once again incur net losses and experience a decline in Adjusted EBITDA and Free Cash, and we may not be able to sustain profitability.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001326801/0001326801-20-000048#part-ii-item-1a:theme:demand:outcome)
   - These measures have caused, and are continuing to cause, business slowdowns or shutdowns in affected areas, both regionally and worldwide, which have significantly impacted our business and results of operations. In the first quarter of 2020, our advertising revenue grew 17% year-over-year, which wa
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001326801/0001326801-22-000018#item-7:theme:demand:outcome)
@@ -2331,14 +2241,6 @@ These candidates are staged for human review. Applying them requires company.app
   - As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-20-000027#part-i-item-2:theme:demand:outcome)
   - In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-22-000050#part-i-item-2:theme:liquidity:outcome)
-  - As a result of the inflationary environment in 2022 to date, we have experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, transportation and labor costs, as well as increased interest expenses related to rising interest rates. We
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-22-000050#part-i-item-2:theme:macro-fx:outcome)
-  - As a result of the inflationary environment in 2022 to date, we have experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, transportation and labor costs, as well as increased interest expenses related to rising interest rates. We
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-25-000006#item-1a:theme:macro-fx:outcome)
-  - Over the last several years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, and transportation and labor costs, as well as increased interest expense related to ch
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-25-000006#item-1a:theme:liquidity:outcome)
-  - Over the last several years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, and transportation and labor costs, as well as increased interest expense related to ch
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-19-000167#part-i-item-2:theme:liquidity:outcome)
   - The increase in interest income, investment income and other was due to higher interest income on cash balances and the inclusion of a $27 million benefit related to pension and postretirement benefit costs, other than service cost, partially offset by higher investment impairments. The Company adop
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-20-000151#part-i-item-2:theme:demand:outcome)
@@ -2389,18 +2291,6 @@ These candidates are staged for human review. Applying them requires company.app
   - Interest expense decreased for the three and six months ended June 30, 2022 compared to the same periods in 2021 primarily due to a decrease in average debt outstanding in the current year periods and a $78 million charge recorded in the prior year periods related to the early redemption of senior n
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:regulation-legal:outcome)
   - Income tax expense for the three and six months ended June 30, 2022 and 2021 reflects an effective income tax rate that differs from the federal statutory rate primarily due to state and foreign income taxes and adjustments associated with uncertain tax positions. The decrease in income tax expense
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-21-000018#item-1a:theme:regulation-legal:outcome)
-  - These economic disruptions and the resulting effect on the Company slightly eased during the second half of 2020, but the pandemic continued to impact demand through the end of 2020 and this decreased demand is expected to continue into 2021. Many of our third-party production partners that were shu
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-21-000018#item-7:theme:regulation-legal:outcome)
-  - These economic disruptions and the resulting effect on the Company slightly eased during the second half of 2020, but the pandemic continued to impact demand through the end of 2020 and this decreased demand is expected to continue into 2021. Many of our third-party production partners that were shu
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-21-000088#part-i-item-2:theme:regulation-legal:outcome)
-  - The Company currently does not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of the Company's third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-21-000088#part-ii-item-1a:theme:regulation-legal:outcome)
-  - The Company currently does not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of the Company's third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-21-000166#part-i-item-2:theme:regulation-legal:outcome)
-  - We currently do not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a res
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-21-000183#part-i-item-2:theme:regulation-legal:outcome)
-  - We currently do not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a res
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-22-000031#item-7:theme:regulation-legal:outcome)
   - The pandemic did not have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a result, we have incurred ad
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-25-000096#part-i-item-2:theme:demand:outcome)
