@@ -15,8 +15,8 @@ source: flywheel-ideas
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 144
-- Applied outcomes: 39
+- Staged outcomes: 120
+- Applied outcomes: 42
 
 ## SEC Company Lifecycle Report
 
@@ -25,22 +25,34 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 ## Lifecycle Snapshot
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
-- Current bets: 376 open company/theme assumption(s) still being carried.
-- Review queue: 127 event(s), 144 staged candidate(s) awaiting human judgment.
-- Accepted outcomes: 39 failure(s), 0 validation(s).
-- Lessons: 39 recorded memo(s), 0 missing memo(s).
-- Triage completion: 39/363 candidate(s) applied (11%).
+- Current bets: 374 open company/theme assumption(s) still being carried.
+- Review queue: 115 event(s), 120 staged candidate(s) awaiting human judgment.
+- Accepted outcomes: 42 failure(s), 0 validation(s).
+- Lessons: 42 recorded memo(s), 0 missing memo(s).
+- Triage completion: 42/363 candidate(s) applied (12%).
 
 ## Operator Next Step
 
-Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-6ZT2WLHL","cout-2UFfphma"], confirm: true })`
+Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kYzqCLkc","cout-HoiWkQmD"], confirm: true })`
 
 ## Lifecycle Status
 
-39 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
+42 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
 
 ## Lessons Captured
 
+- **EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.**
+  - Evidence: 1 accepted failure verdict(s) across TSLA / Demand
+  - Representative context: During the three and six months ended June 30, 2025, Tesla disclosed total revenues of $22.50 billion and $41.83 billion, representing year-over-year decreases of $3.00 billion and $4.97 billion.
+  - Outcomes: out-dRsn956z
+- **Channel assumptions should track distributor-arrangement charges because route-to-market decisions can create direct P&L costs even when underlying consumer demand is stable.**
+  - Evidence: 1 accepted failure verdict(s) across PM / Inventory and channel
+  - Representative context: The filing disclosed that, based on decisions and arrangements with distributors, Philip Morris recorded a $246 million pre-tax charge in the second quarter of 2021.
+  - Outcomes: out-PJAxG7yK
+- **Tobacco demand assumptions should track volume/mix by market because pricing can mask broad volume pressure until it appears in net revenue.**
+  - Evidence: 1 accepted failure verdict(s) across PM / Demand
+  - Representative context: For the nine months ended September 30, 2020, Philip Morris disclosed net revenues excluding unfavorable currency decreased 1.7%, reflecting unfavorable volume/mix primarily due to lower cigarette volume in multiple markets.
+  - Outcomes: out-srjsEnMV
 - **Semiconductor supply-chain assumptions should track architecture-transition inventory because component commitments can become charges when product platforms shift.**
   - Evidence: 1 accepted failure verdict(s) across NVDA / Supply chain
   - Representative context: The filing disclosed approximately $128 million in excess DRAM and other component charges plus a $57 million charge for prior-architecture components and chips.
@@ -206,14 +218,12 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-iVeAyyNH
 - **DIS / Geopolitics and tariffs** — fresh, 24 observation(s), review pressure 7, latest 2026-02-02
   - Assumption: asm-xakuDdYD
-- **PM / Geopolitics and tariffs** — fresh, 54 observation(s), review pressure 5, latest 2026-04-24
-  - Assumption: asm-qsuv2tV3
-- **TSLA / Demand** — fresh, 84 observation(s), review pressure 5, latest 2026-04-23
-  - Assumption: asm-jRQLiAWW
 - **NFLX / Demand** — fresh, 84 observation(s), review pressure 5, latest 2026-04-17
   - Assumption: asm-bmBJ3gyo
 - **DIS / Demand** — fresh, 53 observation(s), review pressure 5, latest 2026-02-02
   - Assumption: asm-6o8MAEsY
+- **PM / Geopolitics and tariffs** — fresh, 54 observation(s), review pressure 4, latest 2026-04-24
+  - Assumption: asm-qsuv2tV3
 - **MO / Liquidity** — fresh, 83 observation(s), review pressure 3, latest 2026-04-30
   - Assumption: asm-kZQCFeFw
 - **MSFT / Demand** — fresh, 84 observation(s), review pressure 3, latest 2026-04-29
@@ -222,73 +232,15 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-cAuLNidr
 - **MCD / Liquidity** — fresh, 68 observation(s), review pressure 3, latest 2025-11-05
   - Assumption: asm-sfuU8h2r
-- **TMUS / Liquidity** — fresh, 84 observation(s), review pressure 2, latest 2026-04-28
-  - Assumption: asm-CJ5Kd9BY
-- **SBUX / Geopolitics and tariffs** — fresh, 50 observation(s), review pressure 2, latest 2026-04-28
-  - Assumption: asm-dM8YjiES
+- **PM / Liquidity** — fresh, 83 observation(s), review pressure 2, latest 2026-04-24
+  - Assumption: asm-dGcwZvEF
+- **TJX / Liquidity** — fresh, 68 observation(s), review pressure 2, latest 2026-03-31
+  - Assumption: asm-YS9U4MTJ
+- **LOW / Liquidity** — fresh, 76 observation(s), review pressure 2, latest 2026-03-23
+  - Assumption: asm-c1UaX4xS
 
 ## Outcome Review Queue
 
-- **NVDA** 2022-08-31 to 2022-11-18: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-6ZT2WLHL, cout-2UFfphma
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-6ZT2WLHL","cout-2UFfphma"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-22-000147#part-ii-item-1a:theme:inventory-channel:outcome
-  - We have had to increase prices for our Data Center products as a result of our suppliers' increase in prices, and may need to continue to do so for other products in the future, which may negatively impact demand. We have also written-down our inventory, incurred cancellation penalties, and recorded
-- **NVDA** 2023-08-28 to 2023-11-21: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-tKYEUShn, cout-pqPLpbiR
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tKYEUShn","cout-pqPLpbiR"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-23-000175#part-ii-item-1a:theme:inventory-channel:outcome
-  - We have had to increase prices for certain of our products as a result of our suppliers' increase in prices, and we may need to continue to do so for other products in the future. We have also written-down our inventory, incurred cancellation penalties, and recorded impairments. These impacts were a
-- **NVDA** 2025-05-28: 2 candidate(s), Demand, Inventory and channel
-  - Candidate IDs: cout-bSEduEij, cout-Rusah251
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-bSEduEij","cout-Rusah251"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-25-000116#part-i-item-2:theme:demand:outcome
-  - On April 9, 2025, the U.S. government, or USG, informed us that it requires a license for export to China (including Hong Kong and Macau) and D:5 countries, or to companies headquartered or with an ultimate parent therein, of our H20 integrated circuits and any other circuits achieving the H20's mem
-- **NVDA** 2026-02-25: 2 candidate(s), Demand, Inventory and channel
-  - Candidate IDs: cout-r8mJxtM1, cout-5f8DcfmB
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8mJxtM1","cout-5f8DcfmB"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-26-000021#item-7:theme:demand:outcome
-  - In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the
-- **PEP** 2020-07-13: 2 candidate(s), Inventory and channel, Liquidity
-  - Candidate IDs: cout-XGnBRQuo, cout-EgExKcvj
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-XGnBRQuo","cout-EgExKcvj"], confirm: true })`
-  - Source: sec-company://0000077476/0000077476-20-000060#part-i-item-2:theme:inventory-channel:outcome
-  - There is considerable uncertainty regarding how current and future health and safety measures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result
-- **PEP** 2020-10-01: 2 candidate(s), Cloud and data center capacity, Supply chain
-  - Candidate IDs: cout-DXzKcfXk, cout-FEQeGt2t
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DXzKcfXk","cout-FEQeGt2t"], confirm: true })`
-  - Source: sec-company://0000077476/0000077476-20-000068#part-ii-item-1a:theme:cloud-data-center-capacity:outcome
-  - ures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result of changes to our supply chain or increases in employee costs, operating costs or otherwi
-- **PM** 2020-10-27: 2 candidate(s), Demand, Geopolitics and tariffs
-  - Candidate IDs: cout-irULbY3m, cout-Hu5JQLVr
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-irULbY3m","cout-Hu5JQLVr"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:demand:outcome
-  - For the nine months ended September 30, 2020, net revenues, excluding unfavorable currency, decreased by 1.7%, reflecting: unfavorable volume/mix, primarily due to lower cigarette volume (mainly in Argentina, Indonesia, Italy, Japan, Mexico, the Philippines, PMI Duty Free, Poland, Russia, Spain, Tur
-- **PM** 2021-07-27 to 2021-10-27: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-FNUnrmaH, cout-fRFDwdDp
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-FNUnrmaH","cout-fRFDwdDp"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-21-000058#part-i-item-2:theme:inventory-channel:outcome
-  - . On the basis of these decisions and in line with arrangements with the distributors, we recorded a pre-tax charge of $246 million in the second quarter of 2021 (representing $215 million net of income tax and
-- **SBUX** 2018-05-01: 2 candidate(s), Demand, Geopolitics and tariffs
-  - Candidate IDs: cout-n94P4LGQ, cout-unJnxjHV
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-n94P4LGQ","cout-unJnxjHV"], confirm: true })`
-  - Source: sec-company://0000829224/0000829224-18-000022#part-i-item-2:theme:demand:outcome
-  - joint venture model, where we recorded only revenues and expenses from products sales to and royalties received from East China, as well as our proportionate share of the joint venture's net profit. The change from equity method to consolidation method lowered the operating margin of our Consolidate
-- **SBUX** 2018-07-31: 2 candidate(s), Demand, Geopolitics and tariffs
-  - Candidate IDs: cout-ANXrdRHG, cout-MXRadGm7
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ANXrdRHG","cout-MXRadGm7"], confirm: true })`
-  - Source: sec-company://0000829224/0000829224-18-000037#part-i-item-2:theme:demand:outcome
-  - As a result of acquiring the remaining interest in our East China joint venture at the end of the first quarter of fiscal 2018, we began recording 100% of its revenues and expenses on our condensed consolidated statements of earnings at the beginning of the second quarter of fiscal 2018. This is in
-- **TMUS** 2020-05-06: 2 candidate(s), Liquidity
-  - Candidate IDs: cout-ujYGRt4f, cout-XnbHCDky
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ujYGRt4f","cout-XnbHCDky"], confirm: true })`
-  - Source: sec-company://0001283699/0001283699-20-000106#part-i-item-2:theme:liquidity:outcome
-  - Under the new credit loss standard we recognize lifetime expected credit losses at the inception of our credit risk exposures whereas we previously recognized credit losses only when it was probable that they had been incurred. We also recognize expected credit losses on our equipment installment pl
-- **TSLA** 2024-07-24 to 2025-07-24: 2 candidate(s), Demand
-  - Candidate IDs: cout-XhRhqQc4, cout-Myvu4Y9T
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-XhRhqQc4","cout-Myvu4Y9T"], confirm: true })`
-  - Source: sec-company://0001318605/0001628280-24-032662#part-i-item-2:theme:demand:outcome
-  - During the three and six months ended June 30, 2024, we recognized total revenues of $25.50 billion and $46.80 billion, respectively, representing an increase of $573 million and a decrease of $1.46 billion, respectively, compared to the same periods in the prior year. During the three and six month
 - **VZ** 2022-10-25: 2 candidate(s), Liquidity, Macro and foreign exchange
   - Candidate IDs: cout-kYzqCLkc, cout-HoiWkQmD
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kYzqCLkc","cout-HoiWkQmD"], confirm: true })`
@@ -1023,6 +975,18 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - In the context of **NVDA disclosed supply chain risk in 10-K 2016-03-17.**, facing **Our competitors' products, services and technologies may be less costly, or may offer superior functionality or different features than ours. In addition, many of our competitors operate and maintain their own fabrication facilities and have longer operating histories, greater name recognition, larger customer bases, and greater financial, sales, marketing and distribution resources than we do. These competitors may be able to more effectively identify and capitalize upon opportunities in new markets and end user customer trends, quickly transition their semiconductor products to increasingly smaller line width geometries and obtain sufficient foundry capacity and packaging materials, which could harm our business.**, we assume **NVDA can manage supply chain risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
 
   - Lesson: Semiconductor supply-chain assumptions should track architecture-transition inventory because component commitments can become charges when product platforms shift.
+- **FAIL** PM / Demand: asm-ENkEBfSg via out-srjsEnMV
+  - In the context of **PM disclosed demand risk in 10-K 2016-02-17.**, facing **Net revenues and operating companies income**, we assume **PM can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Tobacco demand assumptions should track volume/mix by market because pricing can mask broad volume pressure until it appears in net revenue.
+- **FAIL** PM / Inventory and channel: asm-3mQ3s1U8 via out-PJAxG7yK
+  - In the context of **PM disclosed inventory and channel risk in 10-K 2016-02-17.**, facing **On December 12, 2013, we acquired from Megapolis Investment BV a 20% equity interest in Megapolis Distribution BV, the holding company of CJSC TK Megapolis ("Megapolis"), PMI's distributor in Russia. The purchase price of $760 million excludes an additional payment of up to $100 million, which is contingent on Megapolis's operational performance over the four fiscal years following the closing of the transaction.**, we assume **PM can manage inventory and channel risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Channel assumptions should track distributor-arrangement charges because route-to-market decisions can create direct P&L costs even when underlying consumer demand is stable.
+- **FAIL** TSLA / Demand: asm-jRQLiAWW via out-dRsn956z
+  - In the context of **TSLA disclosed demand risk in 10-K 2016-02-24.**, facing **The discussions in this Annual Report on Form 10-K contain forward-looking statements reflecting our current expectations that involve risks and uncertainties. These forward-looking statements include, but are not limited to, statements concerning our strategy, future operations, future financial position, future revenues, projected costs, profitability, expected cost reductions, capital adequacy, expectations regarding demand and acceptance for our technologies, growth opportunities and trends in the market in which we operate, prospects and plans and objectives of management. The words "anticipates", "believes", "estimates", "expects", "intends", "may", "plans", "projects", "will", "would" and similar expressions are intended to identify forward-looking statements, although not all forward-looking statements contain these identifying words.**, we assume **TSLA can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.
 
 ## Dependent Ideas Needing Review
 
@@ -1033,7 +997,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 144 staged, 39 applied.
+- Realized outcome candidates: 120 staged, 42 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -1129,7 +1093,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-11 to 2026-04-16
 - Themes tracked: 12
 - Observations: 538
-- Staged outcomes: 4
+- Staged outcomes: 0
 
 - **Demand**: 84 observation(s), latest 2026-04-16, assumption asm-EttqoebR
 - **Liquidity**: 77 observation(s), latest 2026-04-16, assumption asm-wLsugjzr
@@ -1333,7 +1297,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-26 to 2026-04-28
 - Themes tracked: 12
 - Observations: 541
-- Staged outcomes: 4
+- Staged outcomes: 0
 
 - **Demand**: 84 observation(s), latest 2026-04-28, assumption asm-b5wJFCYT
 - **Liquidity**: 77 observation(s), latest 2026-04-28, assumption asm-BcRAAh3G
@@ -1401,7 +1365,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-03-17 to 2026-02-25
 - Themes tracked: 12
 - Observations: 704
-- Staged outcomes: 10
+- Staged outcomes: 2
 
 - **Demand**: 82 observation(s), latest 2026-02-25, assumption asm-QncdPdYh
 - **AI, R&D, and technology**: 77 observation(s), latest 2026-02-25, assumption asm-GDaMBKx5
@@ -1486,7 +1450,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-17 to 2026-04-28
 - Themes tracked: 12
 - Observations: 525
-- Staged outcomes: 4
+- Staged outcomes: 2
 
 - **Liquidity**: 84 observation(s), latest 2026-04-28, assumption asm-CJ5Kd9BY
 - **Demand**: 65 observation(s), latest 2026-04-28, assumption asm-NyHDPWBk
@@ -1503,7 +1467,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-24 to 2026-04-23
 - Themes tracked: 12
 - Observations: 679
-- Staged outcomes: 6
+- Staged outcomes: 4
 
 - **Demand**: 84 observation(s), latest 2026-04-23, assumption asm-jRQLiAWW
 - **Supply chain**: 79 observation(s), latest 2026-04-23, assumption asm-zXRB5TcJ
@@ -1571,7 +1535,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-17 to 2026-04-24
 - Themes tracked: 11
 - Observations: 536
-- Staged outcomes: 13
+- Staged outcomes: 9
 
 - **Demand**: 84 observation(s), latest 2026-04-24, assumption asm-ENkEBfSg
 - **Liquidity**: 83 observation(s), latest 2026-04-24, assumption asm-dGcwZvEF
@@ -1688,25 +1652,23 @@ No dependent ideas are currently flagged by accepted refutations.
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 53 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
-| Consumer Discretionary | 10 | 12 | 5501 | 22 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
-| Consumer Staples | 10 | 12 | 3899 | 24 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
+| Communication Services | 10 | 12 | 5374 | 51 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Consumer Discretionary | 10 | 12 | 5501 | 16 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
+| Consumer Staples | 10 | 12 | 3899 | 16 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 45 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 37 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |
 
 ## Cross-Sector Mechanism Patterns
 
-- **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 17 realized candidate(s).
+- **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 16 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 7 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Liquidity / Interest, credit, or liquidity stress**: 4 sector(s), 13 company(ies), 925 observation(s), 5 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 5 realized candidate(s).
   - Sectors: Consumer Discretionary, Information Technology
@@ -1720,8 +1682,8 @@ No dependent ideas are currently flagged by accepted refutations.
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Single supplier or manufacturing concentration**: 2 sector(s), 3 company(ies), 142 observation(s), 3 realized candidate(s).
   - Sectors: Consumer Staples, Information Technology
-- **Demand / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 128 observation(s), 3 realized candidate(s).
-  - Sectors: Consumer Discretionary, Information Technology
+- **Liquidity / Interest, credit, or liquidity stress**: 4 sector(s), 13 company(ies), 925 observation(s), 2 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Regulation and legal / Regulatory investigation or litigation**: 4 sector(s), 9 company(ies), 615 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Cloud and data center capacity / Capacity investment and operating expense drag**: 4 sector(s), 15 company(ies), 480 observation(s), 1 realized candidate(s).
@@ -1736,6 +1698,8 @@ No dependent ideas are currently flagged by accepted refutations.
   - Sectors: Communication Services, Consumer Discretionary
 - **Macro and foreign exchange / Consumer or end-market demand shock**: 2 sector(s), 3 company(ies), 146 observation(s), 1 realized candidate(s).
   - Sectors: Consumer Staples, Information Technology
+- **Demand / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 128 observation(s), 1 realized candidate(s).
+  - Sectors: Consumer Discretionary, Information Technology
 - **Inventory and channel / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 116 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Information Technology
 - **Cybersecurity and privacy / Regulatory investigation or litigation**: 3 sector(s), 4 company(ies), 103 observation(s), 0 realized candidate(s).
@@ -1766,56 +1730,8 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-144 staged candidate(s) grouped into 127 review event(s). Apply still operates on candidate IDs; groups are for review only.
+120 staged candidate(s) grouped into 115 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
-- **NVDA** 2022-08-31 to 2022-11-18: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-6ZT2WLHL, cout-2UFfphma
-  - Representative source: sec-company://0001045810/0001045810-22-000147#part-ii-item-1a:theme:inventory-channel:outcome
-  - We have had to increase prices for our Data Center products as a result of our suppliers' increase in prices, and may need to continue to do so for other products in the future, which may negatively impact demand. We have also written-down our inventory, incurred cancellation penalties, and recorded
-- **NVDA** 2023-08-28 to 2023-11-21: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-tKYEUShn, cout-pqPLpbiR
-  - Representative source: sec-company://0001045810/0001045810-23-000175#part-ii-item-1a:theme:inventory-channel:outcome
-  - We have had to increase prices for certain of our products as a result of our suppliers' increase in prices, and we may need to continue to do so for other products in the future. We have also written-down our inventory, incurred cancellation penalties, and recorded impairments. These impacts were a
-- **NVDA** 2025-05-28: 2 candidate(s), Demand, Inventory and channel
-  - Candidate IDs: cout-bSEduEij, cout-Rusah251
-  - Representative source: sec-company://0001045810/0001045810-25-000116#part-i-item-2:theme:demand:outcome
-  - On April 9, 2025, the U.S. government, or USG, informed us that it requires a license for export to China (including Hong Kong and Macau) and D:5 countries, or to companies headquartered or with an ultimate parent therein, of our H20 integrated circuits and any other circuits achieving the H20's mem
-- **NVDA** 2026-02-25: 2 candidate(s), Demand, Inventory and channel
-  - Candidate IDs: cout-r8mJxtM1, cout-5f8DcfmB
-  - Representative source: sec-company://0001045810/0001045810-26-000021#item-7:theme:demand:outcome
-  - In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the
-- **PEP** 2020-07-13: 2 candidate(s), Inventory and channel, Liquidity
-  - Candidate IDs: cout-XGnBRQuo, cout-EgExKcvj
-  - Representative source: sec-company://0000077476/0000077476-20-000060#part-i-item-2:theme:liquidity:outcome
-  - There is considerable uncertainty regarding how current and future health and safety measures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result
-- **PEP** 2020-10-01: 2 candidate(s), Cloud and data center capacity, Supply chain
-  - Candidate IDs: cout-DXzKcfXk, cout-FEQeGt2t
-  - Representative source: sec-company://0000077476/0000077476-20-000068#part-ii-item-1a:theme:supply-chain:outcome
-  - ures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result of changes to our supply chain or increases in employee costs, operating costs or otherwi
-- **PM** 2020-10-27: 2 candidate(s), Demand, Geopolitics and tariffs
-  - Candidate IDs: cout-irULbY3m, cout-Hu5JQLVr
-  - Representative source: sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:demand:outcome
-  - For the nine months ended September 30, 2020, net revenues, excluding unfavorable currency, decreased by 1.7%, reflecting: unfavorable volume/mix, primarily due to lower cigarette volume (mainly in Argentina, Indonesia, Italy, Japan, Mexico, the Philippines, PMI Duty Free, Poland, Russia, Spain, Tur
-- **PM** 2021-07-27 to 2021-10-27: 2 candidate(s), Inventory and channel
-  - Candidate IDs: cout-FNUnrmaH, cout-fRFDwdDp
-  - Representative source: sec-company://0001413329/0001413329-21-000058#part-i-item-2:theme:inventory-channel:outcome
-  - . On the basis of these decisions and in line with arrangements with the distributors, we recorded a pre-tax charge of $246 million in the second quarter of 2021 (representing $215 million net of income tax and
-- **SBUX** 2018-05-01: 2 candidate(s), Demand, Geopolitics and tariffs
-  - Candidate IDs: cout-n94P4LGQ, cout-unJnxjHV
-  - Representative source: sec-company://0000829224/0000829224-18-000022#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - joint venture model, where we recorded only revenues and expenses from products sales to and royalties received from East China, as well as our proportionate share of the joint venture's net profit. The change from equity method to consolidation method lowered the operating margin of our Consolidate
-- **SBUX** 2018-07-31: 2 candidate(s), Demand, Geopolitics and tariffs
-  - Candidate IDs: cout-ANXrdRHG, cout-MXRadGm7
-  - Representative source: sec-company://0000829224/0000829224-18-000037#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - As a result of acquiring the remaining interest in our East China joint venture at the end of the first quarter of fiscal 2018, we began recording 100% of its revenues and expenses on our condensed consolidated statements of earnings at the beginning of the second quarter of fiscal 2018. This is in
-- **TMUS** 2020-05-06: 2 candidate(s), Liquidity
-  - Candidate IDs: cout-ujYGRt4f, cout-XnbHCDky
-  - Representative source: sec-company://0001283699/0001283699-20-000106#part-i-item-2:theme:liquidity:outcome
-  - Under the new credit loss standard we recognize lifetime expected credit losses at the inception of our credit risk exposures whereas we previously recognized credit losses only when it was probable that they had been incurred. We also recognize expected credit losses on our equipment installment pl
-- **TSLA** 2024-07-24 to 2025-07-24: 2 candidate(s), Demand
-  - Candidate IDs: cout-XhRhqQc4, cout-Myvu4Y9T
-  - Representative source: sec-company://0001318605/0001628280-24-032662#part-i-item-2:theme:demand:outcome
-  - During the three and six months ended June 30, 2024, we recognized total revenues of $25.50 billion and $46.80 billion, respectively, representing an increase of $573 million and a decrease of $1.46 billion, respectively, compared to the same periods in the prior year. During the three and six month
 - **VZ** 2022-10-25: 2 candidate(s), Liquidity, Macro and foreign exchange
   - Candidate IDs: cout-kYzqCLkc, cout-HoiWkQmD
   - Representative source: sec-company://0000732712/0000732712-22-000050#part-i-item-2:theme:liquidity:outcome
@@ -2285,22 +2201,6 @@ These candidates are staged for human review. Applying them requires company.app
   - During the first quarter of fiscal year 2021, we experienced disruptions to our supply chain and logistical services provided by outsourcing partners and component supply, primarily based in Asia. These disruptions adversely impacted our linearity of supply and sales within the quarter.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-20-000065#part-ii-item-1a:theme:supply-chain:outcome)
   - impact, our workforce and operations, the operations of our customers and our partners, and those of our respective vendors and suppliers (including our subcontractors and third-party contract manufacturers). For example, during the first quarter of fiscal year 2021, we experienced disruptions to ou
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-22-000147#part-ii-item-1a:theme:inventory-channel:outcome)
-  - We have had to increase prices for our Data Center products as a result of our suppliers' increase in prices, and may need to continue to do so for other products in the future, which may negatively impact demand. We have also written-down our inventory, incurred cancellation penalties, and recorded
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-22-000166#part-ii-item-1a:theme:inventory-channel:outcome)
-  - We have had to increase prices for our Data Center products as a result of our suppliers' increase in prices, and may need to continue to do so for other products in the future, which may negatively impact demand. We have also written-down our inventory, incurred cancellation penalties, and recorded
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-23-000175#part-ii-item-1a:theme:inventory-channel:outcome)
-  - We have had to increase prices for certain of our products as a result of our suppliers' increase in prices, and we may need to continue to do so for other products in the future. We have also written-down our inventory, incurred cancellation penalties, and recorded impairments. These impacts were a
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-23-000227#part-ii-item-1a:theme:inventory-channel:outcome)
-  - We have had to increase prices for certain of our products as a result of our suppliers' increase in prices, and we may need to continue to do so for other products in the future. We have also written-down our inventory, incurred cancellation penalties, and recorded impairments. These impacts were a
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-25-000116#part-i-item-2:theme:demand:outcome)
-  - On April 9, 2025, the U.S. government, or USG, informed us that it requires a license for export to China (including Hong Kong and Macau) and D:5 countries, or to companies headquartered or with an ultimate parent therein, of our H20 integrated circuits and any other circuits achieving the H20's mem
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-25-000116#part-i-item-2:theme:inventory-channel:outcome)
-  - On April 9, 2025, the U.S. government, or USG, informed us that it requires a license for export to China (including Hong Kong and Macau) and D:5 countries, or to companies headquartered or with an ultimate parent therein, of our H20 integrated circuits and any other circuits achieving the H20's mem
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-26-000021#item-7:theme:demand:outcome)
-  - In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001045810/0001045810-26-000021#item-7:theme:inventory-channel:outcome)
-  - In April 2025, the USG informed us that a license is required for exports of our H20 product into the China market. As a result of these requirements, we incurred a $4.5 billion charge in the first quarter of fiscal year 2026 associated with H20 for excess inventory and purchase obligations, as the
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:demand:outcome)
   - Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000320193/0000320193-20-000096#item-1a:theme:supply-chain:outcome)
@@ -2373,12 +2273,8 @@ These candidates are staged for human review. Applying them requires company.app
   - From a customer market standpoint, we experienced product revenue growth in the commercial, enterprise and service provider markets partially offset by a decline in the public sector market.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001564590-21-004599#item-1a:theme:supply-chain:outcome)
   - Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing processes and reducing costs. If we are not successful in achieving these goals, we could face delay
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001628280-24-032662#part-i-item-2:theme:demand:outcome)
-  - During the three and six months ended June 30, 2024, we recognized total revenues of $25.50 billion and $46.80 billion, respectively, representing an increase of $573 million and a decrease of $1.46 billion, respectively, compared to the same periods in the prior year. During the three and six month
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001628280-25-018911#part-i-item-2:theme:demand:outcome)
   - During the three months ended March 31, 2025, we recognized total revenues of $19.34 billion, representing a decrease of $1.97 billion compared to the same period in the prior year. During the three months ended March 31, 2025, our net income attributable to common stockholders was $409 million, rep
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001628280-25-035806#part-i-item-2:theme:demand:outcome)
-  - During the three and six months ended June 30, 2025, we recognized total revenues of $22.50 billion and $41.83 billion, respectively, representing decreases of $3.00 billion and $4.97 billion, respectively, compared to the same periods in the prior year. During the three and six months ended June 30
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001628280-25-045968#part-i-item-2:theme:demand:outcome)
   - During the three and nine months ended September 30, 2025, we recognized total revenues of $28.10 billion and $69.93 billion, respectively, representing an increase of $2.91 billion and a decrease of $2.06 billion, respectively, compared to the same periods in the prior year. During the three and ni
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001628280-26-003952#item-7:theme:demand:outcome)
@@ -2403,14 +2299,6 @@ These candidates are staged for human review. Applying them requires company.app
   - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome)
   - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000829224/0000829224-18-000022#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - joint venture model, where we recorded only revenues and expenses from products sales to and royalties received from East China, as well as our proportionate share of the joint venture's net profit. The change from equity method to consolidation method lowered the operating margin of our Consolidate
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000829224/0000829224-18-000022#part-i-item-2:theme:demand:outcome)
-  - joint venture model, where we recorded only revenues and expenses from products sales to and royalties received from East China, as well as our proportionate share of the joint venture's net profit. The change from equity method to consolidation method lowered the operating margin of our Consolidate
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000829224/0000829224-18-000037#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - As a result of acquiring the remaining interest in our East China joint venture at the end of the first quarter of fiscal 2018, we began recording 100% of its revenues and expenses on our condensed consolidated statements of earnings at the beginning of the second quarter of fiscal 2018. This is in
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000829224/0000829224-18-000037#part-i-item-2:theme:demand:outcome)
-  - As a result of acquiring the remaining interest in our East China joint venture at the end of the first quarter of fiscal 2018, we began recording 100% of its revenues and expenses on our condensed consolidated statements of earnings at the beginning of the second quarter of fiscal 2018. This is in
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome)
   - we recorded a provision for credit losses of $
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001559720/0001559720-23-000003#item-7:theme:liquidity:outcome)
@@ -2441,10 +2329,6 @@ These candidates are staged for human review. Applying them requires company.app
   - During the quarter ended and subsequent to September 30, 2016, a handset Original Equipment Manufacturer ("OEM") announced recalls on certain of its smartphone devices. As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001283699/0001283699-16-000115#part-i-item-2:theme:customer-platform-dependency:outcome)
   - As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001283699/0001283699-20-000106#part-i-item-2:theme:liquidity:outcome)
-  - Under the new credit loss standard we recognize lifetime expected credit losses at the inception of our credit risk exposures whereas we previously recognized credit losses only when it was probable that they had been incurred. We also recognize expected credit losses on our equipment installment pl
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001283699/0001283699-20-000106#part-ii-item-1a:theme:liquidity:outcome)
-  - Under the new credit loss standard we recognize lifetime expected credit losses at the inception of our credit risk exposures whereas we previously recognized credit losses only when it was probable that they had been incurred. We also recognize expected credit losses on our equipment installment pl
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-20-000027#part-i-item-2:theme:demand:outcome)
   - In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-22-000050#part-i-item-2:theme:liquidity:outcome)
@@ -2531,14 +2415,6 @@ These candidates are staged for human review. Applying them requires company.app
   - In connection with these elements of the Tax Cuts and Jobs Act, we recognized a provisional expense of $1.6 billion, which was included as a component of income tax expense as follows:
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:supply-chain:outcome)
   - r $0.04 per share impact on diluted EPS) during the nine months ended September 30, 2020, related to the organizational design optimization plan primarily in Switzerland. We recorded pre-tax asset impairment and exit costs of $65 million (or $0.03 per share impact on diluted EPS) during the nine mon
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:demand:outcome)
-  - For the nine months ended September 30, 2020, net revenues, excluding unfavorable currency, decreased by 1.7%, reflecting: unfavorable volume/mix, primarily due to lower cigarette volume (mainly in Argentina, Indonesia, Italy, Japan, Mexico, the Philippines, PMI Duty Free, Poland, Russia, Spain, Tur
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - For the nine months ended September 30, 2020, net revenues, excluding unfavorable currency, decreased by 1.7%, reflecting: unfavorable volume/mix, primarily due to lower cigarette volume (mainly in Argentina, Indonesia, Italy, Japan, Mexico, the Philippines, PMI Duty Free, Poland, Russia, Spain, Tur
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-21-000058#part-i-item-2:theme:inventory-channel:outcome)
-  - . On the basis of these decisions and in line with arrangements with the distributors, we recorded a pre-tax charge of $246 million in the second quarter of 2021 (representing $215 million net of income tax and
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-21-000091#part-i-item-2:theme:inventory-channel:outcome)
-  - . On the basis of these decisions and in line with arrangements with the distributors, we recorded a pre-tax charge of $246 million in the second quarter of 2021 (representing $215 million net of income tax and
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-21-000091#part-i-item-2:theme:ai-rd-technology:outcome)
   - At the date of acquisition, we determined that the acquired IPR&D had no alternative future use. As a result, we recorded a pre-tax charge of $51 million (representing a $0.03 charge to diluted EPS) to research and development costs within marketing, administration and research costs in the condense
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-22-000072#part-i-item-2:theme:geopolitics-tariffs:outcome)
@@ -2553,14 +2429,6 @@ These candidates are staged for human review. Applying them requires company.app
   - – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-24-000145#part-i-item-2:theme:liquidity:outcome)
   - As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000077476/0000077476-20-000060#part-i-item-2:theme:liquidity:outcome)
-  - There is considerable uncertainty regarding how current and future health and safety measures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000077476/0000077476-20-000060#part-i-item-2:theme:inventory-channel:outcome)
-  - There is considerable uncertainty regarding how current and future health and safety measures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000077476/0000077476-20-000068#part-ii-item-1a:theme:supply-chain:outcome)
-  - ures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result of changes to our supply chain or increases in employee costs, operating costs or otherwi
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000077476/0000077476-20-000068#part-ii-item-1a:theme:cloud-data-center-capacity:outcome)
-  - ures implemented in response to the pandemic will impact our business, including whether they will result in further changes in demand for our products, further increases in operating costs (whether as a result of changes to our supply chain or increases in employee costs, operating costs or otherwi
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome)
   - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-22-000044#part-i-item-2:theme:supply-chain:outcome)

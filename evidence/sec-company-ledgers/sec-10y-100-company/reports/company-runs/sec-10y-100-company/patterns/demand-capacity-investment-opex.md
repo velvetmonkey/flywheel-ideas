@@ -15,7 +15,7 @@ source: flywheel-ideas
 - Sectors: Consumer Discretionary, Information Technology
 - Companies: PLTR, SBUX
 - Observations: 128
-- Realized candidates: 3
+- Realized candidates: 1
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn
