@@ -10,6 +10,22 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.**
+  - Companies: AMD
+  - Themes: Supply chain
+  - Outcomes: out-AiaZth1U
+- **Semiconductor legal assumptions should track contingent-loss language because even small legal reserves mark realized friction that can recur or compound around transactions.**
+  - Companies: AMD
+  - Themes: Regulation and legal
+  - Outcomes: out-PzSBYfnX
+- **Hardware demand assumptions should track channel availability because temporary closures can weaken demand even when supply-chain issues are the more visible shock.**
+  - Companies: AAPL
+  - Themes: Demand
+  - Outcomes: out-ziDKD8UB
+- **Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.**
+  - Companies: WBD
+  - Themes: Regulation and legal
+  - Outcomes: out-sTpYBDUQ
 - **EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.**
   - Companies: TSLA
   - Themes: Demand

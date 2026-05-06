@@ -16,16 +16,13 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 - Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Filings scanned: 1468
-- Current thesis dependencies: 374 open bet(s).
-- Human review queue: 115 event(s), 120 staged candidate(s).
-- Accepted failures: 42; lessons recorded: 42; missing lesson memos: 0.
+- Current thesis dependencies: 370 open bet(s).
+- Human review queue: 103 event(s), 103 staged candidate(s).
+- Accepted failures: 46; lessons recorded: 46; missing lesson memos: 0.
 - Posture: evidence needs human review before thesis confidence should increase.
 
 ## Current Thesis Dependencies
 
-- **WBD / Regulation and legal** - fresh, review pressure 7, 58 observation(s), latest 2026-02-27
-  - Assumption: asm-iVeAyyNH
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **DIS / Geopolitics and tariffs** - fresh, review pressure 7, 24 observation(s), latest 2026-02-02
   - Assumption: asm-xakuDdYD
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
@@ -59,9 +56,28 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **LOW / Liquidity** - fresh, review pressure 2, 76 observation(s), latest 2026-03-23
   - Assumption: asm-c1UaX4xS
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **MU / AI, R&D, and technology** - fresh, review pressure 2, 83 observation(s), latest 2026-03-19
+  - Assumption: asm-o5RkVgmn
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 
 ## Prior Failures And Lessons
 
+- **Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Supply chain
+  - Representative context: The filing disclosed AMD experienced some disruptions to parts of its supply chain during the first quarter of 2020 and continued adjusting supply-chain requirements based on changing customer needs and demand.
+  - Outcomes: out-AiaZth1U
+- **Semiconductor legal assumptions should track contingent-loss language because even small legal reserves mark realized friction that can recur or compound around transactions.**
+  - Evidence: 1 accepted failure verdict(s) across AMD / Regulation and legal
+  - Representative context: The filing disclosed a $5 million contingent loss in connection with a legal matter, alongside other transaction-related expense items.
+  - Outcomes: out-PzSBYfnX
+- **Hardware demand assumptions should track channel availability because temporary closures can weaken demand even when supply-chain issues are the more visible shock.**
+  - Evidence: 1 accepted failure verdict(s) across AAPL / Demand
+  - Representative context: The filing disclosed many channel partner points of sale outside China temporarily closed and Apple experienced weakened demand for products and services outside China during the last three weeks of the quarter.
+  - Outcomes: out-ziDKD8UB
+- **Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.**
+  - Evidence: 1 accepted failure verdict(s) across WBD / Regulation and legal
+  - Representative context: The filing disclosed third-party production partners were shut down during most of the second quarter of 2020 due to COVID-19 restrictions, and after reopening the company incurred additional costs to comply with governmental regulations and safety measures.
+  - Outcomes: out-sTpYBDUQ
 - **EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.**
   - Evidence: 1 accepted failure verdict(s) across TSLA / Demand
   - Representative context: During the three and six months ended June 30, 2025, Tesla disclosed total revenues of $22.50 billion and $41.83 billion, representing year-over-year decreases of $3.00 billion and $4.97 billion.
@@ -233,64 +249,64 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## What Needs Human Review
 
-- **VZ / Liquidity, Macro and foreign exchange** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-kYzqCLkc, cout-HoiWkQmD
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kYzqCLkc","cout-HoiWkQmD"], confirm: true })`
-  - Evidence: As a result of the inflationary environment in 2022 to date, we have experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, transportation and labor costs, as well as increased interest expenses related to rising interest rates. We
-- **VZ / Liquidity, Macro and foreign exchange** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-ZG6dYPEU, cout-wbcRp2yZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ZG6dYPEU","cout-wbcRp2yZ"], confirm: true })`
-  - Evidence: Over the last several years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, and transportation and labor costs, as well as increased interest expense related to ch
-- **WBD / Regulation and legal** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-ThgKhmyj, cout-y8H1vjJk
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ThgKhmyj","cout-y8H1vjJk"], confirm: true })`
-  - Evidence: These economic disruptions and the resulting effect on the Company slightly eased during the second half of 2020, but the pandemic continued to impact demand through the end of 2020 and this decreased demand is expected to continue into 2021. Many of our third-party production partners that were shu
-- **WBD / Regulation and legal** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-VbiHBeHK, cout-j9gPcAuE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-VbiHBeHK","cout-j9gPcAuE"], confirm: true })`
-  - Evidence: The Company currently does not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of the Company's third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter
-- **WBD / Regulation and legal** - 2 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-E4PGKpia, cout-FNuJ7Ujh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-E4PGKpia","cout-FNuJ7Ujh"], confirm: true })`
-  - Evidence: We currently do not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a res
-- **AAPL / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-KT4QEPaj
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KT4QEPaj"], confirm: true })`
-  - Evidence: Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
-- **AAPL / Supply chain** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-Qxnb5fxQ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qxnb5fxQ"], confirm: true })`
-  - Evidence: The COVID-19 pandemic and the measures taken by many countries in response have adversely affected and could in the future materially adversely impact the Company's business, results of operations, financial condition and stock price. Following the initial outbreak of the virus, the Company experien
-- **AAPL / Customer and platform dependency** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-m6FhuALS
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-m6FhuALS"], confirm: true })`
-  - Evidence: During 2020, aspects of the Company's business were adversely affected by the COVID-19 pandemic, with many of the Company's retail stores, as well as channel partner points of sale, temporarily closed at various times, and the vast majority of the Company's employees working remotely. The Company ha
-- **AAPL / Supply chain** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-aRz4uoBR
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-aRz4uoBR"], confirm: true })`
-  - Evidence: The Company has reopened all of its retail stores and substantially all of its other facilities, subject to operating restrictions to protect public health and the health and safety of employees and customers, and it continues to work on safely reopening the remainder of its facilities, subject to l
-- **ABNB / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-EPQ2ubr3
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-EPQ2ubr3"], confirm: true })`
-  - Evidence: We have previously incurred net losses and our Adjusted EBITDA and Free Cash Flow have declined in prior periods. We may once again incur net losses and experience a decline in Adjusted EBITDA and Free Cash, and we may not be able to sustain profitability.
-- **AMD / Regulation and legal** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-yF6Bpixu
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yF6Bpixu"], confirm: true })`
-  - Evidence: , and $41 million of stock-based compensation expense and a $5 million contingent loss in connection with a legal matter for the
-- **AMD / Supply chain** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-5t5NYrEx
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-5t5NYrEx"], confirm: true })`
-  - Evidence: During the first quarter of 2020, we experienced some disruptions to parts of our supply chain. We continue to monitor demand signals as we adjust our supply chain requirements based on changing customer needs and demands.
+- **CMCSA / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-Ue9EKZgN
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Ue9EKZgN"], confirm: true })`
+  - Evidence: Interest expense decreased for the three and six months ended June 30, 2022 compared to the same periods in 2021 primarily due to a decrease in average debt outstanding in the current year periods and a $78 million charge recorded in the prior year periods related to the early redemption of senior n
+- **CMCSA / Regulation and legal** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-jMXzPt2t
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-jMXzPt2t"], confirm: true })`
+  - Evidence: Income tax expense for the three and six months ended June 30, 2022 and 2021 reflects an effective income tax rate that differs from the federal statutory rate primarily due to state and foreign income taxes and adjustments associated with uncertain tax positions. The decrease in income tax expense
+- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-m97Vaazu
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-m97Vaazu"], confirm: true })`
+  - Evidence: we experienced product revenue declines in the public sector and enterprise markets. We believe our sales in the enterprise market were impacted by uncertainty in the macro environment, which led to a slowdown in customer spending, and by currency impacts.
+- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-hKXwsgTh
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-hKXwsgTh"], confirm: true })`
+  - Evidence: , led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 16% in the aggregate, driven by declines in the emerging countries of China and Mexico of 30% and 36%, respectively, partially of
+- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-SMFQGgLC
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-SMFQGgLC"], confirm: true })`
+  - Evidence: Revenue in our APJC segment decreased slightly, led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 8% in the aggregate, driven by declines in the emerging countries of Brazil, China
+- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-oRDH4nxY
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-oRDH4nxY"], confirm: true })`
+  - Evidence: From a customer market standpoint, we experienced product revenue declines in the service provider, enterprise and public sector markets, partially offset by product revenue growth in the commercial market.
+- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-kHpnDRw5
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kHpnDRw5"], confirm: true })`
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector and commercial markets, partially offset by a product revenue decline in the service provider market. Product revenue in the enterprise market was flat.
+- **CSCO / Regulation and legal** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-g7JS1MuB
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-g7JS1MuB"], confirm: true })`
+  - Evidence: percentage points, driven primarily by unfavorable impacts from pricing, a $127 million legal and indemnification settlement charge, and unfavorable product mix, partially offset by productivity benefits. While productivity was positive to overall product gross margin, the benefit was lower than in
+- **CSCO / Regulation and legal** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-ab1MgSFU
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ab1MgSFU"], confirm: true })`
+  - Evidence: percentage points, driven primarily by productivity improvements and the $122 million legal and indemnification settlement charge recorded in the first quarter of fiscal 2018, partially offset by unfavorable impacts from pricing.
+- **CSCO / Regulation and legal** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-GqqPpush
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-GqqPpush"], confirm: true })`
+  - Evidence: percentage points due to productivity benefits and a $127 million legal and indemnification settlement charge recorded in the first six months of fiscal 2018, partially offset by unfavorable impacts from pricing. As a percentage of revenue, research and development, sales and marketing, and general
+- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-FjBCbGzh
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-FjBCbGzh"], confirm: true })`
+  - Evidence: From a customer market standpoint, we experienced product revenue growth in the enterprise, public sector and commercial markets, partially offset by a product revenue decline in the service provider market.
+- **CSCO / Regulation and legal** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-fqA4TDaB
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fqA4TDaB"], confirm: true })`
+  - Evidence: percentage points, driven primarily by productivity benefits partially offset by unfavorable impacts from pricing and mix. Our gross margin also benefited from the sale of our lower margin SPVSS business during the second quarter of fiscal 2019 and the $127 million legal and indemnification settleme
 
 ## Cross-Company Patterns
 
-- **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 19, latest 2026-05-01
-- **Demand**: 28 open bet(s) across AAPL, ABNB, AMZN, AVGO, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 2036 observation(s), review pressure 19, latest 2026-05-01
+- **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 18, latest 2026-05-01
+- **Demand**: 27 open bet(s) across ABNB, AMZN, AVGO, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1952 observation(s), review pressure 18, latest 2026-05-01
 - **Geopolitics and tariffs**: 34 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1234 observation(s), review pressure 14, latest 2026-04-30
-- **Regulation and legal**: 34 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 2193 observation(s), review pressure 9, latest 2026-05-01
 - **AI, R&D, and technology**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1357 observation(s), review pressure 2, latest 2026-05-01
-- **Supply chain**: 29 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, ORCL, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1353 observation(s), review pressure 2, latest 2026-05-01
+- **Regulation and legal**: 32 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WMT, 2053 observation(s), review pressure 1, latest 2026-05-01
 - **Cloud and data center capacity**: 35 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 1, latest 2026-05-01
+- **Supply chain**: 28 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, ORCL, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1274 observation(s), review pressure 1, latest 2026-05-01
 - **Customer and platform dependency**: 35 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1232 observation(s), review pressure 1, latest 2026-05-01
 - **Inventory and channel**: 31 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, NFLX, ORCL, PEP, PG, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1219 observation(s), review pressure 1, latest 2026-05-01
 - **Cybersecurity and privacy**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, VZ, WBD, WMT, 844 observation(s), review pressure 1, latest 2026-05-01
@@ -299,26 +315,26 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## What To Watch Next
 
-- **VZ / Liquidity, Macro and foreign exchange**
-  - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kYzqCLkc","cout-HoiWkQmD"], confirm: true })
-  - Evidence: As a result of the inflationary environment in 2022 to date, we have experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, transportation and labor costs, as well as increased interest expenses related to rising interest rates. We
-- **VZ / Liquidity, Macro and foreign exchange**
-  - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ZG6dYPEU","cout-wbcRp2yZ"], confirm: true })
-  - Evidence: Over the last several years, as a result of the inflationary environment in the U.S., we experienced increases in our direct costs, including electricity and other energy-related costs for our network operations, and transportation and labor costs, as well as increased interest expense related to ch
-- **WBD / Regulation and legal**
-  - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ThgKhmyj","cout-y8H1vjJk"], confirm: true })
-  - Evidence: These economic disruptions and the resulting effect on the Company slightly eased during the second half of 2020, but the pandemic continued to impact demand through the end of 2020 and this decreased demand is expected to continue into 2021. Many of our third-party production partners that were shu
-- **WBD / Regulation and legal**
-  - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-VbiHBeHK","cout-j9gPcAuE"], confirm: true })
-  - Evidence: The Company currently does not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of the Company's third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter
-- **WBD / Regulation and legal**
-  - Reason: 2 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-E4PGKpia","cout-FNuJ7Ujh"], confirm: true })
-  - Evidence: We currently do not expect the pandemic will have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a res
+- **CMCSA / Liquidity**
+  - Reason: 1 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Ue9EKZgN"], confirm: true })
+  - Evidence: Interest expense decreased for the three and six months ended June 30, 2022 compared to the same periods in 2021 primarily due to a decrease in average debt outstanding in the current year periods and a $78 million charge recorded in the prior year periods related to the early redemption of senior n
+- **CMCSA / Regulation and legal**
+  - Reason: 1 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-jMXzPt2t"], confirm: true })
+  - Evidence: Income tax expense for the three and six months ended June 30, 2022 and 2021 reflects an effective income tax rate that differs from the federal statutory rate primarily due to state and foreign income taxes and adjustments associated with uncertain tax positions. The decrease in income tax expense
+- **CSCO / Demand**
+  - Reason: 1 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-m97Vaazu"], confirm: true })
+  - Evidence: we experienced product revenue declines in the public sector and enterprise markets. We believe our sales in the enterprise market were impacted by uncertainty in the macro environment, which led to a slowdown in customer spending, and by currency impacts.
+- **CSCO / Demand**
+  - Reason: 1 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-hKXwsgTh"], confirm: true })
+  - Evidence: , led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 16% in the aggregate, driven by declines in the emerging countries of China and Mexico of 30% and 36%, respectively, partially of
+- **CSCO / Demand**
+  - Reason: 1 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-SMFQGgLC"], confirm: true })
+  - Evidence: Revenue in our APJC segment decreased slightly, led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 8% in the aggregate, driven by declines in the emerging countries of Brazil, China
 - **DIS / Geopolitics and tariffs**
   - Reason: Open assumption has review pressure 7.
   - Next action: Review staged candidates linked to assumption asm-xakuDdYD before carrying this bet forward.

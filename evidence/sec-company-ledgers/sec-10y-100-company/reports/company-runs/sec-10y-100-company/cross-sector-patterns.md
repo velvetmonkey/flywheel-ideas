@@ -17,12 +17,12 @@ Mechanism-level comparison prevents generic SEC boilerplate from looking more me
 | [[patterns/geopolitics-tariffs-geographic-concentration|Geopolitics and tariffs / Geographic concentration or local disruption]] | 4 | 25 | 896 | 16 | shared mechanism with realized-risk evidence |
 | [[patterns/demand-consumer-demand-shock|Demand / Consumer or end-market demand shock]] | 4 | 6 | 408 | 7 | shared mechanism with realized-risk evidence |
 | [[patterns/inventory-channel-platform-customer-concentration|Inventory and channel / Platform or customer concentration]] | 2 | 2 | 58 | 5 | shared mechanism with realized-risk evidence |
-| [[patterns/macro-fx-geographic-concentration|Macro and foreign exchange / Geographic concentration or local disruption]] | 4 | 12 | 741 | 4 | shared mechanism with realized-risk evidence |
 | [[patterns/supply-chain-geographic-concentration|Supply chain / Geographic concentration or local disruption]] | 3 | 4 | 214 | 4 | shared mechanism with realized-risk evidence |
-| [[patterns/supply-chain-capacity-investment-opex|Supply chain / Capacity investment and operating expense drag]] | 2 | 4 | 203 | 4 | shared mechanism with realized-risk evidence |
-| [[patterns/customer-platform-dependency-platform-customer-concentration|Customer and platform dependency / Platform or customer concentration]] | 4 | 26 | 1011 | 3 | shared mechanism with realized-risk evidence |
 | [[patterns/supply-chain-single-supplier-manufacturing|Supply chain / Single supplier or manufacturing concentration]] | 2 | 3 | 142 | 3 | shared mechanism with realized-risk evidence |
-| [[patterns/liquidity-interest-credit-liquidity|Liquidity / Interest, credit, or liquidity stress]] | 4 | 13 | 925 | 2 | shared mechanism with realized-risk evidence |
+| [[patterns/customer-platform-dependency-platform-customer-concentration|Customer and platform dependency / Platform or customer concentration]] | 4 | 26 | 1011 | 2 | shared mechanism with realized-risk evidence |
+| [[patterns/macro-fx-geographic-concentration|Macro and foreign exchange / Geographic concentration or local disruption]] | 4 | 12 | 741 | 2 | shared mechanism with realized-risk evidence |
+| [[patterns/supply-chain-capacity-investment-opex|Supply chain / Capacity investment and operating expense drag]] | 2 | 4 | 203 | 2 | shared mechanism with realized-risk evidence |
+| [[patterns/liquidity-interest-credit-liquidity|Liquidity / Interest, credit, or liquidity stress]] | 4 | 13 | 925 | 1 | shared mechanism with realized-risk evidence |
 | [[patterns/regulation-legal-regulatory-investigation-litigation|Regulation and legal / Regulatory investigation or litigation]] | 4 | 9 | 615 | 1 | shared mechanism with realized-risk evidence |
 | [[patterns/cloud-data-center-capacity-capacity-investment-opex|Cloud and data center capacity / Capacity investment and operating expense drag]] | 4 | 15 | 480 | 1 | shared mechanism with realized-risk evidence |
 | [[patterns/cybersecurity-privacy-data-breach-outage|Cybersecurity and privacy / Data breach, outage, or service disruption]] | 4 | 6 | 107 | 1 | shared mechanism with realized-risk evidence |

@@ -12,13 +12,13 @@ source: flywheel-ideas
 
 - Companies: AAPL, AMD, AVGO, CSCO, INTC, MSFT, MU, NVDA, ORCL, PLTR
 - Observations: 6412
-- Staged outcomes: 37
+- Staged outcomes: 31
 
 ## Companies
 
-- [[companies/amd|AMD]]: 794 observation(s), 2 staged outcome(s).
+- [[companies/amd|AMD]]: 794 observation(s), 0 staged outcome(s).
 - [[companies/intc|INTC]]: 167 observation(s), 0 staged outcome(s).
-- [[companies/aapl|AAPL]]: 672 observation(s), 4 staged outcome(s).
+- [[companies/aapl|AAPL]]: 672 observation(s), 0 staged outcome(s).
 - [[companies/mu|MU]]: 790 observation(s), 9 staged outcome(s).
 - [[companies/msft|MSFT]]: 816 observation(s), 5 staged outcome(s).
 - [[companies/csco|CSCO]]: 782 observation(s), 15 staged outcome(s).
