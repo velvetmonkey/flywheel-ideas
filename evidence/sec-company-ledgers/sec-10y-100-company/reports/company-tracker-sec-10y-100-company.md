@@ -127,7 +127,7 @@ source: flywheel-ideas
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 103
+- Staged outcomes: 91
 - Applied outcomes: 46
 
 ## SEC Company Lifecycle Report
@@ -138,14 +138,14 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
 - Current bets: 370 open company/theme assumption(s) still being carried.
-- Review queue: 103 event(s), 103 staged candidate(s) awaiting human judgment.
+- Review queue: 91 event(s), 91 staged candidate(s) awaiting human judgment.
 - Accepted outcomes: 46 failure(s), 0 validation(s).
 - Lessons: 46 recorded memo(s), 0 missing memo(s).
 - Triage completion: 46/363 candidate(s) applied (13%).
 
 ## Operator Next Step
 
-Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Ue9EKZgN"], confirm: true })`
+Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iihwv1WH"], confirm: true })`
 
 ## Lifecycle Status
 
@@ -369,66 +369,6 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
 
 ## Outcome Review Queue
 
-- **CMCSA** 2022-07-28: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Ue9EKZgN
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Ue9EKZgN"], confirm: true })`
-  - Source: sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:liquidity:outcome
-  - Interest expense decreased for the three and six months ended June 30, 2022 compared to the same periods in 2021 primarily due to a decrease in average debt outstanding in the current year periods and a $78 million charge recorded in the prior year periods related to the early redemption of senior n
-- **CMCSA** 2022-07-28: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-jMXzPt2t
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-jMXzPt2t"], confirm: true })`
-  - Source: sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:regulation-legal:outcome
-  - Income tax expense for the three and six months ended June 30, 2022 and 2021 reflects an effective income tax rate that differs from the federal statutory rate primarily due to state and foreign income taxes and adjustments associated with uncertain tax positions. The decrease in income tax expense
-- **CSCO** 2016-02-18: 1 candidate(s), Demand
-  - Candidate IDs: cout-m97Vaazu
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-m97Vaazu"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-16-000090#part-i-item-2:theme:demand:outcome
-  - we experienced product revenue declines in the public sector and enterprise markets. We believe our sales in the enterprise market were impacted by uncertainty in the macro environment, which led to a slowdown in customer spending, and by currency impacts.
-- **CSCO** 2017-02-21: 1 candidate(s), Demand
-  - Candidate IDs: cout-hKXwsgTh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-hKXwsgTh"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-17-000004#part-i-item-2:theme:demand:outcome
-  - , led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 16% in the aggregate, driven by declines in the emerging countries of China and Mexico of 30% and 36%, respectively, partially of
-- **CSCO** 2017-05-23: 1 candidate(s), Demand
-  - Candidate IDs: cout-SMFQGgLC
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-SMFQGgLC"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-17-000010#part-i-item-2:theme:demand:outcome
-  - Revenue in our APJC segment decreased slightly, led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 8% in the aggregate, driven by declines in the emerging countries of Brazil, China
-- **CSCO** 2017-11-21: 1 candidate(s), Demand
-  - Candidate IDs: cout-oRDH4nxY
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-oRDH4nxY"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-17-000019#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue declines in the service provider, enterprise and public sector markets, partially offset by product revenue growth in the commercial market.
-- **CSCO** 2018-02-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-kHpnDRw5
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-kHpnDRw5"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-18-000004#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the public sector and commercial markets, partially offset by a product revenue decline in the service provider market. Product revenue in the enterprise market was flat.
-- **CSCO** 2018-09-06: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-g7JS1MuB
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-g7JS1MuB"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-18-000011#item-7:theme:regulation-legal:outcome
-  - percentage points, driven primarily by unfavorable impacts from pricing, a $127 million legal and indemnification settlement charge, and unfavorable product mix, partially offset by productivity benefits. While productivity was positive to overall product gross margin, the benefit was lower than in
-- **CSCO** 2018-11-20: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-ab1MgSFU
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ab1MgSFU"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-18-000015#part-i-item-2:theme:regulation-legal:outcome
-  - percentage points, driven primarily by productivity improvements and the $122 million legal and indemnification settlement charge recorded in the first quarter of fiscal 2018, partially offset by unfavorable impacts from pricing.
-- **CSCO** 2019-02-19: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-GqqPpush
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-GqqPpush"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-19-000003#part-i-item-2:theme:regulation-legal:outcome
-  - percentage points due to productivity benefits and a $127 million legal and indemnification settlement charge recorded in the first six months of fiscal 2018, partially offset by unfavorable impacts from pricing. As a percentage of revenue, research and development, sales and marketing, and general
-- **CSCO** 2019-09-05: 1 candidate(s), Demand
-  - Candidate IDs: cout-FjBCbGzh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-FjBCbGzh"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-19-000012#item-7:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the enterprise, public sector and commercial markets, partially offset by a product revenue decline in the service provider market.
-- **CSCO** 2019-09-05: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-fqA4TDaB
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fqA4TDaB"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-19-000012#item-7:theme:regulation-legal:outcome
-  - percentage points, driven primarily by productivity benefits partially offset by unfavorable impacts from pricing and mix. Our gross margin also benefited from the sale of our lower margin SPVSS business during the second quarter of fiscal 2019 and the $127 million legal and indemnification settleme
 - **CSCO** 2019-11-19: 1 candidate(s), Demand
   - Candidate IDs: cout-iihwv1WH
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iihwv1WH"], confirm: true })`
@@ -1081,7 +1021,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 103 staged, 46 applied.
+- Realized outcome candidates: 91 staged, 46 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -1398,7 +1338,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-18 to 2026-02-17
 - Themes tracked: 12
 - Observations: 782
-- Staged outcomes: 15
+- Staged outcomes: 5
 
 - **AI, R&D, and technology**: 82 observation(s), latest 2026-02-17, assumption asm-n7FhB48i
 - **Demand**: 82 observation(s), latest 2026-02-17, assumption asm-apaexpGF
@@ -1517,7 +1457,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-05 to 2026-04-23
 - Themes tracked: 12
 - Observations: 550
-- Staged outcomes: 2
+- Staged outcomes: 0
 
 - **Demand**: 84 observation(s), latest 2026-04-23, assumption asm-hNS1BXy4
 - **Competition**: 77 observation(s), latest 2026-04-23, assumption asm-rPQ3gUSs
@@ -1736,14 +1676,14 @@ No dependent ideas are currently flagged by accepted refutations.
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 41 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Communication Services | 10 | 12 | 5374 | 39 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
 | Consumer Discretionary | 10 | 12 | 5501 | 15 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
 | Consumer Staples | 10 | 12 | 3899 | 16 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 31 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 21 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |
@@ -1776,8 +1716,6 @@ No dependent ideas are currently flagged by accepted refutations.
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Platform or customer concentration**: 3 sector(s), 4 company(ies), 176 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Information Technology
-- **Regulation and legal / Geographic concentration or local disruption**: 2 sector(s), 3 company(ies), 198 observation(s), 1 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary
 - **Demand / Geographic concentration or local disruption**: 2 sector(s), 2 company(ies), 164 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary
 - **Macro and foreign exchange / Consumer or end-market demand shock**: 2 sector(s), 3 company(ies), 146 observation(s), 1 realized candidate(s).
@@ -1790,6 +1728,8 @@ No dependent ideas are currently flagged by accepted refutations.
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
 - **Customer and platform dependency / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 89 observation(s), 0 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
+- **Cybersecurity and privacy / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 52 observation(s), 0 realized candidate(s).
+  - Sectors: Communication Services, Consumer Staples, Information Technology
 
 ## Observation Evidence Examples
 
@@ -1814,56 +1754,8 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-103 staged candidate(s) grouped into 103 review event(s). Apply still operates on candidate IDs; groups are for review only.
+91 staged candidate(s) grouped into 91 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
-- **CMCSA** 2022-07-28: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Ue9EKZgN
-  - Representative source: sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:liquidity:outcome
-  - Interest expense decreased for the three and six months ended June 30, 2022 compared to the same periods in 2021 primarily due to a decrease in average debt outstanding in the current year periods and a $78 million charge recorded in the prior year periods related to the early redemption of senior n
-- **CMCSA** 2022-07-28: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-jMXzPt2t
-  - Representative source: sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:regulation-legal:outcome
-  - Income tax expense for the three and six months ended June 30, 2022 and 2021 reflects an effective income tax rate that differs from the federal statutory rate primarily due to state and foreign income taxes and adjustments associated with uncertain tax positions. The decrease in income tax expense
-- **CSCO** 2016-02-18: 1 candidate(s), Demand
-  - Candidate IDs: cout-m97Vaazu
-  - Representative source: sec-company://0000858877/0000858877-16-000090#part-i-item-2:theme:demand:outcome
-  - we experienced product revenue declines in the public sector and enterprise markets. We believe our sales in the enterprise market were impacted by uncertainty in the macro environment, which led to a slowdown in customer spending, and by currency impacts.
-- **CSCO** 2017-02-21: 1 candidate(s), Demand
-  - Candidate IDs: cout-hKXwsgTh
-  - Representative source: sec-company://0000858877/0000858877-17-000004#part-i-item-2:theme:demand:outcome
-  - , led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 16% in the aggregate, driven by declines in the emerging countries of China and Mexico of 30% and 36%, respectively, partially of
-- **CSCO** 2017-05-23: 1 candidate(s), Demand
-  - Candidate IDs: cout-SMFQGgLC
-  - Representative source: sec-company://0000858877/0000858877-17-000010#part-i-item-2:theme:demand:outcome
-  - Revenue in our APJC segment decreased slightly, led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 8% in the aggregate, driven by declines in the emerging countries of Brazil, China
-- **CSCO** 2017-11-21: 1 candidate(s), Demand
-  - Candidate IDs: cout-oRDH4nxY
-  - Representative source: sec-company://0000858877/0000858877-17-000019#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue declines in the service provider, enterprise and public sector markets, partially offset by product revenue growth in the commercial market.
-- **CSCO** 2018-02-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-kHpnDRw5
-  - Representative source: sec-company://0000858877/0000858877-18-000004#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the public sector and commercial markets, partially offset by a product revenue decline in the service provider market. Product revenue in the enterprise market was flat.
-- **CSCO** 2018-09-06: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-g7JS1MuB
-  - Representative source: sec-company://0000858877/0000858877-18-000011#item-7:theme:regulation-legal:outcome
-  - percentage points, driven primarily by unfavorable impacts from pricing, a $127 million legal and indemnification settlement charge, and unfavorable product mix, partially offset by productivity benefits. While productivity was positive to overall product gross margin, the benefit was lower than in
-- **CSCO** 2018-11-20: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-ab1MgSFU
-  - Representative source: sec-company://0000858877/0000858877-18-000015#part-i-item-2:theme:regulation-legal:outcome
-  - percentage points, driven primarily by productivity improvements and the $122 million legal and indemnification settlement charge recorded in the first quarter of fiscal 2018, partially offset by unfavorable impacts from pricing.
-- **CSCO** 2019-02-19: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-GqqPpush
-  - Representative source: sec-company://0000858877/0000858877-19-000003#part-i-item-2:theme:regulation-legal:outcome
-  - percentage points due to productivity benefits and a $127 million legal and indemnification settlement charge recorded in the first six months of fiscal 2018, partially offset by unfavorable impacts from pricing. As a percentage of revenue, research and development, sales and marketing, and general
-- **CSCO** 2019-09-05: 1 candidate(s), Demand
-  - Candidate IDs: cout-FjBCbGzh
-  - Representative source: sec-company://0000858877/0000858877-19-000012#item-7:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the enterprise, public sector and commercial markets, partially offset by a product revenue decline in the service provider market.
-- **CSCO** 2019-09-05: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-fqA4TDaB
-  - Representative source: sec-company://0000858877/0000858877-19-000012#item-7:theme:regulation-legal:outcome
-  - percentage points, driven primarily by productivity benefits partially offset by unfavorable impacts from pricing and mix. Our gross margin also benefited from the sale of our lower margin SPVSS business during the second quarter of fiscal 2019 and the $127 million legal and indemnification settleme
 - **CSCO** 2019-11-19: 1 candidate(s), Demand
   - Candidate IDs: cout-iihwv1WH
   - Representative source: sec-company://0000858877/0000858877-19-000018#part-i-item-2:theme:demand:outcome
@@ -2265,26 +2157,6 @@ These candidates are staged for human review. Applying them requires company.app
   - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-24-000027#item-7:theme:demand:outcome)
   - These conditions, which began in the fourth quarter of 2022 and persisted into early 2024, led to significant reductions in average selling prices for both DRAM and NAND and reductions in bit shipments for DRAM. We experienced declines in revenue across all our business segments and nearly all our e
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-16-000090#part-i-item-2:theme:demand:outcome)
-  - we experienced product revenue declines in the public sector and enterprise markets. We believe our sales in the enterprise market were impacted by uncertainty in the macro environment, which led to a slowdown in customer spending, and by currency impacts.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-17-000004#part-i-item-2:theme:demand:outcome)
-  - , led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 16% in the aggregate, driven by declines in the emerging countries of China and Mexico of 30% and 36%, respectively, partially of
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-17-000010#part-i-item-2:theme:demand:outcome)
-  - Revenue in our APJC segment decreased slightly, led by a product revenue decrease in China. We experienced revenue declines from many emerging countries. The "BRICM" countries experienced a product revenue decline of 8% in the aggregate, driven by declines in the emerging countries of Brazil, China
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-17-000019#part-i-item-2:theme:demand:outcome)
-  - From a customer market standpoint, we experienced product revenue declines in the service provider, enterprise and public sector markets, partially offset by product revenue growth in the commercial market.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-18-000004#part-i-item-2:theme:demand:outcome)
-  - From a customer market standpoint, we experienced product revenue growth in the public sector and commercial markets, partially offset by a product revenue decline in the service provider market. Product revenue in the enterprise market was flat.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-18-000011#item-7:theme:regulation-legal:outcome)
-  - percentage points, driven primarily by unfavorable impacts from pricing, a $127 million legal and indemnification settlement charge, and unfavorable product mix, partially offset by productivity benefits. While productivity was positive to overall product gross margin, the benefit was lower than in
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-18-000015#part-i-item-2:theme:regulation-legal:outcome)
-  - percentage points, driven primarily by productivity improvements and the $122 million legal and indemnification settlement charge recorded in the first quarter of fiscal 2018, partially offset by unfavorable impacts from pricing.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-19-000003#part-i-item-2:theme:regulation-legal:outcome)
-  - percentage points due to productivity benefits and a $127 million legal and indemnification settlement charge recorded in the first six months of fiscal 2018, partially offset by unfavorable impacts from pricing. As a percentage of revenue, research and development, sales and marketing, and general
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-19-000012#item-7:theme:demand:outcome)
-  - From a customer market standpoint, we experienced product revenue growth in the enterprise, public sector and commercial markets, partially offset by a product revenue decline in the service provider market.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-19-000012#item-7:theme:regulation-legal:outcome)
-  - percentage points, driven primarily by productivity benefits partially offset by unfavorable impacts from pricing and mix. Our gross margin also benefited from the sale of our lower margin SPVSS business during the second quarter of fiscal 2019 and the $127 million legal and indemnification settleme
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-19-000018#part-i-item-2:theme:demand:outcome)
   - From a customer market standpoint, we experienced a product revenue decline in the service provider market and a slight decline in the enterprise market. These decreases were substantially offset by product revenue growth in the public sector and commercial markets.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-21-000008#part-i-item-2:theme:demand:outcome)
@@ -2399,10 +2271,6 @@ These candidates are staged for human review. Applying them requires company.app
   - Other expense, net of $11 million reflecting a charge of $101 million related to a legal ruling, partially offset by a DraftKings Gain of $90 million
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:geopolitics-tariffs:outcome)
   - In the prior-year period, the Company recorded $2,871 million of charges including the Content Impairment, severance and costs related to exiting our businesses in Russia.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:liquidity:outcome)
-  - Interest expense decreased for the three and six months ended June 30, 2022 compared to the same periods in 2021 primarily due to a decrease in average debt outstanding in the current year periods and a $78 million charge recorded in the prior year periods related to the early redemption of senior n
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001166691/0001166691-22-000030#part-i-item-2:theme:regulation-legal:outcome)
-  - Income tax expense for the three and six months ended June 30, 2022 and 2021 reflects an effective income tax rate that differs from the federal statutory rate primarily due to state and foreign income taxes and adjustments associated with uncertain tax positions. The decrease in income tax expense
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-22-000031#item-7:theme:regulation-legal:outcome)
   - The pandemic did not have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a result, we have incurred ad
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001437107/0001437107-25-000096#part-i-item-2:theme:demand:outcome)

@@ -17,12 +17,12 @@ source: flywheel-ideas
 - Sectors: Communication Services, Consumer Discretionary
 - Companies: ABNB, CMCSA, GOOGL
 - Observations: 198
-- Realized candidates: 1
-- Signal: shared mechanism with realized-risk evidence
+- Realized candidates: 0
+- Signal: emerging cross-sector mechanism
 
 ## What We Can Learn
 
-Regulation and legal is not just recurring boilerplate: the geographic concentration or local disruption mechanism has already produced realized-risk candidates in this run, so related open bets in other sectors deserve review.
+Regulation and legal appears through the geographic concentration or local disruption mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
 
 ## Evidence Examples
 
