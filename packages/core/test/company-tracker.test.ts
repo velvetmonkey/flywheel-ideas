@@ -879,6 +879,17 @@ describe('company tracker', () => {
     const refutedAssumption = db.prepare(`SELECT status FROM ideas_assumptions WHERE id = ?`)
       .get(selectedCandidate!.assumption_id) as { status: string };
     expect(refutedAssumption.status).toBe('refuted');
+    db.prepare(
+      `INSERT INTO ideas_company_outcome_candidates
+        (id, run_id, theme_id, assumption_id, filing_id, source_uri, excerpt, confidence, rationale, state, applied_outcome_id, created_at, applied_at)
+       SELECT 'cout-refuted-duplicate', run_id, theme_id, assumption_id, filing_id, source_uri, excerpt, confidence, rationale, 'staged', NULL, created_at + 1, NULL
+         FROM ideas_company_outcome_candidates
+        WHERE id = ?`,
+    ).run(selectedCandidateId);
+    const reportAfterDuplicate = buildSecCompanyLedgerReport(db, { run_id: result.run_id });
+    expect(reportAfterDuplicate.review_queue.every((event) => !event.assumption_ids.includes(selectedCandidate!.assumption_id))).toBe(true);
+    const dataAfterDuplicate = readCompanyRun(db, result.run_id) as { outcome_groups: Array<{ candidate_ids: string[] }> };
+    expect(dataAfterDuplicate.outcome_groups.every((group) => !group.candidate_ids.includes('cout-refuted-duplicate'))).toBe(true);
     const dependentAfterApply = db.prepare(`SELECT needs_review FROM ideas_notes WHERE id = ?`)
       .get(dependentIdeaId) as { needs_review: number };
     expect(dependentAfterApply.needs_review).toBe(1);

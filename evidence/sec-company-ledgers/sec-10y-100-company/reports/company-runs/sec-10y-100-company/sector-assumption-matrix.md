@@ -14,7 +14,7 @@ source: flywheel-ideas
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 32 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Communication Services | 10 | 12 | 5374 | 20 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
 | Consumer Discretionary | 10 | 12 | 5501 | 15 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
 | Consumer Staples | 10 | 12 | 3899 | 16 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |

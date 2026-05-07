@@ -594,7 +594,13 @@ function parseJsonArray(value: unknown): unknown[] {
 function buildReportData(db: IdeasDatabase, runId: string): Record<string, unknown> {
   const run = db.prepare(`SELECT * FROM ideas_company_runs WHERE id = ?`).get(runId) as Record<string, unknown>;
   const filings = db.prepare(`SELECT * FROM ideas_company_filings WHERE run_id = ? ORDER BY cik, filed_at`).all(runId);
-  const themes = db.prepare(`SELECT * FROM ideas_company_themes WHERE run_id = ? ORDER BY cik, theme_key`).all(runId);
+  const themes = db.prepare(
+    `SELECT t.*, a.status AS assumption_status
+       FROM ideas_company_themes t
+       LEFT JOIN ideas_assumptions a ON a.id = t.assumption_id
+      WHERE t.run_id = ?
+      ORDER BY t.cik, t.theme_key`,
+  ).all(runId);
   const observations = db.prepare(`SELECT * FROM ideas_company_observations WHERE run_id = ? ORDER BY observed_at`).all(runId);
   const outcomes = db.prepare(`SELECT * FROM ideas_company_outcome_candidates WHERE run_id = ? ORDER BY confidence DESC`).all(runId);
   const evaluationAttempts = db.prepare(
@@ -1728,9 +1734,13 @@ function buildOutcomeGroups(
     filing_dates: string[];
     representative_excerpt: string;
     max_confidence: number;
+    review_priority: number;
   }>();
   for (const outcome of outcomeRows.filter((o) => o.state === 'staged')) {
     const theme = themeById.get(String(outcome.theme_id));
+    if (stringish(outcome.assumption_id) && (stringish(theme?.assumption_status) || 'open') !== 'open') {
+      continue;
+    }
     const filing = filingById.get(String(outcome.filing_id));
     const company = stringish(theme?.ticker) || stringish(filing?.ticker) || stringish(theme?.cik) || stringish(filing?.cik) || 'unknown';
     const excerpt = stringish(outcome.excerpt);
@@ -1746,6 +1756,7 @@ function buildOutcomeGroups(
       filing_dates: [],
       representative_excerpt: excerpt,
       max_confidence: 0,
+      review_priority: 0,
     };
     current.candidate_ids.push(String(outcome.id));
     current.source_uris.push(stringish(outcome.source_uri));
@@ -1754,6 +1765,7 @@ function buildOutcomeGroups(
     const filedAt = stringish(filing?.filed_at);
     if (filedAt) current.filing_dates.push(filedAt);
     current.max_confidence = Math.max(current.max_confidence, Number(outcome.confidence) || 0);
+    current.review_priority = Math.max(current.review_priority, outcomeReviewPriorityForBundle(outcome));
     if (!current.representative_excerpt || excerpt.length > current.representative_excerpt.length) {
       current.representative_excerpt = excerpt;
     }
@@ -1771,13 +1783,80 @@ function buildOutcomeGroups(
       first_seen_at: minString(group.filing_dates),
       latest_seen_at: maxString(group.filing_dates),
       max_confidence: group.max_confidence,
+      review_priority: group.review_priority,
       representative_excerpt: group.representative_excerpt,
     }))
-    .sort((a, b) => Number(b.candidate_count) - Number(a.candidate_count) || String(a.company).localeCompare(String(b.company)) || String(a.first_seen_at).localeCompare(String(b.first_seen_at)));
+    .sort((a, b) =>
+      Number(b.review_priority) - Number(a.review_priority) ||
+      Number(b.max_confidence) - Number(a.max_confidence) ||
+      Number(b.candidate_count) - Number(a.candidate_count) ||
+      String(a.company).localeCompare(String(b.company)) ||
+      String(b.latest_seen_at).localeCompare(String(a.latest_seen_at)),
+    );
   return sorted.map((group, index) => ({
-    ...group,
     id: `og-${String(index + 1).padStart(3, '0')}`,
+    company: group.company,
+    fingerprint: group.fingerprint,
+    candidate_count: group.candidate_count,
+    candidate_ids: group.candidate_ids,
+    source_uris: group.source_uris,
+    themes: group.themes,
+    theme_keys: group.theme_keys,
+    first_seen_at: group.first_seen_at,
+    latest_seen_at: group.latest_seen_at,
+    max_confidence: group.max_confidence,
+    representative_excerpt: group.representative_excerpt,
   }));
+}
+
+const BUNDLE_STRONG_FAILURE_TERMS = [
+  'impairment',
+  'charge',
+  'charges',
+  'loss',
+  'decline',
+  'decreased',
+  'reduced',
+  'restructuring',
+  'severance',
+  'exit',
+  'exiting',
+  'breach',
+  'unauthorized access',
+  'adverse',
+  'write down',
+  'write-down',
+  'underutilization',
+  'shutdown',
+  'disruption',
+  'ruling',
+  'probable',
+  'extinguishment',
+];
+
+const BUNDLE_WEAK_OR_POSITIVE_TERMS = [
+  'benefited',
+  'higher revenue',
+  'revenues increased',
+  'gross margin increased',
+  'operating income increased',
+  'gain',
+  'favorable',
+  'cost savings',
+  'not have a significant impact',
+  'unknown',
+  'may also',
+  'could',
+];
+
+function outcomeReviewPriorityForBundle(outcome: Record<string, unknown>): number {
+  const excerpt = stringish(outcome.excerpt).toLowerCase();
+  const rationale = stringish(outcome.rationale).toLowerCase();
+  const text = `${excerpt}\n${rationale}`;
+  const strongSignals = BUNDLE_STRONG_FAILURE_TERMS.filter((term) => text.includes(term)).length;
+  const weakSignals = BUNDLE_WEAK_OR_POSITIVE_TERMS.filter((term) => text.includes(term)).length;
+  const shortExcerptPenalty = stringish(outcome.excerpt).trim().length < 120 ? 20 : 0;
+  return Math.round((Number(outcome.confidence) || 0) * 100) + (strongSignals * 8) - (weakSignals * 6) - shortExcerptPenalty;
 }
 
 function outcomeFingerprint(excerpt: string): string {

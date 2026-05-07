@@ -16,16 +16,13 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 - Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Filings scanned: 1468
-- Current thesis dependencies: 369 open bet(s).
-- Human review queue: 79 event(s), 79 staged candidate(s).
-- Accepted failures: 47; lessons recorded: 47; missing lesson memos: 0.
+- Current thesis dependencies: 368 open bet(s).
+- Human review queue: 40 event(s), 67 staged candidate(s).
+- Accepted failures: 48; lessons recorded: 48; missing lesson memos: 0.
 - Posture: evidence needs human review before thesis confidence should increase.
 
 ## Current Thesis Dependencies
 
-- **DIS / Geopolitics and tariffs** - fresh, review pressure 7, 24 observation(s), latest 2026-02-02
-  - Assumption: asm-xakuDdYD
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **NFLX / Demand** - fresh, review pressure 5, 84 observation(s), latest 2026-04-17
   - Assumption: asm-bmBJ3gyo
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
@@ -59,9 +56,16 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **KO / Demand** - fresh, review pressure 1, 84 observation(s), latest 2026-04-30
   - Assumption: asm-5B3UtjSr
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **META / Geopolitics and tariffs** - fresh, review pressure 1, 44 observation(s), latest 2026-04-30
+  - Assumption: asm-ysQyika4
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 
 ## Prior Failures And Lessons
 
+- **A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.**
+  - Evidence: 1 accepted failure verdict(s) across DIS / Geopolitics and tariffs
+  - Representative context: Disney recorded about $0.2B of restructuring and impairment charges primarily tied to Russia businesses and warned that additional exit charges could follow.
+  - Outcomes: out-tnWp4P7Z
 - **Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.**
   - Evidence: 1 accepted failure verdict(s) across DIS / Demand
   - Representative context: The filing disclosed quarterly revenues decreased 42%, or $8.5 billion, to $11.8 billion, while net income attributable to Disney decreased $6.5 billion to a $4.7 billion loss.
@@ -253,60 +257,60 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## What Needs Human Review
 
-- **DIS / Regulation and legal** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-r8Gq1Yqt
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })`
-  - Evidence: The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
-- **DIS / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-1RjGvEZj
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-1RjGvEZj"], confirm: true })`
-  - Evidence: In fiscal 2022, the Company recognized a non-cash loss of $
-- **DIS / Regulation and legal** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-dR9Wd8qh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-dR9Wd8qh"], confirm: true })`
-  - Evidence: The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
-- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-sb6nTUak
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sb6nTUak"], confirm: true })`
-  - Evidence: Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
-- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-W6pLYKH8
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-W6pLYKH8"], confirm: true })`
-  - Evidence: In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
-- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-XQujDkei
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-XQujDkei"], confirm: true })`
-  - Evidence: In the prior-year quarter, the Company recorded charges of $195 million due to the impairment of an intangible asset related to the Disney Channel in Russia.
-- **DIS / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-aWnA41Gu
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-aWnA41Gu"], confirm: true })`
-  - Evidence: Revenues for the quarter increased 4%, or $0.8 billion, to $22.3 billion; net income (loss) attributable to Disney was a loss of $0.5 billion in the current quarter compared to income of $1.4 billion in the prior-year quarter; and diluted earnings per share from continuing operations attributable to
-- **DIS / Macro and foreign exchange** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-feQanEji
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-feQanEji"], confirm: true })`
-  - Evidence: Cost of services for the quarter increased 5%, or $0.6 billion, to $13.0 billion due to cost inflation and increased volumes at our theme parks and higher programming and production costs. The increase in programming and production costs was due
-- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-cvNPXuCE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-cvNPXuCE"], confirm: true })`
-  - Evidence: In the prior-year quarter, the Company recorded charges of $42 million primarily due to asset impairments related to exiting our businesses in Russia.
-- **DIS / Regulation and legal** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-nDNuHLAq
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-nDNuHLAq"], confirm: true })`
-  - Evidence: Other expense, net of $11 million reflects a charge of $101 million related to a legal ruling, partially offset by a DraftKings gain of $90 million
-- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-me3CrjR6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-me3CrjR6"], confirm: true })`
-  - Evidence: In the prior-year quarter, the Company recognized charges of $69 million related to exiting our businesses in Russia.
-- **DIS / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-QVxLjYwb
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-QVxLjYwb"], confirm: true })`
-  - Evidence: Revenues for the quarter increased 1%, or $0.3 billion, to $22.1 billion; net income attributable to Disney decreased to a loss of $20 million in the current quarter compared to income of $1.3 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney decreased to
+- **MSFT / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-rNg4Lx8R
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })`
+  - Evidence: Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
+- **META / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-KS31B85q
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KS31B85q"], confirm: true })`
+  - Evidence: User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
+- **PM / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-gS9pUjHE
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gS9pUjHE"], confirm: true })`
+  - Evidence: As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
+- **PM / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-Qe5gPhAF
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qe5gPhAF"], confirm: true })`
+  - Evidence: As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
+- **LOW / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-DU3jEqeh
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DU3jEqeh"], confirm: true })`
+  - Evidence: Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
+- **MO / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-9eweYbvT
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9eweYbvT"], confirm: true })`
+  - Evidence: We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
+- **TJX / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-CWuPhDfZ
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-CWuPhDfZ"], confirm: true })`
+  - Evidence: A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
+- **TJX / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-9x9J3aNz
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9x9J3aNz"], confirm: true })`
+  - Evidence: During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
+- **MCD / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-p3G4ipfw
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p3G4ipfw"], confirm: true })`
+  - Evidence: The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
+- **MCD / Liquidity** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-U6jdNkpE
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-U6jdNkpE"], confirm: true })`
+  - Evidence: Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
+- **MU / AI, R&D, and technology** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-xeiZQQXT
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xeiZQQXT"], confirm: true })`
+  - Evidence: We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
+- **HD / Cybersecurity and privacy** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-7eX6i6u9
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7eX6i6u9"], confirm: true })`
+  - Evidence: The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
 
 ## Cross-Company Patterns
 
-- **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 15, latest 2026-05-01
-- **Geopolitics and tariffs**: 34 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1234 observation(s), review pressure 14, latest 2026-04-30
+- **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 14, latest 2026-05-01
 - **Demand**: 26 open bet(s) across ABNB, AMZN, AVGO, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1899 observation(s), review pressure 13, latest 2026-05-01
+- **Geopolitics and tariffs**: 33 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1210 observation(s), review pressure 7, latest 2026-04-30
 - **AI, R&D, and technology**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1357 observation(s), review pressure 2, latest 2026-05-01
 - **Supply chain**: 28 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, ORCL, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1274 observation(s), review pressure 1, latest 2026-05-01
 - **Customer and platform dependency**: 35 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1232 observation(s), review pressure 1, latest 2026-05-01
@@ -319,26 +323,26 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## What To Watch Next
 
-- **DIS / Regulation and legal**
+- **MSFT / Demand**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })
-  - Evidence: The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
-- **DIS / Liquidity**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })
+  - Evidence: Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
+- **META / Geopolitics and tariffs**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-1RjGvEZj"], confirm: true })
-  - Evidence: In fiscal 2022, the Company recognized a non-cash loss of $
-- **DIS / Regulation and legal**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KS31B85q"], confirm: true })
+  - Evidence: User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
+- **PM / Liquidity**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-dR9Wd8qh"], confirm: true })
-  - Evidence: The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
-- **DIS / Geopolitics and tariffs**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gS9pUjHE"], confirm: true })
+  - Evidence: As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
+- **PM / Liquidity**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sb6nTUak"], confirm: true })
-  - Evidence: Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
-- **DIS / Geopolitics and tariffs**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qe5gPhAF"], confirm: true })
+  - Evidence: As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
+- **LOW / Liquidity**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-W6pLYKH8"], confirm: true })
-  - Evidence: In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DU3jEqeh"], confirm: true })
+  - Evidence: Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
 - **NFLX / Demand**
   - Reason: Open assumption has review pressure 5.
   - Next action: Review staged candidates linked to assumption asm-bmBJ3gyo before carrying this bet forward.

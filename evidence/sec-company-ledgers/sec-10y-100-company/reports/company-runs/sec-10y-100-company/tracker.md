@@ -15,8 +15,8 @@ source: flywheel-ideas
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 79
-- Applied outcomes: 47
+- Staged outcomes: 67
+- Applied outcomes: 48
 
 ## SEC Company Lifecycle Report
 
@@ -25,22 +25,26 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 ## Lifecycle Snapshot
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
-- Current bets: 369 open company/theme assumption(s) still being carried.
-- Review queue: 79 event(s), 79 staged candidate(s) awaiting human judgment.
-- Accepted outcomes: 47 failure(s), 0 validation(s).
-- Lessons: 47 recorded memo(s), 0 missing memo(s).
-- Triage completion: 47/363 candidate(s) applied (13%).
+- Current bets: 368 open company/theme assumption(s) still being carried.
+- Review queue: 40 event(s), 67 staged candidate(s) awaiting human judgment.
+- Accepted outcomes: 48 failure(s), 0 validation(s).
+- Lessons: 48 recorded memo(s), 0 missing memo(s).
+- Triage completion: 48/363 candidate(s) applied (13%).
 
 ## Operator Next Step
 
-Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })`
+Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })`
 
 ## Lifecycle Status
 
-47 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
+48 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
 
 ## Lessons Captured
 
+- **A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.**
+  - Evidence: 1 accepted failure verdict(s) across DIS / Geopolitics and tariffs
+  - Representative context: Disney recorded about $0.2B of restructuring and impairment charges primarily tied to Russia businesses and warned that additional exit charges could follow.
+  - Outcomes: out-tnWp4P7Z
 - **Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.**
   - Evidence: 1 accepted failure verdict(s) across DIS / Demand
   - Representative context: The filing disclosed quarterly revenues decreased 42%, or $8.5 billion, to $11.8 billion, while net income attributable to Disney decreased $6.5 billion to a $4.7 billion loss.
@@ -234,8 +238,6 @@ Review the highest-pressure event and apply only if the evidence really refutes 
 
 Open company/theme assumptions. Staged evidence raises review pressure; it does not count as failure.
 
-- **DIS / Geopolitics and tariffs** — fresh, 24 observation(s), review pressure 7, latest 2026-02-02
-  - Assumption: asm-xakuDdYD
 - **NFLX / Demand** — fresh, 84 observation(s), review pressure 5, latest 2026-04-17
   - Assumption: asm-bmBJ3gyo
 - **PM / Geopolitics and tariffs** — fresh, 54 observation(s), review pressure 4, latest 2026-04-24
@@ -258,349 +260,126 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-ktbpwdZ5
 - **KO / Demand** — fresh, 84 observation(s), review pressure 1, latest 2026-04-30
   - Assumption: asm-5B3UtjSr
+- **META / Geopolitics and tariffs** — fresh, 44 observation(s), review pressure 1, latest 2026-04-30
+  - Assumption: asm-ysQyika4
 
 ## Outcome Review Queue
 
-- **DIS** 2022-11-29: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-r8Gq1Yqt
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-22-000213#item-1a:theme:regulation-legal:outcome
-  - The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
-- **DIS** 2022-11-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-1RjGvEZj
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-1RjGvEZj"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-22-000213#item-7:theme:liquidity:outcome
-  - In fiscal 2022, the Company recognized a non-cash loss of $
-- **DIS** 2022-11-29: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-dR9Wd8qh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-dR9Wd8qh"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-22-000213#item-7:theme:regulation-legal:outcome
-  - The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
-- **DIS** 2022-11-29: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-sb6nTUak
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sb6nTUak"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-22-000213#item-7:theme:geopolitics-tariffs:outcome
-  - Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
-- **DIS** 2023-02-08: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-W6pLYKH8
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-W6pLYKH8"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-23-000049#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
-- **DIS** 2023-05-10: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-XQujDkei
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-XQujDkei"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-23-000099#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year quarter, the Company recorded charges of $195 million due to the impairment of an intangible asset related to the Disney Channel in Russia.
-- **DIS** 2023-08-09: 1 candidate(s), Demand
-  - Candidate IDs: cout-aWnA41Gu
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-aWnA41Gu"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 4%, or $0.8 billion, to $22.3 billion; net income (loss) attributable to Disney was a loss of $0.5 billion in the current quarter compared to income of $1.4 billion in the prior-year quarter; and diluted earnings per share from continuing operations attributable to
-- **DIS** 2023-08-09: 1 candidate(s), Macro and foreign exchange
-  - Candidate IDs: cout-feQanEji
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-feQanEji"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:macro-fx:outcome
-  - Cost of services for the quarter increased 5%, or $0.6 billion, to $13.0 billion due to cost inflation and increased volumes at our theme parks and higher programming and production costs. The increase in programming and production costs was due
-- **DIS** 2023-08-09: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-cvNPXuCE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-cvNPXuCE"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year quarter, the Company recorded charges of $42 million primarily due to asset impairments related to exiting our businesses in Russia.
-- **DIS** 2023-08-09: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-nDNuHLAq
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-nDNuHLAq"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:regulation-legal:outcome
-  - Other expense, net of $11 million reflects a charge of $101 million related to a legal ruling, partially offset by a DraftKings gain of $90 million
-- **DIS** 2024-02-07: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-me3CrjR6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-me3CrjR6"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year quarter, the Company recognized charges of $69 million related to exiting our businesses in Russia.
-- **DIS** 2024-05-07: 1 candidate(s), Demand
-  - Candidate IDs: cout-QVxLjYwb
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-QVxLjYwb"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-24-000152#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 1%, or $0.3 billion, to $22.1 billion; net income attributable to Disney decreased to a loss of $20 million in the current quarter compared to income of $1.3 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney decreased to
-- **DIS** 2024-05-07: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-YSZorQA6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-YSZorQA6"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-24-000152#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year period, the Company recorded charges of $221 million primarily for severance and costs related to exiting our businesses in Russia.
-- **DIS** 2024-08-07: 1 candidate(s), Demand
-  - Candidate IDs: cout-a1YqjZpH
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-a1YqjZpH"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 4%, or $0.8 billion, to $23.2 billion; net income attributable to Disney increased to income of $2.6 billion in the current quarter compared to a loss of $0.5 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney increased t
-- **DIS** 2024-08-07: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-LwJcRAi8
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-LwJcRAi8"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:regulation-legal:outcome
-  - Other expense, net of $11 million reflecting a charge of $101 million related to a legal ruling, partially offset by a DraftKings Gain of $90 million
-- **DIS** 2024-08-07: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-jvWQ4oRp
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-jvWQ4oRp"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year period, the Company recorded $2,871 million of charges including the Content Impairment, severance and costs related to exiting our businesses in Russia.
-- **HD** 2016-03-24: 1 candidate(s), Cybersecurity and privacy
-  - Candidate IDs: cout-7eX6i6u9
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7eX6i6u9"], confirm: true })`
-  - Source: sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome
-  - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
-- **HD** 2024-08-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-xqjTni51
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xqjTni51"], confirm: true })`
-  - Source: sec-company://0000354950/0000354950-24-000201#part-i-item-2:theme:demand:outcome
-  - Depreciation and amortization for the second quarter of fiscal 2024 increased $85 million, or 13.0%, to $738 million from $653 million for the second quarter of fiscal 2023. As a percentage of net sales, depreciation and amortization was 1.7% for the second quarter of fiscal 2024 compared to 1.5% fo
-- **KO** 2022-10-26: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-255h14jf
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-255h14jf"], confirm: true })`
-  - Source: sec-company://0000021344/0000021344-22-000042#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
-- **KO** 2024-02-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-pLrEFLiU
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-pLrEFLiU"], confirm: true })`
-  - Source: sec-company://0000021344/0000021344-24-000009#item-1a:theme:demand:outcome
-  - Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
-- **LOW** 2016-03-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-DU3jEqeh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DU3jEqeh"], confirm: true })`
-  - Source: sec-company://0000060667/0000060667-16-000276#item-7:theme:liquidity:outcome
-  - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
-- **LOW** 2019-04-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-c36RGbxD
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-c36RGbxD"], confirm: true })`
-  - Source: sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome
-  - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
-- **MAR** 2020-11-06: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-v6UCJTdD
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-v6UCJTdD"], confirm: true })`
-  - Source: sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome
-  - we recorded a provision for credit losses of $
-- **MCD** 2016-08-04: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-UkCnhUp1
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UkCnhUp1"], confirm: true })`
-  - Source: sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome
-  - Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
-- **MCD** 2017-08-08: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-U6jdNkpE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-U6jdNkpE"], confirm: true })`
-  - Source: sec-company://0000063908/0000063908-17-000039#part-i-item-2:theme:liquidity:outcome
-  - Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
-- **MCD** 2017-11-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-p3G4ipfw
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p3G4ipfw"], confirm: true })`
-  - Source: sec-company://0000063908/0000063908-17-000053#part-i-item-2:theme:liquidity:outcome
-  - The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
-- **META** 2020-04-30: 1 candidate(s), Demand
-  - Candidate IDs: cout-Us6fn245
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Us6fn245"], confirm: true })`
-  - Source: sec-company://0001326801/0001326801-20-000048#part-ii-item-1a:theme:demand:outcome
-  - These measures have caused, and are continuing to cause, business slowdowns or shutdowns in affected areas, both regionally and worldwide, which have significantly impacted our business and results of operations. In the first quarter of 2020, our advertising revenue grew 17% year-over-year, which wa
-- **META** 2022-02-03: 1 candidate(s), Demand
-  - Candidate IDs: cout-ob2MQuyh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ob2MQuyh"], confirm: true })`
-  - Source: sec-company://0001326801/0001326801-22-000018#item-7:theme:demand:outcome
-  - The COVID-19 pandemic has also had a varied impact on the demand for and pricing of our ads from period to period. While we experienced a reduction in demand and a related decline in pricing during the onset of the pandemic, we believe the pandemic subsequently contributed to an acceleration in the
-- **META** 2022-04-28: 1 candidate(s), Demand
-  - Candidate IDs: cout-Yme8HfTY
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Yme8HfTY"], confirm: true })`
-  - Source: sec-company://0001326801/0001326801-22-000057#part-i-item-2:theme:demand:outcome
-  - The COVID-19 pandemic has also impacted our business and results of operations, with a varied impact on the demand for and pricing of our ads from period to period. While we experienced a reduction in advertising demand and a related decline in pricing during the onset of the pandemic, we believe th
-- **META** 2022-10-27: 1 candidate(s), Demand
-  - Candidate IDs: cout-KPLfuRTL
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KPLfuRTL"], confirm: true })`
-  - Source: sec-company://0001326801/0001326801-22-000108#part-i-item-2:theme:demand:outcome
-  - The COVID-19 pandemic has also impacted our business and results of operations, with a varied impact on user growth and engagement, as well as the demand for and pricing of our ads from period to period. While we experienced a reduction in advertising demand and a related decline in pricing during t
-- **META** 2022-10-27: 1 candidate(s), Macro and foreign exchange
-  - Candidate IDs: cout-UDATax8B
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UDATax8B"], confirm: true })`
-  - Source: sec-company://0001326801/0001326801-22-000108#part-i-item-2:theme:macro-fx:outcome
-  - , which we believe was primarily driven by reduced marketer spending as a result of a more challenging macroeconomic environment. In addition, because the targeting and measurement challenges associated with iOS changes had already begun in the third quarter of 2021, the impact of these challenges o
-- **META** 2026-04-30: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-KS31B85q
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KS31B85q"], confirm: true })`
-  - Source: sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome
-  - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
-- **MO** 2020-10-30: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Frzywdbu
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Frzywdbu"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome
-  - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
-- **MO** 2022-04-28: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-5To9n9pZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-5To9n9pZ"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-22-000044#part-i-item-2:theme:supply-chain:outcome
-  - The economic and business repercussions of COVID-19 have been compounded by the Russian invasion of Ukraine. While our operating companies focus on the manufacture and sale of tobacco products in the United States and have little direct exposure to the impacted regions, we have experienced negative
-- **MO** 2022-10-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9eweYbvT
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9eweYbvT"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome
-  - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
-- **MO** 2025-04-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-BDUrgiSb
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-BDUrgiSb"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome
-  - became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
-- **MSFT** 2016-10-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-8zSNs1oh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-8zSNs1oh"], confirm: true })`
-  - Source: sec-company://0000789019/0001193125-16-742796#part-i-item-2:theme:demand:outcome
-  - Operating income included an unfavorable foreign currency impact of 5%. Gross margin decreased $563 million or 4%, driven by higher cost of revenue. Gross margin included an unfavorable
-- **MSFT** 2017-04-27: 1 candidate(s), Demand
-  - Candidate IDs: cout-quUySYaJ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-quUySYaJ"], confirm: true })`
-  - Source: sec-company://0000789019/0001564590-17-007547#part-i-item-2:theme:demand:outcome
-  - Operating income included an unfavorable foreign currency impact of 3%. Gross margin increased $1.2 billion or 10%, driven by higher revenue, offset in part by higher cost of revenue.
 - **MSFT** 2017-08-02: 1 candidate(s), Demand
   - Candidate IDs: cout-rNg4Lx8R
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })`
   - Source: sec-company://0000789019/0001564590-17-014900#item-7:theme:demand:outcome
   - Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
-- **MSFT** 2018-08-03: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-h4HuM9Cw
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-h4HuM9Cw"], confirm: true })`
-  - Source: sec-company://0000789019/0001564590-18-019062#item-7:theme:ai-rd-technology:outcome
-  - Operating income increased $2.9 billion or 11%, primarily due to higher gross margin and lower impairment and restructuring expenses, offset in part by an increase in research and development and sales and marketing expenses. Operating income included an operating loss of $924 million related to the
-- **MSFT** 2020-04-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-sYG7DHXL
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sYG7DHXL"], confirm: true })`
-  - Source: sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:liquidity:outcome
-  - Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
-- **MU** 2021-01-08: 1 candidate(s), Demand
-  - Candidate IDs: cout-XaZnFr8J
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-XaZnFr8J"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-21-000012#part-i-item-2:theme:demand:outcome
-  - The ultimate severity and duration of these economic repercussions, including any resulting impact on our business, remain largely unknown and ultimately will depend on many factors. As a result, we have experienced volatility in the markets that our products are sold into, driven by the move to a s
-- **MU** 2021-07-01: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-svAshmvZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-svAshmvZ"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-21-000052#part-i-item-2:theme:inventory-channel:outcome
-  - In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net of estimated selling costs, to b
-- **MU** 2021-10-08: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-iM8KYY62
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iM8KYY62"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-21-000065#item-7:theme:inventory-channel:outcome
-  - the expected consideration, net of estimated selling costs, to be realized from the sale of these assets and liabilities. In the second quarter of 2021, we also recognized a charge of $49 million to cost of goods sold to write down 3D XPoint inventory due to our decision to cease further development
-- **MU** 2022-10-07: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-tcEdEDqs
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tcEdEDqs"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-22-000048#item-7:theme:inventory-channel:outcome
-  - In 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net o
-- **MU** 2023-03-29: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-j3YJZLsU
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-j3YJZLsU"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:ai-rd-technology:outcome
-  - We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
-- **MU** 2023-03-29: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-wHdyt5T6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-wHdyt5T6"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:inventory-channel:outcome
-  - As a result of these conditions and increases in our inventory levels, we have reduced wafer starts and capital expenditures. We recognized $27 million of period costs from underutilization in the second quarter of 2023 due to wafer start reductions.
-- **MU** 2024-10-04: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-xeiZQQXT
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xeiZQQXT"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-24-000027#item-7:theme:ai-rd-technology:outcome
-  - We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
-- **MU** 2024-10-04: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-n8rgakW6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-n8rgakW6"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-24-000027#item-7:theme:supply-chain:outcome
-  - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
-- **MU** 2024-10-04: 1 candidate(s), Demand
-  - Candidate IDs: cout-caydcx3Q
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-caydcx3Q"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-24-000027#item-7:theme:demand:outcome
-  - These conditions, which began in the fourth quarter of 2022 and persisted into early 2024, led to significant reductions in average selling prices for both DRAM and NAND and reductions in bit shipments for DRAM. We experienced declines in revenue across all our business segments and nearly all our e
-- **NFLX** 2024-04-22: 1 candidate(s), Demand
-  - Candidate IDs: cout-SoKXEF1c
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-SoKXEF1c"], confirm: true })`
-  - Source: sec-company://0001065280/0001065280-24-000128#part-i-item-2:theme:demand:outcome
-  - The increase in cost of revenues for the three months ended March 31, 2024 as compared to the three months ended March 31, 2023 is primarily due to a $211 million increase in content amortization relating to our existing and new content, partially offset by a $38 million decrease in other cost of re
-- **NFLX** 2025-04-18: 1 candidate(s), Demand
-  - Candidate IDs: cout-tgtYW1HH
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tgtYW1HH"], confirm: true })`
-  - Source: sec-company://0001065280/0001065280-25-000176#part-i-item-2:theme:demand:outcome
-  - increased $558 million as compared to the prior comparative period, primarily due to a $714 million increase in operating income, driven by a $1,172 million increase in revenues and partially offset by a $286 million increase in cost of revenues primarily due to the increase in content amortization.
-- **NFLX** 2025-07-18: 1 candidate(s), Demand
-  - Candidate IDs: cout-tuYofcfL
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tuYofcfL"], confirm: true })`
-  - Source: sec-company://0001065280/0001065280-25-000323#part-i-item-2:theme:demand:outcome
-  - r the three months ended June 30, 2025 increased $978 million as compared to the prior comparative period, primarily due to a $1,172 million increase in operating income, driven by a $1,520 million increase in revenues and partially offset by a $151 million increase in cost of revenues primarily due
-- **NFLX** 2025-10-22: 1 candidate(s), Demand
-  - Candidate IDs: cout-ZnjYmKtK
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ZnjYmKtK"], confirm: true })`
-  - Source: sec-company://0001065280/0001065280-25-000406#part-i-item-2:theme:demand:outcome
-  - r the three months ended September 30, 2025 increased $183 million as compared to the prior comparative period, primarily due to a $339 million increase in operating income, driven by a $1,686 million increase in revenues and partially offset by a $1,044 million increase in cost of revenues primaril
-- **NFLX** 2026-04-17: 1 candidate(s), Demand
-  - Candidate IDs: cout-EdbcVB6t
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-EdbcVB6t"], confirm: true })`
-  - Source: sec-company://0001065280/0001065280-26-000138#part-i-item-2:theme:demand:outcome
-  - Discovery, Inc. ("WBD") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the "WBD transaction"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil
-- **NVDA** 2020-05-21: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-eGqEKVbF
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-eGqEKVbF"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-20-000065#part-i-item-2:theme:supply-chain:outcome
-  - During the first quarter of fiscal year 2021, we experienced disruptions to our supply chain and logistical services provided by outsourcing partners and component supply, primarily based in Asia. These disruptions adversely impacted our linearity of supply and sales within the quarter.
-- **NVDA** 2020-05-21: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-pAypMBtb
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-pAypMBtb"], confirm: true })`
-  - Source: sec-company://0001045810/0001045810-20-000065#part-ii-item-1a:theme:supply-chain:outcome
-  - impact, our workforce and operations, the operations of our customers and our partners, and those of our respective vendors and suppliers (including our subcontractors and third-party contract manufacturers). For example, during the first quarter of fiscal year 2021, we experienced disruptions to ou
-- **PM** 2018-02-13: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-xyWT6D4M
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xyWT6D4M"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-18-000007#item-7:theme:supply-chain:outcome
-  - In connection with these elements of the Tax Cuts and Jobs Act, we recognized a provisional expense of $1.6 billion, which was included as a component of income tax expense as follows:
-- **PM** 2020-10-27: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-62y5hiw5
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-62y5hiw5"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:supply-chain:outcome
-  - r $0.04 per share impact on diluted EPS) during the nine months ended September 30, 2020, related to the organizational design optimization plan primarily in Switzerland. We recorded pre-tax asset impairment and exit costs of $65 million (or $0.03 per share impact on diluted EPS) during the nine mon
-- **PM** 2021-10-27: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-ZnU6foWn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ZnU6foWn"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-21-000091#part-i-item-2:theme:ai-rd-technology:outcome
-  - At the date of acquisition, we determined that the acquired IPR&D had no alternative future use. As a result, we recorded a pre-tax charge of $51 million (representing a $0.03 charge to diluted EPS) to research and development costs within marketing, administration and research costs in the condense
-- **PM** 2022-07-29: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-yBsxhpgg
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yBsxhpgg"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-22-000072#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
-- **PM** 2022-10-27: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-4pUPM9nU
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-4pUPM9nU"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-22-000114#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
-- **PM** 2023-02-10: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-fynsGdQk
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fynsGdQk"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-23-000025#item-7:theme:geopolitics-tariffs:outcome
-  - We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
-- **PM** 2023-07-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Qe5gPhAF
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qe5gPhAF"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-23-000176#part-i-item-2:theme:liquidity:outcome
-  - As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
-- **PM** 2024-04-26: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-fHbC6VNw
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fHbC6VNw"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-24-000087#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
+- **META** 2026-04-30: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-KS31B85q
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KS31B85q"], confirm: true })`
+  - Source: sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome
+  - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
 - **PM** 2024-07-25: 1 candidate(s), Liquidity
   - Candidate IDs: cout-gS9pUjHE
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gS9pUjHE"], confirm: true })`
   - Source: sec-company://0001413329/0001413329-24-000145#part-i-item-2:theme:liquidity:outcome
   - As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
-- **TJX** 2021-08-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9x9J3aNz
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9x9J3aNz"], confirm: true })`
-  - Source: sec-company://0000109198/0000109198-21-000027#part-i-item-2:theme:liquidity:outcome
-  - During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
+- **PM** 2023-07-27: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-Qe5gPhAF
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qe5gPhAF"], confirm: true })`
+  - Source: sec-company://0001413329/0001413329-23-000176#part-i-item-2:theme:liquidity:outcome
+  - As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
+- **LOW** 2016-03-29: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-DU3jEqeh
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DU3jEqeh"], confirm: true })`
+  - Source: sec-company://0000060667/0000060667-16-000276#item-7:theme:liquidity:outcome
+  - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
+- **MO** 2022-10-27: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-9eweYbvT
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9eweYbvT"], confirm: true })`
+  - Source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome
+  - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
 - **TJX** 2022-03-30: 1 candidate(s), Liquidity
   - Candidate IDs: cout-CWuPhDfZ
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-CWuPhDfZ"], confirm: true })`
   - Source: sec-company://0000109198/0000109198-22-000008#item-7:theme:liquidity:outcome
   - A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
+- **TJX** 2021-08-27: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-9x9J3aNz
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9x9J3aNz"], confirm: true })`
+  - Source: sec-company://0000109198/0000109198-21-000027#part-i-item-2:theme:liquidity:outcome
+  - During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
+- **MCD** 2017-11-02: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-p3G4ipfw
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p3G4ipfw"], confirm: true })`
+  - Source: sec-company://0000063908/0000063908-17-000053#part-i-item-2:theme:liquidity:outcome
+  - The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
+- **MCD** 2017-08-08: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-U6jdNkpE
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-U6jdNkpE"], confirm: true })`
+  - Source: sec-company://0000063908/0000063908-17-000039#part-i-item-2:theme:liquidity:outcome
+  - Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
+- **MU** 2024-10-04: 1 candidate(s), AI, R&D, and technology
+  - Candidate IDs: cout-xeiZQQXT
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xeiZQQXT"], confirm: true })`
+  - Source: sec-company://0000723125/0000723125-24-000027#item-7:theme:ai-rd-technology:outcome
+  - We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
+- **HD** 2016-03-24: 1 candidate(s), Cybersecurity and privacy
+  - Candidate IDs: cout-7eX6i6u9
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7eX6i6u9"], confirm: true })`
+  - Source: sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome
+  - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
+- **KO** 2022-10-26: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-255h14jf
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-255h14jf"], confirm: true })`
+  - Source: sec-company://0000021344/0000021344-22-000042#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
+- **LOW** 2019-04-02: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-c36RGbxD
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-c36RGbxD"], confirm: true })`
+  - Source: sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome
+  - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
+- **MO** 2020-10-30: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-Frzywdbu
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Frzywdbu"], confirm: true })`
+  - Source: sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome
+  - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
+- **MU** 2024-10-04: 1 candidate(s), Supply chain
+  - Candidate IDs: cout-n8rgakW6
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-n8rgakW6"], confirm: true })`
+  - Source: sec-company://0000723125/0000723125-24-000027#item-7:theme:supply-chain:outcome
+  - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
+- **PM** 2023-02-10: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-fynsGdQk
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fynsGdQk"], confirm: true })`
+  - Source: sec-company://0001413329/0001413329-23-000025#item-7:theme:geopolitics-tariffs:outcome
+  - We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
+- **PM** 2022-10-27: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-4pUPM9nU
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-4pUPM9nU"], confirm: true })`
+  - Source: sec-company://0001413329/0001413329-22-000114#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
+- **PM** 2022-07-29: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-yBsxhpgg
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yBsxhpgg"], confirm: true })`
+  - Source: sec-company://0001413329/0001413329-22-000072#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
+- **WBD** 2025-05-08: 1 candidate(s), Demand
+  - Candidate IDs: cout-2gso7KJ6
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-2gso7KJ6"], confirm: true })`
+  - Source: sec-company://0001437107/0001437107-25-000096#part-i-item-2:theme:demand:outcome
+  - Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatrical product revenue and lower payments to partners and participants, and a 66% dec
+- **MCD** 2016-08-04: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-UkCnhUp1
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UkCnhUp1"], confirm: true })`
+  - Source: sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome
+  - Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
+- **MO** 2025-04-29: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-BDUrgiSb
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-BDUrgiSb"], confirm: true })`
+  - Source: sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome
+  - became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
+- **PM** 2024-04-26: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-fHbC6VNw
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fHbC6VNw"], confirm: true })`
+  - Source: sec-company://0001413329/0001413329-24-000087#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
 - **TJX** 2022-03-30: 1 candidate(s), Geopolitics and tariffs
   - Candidate IDs: cout-CFFZUQMx
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-CFFZUQMx"], confirm: true })`
@@ -616,46 +395,76 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ybHov4a1"], confirm: true })`
   - Source: sec-company://0001283699/0001283699-16-000115#part-i-item-2:theme:customer-platform-dependency:outcome
   - As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
-- **TSLA** 2021-02-08: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-61kWsViJ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-61kWsViJ"], confirm: true })`
-  - Source: sec-company://0001318605/0001564590-21-004599#item-1a:theme:supply-chain:outcome
-  - Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing processes and reducing costs. If we are not successful in achieving these goals, we could face delay
-- **TSLA** 2025-04-23: 1 candidate(s), Demand
-  - Candidate IDs: cout-MoYCteWC
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-MoYCteWC"], confirm: true })`
-  - Source: sec-company://0001318605/0001628280-25-018911#part-i-item-2:theme:demand:outcome
-  - During the three months ended March 31, 2025, we recognized total revenues of $19.34 billion, representing a decrease of $1.97 billion compared to the same period in the prior year. During the three months ended March 31, 2025, our net income attributable to common stockholders was $409 million, rep
-- **TSLA** 2025-10-23: 1 candidate(s), Demand
-  - Candidate IDs: cout-gWeeZjak
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gWeeZjak"], confirm: true })`
-  - Source: sec-company://0001318605/0001628280-25-045968#part-i-item-2:theme:demand:outcome
-  - During the three and nine months ended September 30, 2025, we recognized total revenues of $28.10 billion and $69.93 billion, respectively, representing an increase of $2.91 billion and a decrease of $2.06 billion, respectively, compared to the same periods in the prior year. During the three and ni
-- **TSLA** 2026-01-29: 1 candidate(s), Demand
-  - Candidate IDs: cout-vC9ssZFm
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-vC9ssZFm"], confirm: true })`
-  - Source: sec-company://0001318605/0001628280-26-003952#item-7:theme:demand:outcome
-  - In 2025, we recognized total revenues of $94.83 billion, representing a decrease of $2.86 billion compared to the prior year. In 2025, our net income attributable to common stockholders was $3.79 billion, representing a decrease of $3.30 billion compared to the prior year.
 - **VZ** 2020-04-27: 1 candidate(s), Demand
   - Candidate IDs: cout-tygeYzjs
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tygeYzjs"], confirm: true })`
   - Source: sec-company://0000732712/0000732712-20-000027#part-i-item-2:theme:demand:outcome
   - In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
-- **WBD** 2022-02-24: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-JYG4CXqH
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-JYG4CXqH"], confirm: true })`
-  - Source: sec-company://0001437107/0001437107-22-000031#item-7:theme:regulation-legal:outcome
-  - The pandemic did not have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a result, we have incurred ad
-- **WBD** 2025-05-08: 1 candidate(s), Demand
-  - Candidate IDs: cout-2gso7KJ6
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-2gso7KJ6"], confirm: true })`
-  - Source: sec-company://0001437107/0001437107-25-000096#part-i-item-2:theme:demand:outcome
-  - Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatrical product revenue and lower payments to partners and participants, and a 66% dec
+- **MSFT** 2016-10-20: 1 candidate(s), Demand
+  - Candidate IDs: cout-8zSNs1oh
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-8zSNs1oh"], confirm: true })`
+  - Source: sec-company://0000789019/0001193125-16-742796#part-i-item-2:theme:demand:outcome
+  - Operating income included an unfavorable foreign currency impact of 5%. Gross margin decreased $563 million or 4%, driven by higher cost of revenue. Gross margin included an unfavorable
+- **NFLX** 2025-07-18: 1 candidate(s), Demand
+  - Candidate IDs: cout-tuYofcfL
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tuYofcfL"], confirm: true })`
+  - Source: sec-company://0001065280/0001065280-25-000323#part-i-item-2:theme:demand:outcome
+  - r the three months ended June 30, 2025 increased $978 million as compared to the prior comparative period, primarily due to a $1,172 million increase in operating income, driven by a $1,520 million increase in revenues and partially offset by a $151 million increase in cost of revenues primarily due
+- **NFLX** 2025-04-18: 1 candidate(s), Demand
+  - Candidate IDs: cout-tgtYW1HH
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tgtYW1HH"], confirm: true })`
+  - Source: sec-company://0001065280/0001065280-25-000176#part-i-item-2:theme:demand:outcome
+  - increased $558 million as compared to the prior comparative period, primarily due to a $714 million increase in operating income, driven by a $1,172 million increase in revenues and partially offset by a $286 million increase in cost of revenues primarily due to the increase in content amortization.
 - **WMT** 2017-03-31: 1 candidate(s), Inventory and channel
   - Candidate IDs: cout-22Ztexb6
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-22Ztexb6"], confirm: true })`
   - Source: sec-company://0000104169/0000104169-17-000021#item-1a:theme:inventory-channel:outcome
   - In light of the substantial premiums payable for insurance coverage for losses caused by certain natural disasters, such as hurricanes, cyclones, typhoons, tropical storms, earthquakes, floods and tsunamis, as well as the limitations on available coverage for such losses, we have chosen to be primar
+- **HD** 2024-08-20: 1 candidate(s), Demand
+  - Candidate IDs: cout-xqjTni51
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xqjTni51"], confirm: true })`
+  - Source: sec-company://0000354950/0000354950-24-000201#part-i-item-2:theme:demand:outcome
+  - Depreciation and amortization for the second quarter of fiscal 2024 increased $85 million, or 13.0%, to $738 million from $653 million for the second quarter of fiscal 2023. As a percentage of net sales, depreciation and amortization was 1.7% for the second quarter of fiscal 2024 compared to 1.5% fo
+- **MSFT** 2020-04-29: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-sYG7DHXL
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sYG7DHXL"], confirm: true })`
+  - Source: sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:liquidity:outcome
+  - Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
+- **NFLX** 2026-04-17: 1 candidate(s), Demand
+  - Candidate IDs: cout-EdbcVB6t
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-EdbcVB6t"], confirm: true })`
+  - Source: sec-company://0001065280/0001065280-26-000138#part-i-item-2:theme:demand:outcome
+  - Discovery, Inc. ("WBD") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the "WBD transaction"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil
+- **NFLX** 2025-10-22: 1 candidate(s), Demand
+  - Candidate IDs: cout-ZnjYmKtK
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ZnjYmKtK"], confirm: true })`
+  - Source: sec-company://0001065280/0001065280-25-000406#part-i-item-2:theme:demand:outcome
+  - r the three months ended September 30, 2025 increased $183 million as compared to the prior comparative period, primarily due to a $339 million increase in operating income, driven by a $1,686 million increase in revenues and partially offset by a $1,044 million increase in cost of revenues primaril
+- **NFLX** 2024-04-22: 1 candidate(s), Demand
+  - Candidate IDs: cout-SoKXEF1c
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-SoKXEF1c"], confirm: true })`
+  - Source: sec-company://0001065280/0001065280-24-000128#part-i-item-2:theme:demand:outcome
+  - The increase in cost of revenues for the three months ended March 31, 2024 as compared to the three months ended March 31, 2023 is primarily due to a $211 million increase in content amortization relating to our existing and new content, partially offset by a $38 million decrease in other cost of re
+- **KO** 2024-02-20: 1 candidate(s), Demand
+  - Candidate IDs: cout-pLrEFLiU
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-pLrEFLiU"], confirm: true })`
+  - Source: sec-company://0000021344/0000021344-24-000009#item-1a:theme:demand:outcome
+  - Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
+- **MU** 2023-03-29: 1 candidate(s), AI, R&D, and technology
+  - Candidate IDs: cout-j3YJZLsU
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-j3YJZLsU"], confirm: true })`
+  - Source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:ai-rd-technology:outcome
+  - We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
+- **MAR** 2020-11-06: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-v6UCJTdD
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-v6UCJTdD"], confirm: true })`
+  - Source: sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome
+  - we recorded a provision for credit losses of $
+- **MSFT** 2017-04-27: 1 candidate(s), Demand
+  - Candidate IDs: cout-quUySYaJ
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-quUySYaJ"], confirm: true })`
+  - Source: sec-company://0000789019/0001564590-17-007547#part-i-item-2:theme:demand:outcome
+  - Operating income included an unfavorable foreign currency impact of 3%. Gross margin increased $1.2 billion or 10%, driven by higher revenue, offset in part by higher cost of revenue.
 
 ## Accepted Pass/Fail Verdicts
 
@@ -847,6 +656,10 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - In the context of **DIS disclosed demand risk in 10-Q 2019-05-08.**, facing **Seasonality**, we assume **DIS can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
 
   - Lesson: Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.
+- **FAIL** DIS / Geopolitics and tariffs: asm-xakuDdYD via out-tnWp4P7Z
+  - In the context of **DIS disclosed geopolitics and tariffs risk in 10-Q 2022-05-11.**, facing **In March 2022, in response to events in Russia and Ukraine, the Company announced a pause of its operations in Russia, which include theatrical distribution and other licensing businesses and the distribution of the Disney Channel in Russia. These business generate approximately two percent of the Company's operating income.**, we assume **DIS can manage geopolitics and tariffs risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.
 
 ## Dependent Ideas Needing Review
 
@@ -857,7 +670,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 79 staged, 47 applied.
+- Realized outcome candidates: 67 staged, 48 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -1480,7 +1293,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2019-05-08 to 2026-02-02
 - Themes tracked: 12
 - Observations: 333
-- Staged outcomes: 16
+- Staged outcomes: 4
 
 - **Demand**: 53 observation(s), latest 2026-02-02, assumption asm-6o8MAEsY
 - **Regulation and legal**: 46 observation(s), latest 2026-02-02, assumption asm-K8rwQyCS
@@ -1512,7 +1325,7 @@ No dependent ideas are currently flagged by accepted refutations.
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 32 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Communication Services | 10 | 12 | 5374 | 20 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
 | Consumer Discretionary | 10 | 12 | 5501 | 15 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
 | Consumer Staples | 10 | 12 | 3899 | 16 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
@@ -1526,12 +1339,12 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Cross-Sector Mechanism Patterns
 
-- **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 16 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 6 realized candidate(s).
+- **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 12 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 5 realized candidate(s).
   - Sectors: Consumer Discretionary, Information Technology
+- **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 4 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 214 observation(s), 4 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
 - **Supply chain / Single supplier or manufacturing concentration**: 2 sector(s), 3 company(ies), 142 observation(s), 3 realized candidate(s).
@@ -1590,280 +1403,100 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-79 staged candidate(s) grouped into 79 review event(s). Apply still operates on candidate IDs; groups are for review only.
+67 staged candidate(s) grouped into 40 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
-- **DIS** 2022-11-29: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-r8Gq1Yqt
-  - Representative source: sec-company://0001744489/0001744489-22-000213#item-1a:theme:regulation-legal:outcome
-  - The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
-- **DIS** 2022-11-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-1RjGvEZj
-  - Representative source: sec-company://0001744489/0001744489-22-000213#item-7:theme:liquidity:outcome
-  - In fiscal 2022, the Company recognized a non-cash loss of $
-- **DIS** 2022-11-29: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-dR9Wd8qh
-  - Representative source: sec-company://0001744489/0001744489-22-000213#item-7:theme:regulation-legal:outcome
-  - The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
-- **DIS** 2022-11-29: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-sb6nTUak
-  - Representative source: sec-company://0001744489/0001744489-22-000213#item-7:theme:geopolitics-tariffs:outcome
-  - Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
-- **DIS** 2023-02-08: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-W6pLYKH8
-  - Representative source: sec-company://0001744489/0001744489-23-000049#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
-- **DIS** 2023-05-10: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-XQujDkei
-  - Representative source: sec-company://0001744489/0001744489-23-000099#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year quarter, the Company recorded charges of $195 million due to the impairment of an intangible asset related to the Disney Channel in Russia.
-- **DIS** 2023-08-09: 1 candidate(s), Demand
-  - Candidate IDs: cout-aWnA41Gu
-  - Representative source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 4%, or $0.8 billion, to $22.3 billion; net income (loss) attributable to Disney was a loss of $0.5 billion in the current quarter compared to income of $1.4 billion in the prior-year quarter; and diluted earnings per share from continuing operations attributable to
-- **DIS** 2023-08-09: 1 candidate(s), Macro and foreign exchange
-  - Candidate IDs: cout-feQanEji
-  - Representative source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:macro-fx:outcome
-  - Cost of services for the quarter increased 5%, or $0.6 billion, to $13.0 billion due to cost inflation and increased volumes at our theme parks and higher programming and production costs. The increase in programming and production costs was due
-- **DIS** 2023-08-09: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-cvNPXuCE
-  - Representative source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year quarter, the Company recorded charges of $42 million primarily due to asset impairments related to exiting our businesses in Russia.
-- **DIS** 2023-08-09: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-nDNuHLAq
-  - Representative source: sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:regulation-legal:outcome
-  - Other expense, net of $11 million reflects a charge of $101 million related to a legal ruling, partially offset by a DraftKings gain of $90 million
-- **DIS** 2024-02-07: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-me3CrjR6
-  - Representative source: sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year quarter, the Company recognized charges of $69 million related to exiting our businesses in Russia.
-- **DIS** 2024-05-07: 1 candidate(s), Demand
-  - Candidate IDs: cout-QVxLjYwb
-  - Representative source: sec-company://0001744489/0001744489-24-000152#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 1%, or $0.3 billion, to $22.1 billion; net income attributable to Disney decreased to a loss of $20 million in the current quarter compared to income of $1.3 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney decreased to
-- **DIS** 2024-05-07: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-YSZorQA6
-  - Representative source: sec-company://0001744489/0001744489-24-000152#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year period, the Company recorded charges of $221 million primarily for severance and costs related to exiting our businesses in Russia.
-- **DIS** 2024-08-07: 1 candidate(s), Demand
-  - Candidate IDs: cout-a1YqjZpH
-  - Representative source: sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 4%, or $0.8 billion, to $23.2 billion; net income attributable to Disney increased to income of $2.6 billion in the current quarter compared to a loss of $0.5 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney increased t
-- **DIS** 2024-08-07: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-LwJcRAi8
-  - Representative source: sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:regulation-legal:outcome
-  - Other expense, net of $11 million reflecting a charge of $101 million related to a legal ruling, partially offset by a DraftKings Gain of $90 million
-- **DIS** 2024-08-07: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-jvWQ4oRp
-  - Representative source: sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - In the prior-year period, the Company recorded $2,871 million of charges including the Content Impairment, severance and costs related to exiting our businesses in Russia.
-- **HD** 2016-03-24: 1 candidate(s), Cybersecurity and privacy
-  - Candidate IDs: cout-7eX6i6u9
-  - Representative source: sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome
-  - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
-- **HD** 2024-08-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-xqjTni51
-  - Representative source: sec-company://0000354950/0000354950-24-000201#part-i-item-2:theme:demand:outcome
-  - Depreciation and amortization for the second quarter of fiscal 2024 increased $85 million, or 13.0%, to $738 million from $653 million for the second quarter of fiscal 2023. As a percentage of net sales, depreciation and amortization was 1.7% for the second quarter of fiscal 2024 compared to 1.5% fo
-- **KO** 2022-10-26: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-255h14jf
-  - Representative source: sec-company://0000021344/0000021344-22-000042#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
-- **KO** 2024-02-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-pLrEFLiU
-  - Representative source: sec-company://0000021344/0000021344-24-000009#item-1a:theme:demand:outcome
-  - Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
-- **LOW** 2016-03-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-DU3jEqeh
-  - Representative source: sec-company://0000060667/0000060667-16-000276#item-7:theme:liquidity:outcome
-  - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
-- **LOW** 2019-04-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-c36RGbxD
-  - Representative source: sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome
-  - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
-- **MAR** 2020-11-06: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-v6UCJTdD
-  - Representative source: sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome
-  - we recorded a provision for credit losses of $
-- **MCD** 2016-08-04: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-UkCnhUp1
-  - Representative source: sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome
-  - Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
-- **MCD** 2017-08-08: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-U6jdNkpE
-  - Representative source: sec-company://0000063908/0000063908-17-000039#part-i-item-2:theme:liquidity:outcome
-  - Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
-- **MCD** 2017-11-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-p3G4ipfw
-  - Representative source: sec-company://0000063908/0000063908-17-000053#part-i-item-2:theme:liquidity:outcome
-  - The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
-- **META** 2020-04-30: 1 candidate(s), Demand
-  - Candidate IDs: cout-Us6fn245
-  - Representative source: sec-company://0001326801/0001326801-20-000048#part-ii-item-1a:theme:demand:outcome
-  - These measures have caused, and are continuing to cause, business slowdowns or shutdowns in affected areas, both regionally and worldwide, which have significantly impacted our business and results of operations. In the first quarter of 2020, our advertising revenue grew 17% year-over-year, which wa
-- **META** 2022-02-03: 1 candidate(s), Demand
-  - Candidate IDs: cout-ob2MQuyh
-  - Representative source: sec-company://0001326801/0001326801-22-000018#item-7:theme:demand:outcome
-  - The COVID-19 pandemic has also had a varied impact on the demand for and pricing of our ads from period to period. While we experienced a reduction in demand and a related decline in pricing during the onset of the pandemic, we believe the pandemic subsequently contributed to an acceleration in the
-- **META** 2022-04-28: 1 candidate(s), Demand
-  - Candidate IDs: cout-Yme8HfTY
-  - Representative source: sec-company://0001326801/0001326801-22-000057#part-i-item-2:theme:demand:outcome
-  - The COVID-19 pandemic has also impacted our business and results of operations, with a varied impact on the demand for and pricing of our ads from period to period. While we experienced a reduction in advertising demand and a related decline in pricing during the onset of the pandemic, we believe th
-- **META** 2022-10-27: 1 candidate(s), Demand
-  - Candidate IDs: cout-KPLfuRTL
-  - Representative source: sec-company://0001326801/0001326801-22-000108#part-i-item-2:theme:demand:outcome
-  - The COVID-19 pandemic has also impacted our business and results of operations, with a varied impact on user growth and engagement, as well as the demand for and pricing of our ads from period to period. While we experienced a reduction in advertising demand and a related decline in pricing during t
-- **META** 2022-10-27: 1 candidate(s), Macro and foreign exchange
-  - Candidate IDs: cout-UDATax8B
-  - Representative source: sec-company://0001326801/0001326801-22-000108#part-i-item-2:theme:macro-fx:outcome
-  - , which we believe was primarily driven by reduced marketer spending as a result of a more challenging macroeconomic environment. In addition, because the targeting and measurement challenges associated with iOS changes had already begun in the third quarter of 2021, the impact of these challenges o
-- **META** 2026-04-30: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-KS31B85q
-  - Representative source: sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome
-  - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
-- **MO** 2020-10-30: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Frzywdbu
-  - Representative source: sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome
-  - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
-- **MO** 2022-04-28: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-5To9n9pZ
-  - Representative source: sec-company://0000764180/0000764180-22-000044#part-i-item-2:theme:supply-chain:outcome
-  - The economic and business repercussions of COVID-19 have been compounded by the Russian invasion of Ukraine. While our operating companies focus on the manufacture and sale of tobacco products in the United States and have little direct exposure to the impacted regions, we have experienced negative
-- **MO** 2022-10-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9eweYbvT
-  - Representative source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome
-  - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
-- **MO** 2025-04-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-BDUrgiSb
-  - Representative source: sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome
-  - became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
-- **MSFT** 2016-10-20: 1 candidate(s), Demand
-  - Candidate IDs: cout-8zSNs1oh
-  - Representative source: sec-company://0000789019/0001193125-16-742796#part-i-item-2:theme:demand:outcome
-  - Operating income included an unfavorable foreign currency impact of 5%. Gross margin decreased $563 million or 4%, driven by higher cost of revenue. Gross margin included an unfavorable
-- **MSFT** 2017-04-27: 1 candidate(s), Demand
-  - Candidate IDs: cout-quUySYaJ
-  - Representative source: sec-company://0000789019/0001564590-17-007547#part-i-item-2:theme:demand:outcome
-  - Operating income included an unfavorable foreign currency impact of 3%. Gross margin increased $1.2 billion or 10%, driven by higher revenue, offset in part by higher cost of revenue.
 - **MSFT** 2017-08-02: 1 candidate(s), Demand
   - Candidate IDs: cout-rNg4Lx8R
   - Representative source: sec-company://0000789019/0001564590-17-014900#item-7:theme:demand:outcome
   - Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
-- **MSFT** 2018-08-03: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-h4HuM9Cw
-  - Representative source: sec-company://0000789019/0001564590-18-019062#item-7:theme:ai-rd-technology:outcome
-  - Operating income increased $2.9 billion or 11%, primarily due to higher gross margin and lower impairment and restructuring expenses, offset in part by an increase in research and development and sales and marketing expenses. Operating income included an operating loss of $924 million related to the
-- **MSFT** 2020-04-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-sYG7DHXL
-  - Representative source: sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:liquidity:outcome
-  - Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
-- **MU** 2021-01-08: 1 candidate(s), Demand
-  - Candidate IDs: cout-XaZnFr8J
-  - Representative source: sec-company://0000723125/0000723125-21-000012#part-i-item-2:theme:demand:outcome
-  - The ultimate severity and duration of these economic repercussions, including any resulting impact on our business, remain largely unknown and ultimately will depend on many factors. As a result, we have experienced volatility in the markets that our products are sold into, driven by the move to a s
-- **MU** 2021-07-01: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-svAshmvZ
-  - Representative source: sec-company://0000723125/0000723125-21-000052#part-i-item-2:theme:inventory-channel:outcome
-  - In the third quarter of 2021, we recognized a charge of $435 million included in restructure and asset impairments (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net of estimated selling costs, to b
-- **MU** 2021-10-08: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-iM8KYY62
-  - Representative source: sec-company://0000723125/0000723125-21-000065#item-7:theme:inventory-channel:outcome
-  - the expected consideration, net of estimated selling costs, to be realized from the sale of these assets and liabilities. In the second quarter of 2021, we also recognized a charge of $49 million to cost of goods sold to write down 3D XPoint inventory due to our decision to cease further development
-- **MU** 2022-10-07: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-tcEdEDqs
-  - Representative source: sec-company://0000723125/0000723125-22-000048#item-7:theme:inventory-channel:outcome
-  - In 2021, we recognized a charge of $435 million included in restructure and asset impairments in connection with the definitive agreement with TI (and a tax benefit of $104 million included in income tax (provision) benefit) to write down the assets held for sale to the expected consideration, net o
-- **MU** 2023-03-29: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-j3YJZLsU
-  - Representative source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:ai-rd-technology:outcome
-  - We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
-- **MU** 2023-03-29: 1 candidate(s), Inventory and channel
-  - Candidate IDs: cout-wHdyt5T6
-  - Representative source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:inventory-channel:outcome
-  - As a result of these conditions and increases in our inventory levels, we have reduced wafer starts and capital expenditures. We recognized $27 million of period costs from underutilization in the second quarter of 2023 due to wafer start reductions.
-- **MU** 2024-10-04: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-xeiZQQXT
-  - Representative source: sec-company://0000723125/0000723125-24-000027#item-7:theme:ai-rd-technology:outcome
-  - We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
-- **MU** 2024-10-04: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-n8rgakW6
-  - Representative source: sec-company://0000723125/0000723125-24-000027#item-7:theme:supply-chain:outcome
-  - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
-- **MU** 2024-10-04: 1 candidate(s), Demand
-  - Candidate IDs: cout-caydcx3Q
-  - Representative source: sec-company://0000723125/0000723125-24-000027#item-7:theme:demand:outcome
-  - These conditions, which began in the fourth quarter of 2022 and persisted into early 2024, led to significant reductions in average selling prices for both DRAM and NAND and reductions in bit shipments for DRAM. We experienced declines in revenue across all our business segments and nearly all our e
-- **NFLX** 2024-04-22: 1 candidate(s), Demand
-  - Candidate IDs: cout-SoKXEF1c
-  - Representative source: sec-company://0001065280/0001065280-24-000128#part-i-item-2:theme:demand:outcome
-  - The increase in cost of revenues for the three months ended March 31, 2024 as compared to the three months ended March 31, 2023 is primarily due to a $211 million increase in content amortization relating to our existing and new content, partially offset by a $38 million decrease in other cost of re
-- **NFLX** 2025-04-18: 1 candidate(s), Demand
-  - Candidate IDs: cout-tgtYW1HH
-  - Representative source: sec-company://0001065280/0001065280-25-000176#part-i-item-2:theme:demand:outcome
-  - increased $558 million as compared to the prior comparative period, primarily due to a $714 million increase in operating income, driven by a $1,172 million increase in revenues and partially offset by a $286 million increase in cost of revenues primarily due to the increase in content amortization.
-- **NFLX** 2025-07-18: 1 candidate(s), Demand
-  - Candidate IDs: cout-tuYofcfL
-  - Representative source: sec-company://0001065280/0001065280-25-000323#part-i-item-2:theme:demand:outcome
-  - r the three months ended June 30, 2025 increased $978 million as compared to the prior comparative period, primarily due to a $1,172 million increase in operating income, driven by a $1,520 million increase in revenues and partially offset by a $151 million increase in cost of revenues primarily due
-- **NFLX** 2025-10-22: 1 candidate(s), Demand
-  - Candidate IDs: cout-ZnjYmKtK
-  - Representative source: sec-company://0001065280/0001065280-25-000406#part-i-item-2:theme:demand:outcome
-  - r the three months ended September 30, 2025 increased $183 million as compared to the prior comparative period, primarily due to a $339 million increase in operating income, driven by a $1,686 million increase in revenues and partially offset by a $1,044 million increase in cost of revenues primaril
-- **NFLX** 2026-04-17: 1 candidate(s), Demand
-  - Candidate IDs: cout-EdbcVB6t
-  - Representative source: sec-company://0001065280/0001065280-26-000138#part-i-item-2:theme:demand:outcome
-  - Discovery, Inc. ("WBD") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the "WBD transaction"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil
-- **NVDA** 2020-05-21: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-eGqEKVbF
-  - Representative source: sec-company://0001045810/0001045810-20-000065#part-i-item-2:theme:supply-chain:outcome
-  - During the first quarter of fiscal year 2021, we experienced disruptions to our supply chain and logistical services provided by outsourcing partners and component supply, primarily based in Asia. These disruptions adversely impacted our linearity of supply and sales within the quarter.
-- **NVDA** 2020-05-21: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-pAypMBtb
-  - Representative source: sec-company://0001045810/0001045810-20-000065#part-ii-item-1a:theme:supply-chain:outcome
-  - impact, our workforce and operations, the operations of our customers and our partners, and those of our respective vendors and suppliers (including our subcontractors and third-party contract manufacturers). For example, during the first quarter of fiscal year 2021, we experienced disruptions to ou
-- **PM** 2018-02-13: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-xyWT6D4M
-  - Representative source: sec-company://0001413329/0001413329-18-000007#item-7:theme:supply-chain:outcome
-  - In connection with these elements of the Tax Cuts and Jobs Act, we recognized a provisional expense of $1.6 billion, which was included as a component of income tax expense as follows:
-- **PM** 2020-10-27: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-62y5hiw5
-  - Representative source: sec-company://0001413329/0001413329-20-000062#part-i-item-2:theme:supply-chain:outcome
-  - r $0.04 per share impact on diluted EPS) during the nine months ended September 30, 2020, related to the organizational design optimization plan primarily in Switzerland. We recorded pre-tax asset impairment and exit costs of $65 million (or $0.03 per share impact on diluted EPS) during the nine mon
-- **PM** 2021-10-27: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-ZnU6foWn
-  - Representative source: sec-company://0001413329/0001413329-21-000091#part-i-item-2:theme:ai-rd-technology:outcome
-  - At the date of acquisition, we determined that the acquired IPR&D had no alternative future use. As a result, we recorded a pre-tax charge of $51 million (representing a $0.03 charge to diluted EPS) to research and development costs within marketing, administration and research costs in the condense
-- **PM** 2022-07-29: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-yBsxhpgg
-  - Representative source: sec-company://0001413329/0001413329-22-000072#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
-- **PM** 2022-10-27: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-4pUPM9nU
-  - Representative source: sec-company://0001413329/0001413329-22-000114#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
-- **PM** 2023-02-10: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-fynsGdQk
-  - Representative source: sec-company://0001413329/0001413329-23-000025#item-7:theme:geopolitics-tariffs:outcome
-  - We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
-- **PM** 2023-07-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Qe5gPhAF
-  - Representative source: sec-company://0001413329/0001413329-23-000176#part-i-item-2:theme:liquidity:outcome
-  - As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
-- **PM** 2024-04-26: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-fHbC6VNw
-  - Representative source: sec-company://0001413329/0001413329-24-000087#part-i-item-2:theme:geopolitics-tariffs:outcome
-  - – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
+- **META** 2026-04-30: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-KS31B85q
+  - Representative source: sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome
+  - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
 - **PM** 2024-07-25: 1 candidate(s), Liquidity
   - Candidate IDs: cout-gS9pUjHE
   - Representative source: sec-company://0001413329/0001413329-24-000145#part-i-item-2:theme:liquidity:outcome
   - As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
-- **TJX** 2021-08-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9x9J3aNz
-  - Representative source: sec-company://0000109198/0000109198-21-000027#part-i-item-2:theme:liquidity:outcome
-  - During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
+- **PM** 2023-07-27: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-Qe5gPhAF
+  - Representative source: sec-company://0001413329/0001413329-23-000176#part-i-item-2:theme:liquidity:outcome
+  - As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
+- **LOW** 2016-03-29: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-DU3jEqeh
+  - Representative source: sec-company://0000060667/0000060667-16-000276#item-7:theme:liquidity:outcome
+  - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
+- **MO** 2022-10-27: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-9eweYbvT
+  - Representative source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome
+  - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
 - **TJX** 2022-03-30: 1 candidate(s), Liquidity
   - Candidate IDs: cout-CWuPhDfZ
   - Representative source: sec-company://0000109198/0000109198-22-000008#item-7:theme:liquidity:outcome
   - A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
+- **TJX** 2021-08-27: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-9x9J3aNz
+  - Representative source: sec-company://0000109198/0000109198-21-000027#part-i-item-2:theme:liquidity:outcome
+  - During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
+- **MCD** 2017-11-02: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-p3G4ipfw
+  - Representative source: sec-company://0000063908/0000063908-17-000053#part-i-item-2:theme:liquidity:outcome
+  - The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
+- **MCD** 2017-08-08: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-U6jdNkpE
+  - Representative source: sec-company://0000063908/0000063908-17-000039#part-i-item-2:theme:liquidity:outcome
+  - Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
+- **MU** 2024-10-04: 1 candidate(s), AI, R&D, and technology
+  - Candidate IDs: cout-xeiZQQXT
+  - Representative source: sec-company://0000723125/0000723125-24-000027#item-7:theme:ai-rd-technology:outcome
+  - We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
+- **HD** 2016-03-24: 1 candidate(s), Cybersecurity and privacy
+  - Candidate IDs: cout-7eX6i6u9
+  - Representative source: sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome
+  - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
+- **KO** 2022-10-26: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-255h14jf
+  - Representative source: sec-company://0000021344/0000021344-22-000042#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
+- **LOW** 2019-04-02: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-c36RGbxD
+  - Representative source: sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome
+  - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
+- **MO** 2020-10-30: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-Frzywdbu
+  - Representative source: sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome
+  - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
+- **MU** 2024-10-04: 1 candidate(s), Supply chain
+  - Candidate IDs: cout-n8rgakW6
+  - Representative source: sec-company://0000723125/0000723125-24-000027#item-7:theme:supply-chain:outcome
+  - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
+- **PM** 2023-02-10: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-fynsGdQk
+  - Representative source: sec-company://0001413329/0001413329-23-000025#item-7:theme:geopolitics-tariffs:outcome
+  - We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
+- **PM** 2022-10-27: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-4pUPM9nU
+  - Representative source: sec-company://0001413329/0001413329-22-000114#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
+- **PM** 2022-07-29: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-yBsxhpgg
+  - Representative source: sec-company://0001413329/0001413329-22-000072#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
+- **WBD** 2025-05-08: 1 candidate(s), Demand
+  - Candidate IDs: cout-2gso7KJ6
+  - Representative source: sec-company://0001437107/0001437107-25-000096#part-i-item-2:theme:demand:outcome
+  - Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatrical product revenue and lower payments to partners and participants, and a 66% dec
+- **MCD** 2016-08-04: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-UkCnhUp1
+  - Representative source: sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome
+  - Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
+- **MO** 2025-04-29: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-BDUrgiSb
+  - Representative source: sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome
+  - became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
+- **PM** 2024-04-26: 1 candidate(s), Geopolitics and tariffs
+  - Candidate IDs: cout-fHbC6VNw
+  - Representative source: sec-company://0001413329/0001413329-24-000087#part-i-item-2:theme:geopolitics-tariffs:outcome
+  - – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
 - **TJX** 2022-03-30: 1 candidate(s), Geopolitics and tariffs
   - Candidate IDs: cout-CFFZUQMx
   - Representative source: sec-company://0000109198/0000109198-22-000008#item-7:theme:geopolitics-tariffs:outcome
@@ -1876,38 +1509,62 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-ybHov4a1
   - Representative source: sec-company://0001283699/0001283699-16-000115#part-i-item-2:theme:customer-platform-dependency:outcome
   - As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
-- **TSLA** 2021-02-08: 1 candidate(s), Supply chain
-  - Candidate IDs: cout-61kWsViJ
-  - Representative source: sec-company://0001318605/0001564590-21-004599#item-1a:theme:supply-chain:outcome
-  - Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing processes and reducing costs. If we are not successful in achieving these goals, we could face delay
-- **TSLA** 2025-04-23: 1 candidate(s), Demand
-  - Candidate IDs: cout-MoYCteWC
-  - Representative source: sec-company://0001318605/0001628280-25-018911#part-i-item-2:theme:demand:outcome
-  - During the three months ended March 31, 2025, we recognized total revenues of $19.34 billion, representing a decrease of $1.97 billion compared to the same period in the prior year. During the three months ended March 31, 2025, our net income attributable to common stockholders was $409 million, rep
-- **TSLA** 2025-10-23: 1 candidate(s), Demand
-  - Candidate IDs: cout-gWeeZjak
-  - Representative source: sec-company://0001318605/0001628280-25-045968#part-i-item-2:theme:demand:outcome
-  - During the three and nine months ended September 30, 2025, we recognized total revenues of $28.10 billion and $69.93 billion, respectively, representing an increase of $2.91 billion and a decrease of $2.06 billion, respectively, compared to the same periods in the prior year. During the three and ni
-- **TSLA** 2026-01-29: 1 candidate(s), Demand
-  - Candidate IDs: cout-vC9ssZFm
-  - Representative source: sec-company://0001318605/0001628280-26-003952#item-7:theme:demand:outcome
-  - In 2025, we recognized total revenues of $94.83 billion, representing a decrease of $2.86 billion compared to the prior year. In 2025, our net income attributable to common stockholders was $3.79 billion, representing a decrease of $3.30 billion compared to the prior year.
 - **VZ** 2020-04-27: 1 candidate(s), Demand
   - Candidate IDs: cout-tygeYzjs
   - Representative source: sec-company://0000732712/0000732712-20-000027#part-i-item-2:theme:demand:outcome
   - In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
-- **WBD** 2022-02-24: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-JYG4CXqH
-  - Representative source: sec-company://0001437107/0001437107-22-000031#item-7:theme:regulation-legal:outcome
-  - The pandemic did not have a significant impact on demand during fiscal year 2021. Many of our third-party production partners that were shut down during most of the second quarter of 2020 due to COVID-19 restrictions came back online in the third quarter of 2020 and, as a result, we have incurred ad
-- **WBD** 2025-05-08: 1 candidate(s), Demand
-  - Candidate IDs: cout-2gso7KJ6
-  - Representative source: sec-company://0001437107/0001437107-25-000096#part-i-item-2:theme:demand:outcome
-  - Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatrical product revenue and lower payments to partners and participants, and a 66% dec
+- **MSFT** 2016-10-20: 1 candidate(s), Demand
+  - Candidate IDs: cout-8zSNs1oh
+  - Representative source: sec-company://0000789019/0001193125-16-742796#part-i-item-2:theme:demand:outcome
+  - Operating income included an unfavorable foreign currency impact of 5%. Gross margin decreased $563 million or 4%, driven by higher cost of revenue. Gross margin included an unfavorable
+- **NFLX** 2025-07-18: 1 candidate(s), Demand
+  - Candidate IDs: cout-tuYofcfL
+  - Representative source: sec-company://0001065280/0001065280-25-000323#part-i-item-2:theme:demand:outcome
+  - r the three months ended June 30, 2025 increased $978 million as compared to the prior comparative period, primarily due to a $1,172 million increase in operating income, driven by a $1,520 million increase in revenues and partially offset by a $151 million increase in cost of revenues primarily due
+- **NFLX** 2025-04-18: 1 candidate(s), Demand
+  - Candidate IDs: cout-tgtYW1HH
+  - Representative source: sec-company://0001065280/0001065280-25-000176#part-i-item-2:theme:demand:outcome
+  - increased $558 million as compared to the prior comparative period, primarily due to a $714 million increase in operating income, driven by a $1,172 million increase in revenues and partially offset by a $286 million increase in cost of revenues primarily due to the increase in content amortization.
 - **WMT** 2017-03-31: 1 candidate(s), Inventory and channel
   - Candidate IDs: cout-22Ztexb6
   - Representative source: sec-company://0000104169/0000104169-17-000021#item-1a:theme:inventory-channel:outcome
   - In light of the substantial premiums payable for insurance coverage for losses caused by certain natural disasters, such as hurricanes, cyclones, typhoons, tropical storms, earthquakes, floods and tsunamis, as well as the limitations on available coverage for such losses, we have chosen to be primar
+- **HD** 2024-08-20: 1 candidate(s), Demand
+  - Candidate IDs: cout-xqjTni51
+  - Representative source: sec-company://0000354950/0000354950-24-000201#part-i-item-2:theme:demand:outcome
+  - Depreciation and amortization for the second quarter of fiscal 2024 increased $85 million, or 13.0%, to $738 million from $653 million for the second quarter of fiscal 2023. As a percentage of net sales, depreciation and amortization was 1.7% for the second quarter of fiscal 2024 compared to 1.5% fo
+- **MSFT** 2020-04-29: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-sYG7DHXL
+  - Representative source: sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:liquidity:outcome
+  - Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
+- **NFLX** 2026-04-17: 1 candidate(s), Demand
+  - Candidate IDs: cout-EdbcVB6t
+  - Representative source: sec-company://0001065280/0001065280-26-000138#part-i-item-2:theme:demand:outcome
+  - Discovery, Inc. ("WBD") to acquire WBD's streaming and studios businesses, including its film and television studios, HBO Max and HBO (such transaction, the "WBD transaction"). The increase in net income was additionally impacted by a $610 million increase in operating income, driven by a $1,707 mil
+- **NFLX** 2025-10-22: 1 candidate(s), Demand
+  - Candidate IDs: cout-ZnjYmKtK
+  - Representative source: sec-company://0001065280/0001065280-25-000406#part-i-item-2:theme:demand:outcome
+  - r the three months ended September 30, 2025 increased $183 million as compared to the prior comparative period, primarily due to a $339 million increase in operating income, driven by a $1,686 million increase in revenues and partially offset by a $1,044 million increase in cost of revenues primaril
+- **NFLX** 2024-04-22: 1 candidate(s), Demand
+  - Candidate IDs: cout-SoKXEF1c
+  - Representative source: sec-company://0001065280/0001065280-24-000128#part-i-item-2:theme:demand:outcome
+  - The increase in cost of revenues for the three months ended March 31, 2024 as compared to the three months ended March 31, 2023 is primarily due to a $211 million increase in content amortization relating to our existing and new content, partially offset by a $38 million decrease in other cost of re
+- **KO** 2024-02-20: 1 candidate(s), Demand
+  - Candidate IDs: cout-pLrEFLiU
+  - Representative source: sec-company://0000021344/0000021344-24-000009#item-1a:theme:demand:outcome
+  - Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
+- **MU** 2023-03-29: 1 candidate(s), AI, R&D, and technology
+  - Candidate IDs: cout-j3YJZLsU
+  - Representative source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:ai-rd-technology:outcome
+  - We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
+- **MAR** 2020-11-06: 1 candidate(s), Liquidity
+  - Candidate IDs: cout-v6UCJTdD
+  - Representative source: sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome
+  - we recorded a provision for credit losses of $
+- **MSFT** 2017-04-27: 1 candidate(s), Demand
+  - Candidate IDs: cout-quUySYaJ
+  - Representative source: sec-company://0000789019/0001564590-17-007547#part-i-item-2:theme:demand:outcome
+  - Operating income included an unfavorable foreign currency impact of 3%. Gross margin increased $1.2 billion or 10%, driven by higher revenue, offset in part by higher cost of revenue.
 
 ## Realized Outcome Candidates
 
@@ -2003,30 +1660,6 @@ These candidates are staged for human review. Applying them requires company.app
   - As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-20-000027#part-i-item-2:theme:demand:outcome)
   - In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-22-000213#item-1a:theme:regulation-legal:outcome)
-  - The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-22-000213#item-7:theme:liquidity:outcome)
-  - In fiscal 2022, the Company recognized a non-cash loss of $
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-22-000213#item-7:theme:regulation-legal:outcome)
-  - The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-22-000213#item-7:theme:geopolitics-tariffs:outcome)
-  - Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-23-000049#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-23-000099#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - In the prior-year quarter, the Company recorded charges of $195 million due to the impairment of an intangible asset related to the Disney Channel in Russia.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:demand:outcome)
-  - Revenues for the quarter increased 4%, or $0.8 billion, to $22.3 billion; net income (loss) attributable to Disney was a loss of $0.5 billion in the current quarter compared to income of $1.4 billion in the prior-year quarter; and diluted earnings per share from continuing operations attributable to
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:macro-fx:outcome)
-  - Cost of services for the quarter increased 5%, or $0.6 billion, to $13.0 billion due to cost inflation and increased volumes at our theme parks and higher programming and production costs. The increase in programming and production costs was due
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - In the prior-year quarter, the Company recorded charges of $42 million primarily due to asset impairments related to exiting our businesses in Russia.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-23-000171#part-i-item-2:theme:regulation-legal:outcome)
-  - Other expense, net of $11 million reflects a charge of $101 million related to a legal ruling, partially offset by a DraftKings gain of $90 million
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:geopolitics-tariffs:outcome)
-  - In the prior-year quarter, the Company recognized charges of $69 million related to exiting our businesses in Russia.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000152#part-i-item-2:theme:demand:outcome)
-  - Revenues for the quarter increased 1%, or $0.3 billion, to $22.1 billion; net income attributable to Disney decreased to a loss of $20 million in the current quarter compared to income of $1.3 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney decreased to
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000152#part-i-item-2:theme:geopolitics-tariffs:outcome)
   - In the prior-year period, the Company recorded charges of $221 million primarily for severance and costs related to exiting our businesses in Russia.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-24-000232#part-i-item-2:theme:demand:outcome)
