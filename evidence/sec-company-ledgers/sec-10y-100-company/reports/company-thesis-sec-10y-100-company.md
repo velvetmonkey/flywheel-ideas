@@ -128,9 +128,9 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 - Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Filings scanned: 1468
-- Current thesis dependencies: 370 open bet(s).
-- Human review queue: 91 event(s), 91 staged candidate(s).
-- Accepted failures: 46; lessons recorded: 46; missing lesson memos: 0.
+- Current thesis dependencies: 369 open bet(s).
+- Human review queue: 79 event(s), 79 staged candidate(s).
+- Accepted failures: 47; lessons recorded: 47; missing lesson memos: 0.
 - Posture: evidence needs human review before thesis confidence should increase.
 
 ## Current Thesis Dependencies
@@ -141,9 +141,6 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **NFLX / Demand** - fresh, review pressure 5, 84 observation(s), latest 2026-04-17
   - Assumption: asm-bmBJ3gyo
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **DIS / Demand** - fresh, review pressure 5, 53 observation(s), latest 2026-02-02
-  - Assumption: asm-6o8MAEsY
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **PM / Geopolitics and tariffs** - fresh, review pressure 4, 54 observation(s), latest 2026-04-24
   - Assumption: asm-qsuv2tV3
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
@@ -152,9 +149,6 @@ A deterministic decision-support view of current company bets, prior failures, u
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **MSFT / Demand** - fresh, review pressure 3, 84 observation(s), latest 2026-04-29
   - Assumption: asm-GpdfFh1C
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **DIS / Liquidity** - fresh, review pressure 3, 39 observation(s), latest 2026-02-02
-  - Assumption: asm-cAuLNidr
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **MCD / Liquidity** - fresh, review pressure 3, 68 observation(s), latest 2025-11-05
   - Assumption: asm-sfuU8h2r
@@ -171,9 +165,19 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **MU / AI, R&D, and technology** - fresh, review pressure 2, 83 observation(s), latest 2026-03-19
   - Assumption: asm-o5RkVgmn
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **VZ / Demand** - fresh, review pressure 1, 84 observation(s), latest 2026-05-01
+  - Assumption: asm-ktbpwdZ5
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **KO / Demand** - fresh, review pressure 1, 84 observation(s), latest 2026-04-30
+  - Assumption: asm-5B3UtjSr
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 
 ## Prior Failures And Lessons
 
+- **Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.**
+  - Evidence: 1 accepted failure verdict(s) across DIS / Demand
+  - Representative context: The filing disclosed quarterly revenues decreased 42%, or $8.5 billion, to $11.8 billion, while net income attributable to Disney decreased $6.5 billion to a $4.7 billion loss.
+  - Outcomes: out-bDqnUbbv
 - **Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.**
   - Evidence: 1 accepted failure verdict(s) across AMD / Supply chain
   - Representative context: The filing disclosed AMD experienced some disruptions to parts of its supply chain during the first quarter of 2020 and continued adjusting supply-chain requirements based on changing customer needs and demand.
@@ -361,62 +365,61 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## What Needs Human Review
 
-- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-iihwv1WH
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iihwv1WH"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced a product revenue decline in the service provider market and a slight decline in the enterprise market. These decreases were substantially offset by product revenue growth in the public sector and commercial markets.
-- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-UCtqyNPZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UCtqyNPZ"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the service provider, public sector and commercial markets, partially offset by a product revenue decline in the enterprise market. We are seeing improvement in business momentum in our customer markets, which we believe was
-- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-euj24FEW
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-euj24FEW"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector and service provider markets partially offset by declines in the enterprise and commercial markets. As fiscal 2021 progressed, we saw improvement in business momentum in our customer markets, which we belie
-- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-TQsy9gv1
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-TQsy9gv1"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the enterprise, commercial and service provider markets, partially offset by a product revenue decline in the public sector market. We continued to see improvement in business momentum in our customer markets.
-- **CSCO / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-HpzHr3fz
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-HpzHr3fz"], confirm: true })`
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the commercial, enterprise and service provider markets partially offset by a decline in the public sector market.
-- **DIS / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-DUvbJ6gn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DUvbJ6gn"], confirm: true })`
-  - Evidence: The increase in interest income, investment income and other was due to higher interest income on cash balances and the inclusion of a $27 million benefit related to pension and postretirement benefit costs, other than service cost, partially offset by higher investment impairments. The Company adop
-- **DIS / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-5fSq8aVN
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-5fSq8aVN"], confirm: true })`
-  - Evidence: Revenues for the quarter decreased 42%, or $8.5 billion, to $11.8 billion; net income attributable to Disney decreased $6.5 billion, to a loss of $4.7 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) decreased to a loss of $2.61 compared to income of $0
 - **DIS / Regulation and legal** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-DMZbJnsg
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DMZbJnsg"], confirm: true })`
-  - Evidence: Some of our businesses have begun to re-open with limited operations. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we open our theme parks and retail stores, we incurred and will con
-- **DIS / Cloud and data center capacity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-7oy12Z8v
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7oy12Z8v"], confirm: true })`
-  - Evidence: Cost of services for the quarter decreased 16%, or $1.8 billion, to $8.9 billion due to the closure/reduced operating capacity of our theme parks and resorts, lower production cost amortization and distribution costs at Content Sales/Licensing and Other and to a lesser extent, lower programming and
-- **DIS / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-xFZie49u
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xFZie49u"], confirm: true })`
-  - Evidence: Revenues for the quarter increased 45%, or $5.2 billion, to $17.0 billion; net income attributable to Disney increased $5.6 billion, to $0.9 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) was $0.50 compared to a loss of $2.61 in the prior-year quarter
-- **DIS / Regulation and legal** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-p8KnWZgn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p8KnWZgn"], confirm: true })`
-  - Evidence: Most of our businesses have reopened, although some with limited capacity and other restrictions. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we reopened theme parks and retail stor
+  - Candidate IDs: cout-r8Gq1Yqt
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })`
+  - Evidence: The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
 - **DIS / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-t2HbMYdh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-t2HbMYdh"], confirm: true })`
-  - Evidence: In the current quarter, the Company recognized $436 million in Other expense, net due to a non-cash loss of $432 million to adjust its investment in DraftKings to fair value.
+  - Candidate IDs: cout-1RjGvEZj
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-1RjGvEZj"], confirm: true })`
+  - Evidence: In fiscal 2022, the Company recognized a non-cash loss of $
+- **DIS / Regulation and legal** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-dR9Wd8qh
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-dR9Wd8qh"], confirm: true })`
+  - Evidence: The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
+- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-sb6nTUak
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sb6nTUak"], confirm: true })`
+  - Evidence: Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
+- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-W6pLYKH8
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-W6pLYKH8"], confirm: true })`
+  - Evidence: In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
+- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-XQujDkei
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-XQujDkei"], confirm: true })`
+  - Evidence: In the prior-year quarter, the Company recorded charges of $195 million due to the impairment of an intangible asset related to the Disney Channel in Russia.
+- **DIS / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-aWnA41Gu
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-aWnA41Gu"], confirm: true })`
+  - Evidence: Revenues for the quarter increased 4%, or $0.8 billion, to $22.3 billion; net income (loss) attributable to Disney was a loss of $0.5 billion in the current quarter compared to income of $1.4 billion in the prior-year quarter; and diluted earnings per share from continuing operations attributable to
+- **DIS / Macro and foreign exchange** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-feQanEji
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-feQanEji"], confirm: true })`
+  - Evidence: Cost of services for the quarter increased 5%, or $0.6 billion, to $13.0 billion due to cost inflation and increased volumes at our theme parks and higher programming and production costs. The increase in programming and production costs was due
+- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-cvNPXuCE
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-cvNPXuCE"], confirm: true })`
+  - Evidence: In the prior-year quarter, the Company recorded charges of $42 million primarily due to asset impairments related to exiting our businesses in Russia.
+- **DIS / Regulation and legal** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-nDNuHLAq
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-nDNuHLAq"], confirm: true })`
+  - Evidence: Other expense, net of $11 million reflects a charge of $101 million related to a legal ruling, partially offset by a DraftKings gain of $90 million
+- **DIS / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-me3CrjR6
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-me3CrjR6"], confirm: true })`
+  - Evidence: In the prior-year quarter, the Company recognized charges of $69 million related to exiting our businesses in Russia.
+- **DIS / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-QVxLjYwb
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-QVxLjYwb"], confirm: true })`
+  - Evidence: Revenues for the quarter increased 1%, or $0.3 billion, to $22.1 billion; net income attributable to Disney decreased to a loss of $20 million in the current quarter compared to income of $1.3 billion in the prior-year quarter; and diluted earnings per share (EPS) attributable to Disney decreased to
 
 ## Cross-Company Patterns
 
-- **Demand**: 27 open bet(s) across ABNB, AMZN, AVGO, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1952 observation(s), review pressure 18, latest 2026-05-01
-- **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 17, latest 2026-05-01
+- **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 15, latest 2026-05-01
 - **Geopolitics and tariffs**: 34 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1234 observation(s), review pressure 14, latest 2026-04-30
+- **Demand**: 26 open bet(s) across ABNB, AMZN, AVGO, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1899 observation(s), review pressure 13, latest 2026-05-01
 - **AI, R&D, and technology**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1357 observation(s), review pressure 2, latest 2026-05-01
-- **Cloud and data center capacity**: 35 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 1, latest 2026-05-01
 - **Supply chain**: 28 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, ORCL, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1274 observation(s), review pressure 1, latest 2026-05-01
 - **Customer and platform dependency**: 35 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1232 observation(s), review pressure 1, latest 2026-05-01
 - **Inventory and channel**: 31 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, NFLX, ORCL, PEP, PG, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1219 observation(s), review pressure 1, latest 2026-05-01
@@ -424,41 +427,42 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **Regulation and legal**: 32 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WMT, 2053 observation(s), review pressure 0, latest 2026-05-01
 - **Macro and foreign exchange**: 31 open bet(s) across AAPL, ABNB, AMZN, BKNG, CMCSA, COST, CSCO, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, WBD, WMT, 1784 observation(s), review pressure 0, latest 2026-05-01
 - **Competition**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1640 observation(s), review pressure 0, latest 2026-05-01
+- **Cloud and data center capacity**: 35 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 0, latest 2026-05-01
 
 ## What To Watch Next
 
-- **CSCO / Demand**
+- **DIS / Regulation and legal**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iihwv1WH"], confirm: true })
-  - Evidence: From a customer market standpoint, we experienced a product revenue decline in the service provider market and a slight decline in the enterprise market. These decreases were substantially offset by product revenue growth in the public sector and commercial markets.
-- **CSCO / Demand**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })
+  - Evidence: The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
+- **DIS / Liquidity**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UCtqyNPZ"], confirm: true })
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the service provider, public sector and commercial markets, partially offset by a product revenue decline in the enterprise market. We are seeing improvement in business momentum in our customer markets, which we believe was
-- **CSCO / Demand**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-1RjGvEZj"], confirm: true })
+  - Evidence: In fiscal 2022, the Company recognized a non-cash loss of $
+- **DIS / Regulation and legal**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-euj24FEW"], confirm: true })
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the public sector and service provider markets partially offset by declines in the enterprise and commercial markets. As fiscal 2021 progressed, we saw improvement in business momentum in our customer markets, which we belie
-- **CSCO / Demand**
-  - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-TQsy9gv1"], confirm: true })
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the enterprise, commercial and service provider markets, partially offset by a product revenue decline in the public sector market. We continued to see improvement in business momentum in our customer markets.
-- **CSCO / Demand**
-  - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-HpzHr3fz"], confirm: true })
-  - Evidence: From a customer market standpoint, we experienced product revenue growth in the commercial, enterprise and service provider markets partially offset by a decline in the public sector market.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-dR9Wd8qh"], confirm: true })
+  - Evidence: The impact of COVID-19 related disruptions on our financial and operational results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toler
 - **DIS / Geopolitics and tariffs**
-  - Reason: Open assumption has review pressure 7.
-  - Next action: Review staged candidates linked to assumption asm-xakuDdYD before carrying this bet forward.
-  - Evidence: 24 observation(s), latest 2026-02-02.
+  - Reason: 1 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-sb6nTUak"], confirm: true })
+  - Evidence: Restructuring and impairment charges in fiscal 2022 were $0.2 billion primarily due to the impairment of an intangible and other assets related to our businesses in Russia. We may incur additional charges to exit these businesses, which are not anticipated to be material.
+- **DIS / Geopolitics and tariffs**
+  - Reason: 1 staged outcome candidate(s) need human review.
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-W6pLYKH8"], confirm: true })
+  - Evidence: In the current quarter, the Company recorded charges of $69 million related to exiting our businesses in Russia.
 - **NFLX / Demand**
   - Reason: Open assumption has review pressure 5.
   - Next action: Review staged candidates linked to assumption asm-bmBJ3gyo before carrying this bet forward.
   - Evidence: 84 observation(s), latest 2026-04-17.
-- **DIS / Demand**
-  - Reason: Open assumption has review pressure 5.
-  - Next action: Review staged candidates linked to assumption asm-6o8MAEsY before carrying this bet forward.
-  - Evidence: 53 observation(s), latest 2026-02-02.
+- **PM / Geopolitics and tariffs**
+  - Reason: Open assumption has review pressure 4.
+  - Next action: Review staged candidates linked to assumption asm-qsuv2tV3 before carrying this bet forward.
+  - Evidence: 54 observation(s), latest 2026-04-24.
+- **MO / Liquidity**
+  - Reason: Open assumption has review pressure 3.
+  - Next action: Review staged candidates linked to assumption asm-kZQCFeFw before carrying this bet forward.
+  - Evidence: 83 observation(s), latest 2026-04-30.
 
 ## Limits
 

@@ -10,6 +10,10 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.**
+  - Companies: DIS
+  - Themes: Demand
+  - Outcomes: out-bDqnUbbv
 - **Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.**
   - Companies: AMD
   - Themes: Supply chain

@@ -15,7 +15,7 @@ source: flywheel-ideas
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - Companies: AMD, DIS, T, TJX, TMUS, WMT
 - Observations: 408
-- Realized candidates: 7
+- Realized candidates: 6
 - Signal: shared mechanism with realized-risk evidence
 
 ## What We Can Learn
