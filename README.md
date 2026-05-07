@@ -1,8 +1,8 @@
 # flywheel-ideas
 
-**Track your bets, preserve the evidence, and learn when reality proves you wrong.**
+**A local-first decision ledger that turns messy evidence into falsifiable bets, accepted outcomes, and reusable lessons.**
 
-When decisions go wrong, the useful evidence usually gets scattered: the original bet, what you believed, what happened later, which related decisions now need review, and what lesson should carry forward. `flywheel-ideas` keeps that lifecycle together inside your Markdown vault.
+`flywheel-ideas` is for people who make judgment calls and want a memory that compounds. It keeps the original bet, the assumptions behind it, the evidence that arrives later, the human verdict on whether the bet failed, and the lesson that should change future decisions.
 
 The core loop is simple:
 
@@ -11,6 +11,8 @@ bet -> evidence over time -> possible failure -> accepted outcome -> lesson -> r
 ```
 
 This is a general decision and assumption tracker. The strongest current proof is the company thesis report, which uses SEC filings as a hard test corpus: lots of dated evidence, repeated assumptions, later realized-risk language, and a deterministic readout of what still needs human judgment.
+
+The headline proof: the repo now contains a browsable 10-year SEC evidence corpus with 55 accepted failures, each linked to its original assumption and lesson memo. Start here: [`Company Sector Run`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md).
 
 ## What It Does
 
@@ -28,7 +30,7 @@ For public companies, the main artifact is now a personal-investor thesis report
 
 The next product surface is a compounding SEC ledger: start 10 years back, process 10-K and 10-Q filings in chronological order, and refresh the same ledger instead of creating a fresh dated dataset every time. The point is not a bigger pile of filing summaries. The point is a long-lived memory of what each company appeared to be betting on, where those assumptions accumulated pressure, which failures were accepted by a human, and which lessons should change future review.
 
-## Current Evidence: 37 Companies Over Ten Years
+## Current Evidence: A 10-Year Company Memory
 
 The current SEC proof corpus is a Markdown-only evidence snapshot at [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/). It is generated from a local compounding ledger without committing SQLite state.
 
@@ -41,71 +43,65 @@ Start with the top-down table of contents:
 
 ```text
 1,468 SEC filings
-  -> 408 current company/theme bets
+  -> 361 current company/theme bets
   -> 486 shadow LLM evaluations
-  -> 187 human review events
-  -> 363 staged outcome candidates
-  -> 5 accepted failures after curated review
-  -> 5 lesson memos
+  -> 55 accepted failures after curated review
+  -> 55 lesson memos
+  -> 253 rejected candidate outcomes
+  -> 24 remaining human review events
 ```
 
-Those accepted outcomes are not just summaries. The tool linked later filing evidence back to earlier assumptions, staged the possible failures, required explicit human acceptance, changed the assumption status, recorded lesson memos, and regenerated the navigable Markdown reports.
+Those accepted outcomes are not just summaries. The tool linked later filing evidence back to earlier assumptions, staged possible failures, required explicit human acceptance, changed the assumption status, recorded lesson memos, and regenerated the navigable Markdown reports.
 
-Representative accepted failures now include Apple supply/geographic concentration, AMD PC demand and export-control inventory charges, Booking demand collapse, and NVIDIA H20 export-control demand/inventory risk. The remaining queue is still visible rather than hidden: 358 staged candidates need adjudication before they become accepted outcomes.
+Representative accepted failures now include export-control inventory charges, quantified cybersecurity breach costs, market exits, investment impairments, debt-extinguishment losses, platform access restrictions, and travel-demand collapse. The remaining queue is still visible rather than hidden: 24 review events need adjudication before they become accepted outcomes.
 
 This is decision support, not investment advice. The value is the auditable lifecycle: what the thesis depended on, what later evidence challenged, what the human accepted, and what lesson should change future review.
 
-## Earlier Worked Example: Three Companies Over Ten Years
+The sector-scale SEC driver is [`scripts/sec-sector-lifecycle-bundle.mjs`](./scripts/sec-sector-lifecycle-bundle.mjs). It writes a linked report bundle with sector pages, company pages, theme pages, and cross-sector mechanism patterns so shared assumptions are not just keyword matches.
 
-The SEC dogfood run tracked [[aapl]], MSFT, and [[nvda]] across 10 years of 10-K and 10-Q filings.
+## Killer Feature Examples
 
-```text
-125 filings
-  -> 36 tracked company/theme assumptions
-  -> 2,192 dated observations
-  -> 36 staged outcome candidates
-  -> 22 review events
-  -> 9 accepted failures after curated review
-  -> 9 lesson memos
-```
+### 1. NVIDIA: Export Control Became Inventory Risk
 
-Before review, the tool had not claimed anything had failed. It had created visibility: 36 current bets and a review queue.
-
-After accepting three representative review groups, the ledger changed:
-
-- Current bets dropped from 36 to 29.
-- Accepted failures rose from 0 to 9.
-- Lesson memos rose from 0 to 9.
-- Review work remaining dropped from 22 events to 19.
-
-See [`docs/sec-lifecycle-dogfood.md`](./docs/sec-lifecycle-dogfood.md) for the run details and [`scripts/sec-lifecycle-dogfood.mjs`](./scripts/sec-lifecycle-dogfood.mjs) for the reproducible driver.
-
-The sector-scale SEC driver is [`scripts/sec-sector-lifecycle-bundle.mjs`](./scripts/sec-sector-lifecycle-bundle.mjs). It writes a linked report bundle with sector pages, company pages, theme pages, and cross-sector mechanism patterns so shared assumptions are not just keyword matches. The current committed corpus contains the completed Markdown evidence from the companies that were available before SEC 403 throttling blocked the remaining fetches.
-
-## Concrete Examples
-
-### NVIDIA: Demand Became Inventory Risk
-
-- **Bet:** NVIDIA could manage demand and inventory/channel risk without material disruption.
+- **Bet:** NVIDIA could manage AI accelerator demand and inventory/channel risk.
 - **Evidence:** Filings repeatedly disclosed demand, supply, and channel risks.
 - **Failure event:** NVIDIA later disclosed that H20 export-license restrictions contributed to a $4.5B excess inventory and purchase-obligation charge after H20 demand diminished.
 - **Lesson:** Geopolitical access constraints can turn demand risk into inventory write-down risk before the commercial opportunity fully disappears.
+- **Evidence:** [`out-VxXuqAUS`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-VxXuqAUS.md), [`out-4GsRMjM5`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-4GsRMjM5.md)
 
-### Apple: Supply, Channel, And Demand Failed Together
+### 2. AMD: Policy Shock Became Stranded Inventory
 
-- **Bet:** Apple could manage supply-chain, channel, and geopolitical disruption without material disruption.
-- **Evidence:** Filings repeatedly disclosed dependence on global manufacturing, logistics, retail stores, and channel partners.
-- **Failure event:** Apple disclosed COVID-era manufacturing and logistics disruption, temporary iPhone supply shortages, worldwide sales effects, and retail/channel closures.
-- **Lesson:** A distributed hardware business can see supply, channel, and demand assumptions fail together when a shock closes both factories and points of sale.
+- **Bet:** AMD could manage data-center GPU demand and geopolitics risk.
+- **Evidence:** The ledger carried separate assumptions for demand, inventory/channel, geopolitics, and cloud/data-center capacity.
+- **Failure event:** AMD later recorded about $800M of inventory and related charges on MI308 products due to new U.S. export restrictions.
+- **Lesson:** Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.
+- **Evidence:** [`out-BqJTAbxZ`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-BqJTAbxZ.md), [`out-dkrWjofL`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-dkrWjofL.md)
 
-### Microsoft: AI/Cloud Upside Had Cost Drag
+### 3. Home Depot: Cyber Risk Became Quantified Cost
 
-- **Bet:** Microsoft could manage AI, R&D, and cloud/data-center capacity investment without material disruption.
-- **Evidence:** Filings repeatedly disclosed compute capacity, AI talent, cloud infrastructure, and technology investment risks.
-- **Failure event:** Microsoft disclosed operating expense growth driven by Gaming impairment-related expenses and continued investment in compute capacity, AI talent, and data.
-- **Lesson:** AI and cloud capacity bets should track both strategic upside and the impairment/opex drag created when adjacent hardware or gaming assumptions weaken.
+- **Bet:** Home Depot could manage cybersecurity and privacy risk without material disruption.
+- **Evidence:** Cybersecurity remained a live company/theme assumption until a later filing disclosed realized breach impact.
+- **Failure event:** Home Depot disclosed theft of payment-card information and customer emails, $161M of pretax expenses net of expected insurance recoveries, and related litigation exposure.
+- **Lesson:** Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.
+- **Evidence:** [`out-btdioMuB`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-btdioMuB.md)
 
-The Microsoft example is intentionally weaker than the NVIDIA and Apple examples. It is a useful cost/impairment signal, not a clean strategic thesis failure. The point is that the system makes review judgment explicit instead of pretending every detected event is equally strong.
+### 4. Meta: Geopolitics Hit Platform Access Before Revenue
+
+- **Bet:** Meta could manage geopolitics/access restrictions without material user-growth disruption.
+- **Evidence:** The ledger tracked platform, customer dependency, regulation, demand, and geopolitics assumptions separately.
+- **Failure event:** Meta disclosed a slight quarter-over-quarter decline in Family daily active people driven by internet disruptions in Iran and WhatsApp restrictions in Russia.
+- **Lesson:** For platform companies, geopolitical risk becomes decision-grade when access restrictions are tied to measured user engagement declines, even before the filing quantifies revenue loss.
+- **Evidence:** [`out-aWE2ftCq`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-aWE2ftCq.md)
+
+### 5. Capital Allocation Failures Became Lessons
+
+The corpus now contains several cases where abstract liquidity or capital-allocation risk became concrete:
+
+- Lowe's exited Australia and recorded a $530M impairment: [`out-nzwXFuEc`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-nzwXFuEc.md).
+- Altria recorded a $2.5B impairment after an ABI investment decline became other-than-temporary: [`out-V13Rkdgz`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-V13Rkdgz.md).
+- TJX recorded a $242M pre-tax loss on early extinguishment of $2B of debt: [`out-51DsRhsa`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-51DsRhsa.md).
+
+These are the killer feature: the tool does not just find the filing sentence. It keeps the earlier bet, the later contradiction, the human verdict, and the lesson together.
 
 ## What Is Novel Here?
 
