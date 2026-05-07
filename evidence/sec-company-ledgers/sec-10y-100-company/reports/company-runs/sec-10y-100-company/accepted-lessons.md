@@ -10,6 +10,10 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.**
+  - Companies: DIS
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-tnWp4P7Z
 - **Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.**
   - Companies: DIS
   - Themes: Demand

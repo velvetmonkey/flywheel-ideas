@@ -476,9 +476,13 @@ function buildReviewQueue(
     source_uris: string[];
     representative_excerpt: string;
     max_confidence: number;
+    review_priority: number;
   }>();
   for (const candidate of candidates.filter((c) => c.state === 'staged')) {
     const theme = themeById.get(candidate.theme_id);
+    if (candidate.assumption_id && (theme?.assumption_status ?? 'open') !== 'open') {
+      continue;
+    }
     const filing = filingById.get(candidate.filing_id);
     const company = theme?.ticker ?? filing?.ticker ?? theme?.cik ?? filing?.cik ?? 'unknown';
     const key = `${company}:${outcomeFingerprint(candidate.excerpt)}`;
@@ -491,6 +495,7 @@ function buildReviewQueue(
       source_uris: [],
       representative_excerpt: candidate.excerpt,
       max_confidence: 0,
+      review_priority: 0,
     };
     current.candidate_ids.push(candidate.id);
     if (candidate.assumption_id) current.assumption_ids.add(candidate.assumption_id);
@@ -498,6 +503,7 @@ function buildReviewQueue(
     if (filing?.filed_at) current.filing_dates.push(filing.filed_at);
     current.source_uris.push(candidate.source_uri);
     current.max_confidence = Math.max(current.max_confidence, candidate.confidence);
+    current.review_priority = Math.max(current.review_priority, outcomeReviewPriority(candidate));
     if (candidate.excerpt.length > current.representative_excerpt.length) {
       current.representative_excerpt = candidate.excerpt;
     }
@@ -513,20 +519,82 @@ function buildReviewQueue(
       first_seen_at: minString(group.filing_dates),
       latest_seen_at: maxString(group.filing_dates),
       max_confidence: group.max_confidence,
+      review_priority: group.review_priority,
       representative_source_uri: uniqueSorted(group.source_uris)[0] ?? null,
       representative_excerpt: group.representative_excerpt,
     }))
     .sort((a, b) =>
+      b.review_priority - a.review_priority ||
+      b.max_confidence - a.max_confidence ||
       b.candidate_count - a.candidate_count ||
       a.company.localeCompare(b.company) ||
-      String(a.first_seen_at ?? '').localeCompare(String(b.first_seen_at ?? '')),
+      String(b.latest_seen_at ?? '').localeCompare(String(a.latest_seen_at ?? '')),
     )
     .map((group, index) => ({
       id: `og-${String(index + 1).padStart(3, '0')}`,
-      ...group,
+      company: group.company,
+      candidate_count: group.candidate_count,
+      candidate_ids: group.candidate_ids,
+      assumption_ids: group.assumption_ids,
+      themes: group.themes,
+      first_seen_at: group.first_seen_at,
+      latest_seen_at: group.latest_seen_at,
+      max_confidence: group.max_confidence,
+      representative_source_uri: group.representative_source_uri,
+      representative_excerpt: group.representative_excerpt,
       status: 'needs_human_review' as const,
       apply_command: `company.apply_outcomes({ run_id: "${runId}", outcome_candidate_ids: ${JSON.stringify(group.candidate_ids)}, confirm: true })`,
     }));
+}
+
+const STRONG_FAILURE_TERMS = [
+  'impairment',
+  'charge',
+  'charges',
+  'loss',
+  'decline',
+  'decreased',
+  'reduced',
+  'restructuring',
+  'severance',
+  'exit',
+  'exiting',
+  'breach',
+  'unauthorized access',
+  'adverse',
+  'write down',
+  'write-down',
+  'underutilization',
+  'shutdown',
+  'disruption',
+  'ruling',
+  'probable',
+  'extinguishment',
+];
+
+const WEAK_OR_POSITIVE_TERMS = [
+  'benefited',
+  'higher revenue',
+  'revenues increased',
+  'gross margin increased',
+  'operating income increased',
+  'gain',
+  'favorable',
+  'cost savings',
+  'not have a significant impact',
+  'unknown',
+  'may also',
+  'could',
+];
+
+function outcomeReviewPriority(candidate: OutcomeCandidateRow): number {
+  const excerpt = candidate.excerpt.toLowerCase();
+  const rationale = candidate.rationale.toLowerCase();
+  const text = `${excerpt}\n${rationale}`;
+  const strongSignals = STRONG_FAILURE_TERMS.filter((term) => text.includes(term)).length;
+  const weakSignals = WEAK_OR_POSITIVE_TERMS.filter((term) => text.includes(term)).length;
+  const shortExcerptPenalty = candidate.excerpt.trim().length < 120 ? 20 : 0;
+  return Math.round(candidate.confidence * 100) + (strongSignals * 8) - (weakSignals * 6) - shortExcerptPenalty;
 }
 
 function buildAcceptedVerdicts(db: IdeasDatabase, runId: string): SecAcceptedVerdict[] {
