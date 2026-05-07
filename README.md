@@ -14,6 +14,8 @@ This is a general decision and assumption tracker. The strongest current proof i
 
 The headline proof: the repo now contains a browsable 10-year SEC evidence corpus with 55 accepted failures, each linked to its original assumption and lesson memo. Start here: [`Company Sector Run`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md).
 
+If you are evaluating whether this is actually novel, read [`docs/sec-corpus-walkthrough.md`](./docs/sec-corpus-walkthrough.md). It walks through the strongest checked-in examples and separates real product value from ordinary SEC search or summarization.
+
 ## What It Does
 
 - Tracks decisions as explicit bets and load-bearing assumptions.
