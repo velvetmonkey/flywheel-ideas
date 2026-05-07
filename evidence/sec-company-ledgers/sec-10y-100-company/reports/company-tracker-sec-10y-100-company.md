@@ -127,8 +127,8 @@ source: flywheel-ideas
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 91
-- Applied outcomes: 46
+- Staged outcomes: 79
+- Applied outcomes: 47
 
 ## SEC Company Lifecycle Report
 
@@ -137,22 +137,26 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 ## Lifecycle Snapshot
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
-- Current bets: 370 open company/theme assumption(s) still being carried.
-- Review queue: 91 event(s), 91 staged candidate(s) awaiting human judgment.
-- Accepted outcomes: 46 failure(s), 0 validation(s).
-- Lessons: 46 recorded memo(s), 0 missing memo(s).
-- Triage completion: 46/363 candidate(s) applied (13%).
+- Current bets: 369 open company/theme assumption(s) still being carried.
+- Review queue: 79 event(s), 79 staged candidate(s) awaiting human judgment.
+- Accepted outcomes: 47 failure(s), 0 validation(s).
+- Lessons: 47 recorded memo(s), 0 missing memo(s).
+- Triage completion: 47/363 candidate(s) applied (13%).
 
 ## Operator Next Step
 
-Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iihwv1WH"], confirm: true })`
+Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })`
 
 ## Lifecycle Status
 
-46 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
+47 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
 
 ## Lessons Captured
 
+- **Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.**
+  - Evidence: 1 accepted failure verdict(s) across DIS / Demand
+  - Representative context: The filing disclosed quarterly revenues decreased 42%, or $8.5 billion, to $11.8 billion, while net income attributable to Disney decreased $6.5 billion to a $4.7 billion loss.
+  - Outcomes: out-bDqnUbbv
 - **Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.**
   - Evidence: 1 accepted failure verdict(s) across AMD / Supply chain
   - Representative context: The filing disclosed AMD experienced some disruptions to parts of its supply chain during the first quarter of 2020 and continued adjusting supply-chain requirements based on changing customer needs and demand.
@@ -346,16 +350,12 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-xakuDdYD
 - **NFLX / Demand** — fresh, 84 observation(s), review pressure 5, latest 2026-04-17
   - Assumption: asm-bmBJ3gyo
-- **DIS / Demand** — fresh, 53 observation(s), review pressure 5, latest 2026-02-02
-  - Assumption: asm-6o8MAEsY
 - **PM / Geopolitics and tariffs** — fresh, 54 observation(s), review pressure 4, latest 2026-04-24
   - Assumption: asm-qsuv2tV3
 - **MO / Liquidity** — fresh, 83 observation(s), review pressure 3, latest 2026-04-30
   - Assumption: asm-kZQCFeFw
 - **MSFT / Demand** — fresh, 84 observation(s), review pressure 3, latest 2026-04-29
   - Assumption: asm-GpdfFh1C
-- **DIS / Liquidity** — fresh, 39 observation(s), review pressure 3, latest 2026-02-02
-  - Assumption: asm-cAuLNidr
 - **MCD / Liquidity** — fresh, 68 observation(s), review pressure 3, latest 2025-11-05
   - Assumption: asm-sfuU8h2r
 - **PM / Liquidity** — fresh, 83 observation(s), review pressure 2, latest 2026-04-24
@@ -366,69 +366,13 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-c1UaX4xS
 - **MU / AI, R&D, and technology** — fresh, 83 observation(s), review pressure 2, latest 2026-03-19
   - Assumption: asm-o5RkVgmn
+- **VZ / Demand** — fresh, 84 observation(s), review pressure 1, latest 2026-05-01
+  - Assumption: asm-ktbpwdZ5
+- **KO / Demand** — fresh, 84 observation(s), review pressure 1, latest 2026-04-30
+  - Assumption: asm-5B3UtjSr
 
 ## Outcome Review Queue
 
-- **CSCO** 2019-11-19: 1 candidate(s), Demand
-  - Candidate IDs: cout-iihwv1WH
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-iihwv1WH"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-19-000018#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced a product revenue decline in the service provider market and a slight decline in the enterprise market. These decreases were substantially offset by product revenue growth in the public sector and commercial markets.
-- **CSCO** 2021-05-25: 1 candidate(s), Demand
-  - Candidate IDs: cout-UCtqyNPZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UCtqyNPZ"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-21-000008#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the service provider, public sector and commercial markets, partially offset by a product revenue decline in the enterprise market. We are seeing improvement in business momentum in our customer markets, which we believe was
-- **CSCO** 2021-09-09: 1 candidate(s), Demand
-  - Candidate IDs: cout-euj24FEW
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-euj24FEW"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-21-000013#item-7:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the public sector and service provider markets partially offset by declines in the enterprise and commercial markets. As fiscal 2021 progressed, we saw improvement in business momentum in our customer markets, which we belie
-- **CSCO** 2022-02-22: 1 candidate(s), Demand
-  - Candidate IDs: cout-TQsy9gv1
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-TQsy9gv1"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-22-000004#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the enterprise, commercial and service provider markets, partially offset by a product revenue decline in the public sector market. We continued to see improvement in business momentum in our customer markets.
-- **CSCO** 2022-09-08: 1 candidate(s), Demand
-  - Candidate IDs: cout-HpzHr3fz
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-HpzHr3fz"], confirm: true })`
-  - Source: sec-company://0000858877/0000858877-22-000013#item-7:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the commercial, enterprise and service provider markets partially offset by a decline in the public sector market.
-- **DIS** 2019-08-06: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-DUvbJ6gn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DUvbJ6gn"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-19-000167#part-i-item-2:theme:liquidity:outcome
-  - The increase in interest income, investment income and other was due to higher interest income on cash balances and the inclusion of a $27 million benefit related to pension and postretirement benefit costs, other than service cost, partially offset by higher investment impairments. The Company adop
-- **DIS** 2020-08-04: 1 candidate(s), Demand
-  - Candidate IDs: cout-5fSq8aVN
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-5fSq8aVN"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-20-000151#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter decreased 42%, or $8.5 billion, to $11.8 billion; net income attributable to Disney decreased $6.5 billion, to a loss of $4.7 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) decreased to a loss of $2.61 compared to income of $0
-- **DIS** 2020-08-04: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-DMZbJnsg
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DMZbJnsg"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-20-000151#part-i-item-2:theme:regulation-legal:outcome
-  - Some of our businesses have begun to re-open with limited operations. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we open our theme parks and retail stores, we incurred and will con
-- **DIS** 2021-05-13: 1 candidate(s), Cloud and data center capacity
-  - Candidate IDs: cout-7oy12Z8v
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7oy12Z8v"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-21-000108#part-i-item-2:theme:cloud-data-center-capacity:outcome
-  - Cost of services for the quarter decreased 16%, or $1.8 billion, to $8.9 billion due to the closure/reduced operating capacity of our theme parks and resorts, lower production cost amortization and distribution costs at Content Sales/Licensing and Other and to a lesser extent, lower programming and
-- **DIS** 2021-08-12: 1 candidate(s), Demand
-  - Candidate IDs: cout-xFZie49u
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xFZie49u"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-21-000181#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 45%, or $5.2 billion, to $17.0 billion; net income attributable to Disney increased $5.6 billion, to $0.9 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) was $0.50 compared to a loss of $2.61 in the prior-year quarter
-- **DIS** 2021-08-12: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-p8KnWZgn
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p8KnWZgn"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-21-000181#part-i-item-2:theme:regulation-legal:outcome
-  - Most of our businesses have reopened, although some with limited capacity and other restrictions. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we reopened theme parks and retail stor
-- **DIS** 2022-02-09: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-t2HbMYdh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-t2HbMYdh"], confirm: true })`
-  - Source: sec-company://0001744489/0001744489-22-000059#part-i-item-2:theme:liquidity:outcome
-  - In the current quarter, the Company recognized $436 million in Other expense, net due to a non-cash loss of $432 million to adjust its investment in DraftKings to fair value.
 - **DIS** 2022-11-29: 1 candidate(s), Regulation and legal
   - Candidate IDs: cout-r8Gq1Yqt
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-r8Gq1Yqt"], confirm: true })`
@@ -1011,6 +955,10 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - In the context of **AMD disclosed supply chain risk in 10-K 2016-02-18.**, facing **Intel exerts substantial influence over computer manufacturers and their channels of distribution through various brand and other marketing programs. As a result of Intel's position in the microprocessor market, Intel has been able to control x86 microprocessor and computer system standards and benchmarks and to dictate the type of products the microprocessor market requires of us.**, we assume **AMD can manage supply chain risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
 
   - Lesson: Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.
+- **FAIL** DIS / Demand: asm-6o8MAEsY via out-bDqnUbbv
+  - In the context of **DIS disclosed demand risk in 10-Q 2019-05-08.**, facing **Seasonality**, we assume **DIS can manage demand risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.
 
 ## Dependent Ideas Needing Review
 
@@ -1021,7 +969,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 91 staged, 46 applied.
+- Realized outcome candidates: 79 staged, 47 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -1338,7 +1286,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-18 to 2026-02-17
 - Themes tracked: 12
 - Observations: 782
-- Staged outcomes: 5
+- Staged outcomes: 0
 
 - **AI, R&D, and technology**: 82 observation(s), latest 2026-02-17, assumption asm-n7FhB48i
 - **Demand**: 82 observation(s), latest 2026-02-17, assumption asm-apaexpGF
@@ -1644,7 +1592,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2019-05-08 to 2026-02-02
 - Themes tracked: 12
 - Observations: 333
-- Staged outcomes: 23
+- Staged outcomes: 16
 
 - **Demand**: 53 observation(s), latest 2026-02-02, assumption asm-6o8MAEsY
 - **Regulation and legal**: 46 observation(s), latest 2026-02-02, assumption asm-K8rwQyCS
@@ -1676,14 +1624,14 @@ No dependent ideas are currently flagged by accepted refutations.
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 39 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Communication Services | 10 | 12 | 5374 | 32 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
 | Consumer Discretionary | 10 | 12 | 5501 | 15 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
 | Consumer Staples | 10 | 12 | 3899 | 16 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 21 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 16 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |
@@ -1692,7 +1640,7 @@ No dependent ideas are currently flagged by accepted refutations.
 
 - **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 16 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 7 realized candidate(s).
+- **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 6 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 5 realized candidate(s).
   - Sectors: Consumer Discretionary, Information Technology
@@ -1754,56 +1702,8 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-91 staged candidate(s) grouped into 91 review event(s). Apply still operates on candidate IDs; groups are for review only.
+79 staged candidate(s) grouped into 79 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
-- **CSCO** 2019-11-19: 1 candidate(s), Demand
-  - Candidate IDs: cout-iihwv1WH
-  - Representative source: sec-company://0000858877/0000858877-19-000018#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced a product revenue decline in the service provider market and a slight decline in the enterprise market. These decreases were substantially offset by product revenue growth in the public sector and commercial markets.
-- **CSCO** 2021-05-25: 1 candidate(s), Demand
-  - Candidate IDs: cout-UCtqyNPZ
-  - Representative source: sec-company://0000858877/0000858877-21-000008#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the service provider, public sector and commercial markets, partially offset by a product revenue decline in the enterprise market. We are seeing improvement in business momentum in our customer markets, which we believe was
-- **CSCO** 2021-09-09: 1 candidate(s), Demand
-  - Candidate IDs: cout-euj24FEW
-  - Representative source: sec-company://0000858877/0000858877-21-000013#item-7:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the public sector and service provider markets partially offset by declines in the enterprise and commercial markets. As fiscal 2021 progressed, we saw improvement in business momentum in our customer markets, which we belie
-- **CSCO** 2022-02-22: 1 candidate(s), Demand
-  - Candidate IDs: cout-TQsy9gv1
-  - Representative source: sec-company://0000858877/0000858877-22-000004#part-i-item-2:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the enterprise, commercial and service provider markets, partially offset by a product revenue decline in the public sector market. We continued to see improvement in business momentum in our customer markets.
-- **CSCO** 2022-09-08: 1 candidate(s), Demand
-  - Candidate IDs: cout-HpzHr3fz
-  - Representative source: sec-company://0000858877/0000858877-22-000013#item-7:theme:demand:outcome
-  - From a customer market standpoint, we experienced product revenue growth in the commercial, enterprise and service provider markets partially offset by a decline in the public sector market.
-- **DIS** 2019-08-06: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-DUvbJ6gn
-  - Representative source: sec-company://0001744489/0001744489-19-000167#part-i-item-2:theme:liquidity:outcome
-  - The increase in interest income, investment income and other was due to higher interest income on cash balances and the inclusion of a $27 million benefit related to pension and postretirement benefit costs, other than service cost, partially offset by higher investment impairments. The Company adop
-- **DIS** 2020-08-04: 1 candidate(s), Demand
-  - Candidate IDs: cout-5fSq8aVN
-  - Representative source: sec-company://0001744489/0001744489-20-000151#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter decreased 42%, or $8.5 billion, to $11.8 billion; net income attributable to Disney decreased $6.5 billion, to a loss of $4.7 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) decreased to a loss of $2.61 compared to income of $0
-- **DIS** 2020-08-04: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-DMZbJnsg
-  - Representative source: sec-company://0001744489/0001744489-20-000151#part-i-item-2:theme:regulation-legal:outcome
-  - Some of our businesses have begun to re-open with limited operations. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we open our theme parks and retail stores, we incurred and will con
-- **DIS** 2021-05-13: 1 candidate(s), Cloud and data center capacity
-  - Candidate IDs: cout-7oy12Z8v
-  - Representative source: sec-company://0001744489/0001744489-21-000108#part-i-item-2:theme:cloud-data-center-capacity:outcome
-  - Cost of services for the quarter decreased 16%, or $1.8 billion, to $8.9 billion due to the closure/reduced operating capacity of our theme parks and resorts, lower production cost amortization and distribution costs at Content Sales/Licensing and Other and to a lesser extent, lower programming and
-- **DIS** 2021-08-12: 1 candidate(s), Demand
-  - Candidate IDs: cout-xFZie49u
-  - Representative source: sec-company://0001744489/0001744489-21-000181#part-i-item-2:theme:demand:outcome
-  - Revenues for the quarter increased 45%, or $5.2 billion, to $17.0 billion; net income attributable to Disney increased $5.6 billion, to $0.9 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) was $0.50 compared to a loss of $2.61 in the prior-year quarter
-- **DIS** 2021-08-12: 1 candidate(s), Regulation and legal
-  - Candidate IDs: cout-p8KnWZgn
-  - Representative source: sec-company://0001744489/0001744489-21-000181#part-i-item-2:theme:regulation-legal:outcome
-  - Most of our businesses have reopened, although some with limited capacity and other restrictions. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we reopened theme parks and retail stor
-- **DIS** 2022-02-09: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-t2HbMYdh
-  - Representative source: sec-company://0001744489/0001744489-22-000059#part-i-item-2:theme:liquidity:outcome
-  - In the current quarter, the Company recognized $436 million in Other expense, net due to a non-cash loss of $432 million to adjust its investment in DraftKings to fair value.
 - **DIS** 2022-11-29: 1 candidate(s), Regulation and legal
   - Candidate IDs: cout-r8Gq1Yqt
   - Representative source: sec-company://0001744489/0001744489-22-000213#item-1a:theme:regulation-legal:outcome
@@ -2157,16 +2057,6 @@ These candidates are staged for human review. Applying them requires company.app
   - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-24-000027#item-7:theme:demand:outcome)
   - These conditions, which began in the fourth quarter of 2022 and persisted into early 2024, led to significant reductions in average selling prices for both DRAM and NAND and reductions in bit shipments for DRAM. We experienced declines in revenue across all our business segments and nearly all our e
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-19-000018#part-i-item-2:theme:demand:outcome)
-  - From a customer market standpoint, we experienced a product revenue decline in the service provider market and a slight decline in the enterprise market. These decreases were substantially offset by product revenue growth in the public sector and commercial markets.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-21-000008#part-i-item-2:theme:demand:outcome)
-  - From a customer market standpoint, we experienced product revenue growth in the service provider, public sector and commercial markets, partially offset by a product revenue decline in the enterprise market. We are seeing improvement in business momentum in our customer markets, which we believe was
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-21-000013#item-7:theme:demand:outcome)
-  - From a customer market standpoint, we experienced product revenue growth in the public sector and service provider markets partially offset by declines in the enterprise and commercial markets. As fiscal 2021 progressed, we saw improvement in business momentum in our customer markets, which we belie
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-22-000004#part-i-item-2:theme:demand:outcome)
-  - From a customer market standpoint, we experienced product revenue growth in the enterprise, commercial and service provider markets, partially offset by a product revenue decline in the public sector market. We continued to see improvement in business momentum in our customer markets.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000858877/0000858877-22-000013#item-7:theme:demand:outcome)
-  - From a customer market standpoint, we experienced product revenue growth in the commercial, enterprise and service provider markets partially offset by a decline in the public sector market.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001564590-21-004599#item-1a:theme:supply-chain:outcome)
   - Bottlenecks and other unexpected challenges such as those we experienced in the past may arise during our production ramps, and we must address them promptly while continuing to improve manufacturing processes and reducing costs. If we are not successful in achieving these goals, we could face delay
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001628280-25-018911#part-i-item-2:theme:demand:outcome)
@@ -2225,20 +2115,6 @@ These candidates are staged for human review. Applying them requires company.app
   - As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000732712/0000732712-20-000027#part-i-item-2:theme:demand:outcome)
   - In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-19-000167#part-i-item-2:theme:liquidity:outcome)
-  - The increase in interest income, investment income and other was due to higher interest income on cash balances and the inclusion of a $27 million benefit related to pension and postretirement benefit costs, other than service cost, partially offset by higher investment impairments. The Company adop
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-20-000151#part-i-item-2:theme:demand:outcome)
-  - Revenues for the quarter decreased 42%, or $8.5 billion, to $11.8 billion; net income attributable to Disney decreased $6.5 billion, to a loss of $4.7 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) decreased to a loss of $2.61 compared to income of $0
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-20-000151#part-i-item-2:theme:regulation-legal:outcome)
-  - Some of our businesses have begun to re-open with limited operations. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we open our theme parks and retail stores, we incurred and will con
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-21-000108#part-i-item-2:theme:cloud-data-center-capacity:outcome)
-  - Cost of services for the quarter decreased 16%, or $1.8 billion, to $8.9 billion due to the closure/reduced operating capacity of our theme parks and resorts, lower production cost amortization and distribution costs at Content Sales/Licensing and Other and to a lesser extent, lower programming and
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-21-000181#part-i-item-2:theme:demand:outcome)
-  - Revenues for the quarter increased 45%, or $5.2 billion, to $17.0 billion; net income attributable to Disney increased $5.6 billion, to $0.9 billion; and diluted earnings per share from continuing operations attributable to Disney (EPS) was $0.50 compared to a loss of $2.61 in the prior-year quarter
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-21-000181#part-i-item-2:theme:regulation-legal:outcome)
-  - Most of our businesses have reopened, although some with limited capacity and other restrictions. We have incurred and will continue to incur additional costs to address government regulations and the safety of our employees, talent and guests. For example, as we reopened theme parks and retail stor
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-22-000059#part-i-item-2:theme:liquidity:outcome)
-  - In the current quarter, the Company recognized $436 million in Other expense, net due to a non-cash loss of $432 million to adjust its investment in DraftKings to fair value.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-22-000213#item-1a:theme:regulation-legal:outcome)
   - The impact of COVID-19 related disruptions on our financial and operating results will be dictated by the currently unknowable duration and severity of COVID-19 and its variants, and among other things, governmental actions imposed in response to COVID-19 and individuals' and companies' risk toleran
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001744489/0001744489-22-000213#item-7:theme:liquidity:outcome)

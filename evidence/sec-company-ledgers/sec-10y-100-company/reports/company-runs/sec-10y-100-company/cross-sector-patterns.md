@@ -15,7 +15,7 @@ Mechanism-level comparison prevents generic SEC boilerplate from looking more me
 | Pattern | Sectors | Companies | Observations | Realized Candidates | Signal |
 |---|---:|---:|---:|---:|---|
 | [[patterns/geopolitics-tariffs-geographic-concentration|Geopolitics and tariffs / Geographic concentration or local disruption]] | 4 | 25 | 896 | 16 | shared mechanism with realized-risk evidence |
-| [[patterns/demand-consumer-demand-shock|Demand / Consumer or end-market demand shock]] | 4 | 6 | 408 | 7 | shared mechanism with realized-risk evidence |
+| [[patterns/demand-consumer-demand-shock|Demand / Consumer or end-market demand shock]] | 4 | 6 | 408 | 6 | shared mechanism with realized-risk evidence |
 | [[patterns/inventory-channel-platform-customer-concentration|Inventory and channel / Platform or customer concentration]] | 2 | 2 | 58 | 5 | shared mechanism with realized-risk evidence |
 | [[patterns/supply-chain-geographic-concentration|Supply chain / Geographic concentration or local disruption]] | 3 | 4 | 214 | 4 | shared mechanism with realized-risk evidence |
 | [[patterns/supply-chain-single-supplier-manufacturing|Supply chain / Single supplier or manufacturing concentration]] | 2 | 3 | 142 | 3 | shared mechanism with realized-risk evidence |
