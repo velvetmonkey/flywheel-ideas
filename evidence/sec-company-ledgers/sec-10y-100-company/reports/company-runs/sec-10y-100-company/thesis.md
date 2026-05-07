@@ -16,9 +16,9 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 - Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Filings scanned: 1468
-- Current thesis dependencies: 368 open bet(s).
-- Human review queue: 40 event(s), 67 staged candidate(s).
-- Accepted failures: 48; lessons recorded: 48; missing lesson memos: 0.
+- Current thesis dependencies: 361 open bet(s).
+- Human review queue: 24 event(s), 55 staged candidate(s).
+- Accepted failures: 55; lessons recorded: 55; missing lesson memos: 0.
 - Posture: evidence needs human review before thesis confidence should increase.
 
 ## Current Thesis Dependencies
@@ -29,26 +29,8 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **PM / Geopolitics and tariffs** - fresh, review pressure 4, 54 observation(s), latest 2026-04-24
   - Assumption: asm-qsuv2tV3
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **MO / Liquidity** - fresh, review pressure 3, 83 observation(s), latest 2026-04-30
-  - Assumption: asm-kZQCFeFw
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **MSFT / Demand** - fresh, review pressure 3, 84 observation(s), latest 2026-04-29
+- **MSFT / Demand** - fresh, review pressure 2, 84 observation(s), latest 2026-04-29
   - Assumption: asm-GpdfFh1C
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **MCD / Liquidity** - fresh, review pressure 3, 68 observation(s), latest 2025-11-05
-  - Assumption: asm-sfuU8h2r
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **PM / Liquidity** - fresh, review pressure 2, 83 observation(s), latest 2026-04-24
-  - Assumption: asm-dGcwZvEF
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **TJX / Liquidity** - fresh, review pressure 2, 68 observation(s), latest 2026-03-31
-  - Assumption: asm-YS9U4MTJ
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **LOW / Liquidity** - fresh, review pressure 2, 76 observation(s), latest 2026-03-23
-  - Assumption: asm-c1UaX4xS
-  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **MU / AI, R&D, and technology** - fresh, review pressure 2, 83 observation(s), latest 2026-03-19
-  - Assumption: asm-o5RkVgmn
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 - **VZ / Demand** - fresh, review pressure 1, 84 observation(s), latest 2026-05-01
   - Assumption: asm-ktbpwdZ5
@@ -56,12 +38,58 @@ A deterministic decision-support view of current company bets, prior failures, u
 - **KO / Demand** - fresh, review pressure 1, 84 observation(s), latest 2026-04-30
   - Assumption: asm-5B3UtjSr
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
-- **META / Geopolitics and tariffs** - fresh, review pressure 1, 44 observation(s), latest 2026-04-30
-  - Assumption: asm-ysQyika4
+- **MSFT / Liquidity** - fresh, review pressure 1, 64 observation(s), latest 2026-04-29
+  - Assumption: asm-pvTxdvNS
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **TMUS / Demand** - fresh, review pressure 1, 65 observation(s), latest 2026-04-28
+  - Assumption: asm-NyHDPWBk
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **TJX / Geopolitics and tariffs** - fresh, review pressure 1, 15 observation(s), latest 2026-03-31
+  - Assumption: asm-GtYjUncm
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **MU / Supply chain** - fresh, review pressure 1, 84 observation(s), latest 2026-03-19
+  - Assumption: asm-TN54hhrX
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **HD / Demand** - fresh, review pressure 1, 82 observation(s), latest 2026-03-18
+  - Assumption: asm-XBSku9xU
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **WMT / Inventory and channel** - fresh, review pressure 1, 38 observation(s), latest 2026-03-13
+  - Assumption: asm-rLgC687v
+  - Why it matters: Staged evidence exists; review before treating this assumption as intact.
+- **WBD / Demand** - fresh, review pressure 1, 82 observation(s), latest 2026-02-27
+  - Assumption: asm-GY8sY5ge
   - Why it matters: Staged evidence exists; review before treating this assumption as intact.
 
 ## Prior Failures And Lessons
 
+- **Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.**
+  - Evidence: 1 accepted failure verdict(s) across HD / Cybersecurity and privacy
+  - Representative context: Home Depot disclosed a data breach involving stolen payment-card information and customer email addresses, $161M of pretax expenses net of expected insurance recoveries, and related class-action/shareholder litigation.
+  - Outcomes: out-btdioMuB
+- **Technology/R&D exposure becomes falsified when strategic cost resets require quantified restructuring and severance charges rather than normal operating adjustment.**
+  - Evidence: 1 accepted failure verdict(s) across MU / AI, R&D, and technology
+  - Representative context: Micron disclosed $171M of restructuring charges in 2023, primarily related to employee severance, while pursuing a plan expected to generate cost savings.
+  - Outcomes: out-TJEZc2NV
+- **Liquidity risk is decision-grade when financing actions create quantified extinguishment losses and explicit margin/EPS impacts.**
+  - Evidence: 1 accepted failure verdict(s) across TJX / Liquidity
+  - Representative context: TJX completed make-whole calls for $2B of debt and recorded a $242M pre-tax loss on early extinguishment, reducing fiscal 2022 pre-tax margin by 2.0 points and EPS by $0.15.
+  - Outcomes: out-51DsRhsa
+- **Investment/liquidity risks become falsified when fair-value declines are no longer temporary and management records a quantified impairment.**
+  - Evidence: 1 accepted failure verdict(s) across MO / Liquidity
+  - Representative context: Altria disclosed a $2.5B non-cash pre-tax impairment charge on its ABI equity investment after concluding the fair-value decline was other-than-temporary.
+  - Outcomes: out-V13Rkdgz
+- **Liquidity/capital allocation risk becomes decision-grade when a company exits a market and quantifies the impairment required to unwind the bet.**
+  - Evidence: 1 accepted failure verdict(s) across LOW / Liquidity
+  - Representative context: Lowe's disclosed a $530M non-cash impairment charge associated with exiting the Australian home improvement market.
+  - Outcomes: out-nzwXFuEc
+- **Legal/liquidity risks become falsified when filings move from exposure language to probable adverse outcomes with quantified P&L and EPS effects.**
+  - Evidence: 1 accepted failure verdict(s) across PM / Liquidity
+  - Representative context: PM recorded a $204M non-cash pre-tax charge after concluding an adverse outcome was probable, with a stated $0.11 diluted EPS impact.
+  - Outcomes: out-VEELu9Yp
+- **For platform companies, geopolitical risk becomes decision-grade when access restrictions are tied to measured user engagement declines, even before the filing quantifies revenue loss.**
+  - Evidence: 1 accepted failure verdict(s) across META / Geopolitics and tariffs
+  - Representative context: Meta disclosed a slight quarter-over-quarter decline in Family daily active people driven by internet disruptions in Iran and WhatsApp access restrictions in Russia.
+  - Outcomes: out-aWE2ftCq
 - **A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.**
   - Evidence: 1 accepted failure verdict(s) across DIS / Geopolitics and tariffs
   - Representative context: Disney recorded about $0.2B of restructuring and impairment charges primarily tied to Russia businesses and warned that additional exit charges could follow.
@@ -257,104 +285,104 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## What Needs Human Review
 
-- **MSFT / Demand** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-rNg4Lx8R
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })`
-  - Evidence: Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
-- **META / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-KS31B85q
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KS31B85q"], confirm: true })`
-  - Evidence: User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
-- **PM / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-gS9pUjHE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gS9pUjHE"], confirm: true })`
-  - Evidence: As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
-- **PM / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-Qe5gPhAF
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qe5gPhAF"], confirm: true })`
-  - Evidence: As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
-- **LOW / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-DU3jEqeh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DU3jEqeh"], confirm: true })`
-  - Evidence: Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
-- **MO / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-9eweYbvT
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9eweYbvT"], confirm: true })`
-  - Evidence: We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
-- **TJX / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-CWuPhDfZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-CWuPhDfZ"], confirm: true })`
-  - Evidence: A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
-- **TJX / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-9x9J3aNz
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9x9J3aNz"], confirm: true })`
-  - Evidence: During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
+- **KO / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-255h14jf
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-255h14jf"], confirm: true })`
+  - Evidence: During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
+- **MU / Supply chain** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-n8rgakW6
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-n8rgakW6"], confirm: true })`
+  - Evidence: We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
+- **PM / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-fynsGdQk
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fynsGdQk"], confirm: true })`
+  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
+- **PM / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-4pUPM9nU
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-4pUPM9nU"], confirm: true })`
+  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
+- **PM / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-yBsxhpgg
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yBsxhpgg"], confirm: true })`
+  - Evidence: We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
+- **WBD / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-2gso7KJ6
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-2gso7KJ6"], confirm: true })`
+  - Evidence: Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatrical product revenue and lower payments to partners and participants, and a 66% dec
 - **MCD / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-p3G4ipfw
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p3G4ipfw"], confirm: true })`
-  - Evidence: The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
-- **MCD / Liquidity** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-U6jdNkpE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-U6jdNkpE"], confirm: true })`
-  - Evidence: Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
-- **MU / AI, R&D, and technology** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-xeiZQQXT
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xeiZQQXT"], confirm: true })`
-  - Evidence: We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
-- **HD / Cybersecurity and privacy** - 1 candidate(s), confidence up to 0.92
-  - Candidate IDs: cout-7eX6i6u9
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7eX6i6u9"], confirm: true })`
-  - Evidence: The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
+  - Candidate IDs: cout-UkCnhUp1
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UkCnhUp1"], confirm: true })`
+  - Evidence: Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
+- **PM / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-fHbC6VNw
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fHbC6VNw"], confirm: true })`
+  - Evidence: – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
+- **TJX / Geopolitics and tariffs** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-CFFZUQMx
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-CFFZUQMx"], confirm: true })`
+  - Evidence: We account for our investment in Familia using the equity method of accounting. As of January 29, 2022, the carrying value of our investment in Familia was $186 million, which reflects the revaluing of the investment from Russian rubles to the U.S. dollar, resulting in a cumulative translation loss
+- **TMUS / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-mibPR2Sf
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-mibPR2Sf"], confirm: true })`
+  - Evidence: During the quarter ended and subsequent to September 30, 2016, a handset Original Equipment Manufacturer ("OEM") announced recalls on certain of its smartphone devices. As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable
+- **TMUS / Customer and platform dependency** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-ybHov4a1
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-ybHov4a1"], confirm: true })`
+  - Evidence: As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss recorded in
+- **VZ / Demand** - 1 candidate(s), confidence up to 0.92
+  - Candidate IDs: cout-tygeYzjs
+  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-tygeYzjs"], confirm: true })`
+  - Evidence: In Verizon Media, we experienced a decline in advertising and search revenue as advertisers paused or canceled campaigns during this period, and users searched for fewer commercial terms, providing less opportunity for monetization.
 
 ## Cross-Company Patterns
 
-- **Liquidity**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, WBD, WMT, 2450 observation(s), review pressure 14, latest 2026-05-01
-- **Demand**: 26 open bet(s) across ABNB, AMZN, AVGO, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1899 observation(s), review pressure 13, latest 2026-05-01
-- **Geopolitics and tariffs**: 33 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1210 observation(s), review pressure 7, latest 2026-04-30
-- **AI, R&D, and technology**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1357 observation(s), review pressure 2, latest 2026-05-01
+- **Demand**: 26 open bet(s) across ABNB, AMZN, AVGO, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1899 observation(s), review pressure 12, latest 2026-05-01
+- **Geopolitics and tariffs**: 32 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1166 observation(s), review pressure 6, latest 2026-04-30
+- **Liquidity**: 31 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, MAR, MCD, META, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, WBD, WMT, 2140 observation(s), review pressure 3, latest 2026-05-01
 - **Supply chain**: 28 open bet(s) across ABNB, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MSFT, MU, NFLX, ORCL, PG, PLTR, T, TJX, TMUS, VZ, WBD, WMT, 1274 observation(s), review pressure 1, latest 2026-05-01
 - **Customer and platform dependency**: 35 open bet(s) across ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1232 observation(s), review pressure 1, latest 2026-05-01
 - **Inventory and channel**: 31 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, NFLX, ORCL, PEP, PG, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1219 observation(s), review pressure 1, latest 2026-05-01
-- **Cybersecurity and privacy**: 35 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, VZ, WBD, WMT, 844 observation(s), review pressure 1, latest 2026-05-01
 - **Regulation and legal**: 32 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WMT, 2053 observation(s), review pressure 0, latest 2026-05-01
 - **Macro and foreign exchange**: 31 open bet(s) across AAPL, ABNB, AMZN, BKNG, CMCSA, COST, CSCO, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, WBD, WMT, 1784 observation(s), review pressure 0, latest 2026-05-01
 - **Competition**: 36 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1640 observation(s), review pressure 0, latest 2026-05-01
 - **Cloud and data center capacity**: 35 open bet(s) across AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1291 observation(s), review pressure 0, latest 2026-05-01
+- **AI, R&D, and technology**: 34 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT, 1274 observation(s), review pressure 0, latest 2026-05-01
+- **Cybersecurity and privacy**: 34 open bet(s) across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, VZ, WBD, WMT, 803 observation(s), review pressure 0, latest 2026-05-01
 
 ## What To Watch Next
 
-- **MSFT / Demand**
+- **KO / Geopolitics and tariffs**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })
-  - Evidence: Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
-- **META / Geopolitics and tariffs**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-255h14jf"], confirm: true })
+  - Evidence: During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
+- **MU / Supply chain**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KS31B85q"], confirm: true })
-  - Evidence: User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
-- **PM / Liquidity**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-n8rgakW6"], confirm: true })
+  - Evidence: We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
+- **PM / Geopolitics and tariffs**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gS9pUjHE"], confirm: true })
-  - Evidence: As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
-- **PM / Liquidity**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fynsGdQk"], confirm: true })
+  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
+- **PM / Geopolitics and tariffs**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qe5gPhAF"], confirm: true })
-  - Evidence: As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
-- **LOW / Liquidity**
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-4pUPM9nU"], confirm: true })
+  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
+- **PM / Geopolitics and tariffs**
   - Reason: 1 staged outcome candidate(s) need human review.
-  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DU3jEqeh"], confirm: true })
-  - Evidence: Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
+  - Next action: company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-yBsxhpgg"], confirm: true })
+  - Evidence: We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
 - **NFLX / Demand**
   - Reason: Open assumption has review pressure 5.
   - Next action: Review staged candidates linked to assumption asm-bmBJ3gyo before carrying this bet forward.
   - Evidence: 84 observation(s), latest 2026-04-17.
-- **PM / Geopolitics and tariffs**
-  - Reason: Open assumption has review pressure 4.
-  - Next action: Review staged candidates linked to assumption asm-qsuv2tV3 before carrying this bet forward.
-  - Evidence: 54 observation(s), latest 2026-04-24.
-- **MO / Liquidity**
-  - Reason: Open assumption has review pressure 3.
-  - Next action: Review staged candidates linked to assumption asm-kZQCFeFw before carrying this bet forward.
-  - Evidence: 83 observation(s), latest 2026-04-30.
+- **MSFT / Demand**
+  - Reason: Open assumption has review pressure 2.
+  - Next action: Review staged candidates linked to assumption asm-GpdfFh1C before carrying this bet forward.
+  - Evidence: 84 observation(s), latest 2026-04-29.
+- **VZ / Demand**
+  - Reason: Open assumption has review pressure 1.
+  - Next action: Review staged candidates linked to assumption asm-ktbpwdZ5 before carrying this bet forward.
+  - Evidence: 84 observation(s), latest 2026-05-01.
 
 ## Limits
 

@@ -127,8 +127,8 @@ source: flywheel-ideas
 - Forms: ["10-K","10-Q"]
 - Filings scanned: 1468
 - Themes tracked: 439
-- Staged outcomes: 67
-- Applied outcomes: 48
+- Staged outcomes: 55
+- Applied outcomes: 55
 
 ## SEC Company Lifecycle Report
 
@@ -137,22 +137,50 @@ This report tracks the loop: current bets -> evidence over time -> review queue 
 ## Lifecycle Snapshot
 
 - Corpus: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT across 1468 filing(s), 439 tracked assumption(s), and 21186 dated observation(s).
-- Current bets: 368 open company/theme assumption(s) still being carried.
-- Review queue: 40 event(s), 67 staged candidate(s) awaiting human judgment.
-- Accepted outcomes: 48 failure(s), 0 validation(s).
-- Lessons: 48 recorded memo(s), 0 missing memo(s).
-- Triage completion: 48/363 candidate(s) applied (13%).
+- Current bets: 361 open company/theme assumption(s) still being carried.
+- Review queue: 24 event(s), 55 staged candidate(s) awaiting human judgment.
+- Accepted outcomes: 55 failure(s), 0 validation(s).
+- Lessons: 55 recorded memo(s), 0 missing memo(s).
+- Triage completion: 55/363 candidate(s) applied (15%).
 
 ## Operator Next Step
 
-Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })`
+Review the highest-pressure event and apply only if the evidence really refutes the bet: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-255h14jf"], confirm: true })`
 
 ## Lifecycle Status
 
-48 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
+55 accepted verdict(s) are in the ledger, and all accepted failures have durable lesson memos.
 
 ## Lessons Captured
 
+- **Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.**
+  - Evidence: 1 accepted failure verdict(s) across HD / Cybersecurity and privacy
+  - Representative context: Home Depot disclosed a data breach involving stolen payment-card information and customer email addresses, $161M of pretax expenses net of expected insurance recoveries, and related class-action/shareholder litigation.
+  - Outcomes: out-btdioMuB
+- **Technology/R&D exposure becomes falsified when strategic cost resets require quantified restructuring and severance charges rather than normal operating adjustment.**
+  - Evidence: 1 accepted failure verdict(s) across MU / AI, R&D, and technology
+  - Representative context: Micron disclosed $171M of restructuring charges in 2023, primarily related to employee severance, while pursuing a plan expected to generate cost savings.
+  - Outcomes: out-TJEZc2NV
+- **Liquidity risk is decision-grade when financing actions create quantified extinguishment losses and explicit margin/EPS impacts.**
+  - Evidence: 1 accepted failure verdict(s) across TJX / Liquidity
+  - Representative context: TJX completed make-whole calls for $2B of debt and recorded a $242M pre-tax loss on early extinguishment, reducing fiscal 2022 pre-tax margin by 2.0 points and EPS by $0.15.
+  - Outcomes: out-51DsRhsa
+- **Investment/liquidity risks become falsified when fair-value declines are no longer temporary and management records a quantified impairment.**
+  - Evidence: 1 accepted failure verdict(s) across MO / Liquidity
+  - Representative context: Altria disclosed a $2.5B non-cash pre-tax impairment charge on its ABI equity investment after concluding the fair-value decline was other-than-temporary.
+  - Outcomes: out-V13Rkdgz
+- **Liquidity/capital allocation risk becomes decision-grade when a company exits a market and quantifies the impairment required to unwind the bet.**
+  - Evidence: 1 accepted failure verdict(s) across LOW / Liquidity
+  - Representative context: Lowe's disclosed a $530M non-cash impairment charge associated with exiting the Australian home improvement market.
+  - Outcomes: out-nzwXFuEc
+- **Legal/liquidity risks become falsified when filings move from exposure language to probable adverse outcomes with quantified P&L and EPS effects.**
+  - Evidence: 1 accepted failure verdict(s) across PM / Liquidity
+  - Representative context: PM recorded a $204M non-cash pre-tax charge after concluding an adverse outcome was probable, with a stated $0.11 diluted EPS impact.
+  - Outcomes: out-VEELu9Yp
+- **For platform companies, geopolitical risk becomes decision-grade when access restrictions are tied to measured user engagement declines, even before the filing quantifies revenue loss.**
+  - Evidence: 1 accepted failure verdict(s) across META / Geopolitics and tariffs
+  - Representative context: Meta disclosed a slight quarter-over-quarter decline in Family daily active people driven by internet disruptions in Iran and WhatsApp access restrictions in Russia.
+  - Outcomes: out-aWE2ftCq
 - **A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.**
   - Evidence: 1 accepted failure verdict(s) across DIS / Geopolitics and tariffs
   - Representative context: Disney recorded about $0.2B of restructuring and impairment charges primarily tied to Russia businesses and warned that additional exit charges could follow.
@@ -354,104 +382,34 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Assumption: asm-bmBJ3gyo
 - **PM / Geopolitics and tariffs** — fresh, 54 observation(s), review pressure 4, latest 2026-04-24
   - Assumption: asm-qsuv2tV3
-- **MO / Liquidity** — fresh, 83 observation(s), review pressure 3, latest 2026-04-30
-  - Assumption: asm-kZQCFeFw
-- **MSFT / Demand** — fresh, 84 observation(s), review pressure 3, latest 2026-04-29
+- **MSFT / Demand** — fresh, 84 observation(s), review pressure 2, latest 2026-04-29
   - Assumption: asm-GpdfFh1C
-- **MCD / Liquidity** — fresh, 68 observation(s), review pressure 3, latest 2025-11-05
-  - Assumption: asm-sfuU8h2r
-- **PM / Liquidity** — fresh, 83 observation(s), review pressure 2, latest 2026-04-24
-  - Assumption: asm-dGcwZvEF
-- **TJX / Liquidity** — fresh, 68 observation(s), review pressure 2, latest 2026-03-31
-  - Assumption: asm-YS9U4MTJ
-- **LOW / Liquidity** — fresh, 76 observation(s), review pressure 2, latest 2026-03-23
-  - Assumption: asm-c1UaX4xS
-- **MU / AI, R&D, and technology** — fresh, 83 observation(s), review pressure 2, latest 2026-03-19
-  - Assumption: asm-o5RkVgmn
 - **VZ / Demand** — fresh, 84 observation(s), review pressure 1, latest 2026-05-01
   - Assumption: asm-ktbpwdZ5
 - **KO / Demand** — fresh, 84 observation(s), review pressure 1, latest 2026-04-30
   - Assumption: asm-5B3UtjSr
-- **META / Geopolitics and tariffs** — fresh, 44 observation(s), review pressure 1, latest 2026-04-30
-  - Assumption: asm-ysQyika4
+- **MSFT / Liquidity** — fresh, 64 observation(s), review pressure 1, latest 2026-04-29
+  - Assumption: asm-pvTxdvNS
+- **TMUS / Demand** — fresh, 65 observation(s), review pressure 1, latest 2026-04-28
+  - Assumption: asm-NyHDPWBk
+- **TJX / Geopolitics and tariffs** — fresh, 15 observation(s), review pressure 1, latest 2026-03-31
+  - Assumption: asm-GtYjUncm
+- **MU / Supply chain** — fresh, 84 observation(s), review pressure 1, latest 2026-03-19
+  - Assumption: asm-TN54hhrX
+- **HD / Demand** — fresh, 82 observation(s), review pressure 1, latest 2026-03-18
+  - Assumption: asm-XBSku9xU
+- **WMT / Inventory and channel** — fresh, 38 observation(s), review pressure 1, latest 2026-03-13
+  - Assumption: asm-rLgC687v
+- **WBD / Demand** — fresh, 82 observation(s), review pressure 1, latest 2026-02-27
+  - Assumption: asm-GY8sY5ge
 
 ## Outcome Review Queue
 
-- **MSFT** 2017-08-02: 1 candidate(s), Demand
-  - Candidate IDs: cout-rNg4Lx8R
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-rNg4Lx8R"], confirm: true })`
-  - Source: sec-company://0000789019/0001564590-17-014900#item-7:theme:demand:outcome
-  - Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
-- **META** 2026-04-30: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-KS31B85q
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-KS31B85q"], confirm: true })`
-  - Source: sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome
-  - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
-- **PM** 2024-07-25: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-gS9pUjHE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-gS9pUjHE"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-24-000145#part-i-item-2:theme:liquidity:outcome
-  - As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
-- **PM** 2023-07-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Qe5gPhAF
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Qe5gPhAF"], confirm: true })`
-  - Source: sec-company://0001413329/0001413329-23-000176#part-i-item-2:theme:liquidity:outcome
-  - As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
-- **LOW** 2016-03-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-DU3jEqeh
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-DU3jEqeh"], confirm: true })`
-  - Source: sec-company://0000060667/0000060667-16-000276#item-7:theme:liquidity:outcome
-  - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
-- **MO** 2022-10-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9eweYbvT
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9eweYbvT"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome
-  - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
-- **TJX** 2022-03-30: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-CWuPhDfZ
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-CWuPhDfZ"], confirm: true })`
-  - Source: sec-company://0000109198/0000109198-22-000008#item-7:theme:liquidity:outcome
-  - A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
-- **TJX** 2021-08-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9x9J3aNz
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-9x9J3aNz"], confirm: true })`
-  - Source: sec-company://0000109198/0000109198-21-000027#part-i-item-2:theme:liquidity:outcome
-  - During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
-- **MCD** 2017-11-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-p3G4ipfw
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-p3G4ipfw"], confirm: true })`
-  - Source: sec-company://0000063908/0000063908-17-000053#part-i-item-2:theme:liquidity:outcome
-  - The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
-- **MCD** 2017-08-08: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-U6jdNkpE
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-U6jdNkpE"], confirm: true })`
-  - Source: sec-company://0000063908/0000063908-17-000039#part-i-item-2:theme:liquidity:outcome
-  - Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
-- **MU** 2024-10-04: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-xeiZQQXT
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-xeiZQQXT"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-24-000027#item-7:theme:ai-rd-technology:outcome
-  - We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
-- **HD** 2016-03-24: 1 candidate(s), Cybersecurity and privacy
-  - Candidate IDs: cout-7eX6i6u9
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-7eX6i6u9"], confirm: true })`
-  - Source: sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome
-  - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
 - **KO** 2022-10-26: 1 candidate(s), Geopolitics and tariffs
   - Candidate IDs: cout-255h14jf
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-255h14jf"], confirm: true })`
   - Source: sec-company://0000021344/0000021344-22-000042#part-i-item-2:theme:geopolitics-tariffs:outcome
   - During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
-- **LOW** 2019-04-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-c36RGbxD
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-c36RGbxD"], confirm: true })`
-  - Source: sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome
-  - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
-- **MO** 2020-10-30: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Frzywdbu
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-Frzywdbu"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome
-  - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
 - **MU** 2024-10-04: 1 candidate(s), Supply chain
   - Candidate IDs: cout-n8rgakW6
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-n8rgakW6"], confirm: true })`
@@ -482,11 +440,6 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-UkCnhUp1"], confirm: true })`
   - Source: sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome
   - Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
-- **MO** 2025-04-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-BDUrgiSb
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-BDUrgiSb"], confirm: true })`
-  - Source: sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome
-  - became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
 - **PM** 2024-04-26: 1 candidate(s), Geopolitics and tariffs
   - Candidate IDs: cout-fHbC6VNw
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-fHbC6VNw"], confirm: true })`
@@ -562,11 +515,6 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-pLrEFLiU"], confirm: true })`
   - Source: sec-company://0000021344/0000021344-24-000009#item-1a:theme:demand:outcome
   - Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
-- **MU** 2023-03-29: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-j3YJZLsU
-  - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-j3YJZLsU"], confirm: true })`
-  - Source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:ai-rd-technology:outcome
-  - We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
 - **MAR** 2020-11-06: 1 candidate(s), Liquidity
   - Candidate IDs: cout-v6UCJTdD
   - Apply after review: `company.apply_outcomes({ run_id: "sec-10y-100-company", outcome_candidate_ids: ["cout-v6UCJTdD"], confirm: true })`
@@ -772,6 +720,34 @@ Open company/theme assumptions. Staged evidence raises review pressure; it does 
   - In the context of **DIS disclosed geopolitics and tariffs risk in 10-Q 2022-05-11.**, facing **In March 2022, in response to events in Russia and Ukraine, the Company announced a pause of its operations in Russia, which include theatrical distribution and other licensing businesses and the distribution of the Disney Channel in Russia. These business generate approximately two percent of the Company's operating income.**, we assume **DIS can manage geopolitics and tariffs risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
 
   - Lesson: A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.
+- **FAIL** META / Geopolitics and tariffs: asm-ysQyika4 via out-aWE2ftCq
+  - In the context of **META disclosed geopolitics and tariffs risk in 10-Q 2016-11-03.**, facing **Note: For purposes of reporting DAUs, MAUs, and ARPU by geographic region, Europe includes all users in Russia and Turkey and Rest of World includes all users in Africa, Latin America, and the Middle East.**, we assume **META can manage geopolitics and tariffs risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: For platform companies, geopolitical risk becomes decision-grade when access restrictions are tied to measured user engagement declines, even before the filing quantifies revenue loss.
+- **FAIL** PM / Liquidity: asm-dGcwZvEF via out-VEELu9Yp
+  - In the context of **PM disclosed liquidity risk in 10-K 2016-02-17.**, facing **The dissolution, mutually agreed with SWMA, means that both companies will now focus on independent strategies for the commercialization of these products, and the trademarks and intellectual property licensed to the joint venture by the companies will revert to their original owners. The dissolution of this agreement was not material to our consolidated financial position, results of operations or cash flows in any of the periods presented.**, we assume **PM can manage liquidity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Legal/liquidity risks become falsified when filings move from exposure language to probable adverse outcomes with quantified P&L and EPS effects.
+- **FAIL** LOW / Liquidity: asm-c1UaX4xS via out-nzwXFuEc
+  - In the context of **LOW disclosed liquidity risk in 10-K 2016-03-29.**, facing **We accept payments using a variety of methods, including credit card, debit card, credit accounts, our private label and co-branded credit cards, gift cards, direct debit from a customer's bank account, consumer invoicing, and physical bank checks, and we may offer different payment options over time. These payment options subject us to many compliance requirements, including, but not limited to, compliance with payment card association operating rules, including data security rules, certification requirements, rules governing electronic funds transfers and Payment Card Industry Data Security Standards.**, we assume **LOW can manage liquidity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Liquidity/capital allocation risk becomes decision-grade when a company exits a market and quantifies the impairment required to unwind the bet.
+- **FAIL** MO / Liquidity: asm-kZQCFeFw via out-V13Rkdgz
+  - In the context of **MO disclosed liquidity risk in 10-K 2016-02-25.**, facing **The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our results of operations, our cash flows, our financial position and the actual outcome of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.**, we assume **MO can manage liquidity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Investment/liquidity risks become falsified when fair-value declines are no longer temporary and management records a quantified impairment.
+- **FAIL** TJX / Liquidity: asm-YS9U4MTJ via out-51DsRhsa
+  - In the context of **TJX disclosed liquidity risk in 10-K 2016-03-29.**, facing **increases in both fiscal 2015 and fiscal 2014. We continued to generate strong cash flows, allowing us to return value to our shareholders through cash dividends and share repurchases, while continuing to reinvest in our business by adding new**, we assume **TJX can manage liquidity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Liquidity risk is decision-grade when financing actions create quantified extinguishment losses and explicit margin/EPS impacts.
+- **FAIL** MU / AI, R&D, and technology: asm-o5RkVgmn via out-TJEZc2NV
+  - In the context of **MU disclosed ai, r&d, and technology risk in 10-Q 2016-01-08.**, facing **We market our products through our internal sales force, independent sales representatives, and distributors, primarily to OEMs and retailers located around the world. Our success is largely dependent on the market acceptance of our diversified portfolio of semiconductor products, efficient utilization of our manufacturing infrastructure, successful ongoing development of advanced product and process technologies, and generating a return on R&D investments.**, we assume **MU can manage ai, r&d, and technology risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Technology/R&D exposure becomes falsified when strategic cost resets require quantified restructuring and severance charges rather than normal operating adjustment.
+- **FAIL** HD / Cybersecurity and privacy: asm-tCv4Rh7b via out-btdioMuB
+  - In the context of **HD disclosed cybersecurity and privacy risk in 10-K 2016-03-24.**, facing **The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach, as described in more detail in Item 7, "Management's Discussion and Analysis of Financial Condition and Results of Operation" and Note 13 to the Consolidated Financial Statements included in Item 8, "Financial Statements and Supplementary Data". We are facing putative class actions filed in the U.S. and Canada and a consolidated shareholder derivative action brought by two purported shareholders in the U.S., and other claims have been and may be asserted on behalf of customers, payment card issuing banks, shareholders, or others seeking damages or other related relief, allegedly arising out of**, we assume **HD can manage cybersecurity and privacy risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+
+  - Lesson: Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.
 
 ## Dependent Ideas Needing Review
 
@@ -782,7 +758,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Corpus: 1468 SEC filing(s) scanned.
 - Observation ledger: 21186 dated observation(s) grouped into 439 tracked assumption theme(s).
 - Cross-company comparison: 12 theme(s) appeared in more than one company.
-- Realized outcome candidates: 67 staged, 48 applied.
+- Realized outcome candidates: 55 staged, 55 applied.
 - Value signal: recurring issuer-authored evidence is organized for review; outcomes are not applied until explicitly accepted.
 
 ## Company Summaries
@@ -844,7 +820,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-03-29 to 2026-03-23
 - Themes tracked: 12
 - Observations: 546
-- Staged outcomes: 2
+- Staged outcomes: 1
 
 - **Demand**: 82 observation(s), latest 2026-03-23, assumption asm-2bsXCx1z
 - **Regulation and legal**: 79 observation(s), latest 2026-03-23, assumption asm-RvnDU8Y8
@@ -861,7 +837,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-25 to 2026-02-24
 - Themes tracked: 12
 - Observations: 419
-- Staged outcomes: 3
+- Staged outcomes: 1
 
 - **Demand**: 68 observation(s), latest 2025-11-05, assumption asm-n6h4Xk4Y
 - **Liquidity**: 68 observation(s), latest 2025-11-05, assumption asm-sfuU8h2r
@@ -929,7 +905,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-03-29 to 2026-03-31
 - Themes tracked: 11
 - Observations: 382
-- Staged outcomes: 3
+- Staged outcomes: 1
 
 - **Demand**: 70 observation(s), latest 2026-03-31, assumption asm-s1DMMs1D
 - **Liquidity**: 68 observation(s), latest 2026-03-31, assumption asm-YS9U4MTJ
@@ -963,7 +939,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-03-24 to 2026-03-18
 - Themes tracked: 12
 - Observations: 683
-- Staged outcomes: 2
+- Staged outcomes: 1
 
 - **Demand**: 82 observation(s), latest 2026-03-18, assumption asm-XBSku9xU
 - **Liquidity**: 81 observation(s), latest 2026-03-18, assumption asm-TFmHzJEj
@@ -997,7 +973,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-08 to 2026-03-19
 - Themes tracked: 12
 - Observations: 790
-- Staged outcomes: 9
+- Staged outcomes: 8
 
 - **Supply chain**: 84 observation(s), latest 2026-03-19, assumption asm-TN54hhrX
 - **AI, R&D, and technology**: 83 observation(s), latest 2026-03-19, assumption asm-o5RkVgmn
@@ -1048,7 +1024,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-25 to 2026-04-30
 - Themes tracked: 12
 - Observations: 471
-- Staged outcomes: 4
+- Staged outcomes: 3
 
 - **Demand**: 84 observation(s), latest 2026-04-30, assumption asm-GzBCvRcp
 - **Liquidity**: 83 observation(s), latest 2026-04-30, assumption asm-kZQCFeFw
@@ -1065,7 +1041,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-28 to 2026-04-29
 - Themes tracked: 12
 - Observations: 816
-- Staged outcomes: 5
+- Staged outcomes: 4
 
 - **Demand**: 84 observation(s), latest 2026-04-29, assumption asm-GpdfFh1C
 - **AI, R&D, and technology**: 83 observation(s), latest 2026-04-29, assumption asm-e7XCszRn
@@ -1286,7 +1262,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-01-28 to 2026-04-30
 - Themes tracked: 12
 - Observations: 720
-- Staged outcomes: 6
+- Staged outcomes: 5
 
 - **Demand**: 84 observation(s), latest 2026-04-30, assumption asm-s331HAs6
 - **AI, R&D, and technology**: 82 observation(s), latest 2026-04-30, assumption asm-62M2pid4
@@ -1320,7 +1296,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - Window: 2016-02-17 to 2026-04-24
 - Themes tracked: 11
 - Observations: 536
-- Staged outcomes: 9
+- Staged outcomes: 7
 
 - **Demand**: 84 observation(s), latest 2026-04-24, assumption asm-ENkEBfSg
 - **Liquidity**: 83 observation(s), latest 2026-04-24, assumption asm-dGcwZvEF
@@ -1437,14 +1413,14 @@ No dependent ideas are currently flagged by accepted refutations.
 
 | Sector | Companies | Themes | Observations | Staged Outcomes | Top Shared Themes |
 |---|---:|---:|---:|---:|---|
-| Communication Services | 10 | 12 | 5374 | 20 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
-| Consumer Discretionary | 10 | 12 | 5501 | 15 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
-| Consumer Staples | 10 | 12 | 3899 | 16 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
+| Communication Services | 10 | 12 | 5374 | 19 | Demand, Liquidity, Regulation and legal, Macro and foreign exchange, Competition |
+| Consumer Discretionary | 10 | 12 | 5501 | 9 | Demand, Liquidity, Macro and foreign exchange, Regulation and legal, Supply chain |
+| Consumer Staples | 10 | 12 | 3899 | 13 | Demand, Liquidity, Regulation and legal, Supply chain, Macro and foreign exchange |
 | Energy | 10 | 0 | 0 | 0 |  |
 | Financials | 10 | 0 | 0 | 0 |  |
 | Health Care | 10 | 0 | 0 | 0 |  |
 | Industrials | 10 | 0 | 0 | 0 |  |
-| Information Technology | 10 | 12 | 6412 | 16 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
+| Information Technology | 10 | 12 | 6412 | 14 | Demand, AI, R&D, and technology, Liquidity, Regulation and legal, Cloud and data center capacity |
 | Materials | 10 | 0 | 0 | 0 |  |
 | Real Estate | 10 | 0 | 0 | 0 |  |
 | Utilities | 10 | 0 | 0 | 0 |  |
@@ -1515,68 +1491,12 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Realized Outcome Review Events
 
-67 staged candidate(s) grouped into 40 review event(s). Apply still operates on candidate IDs; groups are for review only.
+55 staged candidate(s) grouped into 24 review event(s). Apply still operates on candidate IDs; groups are for review only.
 
-- **MSFT** 2017-08-02: 1 candidate(s), Demand
-  - Candidate IDs: cout-rNg4Lx8R
-  - Representative source: sec-company://0000789019/0001564590-17-014900#item-7:theme:demand:outcome
-  - Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
-- **META** 2026-04-30: 1 candidate(s), Geopolitics and tariffs
-  - Candidate IDs: cout-KS31B85q
-  - Representative source: sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome
-  - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
-- **PM** 2024-07-25: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-gS9pUjHE
-  - Representative source: sec-company://0001413329/0001413329-24-000145#part-i-item-2:theme:liquidity:outcome
-  - As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
-- **PM** 2023-07-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Qe5gPhAF
-  - Representative source: sec-company://0001413329/0001413329-23-000176#part-i-item-2:theme:liquidity:outcome
-  - As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
-- **LOW** 2016-03-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-DU3jEqeh
-  - Representative source: sec-company://0000060667/0000060667-16-000276#item-7:theme:liquidity:outcome
-  - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
-- **MO** 2022-10-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9eweYbvT
-  - Representative source: sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome
-  - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
-- **TJX** 2022-03-30: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-CWuPhDfZ
-  - Representative source: sec-company://0000109198/0000109198-22-000008#item-7:theme:liquidity:outcome
-  - A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
-- **TJX** 2021-08-27: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-9x9J3aNz
-  - Representative source: sec-company://0000109198/0000109198-21-000027#part-i-item-2:theme:liquidity:outcome
-  - During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
-- **MCD** 2017-11-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-p3G4ipfw
-  - Representative source: sec-company://0000063908/0000063908-17-000053#part-i-item-2:theme:liquidity:outcome
-  - The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
-- **MCD** 2017-08-08: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-U6jdNkpE
-  - Representative source: sec-company://0000063908/0000063908-17-000039#part-i-item-2:theme:liquidity:outcome
-  - Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
-- **MU** 2024-10-04: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-xeiZQQXT
-  - Representative source: sec-company://0000723125/0000723125-24-000027#item-7:theme:ai-rd-technology:outcome
-  - We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
-- **HD** 2016-03-24: 1 candidate(s), Cybersecurity and privacy
-  - Candidate IDs: cout-7eX6i6u9
-  - Representative source: sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome
-  - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
 - **KO** 2022-10-26: 1 candidate(s), Geopolitics and tariffs
   - Candidate IDs: cout-255h14jf
   - Representative source: sec-company://0000021344/0000021344-22-000042#part-i-item-2:theme:geopolitics-tariffs:outcome
   - During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets related to Russia and Ukraine was less than 0.
-- **LOW** 2019-04-02: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-c36RGbxD
-  - Representative source: sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome
-  - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
-- **MO** 2020-10-30: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-Frzywdbu
-  - Representative source: sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome
-  - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
 - **MU** 2024-10-04: 1 candidate(s), Supply chain
   - Candidate IDs: cout-n8rgakW6
   - Representative source: sec-company://0000723125/0000723125-24-000027#item-7:theme:supply-chain:outcome
@@ -1601,10 +1521,6 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-UkCnhUp1
   - Representative source: sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome
   - Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
-- **MO** 2025-04-29: 1 candidate(s), Liquidity
-  - Candidate IDs: cout-BDUrgiSb
-  - Representative source: sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome
-  - became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
 - **PM** 2024-04-26: 1 candidate(s), Geopolitics and tariffs
   - Candidate IDs: cout-fHbC6VNw
   - Representative source: sec-company://0001413329/0001413329-24-000087#part-i-item-2:theme:geopolitics-tariffs:outcome
@@ -1665,10 +1581,6 @@ No dependent ideas are currently flagged by accepted refutations.
   - Candidate IDs: cout-pLrEFLiU
   - Representative source: sec-company://0000021344/0000021344-24-000009#item-1a:theme:demand:outcome
   - Geopolitical instability may also lead to heightened security risk, impacting employee safety and/or damage to infrastructure or our assets. At times, we have faced product boycotts resulting from activism, which have reduced demand for our products. Restrictions on our ability to transfer earnings
-- **MU** 2023-03-29: 1 candidate(s), AI, R&D, and technology
-  - Candidate IDs: cout-j3YJZLsU
-  - Representative source: sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:ai-rd-technology:outcome
-  - We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
 - **MAR** 2020-11-06: 1 candidate(s), Liquidity
   - Candidate IDs: cout-v6UCJTdD
   - Representative source: sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome
@@ -1690,8 +1602,6 @@ These candidates are staged for human review. Applying them requires company.app
   - Operating income included an unfavorable foreign currency impact of 5%. Gross margin decreased $563 million or 4%, driven by higher cost of revenue. Gross margin included an unfavorable
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-17-007547#part-i-item-2:theme:demand:outcome)
   - Operating income included an unfavorable foreign currency impact of 3%. Gross margin increased $1.2 billion or 10%, driven by higher revenue, offset in part by higher cost of revenue.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-17-014900#item-7:theme:demand:outcome)
-  - Corporate and Other operating loss decreased $2.3 billion, primarily due to an $8.9 billion reduction in impairment, integration, and restructuring expenses, driven by prior year goodwill and asset impairment charges related to our phone business, offset in part by lower revenue.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-18-019062#item-7:theme:ai-rd-technology:outcome)
   - Operating income increased $2.9 billion or 11%, primarily due to higher gross margin and lower impairment and restructuring expenses, offset in part by an increase in research and development and sales and marketing expenses. Operating income included an operating loss of $924 million related to the
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:liquidity:outcome)
@@ -1708,8 +1618,6 @@ These candidates are staged for human review. Applying them requires company.app
   - We expect the plan to be substantially completed by the end of the third quarter of 2023. As a result of the 2023 Restructure Plan, we expect to realize cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D, and 10% in SG&A) starting in the fourt
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-23-000022#part-i-item-2:theme:inventory-channel:outcome)
   - As a result of these conditions and increases in our inventory levels, we have reduced wafer starts and capital expenditures. We recognized $27 million of period costs from underutilization in the second quarter of 2023 due to wafer start reductions.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-24-000027#item-7:theme:ai-rd-technology:outcome)
-  - We incurred restructure charges of $171 million in 2023 primarily related to employee severance costs. The 2023 Restructure Plan, which was substantially completed in 2023, yielded estimated cost savings of approximately $130 million per quarter (approximately 60% in cost of goods sold, 30% in R&D,
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-24-000027#item-7:theme:supply-chain:outcome)
   - We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due to wafer start reductions. Subsequently,
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000723125/0000723125-24-000027#item-7:theme:demand:outcome)
@@ -1722,24 +1630,12 @@ These candidates are staged for human review. Applying them requires company.app
   - During the three and nine months ended September 30, 2025, we recognized total revenues of $28.10 billion and $69.93 billion, respectively, representing an increase of $2.91 billion and a decrease of $2.06 billion, respectively, compared to the same periods in the prior year. During the three and ni
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001318605/0001628280-26-003952#item-7:theme:demand:outcome)
   - In 2025, we recognized total revenues of $94.83 billion, representing a decrease of $2.86 billion compared to the prior year. In 2025, our net income attributable to common stockholders was $3.79 billion, representing a decrease of $3.30 billion compared to the prior year.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000354950/0000354950-16-000060#item-1a:theme:cybersecurity-privacy:outcome)
-  - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach,
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000354950/0000354950-24-000201#part-i-item-2:theme:demand:outcome)
   - Depreciation and amortization for the second quarter of fiscal 2024 increased $85 million, or 13.0%, to $738 million from $653 million for the second quarter of fiscal 2023. As a percentage of net sales, depreciation and amortization was 1.7% for the second quarter of fiscal 2024 compared to 1.5% fo
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000063908/0000063908-16-000142#part-i-item-2:theme:liquidity:outcome)
   - Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily of non-cash impairment charges incurred in
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000063908/0000063908-17-000039#part-i-item-2:theme:liquidity:outcome)
-  - Results for both periods also benefited from comparison to the prior year's strategic charges of approximately $230 million, consisting primarily of non-cash impairment charges related to the Company's ongoing refranchising initiatives, as well as the decision to relocate the Company's headquarters.
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000063908/0000063908-17-000053#part-i-item-2:theme:liquidity:outcome)
-  - The Company recorded a pre-tax gain of approximately $850 million related to this sale. For the quarter, this gain was partially offset by $111 million of unrelated pre-tax non-cash impairment charges. Results for 2016 included pre-tax strategic charges of $128 million for the quarter and $357 milli
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000109198/0000109198-21-000027#part-i-item-2:theme:liquidity:outcome)
-  - During the second quarter of fiscal 2022, we completed make-whole calls for $2 billion of our debt that was due to mature in 2025 and 2027 and recorded a pre-tax loss on the early extinguishment of these notes of $242 million. This reduced fiscal 2022 pre-tax margin by 2.0 percentage points and redu
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000109198/0000109198-22-000008#item-7:theme:liquidity:outcome)
-  - A debt extinguishment charge of $0.2 billion reduced fiscal 2022 pre-tax margin by 0.5 percentage points and a debt extinguishment charge of $0.3 billion reduced fiscal 2021 pre-tax margin by 1.0 percentage point.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000109198/0000109198-22-000008#item-7:theme:geopolitics-tariffs:outcome)
   - We account for our investment in Familia using the equity method of accounting. As of January 29, 2022, the carrying value of our investment in Familia was $186 million, which reflects the revaluing of the investment from Russian rubles to the U.S. dollar, resulting in a cumulative translation loss
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000060667/0000060667-16-000276#item-7:theme:liquidity:outcome)
-  - Results for 2015 were negatively impacted by a $530 million non-cash impairment charge associated with our decision to exit the Australian home improvement market by withdrawing from our joint venture with Woolworths Limited. Excluding the impact of this charge, adjusted net income totaled $3.1 bill
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000060667/0000060667-19-000042#item-7:theme:liquidity:outcome)
   - In addition, our fourth quarter annual goodwill impairment review resulted in a non-cash goodwill impairment charge of $952 million related to our Canadian operations (Canadian goodwill impairment). Given the softening outlook for the Canadian housing market, we determined that the book value of thi
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001048286/0001628280-20-015909#part-ii-item-1a:theme:liquidity:outcome)
@@ -1754,8 +1650,6 @@ These candidates are staged for human review. Applying them requires company.app
   - The COVID-19 pandemic has also impacted our business and results of operations, with a varied impact on user growth and engagement, as well as the demand for and pricing of our ads from period to period. While we experienced a reduction in advertising demand and a related decline in pricing during t
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001326801/0001326801-22-000108#part-i-item-2:theme:macro-fx:outcome)
   - , which we believe was primarily driven by reduced marketer spending as a result of a more challenging macroeconomic environment. In addition, because the targeting and measurement challenges associated with iOS changes had already begun in the third quarter of 2021, the impact of these challenges o
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001326801/0001628280-26-028526#part-ii-item-1a:theme:geopolitics-tariffs:outcome)
-  - User growth and engagement are also impacted by a number of other factors, including competitive products and services, such as TikTok, that have reduced some users' engagement with our products and services, as well as global and regional business, macroeconomic, and geopolitical conditions. For ex
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001065280/0001065280-24-000128#part-i-item-2:theme:demand:outcome)
   - The increase in cost of revenues for the three months ended March 31, 2024 as compared to the three months ended March 31, 2023 is primarily due to a $211 million increase in content amortization relating to our existing and new content, partially offset by a $38 million decrease in other cost of re
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001065280/0001065280-25-000176#part-i-item-2:theme:demand:outcome)
@@ -1802,18 +1696,12 @@ These candidates are staged for human review. Applying them requires company.app
   - We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned launch of
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-23-000025#item-7:theme:geopolitics-tariffs:outcome)
   - We recorded pre-tax charges related to the war in Ukraine of approximately $151 million in 2022 (including humanitarian efforts). This includes charges in Russia related to the cancellation of the planned launch of
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-23-000176#part-i-item-2:theme:liquidity:outcome)
-  - As a result of the ruling, we concluded that an adverse outcome is probable. Consequently, we recorded a non-cash pre-tax charge of $204 million in the second quarter results of 2023, reflecting the full amount previously paid by PM Korea. For further details, see Note 10.
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-24-000087#part-i-item-2:theme:geopolitics-tariffs:outcome)
   - – Following the termination of a distribution arrangement in the Middle East, we recorded a pre-tax charge of $80 million in the first quarter of 2023 (representing $70 million net of income tax and a diluted EPS charge of $0.04 per share). The pre-tax charge was recorded as a reduction of net reven
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0001413329/0001413329-24-000145#part-i-item-2:theme:liquidity:outcome)
-  - As a result of the ruling, we concluded that an adverse outcome was probable. Consequently, we recorded a non-cash pre-tax charge of $204 million (representing $174 million net of income tax or $0.11 per share decrease in diluted EPS) in the second quarter results of 2023, reflecting the full amount
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-20-000106#part-i-item-2:theme:liquidity:outcome)
   - Altria considered the impact of COVID-19 on the business of JUUL Labs, Inc. ("JUUL"), including its sales, distribution, operations, supply chain and liquidity, in conducting its periodic impairment assessment. While the impact of COVID-19 was considered in our quantitative valuation that resulted i
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-22-000044#part-i-item-2:theme:supply-chain:outcome)
   - The economic and business repercussions of COVID-19 have been compounded by the Russian invasion of Ukraine. While our operating companies focus on the manufacture and sale of tobacco products in the United States and have little direct exposure to the impacted regions, we have experienced negative
-- **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-22-000102#part-i-item-2:theme:liquidity:outcome)
-  - We evaluated the factors related to the decline in the fair value of our equity investment in ABI below its carrying value at September 30, 2022, including the macroeconomic and geopolitical factors, and concluded that the decline in fair value of our equity investment in ABI at September 30, 2022 w
 - **0.92** Filing language states this risk had an actual effect on operations, results, costs, or supply. (sec-company://0000764180/0000764180-25-000049#part-i-item-2:theme:liquidity:outcome)
   - became effective March 31, 2025. As a result, we performed an interim impairment assessment for the e-vapor reporting unit and recorded a non-cash impairment of our e-vapor reporting unit goodwill. For further discussion, see Note 4.
 
