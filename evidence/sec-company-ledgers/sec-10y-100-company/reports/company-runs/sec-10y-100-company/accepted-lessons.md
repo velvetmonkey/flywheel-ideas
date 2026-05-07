@@ -10,6 +10,34 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.**
+  - Companies: HD
+  - Themes: Cybersecurity and privacy
+  - Outcomes: out-btdioMuB
+- **Technology/R&D exposure becomes falsified when strategic cost resets require quantified restructuring and severance charges rather than normal operating adjustment.**
+  - Companies: MU
+  - Themes: AI, R&D, and technology
+  - Outcomes: out-TJEZc2NV
+- **Liquidity risk is decision-grade when financing actions create quantified extinguishment losses and explicit margin/EPS impacts.**
+  - Companies: TJX
+  - Themes: Liquidity
+  - Outcomes: out-51DsRhsa
+- **Investment/liquidity risks become falsified when fair-value declines are no longer temporary and management records a quantified impairment.**
+  - Companies: MO
+  - Themes: Liquidity
+  - Outcomes: out-V13Rkdgz
+- **Liquidity/capital allocation risk becomes decision-grade when a company exits a market and quantifies the impairment required to unwind the bet.**
+  - Companies: LOW
+  - Themes: Liquidity
+  - Outcomes: out-nzwXFuEc
+- **Legal/liquidity risks become falsified when filings move from exposure language to probable adverse outcomes with quantified P&L and EPS effects.**
+  - Companies: PM
+  - Themes: Liquidity
+  - Outcomes: out-VEELu9Yp
+- **For platform companies, geopolitical risk becomes decision-grade when access restrictions are tied to measured user engagement declines, even before the filing quantifies revenue loss.**
+  - Companies: META
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-aWE2ftCq
 - **A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.**
   - Companies: DIS
   - Themes: Geopolitics and tariffs
