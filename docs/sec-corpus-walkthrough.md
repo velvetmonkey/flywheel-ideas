@@ -25,6 +25,7 @@ The corpus is committed as Markdown only. SQLite, SEC caches, JSON, JSONL, WAL/S
 ## What To Inspect First
 
 - [`thesis.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md): executive view of open bets, accepted failures, and what still needs review.
+- [`dashboard.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md): one-page dashboard of failures, lessons, open bets, and remaining review work.
 - [`tracker.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/tracker.md): lower-level audit view showing accepted verdicts against assumptions.
 - [`accepted-lessons.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md): reusable lessons extracted from accepted failures.
 - [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): remaining work that has not been accepted as truth.
@@ -109,4 +110,3 @@ The tool should not claim to pick stocks. Its current useful role is closer to a
 - Build a sharper thesis dashboard over accepted failures, open bets, lessons, and remaining review events.
 - Add richer cross-company mechanism pages so repeated patterns are easier to compare across sectors.
 - Make dependent-idea review more visible in the SEC corpus once real user-authored theses depend on these assumptions.
-

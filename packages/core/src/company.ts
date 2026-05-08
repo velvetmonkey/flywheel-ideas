@@ -790,6 +790,7 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
   const evaluations = data.evaluation_attempts as Array<Record<string, unknown>>;
   const pages: BundlePage[] = [];
   const indexLinks = [
+    `- [[${baseDir}/dashboard|Thesis dashboard]]`,
     `- [[${baseDir}/thesis|Company thesis]]`,
     `- [[${baseDir}/tracker|Evidence tracker]]`,
     `- [[${baseDir}/sector-assumption-matrix|Sector assumption matrix]]`,
@@ -839,6 +840,12 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
     kind: 'company_ledger_manifest',
     path: `${baseDir}/manifest.md`,
     body: renderLedgerManifestPage(data, baseDir),
+  });
+  pages.push({
+    id: `company-run-${runId}-dashboard`,
+    kind: 'company_thesis_dashboard',
+    path: `${baseDir}/dashboard.md`,
+    body: renderThesisDashboardPage(runId, thesis, baseDir),
   });
   pages.push({
     id: `company-run-${runId}-run-history`,
@@ -979,6 +986,95 @@ function renderSectorMatrixPage(
     lines.push(`- **${row.title ?? row.theme_key}** appears across ${companies.join(', ')} with ${row.observation_count} observation(s).`);
   }
   return `${lines.join('\n')}\n`;
+}
+
+function renderThesisDashboardPage(
+  runId: string,
+  thesis: CompanyThesisReport,
+  baseDir: string,
+): string {
+  const s = thesis.executive_readout;
+  const topLessons = thesis.prior_failures_and_lessons.slice(0, 8);
+  const topReview = thesis.needs_human_review.slice(0, 8);
+  const topBets = thesis.current_thesis_dependencies.slice(0, 8);
+  const topPatterns = thesis.cross_company_patterns.slice(0, 8);
+  const lines = [
+    `# Thesis Dashboard ${runId}`,
+    '',
+    'One-page decision-support view: what failed, what lesson survived, what still needs review, and which bets remain live.',
+    '',
+    '## Snapshot',
+    '',
+    `- Filings scanned: ${s.filings_scanned}`,
+    `- Companies tracked: ${s.companies.length}`,
+    `- Current open bets: ${s.current_bets}`,
+    `- Accepted failures: ${s.accepted_failures}`,
+    `- Lessons recorded: ${s.accepted_lessons}`,
+    `- Missing lesson memos: ${s.missing_lessons}`,
+    `- Review events remaining: ${s.review_events}`,
+    `- Staged candidates remaining: ${s.staged_candidates}`,
+    '',
+    '## Start Here',
+    '',
+    `- Full thesis: [[${baseDir}/thesis|Company thesis]]`,
+    `- Evidence tracker: [[${baseDir}/tracker|Evidence tracker]]`,
+    `- Accepted lessons: [[${baseDir}/accepted-lessons|Accepted lessons]]`,
+    `- Human review queue: [[${baseDir}/review-queue|Human review queue]]`,
+    `- Cross-sector patterns: [[${baseDir}/cross-sector-patterns|Cross-sector patterns]]`,
+    '',
+    '## What Failed',
+    '',
+  ];
+  if (topLessons.length === 0) {
+    lines.push('No accepted failures have been recorded yet.');
+  } else {
+    for (const lesson of topLessons) {
+      lines.push(`- **${lesson.companies.join(', ')} / ${lesson.themes.join(', ')}**`);
+      lines.push(`  - Lesson: ${lesson.lesson}`);
+      lines.push(`  - Evidence: ${lesson.verdict_count} accepted failure(s), outcome(s) ${lesson.outcome_ids.join(', ')}`);
+      lines.push(`  - Context: ${truncateOneLine(lesson.representative_context, 220)}`);
+    }
+  }
+  lines.push('', '## What Still Needs Review', '');
+  if (topReview.length === 0) {
+    lines.push('No staged review events are waiting for human judgment.');
+  } else {
+    for (const event of topReview) {
+      lines.push(`- **${event.company} / ${event.themes.join(', ')}**`);
+      lines.push(`  - Candidates: ${event.candidate_ids.join(', ')}`);
+      lines.push(`  - Evidence: ${truncateOneLine(event.representative_excerpt, 220)}`);
+      lines.push(`  - Action: review, then apply or reject from [[${baseDir}/review-queue|Human review queue]].`);
+    }
+  }
+  lines.push('', '## Current Bets With Review Pressure', '');
+  if (topBets.length === 0) {
+    lines.push('No open company/theme assumptions are currently being carried.');
+  } else {
+    for (const bet of topBets) {
+      lines.push(`- **${bet.company} / ${bet.theme}** - pressure ${bet.review_pressure}, ${bet.observation_count} observation(s), latest ${bet.latest_seen_at}`);
+      lines.push(`  - Assumption: ${bet.assumption_id}`);
+      lines.push(`  - Why it matters: ${bet.why_it_matters}`);
+    }
+  }
+  lines.push('', '## Cross-Company Mechanisms', '');
+  if (topPatterns.length === 0) {
+    lines.push('No shared open-bet patterns are currently visible.');
+  } else {
+    for (const pattern of topPatterns) {
+      lines.push(`- **${pattern.theme}**: ${pattern.open_bet_count} open bet(s), ${pattern.total_observations} observation(s), pressure ${pattern.review_pressure}, companies ${pattern.companies.join(', ')}`);
+    }
+  }
+  lines.push('', '## Product Value Check', '');
+  lines.push('- Novel value today: persistent assumption memory, explicit human outcome adjudication, refuted assumptions, lesson memos, and an auditable Markdown trail.');
+  lines.push('- Not novel by itself: SEC data, filing search, risk-factor extraction, or generic summarization.');
+  lines.push('- Practical use: analyst memory. It shows which thesis assumptions have failed before and what similar live bets still deserve review.');
+  lines.push('');
+  return `${lines.join('\n')}\n`;
+}
+
+function truncateOneLine(value: string, length: number): string {
+  const normalized = value.replace(/\s+/g, ' ').trim();
+  return normalized.length <= length ? normalized : `${normalized.slice(0, length - 1)}…`;
 }
 
 function renderLedgerManifestPage(data: Record<string, unknown>, baseDir: string): string {
