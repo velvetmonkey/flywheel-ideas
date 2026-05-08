@@ -25,6 +25,7 @@ One-page decision-support view: what failed, what lesson survived, what still ne
 
 ## Start Here
 
+- Proof path: [[reports/company-runs/sec-10y-100-company/proof-path|Proof path]]
 - Full thesis: [[reports/company-runs/sec-10y-100-company/thesis|Company thesis]]
 - Evidence tracker: [[reports/company-runs/sec-10y-100-company/tracker|Evidence tracker]]
 - Accepted lessons: [[reports/company-runs/sec-10y-100-company/accepted-lessons|Accepted lessons]]

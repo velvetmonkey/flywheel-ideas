@@ -467,6 +467,16 @@ export async function exportCompanyMarkdownEvidence(
       '',
       'SQLite, JSON, JSONL, raw SEC cache files, WAL/SHM journals, and backups are intentionally excluded.',
       '',
+      '## Start Here',
+      '',
+      `- [Proof path](./reports/company-runs/${input.run_id.toLowerCase()}/proof-path.md): generated reader path through the strongest lifecycle evidence.`,
+      `- [Thesis dashboard](./reports/company-runs/${input.run_id.toLowerCase()}/dashboard.md): accepted failures, live bets under pressure, lessons, and remaining review work.`,
+      `- [Company sector run](./reports/company-runs/${input.run_id.toLowerCase()}/index.md): full table of contents for the generated Markdown bundle.`,
+      `- [Accepted lessons](./reports/company-runs/${input.run_id.toLowerCase()}/accepted-lessons.md): reusable lessons produced by accepted outcomes.`,
+      `- [Human review queue](./reports/company-runs/${input.run_id.toLowerCase()}/review-queue.md): candidate failures still awaiting human judgment.`,
+      '',
+      'This corpus is evidence for the Flywheel Ideas product loop: dated filings create assumptions and observations; possible failures are staged; accepted outcomes refute assumptions; lesson memos preserve what should change next time.',
+      '',
     ].join('\n'),
     'utf8',
   );
@@ -791,6 +801,7 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
   const pages: BundlePage[] = [];
   const indexLinks = [
     `- [[${baseDir}/dashboard|Thesis dashboard]]`,
+    `- [[${baseDir}/proof-path|Proof path]]`,
     `- [[${baseDir}/thesis|Company thesis]]`,
     `- [[${baseDir}/tracker|Evidence tracker]]`,
     `- [[${baseDir}/sector-assumption-matrix|Sector assumption matrix]]`,
@@ -846,6 +857,12 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
     kind: 'company_thesis_dashboard',
     path: `${baseDir}/dashboard.md`,
     body: renderThesisDashboardPage(runId, thesis, baseDir),
+  });
+  pages.push({
+    id: `company-run-${runId}-proof-path`,
+    kind: 'company_proof_path',
+    path: `${baseDir}/proof-path.md`,
+    body: renderProofPathPage(runId, thesis, baseDir),
   });
   pages.push({
     id: `company-run-${runId}-run-history`,
@@ -1016,6 +1033,7 @@ function renderThesisDashboardPage(
     '',
     '## Start Here',
     '',
+    `- Proof path: [[${baseDir}/proof-path|Proof path]]`,
     `- Full thesis: [[${baseDir}/thesis|Company thesis]]`,
     `- Evidence tracker: [[${baseDir}/tracker|Evidence tracker]]`,
     `- Accepted lessons: [[${baseDir}/accepted-lessons|Accepted lessons]]`,
@@ -1072,6 +1090,93 @@ function renderThesisDashboardPage(
   return `${lines.join('\n')}\n`;
 }
 
+function renderProofPathPage(
+  runId: string,
+  thesis: CompanyThesisReport,
+  baseDir: string,
+): string {
+  const s = thesis.executive_readout;
+  const proofCases = thesis.prior_failures_and_lessons.slice(0, 6);
+  const reviewCases = thesis.needs_human_review.slice(0, 6);
+  const pressureBets = thesis.current_thesis_dependencies
+    .filter((bet) => bet.review_pressure > 0)
+    .slice(0, 6);
+  const lines = [
+    `# Proof Path ${runId}`,
+    '',
+    'Generated reader path through the strongest evidence that this is an assumption lifecycle, not filing search or generic summarization.',
+    '',
+    '## Claim Under Test',
+    '',
+    'Flywheel Ideas is useful when it keeps a durable chain from a prior assumption to later evidence, human judgment, a refuted assumption, and a lesson that changes future review.',
+    '',
+    '## Corpus Snapshot',
+    '',
+    `- Filings scanned: ${s.filings_scanned}`,
+    `- Companies tracked: ${s.companies.length}`,
+    `- Current open bets: ${s.current_bets}`,
+    `- Accepted failures: ${s.accepted_failures}`,
+    `- Lessons recorded: ${s.accepted_lessons}`,
+    `- Review events remaining: ${s.review_events}`,
+    `- Staged candidates remaining: ${s.staged_candidates}`,
+    '',
+    '## Read These First',
+    '',
+    `- Dashboard: [[${baseDir}/dashboard|Thesis dashboard]]`,
+    `- Accepted lessons: [[${baseDir}/accepted-lessons|Accepted lessons]]`,
+    `- Human review queue: [[${baseDir}/review-queue|Human review queue]]`,
+    `- Evidence tracker: [[${baseDir}/tracker|Evidence tracker]]`,
+    '',
+    '## Accepted Failure Chains',
+    '',
+  ];
+  if (proofCases.length === 0) {
+    lines.push('No accepted failures have been recorded yet. The proof path starts once outcome candidates are adjudicated.');
+  } else {
+    for (const lesson of proofCases) {
+      lines.push(`- **${lesson.companies.join(', ')} / ${lesson.themes.join(', ')}**`);
+      lines.push('  - Prior assumption: the company could manage this risk without material disruption.');
+      lines.push(`  - Later evidence: ${truncateOneLine(lesson.representative_context, 260)}`);
+      lines.push(`  - Human verdict: ${lesson.verdict_count} accepted failure verdict(s).`);
+      lines.push(`  - Lesson: ${lesson.lesson}`);
+      lines.push(`  - Outcomes: ${lesson.outcome_ids.join(', ')}`);
+    }
+  }
+  lines.push('', '## Live Bets Under Review Pressure', '');
+  if (pressureBets.length === 0) {
+    lines.push('No open bets currently have staged review pressure.');
+  } else {
+    for (const bet of pressureBets) {
+      lines.push(`- **${bet.company} / ${bet.theme}**`);
+      lines.push(`  - Assumption: ${bet.assumption_id}`);
+      lines.push(`  - Observations: ${bet.observation_count}; latest ${bet.latest_seen_at}; pressure ${bet.review_pressure}`);
+      lines.push(`  - Why it matters: ${bet.why_it_matters}`);
+    }
+  }
+  lines.push('', '## Candidate Noise Kept Out Of Truth', '');
+  if (reviewCases.length === 0) {
+    lines.push('No staged events are waiting for judgment.');
+  } else {
+    for (const event of reviewCases) {
+      lines.push(`- **${event.company} / ${event.themes.join(', ')}**`);
+      lines.push(`  - Candidates: ${event.candidate_ids.join(', ')}`);
+      lines.push(`  - Evidence: ${truncateOneLine(event.representative_excerpt, 260)}`);
+      lines.push(`  - Status: not truth until reviewed in [[${baseDir}/review-queue|Human review queue]].`);
+    }
+  }
+  lines.push('', '## What This Proves', '');
+  lines.push('- The ledger preserves old assumptions instead of replacing them with disconnected summaries.');
+  lines.push('- Accepted outcomes change assumption state only after human judgment.');
+  lines.push('- Lessons become reusable review rules rather than one-off filing snippets.');
+  lines.push('- Pending candidates remain visible as review work, not automated verdicts.');
+  lines.push('', '## What This Does Not Prove', '');
+  lines.push('- It does not prove a buy/sell recommendation.');
+  lines.push('- It does not prove SEC filings are independent truth.');
+  lines.push('- It does not prove the lessons improve returns without further field evidence.');
+  lines.push('');
+  return `${lines.join('\n')}\n`;
+}
+
 function truncateOneLine(value: string, length: number): string {
   const normalized = value.replace(/\s+/g, ' ').trim();
   return normalized.length <= length ? normalized : `${normalized.slice(0, length - 1)}…`;
@@ -1093,10 +1198,11 @@ function renderLedgerManifestPage(data: Record<string, unknown>, baseDir: string
     `- Forms: ${parseJsonArray(run.forms_json).join(', ')}`,
     `- Filings: ${filings.length}`,
     `- Assumptions: ${themes.length}`,
-    `- Observations: ${observations.length}`,
-    `- Outcome candidates: ${outcomes.length}`,
-    `- LLM evaluations: ${evaluations.length}`,
-    '',
+      `- Observations: ${observations.length}`,
+      `- Outcome candidates: ${outcomes.length}`,
+      `- LLM evaluations: ${evaluations.length}`,
+      `- Proof path: [[${baseDir}/proof-path|Proof path]]`,
+      '',
     'This Markdown manifest is the git-safe audit surface. Operational SQLite and raw SEC caches stay local.',
     '',
   ].join('\n');

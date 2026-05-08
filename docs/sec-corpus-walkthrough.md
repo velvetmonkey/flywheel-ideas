@@ -8,7 +8,7 @@ The honest answer: the SEC data is not novel, and finding a sentence in a filing
 old assumption -> dated evidence -> staged failure -> human verdict -> refuted assumption -> lesson -> remaining bets to review
 ```
 
-Start at the [`dashboard`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md), then use the [`Company Sector Run`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) as the full table of contents.
+Start at the generated [`proof path`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md), then use the [`dashboard`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) and [`Company Sector Run`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) as the full table of contents.
 
 ## The Claim
 
@@ -32,6 +32,7 @@ The corpus is committed as Markdown only. SQLite, SEC caches, JSON, JSONL, WAL/S
 
 - [`thesis.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md): executive view of open bets, accepted failures, and what still needs review.
 - [`dashboard.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md): one-page dashboard of failures, lessons, open bets, and remaining review work.
+- [`proof-path.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md): generated path through accepted failure chains, live bets under pressure, and candidate noise kept out of truth.
 - [`tracker.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/tracker.md): lower-level audit view showing accepted verdicts against assumptions.
 - [`accepted-lessons.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md): reusable lessons extracted from accepted failures.
 - [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): remaining work that has not been accepted as truth.

@@ -15,6 +15,7 @@ A Flywheel-linked table of contents for the company lifecycle bundle.
 ## Top Down
 
 - [[reports/company-runs/sec-10y-100-company/dashboard|Thesis dashboard]]
+- [[reports/company-runs/sec-10y-100-company/proof-path|Proof path]]
 - [[reports/company-runs/sec-10y-100-company/thesis|Company thesis]]
 - [[reports/company-runs/sec-10y-100-company/tracker|Evidence tracker]]
 - [[reports/company-runs/sec-10y-100-company/sector-assumption-matrix|Sector assumption matrix]]
