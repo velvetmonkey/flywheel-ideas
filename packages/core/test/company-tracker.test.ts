@@ -48,7 +48,7 @@ beforeEach(async () => {
 afterEach(async () => {
   db.close();
   await rmWithRetries(vault);
-});
+}, 60_000);
 
 async function rmWithRetries(target: string): Promise<void> {
   for (let attempt = 0; attempt < 8; attempt++) {
