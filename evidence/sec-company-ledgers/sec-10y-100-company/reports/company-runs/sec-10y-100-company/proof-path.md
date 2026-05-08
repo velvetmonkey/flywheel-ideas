@@ -32,6 +32,7 @@ Flywheel Ideas is useful when it keeps a durable chain from a prior assumption t
 - Accepted lessons: [[reports/company-runs/sec-10y-100-company/accepted-lessons|Accepted lessons]]
 - Human review queue: [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]]
 - Evidence tracker: [[reports/company-runs/sec-10y-100-company/tracker|Evidence tracker]]
+- Cross-sector mechanisms: [[reports/company-runs/sec-10y-100-company/cross-sector-patterns|Cross-sector patterns]]
 
 ## Accepted Failure Chains
 
@@ -103,11 +104,11 @@ Flywheel Ideas is useful when it keeps a durable chain from a prior assumption t
 
 - **KO / Geopolitics and tariffs**
   - Candidates: cout-255h14jf
-  - Evidence: During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carr...
+  - Evidence: During the nine months ended September 30, 2022, the Company recorded an other-than-temporary impairment charge of $96 million related to an equity method investee in Russia. As of September 30, 2022, the remaining carrying value of the Company's assets relat…
   - Status: not truth until reviewed in [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]].
 - **MU / Supply chain**
   - Candidates: cout-n8rgakW6
-  - Evidence: We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 ...
+  - Evidence: We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due…
   - Status: not truth until reviewed in [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]].
 - **PM / Geopolitics and tariffs**
   - Candidates: cout-fynsGdQk
@@ -115,15 +116,15 @@ Flywheel Ideas is useful when it keeps a durable chain from a prior assumption t
   - Status: not truth until reviewed in [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]].
 - **PM / Geopolitics and tariffs**
   - Candidates: cout-4pUPM9nU
-  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia rel...
+  - Evidence: We recorded pre-tax charges related to the war in Ukraine of approximately $6 million in the third quarter of 2022 and approximately $128 million in the September year-to-date period. This includes charges in Russia related to the cancellation of the planned …
   - Status: not truth until reviewed in [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]].
 - **PM / Geopolitics and tariffs**
   - Candidates: cout-yBsxhpgg
-  - Evidence: We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cance...
+  - Evidence: We recorded charges related to the war in Ukraine of approximately $80 million in the second quarter of 2022 and approximately $122 million in the first half of 2022. This includes charges in Russia related to the cancellation of the planned launch of
   - Status: not truth until reviewed in [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]].
 - **WBD / Demand**
   - Candidates: cout-2gso7KJ6
-  - Evidence: Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatric...
+  - Evidence: Costs of revenues decreased 15% for the three months ended March 31, 2025, primarily attributable to a 41% decrease in theatrical product content expense, as a result of lower film costs commensurate with lower theatrical product revenue and lower payments to…
   - Status: not truth until reviewed in [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]].
 
 ## What This Proves

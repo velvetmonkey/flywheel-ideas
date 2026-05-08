@@ -18,11 +18,41 @@ source: flywheel-ideas
 - Companies: INTC, PG
 - Observations: 66
 - Realized candidates: 0
-- Signal: emerging cross-sector mechanism
+- Accepted lessons: 4
+- Open pressure bets: 0
+- Review events: 0
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-AI, R&D, and technology appears through the single supplier or manufacturing concentration mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
+AI, R&D, and technology is now connected to accepted lesson evidence through the single supplier or manufacturing concentration mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **MU / AI, R&D, and technology**
+  - Lesson: Technology/R&D exposure becomes falsified when strategic cost resets require quantified restructuring and severance charges rather than normal operating adjustment.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-TJEZc2NV
+  - Context: Micron disclosed $171M of restructuring charges in 2023, primarily related to employee severance, while pursuing a plan expected to generate cost savings.
+- **MSFT / AI, R&D, and technology**
+  - Lesson: AI/R&D assumptions should separate productive investment from impairment-backed cost pressure; both can rise together and change the risk profile.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-JiCcBcGp
+  - Context: The filing disclosed operating expenses increased $236 million, driven by Gaming impairment charges and R&D investments in compute capacity and AI talent.
+- **MSFT / AI, R&D, and technology**
+  - Lesson: Technology-platform assumptions should track impairment charges inside R&D because they identify product or portfolio bets that failed to compound.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-4u23dr9z
+  - Context: The filing disclosed R&D expenses increased $1.1 billion, driven partly by impairment charges resulting from changes to the hardware portfolio.
+- **PM / AI, R&D, and technology**
+  - Lesson: Adjacent R&D bets should be tracked through impairment language because small charges can reveal which innovation options failed to compound.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-cS3hKxNW
+  - Context: The 2025 filing disclosed a $27 million impairment charge primarily reflecting impairment of non-amortizable intangible assets related to an in-process R&D project.
+
+## Live Bets With Pressure
+
+No open bets with staged review pressure are attached to this mechanism.
+
+## Pending Review Evidence
+
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

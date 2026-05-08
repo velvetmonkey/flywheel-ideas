@@ -18,11 +18,29 @@ source: flywheel-ideas
 - Companies: ABNB, AMD, DIS, HD, KO, ORCL
 - Observations: 107
 - Realized candidates: 1
-- Signal: shared mechanism with realized-risk evidence
+- Accepted lessons: 1
+- Open pressure bets: 0
+- Review events: 0
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Cybersecurity and privacy is not just recurring boilerplate: the data breach, outage, or service disruption mechanism has already produced realized-risk candidates in this run, so related open bets in other sectors deserve review.
+Cybersecurity and privacy is now connected to accepted lesson evidence through the data breach, outage, or service disruption mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **HD / Cybersecurity and privacy**
+  - Lesson: Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-btdioMuB
+  - Context: Home Depot disclosed a data breach involving stolen payment-card information and customer email addresses, $161M of pretax expenses net of expected insurance recoveries, and related class-action/shareholder litigation.
+
+## Live Bets With Pressure
+
+No open bets with staged review pressure are attached to this mechanism.
+
+## Pending Review Evidence
+
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

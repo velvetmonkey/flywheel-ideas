@@ -18,11 +18,29 @@ source: flywheel-ideas
 - Companies: AMD, NVDA, VZ
 - Observations: 160
 - Realized candidates: 0
-- Signal: emerging cross-sector mechanism
+- Accepted lessons: 1
+- Open pressure bets: 0
+- Review events: 0
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Competition appears through the platform or customer concentration mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
+Competition is now connected to accepted lesson evidence through the platform or customer concentration mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **CSCO / Competition**
+  - Lesson: Competition assumptions should be reviewed when management ties category weakness to competitive pressure and named customer-market weakness.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-v6eDv9xd
+  - Context: The filing disclosed that the competitive environment negatively impacted certain Infrastructure Platforms offerings and that service-provider weakness was expected to remain uncertain.
+
+## Live Bets With Pressure
+
+No open bets with staged review pressure are attached to this mechanism.
+
+## Pending Review Evidence
+
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

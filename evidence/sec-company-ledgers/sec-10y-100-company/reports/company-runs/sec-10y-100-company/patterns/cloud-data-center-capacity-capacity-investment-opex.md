@@ -18,11 +18,29 @@ source: flywheel-ideas
 - Companies: ABNB, AMD, AVGO, BKNG, CSCO, KO, LOW, MAR, MCD, MO, PLTR, PM, SBUX, VZ, WMT
 - Observations: 480
 - Realized candidates: 1
-- Signal: shared mechanism with realized-risk evidence
+- Accepted lessons: 1
+- Open pressure bets: 0
+- Review events: 0
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Cloud and data center capacity is not just recurring boilerplate: the capacity investment and operating expense drag mechanism has already produced realized-risk candidates in this run, so related open bets in other sectors deserve review.
+Cloud and data center capacity is now connected to accepted lesson evidence through the capacity investment and operating expense drag mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **AMD / Cloud and data center capacity**
+  - Lesson: Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-dkrWjofL
+  - Context: The 2026 10-K disclosed approximately $800 million of inventory and related charges on AMD Instinct MI308 products due to new export restrictions on China shipments.
+
+## Live Bets With Pressure
+
+No open bets with staged review pressure are attached to this mechanism.
+
+## Pending Review Evidence
+
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

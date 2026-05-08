@@ -18,11 +18,49 @@ source: flywheel-ideas
 - Companies: ABNB, MU
 - Observations: 58
 - Realized candidates: 5
-- Signal: shared mechanism with realized-risk evidence
+- Accepted lessons: 5
+- Open pressure bets: 1
+- Review events: 1
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Inventory and channel is not just recurring boilerplate: the platform or customer concentration mechanism has already produced realized-risk candidates in this run, so related open bets in other sectors deserve review.
+Inventory and channel is now connected to accepted lesson evidence through the platform or customer concentration mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **PM / Inventory and channel**
+  - Lesson: Channel assumptions should track distributor-arrangement charges because route-to-market decisions can create direct P&L costs even when underlying consumer demand is stable.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-PJAxG7yK
+  - Context: The filing disclosed that, based on decisions and arrangements with distributors, Philip Morris recorded a $246 million pre-tax charge in the second quarter of 2021.
+- **MU / Inventory and channel**
+  - Lesson: Memory inventory assumptions should track product-line exits because technology discontinuation can convert both assets and inventory into charges.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-ckuQwvui
+  - Context: In 2021, Micron recognized a $435 million restructure and asset-impairment charge related to assets held for sale and a $49 million cost-of-goods-sold charge to write down 3D XPoint inventory.
+- **SBUX / Inventory and channel**
+  - Lesson: Perishable retail inventory assumptions should watch write-off language because demand shocks can convert quickly into margin losses.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-P9gZXJq1
+  - Context: The filing disclosed higher expenses from inventory write-offs, contributing to significantly lower operating margins for retail store businesses.
+- **NVDA / Inventory and channel**
+  - Lesson: AI accelerator inventory assumptions should treat export-control shocks as channel-risk events because regulatory access can instantly impair demand and purchase commitments.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-VxXuqAUS
+  - Context: The fiscal 2026 filing disclosed a $4.5 billion charge associated with H20 excess inventory and purchase obligations after new China export license requirements diminished demand.
+- **AMD / Inventory and channel**
+  - Lesson: Channel inventory corrections can convert end-market weakness into a distinct company-level revenue failure signal.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-a6jEU45k
+  - Context: The 2023 10-K disclosed Client segment revenue decline caused by weak PC macro conditions and inventory correction actions across the PC supply chain.
+
+## Live Bets With Pressure
+
+- **WMT / Inventory and channel**
+  - Assumption: asm-rLgC687v
+  - Observations: 38; pressure 1; latest 2026-03-13
+
+## Pending Review Evidence
+
+- **WMT / Inventory and channel**
+  - Candidates: cout-22Ztexb6
+  - Evidence: In light of the substantial premiums payable for insurance coverage for losses caused by certain natural disasters, such as hurricanes, cyclones, typhoons, tropical storms, earthquakes, floods and tsunamis, as well as the limitations on available coverage for…
 
 ## Evidence Examples
 

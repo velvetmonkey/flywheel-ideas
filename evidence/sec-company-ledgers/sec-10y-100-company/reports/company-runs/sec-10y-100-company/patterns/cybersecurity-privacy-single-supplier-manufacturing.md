@@ -18,11 +18,29 @@ source: flywheel-ideas
 - Companies: AAPL, AVGO, MU, PG
 - Observations: 101
 - Realized candidates: 0
-- Signal: emerging cross-sector mechanism
+- Accepted lessons: 1
+- Open pressure bets: 0
+- Review events: 0
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Cybersecurity and privacy appears through the single supplier or manufacturing concentration mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
+Cybersecurity and privacy is now connected to accepted lesson evidence through the single supplier or manufacturing concentration mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **HD / Cybersecurity and privacy**
+  - Lesson: Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-btdioMuB
+  - Context: Home Depot disclosed a data breach involving stolen payment-card information and customer email addresses, $161M of pretax expenses net of expected insurance recoveries, and related class-action/shareholder litigation.
+
+## Live Bets With Pressure
+
+No open bets with staged review pressure are attached to this mechanism.
+
+## Pending Review Evidence
+
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

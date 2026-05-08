@@ -18,11 +18,33 @@ source: flywheel-ideas
 - Companies: AVGO, PG
 - Observations: 83
 - Realized candidates: 0
-- Signal: emerging cross-sector mechanism
+- Accepted lessons: 1
+- Open pressure bets: 1
+- Review events: 1
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Customer and platform dependency appears through the single supplier or manufacturing concentration mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
+Customer and platform dependency is now connected to accepted lesson evidence through the single supplier or manufacturing concentration mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **AAPL / Customer and platform dependency**
+  - Lesson: Channel-dependency assumptions should treat retail and partner access as load-bearing when regional shutdowns can directly suppress sales.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-yu9stwSH
+  - Context: The filing disclosed that China sales were adversely affected by public-health measures, including temporary closure of Apple retail stores and channel-partner points of sale.
+
+## Live Bets With Pressure
+
+- **TMUS / Customer and platform dependency**
+  - Assumption: asm-k3Dfjwuj
+  - Observations: 19; pressure 1; latest 2026-02-11
+
+## Pending Review Evidence
+
+- **TMUS / Customer and platform dependency**
+  - Candidates: cout-ybHov4a1
+  - Evidence: As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss r…
 
 ## Evidence Examples
 
