@@ -19,6 +19,7 @@ source: flywheel-ideas
 - Observations: 21186
 - Outcome candidates: 363
 - LLM evaluations: 486
+- Proof path: [[reports/company-runs/sec-10y-100-company/proof-path|Proof path]]
 
 This Markdown manifest is the git-safe audit surface. Operational SQLite and raw SEC caches stay local.
 

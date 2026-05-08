@@ -19,6 +19,7 @@ The strongest current proof is a browsable 10-year SEC evidence corpus. It is no
 Start with these checked-in artifacts:
 
 - [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md): the one-page view of failed bets, open bets under pressure, lessons, and remaining review work.
+- [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md): generated reader path through the strongest lifecycle evidence.
 - [`docs/sec-corpus-walkthrough.md`](./docs/sec-corpus-walkthrough.md): the skeptical-reader guide to what is novel and what is not.
 - [`out-VxXuqAUS`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-VxXuqAUS.md): NVIDIA export controls became a $4.5B inventory/purchase-obligation charge tied back to an earlier assumption.
 - [`out-BqJTAbxZ`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-BqJTAbxZ.md): AMD export restrictions became stranded inventory, showing why one event can cut across demand, geopolitics, capacity, and channel assumptions.
@@ -49,6 +50,7 @@ The current SEC proof corpus is a Markdown-only evidence snapshot at [`evidence/
 Top-down corpus entry points:
 
 - [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) gives the one-page thesis dashboard.
+- [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md) gives the generated proof path through accepted failures, live pressure, and pending review.
 - [`index.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) links the whole run.
 - [`thesis.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md) shows current bets, accepted failures, unresolved review work, and what to watch next.
 - [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md) shows durable lessons created after outcome review.

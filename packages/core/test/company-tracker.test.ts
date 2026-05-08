@@ -949,13 +949,20 @@ describe('company tracker', () => {
 
     const bundleIndex = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/index.md`), 'utf8');
     expect(bundleIndex).toContain(`[[reports/company-runs/${result.run_id.toLowerCase()}/dashboard|Thesis dashboard]]`);
+    expect(bundleIndex).toContain(`[[reports/company-runs/${result.run_id.toLowerCase()}/proof-path|Proof path]]`);
     expect(bundleIndex).toContain('Shadow LLM evaluations: 10');
     expect(bundleIndex).toContain('Accepted failures: 1');
     const dashboard = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/dashboard.md`), 'utf8');
     expect(dashboard).toContain('## What Failed');
     expect(dashboard).toContain('## What Still Needs Review');
     expect(dashboard).toContain('## Product Value Check');
+    expect(dashboard).toContain(`[[reports/company-runs/${result.run_id.toLowerCase()}/proof-path|Proof path]]`);
     expect(dashboard).toContain('Recurring risk disclosure');
+    const proofPath = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/proof-path.md`), 'utf8');
+    expect(proofPath).toContain('## Claim Under Test');
+    expect(proofPath).toContain('## Accepted Failure Chains');
+    expect(proofPath).toContain('## Candidate Noise Kept Out Of Truth');
+    expect(proofPath).toContain('Recurring risk disclosure');
     const evalIndex = await fsp.readFile(path.join(vault, outcomeReview.summary_paths.evaluation_index), 'utf8');
     expect(evalIndex).toContain('valid_failure');
     expect(evalIndex).toContain('thesis_weakened');
