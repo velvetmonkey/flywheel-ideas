@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-theme-geopolitics-tariffs
 entity_type: company_theme_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.977Z'
 ---
 # Geopolitics and tariffs sec-10y-100-company
 

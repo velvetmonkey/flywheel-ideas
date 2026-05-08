@@ -19,12 +19,13 @@ The proof corpus matters because SEC filings are a hard input: repeated boilerpl
 ## Current Corpus State
 
 - `1,468` SEC filings scanned.
-- `361` current company/theme bets still open.
+- `349` current company/theme bets still open.
 - `486` shadow LLM evaluations preserved as audit evidence.
-- `55` accepted failures after human adjudication.
-- `55` lesson memos.
-- `253` rejected candidate outcomes.
-- `24` remaining human review events.
+- `70` accepted failures after human adjudication.
+- `70` lesson memos.
+- `262` rejected candidate outcomes.
+- `0` remaining visible human review events.
+- `31` suppressed staged candidates tied to already-refuted assumptions.
 
 The corpus is committed as Markdown only. SQLite, SEC caches, JSON, JSONL, WAL/SHM, and raw operational state are intentionally excluded.
 
@@ -35,7 +36,8 @@ The corpus is committed as Markdown only. SQLite, SEC caches, JSON, JSONL, WAL/S
 - [`proof-path.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md): generated path through accepted failure chains, live bets under pressure, and candidate noise kept out of truth.
 - [`tracker.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/tracker.md): lower-level audit view showing accepted verdicts against assumptions.
 - [`accepted-lessons.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md): reusable lessons extracted from accepted failures.
-- [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): remaining work that has not been accepted as truth.
+- [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): the active judgment queue; it is currently clear.
+- [`candidate-noise.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/candidate-noise.md): staged candidates kept out of the active queue because they are duplicate pressure on already-refuted assumptions.
 
 ## Killer Feature 1: The Filing Sentence Refutes A Prior Bet
 
@@ -83,7 +85,7 @@ FAIL HD / Cybersecurity and privacy: asm-tCv4Rh7b via out-btdioMuB
 Lesson: Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.
 ```
 
-Contrast that with [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md). The remaining events are not claimed as truth. They remain review work. This matters because the system previously surfaced duplicate and weak positive signals; the current queue is now explicitly a human judgment surface, not an automated verdict engine.
+Contrast that with [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) and [`candidate-noise.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/candidate-noise.md). The visible queue is now clear, while 31 staged candidates remain documented as duplicate pressure on assumptions that are already refuted. This matters because the system does not hide noise, but it also does not ask a human to re-adjudicate the same failed assumption.
 
 ## Killer Feature 4: The Dashboard Shows What To Review Next
 
@@ -93,6 +95,7 @@ The [`dashboard`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/co
 - Lessons: what should change in future review.
 - Open bets with pressure: assumptions that still exist but have staged evidence nearby.
 - Review queue: candidate events that are not yet truth.
+- Candidate noise: staged candidates intentionally kept out of active review because they are duplicate or closed-assumption pressure.
 
 That separation is the safety rail. It lets the tool be useful without pretending that every detected sentence is a real business failure.
 
@@ -111,7 +114,7 @@ That separation is the safety rail. It lets the tool be useful without pretendin
 - Refutation propagation: accepted outcomes change assumption state and can flag dependent ideas for review.
 - Lesson capture: each accepted failure records a reusable judgment rule.
 - Auditability: the committed Markdown lets a reader inspect the assumption, outcome, lesson, review queue, and report without trusting a hidden database.
-- Visibility: the dashboard separates accepted truth, pending judgment, open bets, and lessons instead of collapsing them into one summary.
+- Visibility: the dashboard separates accepted truth, active judgment, suppressed noise, open bets, and lessons instead of collapsing them into one summary.
 
 ## What Is Not Novel Yet
 
@@ -126,7 +129,7 @@ The tool should not claim to pick stocks. Its current useful role is closer to a
 
 ## Remaining Product Work
 
-- Improve candidate quality so positive-result snippets and incomplete excerpts are less likely to enter the queue.
-- Build a sharper thesis dashboard over accepted failures, open bets, lessons, and remaining review events.
+- Improve candidate quality so positive-result snippets and incomplete excerpts are less likely to enter staging.
+- Make suppressed candidate noise more actionable: distinguish duplicate pressure, stale candidates, and true new review work.
 - Add richer cross-company mechanism pages so repeated patterns are easier to compare across sectors.
 - Make dependent-idea review more visible in the SEC corpus once real user-authored theses depend on these assumptions.

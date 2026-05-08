@@ -9,6 +9,8 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-inventory-channel-platform-customer-concentration
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.075Z'
 ---
 # Inventory and channel / Platform or customer concentration sec-10y-100-company
 

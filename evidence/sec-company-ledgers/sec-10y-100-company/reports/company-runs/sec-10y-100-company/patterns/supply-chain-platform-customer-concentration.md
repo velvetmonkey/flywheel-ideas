@@ -9,6 +9,8 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-supply-chain-platform-customer-concentration
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.036Z'
 ---
 # Supply chain / Platform or customer concentration sec-10y-100-company
 
@@ -69,7 +71,7 @@ No staged review events are attached to this mechanism.
 - **MU / Information Technology** (2016-01-08)
   - We have experienced significant decreases in our average selling prices per gigabit in previous years as noted in the table below and may continue to experience such decreases in the future. In some prior periods, average selling prices for our memory products have been below our manufacturing costs and we may experience such circumstances in the f
 - **EA / Communication Services** (2016-02-08)
-  - Our goal is to develop our intellectual properties into year-round businesses available on a range of platforms. Our products and services may be purchased through physical and online retailers, platform providers such as console manufacturers, providers of free-to-download PC games played on the Internet, mobile carriers via streaming and digital
+  - Our goal is to develop our intellectual properties into year-round businesses available on a range of platforms. Our products and services may be purchased through physical and online retailers, platform providers such as console manufacturers, providers of free-to-download PC games played on the Internet, mobile carriers via streaming and digital 
 - **EA / Communication Services** (2016-02-08)
   - Our business is dependent on the success and availability of video game hardware systems and devices manufactured by third parties, as well as our ability to develop commercially successful products and services for these systems and devices.
 - **WBD / Communication Services** (2016-02-18)

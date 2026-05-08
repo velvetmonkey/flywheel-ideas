@@ -17,6 +17,7 @@
  *   MOCK_FM_INVOKE_LOG             Path: append `{tool, args}\n` for every call.
  *   MOCK_FM_ENV_DUMP               Path: write `process.env` to this file at start.
  *   MOCK_FM_PID_FILE               Path: write `process.pid` to this file at start.
+ *   MOCK_FM_PID_LOG                Path: append `process.pid` at start.
  *   MOCK_FM_IGNORE_SIGTERM         '1' → ignore SIGTERM (escalation tests).
  *   MOCK_FM_SUPPORTS_NOTE          '1' → register the `note` tool (v0.2 write-path tests).
  *   MOCK_FM_SUPPORTS_FRONTMATTER   '1' → register `vault_update_frontmatter`.
@@ -45,6 +46,14 @@ if (process.env.MOCK_FM_ENV_DUMP) {
 if (process.env.MOCK_FM_PID_FILE) {
   try {
     fs.writeFileSync(process.env.MOCK_FM_PID_FILE, String(process.pid));
+  } catch {
+    /* non-fatal */
+  }
+}
+
+if (process.env.MOCK_FM_PID_LOG) {
+  try {
+    fs.appendFileSync(process.env.MOCK_FM_PID_LOG, String(process.pid) + '\n');
   } catch {
     /* non-fatal */
   }

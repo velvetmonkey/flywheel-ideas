@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import {
   patchFrontmatterViaSubprocess,
   writeNoteViaSubprocess,
+  writeNotesViaSubprocess,
 } from '../src/write/index.js';
 
 const MOCK_FM = path.join(
@@ -104,6 +105,41 @@ describe('writeNoteViaSubprocess', () => {
     expect(outcome.status).toBe('ok');
     if (outcome.status !== 'ok') return;
     expect(outcome.value.vault_path).toBe('reports/company-tracker-run-abc.md');
+  });
+
+  it('writes a batch through one subprocess session', async () => {
+    const log = path.join(tmp, 'invocations.jsonl');
+    const pidLog = path.join(tmp, 'pids.txt');
+    const outcome = await writeNotesViaSubprocess(
+      tmp,
+      [
+        {
+          relPath: 'reports/a.md',
+          frontmatter: { type: 'report', id: 'a' },
+          body: 'a',
+          options: { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 4 },
+        },
+        {
+          relPath: 'reports/b.md',
+          frontmatter: { type: 'report', id: 'b' },
+          body: 'b',
+          options: { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 4 },
+        },
+      ],
+      mockOpts({
+        MOCK_FM_SUPPORTS_NOTE: '1',
+        MOCK_FM_INVOKE_LOG: log,
+        MOCK_FM_PID_LOG: pidLog,
+      }),
+    );
+
+    expect(outcome.status).toBe('ok');
+    if (outcome.status !== 'ok') return;
+    expect(outcome.value.map((result) => result.vault_path)).toEqual(['reports/a.md', 'reports/b.md']);
+    const invocations = (await fsp.readFile(log, 'utf8')).trim().split('\n');
+    expect(invocations).toHaveLength(2);
+    const pids = (await fsp.readFile(pidLog, 'utf8')).trim().split('\n');
+    expect(new Set(pids).size).toBe(1);
   });
 
   it('returns skipped tool_returned_error when tool reports failure', async () => {

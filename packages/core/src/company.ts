@@ -27,7 +27,7 @@ import {
   renderSecCompanyLedgerMarkdown,
   type SecLedgerReport,
 } from './sec-ledger-report.js';
-import { writeNote } from './write/index.js';
+import { writeNote, writeNotes } from './write/index.js';
 
 export interface CompanyTrackInput {
   run_id?: string;
@@ -406,12 +406,11 @@ export async function writeCompanyBundleReports(
   const run = data.run as Record<string, unknown>;
   const baseDir = `reports/company-runs/${runId.toLowerCase()}`;
   const pages = buildCompanyBundlePages(data, baseDir);
-  const writtenPaths: string[] = [];
-  for (const page of pages) {
-    const result = await writeNote(
-      vaultPath,
-      page.path,
-      {
+  const results = await writeNotes(
+    vaultPath,
+    pages.map((page) => ({
+      relPath: page.path,
+      frontmatter: {
         id: page.id,
         type: 'report',
         report_kind: page.kind,
@@ -421,11 +420,11 @@ export async function writeCompanyBundleReports(
         entity_type: page.kind,
         source: 'flywheel-ideas',
       },
-      page.body,
-      { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 4, timeoutMs: 30_000 },
-    );
-    writtenPaths.push(result.vault_path);
-  }
+      body: page.body,
+      options: { overwrite: true, skipWikilinks: false, suggestOutgoingLinks: true, maxSuggestions: 4, timeoutMs: 30_000 },
+    })),
+  );
+  const writtenPaths = results.map((result) => result.vault_path);
   return { indexPath: `${baseDir}/index.md`, writtenPaths };
 }
 
@@ -473,7 +472,8 @@ export async function exportCompanyMarkdownEvidence(
       `- [Thesis dashboard](./reports/company-runs/${input.run_id.toLowerCase()}/dashboard.md): accepted failures, live bets under pressure, lessons, and remaining review work.`,
       `- [Company sector run](./reports/company-runs/${input.run_id.toLowerCase()}/index.md): full table of contents for the generated Markdown bundle.`,
       `- [Accepted lessons](./reports/company-runs/${input.run_id.toLowerCase()}/accepted-lessons.md): reusable lessons produced by accepted outcomes.`,
-      `- [Human review queue](./reports/company-runs/${input.run_id.toLowerCase()}/review-queue.md): candidate failures still awaiting human judgment.`,
+      `- [Human review queue](./reports/company-runs/${input.run_id.toLowerCase()}/review-queue.md): active candidate failures still awaiting human judgment.`,
+      `- [Candidate noise](./reports/company-runs/${input.run_id.toLowerCase()}/candidate-noise.md): staged candidates intentionally kept out of the active queue because they are duplicate or closed-assumption pressure.`,
       '',
       'This corpus is evidence for the Flywheel Ideas product loop: dated filings create assumptions and observations; possible failures are staged; accepted outcomes refute assumptions; lesson memos preserve what should change next time.',
       '',
@@ -624,6 +624,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const lifecycleSummary = buildLifecycleSummary(filings, themes, observations, outcomes);
   const observationExamples = buildObservationExamples(themes, observations, filings);
   const outcomeGroups = buildOutcomeGroups(outcomes, themes, filings);
+  const suppressedOutcomeSummary = buildSuppressedOutcomeSummary(outcomes, themes, outcomeGroups);
   const secLedgerReport = buildSecCompanyLedgerReport(db, { run_id: runId });
   const companyThesisReport = buildCompanyThesisReport(secLedgerReport);
   const crossSectorPatterns = buildCrossSectorPatterns(themes, observations, outcomes, runMembers, secLedgerReport);
@@ -644,6 +645,7 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
     },
     observation_examples: observationExamples,
     outcome_groups: outcomeGroups,
+    suppressed_outcome_summary: suppressedOutcomeSummary,
     sec_ledger_report: secLedgerReport,
     company_thesis_report: companyThesisReport,
     run_members: runMembers,
@@ -796,6 +798,7 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
   const themeMatrix = data.theme_matrix as Array<Record<string, unknown>>;
   const crossSectorPatterns = data.cross_sector_patterns as Array<Record<string, unknown>>;
   const outcomeGroups = data.outcome_groups as Array<Record<string, unknown>>;
+  const suppression = data.suppressed_outcome_summary as Record<string, unknown>;
   const secLedgerReport = data.sec_ledger_report as SecLedgerReport;
   const evaluations = data.evaluation_attempts as Array<Record<string, unknown>>;
   const pages: BundlePage[] = [];
@@ -810,6 +813,7 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
     `- [[${baseDir}/thesis-deltas|Thesis deltas]]`,
     `- [[${baseDir}/disputes|Evaluation disputes]]`,
     `- [[${baseDir}/review-queue|Human review queue]]`,
+    `- [[${baseDir}/candidate-noise|Candidate noise and suppressed staged candidates]]`,
     `- [[${baseDir}/accepted-lessons|Accepted lessons]]`,
     `- [[${baseDir}/run-delta|Run delta]]`,
     `- [[${baseDir}/manifest|Markdown manifest]]`,
@@ -856,13 +860,19 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
     id: `company-run-${runId}-dashboard`,
     kind: 'company_thesis_dashboard',
     path: `${baseDir}/dashboard.md`,
-    body: renderThesisDashboardPage(runId, thesis, baseDir),
+    body: renderThesisDashboardPage(runId, thesis, baseDir, suppression),
   });
   pages.push({
     id: `company-run-${runId}-proof-path`,
     kind: 'company_proof_path',
     path: `${baseDir}/proof-path.md`,
-    body: renderProofPathPage(runId, thesis, baseDir),
+    body: renderProofPathPage(runId, thesis, baseDir, suppression),
+  });
+  pages.push({
+    id: `company-run-${runId}-candidate-noise`,
+    kind: 'company_candidate_noise',
+    path: `${baseDir}/candidate-noise.md`,
+    body: renderCandidateNoisePage(runId, suppression, baseDir),
   });
   pages.push({
     id: `company-run-${runId}-run-history`,
@@ -904,7 +914,7 @@ function buildCompanyBundlePages(data: Record<string, unknown>, baseDir: string)
     id: `company-run-${runId}-review-queue`,
     kind: 'company_review_queue',
     path: `${baseDir}/review-queue.md`,
-    body: renderReviewQueuePage(runId, outcomeGroups),
+    body: renderReviewQueuePage(runId, outcomeGroups, suppression),
   });
   pages.push({
     id: `company-run-${runId}-evaluation-index`,
@@ -1009,6 +1019,7 @@ function renderThesisDashboardPage(
   runId: string,
   thesis: CompanyThesisReport,
   baseDir: string,
+  suppression: Record<string, unknown>,
 ): string {
   const s = thesis.executive_readout;
   const topLessons = thesis.prior_failures_and_lessons.slice(0, 8);
@@ -1038,6 +1049,7 @@ function renderThesisDashboardPage(
     `- Evidence tracker: [[${baseDir}/tracker|Evidence tracker]]`,
     `- Accepted lessons: [[${baseDir}/accepted-lessons|Accepted lessons]]`,
     `- Human review queue: [[${baseDir}/review-queue|Human review queue]]`,
+    `- Candidate noise: [[${baseDir}/candidate-noise|Candidate noise]]`,
     `- Cross-sector patterns: [[${baseDir}/cross-sector-patterns|Cross-sector patterns]]`,
     '',
     '## What Failed',
@@ -1056,6 +1068,9 @@ function renderThesisDashboardPage(
   lines.push('', '## What Still Needs Review', '');
   if (topReview.length === 0) {
     lines.push('No staged review events are waiting for human judgment.');
+    if (Number(suppression.suppressed_total ?? 0) > 0) {
+      lines.push(`${suppression.suppressed_total} staged candidate(s) are documented as duplicate or closed-assumption pressure in [[${baseDir}/candidate-noise|Candidate noise]].`);
+    }
   } else {
     for (const event of topReview) {
       lines.push(`- **${event.company} / ${event.themes.join(', ')}**`);
@@ -1094,6 +1109,7 @@ function renderProofPathPage(
   runId: string,
   thesis: CompanyThesisReport,
   baseDir: string,
+  suppression: Record<string, unknown>,
 ): string {
   const s = thesis.executive_readout;
   const proofCases = thesis.prior_failures_and_lessons.slice(0, 6);
@@ -1125,6 +1141,7 @@ function renderProofPathPage(
     `- Dashboard: [[${baseDir}/dashboard|Thesis dashboard]]`,
     `- Accepted lessons: [[${baseDir}/accepted-lessons|Accepted lessons]]`,
     `- Human review queue: [[${baseDir}/review-queue|Human review queue]]`,
+    `- Candidate noise: [[${baseDir}/candidate-noise|Candidate noise]]`,
     `- Evidence tracker: [[${baseDir}/tracker|Evidence tracker]]`,
     `- Cross-sector mechanisms: [[${baseDir}/cross-sector-patterns|Cross-sector patterns]]`,
     '',
@@ -1157,6 +1174,9 @@ function renderProofPathPage(
   lines.push('', '## Candidate Noise Kept Out Of Truth', '');
   if (reviewCases.length === 0) {
     lines.push('No staged events are waiting for judgment.');
+    if (Number(suppression.suppressed_total ?? 0) > 0) {
+      lines.push(`${suppression.suppressed_total} staged candidate(s) remain visible as suppressed duplicate pressure in [[${baseDir}/candidate-noise|Candidate noise]].`);
+    }
   } else {
     for (const event of reviewCases) {
       lines.push(`- **${event.company} / ${event.themes.join(', ')}**`);
@@ -1240,10 +1260,63 @@ function appendAuditBlock(body: string, audit: Record<string, unknown>): string 
   return `${body.trimEnd()}\n\n## Flywheel Audit\n\n\`\`\`flywheel-audit-json\n${JSON.stringify(audit, null, 2)}\n\`\`\`\n`;
 }
 
-function renderReviewQueuePage(runId: string, outcomeGroups: Array<Record<string, unknown>>): string {
+function renderCandidateNoisePage(
+  runId: string,
+  suppression: Record<string, unknown>,
+  baseDir: string,
+): string {
+  const examples = (suppression.examples as Array<Record<string, unknown>> | undefined) ?? [];
+  const lines = [
+    `# Candidate Noise ${runId}`,
+    '',
+    'This page explains staged outcome candidates that are not in the active human review queue.',
+    '',
+    '## Summary',
+    '',
+    `- Staged candidates total: ${suppression.staged_total ?? 0}`,
+    `- Visible review candidates: ${suppression.visible_review_candidates ?? 0}`,
+    `- Suppressed candidates: ${suppression.suppressed_total ?? 0}`,
+    `- Suppressed because the linked assumption is already refuted: ${suppression.hidden_by_refuted_assumption ?? 0}`,
+    `- Suppressed because the linked assumption is otherwise closed: ${suppression.hidden_by_other_closed_assumption ?? 0}`,
+    `- Suppressed for other grouping reasons: ${suppression.hidden_by_unknown_reason ?? 0}`,
+    '',
+    '## Why This Matters',
+    '',
+    `- [[${baseDir}/review-queue|Human review queue]] is the active judgment surface, not every raw staged candidate.`,
+    '- A staged candidate tied to an already-refuted assumption is duplicate pressure, not a new open decision.',
+    '- Keeping the count visible prevents the dashboard from hiding noise while avoiding repeated human review of the same failed assumption.',
+    '',
+    '## Examples',
+    '',
+  ];
+  if (examples.length === 0) {
+    lines.push('No suppressed staged candidates are present.');
+  } else {
+    for (const example of examples) {
+      lines.push(`- **${example.company} / ${example.theme}** (${example.id})`);
+      lines.push(`  - Reason: ${example.reason}`);
+      lines.push(`  - Assumption: ${example.assumption_id || 'n/a'} (${example.assumption_status || 'unknown'})`);
+      lines.push(`  - Source: ${example.source_uri || 'n/a'}`);
+      lines.push(`  - Evidence: ${example.excerpt || 'n/a'}`);
+    }
+  }
+  return `${lines.join('\n')}\n`;
+}
+
+function renderReviewQueuePage(
+  runId: string,
+  outcomeGroups: Array<Record<string, unknown>>,
+  suppression: Record<string, unknown>,
+): string {
   const lines = [`# Human Review Queue ${runId}`, ''];
   if (outcomeGroups.length === 0) {
     lines.push('No staged review events are waiting for human judgment.');
+    if (Number(suppression.suppressed_total ?? 0) > 0) {
+      lines.push('');
+      lines.push(
+        `${suppression.suppressed_total} staged candidate(s) are intentionally kept out of this queue because they are duplicate or closed-assumption pressure. See [[reports/company-runs/${runId.toLowerCase()}/candidate-noise|Candidate noise]].`,
+      );
+    }
   } else {
     for (const group of outcomeGroups) {
       const candidates = group.candidate_ids as string[];
@@ -2146,6 +2219,67 @@ function buildOutcomeGroups(
     max_confidence: group.max_confidence,
     representative_excerpt: group.representative_excerpt,
   }));
+}
+
+function buildSuppressedOutcomeSummary(
+  outcomes: unknown[],
+  themes: unknown[],
+  outcomeGroups: Array<Record<string, unknown>>,
+): Record<string, unknown> {
+  const outcomeRows = outcomes as Array<Record<string, unknown>>;
+  const themeRows = themes as Array<Record<string, unknown>>;
+  const themeById = new Map(themeRows.map((theme) => [String(theme.id), theme]));
+  const visibleIds = new Set<string>();
+  for (const group of outcomeGroups) {
+    for (const id of (group.candidate_ids as string[] | undefined) ?? []) {
+      visibleIds.add(String(id));
+    }
+  }
+
+  const staged = outcomeRows.filter((outcome) => outcome.state === 'staged');
+  let hiddenByRefutedAssumption = 0;
+  let hiddenByOtherClosedAssumption = 0;
+  let hiddenByUnknownReason = 0;
+  const examples: Array<Record<string, unknown>> = [];
+
+  for (const outcome of staged) {
+    const id = String(outcome.id);
+    if (visibleIds.has(id)) continue;
+    const theme = themeById.get(String(outcome.theme_id));
+    const status = stringish(theme?.assumption_status) || 'open';
+    let reason = 'not grouped into a visible review event';
+    if (stringish(outcome.assumption_id) && status === 'refuted') {
+      hiddenByRefutedAssumption++;
+      reason = 'linked assumption is already refuted';
+    } else if (stringish(outcome.assumption_id) && status !== 'open') {
+      hiddenByOtherClosedAssumption++;
+      reason = `linked assumption is ${status}`;
+    } else {
+      hiddenByUnknownReason++;
+    }
+    if (examples.length < 8) {
+      examples.push({
+        id,
+        reason,
+        company: stringish(theme?.ticker) || stringish(theme?.cik) || 'unknown',
+        theme: stringish(theme?.title) || stringish(outcome.theme_id) || 'unknown',
+        assumption_id: stringish(outcome.assumption_id),
+        assumption_status: status,
+        source_uri: stringish(outcome.source_uri),
+        excerpt: truncateOneLine(stringish(outcome.excerpt), 220),
+      });
+    }
+  }
+
+  return {
+    staged_total: staged.length,
+    visible_review_candidates: visibleIds.size,
+    suppressed_total: staged.length - visibleIds.size,
+    hidden_by_refuted_assumption: hiddenByRefutedAssumption,
+    hidden_by_other_closed_assumption: hiddenByOtherClosedAssumption,
+    hidden_by_unknown_reason: hiddenByUnknownReason,
+    examples,
+  };
 }
 
 const BUNDLE_STRONG_FAILURE_TERMS = [

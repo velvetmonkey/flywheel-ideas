@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-pattern-demand-capacity-investment-opex
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.051Z'
 ---
 # Demand / Capacity investment and operating expense drag sec-10y-100-company
 
@@ -67,7 +69,7 @@ No staged review events are attached to this mechanism.
 - **SBUX / Consumer Discretionary** (2016-01-26)
   - Net revenues:
 - **SBUX / Consumer Discretionary** (2016-04-26)
-  - Certain statements herein, including statements regarding trends in or expectations relating to the expected effects of our initiatives and plans, as well as trends in or expectations regarding revenues, operating margins, comparable store sales, anticipated net new stores, earnings per share, tax rates, capital expenditures, sales leverage, sales
+  - Certain statements herein, including statements regarding trends in or expectations relating to the expected effects of our initiatives and plans, as well as trends in or expectations regarding revenues, operating margins, comparable store sales, anticipated net new stores, earnings per share, tax rates, capital expenditures, sales leverage, sales 
 - **SBUX / Consumer Discretionary** (2016-04-26)
   - Net revenues:
 - **SBUX / Consumer Discretionary** (2016-07-27)

@@ -50,6 +50,13 @@ export interface WriteSubprocessOptions {
   env?: Record<string, string>;
 }
 
+export interface WriteNoteSubprocessInput {
+  relPath: string;
+  frontmatter: Record<string, unknown>;
+  body: string;
+  options?: WriteNoteOptions & WriteSubprocessOptions;
+}
+
 const DEFAULT_TIMEOUT_MS = 15_000;
 const CLOSE_REAP_TIMEOUT_MS = 2_000;
 const CLOSE_REAP_POLL_MS = 50;
@@ -69,22 +76,36 @@ export async function writeNoteViaSubprocess(
   options: WriteNoteOptions & WriteSubprocessOptions = {},
 ): Promise<WriteSubprocessOutcome<WriteNoteResult>> {
   return await withMemoryWriter(vaultPath, async (client) => {
-    const resp = await client.callTool({
-      name: 'note',
-      arguments: {
-        action: 'create',
-        path: relPath,
-        content: body,
-        frontmatter,
-        overwrite: options.overwrite === true,
-        // Imported notes keep direct-fs semantics by default. Generated
-        // reports can opt into Flywheel markup with skipWikilinks:false.
-        skipWikilinks: options.skipWikilinks ?? true,
-        suggestOutgoingLinks: options.suggestOutgoingLinks === true,
-        maxSuggestions: options.maxSuggestions,
-      },
+    return await callNoteCreate(client, {
+      relPath,
+      frontmatter,
+      body,
+      options,
     });
-    return parseNoteCreateResponse(resp, relPath);
+  }, options);
+}
+
+/**
+ * Write several notes through a single flywheel-memory subprocess session.
+ * Each MCP call keeps the same timeout semantics as `writeNoteViaSubprocess`,
+ * but the transport/client startup cost is paid once for the whole batch.
+ */
+export async function writeNotesViaSubprocess(
+  vaultPath: string,
+  notes: WriteNoteSubprocessInput[],
+  options: WriteSubprocessOptions = {},
+): Promise<WriteSubprocessOutcome<WriteNoteResult[]>> {
+  return await withMemoryWriterSession(vaultPath, async (client, timeoutMs) => {
+    const results: WriteNoteResult[] = [];
+    for (const note of notes) {
+      results.push(
+        await raceWithTimeout(
+          callNoteCreate(client, note),
+          note.options?.timeoutMs ?? timeoutMs,
+        ),
+      );
+    }
+    return results;
   }, options);
 }
 
@@ -176,9 +197,84 @@ async function withMemoryWriter<T>(
   }
 }
 
+async function withMemoryWriterSession<T>(
+  vaultPath: string,
+  fn: (client: Client, timeoutMs: number) => Promise<T>,
+  options: WriteSubprocessOptions = {},
+): Promise<WriteSubprocessOutcome<T>> {
+  const binary = options.binary ?? process.env.FLYWHEEL_MEMORY_BIN ?? 'flywheel-memory';
+  const args = options.args ?? [];
+  const timeoutMs = resolveTimeout(options.timeoutMs);
+
+  if (isAbsolute(binary) && !existsSync(binary)) {
+    return { status: 'skipped', reason: 'binary_not_found', detail: binary };
+  }
+
+  const env: Record<string, string> = {
+    ...(options.env ?? {}),
+    VAULT_PATH: vaultPath,
+    FLYWHEEL_TRANSPORT: 'stdio',
+  };
+
+  const transport = new StdioClientTransport({
+    command: binary,
+    args,
+    env,
+    stderr: 'pipe',
+  });
+  const client = new Client(
+    { name: WRITER_NAME, version: WRITER_VERSION },
+    { capabilities: {} },
+  );
+  let childPid: number | null = null;
+
+  try {
+    await raceWithTimeout(client.connect(transport), timeoutMs);
+    childPid = transport.pid;
+    const value = await fn(client, timeoutMs);
+    return { status: 'ok' as const, value };
+  } catch (err) {
+    return classifyError(err, binary, timeoutMs);
+  } finally {
+    childPid ??= transport.pid;
+    try {
+      await client.close();
+    } catch (closeErr) {
+      if (process.env.FLYWHEEL_IDEAS_DEBUG === '1') {
+        process.stderr.write(
+          `flywheel-ideas: mcp-subprocess write close error: ${(closeErr as Error).message}\n`,
+        );
+      }
+    }
+    await reapTransportProcess(childPid);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Response parsers
 // ---------------------------------------------------------------------------
+
+async function callNoteCreate(
+  client: Client,
+  note: WriteNoteSubprocessInput,
+): Promise<WriteNoteResult> {
+  const resp = await client.callTool({
+    name: 'note',
+    arguments: {
+      action: 'create',
+      path: note.relPath,
+      content: note.body,
+      frontmatter: note.frontmatter,
+      overwrite: note.options?.overwrite === true,
+      // Imported notes keep direct-fs semantics by default. Generated
+      // reports can opt into Flywheel markup with skipWikilinks:false.
+      skipWikilinks: note.options?.skipWikilinks ?? true,
+      suggestOutgoingLinks: note.options?.suggestOutgoingLinks === true,
+      maxSuggestions: note.options?.maxSuggestions,
+    },
+  });
+  return parseNoteCreateResponse(resp, note.relPath);
+}
 
 function parseNoteCreateResponse(
   resp: unknown,

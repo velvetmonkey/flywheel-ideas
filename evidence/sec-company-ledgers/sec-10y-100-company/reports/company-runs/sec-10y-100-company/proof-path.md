@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-proof-path
 entity_type: company_proof_path
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.571Z'
 ---
 # Proof Path sec-10y-100-company
 
@@ -31,6 +33,7 @@ Flywheel Ideas is useful when it keeps a durable chain from a prior assumption t
 - Dashboard: [[reports/company-runs/sec-10y-100-company/dashboard|Thesis dashboard]]
 - Accepted lessons: [[reports/company-runs/sec-10y-100-company/accepted-lessons|Accepted lessons]]
 - Human review queue: [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]]
+- Candidate noise: [[reports/company-runs/sec-10y-100-company/candidate-noise|Candidate noise]]
 - Evidence tracker: [[reports/company-runs/sec-10y-100-company/tracker|Evidence tracker]]
 - Cross-sector mechanisms: [[reports/company-runs/sec-10y-100-company/cross-sector-patterns|Cross-sector patterns]]
 
@@ -80,6 +83,7 @@ No open bets currently have staged review pressure.
 ## Candidate Noise Kept Out Of Truth
 
 No staged events are waiting for judgment.
+31 staged candidate(s) remain visible as suppressed duplicate pressure in [[reports/company-runs/sec-10y-100-company/candidate-noise|Candidate noise]].
 
 ## What This Proves
 

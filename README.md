@@ -18,14 +18,15 @@ The strongest current proof is a browsable 10-year SEC evidence corpus. It is no
 
 Start with these checked-in artifacts:
 
-- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md): the one-page view of failed bets, open bets under pressure, lessons, and remaining review work.
+- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md): the one-page view of failed bets, open bets under pressure, lessons, and visible review work.
 - [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md): generated reader path through the strongest lifecycle evidence.
 - [`docs/sec-corpus-walkthrough.md`](./docs/sec-corpus-walkthrough.md): the skeptical-reader guide to what is novel and what is not.
 - [`out-VxXuqAUS`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-VxXuqAUS.md): NVIDIA export controls became a $4.5B inventory/purchase-obligation charge tied back to an earlier assumption.
 - [`out-BqJTAbxZ`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-BqJTAbxZ.md): AMD export restrictions became stranded inventory, showing why one event can cut across demand, geopolitics, capacity, and channel assumptions.
 - [`out-btdioMuB`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-btdioMuB.md): Home Depot cybersecurity risk became quantified breach cost and litigation exposure after human adjudication.
 - [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md): the reusable lessons created from accepted failures.
-- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): the events still awaiting judgment rather than being auto-declared true.
+- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): the active judgment queue; it is currently clear.
+- [`candidate-noise.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/candidate-noise.md): the 31 staged candidates intentionally kept out of the active queue because they are duplicate pressure on already-refuted assumptions.
 
 This is decision support, not investment advice. The useful role is analyst memory: what did the thesis depend on, what later challenged it, which challenges were accepted, and what should be reviewed next?
 
@@ -50,11 +51,12 @@ The current SEC proof corpus is a Markdown-only evidence snapshot at [`evidence/
 Top-down corpus entry points:
 
 - [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) gives the one-page thesis dashboard.
-- [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md) gives the generated proof path through accepted failures, live pressure, and pending review.
+- [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md) gives the generated proof path through accepted failures, live pressure, and candidate noise kept out of truth.
 - [`index.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) links the whole run.
-- [`thesis.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md) shows current bets, accepted failures, unresolved review work, and what to watch next.
+- [`thesis.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md) shows current bets, accepted failures, review state, and what to watch next.
 - [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md) shows durable lessons created after outcome review.
-- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) shows remaining human adjudication work.
+- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) shows that no visible human adjudication events remain.
+- [`candidate-noise.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/candidate-noise.md) explains the staged candidates that remain outside the active queue.
 
 ```text
 1,468 SEC filings
@@ -64,6 +66,7 @@ Top-down corpus entry points:
   -> 70 lesson memos
   -> 262 rejected candidate outcomes
   -> 0 remaining human review events
+  -> 31 suppressed staged candidates tied to already-refuted assumptions
 ```
 
 Those accepted outcomes are not just summaries. The tool linked later filing evidence back to earlier assumptions, staged possible failures, required explicit human acceptance, changed the assumption status, recorded lesson memos, and regenerated the navigable Markdown reports.
@@ -155,7 +158,7 @@ Git evidence snapshots should commit Markdown artifacts only. SQLite databases, 
 
 ## SEC Adjudication Batches
 
-The remaining review queue should be processed in batches, not by hand-picking isolated examples.
+SEC review queues should be processed in batches, not by hand-picking isolated examples. The current checked-in visible queue is clear; the same workflow remains for future refreshes that stage new review events.
 
 ```bash
 npm run build -w @velvetmonkey/flywheel-ideas-core
@@ -183,7 +186,7 @@ node scripts/sec-adjudication-batch.mjs \
   --confirm
 ```
 
-Applying decisions regenerates company reports, writes a decision log Markdown note, refreshes the Markdown-only evidence export, and keeps the remaining staged queue visible.
+Applying decisions regenerates company reports, writes a decision log Markdown note, refreshes the Markdown-only evidence export, and keeps the active review queue plus suppressed candidate noise visible.
 
 ## What It Is Not
 
