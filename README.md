@@ -38,6 +38,7 @@ The current SEC proof corpus is a Markdown-only evidence snapshot at [`evidence/
 
 Start with the top-down table of contents:
 
+- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) gives the one-page thesis dashboard: what failed, what remains live, and what needs review.
 - [`index.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) links the whole run.
 - [`thesis.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md) shows current bets, accepted failures, unresolved review work, and what to watch next.
 - [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) shows the remaining human adjudication work.

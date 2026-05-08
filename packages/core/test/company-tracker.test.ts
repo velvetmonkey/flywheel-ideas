@@ -948,8 +948,14 @@ describe('company tracker', () => {
     expect(finalData.company_thesis_report.markdown).toContain('## Prior Failures And Lessons');
 
     const bundleIndex = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/index.md`), 'utf8');
+    expect(bundleIndex).toContain(`[[reports/company-runs/${result.run_id.toLowerCase()}/dashboard|Thesis dashboard]]`);
     expect(bundleIndex).toContain('Shadow LLM evaluations: 10');
     expect(bundleIndex).toContain('Accepted failures: 1');
+    const dashboard = await fsp.readFile(path.join(vault, `reports/company-runs/${result.run_id.toLowerCase()}/dashboard.md`), 'utf8');
+    expect(dashboard).toContain('## What Failed');
+    expect(dashboard).toContain('## What Still Needs Review');
+    expect(dashboard).toContain('## Product Value Check');
+    expect(dashboard).toContain('Recurring risk disclosure');
     const evalIndex = await fsp.readFile(path.join(vault, outcomeReview.summary_paths.evaluation_index), 'utf8');
     expect(evalIndex).toContain('valid_failure');
     expect(evalIndex).toContain('thesis_weakened');
