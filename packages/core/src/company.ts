@@ -621,12 +621,12 @@ function buildReportData(db: IdeasDatabase, runId: string): Record<string, unkno
   const companySummariesWithMetadata = attachCompanyMetadata(companySummaries, runMembers);
   const themeMatrix = buildThemeMatrix(themes, observations);
   const sectorMatrix = buildSectorMatrix(companySummariesWithMetadata, themes, observations, outcomes, runMembers);
-  const crossSectorPatterns = buildCrossSectorPatterns(themes, observations, outcomes, runMembers);
   const lifecycleSummary = buildLifecycleSummary(filings, themes, observations, outcomes);
   const observationExamples = buildObservationExamples(themes, observations, filings);
   const outcomeGroups = buildOutcomeGroups(outcomes, themes, filings);
   const secLedgerReport = buildSecCompanyLedgerReport(db, { run_id: runId });
   const companyThesisReport = buildCompanyThesisReport(secLedgerReport);
+  const crossSectorPatterns = buildCrossSectorPatterns(themes, observations, outcomes, runMembers, secLedgerReport);
   const highConfidenceOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) >= 0.9);
   const reviewOutcomes = (outcomes as Array<Record<string, unknown>>).filter((o) => Number(o.confidence) < 0.9);
   return {
@@ -1126,6 +1126,7 @@ function renderProofPathPage(
     `- Accepted lessons: [[${baseDir}/accepted-lessons|Accepted lessons]]`,
     `- Human review queue: [[${baseDir}/review-queue|Human review queue]]`,
     `- Evidence tracker: [[${baseDir}/tracker|Evidence tracker]]`,
+    `- Cross-sector mechanisms: [[${baseDir}/cross-sector-patterns|Cross-sector patterns]]`,
     '',
     '## Accepted Failure Chains',
     '',
@@ -1324,15 +1325,17 @@ function renderCrossSectorPatternsPage(
     '',
     'Mechanism-level comparison prevents generic SEC boilerplate from looking more meaningful than it is.',
     '',
-    '| Pattern | Sectors | Companies | Observations | Realized Candidates | Signal |',
-    '|---|---:|---:|---:|---:|---|',
+    '| Pattern | Sectors | Companies | Observations | Realized Candidates | Accepted Lessons | Open Pressure | Signal |',
+    '|---|---:|---:|---:|---:|---:|---:|---|',
   ];
   for (const pattern of patterns) {
     const sectors = pattern.sectors as string[];
     const companies = pattern.companies as string[];
-    lines.push(`| [[patterns/${slugify(String(pattern.pattern_key))}|${pattern.theme_title} / ${pattern.mechanism_title}]] | ${sectors.length} | ${companies.length} | ${pattern.observation_count} | ${pattern.realized_candidate_count} | ${pattern.signal} |`);
+    const acceptedLessons = pattern.accepted_lessons as Array<Record<string, unknown>>;
+    const pressureBets = pattern.open_pressure_bets as Array<Record<string, unknown>>;
+    lines.push(`| [[patterns/${slugify(String(pattern.pattern_key))}|${pattern.theme_title} / ${pattern.mechanism_title}]] | ${sectors.length} | ${companies.length} | ${pattern.observation_count} | ${pattern.realized_candidate_count} | ${acceptedLessons.length} | ${pressureBets.length} | ${pattern.signal} |`);
   }
-  if (patterns.length === 0) lines.push('| none | 0 | 0 | 0 | 0 | no cross-sector mechanism pattern yet |');
+  if (patterns.length === 0) lines.push('| none | 0 | 0 | 0 | 0 | 0 | 0 | no cross-sector mechanism pattern yet |');
   return `${lines.join('\n')}\n`;
 }
 
@@ -1340,6 +1343,9 @@ function renderCrossSectorPatternPage(runId: string, pattern: Record<string, unk
   const sectors = pattern.sectors as string[];
   const companies = pattern.companies as string[];
   const examples = pattern.examples as Array<Record<string, unknown>>;
+  const lessons = pattern.accepted_lessons as Array<Record<string, unknown>>;
+  const pressureBets = pattern.open_pressure_bets as Array<Record<string, unknown>>;
+  const reviewEvents = pattern.review_events as Array<Record<string, unknown>>;
   const lines = [
     `# ${pattern.theme_title} / ${pattern.mechanism_title} ${runId}`,
     '',
@@ -1349,15 +1355,58 @@ function renderCrossSectorPatternPage(runId: string, pattern: Record<string, unk
     `- Companies: ${companies.join(', ')}`,
     `- Observations: ${pattern.observation_count}`,
     `- Realized candidates: ${pattern.realized_candidate_count}`,
+    `- Accepted lessons: ${lessons.length}`,
+    `- Open pressure bets: ${pressureBets.length}`,
+    `- Review events: ${reviewEvents.length}`,
     `- Signal: ${pattern.signal}`,
     '',
     '## What We Can Learn',
     '',
     String(pattern.learning),
     '',
-    '## Evidence Examples',
+    '## Accepted Failure Chains',
     '',
   ];
+  if (lessons.length === 0) {
+    lines.push('No accepted lesson has been attached to this mechanism yet.');
+  } else {
+    for (const lesson of lessons) {
+      const lessonCompanies = lesson.companies as string[];
+      const lessonThemes = lesson.themes as string[];
+      const outcomeIds = lesson.outcome_ids as string[];
+      lines.push(`- **${lessonCompanies.join(', ')} / ${lessonThemes.join(', ')}**`);
+      lines.push(`  - Lesson: ${lesson.lesson}`);
+      lines.push(`  - Evidence: ${lesson.verdict_count} accepted verdict(s), outcome(s) ${outcomeIds.join(', ')}`);
+      lines.push(`  - Context: ${truncateOneLine(String(lesson.representative_context ?? ''), 260)}`);
+    }
+  }
+  lines.push('', '## Live Bets With Pressure', '');
+  if (pressureBets.length === 0) {
+    lines.push('No open bets with staged review pressure are attached to this mechanism.');
+  } else {
+    for (const bet of pressureBets) {
+      lines.push(`- **${bet.company} / ${bet.theme}**`);
+      lines.push(`  - Assumption: ${bet.assumption_id}`);
+      lines.push(`  - Observations: ${bet.observation_count}; pressure ${bet.review_pressure}; latest ${bet.latest_seen_at}`);
+    }
+  }
+  lines.push('', '## Pending Review Evidence', '');
+  if (reviewEvents.length === 0) {
+    lines.push('No staged review events are attached to this mechanism.');
+  } else {
+    for (const event of reviewEvents) {
+      const eventThemes = event.themes as string[];
+      const candidateIds = event.candidate_ids as string[];
+      lines.push(`- **${event.company} / ${eventThemes.join(', ')}**`);
+      lines.push(`  - Candidates: ${candidateIds.join(', ')}`);
+      lines.push(`  - Evidence: ${truncateOneLine(String(event.representative_excerpt ?? ''), 260)}`);
+    }
+  }
+  lines.push(
+    '',
+    '## Evidence Examples',
+    '',
+  );
   for (const example of examples) {
     lines.push(`- **${example.company} / ${example.sector}** (${example.observed_at})`);
     lines.push(`  - ${String(example.excerpt ?? '').replace(/\s+/g, ' ').slice(0, 350)}`);
@@ -1709,6 +1758,7 @@ function buildCrossSectorPatterns(
   observations: unknown[],
   outcomes: unknown[],
   members: unknown[],
+  ledger: SecLedgerReport,
 ): Array<Record<string, unknown>> {
   const themeRows = themes as Array<Record<string, unknown>>;
   const observationRows = observations as Array<Record<string, unknown>>;
@@ -1775,26 +1825,108 @@ function buildCrossSectorPatterns(
 
   return [...groups.values()]
     .filter((group) => group.sectors.size > 1 && group.mechanism_key !== 'generic-risk-disclosure')
-    .map((group) => ({
-      pattern_key: group.pattern_key,
-      theme_key: group.theme_key,
-      theme_title: group.theme_title,
-      mechanism_key: group.mechanism_key,
-      mechanism_title: group.mechanism_title,
-      sectors: [...group.sectors].sort(),
-      companies: [...group.companies].sort(),
-      observation_count: group.observation_count,
-      realized_candidate_count: group.realized_candidate_count,
-      signal: crossSectorSignal(group.sectors.size, group.realized_candidate_count),
-      learning: crossSectorLearning(group.theme_title, group.mechanism_title, group.sectors.size, group.realized_candidate_count),
-      examples: group.examples,
-    }))
+    .map((group) => {
+      const acceptedLessons = acceptedLessonsForPattern(group, ledger);
+      const pressureBets = pressureBetsForPattern(group, ledger);
+      const reviewEvents = reviewEventsForPattern(group, ledger);
+      return {
+        pattern_key: group.pattern_key,
+        theme_key: group.theme_key,
+        theme_title: group.theme_title,
+        mechanism_key: group.mechanism_key,
+        mechanism_title: group.mechanism_title,
+        sectors: [...group.sectors].sort(),
+        companies: [...group.companies].sort(),
+        observation_count: group.observation_count,
+        realized_candidate_count: group.realized_candidate_count,
+        accepted_lessons: acceptedLessons,
+        open_pressure_bets: pressureBets,
+        review_events: reviewEvents,
+        signal: crossSectorSignal(group.sectors.size, group.realized_candidate_count, acceptedLessons.length),
+        learning: crossSectorLearning(
+          group.theme_title,
+          group.mechanism_title,
+          group.sectors.size,
+          group.realized_candidate_count,
+          acceptedLessons.length,
+        ),
+        examples: group.examples,
+      };
+    })
     .sort((a, b) =>
+      (b.accepted_lessons as Array<unknown>).length - (a.accepted_lessons as Array<unknown>).length ||
+      (b.open_pressure_bets as Array<unknown>).length - (a.open_pressure_bets as Array<unknown>).length ||
       Number(b.realized_candidate_count) - Number(a.realized_candidate_count) ||
       (b.sectors as string[]).length - (a.sectors as string[]).length ||
       Number(b.observation_count) - Number(a.observation_count) ||
       String(a.theme_title).localeCompare(String(b.theme_title)),
     );
+}
+
+function acceptedLessonsForPattern(
+  group: {
+    theme_title: string;
+  },
+  ledger: SecLedgerReport,
+): Array<Record<string, unknown>> {
+  const theme = group.theme_title.toLowerCase();
+  return ledger.lessons_captured
+    .filter((lesson) => lesson.themes.some((lessonTheme) => sameTheme(lessonTheme, theme)))
+    .slice(0, 6)
+    .map((lesson) => ({
+      lesson: lesson.lesson,
+      verdict_count: lesson.verdict_count,
+      companies: lesson.companies,
+      themes: lesson.themes,
+      outcome_ids: lesson.outcome_ids,
+      representative_context: lesson.representative.what_actually_happened,
+    }));
+}
+
+function pressureBetsForPattern(
+  group: {
+    theme_title: string;
+  },
+  ledger: SecLedgerReport,
+): Array<Record<string, unknown>> {
+  const theme = group.theme_title.toLowerCase();
+  return ledger.current_bets
+    .filter((bet) => bet.review_pressure > 0)
+    .filter((bet) => sameTheme(bet.theme, theme))
+    .slice(0, 8)
+    .map((bet) => ({
+      company: bet.company,
+      theme: bet.theme,
+      assumption_id: bet.assumption_id,
+      observation_count: bet.observation_count,
+      review_pressure: bet.review_pressure,
+      latest_seen_at: bet.latest_seen_at,
+    }));
+}
+
+function reviewEventsForPattern(
+  group: {
+    theme_title: string;
+  },
+  ledger: SecLedgerReport,
+): Array<Record<string, unknown>> {
+  const theme = group.theme_title.toLowerCase();
+  return ledger.review_queue
+    .filter((event) => event.themes.some((eventTheme) => sameTheme(eventTheme, theme)))
+    .slice(0, 8)
+    .map((event) => ({
+      company: event.company,
+      themes: event.themes,
+      candidate_ids: event.candidate_ids,
+      representative_excerpt: event.representative_excerpt,
+    }));
+}
+
+function sameTheme(candidate: string, normalizedTheme: string): boolean {
+  const normalized = candidate.toLowerCase();
+  return normalized === normalizedTheme ||
+    normalized.includes(normalizedTheme) ||
+    normalizedTheme.includes(normalized);
 }
 
 function mechanismKeyFromExcerpt(excerpt: string): string {
@@ -1816,7 +1948,8 @@ function mechanismTitleFromKey(key: string): string {
   return key.split('-').map((part) => part[0]?.toUpperCase() + part.slice(1)).join(' ');
 }
 
-function crossSectorSignal(sectorCount: number, realizedCandidates: number): string {
+function crossSectorSignal(sectorCount: number, realizedCandidates: number, acceptedLessons: number): string {
+  if (acceptedLessons > 0) return 'shared mechanism with accepted lessons';
   if (realizedCandidates > 0) return 'shared mechanism with realized-risk evidence';
   if (sectorCount >= 4) return 'broad shared mechanism to monitor';
   return 'emerging cross-sector mechanism';
@@ -1827,7 +1960,11 @@ function crossSectorLearning(
   mechanism: string,
   sectorCount: number,
   realizedCandidates: number,
+  acceptedLessons: number,
 ): string {
+  if (acceptedLessons > 0) {
+    return `${theme} is now connected to accepted lesson evidence through the ${mechanism.toLowerCase()} mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.`;
+  }
   if (realizedCandidates > 0) {
     return `${theme} is not just recurring boilerplate: the ${mechanism.toLowerCase()} mechanism has already produced realized-risk candidates in this run, so related open bets in other sectors deserve review.`;
   }
