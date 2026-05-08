@@ -19,8 +19,8 @@ source: flywheel-ideas
 - Observations: 58
 - Realized candidates: 5
 - Accepted lessons: 5
-- Open pressure bets: 1
-- Review events: 1
+- Open pressure bets: 0
+- Review events: 0
 - Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
@@ -52,15 +52,11 @@ Inventory and channel is now connected to accepted lesson evidence through the p
 
 ## Live Bets With Pressure
 
-- **WMT / Inventory and channel**
-  - Assumption: asm-rLgC687v
-  - Observations: 38; pressure 1; latest 2026-03-13
+No open bets with staged review pressure are attached to this mechanism.
 
 ## Pending Review Evidence
 
-- **WMT / Inventory and channel**
-  - Candidates: cout-22Ztexb6
-  - Evidence: In light of the substantial premiums payable for insurance coverage for losses caused by certain natural disasters, such as hurricanes, cyclones, typhoons, tropical storms, earthquakes, floods and tsunamis, as well as the limitations on available coverage for…
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

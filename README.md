@@ -58,17 +58,17 @@ Top-down corpus entry points:
 
 ```text
 1,468 SEC filings
-  -> 361 current company/theme bets
+  -> 349 current company/theme bets
   -> 486 shadow LLM evaluations
-  -> 55 accepted failures after curated review
-  -> 55 lesson memos
-  -> 253 rejected candidate outcomes
-  -> 24 remaining human review events
+  -> 70 accepted failures after curated review
+  -> 70 lesson memos
+  -> 262 rejected candidate outcomes
+  -> 0 remaining human review events
 ```
 
 Those accepted outcomes are not just summaries. The tool linked later filing evidence back to earlier assumptions, staged possible failures, required explicit human acceptance, changed the assumption status, recorded lesson memos, and regenerated the navigable Markdown reports.
 
-Representative accepted failures now include export-control inventory charges, quantified cybersecurity breach costs, market exits, investment impairments, debt-extinguishment losses, platform access restrictions, and travel-demand collapse. The remaining queue is still visible rather than hidden: 24 review events need adjudication before they become accepted outcomes.
+Representative accepted failures now include export-control inventory charges, quantified cybersecurity breach costs, market exits, investment impairments, debt-extinguishment losses, platform access restrictions, travel-demand collapse, geopolitical charges, OEM recall disruption, and demand-pressure cost deleverage. The visible review queue has now been adjudicated: ambiguous or weak candidates were either accepted with lesson memos or rejected as non-decision-grade evidence.
 
 This is decision support, not investment advice. The value is the auditable lifecycle: what the thesis depended on, what later evidence challenged, what the human accepted, and what lesson should change future review.
 
