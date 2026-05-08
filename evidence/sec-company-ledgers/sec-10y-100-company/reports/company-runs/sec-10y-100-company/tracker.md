@@ -1315,46 +1315,46 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Cross-Sector Mechanism Patterns
 
-- **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 12 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 5 realized candidate(s).
-  - Sectors: Consumer Discretionary, Information Technology
 - **Demand / Consumer or end-market demand shock**: 4 sector(s), 6 company(ies), 408 observation(s), 4 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
+- **Demand / Geographic concentration or local disruption**: 2 sector(s), 2 company(ies), 164 observation(s), 1 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary
+- **Demand / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 128 observation(s), 1 realized candidate(s).
+  - Sectors: Consumer Discretionary, Information Technology
+- **Liquidity / Interest, credit, or liquidity stress**: 4 sector(s), 13 company(ies), 925 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 214 observation(s), 4 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
 - **Supply chain / Single supplier or manufacturing concentration**: 2 sector(s), 3 company(ies), 142 observation(s), 3 realized candidate(s).
   - Sectors: Consumer Staples, Information Technology
-- **Customer and platform dependency / Platform or customer concentration**: 4 sector(s), 26 company(ies), 1011 observation(s), 2 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Macro and foreign exchange / Geographic concentration or local disruption**: 4 sector(s), 12 company(ies), 741 observation(s), 2 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Capacity investment and operating expense drag**: 2 sector(s), 4 company(ies), 203 observation(s), 2 realized candidate(s).
   - Sectors: Communication Services, Information Technology
-- **Liquidity / Interest, credit, or liquidity stress**: 4 sector(s), 13 company(ies), 925 observation(s), 1 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Regulation and legal / Regulatory investigation or litigation**: 4 sector(s), 9 company(ies), 615 observation(s), 1 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Cloud and data center capacity / Capacity investment and operating expense drag**: 4 sector(s), 15 company(ies), 480 observation(s), 1 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- **Cybersecurity and privacy / Data breach, outage, or service disruption**: 4 sector(s), 6 company(ies), 107 observation(s), 1 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Supply chain / Platform or customer concentration**: 3 sector(s), 4 company(ies), 176 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Consumer Discretionary, Information Technology
-- **Demand / Geographic concentration or local disruption**: 2 sector(s), 2 company(ies), 164 observation(s), 1 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary
+- **Macro and foreign exchange / Geographic concentration or local disruption**: 4 sector(s), 12 company(ies), 741 observation(s), 2 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - **Macro and foreign exchange / Consumer or end-market demand shock**: 2 sector(s), 3 company(ies), 146 observation(s), 1 realized candidate(s).
   - Sectors: Consumer Staples, Information Technology
-- **Demand / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 128 observation(s), 1 realized candidate(s).
+- **Macro and foreign exchange / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 109 observation(s), 0 realized candidate(s).
+  - Sectors: Consumer Discretionary, Information Technology
+- **Macro and foreign exchange / Interest, credit, or liquidity stress**: 2 sector(s), 2 company(ies), 90 observation(s), 0 realized candidate(s).
+  - Sectors: Communication Services, Consumer Staples
+- **Geopolitics and tariffs / Geographic concentration or local disruption**: 4 sector(s), 25 company(ies), 896 observation(s), 12 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
+- **Geopolitics and tariffs / Export controls or sanctions**: 2 sector(s), 3 company(ies), 91 observation(s), 0 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary
+- **Inventory and channel / Platform or customer concentration**: 2 sector(s), 2 company(ies), 58 observation(s), 5 realized candidate(s).
   - Sectors: Consumer Discretionary, Information Technology
 - **Inventory and channel / Capacity investment and operating expense drag**: 2 sector(s), 2 company(ies), 116 observation(s), 1 realized candidate(s).
   - Sectors: Communication Services, Information Technology
-- **Cybersecurity and privacy / Regulatory investigation or litigation**: 3 sector(s), 4 company(ies), 103 observation(s), 0 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
-- **Customer and platform dependency / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 89 observation(s), 0 realized candidate(s).
-  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
-- **Cybersecurity and privacy / Geographic concentration or local disruption**: 3 sector(s), 4 company(ies), 52 observation(s), 0 realized candidate(s).
-  - Sectors: Communication Services, Consumer Staples, Information Technology
+- **Regulation and legal / Regulatory investigation or litigation**: 4 sector(s), 9 company(ies), 615 observation(s), 1 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
+- **Regulation and legal / Geographic concentration or local disruption**: 2 sector(s), 3 company(ies), 198 observation(s), 0 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary
+- **AI, R&D, and technology / Geographic concentration or local disruption**: 2 sector(s), 3 company(ies), 99 observation(s), 0 realized candidate(s).
+  - Sectors: Communication Services, Consumer Discretionary
+- **AI, R&D, and technology / Single supplier or manufacturing concentration**: 2 sector(s), 2 company(ies), 66 observation(s), 0 realized candidate(s).
+  - Sectors: Consumer Staples, Information Technology
 
 ## Observation Evidence Examples
 

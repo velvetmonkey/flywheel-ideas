@@ -18,11 +18,45 @@ source: flywheel-ideas
 - Companies: ABNB, CMCSA, GOOGL
 - Observations: 198
 - Realized candidates: 0
-- Signal: emerging cross-sector mechanism
+- Accepted lessons: 5
+- Open pressure bets: 0
+- Review events: 0
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Regulation and legal appears through the geographic concentration or local disruption mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
+Regulation and legal is now connected to accepted lesson evidence through the geographic concentration or local disruption mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **AMD / Regulation and legal**
+  - Lesson: Semiconductor legal assumptions should track contingent-loss language because even small legal reserves mark realized friction that can recur or compound around transactions.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-PzSBYfnX
+  - Context: The filing disclosed a $5 million contingent loss in connection with a legal matter, alongside other transaction-related expense items.
+- **WBD / Regulation and legal**
+  - Lesson: Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-sTpYBDUQ
+  - Context: The filing disclosed third-party production partners were shut down during most of the second quarter of 2020 due to COVID-19 restrictions, and after reopening the company incurred additional costs to comply with governmental regulations and safety measures.
+- **DIS / Regulation and legal**
+  - Lesson: Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-HR8ZaBsU
+  - Context: The filing disclosed that reopening or closure of Disney businesses depended on changing government requirements and that reopened businesses incurred additional costs to address regulations and safety of employees, talent, and guests.
+- **CSCO / Regulation and legal**
+  - Lesson: Regulation and legal assumptions should track settlement charges when management connects them to margin movement, not only litigation headlines or final judgments.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-4D4Rto1C
+  - Context: The filing disclosed gross-margin pressure driven by unfavorable pricing, lower productivity benefits from higher memory-component costs, and a $122 million legal and indemnification settlement charge.
+- **META / Regulation and legal**
+  - Lesson: Regulatory and platform-policy assumptions should track measurement and targeting degradation because tooling limits can become revenue pressure before direct fines or bans appear.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-bbr3AY3V
+  - Context: The 2022 filing disclosed advertising revenue was affected by targeting and measurement limitations arising from iOS changes and the regulatory environment.
+
+## Live Bets With Pressure
+
+No open bets with staged review pressure are attached to this mechanism.
+
+## Pending Review Evidence
+
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

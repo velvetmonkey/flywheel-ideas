@@ -18,11 +18,33 @@ source: flywheel-ideas
 - Companies: AAPL, ABNB, AMZN, BKNG, CMCSA, CSCO, DIS, EA, HD, LOW, MCD, META, MSFT, MU, NVDA, ORCL, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Observations: 1011
 - Realized candidates: 2
-- Signal: shared mechanism with realized-risk evidence
+- Accepted lessons: 1
+- Open pressure bets: 1
+- Review events: 1
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Customer and platform dependency is not just recurring boilerplate: the platform or customer concentration mechanism has already produced realized-risk candidates in this run, so related open bets in other sectors deserve review.
+Customer and platform dependency is now connected to accepted lesson evidence through the platform or customer concentration mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **AAPL / Customer and platform dependency**
+  - Lesson: Channel-dependency assumptions should treat retail and partner access as load-bearing when regional shutdowns can directly suppress sales.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-yu9stwSH
+  - Context: The filing disclosed that China sales were adversely affected by public-health measures, including temporary closure of Apple retail stores and channel-partner points of sale.
+
+## Live Bets With Pressure
+
+- **TMUS / Customer and platform dependency**
+  - Assumption: asm-k3Dfjwuj
+  - Observations: 19; pressure 1; latest 2026-02-11
+
+## Pending Review Evidence
+
+- **TMUS / Customer and platform dependency**
+  - Candidates: cout-ybHov4a1
+  - Evidence: As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss r…
 
 ## Evidence Examples
 

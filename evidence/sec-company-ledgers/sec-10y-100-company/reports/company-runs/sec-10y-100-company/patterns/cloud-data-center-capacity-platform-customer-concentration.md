@@ -18,11 +18,29 @@ source: flywheel-ideas
 - Companies: CMCSA, MSFT, MU, NVDA
 - Observations: 245
 - Realized candidates: 0
-- Signal: emerging cross-sector mechanism
+- Accepted lessons: 1
+- Open pressure bets: 0
+- Review events: 0
+- Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
 
-Cloud and data center capacity appears through the platform or customer concentration mechanism across 2 sectors. Treat this as a watchpoint until later filings show whether it remains disclosure-only or turns into realized outcomes.
+Cloud and data center capacity is now connected to accepted lesson evidence through the platform or customer concentration mechanism, so similar open bets across sectors should be reviewed before treating the disclosure as harmless boilerplate.
+
+## Accepted Failure Chains
+
+- **AMD / Cloud and data center capacity**
+  - Lesson: Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-dkrWjofL
+  - Context: The 2026 10-K disclosed approximately $800 million of inventory and related charges on AMD Instinct MI308 products due to new export restrictions on China shipments.
+
+## Live Bets With Pressure
+
+No open bets with staged review pressure are attached to this mechanism.
+
+## Pending Review Evidence
+
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 
