@@ -131,6 +131,32 @@ describe('writeNoteViaSubprocess', () => {
     if (outcome.status !== 'skipped') return;
     expect(outcome.reason).toBe('binary_not_found');
   });
+
+  it('reaps a timed-out writer subprocess even when it ignores SIGTERM', async () => {
+    const pidFile = path.join(tmp, 'writer.pid');
+    const outcome = await writeNoteViaSubprocess(
+      tmp,
+      'reports/hanging.md',
+      { type: 'report' },
+      'body',
+      {
+        ...mockOpts({
+          MOCK_FM_SUPPORTS_NOTE: '1',
+          MOCK_FM_HANG_MS: '10000',
+          MOCK_FM_IGNORE_SIGTERM: '1',
+          MOCK_FM_PID_FILE: pidFile,
+        }),
+        timeoutMs: 100,
+      },
+    );
+
+    expect(outcome.status).toBe('skipped');
+    if (outcome.status !== 'skipped') return;
+    expect(outcome.reason).toBe('timeout');
+    const pid = Number.parseInt(await fsp.readFile(pidFile, 'utf8'), 10);
+    expect(Number.isFinite(pid)).toBe(true);
+    expect(await waitForDead(pid, 2_000)).toBe(true);
+  }, 10_000);
 });
 
 describe('patchFrontmatterViaSubprocess', () => {
@@ -162,3 +188,21 @@ describe('patchFrontmatterViaSubprocess', () => {
     expect(outcome.reason).toBe('tool_returned_error');
   });
 });
+
+async function waitForDead(pid: number, timeoutMs: number): Promise<boolean> {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (!isPidAlive(pid)) return true;
+    await new Promise((resolve) => setTimeout(resolve, 50));
+  }
+  return !isPidAlive(pid);
+}
+
+function isPidAlive(pid: number): boolean {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch {
+    return false;
+  }
+}
