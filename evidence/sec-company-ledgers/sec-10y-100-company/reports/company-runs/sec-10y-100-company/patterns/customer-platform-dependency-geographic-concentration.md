@@ -18,9 +18,9 @@ source: flywheel-ideas
 - Companies: GOOGL, MAR, MO, PEP
 - Observations: 89
 - Realized candidates: 0
-- Accepted lessons: 1
-- Open pressure bets: 1
-- Review events: 1
+- Accepted lessons: 2
+- Open pressure bets: 0
+- Review events: 0
 - Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
@@ -29,6 +29,10 @@ Customer and platform dependency is now connected to accepted lesson evidence th
 
 ## Accepted Failure Chains
 
+- **TMUS / Customer and platform dependency**
+  - Lesson: Partner-dependency assumptions should treat OEM quality failures as first-order financial risk when the company sells, finances, or stocks the affected devices.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-r9mw4Nbw
+  - Context: TMUS recorded no revenue for recalled device sales, impaired devices to net realizable value, and booked an OEM reimbursement receivable.
 - **AAPL / Customer and platform dependency**
   - Lesson: Channel-dependency assumptions should treat retail and partner access as load-bearing when regional shutdowns can directly suppress sales.
   - Evidence: 1 accepted verdict(s), outcome(s) out-yu9stwSH
@@ -36,15 +40,11 @@ Customer and platform dependency is now connected to accepted lesson evidence th
 
 ## Live Bets With Pressure
 
-- **TMUS / Customer and platform dependency**
-  - Assumption: asm-k3Dfjwuj
-  - Observations: 19; pressure 1; latest 2026-02-11
+No open bets with staged review pressure are attached to this mechanism.
 
 ## Pending Review Evidence
 
-- **TMUS / Customer and platform dependency**
-  - Candidates: cout-ybHov4a1
-  - Evidence: As a result, we recorded no revenue associated with the device sales to customers and impaired the devices to their net realizable value. The OEM has agreed to reimburse T-Mobile, as such, we have recorded an amount due from the OEM as an offset to the loss r…
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

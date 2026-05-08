@@ -15,10 +15,10 @@ source: flywheel-ideas
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
 - Companies: ABNB, COST, KO, MAR, MU, NFLX, ORCL, PEP, PLTR, T, TMUS, WBD, WMT
 - Observations: 925
-- Realized candidates: 1
+- Realized candidates: 0
 - Accepted lessons: 6
-- Open pressure bets: 3
-- Review events: 3
+- Open pressure bets: 0
+- Review events: 0
 - Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
@@ -27,6 +27,14 @@ Liquidity is now connected to accepted lesson evidence through the interest, cre
 
 ## Accepted Failure Chains
 
+- **MSFT / Liquidity**
+  - Lesson: Liquidity and credit assumptions should watch bad debt expense as an early signal of customer payment stress, even inside otherwise growing enterprise businesses.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-nCkT2qHA
+  - Context: MSFT reported higher sales and marketing expense partly due to increased bad debt expense.
+- **MCD / Liquidity**
+  - Lesson: Turnaround plans that rely on refranchising, cost savings, and leverage should be watched for restructuring charges, because execution costs can be material even when operating performance improves.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-jHWDEcpN
+  - Context: MCD reported approximately $230 million of strategic charges in the quarter and six-month period, including non-cash impairment charges.
 - **TJX / Liquidity**
   - Lesson: Liquidity risk is decision-grade when financing actions create quantified extinguishment losses and explicit margin/EPS impacts.
   - Evidence: 1 accepted verdict(s), outcome(s) out-51DsRhsa
@@ -43,38 +51,14 @@ Liquidity is now connected to accepted lesson evidence through the interest, cre
   - Lesson: Legal/liquidity risks become falsified when filings move from exposure language to probable adverse outcomes with quantified P&L and EPS effects.
   - Evidence: 1 accepted verdict(s), outcome(s) out-VEELu9Yp
   - Context: PM recorded a $204M non-cash pre-tax charge after concluding an adverse outcome was probable, with a stated $0.11 diluted EPS impact.
-- **VZ / Liquidity**
-  - Lesson: Liquidity assumptions for capital-intensive telecoms should track interest-expense sensitivity when rates rise, not only near-term cash availability.
-  - Evidence: 1 accepted verdict(s), outcome(s) out-Ei2WCFV6
-  - Context: The 2023 filing disclosed increased interest expenses related to rising interest rates, along with direct-cost inflation and lower EPS/guidance.
-- **BKNG / Liquidity**
-  - Lesson: Marketplace liquidity assumptions should be reviewed when transaction volume collapses, not only when debt or cash-balance stress appears.
-  - Evidence: 1 accepted verdict(s), outcome(s) out-VoaZ4Yv9
-  - Context: The May 2020 10-Q disclosed a material decline in gross travel bookings, room nights, total revenues, net income, and cash flow from operations, with April 2020 newly booked room nights down over 85% year over year.
 
 ## Live Bets With Pressure
 
-- **MSFT / Liquidity**
-  - Assumption: asm-pvTxdvNS
-  - Observations: 64; pressure 1; latest 2026-04-29
-- **MAR / Liquidity**
-  - Assumption: asm-D1qsFGdq
-  - Observations: 80; pressure 1; latest 2026-02-10
-- **MCD / Liquidity**
-  - Assumption: asm-sfuU8h2r
-  - Observations: 68; pressure 1; latest 2025-11-05
+No open bets with staged review pressure are attached to this mechanism.
 
 ## Pending Review Evidence
 
-- **MCD / Liquidity**
-  - Candidates: cout-UkCnhUp1
-  - Evidence: Results for the quarter and six months benefited from stronger operating performance and higher gains on sales of restaurant businesses. Both periods were impacted by approximately $230 million, or $0.20 per share, of strategic charges, consisting primarily o…
-- **MSFT / Liquidity**
-  - Candidates: cout-sYG7DHXL
-  - Evidence: Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
-- **MAR / Liquidity**
-  - Candidates: cout-v6UCJTdD
-  - Evidence: we recorded a provision for credit losses of $
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

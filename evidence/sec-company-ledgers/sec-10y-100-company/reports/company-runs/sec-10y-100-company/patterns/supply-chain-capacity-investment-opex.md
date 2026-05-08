@@ -17,8 +17,8 @@ source: flywheel-ideas
 - Observations: 203
 - Realized candidates: 2
 - Accepted lessons: 6
-- Open pressure bets: 1
-- Review events: 1
+- Open pressure bets: 0
+- Review events: 0
 - Signal: shared mechanism with accepted lessons
 
 ## What We Can Learn
@@ -27,6 +27,10 @@ Supply chain is now connected to accepted lesson evidence through the capacity i
 
 ## Accepted Failure Chains
 
+- **MU / Supply chain**
+  - Lesson: In cyclical semiconductor businesses, supply-chain risk should include utilization risk: capacity reductions can create material period costs before demand fully recovers.
+  - Evidence: 1 accepted verdict(s), outcome(s) out-om1opwh6
+  - Context: MU recognized $382 million of fabrication facility underutilization costs in 2023 and $165 million in the first quarter of 2024.
 - **AMD / Supply chain**
   - Lesson: Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.
   - Evidence: 1 accepted verdict(s), outcome(s) out-AiaZth1U
@@ -47,22 +51,14 @@ Supply chain is now connected to accepted lesson evidence through the capacity i
   - Lesson: Retail supply-chain assumptions should include supplier-obligation rigidity because fixed commitments can amplify demand shocks.
   - Evidence: 1 accepted verdict(s), outcome(s) out-xsQzN5r7
   - Context: The filing disclosed higher expenses from honoring supplier obligations, alongside lost revenues and inventory write-offs.
-- **PEP / Supply chain**
-  - Lesson: Consumer-staples supply-chain assumptions should include labor availability and plant operating capacity, not only logistics and input availability.
-  - Evidence: 1 accepted verdict(s), outcome(s) out-gHyrXMxQ
-  - Context: The filing disclosed reduced manufacturing capacity at certain facilities and increased employee, sanitation, and other COVID-related operating costs.
 
 ## Live Bets With Pressure
 
-- **MU / Supply chain**
-  - Assumption: asm-TN54hhrX
-  - Observations: 84; pressure 1; latest 2026-03-19
+No open bets with staged review pressure are attached to this mechanism.
 
 ## Pending Review Evidence
 
-- **MU / Supply chain**
-  - Candidates: cout-n8rgakW6
-  - Evidence: We believe this approach to node migration and consequent wafer capacity reduction was adopted across the industry. We recognized period costs from fabrication facility underutilization of $382 million in 2023 and $165 million in the first quarter of 2024 due…
+No staged review events are attached to this mechanism.
 
 ## Evidence Examples
 

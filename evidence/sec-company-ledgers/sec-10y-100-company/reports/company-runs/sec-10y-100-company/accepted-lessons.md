@@ -10,6 +10,66 @@ source: flywheel-ideas
 ---
 # Accepted Lessons sec-10y-100-company
 
+- **Consumer-brand demand risk can become decision-grade through activism and geopolitical boycotts before the filing quantifies the lost revenue.**
+  - Companies: KO
+  - Themes: Demand
+  - Outcomes: out-UBieSNC8
+- **Retail demand pressure becomes decision-grade when negative comparable sales create cost deleverage, not only when headline revenue declines.**
+  - Companies: HD
+  - Themes: Demand
+  - Outcomes: out-7F4mfxw6
+- **Liquidity and credit assumptions should watch bad debt expense as an early signal of customer payment stress, even inside otherwise growing enterprise businesses.**
+  - Companies: MSFT
+  - Themes: Liquidity
+  - Outcomes: out-nCkT2qHA
+- **Regional distribution exposure should be tracked as a channel and geopolitical dependency when termination can flow directly through net revenue.**
+  - Companies: PM
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-5M7w88HP
+- **When geopolitical conflict cancels market launches, the risk should be tracked as a realized operating and capital-allocation failure, not only as regional uncertainty.**
+  - Companies: PM
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-ATHaEBdv
+- **Media demand risk is decision-grade when revenue softness flows through content expense, participant payments, or impairment language rather than only audience commentary.**
+  - Companies: WBD
+  - Themes: Demand
+  - Outcomes: out-awfUrwLp
+- **Advertising-supported segments need separate demand tracking because macro shocks can hit advertiser spend and commercial-search intent before broader company demand weakens.**
+  - Companies: VZ
+  - Themes: Demand
+  - Outcomes: out-zPo6jwP7
+- **Partner-dependency assumptions should treat OEM quality failures as first-order financial risk when the company sells, finances, or stocks the affected devices.**
+  - Companies: TMUS
+  - Themes: Customer and platform dependency
+  - Outcomes: out-r9mw4Nbw
+- **Demand risk in telecom can be triggered by partner hardware failures; OEM recalls should be linked to revenue recognition and inventory impairment review.**
+  - Companies: TMUS
+  - Themes: Demand
+  - Outcomes: out-1UVkXkKo
+- **Geopolitical risk can appear through currency translation and investment carrying value before it appears as direct operating disruption.**
+  - Companies: TJX
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-eFwTWYkz
+- **Turnaround plans that rely on refranchising, cost savings, and leverage should be watched for restructuring charges, because execution costs can be material even when operating performance improves.**
+  - Companies: MCD
+  - Themes: Liquidity
+  - Outcomes: out-jHWDEcpN
+- **Repeated interim charges are evidence that geopolitical risk is not a one-off disclosure item; it should keep related assumptions under review until the exposure stabilizes.**
+  - Companies: PM
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-eSPETF66
+- **Country-specific geopolitical exposure can become a recurring financial charge when conflict blocks planned launches or operating continuity.**
+  - Companies: PM
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-PaJL3nqm
+- **In cyclical semiconductor businesses, supply-chain risk should include utilization risk: capacity reductions can create material period costs before demand fully recovers.**
+  - Companies: MU
+  - Themes: Supply chain
+  - Outcomes: out-om1opwh6
+- **Geopolitical exposure becomes decision-grade when a company-owned investment or operating footprint is written down, even if the remaining exposure becomes small afterward.**
+  - Companies: KO
+  - Themes: Geopolitics and tariffs
+  - Outcomes: out-EsYi1hpw
 - **Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.**
   - Companies: HD
   - Themes: Cybersecurity and privacy
