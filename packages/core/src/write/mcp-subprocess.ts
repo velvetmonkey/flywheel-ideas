@@ -23,6 +23,7 @@
  *  - `FLYWHEEL_IDEAS_DEBUG=1`                        — surface transport teardown
  */
 
+import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { isAbsolute } from 'node:path';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
@@ -50,6 +51,8 @@ export interface WriteSubprocessOptions {
 }
 
 const DEFAULT_TIMEOUT_MS = 15_000;
+const CLOSE_REAP_TIMEOUT_MS = 2_000;
+const CLOSE_REAP_POLL_MS = 50;
 const WRITER_NAME = 'flywheel-ideas-writer';
 const WRITER_VERSION = '0.2.x';
 
@@ -144,11 +147,13 @@ async function withMemoryWriter<T>(
     { name: WRITER_NAME, version: WRITER_VERSION },
     { capabilities: {} },
   );
+  let childPid: number | null = null;
 
   try {
     return await raceWithTimeout(
       (async () => {
         await client.connect(transport);
+        childPid = transport.pid;
         const value = await fn(client);
         return { status: 'ok' as const, value };
       })(),
@@ -157,6 +162,7 @@ async function withMemoryWriter<T>(
   } catch (err) {
     return classifyError(err, binary, timeoutMs);
   } finally {
+    childPid ??= transport.pid;
     try {
       await client.close();
     } catch (closeErr) {
@@ -166,6 +172,7 @@ async function withMemoryWriter<T>(
         );
       }
     }
+    await reapTransportProcess(childPid);
   }
 }
 
@@ -278,6 +285,48 @@ function raceWithTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
       },
     );
   });
+}
+
+async function reapTransportProcess(pid: number | null | undefined): Promise<void> {
+  if (!pid) return;
+  if (!(await waitForExit(pid, CLOSE_REAP_TIMEOUT_MS))) {
+    forceKill(pid);
+    await waitForExit(pid, CLOSE_REAP_TIMEOUT_MS);
+  }
+}
+
+async function waitForExit(pid: number, timeoutMs: number): Promise<boolean> {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (!isProcessAlive(pid)) return true;
+    await sleep(CLOSE_REAP_POLL_MS);
+  }
+  return !isProcessAlive(pid);
+}
+
+function isProcessAlive(pid: number): boolean {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function forceKill(pid: number): void {
+  try {
+    if (process.platform === 'win32') {
+      spawnSync('taskkill', ['/T', '/F', '/PID', String(pid)], { stdio: 'ignore' });
+    } else {
+      process.kill(pid, 'SIGKILL');
+    }
+  } catch {
+    /* best effort */
+  }
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function resolveTimeout(opt?: number): number {
