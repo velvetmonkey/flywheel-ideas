@@ -8,6 +8,7 @@ import {
   __setWritePathForTests,
   patchFrontmatter,
   writeNote,
+  writeNotes,
   WriteSubprocessFailedError,
 } from '../src/write/index.js';
 
@@ -54,6 +55,28 @@ describe('writeNote dispatcher', () => {
     } finally {
       delete process.env.FLYWHEEL_MEMORY_BIN;
     }
+  });
+
+  it('writes batches through direct-fs when active tier is direct-fs', async () => {
+    __setWritePathForTests({ active: 'direct-fs', reason: 'not_probed', binary: 'flywheel-memory' });
+    const results = await writeNotes(tmp, [
+      {
+        relPath: 'reports/a.md',
+        frontmatter: { type: 'report', title: 'a' },
+        body: '# a\n',
+        options: { overwrite: true },
+      },
+      {
+        relPath: 'reports/b.md',
+        frontmatter: { type: 'report', title: 'b' },
+        body: '# b\n',
+        options: { overwrite: true },
+      },
+    ]);
+
+    expect(results.map((result) => result.write_path)).toEqual(['direct-fs', 'direct-fs']);
+    await expect(fsp.access(path.join(tmp, 'reports/a.md'))).resolves.toBeUndefined();
+    await expect(fsp.access(path.join(tmp, 'reports/b.md'))).resolves.toBeUndefined();
   });
 });
 

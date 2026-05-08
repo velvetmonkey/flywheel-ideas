@@ -33,12 +33,15 @@ import type {
 import { applyPatch, serializeScalar } from './patch-frontmatter.js';
 import {
   writeNoteViaSubprocess,
+  writeNotesViaSubprocess,
   patchFrontmatterViaSubprocess,
+  type WriteNoteSubprocessInput,
   type WriteSubprocessOptions,
 } from './mcp-subprocess.js';
 import { getActiveWritePath } from './probe.js';
 
 export type WritePathTier = WritePathLabel;
+export type WriteNotesInput = WriteNoteSubprocessInput;
 
 export { WriteNotePathError };
 export type { WriteNoteOptions, WriteNoteResult };
@@ -68,6 +71,7 @@ export type { ProbeOptions, ProbeOutcome } from './probe.js';
 export { writeNoteDirectFs, patchFrontmatterDirectFs };
 export {
   writeNoteViaSubprocess,
+  writeNotesViaSubprocess,
   patchFrontmatterViaSubprocess,
 } from './mcp-subprocess.js';
 export type { WriteSubprocessOptions } from './mcp-subprocess.js';
@@ -121,6 +125,38 @@ export async function writeNote(
     throw new WriteSubprocessFailedError(outcome.reason, outcome.detail);
   }
   return await writeNoteDirectFs(vaultPath, relPath, frontmatter, body, options);
+}
+
+/**
+ * Write several markdown notes. In production this reuses one mcp-subprocess
+ * session for the batch; in direct-fs test mode it writes sequentially.
+ */
+export async function writeNotes(
+  vaultPath: string,
+  notes: WriteNotesInput[],
+  options: WriteSubprocessOptions = {},
+): Promise<WriteNoteResult[]> {
+  if (getActiveWritePath() === 'mcp-subprocess') {
+    const outcome = await writeNotesViaSubprocess(vaultPath, notes, options);
+    if (outcome.status === 'ok') {
+      return outcome.value;
+    }
+    throw new WriteSubprocessFailedError(outcome.reason, outcome.detail);
+  }
+
+  const results: WriteNoteResult[] = [];
+  for (const note of notes) {
+    results.push(
+      await writeNoteDirectFs(
+        vaultPath,
+        note.relPath,
+        note.frontmatter,
+        note.body,
+        note.options,
+      ),
+    );
+  }
+  return results;
 }
 
 /**

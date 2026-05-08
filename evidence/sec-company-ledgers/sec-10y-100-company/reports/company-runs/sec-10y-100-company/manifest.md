@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-manifest
 entity_type: company_ledger_manifest
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.558Z'
 ---
 # Ledger Manifest sec-10y-100-company
 

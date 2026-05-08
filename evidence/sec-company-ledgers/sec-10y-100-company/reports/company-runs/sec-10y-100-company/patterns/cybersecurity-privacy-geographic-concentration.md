@@ -9,6 +9,8 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-cybersecurity-privacy-geographic-concentration
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.133Z'
 ---
 # Cybersecurity and privacy / Geographic concentration or local disruption sec-10y-100-company
 
@@ -49,7 +51,7 @@ No staged review events are attached to this mechanism.
 - **INTC / Information Technology** (2017-02-17)
   - We are subject to laws and regulations worldwide, which may differ among jurisdictions, affecting our operations in areas including, but not limited to: IP ownership and infringement; tax; import and export requirements; anti-corruption; foreign exchange controls and cash repatriation restrictions; data privacy requirements; anti-competition; adver
 - **T / Communication Services** (2017-02-17)
-  - The final outcome of FCC and other federal, state or foreign government agency proceedings (including judicial review, if any, of such proceedings) involving issues that are important to our business, including, without limitation, special access and business data services; intercarrier compensation; interconnection obligations; pending Notices of
+  - The final outcome of FCC and other federal, state or foreign government agency proceedings (including judicial review, if any, of such proceedings) involving issues that are important to our business, including, without limitation, special access and business data services; intercarrier compensation; interconnection obligations; pending Notices of 
 - **VZ / Communication Services** (2017-02-21)
   - potentially impede our ability to provide services in a manner that would be attractive to us and our customers. For example, we are subject to federal, state and international laws related to privacy and data protection. A new data protection
 - **INTC / Information Technology** (2017-04-27)

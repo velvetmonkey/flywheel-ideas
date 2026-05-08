@@ -9,6 +9,8 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-inventory-channel-capacity-investment-opex
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.084Z'
 ---
 # Inventory and channel / Capacity investment and operating expense drag sec-10y-100-company
 
@@ -67,7 +69,7 @@ No staged review events are attached to this mechanism.
 - **AMD / Information Technology** (2016-02-18)
   - Intel also dominates the computer system platform, which includes core logic chipsets, graphics chips, motherboards and other components necessary to assemble a computer system. OEMs that purchase microprocessors for computer systems are highly dependent on Intel, less innovative on their own and, to a large extent, are distributors of Intel techno
 - **AMD / Information Technology** (2016-02-18)
-  - ors do not design and develop software to run on AMD's products, its ability to sell its products could be materially adversely affected; AMD's reliance on third-party distributors and AIB partners subjects it to certain risks; AMD's inability to continue to attract and retain qualified personnel may hinder its product development programs; in the
+  - ors do not design and develop software to run on AMD's products, its ability to sell its products could be materially adversely affected; AMD's reliance on third-party distributors and AIB partners subjects it to certain risks; AMD's inability to continue to attract and retain qualified personnel may hinder its product development programs; in the 
 - **AMD / Information Technology** (2016-04-28)
   - If GF is not able to satisfy AMD's manufacturing requirements, its business could be adversely impacted; AMD relies on third parties to manufacture its products, and if they are unable to do so on a timely basis in sufficient quantities and using competitive technologies, AMD's business could be materially adversely affected; failure to achieve exp
 - **AMD / Information Technology** (2016-04-28)

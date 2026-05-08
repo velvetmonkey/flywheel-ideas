@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-sector-matrix
 entity_type: company_sector_matrix
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.628Z'
 ---
 # Sector Assumption Matrix sec-10y-100-company
 

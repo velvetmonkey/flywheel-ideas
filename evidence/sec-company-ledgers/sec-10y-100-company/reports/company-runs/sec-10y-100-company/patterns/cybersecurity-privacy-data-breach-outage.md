@@ -9,6 +9,8 @@ entity_id: >-
   company-run-sec-10y-100-company-pattern-cybersecurity-privacy-data-breach-outage
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.124Z'
 ---
 # Cybersecurity and privacy / Data breach, outage, or service disruption sec-10y-100-company
 
@@ -45,7 +47,7 @@ No staged review events are attached to this mechanism.
 ## Evidence Examples
 
 - **AMD / Information Technology** (2016-02-18)
-  - its business in the future; acquisitions, divestitures and/or joint ventures could disrupt its business, harm its financial condition and operating results or dilute, or adversely affect the price of its common stock; AMD's business is dependent upon the proper functioning of its internal business processes and information systems and modification
+  - its business in the future; acquisitions, divestitures and/or joint ventures could disrupt its business, harm its financial condition and operating results or dilute, or adversely affect the price of its common stock; AMD's business is dependent upon the proper functioning of its internal business processes and information systems and modification 
 - **HD / Consumer Discretionary** (2016-03-24)
   - The Data Breach involved the theft of certain payment card information and customer email addresses through unauthorized access to our systems. Since the Data Breach occurred, we have recorded $161 million of pretax expenses, net of expected insurance recoveries, in connection with the Data Breach, as described in more detail in Item 7, "Management
 - **HD / Consumer Discretionary** (2016-03-24)

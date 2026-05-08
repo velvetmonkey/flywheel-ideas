@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-pattern-liquidity-interest-credit-liquidity
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.056Z'
 ---
 # Liquidity / Interest, credit, or liquidity stress sec-10y-100-company
 

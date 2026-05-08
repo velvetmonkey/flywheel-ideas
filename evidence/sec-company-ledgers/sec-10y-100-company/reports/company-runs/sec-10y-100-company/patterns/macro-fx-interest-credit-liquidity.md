@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-pattern-macro-fx-interest-credit-liquidity
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.070Z'
 ---
 # Macro and foreign exchange / Interest, credit, or liquidity stress sec-10y-100-company
 
@@ -71,7 +73,7 @@ No staged review events are attached to this mechanism.
 - **TMUS / Communication Services** (2016-04-26)
   - adverse change in the ratings of our debt securities by nationally accredited rating organizations or adverse conditions in the credit markets affecting the cost, including interest rates, and/or availability of further financing;
 - **COST / Consumer Staples** (2016-06-01)
-  - The Company accounts for certain assets and liabilities at fair value. The carrying value of the Company's financial instruments, including cash and cash equivalents, receivables and accounts payable, approximate fair value due to their short-term nature or variable interest rates. See Notes 2, 3, and 4 for the carrying value and fair value of the
+  - The Company accounts for certain assets and liabilities at fair value. The carrying value of the Company's financial instruments, including cash and cash equivalents, receivables and accounts payable, approximate fair value due to their short-term nature or variable interest rates. See Notes 2, 3, and 4 for the carrying value and fair value of the 
 - **COST / Consumer Staples** (2016-06-01)
   - The Company accounts for certain assets and liabilities at fair value. The carrying value of the Company's financial instruments, including cash and cash equivalents, receivables and accounts payable, approximate fair value due to their short-term nature or variable interest rates. See Notes 2, 3, and 4 for the carrying value and fair value of the
 

@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-sector-consumer-discretionary
 entity_type: company_sector_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.697Z'
 ---
 # Consumer Discretionary sec-10y-100-company
 

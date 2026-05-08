@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-dashboard
 entity_type: company_thesis_dashboard
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.564Z'
 ---
 # Thesis Dashboard sec-10y-100-company
 
@@ -30,6 +32,7 @@ One-page decision-support view: what failed, what lesson survived, what still ne
 - Evidence tracker: [[reports/company-runs/sec-10y-100-company/tracker|Evidence tracker]]
 - Accepted lessons: [[reports/company-runs/sec-10y-100-company/accepted-lessons|Accepted lessons]]
 - Human review queue: [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]]
+- Candidate noise: [[reports/company-runs/sec-10y-100-company/candidate-noise|Candidate noise]]
 - Cross-sector patterns: [[reports/company-runs/sec-10y-100-company/cross-sector-patterns|Cross-sector patterns]]
 
 ## What Failed
@@ -70,6 +73,7 @@ One-page decision-support view: what failed, what lesson survived, what still ne
 ## What Still Needs Review
 
 No staged review events are waiting for human judgment.
+31 staged candidate(s) are documented as duplicate or closed-assumption pressure in [[reports/company-runs/sec-10y-100-company/candidate-noise|Candidate noise]].
 
 ## Current Bets With Review Pressure
 

@@ -78,8 +78,10 @@ export type { VaultResolution } from './vault-path.js';
 // Writer interface (M4 commits 1-2; v0.2 write-path migration; v0.4.0 hard-fail)
 export {
   writeNote,
+  writeNotes,
   writeNoteDirectFs,
   writeNoteViaSubprocess,
+  writeNotesViaSubprocess,
   WriteNotePathError,
   WriteSubprocessFailedError,
   patchFrontmatter,
@@ -101,6 +103,7 @@ export {
 } from './write/index.js';
 export type {
   WriteNoteOptions,
+  WriteNotesInput,
   WriteNoteResult,
   WritePathTier,
   FrontmatterPatch,

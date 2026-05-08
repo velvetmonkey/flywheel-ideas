@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-index
 entity_type: company_sector_bundle_index
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.542Z'
 ---
 # Company Sector Run sec-10y-100-company
 
@@ -24,6 +26,7 @@ A Flywheel-linked table of contents for the company lifecycle bundle.
 - [[reports/company-runs/sec-10y-100-company/thesis-deltas|Thesis deltas]]
 - [[reports/company-runs/sec-10y-100-company/disputes|Evaluation disputes]]
 - [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]]
+- [[reports/company-runs/sec-10y-100-company/candidate-noise|Candidate noise and suppressed staged candidates]]
 - [[reports/company-runs/sec-10y-100-company/accepted-lessons|Accepted lessons]]
 - [[reports/company-runs/sec-10y-100-company/run-delta|Run delta]]
 - [[reports/company-runs/sec-10y-100-company/manifest|Markdown manifest]]

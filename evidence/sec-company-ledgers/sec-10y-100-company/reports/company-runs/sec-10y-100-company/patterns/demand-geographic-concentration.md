@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-pattern-demand-geographic-concentration
 entity_type: company_cross_sector_pattern_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:08.042Z'
 ---
 # Demand / Geographic concentration or local disruption sec-10y-100-company
 
@@ -69,7 +71,7 @@ No staged review events are attached to this mechanism.
 - **WBD / Communication Services** (2016-02-18)
   - Consolidation among cable and satellite providers, both domestically and internationally, could have an adverse effect on our revenue and profitability.
 - **WBD / Communication Services** (2016-02-18)
-  - Where, in any forward-looking statement, we express an expectation or belief as to future results or events, such expectation or belief is expressed in good faith and believed to have a reasonable basis, but there can be no assurance that the expectation or belief will result or be accomplished. The following is a list of some, but not all, of the
+  - Where, in any forward-looking statement, we express an expectation or belief as to future results or events, such expectation or belief is expressed in good faith and believed to have a reasonable basis, but there can be no assurance that the expectation or belief will result or be accomplished. The following is a list of some, but not all, of the 
 - **MAR / Consumer Discretionary** (2016-04-28)
   - We earn base management fees and in many cases incentive management fees from the properties that we manage, and we earn franchise fees on the properties that others operate under franchise agreements with us. Base fees typically consist of a percentage of property-level revenue while incentive fees typically consist of a percentage of net house pr
 - **MAR / Consumer Discretionary** (2016-04-28)

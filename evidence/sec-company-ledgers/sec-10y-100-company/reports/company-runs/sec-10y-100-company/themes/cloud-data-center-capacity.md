@@ -7,6 +7,8 @@ run_id: sec-10y-100-company
 entity_id: company-run-sec-10y-100-company-theme-cloud-data-center-capacity
 entity_type: company_theme_page
 source: flywheel-ideas
+date: '2026-05-08'
+created: '2026-05-08T16:38:07.988Z'
 ---
 # Cloud and data center capacity sec-10y-100-company
 
