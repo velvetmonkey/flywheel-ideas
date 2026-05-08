@@ -2,13 +2,19 @@
 
 This is the shortest path through the checked-in SEC proof corpus. It is written for a skeptical reader asking: "Is this more than filing search plus summaries?"
 
-The honest answer: partly, and now visibly. The SEC data is not novel. Finding a sentence in a filing is not novel. The useful part is the lifecycle the tool preserves around that sentence:
+The honest answer: the SEC data is not novel, and finding a sentence in a filing is not novel. The useful part is the lifecycle the tool preserves around that sentence:
 
 ```text
 old assumption -> dated evidence -> staged failure -> human verdict -> refuted assumption -> lesson -> remaining bets to review
 ```
 
-Start at [`Company Sector Run`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md).
+Start at the [`dashboard`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md), then use the [`Company Sector Run`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) as the full table of contents.
+
+## The Claim
+
+`flywheel-ideas` is not a stock picker and not an automated verdict engine. It is an analyst memory system. It records what a thesis depended on, watches later evidence accumulate, stages possible failures, requires a human verdict, and keeps the resulting lesson linked to the original assumption.
+
+The proof corpus matters because SEC filings are a hard input: repeated boilerplate, dated disclosures, noisy candidates, and later realized-risk language. If the tool only summarized filings, this corpus would not be interesting. It becomes useful when an old assumption remains linked to a later accepted outcome and a lesson that can change future review.
 
 ## Current Corpus State
 
@@ -49,7 +55,7 @@ FAIL NVDA / Inventory and channel: asm-XtUoWXU4 via out-VxXuqAUS
 Lesson: AI accelerator inventory assumptions should treat export-control shocks as channel-risk events because regulatory access can instantly impair demand and purchase commitments.
 ```
 
-The novel value is not spotting "NVIDIA had a charge." The value is that a 2016-era inventory/channel assumption remains connected to a 2026 filing outcome, a human verdict, and a reusable lesson.
+The novel value is not spotting "NVIDIA had a charge." The value is that an old inventory/channel assumption remains connected to a later filing outcome, a human verdict, and a reusable lesson.
 
 ## Killer Feature 2: One Event Can Cut Across Themes
 
@@ -63,7 +69,7 @@ The lesson is cross-theme:
 Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.
 ```
 
-That is the product shape: decisions fail through mechanisms, not isolated tags. The tool is starting to preserve those mechanisms as lessons.
+That is the product shape: decisions fail through mechanisms, not isolated tags. The tool preserves those mechanisms as lessons that can be reused when similar live assumptions show pressure.
 
 ## Killer Feature 3: It Separates Accepted Failures From Candidate Noise
 
@@ -77,6 +83,17 @@ Lesson: Cybersecurity risk becomes decision-grade when breach disclosure connect
 ```
 
 Contrast that with [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md). The remaining events are not claimed as truth. They remain review work. This matters because the system previously surfaced duplicate and weak positive signals; the current queue is now explicitly a human judgment surface, not an automated verdict engine.
+
+## Killer Feature 4: The Dashboard Shows What To Review Next
+
+The [`dashboard`](../evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) is the current product surface. It separates four things that are usually mixed together in notes or filing summaries:
+
+- Accepted failures: where a human has already agreed that later evidence refuted an assumption.
+- Lessons: what should change in future review.
+- Open bets with pressure: assumptions that still exist but have staged evidence nearby.
+- Review queue: candidate events that are not yet truth.
+
+That separation is the safety rail. It lets the tool be useful without pretending that every detected sentence is a real business failure.
 
 ## More Examples Worth Reading
 
@@ -93,6 +110,7 @@ Contrast that with [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-1
 - Refutation propagation: accepted outcomes change assumption state and can flag dependent ideas for review.
 - Lesson capture: each accepted failure records a reusable judgment rule.
 - Auditability: the committed Markdown lets a reader inspect the assumption, outcome, lesson, review queue, and report without trusting a hidden database.
+- Visibility: the dashboard separates accepted truth, pending judgment, open bets, and lessons instead of collapsing them into one summary.
 
 ## What Is Not Novel Yet
 
@@ -101,6 +119,7 @@ Contrast that with [`review-queue.md`](../evidence/sec-company-ledgers/sec-10y-1
 - Simple filing search.
 - Generic summarization.
 - Fully automated investment conclusions.
+- Proof that the lessons produce better investment returns.
 
 The tool should not claim to pick stocks. Its current useful role is closer to an analyst memory system: it preserves what a thesis depended on, when reality contradicted it, which contradictions were accepted, and what that should change next time.
 

@@ -10,11 +10,23 @@ The core loop is simple:
 bet -> evidence over time -> possible failure -> accepted outcome -> lesson -> related bets to review
 ```
 
-This is a general decision and assumption tracker. The strongest current proof is the company thesis report, which uses SEC filings as a hard test corpus: lots of dated evidence, repeated assumptions, later realized-risk language, and a deterministic readout of what still needs human judgment.
+The product value is not "AI reads documents." The value is a durable trail from belief to evidence to outcome to lesson.
 
-The headline proof: the repo now contains a browsable 10-year SEC evidence corpus with 55 accepted failures, each linked to its original assumption and lesson memo. Start here: [`Company Sector Run`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md).
+## Start Here: The Proof
 
-If you are evaluating whether this is actually novel, read [`docs/sec-corpus-walkthrough.md`](./docs/sec-corpus-walkthrough.md). It walks through the strongest checked-in examples and separates real product value from ordinary SEC search or summarization.
+The strongest current proof is a browsable 10-year SEC evidence corpus. It is not meant to prove the SEC data is novel. It is meant to prove the lifecycle is useful: old assumptions stay connected to later evidence, possible failures are staged for review, accepted outcomes refute assumptions, and lessons survive for future decisions.
+
+Start with these checked-in artifacts:
+
+- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md): the one-page view of failed bets, open bets under pressure, lessons, and remaining review work.
+- [`docs/sec-corpus-walkthrough.md`](./docs/sec-corpus-walkthrough.md): the skeptical-reader guide to what is novel and what is not.
+- [`out-VxXuqAUS`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-VxXuqAUS.md): NVIDIA export controls became a $4.5B inventory/purchase-obligation charge tied back to an earlier assumption.
+- [`out-BqJTAbxZ`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-BqJTAbxZ.md): AMD export restrictions became stranded inventory, showing why one event can cut across demand, geopolitics, capacity, and channel assumptions.
+- [`out-btdioMuB`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-btdioMuB.md): Home Depot cybersecurity risk became quantified breach cost and litigation exposure after human adjudication.
+- [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md): the reusable lessons created from accepted failures.
+- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): the events still awaiting judgment rather than being auto-declared true.
+
+This is decision support, not investment advice. The useful role is analyst memory: what did the thesis depend on, what later challenged it, which challenges were accepted, and what should be reviewed next?
 
 ## What It Does
 
@@ -26,8 +38,6 @@ If you are evaluating whether this is actually novel, read [`docs/sec-corpus-wal
 - Captures durable lessons from failed assumptions.
 - Flags related ideas when a shared assumption fails.
 
-The product value is not "AI reads documents." The value is a durable trail from belief to evidence to outcome to lesson.
-
 For public companies, the main artifact is now a personal-investor thesis report. It does not say "buy" or "sell." It shows the live assumptions your company thesis depends on, where similar assumptions failed before, what needs review, and what to watch next.
 
 The next product surface is a compounding SEC ledger: start 10 years back, process 10-K and 10-Q filings in chronological order, and refresh the same ledger instead of creating a fresh dated dataset every time. The point is not a bigger pile of filing summaries. The point is a long-lived memory of what each company appeared to be betting on, where those assumptions accumulated pressure, which failures were accepted by a human, and which lessons should change future review.
@@ -36,13 +46,13 @@ The next product surface is a compounding SEC ledger: start 10 years back, proce
 
 The current SEC proof corpus is a Markdown-only evidence snapshot at [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/). It is generated from a local compounding ledger without committing SQLite state.
 
-Start with the top-down table of contents:
+Top-down corpus entry points:
 
-- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) gives the one-page thesis dashboard: what failed, what remains live, and what needs review.
+- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) gives the one-page thesis dashboard.
 - [`index.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) links the whole run.
 - [`thesis.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md) shows current bets, accepted failures, unresolved review work, and what to watch next.
-- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) shows the remaining human adjudication work.
-- [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md) shows the durable lessons created after outcome review.
+- [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md) shows durable lessons created after outcome review.
+- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) shows remaining human adjudication work.
 
 ```text
 1,468 SEC filings
