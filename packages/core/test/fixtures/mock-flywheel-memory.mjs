@@ -24,6 +24,11 @@
  *   MOCK_FM_WRITE_ROOT             Abs dir — when set + SUPPORTS_NOTE, writes note content there.
  *   MOCK_FM_NOTE_FORCE_ERROR       '1' → `note` returns success:false.
  *   MOCK_FM_FRONTMATTER_FORCE_ERROR '1' → `vault_update_frontmatter` returns success:false.
+ *   MOCK_FM_MCP_ERROR              '1' → mutation tools return MCP isError:true.
+ *   MOCK_FM_MALFORMED_JSON         '1' → mutation tools return invalid JSON text.
+ *   MOCK_FM_MISSING_SUCCESS        '1' → mutation tools return valid JSON without success.
+ *   MOCK_FM_MISSING_PATH           '1' → mutation tools return success:true without path.
+ *   MOCK_FM_PLAIN_TEXT             '1' → mutation tools return plain non-JSON text.
  */
 
 import * as fs from 'node:fs';
@@ -88,6 +93,31 @@ function logInvoke(tool, args) {
   }
 }
 
+function forcedMutationResponse(path) {
+  if (process.env.MOCK_FM_MCP_ERROR === '1') {
+    return {
+      content: [{ type: 'text', text: JSON.stringify({ error: 'forced mcp error' }) }],
+      isError: true,
+    };
+  }
+  if (process.env.MOCK_FM_NO_CONTENT === '1') {
+    return { content: [] };
+  }
+  if (process.env.MOCK_FM_MALFORMED_JSON === '1') {
+    return { content: [{ type: 'text', text: '{"success": true' }] };
+  }
+  if (process.env.MOCK_FM_PLAIN_TEXT === '1') {
+    return { content: [{ type: 'text', text: 'plain text response' }] };
+  }
+  if (process.env.MOCK_FM_MISSING_SUCCESS === '1') {
+    return { content: [{ type: 'text', text: JSON.stringify({ path }) }] };
+  }
+  if (process.env.MOCK_FM_MISSING_PATH === '1') {
+    return { content: [{ type: 'text', text: JSON.stringify({ success: true }) }] };
+  }
+  return null;
+}
+
 // ---- note tool (v0.2 write-path migration tests) ----
 if (process.env.MOCK_FM_SUPPORTS_NOTE === '1') {
   server.tool(
@@ -110,6 +140,9 @@ if (process.env.MOCK_FM_SUPPORTS_NOTE === '1') {
       const hang = Number.parseInt(process.env.MOCK_FM_HANG_MS ?? '0', 10);
       if (hang > 0) await sleep(hang);
       logInvoke('note', args);
+
+      const forced = forcedMutationResponse(args.path);
+      if (forced) return forced;
 
       if (process.env.MOCK_FM_NOTE_FORCE_ERROR === '1') {
         return {
@@ -159,6 +192,9 @@ if (process.env.MOCK_FM_SUPPORTS_FRONTMATTER === '1') {
       const hang = Number.parseInt(process.env.MOCK_FM_HANG_MS ?? '0', 10);
       if (hang > 0) await sleep(hang);
       logInvoke('vault_update_frontmatter', args);
+
+      const forced = forcedMutationResponse(args.path);
+      if (forced) return forced;
 
       if (process.env.MOCK_FM_FRONTMATTER_FORCE_ERROR === '1') {
         return {
