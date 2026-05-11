@@ -9,6 +9,8 @@
  */
 
 import type { IdeasDatabase } from './db.js';
+import * as fsp from 'node:fs/promises';
+import * as path from 'node:path';
 import { generateIdeaId } from './ids.js';
 import { INITIAL_STATE } from './lifecycle.js';
 import { buildIdeaPath } from './idea-paths.js';
@@ -60,10 +62,19 @@ export async function createIdea(
     maxSuggestions: 6,
   });
 
-  db.prepare(
-    `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-  ).run(id, writeResult.vault_path, input.title, INITIAL_STATE, now, now);
+  try {
+    db.prepare(
+      `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+    ).run(id, writeResult.vault_path, input.title, INITIAL_STATE, now, now);
+  } catch (err) {
+    try {
+      await fsp.unlink(path.join(vaultPath, writeResult.vault_path));
+    } catch {
+      /* ignore */
+    }
+    throw err;
+  }
 
   return {
     id,

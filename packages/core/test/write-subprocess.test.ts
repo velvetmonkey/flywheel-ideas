@@ -155,6 +155,38 @@ describe('writeNoteViaSubprocess', () => {
     expect(outcome.reason).toBe('tool_returned_error');
   });
 
+  it('returns skipped tool_returned_error when MCP flags the note response as an error', async () => {
+    const outcome = await writeNoteViaSubprocess(
+      tmp,
+      'x.md',
+      { type: 'idea' },
+      'body',
+      mockOpts({ MOCK_FM_SUPPORTS_NOTE: '1', MOCK_FM_MCP_ERROR: '1' }),
+    );
+    expect(outcome.status).toBe('skipped');
+    if (outcome.status !== 'skipped') return;
+    expect(outcome.reason).toBe('tool_returned_error');
+  });
+
+  it.each([
+    ['missing text content', { MOCK_FM_NO_CONTENT: '1' }],
+    ['malformed JSON', { MOCK_FM_MALFORMED_JSON: '1' }],
+    ['plain text', { MOCK_FM_PLAIN_TEXT: '1' }],
+    ['missing success field', { MOCK_FM_MISSING_SUCCESS: '1' }],
+    ['missing path field', { MOCK_FM_MISSING_PATH: '1' }],
+  ])('returns skipped invalid_response for note %s', async (_name, env) => {
+    const outcome = await writeNoteViaSubprocess(
+      tmp,
+      'x.md',
+      { type: 'idea' },
+      'body',
+      mockOpts({ MOCK_FM_SUPPORTS_NOTE: '1', ...env }),
+    );
+    expect(outcome.status).toBe('skipped');
+    if (outcome.status !== 'skipped') return;
+    expect(outcome.reason).toBe('invalid_response');
+  });
+
   it('binary_not_found for missing absolute binary', async () => {
     const outcome = await writeNoteViaSubprocess(
       tmp,
@@ -206,6 +238,7 @@ describe('patchFrontmatterViaSubprocess', () => {
     expect(outcome.status).toBe('ok');
     if (outcome.status !== 'ok') return;
     expect(outcome.value.write_path).toBe('mcp-subprocess');
+    expect(outcome.value.vault_path).toBe('ideas/sample.md');
     expect(outcome.value.keys_changed.sort()).toEqual(['locked_at', 'state']);
   });
 
@@ -222,6 +255,42 @@ describe('patchFrontmatterViaSubprocess', () => {
     expect(outcome.status).toBe('skipped');
     if (outcome.status !== 'skipped') return;
     expect(outcome.reason).toBe('tool_returned_error');
+  });
+
+  it('propagates MCP error flag as skipped tool_returned_error', async () => {
+    const outcome = await patchFrontmatterViaSubprocess(
+      tmp,
+      'x.md',
+      { state: 'committed' },
+      mockOpts({
+        MOCK_FM_SUPPORTS_FRONTMATTER: '1',
+        MOCK_FM_MCP_ERROR: '1',
+      }),
+    );
+    expect(outcome.status).toBe('skipped');
+    if (outcome.status !== 'skipped') return;
+    expect(outcome.reason).toBe('tool_returned_error');
+  });
+
+  it.each([
+    ['missing text content', { MOCK_FM_NO_CONTENT: '1' }],
+    ['malformed JSON', { MOCK_FM_MALFORMED_JSON: '1' }],
+    ['plain text', { MOCK_FM_PLAIN_TEXT: '1' }],
+    ['missing success field', { MOCK_FM_MISSING_SUCCESS: '1' }],
+    ['missing path field', { MOCK_FM_MISSING_PATH: '1' }],
+  ])('returns skipped invalid_response for frontmatter %s', async (_name, env) => {
+    const outcome = await patchFrontmatterViaSubprocess(
+      tmp,
+      'x.md',
+      { state: 'committed' },
+      mockOpts({
+        MOCK_FM_SUPPORTS_FRONTMATTER: '1',
+        ...env,
+      }),
+    );
+    expect(outcome.status).toBe('skipped');
+    if (outcome.status !== 'skipped') return;
+    expect(outcome.reason).toBe('invalid_response');
   });
 });
 

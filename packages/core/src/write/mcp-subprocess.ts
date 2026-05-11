@@ -131,7 +131,7 @@ export async function patchFrontmatterViaSubprocess(
         dry_run: false,
       },
     });
-    return parseFrontmatterPatchResponse(resp, relPath, requestedKeys);
+    return parseFrontmatterPatchResponse(resp, requestedKeys);
   }, options);
 }
 
@@ -273,75 +273,74 @@ async function callNoteCreate(
       maxSuggestions: note.options?.maxSuggestions,
     },
   });
-  return parseNoteCreateResponse(resp, note.relPath);
+  return parseNoteCreateResponse(resp);
 }
 
-function parseNoteCreateResponse(
-  resp: unknown,
-  relPath: string,
-): WriteNoteResult {
-  // flywheel-memory's note.create typically returns `{content: [{type: 'text', text: <json>}]}`
-  // where the JSON carries `{success, path, ...}`. We don't need to parse
-  // deeply — if the call succeeded, the note was written at relPath.
-  const text = extractToolText(resp);
-  if (text) {
-    try {
-      const parsed = JSON.parse(text) as { success?: unknown; path?: unknown };
-      if (parsed.success === false) {
-        throw new SubprocessToolError(
-          `note.create reported failure: ${JSON.stringify(parsed)}`,
-        );
-      }
-      if (typeof parsed.path === 'string' && parsed.path.length > 0) {
-        return { vault_path: parsed.path, write_path: 'mcp-subprocess' };
-      }
-    } catch (err) {
-      if (err instanceof SubprocessToolError) throw err;
-      // Unparseable text is not fatal — the note probably wrote fine; we'll
-      // surface 'invalid_response' only if the MCP layer itself errored.
-    }
-  }
-  return { vault_path: relPath, write_path: 'mcp-subprocess' };
+function parseNoteCreateResponse(resp: unknown): WriteNoteResult {
+  const parsed = parseMutationResponse(resp, 'note.create');
+  return { vault_path: parsed.path, write_path: 'mcp-subprocess' };
 }
 
 function parseFrontmatterPatchResponse(
   resp: unknown,
-  relPath: string,
   requestedKeys: string[],
 ): PatchFrontmatterResult {
-  // flywheel-memory's vault_update_frontmatter merges + returns the merged
-  // block. We don't get per-key changed/appended diffs back, so we report
-  // all requested keys as `keys_changed`. Semantic difference from
-  // direct-fs (which distinguishes changed vs appended), but direct-fs's
-  // own internal callers don't consume that distinction at runtime. Any
-  // callers that do can re-read the file themselves; the MCP surface
-  // exposes the combined set.
-  const text = extractToolText(resp);
-  if (text) {
-    try {
-      const parsed = JSON.parse(text) as { success?: unknown };
-      if (parsed.success === false) {
-        throw new SubprocessToolError(
-          `vault_update_frontmatter reported failure: ${text.slice(0, 200)}`,
-        );
-      }
-    } catch (err) {
-      if (err instanceof SubprocessToolError) throw err;
-      // non-JSON body is not fatal
-    }
-  }
+  const parsed = parseMutationResponse(resp, 'vault_update_frontmatter');
   return {
-    vault_path: relPath,
+    vault_path: parsed.path,
     write_path: 'mcp-subprocess',
     keys_changed: requestedKeys,
     keys_appended: [],
   };
 }
 
+function parseMutationResponse(resp: unknown, toolName: string): { path: string } {
+  if (typeof resp === 'object' && resp !== null && (resp as { isError?: unknown }).isError === true) {
+    throw new SubprocessToolError(`${toolName} returned MCP isError: true`);
+  }
+
+  const text = extractToolText(resp);
+  if (!text) {
+    throw new InvalidSubprocessResponseError(`${toolName} returned no text content`);
+  }
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw new InvalidSubprocessResponseError(
+      `${toolName} returned non-JSON text: ${text.slice(0, 200)}`,
+    );
+  }
+  if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+    throw new InvalidSubprocessResponseError(`${toolName} response was not a JSON object`);
+  }
+
+  const mutation = parsed as { success?: unknown; path?: unknown };
+
+  if (mutation.success === false) {
+    throw new SubprocessToolError(`${toolName} reported failure: ${text.slice(0, 200)}`);
+  }
+  if (mutation.success !== true) {
+    throw new InvalidSubprocessResponseError(`${toolName} response missing success:true`);
+  }
+  if (typeof mutation.path !== 'string' || mutation.path.length === 0) {
+    throw new InvalidSubprocessResponseError(`${toolName} response missing path`);
+  }
+  return { path: mutation.path };
+}
+
 class SubprocessToolError extends Error {
   constructor(message: string) {
     super(message);
     this.name = 'SubprocessToolError';
+  }
+}
+
+class InvalidSubprocessResponseError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'InvalidSubprocessResponseError';
   }
 }
 
@@ -352,6 +351,9 @@ function classifyError<T>(
 ): WriteSubprocessOutcome<T> {
   if (err instanceof SubprocessToolError) {
     return { status: 'skipped', reason: 'tool_returned_error', detail: err.message };
+  }
+  if (err instanceof InvalidSubprocessResponseError) {
+    return { status: 'skipped', reason: 'invalid_response', detail: err.message };
   }
   if (err instanceof Error && err.message === 'TIMEOUT') {
     return { status: 'skipped', reason: 'timeout', detail: `${timeoutMs}ms` };
