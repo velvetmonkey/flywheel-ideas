@@ -32,6 +32,10 @@ import {
 let vault: string;
 let db: IdeasDatabase;
 
+function isoString(value: unknown): string {
+  return value instanceof Date ? value.toISOString() : String(value);
+}
+
 async function makeIdea(title: string = 'test idea'): Promise<string> {
   const id = generateIdeaId();
   const relPath = `ideas/${id}.md`;
@@ -86,6 +90,16 @@ function stubCitedCouncilSession(idea_id: string, assumption_ids: string[]): str
   );
   for (const asm_id of assumption_ids) cstmt.run(view_id, asm_id);
   return session_id;
+}
+
+async function listOutcomeMarkdownFiles(): Promise<string[]> {
+  try {
+    const files = await fsp.readdir(path.join(vault, 'outcomes'));
+    return files.filter((file) => file.endsWith('.md')).sort();
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') return [];
+    throw err;
+  }
 }
 
 beforeEach(async () => {
@@ -210,6 +224,72 @@ describe('logOutcome — happy path', () => {
     expect(parsed.data.undone_at).toBeNull();
   });
 
+  it('keeps mixed verdict result, DB rows, assumption statuses, and markdown in agreement', async () => {
+    const now = Date.UTC(2026, 4, 11, 12, 0, 0);
+    const ideaId = await makeIdea();
+    const refutedAsm = await makeAssumption(ideaId, 'refuted assumption');
+    const validatedAsm = await makeAssumption(ideaId, 'validated assumption');
+
+    const result = await logOutcome(
+      db,
+      vault,
+      {
+        idea_id: ideaId,
+        text: 'Mixed verdict outcome',
+        refutes: [refutedAsm],
+        validates: [validatedAsm],
+      },
+      now,
+    );
+
+    const outcomeRow = db
+      .prepare(
+        `SELECT id, idea_id, text, vault_path, landed_at, undone_at
+           FROM ideas_outcomes
+          WHERE id = ?`,
+      )
+      .get(result.outcome.id) as {
+      id: string;
+      idea_id: string;
+      text: string;
+      vault_path: string;
+      landed_at: number;
+      undone_at: number | null;
+    };
+    expect(outcomeRow).toEqual(result.outcome);
+
+    const verdicts = db
+      .prepare(
+        `SELECT assumption_id, verdict
+           FROM ideas_outcome_verdicts
+          WHERE outcome_id = ?
+          ORDER BY assumption_id`,
+      )
+      .all(result.outcome.id);
+    expect(verdicts).toEqual(
+      [
+        { assumption_id: refutedAsm, verdict: 'refuted' },
+        { assumption_id: validatedAsm, verdict: 'validated' },
+      ].sort((a, b) => a.assumption_id.localeCompare(b.assumption_id)),
+    );
+
+    expect(getAssumption(db, refutedAsm)?.status).toBe('refuted');
+    expect(getAssumption(db, refutedAsm)?.refuted_at).toBe(now);
+    expect(getAssumption(db, validatedAsm)?.status).toBe('held');
+    expect(getAssumption(db, validatedAsm)?.refuted_at).toBeNull();
+
+    const md = await fsp.readFile(path.join(vault, result.outcome.vault_path), 'utf8');
+    const parsed = matter(md);
+    expect(parsed.data.id).toBe(result.outcome.id);
+    expect(parsed.data.type).toBe('outcome');
+    expect(parsed.data.idea_id).toBe(ideaId);
+    expect(isoString(parsed.data.landed_at)).toBe(new Date(now).toISOString());
+    expect(parsed.data.refutes).toEqual([refutedAsm]);
+    expect(parsed.data.validates).toEqual([validatedAsm]);
+    expect(parsed.data.undone_at).toBeNull();
+    expect(parsed.content).toContain('Mixed verdict outcome');
+  });
+
   it('marks refuted assumptions with status=refuted + refuted_at', async () => {
     const ideaId = await makeIdea();
     const asmId = await makeAssumption(ideaId);
@@ -254,6 +334,76 @@ describe('logOutcome — happy path', () => {
       validates: [asmId],
     });
     expect(result.flagged_ideas).toEqual([]);
+  });
+});
+
+describe('logOutcome — rollback paths', () => {
+  it('unlinks orphan markdown and leaves the DB unchanged when outcome insert fails', async () => {
+    const ideaId = await makeIdea();
+    const asmId = await makeAssumption(ideaId);
+
+    db.exec(`
+      CREATE TRIGGER fail_outcome_insert
+      BEFORE INSERT ON ideas_outcomes
+      BEGIN
+        SELECT RAISE(ABORT, 'forced outcome insert failure');
+      END;
+    `);
+
+    await expect(
+      logOutcome(db, vault, {
+        idea_id: ideaId,
+        text: 'This write should roll back',
+        refutes: [asmId],
+      }),
+    ).rejects.toThrow(/forced outcome insert failure/);
+
+    expect(await listOutcomeMarkdownFiles()).toEqual([]);
+    expect(
+      db.prepare('SELECT COUNT(*) AS count FROM ideas_outcomes').get(),
+    ).toEqual({ count: 0 });
+    expect(
+      db.prepare('SELECT COUNT(*) AS count FROM ideas_outcome_verdicts').get(),
+    ).toEqual({ count: 0 });
+    expect(getAssumption(db, asmId)?.status).toBe('open');
+    expect(getAssumption(db, asmId)?.refuted_at).toBeNull();
+  });
+
+  it('rolls back partial transaction work and unlinks markdown when verdict insert fails', async () => {
+    const ideaA = await makeIdea('A');
+    const asmA = await makeAssumption(ideaA);
+    const ideaB = await makeIdea('B');
+    stubCitedCouncilSession(ideaB, [asmA]);
+
+    db.exec(`
+      CREATE TRIGGER fail_verdict_insert
+      BEFORE INSERT ON ideas_outcome_verdicts
+      BEGIN
+        SELECT RAISE(ABORT, 'forced verdict insert failure');
+      END;
+    `);
+
+    await expect(
+      logOutcome(db, vault, {
+        idea_id: ideaA,
+        text: 'This verdict write should roll back',
+        refutes: [asmA],
+      }),
+    ).rejects.toThrow(/forced verdict insert failure/);
+
+    expect(await listOutcomeMarkdownFiles()).toEqual([]);
+    expect(
+      db.prepare('SELECT COUNT(*) AS count FROM ideas_outcomes').get(),
+    ).toEqual({ count: 0 });
+    expect(
+      db.prepare('SELECT COUNT(*) AS count FROM ideas_outcome_verdicts').get(),
+    ).toEqual({ count: 0 });
+    expect(getAssumption(db, asmA)?.status).toBe('open');
+    expect(getAssumption(db, asmA)?.refuted_at).toBeNull();
+    const dependent = db
+      .prepare('SELECT needs_review FROM ideas_notes WHERE id = ?')
+      .get(ideaB) as { needs_review: number };
+    expect(dependent.needs_review).toBe(0);
   });
 });
 

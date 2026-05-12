@@ -26,6 +26,10 @@ import {
 let vault: string;
 let db: IdeasDatabase;
 
+function isoString(value: unknown): string {
+  return value instanceof Date ? value.toISOString() : String(value);
+}
+
 async function seedIdea(id: string = 'idea-a'): Promise<void> {
   db.prepare(
     `INSERT INTO ideas_notes (id, vault_path, title, state, created_at, state_changed_at)
@@ -88,6 +92,8 @@ describe('declareAssumption — structured', () => {
   });
 
   it('writes the markdown note + DB row with Y-statement body', async () => {
+    const now = Date.UTC(2026, 4, 11, 12, 0, 0);
+    const signpostAt = Date.UTC(2026, 5, 1, 9, 30, 0);
     const { assumption, write_path } = await declareAssumption(db, vault, {
       idea_id: 'idea-a',
       structured: {
@@ -96,8 +102,10 @@ describe('declareAssumption — structured', () => {
         decision: 'dec',
         tradeoff: 'trade',
       },
+      signpost_at: signpostAt,
+      signpost_reason: 'review the leading signal',
       load_bearing: true,
-    });
+    }, now);
 
     expect(assumption.id).toMatch(/^asm-[A-Za-z0-9]{8}$/);
     expect(assumption.idea_id).toBe('idea-a');
@@ -107,16 +115,55 @@ describe('declareAssumption — structured', () => {
     expect(assumption.challenge).toBe('chal');
     expect(assumption.decision).toBe('dec');
     expect(assumption.tradeoff).toBe('trade');
+    expect(assumption.signpost_at).toBe(signpostAt);
+    expect(assumption.signpost_reason).toBe('review the leading signal');
+    expect(assumption.declared_at).toBe(now);
     expect(assumption.vault_path).toMatch(/^assumptions\/dec-\d+\.md$/);
     expect(write_path).toBe('direct-fs');
 
+    const row = db
+      .prepare(
+        `SELECT id, idea_id, text, status, load_bearing, signpost_at,
+                signpost_reason, vault_path, declared_at
+           FROM ideas_assumptions
+          WHERE id = ?`,
+      )
+      .get(assumption.id) as {
+      id: string;
+      idea_id: string;
+      text: string;
+      status: string;
+      load_bearing: number;
+      signpost_at: number;
+      signpost_reason: string;
+      vault_path: string;
+      declared_at: number;
+    };
+    expect(row).toEqual({
+      id: assumption.id,
+      idea_id: assumption.idea_id,
+      text: assumption.text,
+      status: assumption.status,
+      load_bearing: 1,
+      signpost_at: signpostAt,
+      signpost_reason: 'review the leading signal',
+      vault_path: assumption.vault_path,
+      declared_at: now,
+    });
+
     const raw = await fsp.readFile(path.join(vault, assumption.vault_path), 'utf8');
     const parsed = matter(raw);
+    expect(parsed.data.id).toBe(assumption.id);
     expect(parsed.data.type).toBe('assumption');
     expect(parsed.data.idea_id).toBe('idea-a');
     expect(parsed.data.status).toBe('open');
     expect(parsed.data.load_bearing).toBe(true);
-    expect(parsed.content).toContain('In the context of');
+    expect(isoString(parsed.data.declared_at)).toBe(new Date(now).toISOString());
+    expect(isoString(parsed.data.signpost_at)).toBe(
+      new Date(signpostAt).toISOString(),
+    );
+    expect(parsed.data.signpost_reason).toBe('review the leading signal');
+    expect(parsed.content).toBe(assumption.text);
   });
 });
 
@@ -184,14 +231,13 @@ describe('declareAssumption — rollback paths', () => {
       text: 'first',
     });
 
-    // Force a PK collision on the SECOND write by making the ids.ts RNG
-    // deterministic via monkeypatching the prepared statement. Simpler
-    // approach: directly manipulate the DB so the next insert fails.
-    // We'll simulate by inserting a second assumption with a known id that
-    // matches what the next generateAssumptionId will produce — but that
-    // ID is random. Alternative: drop the ideas_assumptions table mid-test
-    // so the next insert throws.
-    db.exec('DROP TABLE ideas_assumptions');
+    db.exec(`
+      CREATE TRIGGER fail_assumption_insert
+      BEFORE INSERT ON ideas_assumptions
+      BEGIN
+        SELECT RAISE(ABORT, 'forced assumption insert failure');
+      END;
+    `);
 
     await expect(
       declareAssumption(db, vault, {
@@ -212,6 +258,13 @@ describe('declareAssumption — rollback paths', () => {
     const files = await fsp.readdir(path.join(vault, 'assumptions'));
     expect(files.length).toBe(1);
     expect(files[0]).toContain('first');
+
+    const rows = db
+      .prepare('SELECT id, vault_path FROM ideas_assumptions')
+      .all() as Array<{ id: string; vault_path: string }>;
+    expect(rows).toEqual([
+      { id: first.assumption.id, vault_path: first.assumption.vault_path },
+    ]);
   });
 });
 

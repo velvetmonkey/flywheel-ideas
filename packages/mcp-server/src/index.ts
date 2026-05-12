@@ -2,8 +2,8 @@
 /**
  * flywheel-ideas — MCP server entrypoint.
  *
- * The local-first falsifiable decision ledger. Six tools — `idea`,
- * `assumption`, `council`, `company`, `outcome`, `import` — backed by a required
+ * The local-first falsifiable decision ledger. Seven tools — `idea`,
+ * `assumption`, `council`, `company`, `outcome`, `import`, `doctor` — backed by a required
  * flywheel-memory peer that handles vault writes, retrieval, and the
  * `ideas_*` custom-category registration.
  *
@@ -36,6 +36,7 @@ import {
 import { registerAssumptionTool } from './tools/assumption.js';
 import { registerCouncilTool } from './tools/council.js';
 import { registerCompanyTool } from './tools/company.js';
+import { registerDoctorTool } from './tools/doctor.js';
 import { registerIdeaTool } from './tools/idea.js';
 import { registerImportTool } from './tools/import.js';
 import { registerOutcomeTool } from './tools/outcome.js';
@@ -80,6 +81,11 @@ export function createConfiguredServer(
     () => db,
   );
   registerImportTool(
+    server,
+    () => vaultPath,
+    () => db,
+  );
+  registerDoctorTool(
     server,
     () => vaultPath,
     () => db,
