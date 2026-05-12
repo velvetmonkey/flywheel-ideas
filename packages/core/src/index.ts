@@ -126,6 +126,14 @@ export type {
   FilterStaleResult,
 } from './stale-filter.js';
 
+export { buildConsistencyDoctorReport } from './consistency-doctor.js';
+export type {
+  ConsistencyDoctorIssue,
+  ConsistencyDoctorReport,
+  ConsistencyIssueKind,
+  ConsistencyIssueSeverity,
+} from './consistency-doctor.js';
+
 // IDs (M4 commit 3)
 export {
   generateId,
