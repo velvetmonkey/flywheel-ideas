@@ -208,6 +208,9 @@ function emitProseSection(out: string[], header: string, body: string): void {
  * caller decides whether to fix.
  */
 export function parseDocIdea(text: string): DocModeIdea {
+  // Doc-mode is a portable format; canonicalize CRLF input so Windows-authored
+  // files parse. Renderer emits LF, so CRLF round-trips to LF by design.
+  text = text.replace(/\r\n/g, '\n');
   const { frontmatter, body } = splitFrontmatter(text);
 
   const id = requireString(frontmatter, 'id');

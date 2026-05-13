@@ -49,6 +49,16 @@ describe('doc-mode format — golden fixtures round-trip', () => {
     },
   );
 
+  it.each(['minimal.md', 'full-lifecycle.md'])(
+    '%s accepts CRLF input and canonicalizes to LF on round-trip',
+    async (name) => {
+      const lfSource = await readFixture(name);
+      const crlfSource = lfSource.replace(/\n/g, '\r\n');
+      const parsed = parseDocIdea(crlfSource);
+      expect(renderDocIdea(parsed)).toBe(lfSource);
+    },
+  );
+
   it('full-lifecycle.md parses every section into the expected struct', async () => {
     const source = await readFixture('full-lifecycle.md');
     const parsed = parseDocIdea(source);
