@@ -30,7 +30,10 @@ import { handleAncestry, handleDescendants, handleSharedAssumptions } from './li
 import { handleExport } from './export.js';
 import { handleReport } from './report.js';
 import {
-  docHandlerNotYetImplemented,
+  docCreate,
+  docList,
+  docRead,
+  docTransition,
   IDEA_DOC_MODE_ACTIONS,
   type IdeaActionName,
 } from './doc-mode.js';
@@ -206,7 +209,16 @@ export function registerIdeaTool(
           if (!IDEA_DOC_MODE_ACTIONS.has(docAction)) {
             return mcpNotSupportedInDocMode(`idea.${docAction}`);
           }
-          return docHandlerNotYetImplemented(docAction);
+          switch (docAction) {
+            case 'create':
+              return await docCreate(getVaultPath(), args);
+            case 'read':
+              return await docRead(getVaultPath(), args);
+            case 'list':
+              return await docList(getVaultPath(), args);
+            case 'transition':
+              return await docTransition(getVaultPath(), args);
+          }
         }
 
         switch (args.action) {

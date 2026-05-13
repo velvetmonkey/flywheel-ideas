@@ -38,6 +38,7 @@ import {
   type ThresholdDirection,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpNotSupportedInDocMode, mcpText, type NextStep } from '../next_steps.js';
+import { docDeclareAssumption } from './idea/doc-mode.js';
 
 export function registerAssumptionTool(
   server: McpServer,
@@ -250,16 +251,7 @@ export function registerAssumptionTool(
           if (args.action !== 'declare') {
             return mcpNotSupportedInDocMode(`assumption.${args.action}`);
           }
-          return mcpError(
-            'doc_mode_in_flight: assumption.declare doc-mode handler is staged but not yet implemented. backend: "sqlite" works today.',
-            [
-              {
-                action: 'assumption.declare',
-                example: 'assumption.declare({ idea_id: "...", text: "...", backend: "sqlite" })',
-                why: 'Run the SQLite-backed path while doc mode lands. See docs/single-doc-format.md for the file contract.',
-              },
-            ],
-          );
+          return await docDeclareAssumption(getVaultPath(), args);
         }
 
         switch (args.action) {

@@ -31,6 +31,7 @@ import {
   type OutcomeMemo,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpNotSupportedInDocMode, mcpText, type NextStep } from '../next_steps.js';
+import { docLogVerdict } from './idea/doc-mode.js';
 
 export function registerOutcomeTool(
   server: McpServer,
@@ -120,16 +121,17 @@ export function registerOutcomeTool(
           if (args.action !== 'log') {
             return mcpNotSupportedInDocMode(`outcome.${args.action}`);
           }
-          return mcpError(
-            'doc_mode_in_flight: outcome.log doc-mode handler is staged but not yet implemented. backend: "sqlite" works today.',
-            [
-              {
-                action: 'outcome.log',
-                example: 'outcome.log({ idea_id: "...", text: "...", backend: "sqlite" })',
-                why: 'Run the SQLite-backed path while doc mode lands. Note that doc mode supports only a verdict block (no cross-idea cascading refutation).',
-              },
-            ],
-          );
+          // Doc mode writes a single verdict block to the idea file; it
+          // does not propagate to other ideas. Infer verdict from the
+          // refutes/validates lists for callers that omit it explicitly.
+          const hasRefutes = Array.isArray(args.refutes) && args.refutes.length > 0;
+          const hasValidates = Array.isArray(args.validates) && args.validates.length > 0;
+          const verdict = hasRefutes ? 'fail' : hasValidates ? 'pass' : undefined;
+          return await docLogVerdict(getVaultPath(), {
+            idea_id: args.idea_id,
+            text: args.text,
+            verdict,
+          });
         }
 
         switch (args.action) {

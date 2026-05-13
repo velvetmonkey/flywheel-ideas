@@ -68,18 +68,44 @@ function parseEnvelope(response: {
 // ---------------------------------------------------------------------------
 
 describe('doc-mode boundary — idea tool', () => {
-  it.each(['create', 'read', 'list', 'transition'] as const)(
-    'supported action %s returns doc_mode_in_flight placeholder',
-    async (action) => {
-      const response = parseEnvelope(
-        await client.callTool('idea', { action, backend: 'doc' }),
-      );
-      expect(response.isError).toBe(true);
-      expect(response.error).toMatch(/doc_mode_in_flight: idea\.\w+/);
-      expect(response.next_steps[0].action).toBe(`idea.${action}`);
-      expect(response.next_steps[0].example).toContain('backend: "sqlite"');
-    },
-  );
+  it('supported action create routes to doc-mode handler (success)', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', {
+        action: 'create',
+        backend: 'doc',
+        title: 'Boundary smoke',
+      }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.backend).toBe('doc');
+    expect(response.result.id).toMatch(/^idea-/);
+  });
+
+  it('supported action list routes to doc-mode handler (empty result on fresh vault)', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'list', backend: 'doc' }),
+    );
+    expect(response.isError).toBe(false);
+    expect(response.result.backend).toBe('doc');
+    expect(response.result.ideas).toEqual([]);
+  });
+
+  it('supported action read without id routes to doc-mode handler (validation error)', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'read', backend: 'doc' }),
+    );
+    // The doc-mode handler — not the placeholder — produces this error
+    expect(response.isError).toBe(true);
+    expect(response.error).toMatch(/doc-mode read requires `id`/);
+  });
+
+  it('supported action transition without id routes to doc-mode handler (validation error)', async () => {
+    const response = parseEnvelope(
+      await client.callTool('idea', { action: 'transition', backend: 'doc' }),
+    );
+    expect(response.isError).toBe(true);
+    expect(response.error).toMatch(/doc-mode transition requires `id`/);
+  });
 
   it.each([
     'forget',
@@ -121,13 +147,12 @@ describe('doc-mode boundary — idea tool', () => {
 // ---------------------------------------------------------------------------
 
 describe('doc-mode boundary — assumption tool', () => {
-  it('supported action declare returns doc_mode_in_flight placeholder', async () => {
+  it('supported action declare without idea_id routes to doc-mode handler (validation error)', async () => {
     const response = parseEnvelope(
       await client.callTool('assumption', { action: 'declare', backend: 'doc' }),
     );
     expect(response.isError).toBe(true);
-    expect(response.error).toMatch(/doc_mode_in_flight: assumption\.declare/);
-    expect(response.next_steps[0].example).toContain('backend: "sqlite"');
+    expect(response.error).toMatch(/doc-mode assumption.declare requires `idea_id`/);
   });
 
   it.each([
@@ -153,13 +178,12 @@ describe('doc-mode boundary — assumption tool', () => {
 // ---------------------------------------------------------------------------
 
 describe('doc-mode boundary — outcome tool', () => {
-  it('supported action log returns doc_mode_in_flight placeholder', async () => {
+  it('supported action log without idea_id routes to doc-mode handler (validation error)', async () => {
     const response = parseEnvelope(
       await client.callTool('outcome', { action: 'log', backend: 'doc' }),
     );
     expect(response.isError).toBe(true);
-    expect(response.error).toMatch(/doc_mode_in_flight: outcome\.log/);
-    expect(response.next_steps[0].example).toContain('backend: "sqlite"');
+    expect(response.error).toMatch(/doc-mode outcome.log requires `idea_id`/);
   });
 
   it.each(['undo', 'list', 'read', 'memo_upsert'] as const)(

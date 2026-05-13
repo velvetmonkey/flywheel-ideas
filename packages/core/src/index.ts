@@ -487,6 +487,28 @@ export { buildIdeaPath, slugifyIdeaTitle } from './idea-paths.js';
 export { createIdea } from './idea-create.js';
 export type { CreateIdeaInput, CreateIdeaResult } from './idea-create.js';
 
+// Doc-mode file format (parser + serializer; pure, no DB/fs)
+export {
+  buildDocIdeaPath,
+  DOC_ASSUMPTION_STATUSES,
+  DOC_IDEA_STATES,
+  DOC_MODE_FOLDER,
+  DOC_VERDICT_STATES,
+  DocFormatError,
+  parseDocIdea,
+  renderDocIdea,
+  slugifyDocTitle,
+} from './doc-mode/format.js';
+export type {
+  DocAssumption,
+  DocAssumptionStatus,
+  DocEvidenceEntry,
+  DocIdeaState,
+  DocModeIdea,
+  DocVerdict,
+  DocVerdictState,
+} from './doc-mode/format.js';
+
 // Bulk-import subsystem (v0.2 Phase 2)
 export {
   // adapter types
