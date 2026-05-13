@@ -132,6 +132,8 @@ export type {
 export { buildConsistencyDoctorReport } from './consistency-doctor.js';
 export type {
   ConsistencyDoctorIssue,
+  ConsistencyDoctorMode,
+  ConsistencyDoctorOptions,
   ConsistencyDoctorReport,
   ConsistencyIssueKind,
   ConsistencyIssueSeverity,

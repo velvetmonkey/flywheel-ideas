@@ -2,13 +2,31 @@ import * as fsp from 'node:fs/promises';
 import * as path from 'node:path';
 import matter from 'gray-matter';
 import type { IdeasDatabase } from './db.js';
+import {
+  DOC_MODE_FOLDER,
+  DocFormatError,
+  parseDocIdea,
+  renderDocIdea,
+  type DocModeIdea,
+} from './doc-mode/format.js';
 
 export type ConsistencyIssueKind =
   | 'missing_markdown'
   | 'orphan_markdown'
   | 'stale_frontmatter'
   | 'incomplete_council_session'
-  | 'failed_council_view';
+  | 'failed_council_view'
+  | 'doc_round_trip_failed'
+  | 'doc_state_verdict_mismatch'
+  | 'doc_transition_out_of_order'
+  | 'doc_malformed_section';
+
+export type ConsistencyDoctorMode = 'sqlite' | 'doc' | 'both';
+
+export interface ConsistencyDoctorOptions {
+  /** Default 'sqlite' (backward-compatible with v0.4 callers). */
+  mode?: ConsistencyDoctorMode;
+}
 
 export type ConsistencyIssueSeverity = 'info' | 'warning' | 'error';
 
@@ -39,19 +57,30 @@ const EMPTY_COUNTS: Record<ConsistencyIssueKind, number> = {
   stale_frontmatter: 0,
   incomplete_council_session: 0,
   failed_council_view: 0,
+  doc_round_trip_failed: 0,
+  doc_state_verdict_mismatch: 0,
+  doc_transition_out_of_order: 0,
+  doc_malformed_section: 0,
 };
 
 export async function buildConsistencyDoctorReport(
   db: IdeasDatabase,
   vaultPath: string,
+  options: ConsistencyDoctorOptions = {},
 ): Promise<ConsistencyDoctorReport> {
+  const mode = options.mode ?? 'sqlite';
   const issues: ConsistencyDoctorIssue[] = [];
 
-  await inspectIdeas(db, vaultPath, issues);
-  await inspectAssumptions(db, vaultPath, issues);
-  await inspectOutcomes(db, vaultPath, issues);
-  await inspectCouncil(db, vaultPath, issues);
-  await inspectOrphanMarkdown(db, vaultPath, issues);
+  if (mode === 'sqlite' || mode === 'both') {
+    await inspectIdeas(db, vaultPath, issues);
+    await inspectAssumptions(db, vaultPath, issues);
+    await inspectOutcomes(db, vaultPath, issues);
+    await inspectCouncil(db, vaultPath, issues);
+    await inspectOrphanMarkdown(db, vaultPath, issues);
+  }
+  if (mode === 'doc' || mode === 'both') {
+    await inspectDocMode(vaultPath, issues);
+  }
 
   const counts = { ...EMPTY_COUNTS };
   for (const issue of issues) counts[issue.kind] += 1;
@@ -441,4 +470,141 @@ function frontmatterDate(value: unknown): string | null {
   if (value == null) return null;
   if (value instanceof Date) return value.toISOString();
   return String(value);
+}
+
+// ---------------------------------------------------------------------------
+// Doc-mode inspector
+// ---------------------------------------------------------------------------
+
+/**
+ * Walk `<vault>/ideas-doc/` and emit doc-mode issues. Doc mode is
+ * intra-file (no DB to reconcile), so the invariants are different
+ * from SQLite mode: round-trip byte-identical, frontmatter state
+ * agrees with the verdict block, transition timestamps monotonic,
+ * required sections present + well-formed.
+ *
+ * Files that fail to parse surface as `doc_malformed_section` (or the
+ * specific kind on the DocFormatError if more precise) and are skipped
+ * for the deeper checks — there is nothing useful to assert about a
+ * file the parser cannot understand.
+ */
+async function inspectDocMode(
+  vaultPath: string,
+  issues: ConsistencyDoctorIssue[],
+): Promise<void> {
+  const folder = path.join(vaultPath, DOC_MODE_FOLDER);
+  let entries: string[];
+  try {
+    entries = await fsp.readdir(folder);
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') return;
+    throw err;
+  }
+
+  for (const name of entries) {
+    if (!name.endsWith('.md')) continue;
+    const relPath = `${DOC_MODE_FOLDER}/${name}`;
+    const absPath = path.join(folder, name);
+    const text = await fsp.readFile(absPath, 'utf8');
+
+    let parsed: DocModeIdea;
+    try {
+      parsed = parseDocIdea(text);
+    } catch (err) {
+      if (err instanceof DocFormatError) {
+        const kind: ConsistencyIssueKind =
+          err.kind === 'doc_transition_out_of_order'
+            ? 'doc_transition_out_of_order'
+            : 'doc_malformed_section';
+        issues.push({
+          kind,
+          severity: 'error',
+          path: relPath,
+          detail: err.message,
+        });
+        continue;
+      }
+      throw err;
+    }
+
+    // Round-trip invariant. Failure means the file has formatting drift
+    // (whitespace, ordering, casing) that the renderer would not
+    // produce — caller has to decide whether to normalize.
+    const rendered = renderDocIdea(parsed);
+    if (rendered !== text) {
+      issues.push({
+        kind: 'doc_round_trip_failed',
+        severity: 'warning',
+        id: parsed.id,
+        path: relPath,
+        detail:
+          'File is not byte-identical to renderer output. Whitespace, key order, or quoting differs. Re-saving via the MCP tool will normalize.',
+      });
+    }
+
+    // State / verdict agreement.
+    const mismatch = detectStateVerdictMismatch(parsed);
+    if (mismatch !== null) {
+      issues.push({
+        kind: 'doc_state_verdict_mismatch',
+        severity: 'error',
+        id: parsed.id,
+        path: relPath,
+        field: 'state',
+        db_value: parsed.state,
+        markdown_value: parsed.verdict?.state ?? null,
+        detail: mismatch,
+      });
+    }
+
+    // Transition timestamps: created_at <= updated_at, and updated_at
+    // >= any evidence-log timestamp.
+    if (parsed.createdAt > parsed.updatedAt) {
+      issues.push({
+        kind: 'doc_transition_out_of_order',
+        severity: 'error',
+        id: parsed.id,
+        path: relPath,
+        field: 'updated_at',
+        db_value: parsed.updatedAt,
+        markdown_value: parsed.createdAt,
+        detail: `frontmatter updated_at (${parsed.updatedAt}) precedes created_at (${parsed.createdAt})`,
+      });
+    }
+    const lastEvidence = parsed.evidenceLog[parsed.evidenceLog.length - 1];
+    if (lastEvidence && lastEvidence.timestamp > parsed.updatedAt) {
+      issues.push({
+        kind: 'doc_transition_out_of_order',
+        severity: 'error',
+        id: parsed.id,
+        path: relPath,
+        field: 'updated_at',
+        db_value: parsed.updatedAt,
+        markdown_value: lastEvidence.timestamp,
+        detail: `latest evidence log timestamp (${lastEvidence.timestamp}) is later than frontmatter updated_at (${parsed.updatedAt})`,
+      });
+    }
+  }
+}
+
+function detectStateVerdictMismatch(idea: DocModeIdea): string | null {
+  const requiredVerdict: Record<string, string | null> = {
+    validated: 'pass',
+    refuted: 'fail',
+    parked: 'parked',
+  };
+  const expected = requiredVerdict[idea.state];
+  if (expected === undefined) {
+    // States that don't require a verdict (nascent/explored/evaluated/
+    // committed/killed). Doc mode permits an in-progress verdict block
+    // on these for drafting; nothing to flag.
+    return null;
+  }
+  if (idea.verdict === null) {
+    return `frontmatter state "${idea.state}" requires a verdict block (expected state: "${expected}") but the verdict section is empty`;
+  }
+  if (idea.verdict.state !== expected) {
+    return `frontmatter state "${idea.state}" requires verdict.state "${expected}" but got "${idea.verdict.state}"`;
+  }
+  return null;
 }

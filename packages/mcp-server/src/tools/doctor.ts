@@ -15,19 +15,27 @@ export function registerDoctorTool(
     'doctor',
     [
       'Read-only diagnostics for the flywheel-ideas decision ledger. ',
-      'Actions: consistency (DB/markdown drift, orphan notes, incomplete council runs).',
+      'Actions: consistency (DB/markdown drift in sqlite mode; intra-file ',
+      'invariants in doc mode). Select via mode: sqlite | doc | both.',
     ].join(''),
     {
       action: z.enum(['consistency']).describe('Diagnostic report to run'),
+      mode: z
+        .enum(['sqlite', 'doc', 'both'])
+        .optional()
+        .describe(
+          '[consistency] sqlite (default) inspects DB rows against their markdown mirror; doc inspects ideas-doc/ for round-trip, state/verdict, transition-order, and section-shape violations; both runs everything. See docs/consistency.md.',
+        ),
     },
     async (args) => {
       try {
         if (args.action !== 'consistency') {
           return mcpError(`unknown doctor action: ${(args as { action: string }).action}`);
         }
-        const report = await buildConsistencyDoctorReport(getDb(), getVaultPath());
+        const mode = args.mode ?? 'sqlite';
+        const report = await buildConsistencyDoctorReport(getDb(), getVaultPath(), { mode });
         return mcpText({
-          result: report,
+          result: { ...report, mode },
           next_steps: report.ok
             ? [
                 {
@@ -39,7 +47,7 @@ export function registerDoctorTool(
             : [
                 {
                   action: 'doctor.consistency',
-                  example: 'doctor.consistency({})',
+                  example: `doctor.consistency({ mode: "${mode}" })`,
                   why: 'Review the reported paths and decide which ones should be repaired manually or by a future repair action.',
                 },
               ],
