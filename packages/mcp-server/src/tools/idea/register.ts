@@ -31,6 +31,7 @@ import { handleExport } from './export.js';
 import { handleReport } from './report.js';
 import {
   docCreate,
+  docExportFromSqlite,
   docList,
   docRead,
   docTransition,
@@ -62,7 +63,7 @@ export function registerIdeaTool(
           'create', 'read', 'list', 'transition', 'forget',
           'freeze', 'list_freezes',
           'ancestry', 'descendants', 'shared_assumptions',
-          'export', 'report',
+          'export', 'export_doc', 'report',
         ])
         .describe('Operation to perform'),
       backend: z
@@ -177,7 +178,11 @@ export function registerIdeaTool(
       output_path: z
         .string()
         .optional()
-        .describe('[export] Override the default output path. Relative paths resolve under the vault. Default: `exports/portfolio-<timestamp>.md`.'),
+        .describe('[export|export_doc] Override the default output path. Relative paths resolve under the vault. Default for export: `exports/portfolio-<timestamp>.md`; default for export_doc: `ideas-doc/<slug>-<id>.md`.'),
+      overwrite: z
+        .boolean()
+        .optional()
+        .describe('[export_doc] Overwrite the destination file if it already exists. Default false — re-running export_doc on the same id without overwrite is rejected so accidental re-exports do not silently replace edited doc files.'),
       include_private_context: z
         .boolean()
         .optional()
@@ -244,6 +249,11 @@ export function registerIdeaTool(
             return handleSharedAssumptions(getDb(), args);
           case 'export':
             return handleExport(getVaultPath(), getDb(), args);
+          case 'export_doc':
+            // SQLite → doc-mode migration. Reads the SQLite ledger,
+            // writes the result as a portable single-file doc-mode .md.
+            // One-way (no import-back); see docs/single-doc-format.md.
+            return await docExportFromSqlite(getVaultPath(), getDb(), args);
           case 'report':
             return handleReport(getDb(), args);
           default:

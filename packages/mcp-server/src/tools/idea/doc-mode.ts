@@ -31,8 +31,12 @@ import {
   parseDocIdea,
   renderDocIdea,
   slugifyDocTitle,
+  type DocAssumption,
+  type DocAssumptionStatus,
   type DocIdeaState,
   type DocModeIdea,
+  type DocVerdictState,
+  type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
 import { mcpError, mcpText, type NextStep } from '../../next_steps.js';
 
@@ -555,3 +559,237 @@ function randomNanoid(length: number): string {
   }
   return out;
 }
+
+// ---------------------------------------------------------------------------
+// idea.export_doc — SQLite → doc-mode migration
+// ---------------------------------------------------------------------------
+
+const SQLITE_TO_DOC_STATE: Record<string, DocIdeaState> = {
+  nascent: 'nascent',
+  explored: 'explored',
+  evaluated: 'evaluated',
+  committed: 'committed',
+  validated: 'validated',
+  refuted: 'refuted',
+  parked: 'parked',
+  killed: 'killed',
+};
+
+const SQLITE_TO_DOC_ASSUMPTION_STATUS: Record<string, DocAssumptionStatus> = {
+  open: 'open',
+  refuted: 'refuted',
+  held: 'validated',
+};
+
+/**
+ * Read an existing SQLite-mode idea and write it out as a doc-mode
+ * portable `.md` file. One-way: import-back from doc to SQLite is
+ * deliberately deferred (see docs/single-doc-format.md).
+ *
+ * What carries over:
+ *   - frontmatter: id, title, state, created_at, updated_at
+ *   - claim (from the idea body)
+ *   - assumptions (text, load_bearing, signpost_at, status)
+ *   - verdict (derived from the most recent outcome's refutes/validates)
+ *   - lesson (from the outcome's memo lesson field if present)
+ *
+ * What does NOT carry over (doc mode does not model these):
+ *   - council sessions / dispatches
+ *   - lineage (ancestry / descendants / supersedes)
+ *   - cross-idea citations
+ *   - propagation flags
+ *   - private decision-journal context
+ *
+ * The destination file is `<vault>/ideas-doc/<slug>-<id>.md` by
+ * default; override with `output_path` (relative paths resolve under
+ * the vault).
+ */
+export async function docExportFromSqlite(
+  vaultPath: string,
+  db: IdeasDatabase,
+  args: { id?: string; output_path?: string; overwrite?: boolean },
+): Promise<ReturnType<typeof mcpText>> {
+  if (!args.id) {
+    return mcpError('idea.export_doc requires `id`', [
+      {
+        action: 'idea.list',
+        example: 'idea.list({})',
+        why: 'List sqlite-mode ideas to find the id you want to export to doc format.',
+      },
+    ]);
+  }
+
+  const row = db
+    .prepare(
+      `SELECT id, vault_path, title, state, created_at, state_changed_at
+         FROM ideas_notes WHERE id = ?`,
+    )
+    .get(args.id) as
+    | {
+        id: string;
+        vault_path: string;
+        title: string;
+        state: string;
+        created_at: number;
+        state_changed_at: number;
+      }
+    | undefined;
+  if (!row) {
+    return mcpError(`idea not found: ${args.id}`, [
+      {
+        action: 'idea.list',
+        example: 'idea.list({})',
+        why: 'List ideas to confirm the id.',
+      },
+    ]);
+  }
+
+  const docState = SQLITE_TO_DOC_STATE[row.state];
+  if (docState === undefined) {
+    return mcpError(`unknown sqlite-mode state "${row.state}" cannot be mapped to a doc-mode state`, []);
+  }
+
+  // Idea markdown body becomes the claim. Strip frontmatter cheaply
+  // (we already have authoritative frontmatter in the DB row).
+  let claim = '';
+  try {
+    const md = await fs.readFile(path.join(vaultPath, row.vault_path), 'utf8');
+    claim = stripFrontmatter(md).trim();
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code !== 'ENOENT') throw err;
+    // Stale row (markdown missing); just emit empty claim.
+  }
+
+  const assumptionRows = db
+    .prepare(
+      `SELECT id, text, decision, status, load_bearing, signpost_at
+         FROM ideas_assumptions
+        WHERE idea_id = ?
+        ORDER BY declared_at ASC`,
+    )
+    .all(args.id) as Array<{
+    id: string;
+    text: string;
+    decision: string | null;
+    status: string;
+    load_bearing: number;
+    signpost_at: number | null;
+  }>;
+
+  const assumptions: DocAssumption[] = assumptionRows.map((r) => ({
+    id: r.id,
+    // Prefer the decision clause of the Y-statement (the actionable
+    // claim) over the free-form text when both exist. Falls back to
+    // text. Always normalized to single-line for doc-mode parser.
+    text: (r.decision?.trim() || r.text.trim()).replace(/\s+/gu, ' '),
+    loadBearing: r.load_bearing === 1,
+    signpostAt: r.signpost_at == null ? null : new Date(r.signpost_at).toISOString(),
+    status: SQLITE_TO_DOC_ASSUMPTION_STATUS[r.status] ?? 'open',
+  }));
+
+  // Latest non-undone outcome → verdict block (+ optional lesson from memo).
+  const outcome = db
+    .prepare(
+      `SELECT id, landed_at
+         FROM ideas_outcomes
+        WHERE idea_id = ? AND undone_at IS NULL
+        ORDER BY landed_at DESC
+        LIMIT 1`,
+    )
+    .get(args.id) as { id: string; landed_at: number } | undefined;
+
+  let verdict: { state: DocVerdictState; rationale: string } | null = null;
+  let lesson = '';
+  if (outcome) {
+    const verdictRows = db
+      .prepare(
+        `SELECT verdict FROM ideas_outcome_verdicts WHERE outcome_id = ?`,
+      )
+      .all(outcome.id) as Array<{ verdict: string }>;
+    const refutes = verdictRows.filter((v) => v.verdict === 'refuted').length;
+    const validates = verdictRows.filter((v) => v.verdict === 'validated').length;
+    const verdictState: DocVerdictState =
+      refutes > 0 ? 'fail' : validates > 0 ? 'pass' : 'parked';
+    const outcomeRow = db
+      .prepare(`SELECT text FROM ideas_outcomes WHERE id = ?`)
+      .get(outcome.id) as { text: string } | undefined;
+    if (outcomeRow) {
+      verdict = {
+        state: verdictState,
+        rationale: outcomeRow.text.trim().replace(/\s+/gu, ' '),
+      };
+    }
+    const memo = db
+      .prepare(`SELECT memo_json FROM ideas_outcome_memos WHERE outcome_id = ?`)
+      .get(outcome.id) as { memo_json: string } | undefined;
+    if (memo?.memo_json) {
+      try {
+        const parsed = JSON.parse(memo.memo_json) as { lesson?: string };
+        if (typeof parsed.lesson === 'string') lesson = parsed.lesson.trim();
+      } catch {
+        // memo blob is opaque to doc-mode; if it doesn't parse, the
+        // outcome still has its rationale in the verdict block.
+      }
+    }
+  }
+
+  const idea: DocModeIdea = {
+    id: row.id,
+    title: row.title,
+    state: docState,
+    createdAt: new Date(row.created_at).toISOString(),
+    updatedAt: new Date(row.state_changed_at).toISOString(),
+    claim,
+    testCondition: '',
+    assumptions,
+    evidenceLog: [],
+    verdict,
+    lesson,
+  };
+
+  const slug = slugifyDocTitle(row.title);
+  const relPath = args.output_path ?? buildDocIdeaPath(slug, row.id);
+  const absPath = path.isAbsolute(relPath) ? relPath : path.join(vaultPath, relPath);
+
+  if (!args.overwrite) {
+    try {
+      await fs.access(absPath);
+      return mcpError(`refusing to overwrite existing file at ${relPath}; pass overwrite: true to force`, []);
+    } catch {
+      // ENOENT — fine, proceed.
+    }
+  }
+  await fs.mkdir(path.dirname(absPath), { recursive: true });
+  await fs.writeFile(absPath, renderDocIdea(idea), 'utf8');
+
+  return mcpText({
+    result: {
+      sqlite_id: row.id,
+      doc_path: relPath,
+      assumptions_count: assumptions.length,
+      has_verdict: verdict !== null,
+      backend_source: 'sqlite',
+      backend_target: 'doc',
+    },
+    next_steps: [
+      {
+        action: 'idea.read',
+        example: `idea.read({ id: "${row.id}", backend: "doc" })`,
+        why: 'Read the exported doc-mode idea to verify the export landed cleanly.',
+      },
+      {
+        action: 'doctor.consistency',
+        example: 'doctor.consistency({ mode: "doc" })',
+        why: 'Validate the doc-mode file against the format invariants (round-trip, state/verdict, transition order, section shape).',
+      },
+    ],
+  });
+}
+
+function stripFrontmatter(md: string): string {
+  if (!md.startsWith('---\n')) return md;
+  const end = md.indexOf('\n---\n', 4);
+  if (end < 0) return md;
+  return md.slice(end + 5);
+}
+
