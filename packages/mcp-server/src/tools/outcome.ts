@@ -30,7 +30,7 @@ import {
   type IdeasDatabase,
   type OutcomeMemo,
 } from '@velvetmonkey/flywheel-ideas-core';
-import { mcpError, mcpText, type NextStep } from '../next_steps.js';
+import { mcpError, mcpNotSupportedInDocMode, mcpText, type NextStep } from '../next_steps.js';
 
 export function registerOutcomeTool(
   server: McpServer,
@@ -50,6 +50,12 @@ export function registerOutcomeTool(
     ].join(''),
     {
       action: z.enum(['log', 'undo', 'list', 'read', 'memo_upsert']).describe('Operation to perform'),
+      backend: z
+        .enum(['sqlite', 'doc'])
+        .optional()
+        .describe(
+          '[all] Storage backend. "sqlite" (default) records the outcome and cascades refutation to related ideas. "doc" sets the verdict block on a single portable .md (no cross-idea propagation); only `log` is supported in doc mode, other actions return not_supported_in_doc_mode. See docs/single-doc-format.md.',
+        ),
       // log
       idea_id: z
         .string()
@@ -104,6 +110,28 @@ export function registerOutcomeTool(
     },
     async (args) => {
       try {
+        // Doc-mode boundary: only `log` has a doc-mode handler (writes a
+        // verdict block into the single .md). undo / list / read /
+        // memo_upsert rely on the SQLite outcomes table and cross-idea
+        // propagation; reject in doc mode. `log` itself currently returns
+        // the in-flight placeholder; B2 swaps it for the real verdict-
+        // block writer.
+        if (args.backend === 'doc') {
+          if (args.action !== 'log') {
+            return mcpNotSupportedInDocMode(`outcome.${args.action}`);
+          }
+          return mcpError(
+            'doc_mode_in_flight: outcome.log doc-mode handler is staged but not yet implemented. backend: "sqlite" works today.',
+            [
+              {
+                action: 'outcome.log',
+                example: 'outcome.log({ idea_id: "...", text: "...", backend: "sqlite" })',
+                why: 'Run the SQLite-backed path while doc mode lands. Note that doc mode supports only a verdict block (no cross-idea cascading refutation).',
+              },
+            ],
+          );
+        }
+
         switch (args.action) {
           case 'log':
             return await handleLog(getVaultPath(), getDb(), args);

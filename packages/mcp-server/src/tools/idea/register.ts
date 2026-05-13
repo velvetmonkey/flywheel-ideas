@@ -19,7 +19,7 @@ import {
   IDEA_STATES,
   type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
-import { mcpError } from '../../next_steps.js';
+import { mcpError, mcpNotSupportedInDocMode } from '../../next_steps.js';
 import { handleCreate } from './create.js';
 import { handleRead } from './read.js';
 import { handleList } from './list.js';
@@ -29,6 +29,11 @@ import { handleFreeze, handleListFreezes } from './freeze.js';
 import { handleAncestry, handleDescendants, handleSharedAssumptions } from './lineage.js';
 import { handleExport } from './export.js';
 import { handleReport } from './report.js';
+import {
+  docHandlerNotYetImplemented,
+  IDEA_DOC_MODE_ACTIONS,
+  type IdeaActionName,
+} from './doc-mode.js';
 
 /**
  * Register the `idea` tool on a server. Captures the vault path + DB handle
@@ -57,6 +62,12 @@ export function registerIdeaTool(
           'export', 'report',
         ])
         .describe('Operation to perform'),
+      backend: z
+        .enum(['sqlite', 'doc'])
+        .optional()
+        .describe(
+          '[all] Storage backend. "sqlite" (default) is the canonical ledger with full feature set: council, outcome propagation, lineage, SEC tracking. "doc" is the embeddable single-file lifecycle — supports create/read/list/transition only; cross-idea actions return not_supported_in_doc_mode. See docs/single-doc-format.md for the file contract.',
+        ),
       title: z
         .string()
         .min(1)
@@ -184,6 +195,20 @@ export function registerIdeaTool(
       // dispatch and return an `mcpError` with the thrown message as the
       // recovery hint.
       try {
+        // Doc-mode boundary: if the caller asked for the portable
+        // single-file backend, gate the action against the supported set
+        // before touching the SQLite handlers. Unsupported actions return
+        // a stable not_supported_in_doc_mode error; supported actions get
+        // dispatched to their doc-mode counterpart (or, in this commit, to
+        // a stub pending the B2 implementation).
+        if (args.backend === 'doc') {
+          const docAction = args.action as IdeaActionName;
+          if (!IDEA_DOC_MODE_ACTIONS.has(docAction)) {
+            return mcpNotSupportedInDocMode(`idea.${docAction}`);
+          }
+          return docHandlerNotYetImplemented(docAction);
+        }
+
         switch (args.action) {
           case 'create':
             return await handleCreate(getVaultPath(), getDb(), args);

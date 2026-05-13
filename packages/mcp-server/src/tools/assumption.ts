@@ -37,7 +37,7 @@ import {
   type RadarHit,
   type ThresholdDirection,
 } from '@velvetmonkey/flywheel-ideas-core';
-import { mcpError, mcpText, type NextStep } from '../next_steps.js';
+import { mcpError, mcpNotSupportedInDocMode, mcpText, type NextStep } from '../next_steps.js';
 
 export function registerAssumptionTool(
   server: McpServer,
@@ -70,6 +70,12 @@ export function registerAssumptionTool(
           'extension_get',
         ])
         .describe('Operation to perform'),
+      backend: z
+        .enum(['sqlite', 'doc'])
+        .optional()
+        .describe(
+          '[all] Storage backend. "sqlite" (default) is the canonical ledger. "doc" appends an assumption block to a single portable .md per docs/single-doc-format.md; only `declare` is supported in doc mode, the other actions return not_supported_in_doc_mode.',
+        ),
       // declare + list + signposts_due
       idea_id: z
         .string()
@@ -236,6 +242,26 @@ export function registerAssumptionTool(
     },
     async (args) => {
       try {
+        // Doc-mode boundary: only `declare` has a doc-mode handler. Other
+        // actions return not_supported_in_doc_mode. `declare` itself
+        // currently returns the in-flight placeholder; B2 swaps it for
+        // the real append-to-doc-file implementation.
+        if (args.backend === 'doc') {
+          if (args.action !== 'declare') {
+            return mcpNotSupportedInDocMode(`assumption.${args.action}`);
+          }
+          return mcpError(
+            'doc_mode_in_flight: assumption.declare doc-mode handler is staged but not yet implemented. backend: "sqlite" works today.',
+            [
+              {
+                action: 'assumption.declare',
+                example: 'assumption.declare({ idea_id: "...", text: "...", backend: "sqlite" })',
+                why: 'Run the SQLite-backed path while doc mode lands. See docs/single-doc-format.md for the file contract.',
+              },
+            ],
+          );
+        }
+
         switch (args.action) {
           case 'declare':
             return await handleDeclare(getVaultPath(), getDb(), args);

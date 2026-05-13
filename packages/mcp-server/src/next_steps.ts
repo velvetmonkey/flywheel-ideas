@@ -51,3 +51,29 @@ export function mcpError(message: string, nextSteps: NextStep[] = []): {
     isError: true,
   };
 }
+
+/**
+ * Doc-mode backend ("doc") boundary error. Used by tool handlers when an
+ * action is invoked with `backend: 'doc'` but does not have a doc-mode
+ * implementation. The error code `not_supported_in_doc_mode` is the
+ * documented contract on `docs/consistency.md` and is intentionally stable
+ * so MCP clients can match on it.
+ *
+ * `qualifiedAction` is the canonical `<tool>.<action>` form (e.g.
+ * "idea.export", "council.run") so the message is self-locating.
+ */
+export function mcpNotSupportedInDocMode(qualifiedAction: string): {
+  content: Array<{ type: 'text'; text: string }>;
+  isError: true;
+} {
+  return mcpError(
+    `not_supported_in_doc_mode: ${qualifiedAction} requires backend: "sqlite"`,
+    [
+      {
+        action: qualifiedAction,
+        example: `${qualifiedAction}({ /* ... */ backend: "sqlite" })`,
+        why: 'Doc mode is the embeddable single-file lifecycle; cross-idea features (council, propagation, lineage, SEC tracking) keep requiring the SQLite ledger. Set backend: "sqlite" on this call, or omit the field — sqlite is the default.',
+      },
+    ],
+  );
+}

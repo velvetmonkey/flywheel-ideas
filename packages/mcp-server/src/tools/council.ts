@@ -35,7 +35,7 @@ import {
   type CouncilMode,
   type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
-import { mcpError, mcpText, type NextStep } from '../next_steps.js';
+import { mcpError, mcpNotSupportedInDocMode, mcpText, type NextStep } from '../next_steps.js';
 
 const APPROVAL_ENV_VAR = 'FLYWHEEL_IDEAS_APPROVE';
 
@@ -63,6 +63,12 @@ export function registerCouncilTool(
       action: z
         .enum(['run', 'approval_status', 'delta', 'effectiveness_report'])
         .describe('Operation to perform'),
+      backend: z
+        .enum(['sqlite', 'doc'])
+        .optional()
+        .describe(
+          '[all] Storage backend. council requires the SQLite ledger for ideas_council_sessions/views/dispatches; any value other than "sqlite" returns not_supported_in_doc_mode.',
+        ),
       // run
       id: z.string().optional().describe('[run] The idea id to dispatch the council against'),
       depth: z
@@ -131,6 +137,13 @@ export function registerCouncilTool(
     },
     async (args) => {
       try {
+        // council writes ideas_council_sessions + ideas_council_views +
+        // ideas_dispatches and reads them back for delta/effectiveness;
+        // there is no doc-mode equivalent because doc mode is the
+        // single-file lifecycle. Reject backend='doc' for every action.
+        if (args.backend === 'doc') {
+          return mcpNotSupportedInDocMode(`council.${args.action}`);
+        }
         switch (args.action) {
           case 'run':
             return await handleRun(getVaultPath(), getDb(), args);

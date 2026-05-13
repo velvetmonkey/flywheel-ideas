@@ -9,7 +9,7 @@ import {
   trackCompanies,
   type IdeasDatabase,
 } from '@velvetmonkey/flywheel-ideas-core';
-import { mcpError, mcpText, type NextStep } from '../next_steps.js';
+import { mcpError, mcpNotSupportedInDocMode, mcpText, type NextStep } from '../next_steps.js';
 
 export function registerCompanyTool(
   server: McpServer,
@@ -28,6 +28,12 @@ export function registerCompanyTool(
     ].join(''),
     {
       action: z.enum(['track', 'evaluate', 'read', 'report', 'apply_outcomes']),
+      backend: z
+        .enum(['sqlite', 'doc'])
+        .optional()
+        .describe(
+          '[all] Storage backend. SEC company tracking is a cross-company relational workload; any value other than "sqlite" returns not_supported_in_doc_mode.',
+        ),
       companies: z.array(z.string()).max(125).optional().describe('[track] Up to 125 tickers or cik:########## sources'),
       years: z.number().int().min(1).max(20).optional().describe('[track] Backfill window; default 10'),
       forms: z.array(z.enum(['10-K', '10-Q'])).optional().describe('[track] Filing forms; default 10-K + 10-Q'),
@@ -55,6 +61,13 @@ export function registerCompanyTool(
     },
     async (args) => {
       try {
+        // SEC company tracking is the canonical cross-company relational
+        // workload (ideas_company_runs, ideas_company_themes,
+        // ideas_company_observations, ideas_outcomes propagation) and has
+        // no doc-mode equivalent. Reject backend='doc' for every action.
+        if (args.backend === 'doc') {
+          return mcpNotSupportedInDocMode(`company.${args.action}`);
+        }
         switch (args.action) {
           case 'track':
             return await handleTrack(getVaultPath(), getDb(), args);
