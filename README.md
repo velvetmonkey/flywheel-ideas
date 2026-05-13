@@ -4,61 +4,203 @@
   <p><strong>A local-first decision ledger that turns messy evidence into falsifiable bets, accepted outcomes, and reusable lessons.</strong></p>
 </div>
 
-`flywheel-ideas` is for people who make judgment calls and want a memory that compounds. It keeps the original bet, the assumptions behind it, the evidence that arrives later, the human verdict on whether the bet failed, and the lesson that should change future decisions.
+`flywheel-ideas` is for people who make judgment calls and want a memory
+that compounds. It keeps the original bet, the assumptions behind it,
+the evidence that arrives later, the human verdict on whether the bet
+failed, and the lesson that should change future decisions.
 
-The core loop is simple:
+The core loop:
 
 ```text
-bet -> evidence over time -> possible failure -> accepted outcome -> lesson -> related bets to review
+bet -> assumption -> evidence over time -> possible failure -> accepted outcome -> lesson -> related bets to review
 ```
 
-The product value is not "AI reads documents." The value is a durable trail from belief to evidence to outcome to lesson.
+The product value is not "AI reads documents." The value is a durable
+trail from belief to evidence to outcome to lesson — one that survives
+every project switch, every laptop migration, and every notebook lost
+to bit rot.
 
-## Start Here: The Proof
+---
 
-The strongest current proof is a browsable 10-year SEC evidence corpus. It is not meant to prove the SEC data is novel. It is meant to prove the lifecycle is useful: old assumptions stay connected to later evidence, possible failures are staged for review, accepted outcomes refute assumptions, and lessons survive for future decisions.
+## Start here
 
-Start with these checked-in artifacts:
+New? Read **[`docs/QUICKSTART.md`](./docs/QUICKSTART.md)** — install
+and walk through one real idea in five minutes. No SEC corpus, no
+council dispatch, just `idea.create` → `assumption.declare` →
+`outcome.log`.
 
-- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md): the one-page view of failed bets, open bets under pressure, lessons, and visible review work.
-- [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md): generated reader path through the strongest lifecycle evidence.
-- [`docs/sec-corpus-walkthrough.md`](./docs/sec-corpus-walkthrough.md): the skeptical-reader guide to what is novel and what is not.
-- [`out-VxXuqAUS`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-VxXuqAUS.md): NVIDIA export controls became a $4.5B inventory/purchase-obligation charge tied back to an earlier assumption.
-- [`out-BqJTAbxZ`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-BqJTAbxZ.md): AMD export restrictions became stranded inventory, showing why one event can cut across demand, geopolitics, capacity, and channel assumptions.
-- [`out-btdioMuB`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-btdioMuB.md): Home Depot cybersecurity risk became quantified breach cost and litigation exposure after human adjudication.
-- [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md): the reusable lessons created from accepted failures.
-- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): the active judgment queue; it is currently clear.
-- [`candidate-noise.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/candidate-noise.md): the 31 staged candidates intentionally kept out of the active queue because they are duplicate pressure on already-refuted assumptions.
+For the full per-tool reference, read **[`docs/RUNBOOK.md`](./docs/RUNBOOK.md)**.
 
-This is decision support, not investment advice. The useful role is analyst memory: what did the thesis depend on, what later challenged it, which challenges were accepted, and what should be reviewed next?
+The rest of this README is the longer-form story: what you actually do
+with the tool, what it looks like in use, what compounds over time,
+and the public-evidence proof against ten years of SEC filings.
 
-## What It Does
+---
 
-- Tracks decisions as explicit bets and load-bearing assumptions.
-- Attaches new evidence to existing assumptions instead of creating disconnected notes.
-- Shows which bets are still live.
-- Stages possible failures for human review instead of auto-declaring verdicts.
-- Logs accepted outcomes as pass/fail evidence.
-- Captures durable lessons from failed assumptions.
-- Flags related ideas when a shared assumption fails.
+## What you actually do with it
 
-For public companies, the main artifact is now a personal-investor thesis report. It does not say "buy" or "sell." It shows the live assumptions your company thesis depends on, where similar assumptions failed before, what needs review, and what to watch next.
+Three illustrative use cases. None of them require the SEC corpus or
+the council. They are the basic loop you'll run dozens of times before
+you reach for anything advanced.
 
-The next product surface is a compounding SEC ledger: start 10 years back, process 10-K and 10-Q filings in chronological order, and refresh the same ledger instead of creating a fresh dated dataset every time. The point is not a bigger pile of filing summaries. The point is a long-lived memory of what each company appeared to be betting on, where those assumptions accumulated pressure, which failures were accepted by a human, and which lessons should change future review.
+### Personal: "I should replace the thermostat"
 
-## Current Evidence: A 10-Year Company Memory
+```
+idea.create({ title: "Replace home thermostat with smart thermostat" })
+  → ideas/2026/05/replace-home-thermostat-...md created
 
-The current SEC proof corpus is a Markdown-only evidence snapshot at [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/). It is generated from a local compounding ledger without committing SQLite state.
+assumption.declare({
+  idea_id: ...,
+  context: "3-bedroom apartment, gas heating",
+  challenge: "Pay-back time depends on the device actually changing our heating pattern",
+  decision: "Assume year-1 heating bill drops at least 12%",
+  signpost_at: "2027-04-01"
+})
 
-Top-down corpus entry points:
+# ...one year later
 
-- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) gives the one-page thesis dashboard.
-- [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md) gives the generated proof path through accepted failures, live pressure, and candidate noise kept out of truth.
-- [`index.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/index.md) links the whole run.
-- [`thesis.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/thesis.md) shows current bets, accepted failures, review state, and what to watch next.
-- [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md) shows durable lessons created after outcome review.
-- [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md) shows that no visible human adjudication events remain.
-- [`candidate-noise.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/candidate-noise.md) explains the staged candidates that remain outside the active queue.
+outcome.log({
+  idea_id: ...,
+  text: "Bill went UP 4% — the smart schedule did not match our occupancy",
+  refutes: [the assumption id]
+})
+```
+
+What you now own: a small Markdown record of a real bet you made, the
+specific claim it depended on, the date you said to check, and the
+outcome with the lesson. Six months from now when you're tempted to buy
+the next "smart" device, the ledger surfaces this refuted assumption.
+
+### Professional: an architecture decision
+
+```
+idea.create({ title: "Move ingestion pipeline from Kafka to Kinesis" })
+
+assumption.declare({
+  idea_id: ...,
+  context: "Current Kafka cluster is 4 brokers, 18-month-old version",
+  challenge: "Latency under burst load is the differentiator we care about",
+  decision: "Assume Kinesis sustains p99 < 150ms at 2x current peak",
+  signpost_at: <three months>
+})
+
+council.run({ id: ..., depth: "light", mode: "pre_mortem", confirm: true })
+  → spawns claude / codex / gemini × 2 personas in parallel
+  → writes councils/<idea-id>/session-1/SYNTHESIS.md
+  → surfaces dissent BEFORE you commit
+
+idea.transition({ id: ..., to: "committed" })
+
+# ...three months and one incident later
+
+outcome.log({
+  idea_id: ...,
+  text: "p99 hit 480ms under the Black Friday spike. Failed.",
+  refutes: [the latency assumption],
+  text_lessons: "Burst-latency claims need synthetic-load evidence, not vendor benchmarks"
+})
+```
+
+Now: every *other* architecture idea in your ledger that depended on
+vendor latency benchmarks is flagged `needs_review`. You see it next
+time you run `idea.list({ needs_review: true })`. That's the
+compounding mechanism — one accepted failure can flag five related
+bets you forgot you made.
+
+### Public evidence: the ten-year SEC ledger
+
+The third use case is the strongest proof: ten years of SEC 10-K and
+10-Q filings, processed in chronological order, with later realized
+risks tied back to earlier disclosed assumptions through the same
+lifecycle. See [The SEC proof corpus](#the-sec-proof-corpus) below for
+the full evidence path.
+
+---
+
+## What compounds
+
+The first week: a few isolated `.md` files. Looks like Obsidian notes.
+
+The first month: `idea.list({ needs_review: true })` becomes your most
+useful single command. Every accepted refutation cascades — bets you
+made in unrelated projects get flagged because they shared an
+underlying assumption.
+
+The first quarter: `assumption.signposts_due` starts producing hits.
+Each one is a future-dated note to yourself that this is the moment to
+check the bet. Re-evaluate, accept or reject, write the lesson.
+
+The first year: `idea.export` gives you a portfolio Markdown of every
+decision you logged, with the lesson memos attached. If you logged
+nothing, you get nothing. If you logged diligently, the portfolio is
+a compounding artifact of how your judgment shifted — searchable,
+diffable against an earlier snapshot, shareable as one file.
+
+---
+
+## Two backends
+
+| Backend | Status | What it is | When to use |
+| --- | --- | --- | --- |
+| `sqlite` (default) | Shipped | Canonical state in `<vault>/.flywheel/ideas.db`, Markdown mirror under `<vault>/ideas/`. Full feature set: council, propagation, lineage, SEC tracker. | Anything where the compounding mechanism matters. The default. |
+| `doc` | Designed, in flight | One portable `.md` per idea, no DB. Format is the contract. | Embedding a single decision lifecycle inside another app, sharing one bet outside the ledger, lightweight personal use. |
+
+The doc-mode file contract is fully specified in
+[`docs/single-doc-format.md`](./docs/single-doc-format.md). The
+parallel-codepath rationale is in
+[`docs/consistency.md`](./docs/consistency.md).
+
+---
+
+## Install (short)
+
+Full walkthrough: [`docs/QUICKSTART.md`](./docs/QUICKSTART.md).
+
+```bash
+npm install -g @velvetmonkey/flywheel-memory @velvetmonkey/flywheel-ideas
+```
+
+Register in your MCP client (Claude Code shown):
+
+```json
+{
+  "mcpServers": {
+    "flywheel-ideas": {
+      "command": "flywheel-ideas-mcp",
+      "env": {
+        "VAULT_PATH": "/path/to/your/vault",
+        "FLYWHEEL_IDEAS_APPROVE": "session"
+      }
+    }
+  }
+}
+```
+
+`flywheel-memory` is a required peer. If it is missing or unreachable,
+the server hard-fails at startup with `FlywheelMemoryRequiredError`
+rather than silently writing around the index.
+
+For live SEC scans:
+
+```bash
+export FLYWHEEL_IDEAS_IMPORT_NETWORK=1
+export FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL="you@your-domain.example"
+```
+
+---
+
+## The SEC proof corpus
+
+The strongest current proof is a browsable 10-year SEC evidence corpus.
+It is not meant to prove the SEC data is novel. It is meant to prove
+the lifecycle is useful: old assumptions stay connected to later
+evidence, possible failures are staged for review, accepted outcomes
+refute assumptions, and lessons survive for future decisions.
+
+The Markdown-only evidence snapshot lives at
+[`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/),
+generated from a local compounding ledger without committing SQLite
+state.
 
 ```text
 1,468 SEC filings
@@ -71,274 +213,127 @@ Top-down corpus entry points:
   -> 31 suppressed staged candidates tied to already-refuted assumptions
 ```
 
-Those accepted outcomes are not just summaries. The tool linked later filing evidence back to earlier assumptions, staged possible failures, required explicit human acceptance, changed the assumption status, recorded lesson memos, and regenerated the navigable Markdown reports.
+Entry points (in order of "show me the strongest evidence" depth):
 
-Representative accepted failures now include export-control inventory charges, quantified cybersecurity breach costs, market exits, investment impairments, debt-extinguishment losses, platform access restrictions, travel-demand collapse, geopolitical charges, OEM recall disruption, and demand-pressure cost deleverage. The visible review queue has now been adjudicated: ambiguous or weak candidates were either accepted with lesson memos or rejected as non-decision-grade evidence.
+- [`dashboard.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/dashboard.md) — one-page view of failed bets, open bets under pressure, lessons, visible review work.
+- [`proof-path.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/proof-path.md) — generated reader path through the strongest lifecycle evidence.
+- [`docs/sec-corpus-walkthrough.md`](./docs/sec-corpus-walkthrough.md) — skeptical-reader guide to what is novel and what is not.
+- [`accepted-lessons.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/accepted-lessons.md) — the reusable lessons from accepted failures.
 
-This is decision support, not investment advice. The value is the auditable lifecycle: what the thesis depended on, what later evidence challenged, what the human accepted, and what lesson should change future review.
+This is decision support, not investment advice. The useful role is
+analyst memory: what did the thesis depend on, what later challenged
+it, which challenges were accepted, and what should be reviewed next?
 
-The sector-scale SEC driver is [`scripts/sec-sector-lifecycle-bundle.mjs`](./scripts/sec-sector-lifecycle-bundle.mjs). It writes a linked report bundle with sector pages, company pages, theme pages, and cross-sector mechanism patterns so shared assumptions are not just keyword matches.
+### Representative accepted failures
 
-## Killer Feature Examples
+These are the killer feature: the tool does not just find the filing
+sentence. It keeps the earlier bet, the later contradiction, the human
+verdict, and the lesson together.
 
-### 1. NVIDIA: Export Control Became Inventory Risk
+**NVIDIA — export control became inventory risk.** Earlier assumption:
+NVIDIA can manage AI accelerator demand and inventory risk. Later
+disclosure: H20 export-license restrictions contributed to a $4.5B
+excess inventory and purchase-obligation charge after H20 demand
+diminished. Lesson: geopolitical access constraints can turn demand
+risk into inventory write-down risk before the commercial opportunity
+fully disappears.
+([`out-VxXuqAUS`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-VxXuqAUS.md))
 
-- **Bet:** NVIDIA could manage AI accelerator demand and inventory/channel risk.
-- **Evidence:** Filings repeatedly disclosed demand, supply, and channel risks.
-- **Failure event:** NVIDIA later disclosed that H20 export-license restrictions contributed to a $4.5B excess inventory and purchase-obligation charge after H20 demand diminished.
-- **Lesson:** Geopolitical access constraints can turn demand risk into inventory write-down risk before the commercial opportunity fully disappears.
-- **Evidence:** [`out-VxXuqAUS`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-VxXuqAUS.md), [`out-4GsRMjM5`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-4GsRMjM5.md)
+**AMD — policy shock became stranded inventory.** ~$800M of inventory
+and related charges on MI308 products due to new U.S. export
+restrictions. Lesson: export controls turn high-growth AI hardware
+bets into inventory impairment risk; the ledger should connect
+geopolitics, capacity, and channel assumptions instead of reviewing
+them separately.
+([`out-BqJTAbxZ`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-BqJTAbxZ.md))
 
-### 2. AMD: Policy Shock Became Stranded Inventory
+**Home Depot — cyber risk became quantified cost.** Disclosed theft
+of payment-card information and customer emails, $161M of pretax
+expenses net of expected insurance recoveries, plus litigation
+exposure. Lesson: cybersecurity risk becomes decision-grade when breach
+disclosure connects unauthorized access to quantified costs.
+([`out-btdioMuB`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-btdioMuB.md))
 
-- **Bet:** AMD could manage data-center GPU demand and geopolitics risk.
-- **Evidence:** The ledger carried separate assumptions for demand, inventory/channel, geopolitics, and cloud/data-center capacity.
-- **Failure event:** AMD later recorded about $800M of inventory and related charges on MI308 products due to new U.S. export restrictions.
-- **Lesson:** Export controls can turn a high-growth AI hardware bet into an inventory impairment risk; the ledger should connect geopolitics, capacity, and channel assumptions instead of reviewing them separately.
-- **Evidence:** [`out-BqJTAbxZ`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-BqJTAbxZ.md), [`out-dkrWjofL`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-dkrWjofL.md)
+**Meta — geopolitics hit platform access before revenue.** Disclosed
+a slight quarter-over-quarter decline in Family DAP driven by internet
+disruptions in Iran and WhatsApp restrictions in Russia. Lesson: for
+platform companies, geopolitical risk becomes decision-grade when
+access restrictions are tied to measured user engagement declines.
+([`out-aWE2ftCq`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-aWE2ftCq.md))
 
-### 3. Home Depot: Cyber Risk Became Quantified Cost
+Capital-allocation cases include: Lowe's exit from Australia and the
+$530M impairment, Altria's $2.5B ABI investment impairment, TJX's
+$242M pre-tax loss on early extinguishment of $2B of debt.
 
-- **Bet:** Home Depot could manage cybersecurity and privacy risk without material disruption.
-- **Evidence:** Cybersecurity remained a live company/theme assumption until a later filing disclosed realized breach impact.
-- **Failure event:** Home Depot disclosed theft of payment-card information and customer emails, $161M of pretax expenses net of expected insurance recoveries, and related litigation exposure.
-- **Lesson:** Cybersecurity risk becomes decision-grade when breach disclosure connects unauthorized access to quantified costs, customer data exposure, and follow-on litigation.
-- **Evidence:** [`out-btdioMuB`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-btdioMuB.md)
+### What is novel here
 
-### 4. Meta: Geopolitics Hit Platform Access Before Revenue
-
-- **Bet:** Meta could manage geopolitics/access restrictions without material user-growth disruption.
-- **Evidence:** The ledger tracked platform, customer dependency, regulation, demand, and geopolitics assumptions separately.
-- **Failure event:** Meta disclosed a slight quarter-over-quarter decline in Family daily active people driven by internet disruptions in Iran and WhatsApp restrictions in Russia.
-- **Lesson:** For platform companies, geopolitical risk becomes decision-grade when access restrictions are tied to measured user engagement declines, even before the filing quantifies revenue loss.
-- **Evidence:** [`out-aWE2ftCq`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-aWE2ftCq.md)
-
-### 5. Capital Allocation Failures Became Lessons
-
-The corpus now contains several cases where abstract liquidity or capital-allocation risk became concrete:
-
-- Lowe's exited Australia and recorded a $530M impairment: [`out-nzwXFuEc`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-nzwXFuEc.md).
-- Altria recorded a $2.5B impairment after an ABI investment decline became other-than-temporary: [`out-V13Rkdgz`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-V13Rkdgz.md).
-- TJX recorded a $242M pre-tax loss on early extinguishment of $2B of debt: [`out-51DsRhsa`](./evidence/sec-company-ledgers/sec-10y-100-company/outcomes/filing-language-states-this-risk-had-an-actual-effect-on-ope-51DsRhsa.md).
-
-These are the killer feature: the tool does not just find the filing sentence. It keeps the earlier bet, the later contradiction, the human verdict, and the lesson together.
-
-## What Is Novel Here?
-
-Existing tools can search filings, summarize documents, manage notes, or run an AI critique. `flywheel-ideas` is different because it connects the lifecycle:
+Existing tools can search filings, summarize documents, manage notes,
+or run an AI critique. `flywheel-ideas` is different because it
+connects the lifecycle:
 
 - A bet stays linked to its evidence over time.
 - A later outcome can change the status of the original assumption.
 - A failed shared assumption can flag related ideas for review.
 - A lesson memo turns a one-off failure into reusable judgment.
-- The report separates current bets, pending review work, accepted failures, and missing lessons.
+- The report separates current bets, pending review, accepted
+  failures, and missing lessons.
 
-In short: it compounds judgment. The database is not just a pile of notes; it remembers what you believed, what reality later said, and what else that should cause you to revisit.
+It compounds judgment. The database is not just a pile of notes; it
+remembers what you believed, what reality later said, and what else
+that should cause you to revisit.
 
-## Compounding SEC Ledger Mode
+---
 
-The company tracker now supports stable ledgers through `ledger_id` and `compound: true`.
+## Hard product rules
 
-```ts
-await company.track({
-  ledger_id: "sec-10y-100-company",
-  compound: true,
-  companies: ["AAPL", "MSFT", "NVDA"],
-  years: 10,
-  forms: ["10-K", "10-Q"],
-  confirm: true,
-});
-```
+These are non-negotiable and survive every refactor:
 
-In compound mode, refreshes reuse prior filings, assumptions, observations, and outcome candidates by source keys. New filings extend the ledger; unchanged filings are not duplicated.
+- **No auto-transitions.** The user writes the final decision rationale.
+- **No auto-decisions.** Council output is dissent, never verdict.
+- **Dissent always visible.** Synthesis surfaces disagreement, not consensus-washing.
+- **Two-pass metacognitive structure per council cell.** `initial_stance` + `self_critique` + revised `stance` all persisted.
+- **Reversibility.** `outcome.log.undo` exists from day one.
+- **Every response carries `next_steps`.**
+- **No hardcoded paths.** Everything via `VAULT_PATH` env.
 
-Generated bundle Markdown now includes a linked top-down index, a Markdown manifest, run history, rebuild instructions, and structured `flywheel-audit-json` blocks for Markdown-only evidence snapshots.
+---
 
-Generated idea, assumption, outcome, evaluation, and report notes request Flywheel wikilink markup and outgoing-link suggestions at write time. The SEC corpus does not depend on a later background markup pass to become navigable.
-
-Git evidence snapshots should commit Markdown artifacts only. SQLite databases, JSON reports, JSONL logs, SEC caches, WAL/SHM files, and backups remain local operational state.
-
-## SEC Adjudication Batches
-
-SEC review queues should be processed in batches, not by hand-picking isolated examples. The current checked-in visible queue is clear; the same workflow remains for future refreshes that stage new review events.
-
-```bash
-npm run build -w @velvetmonkey/flywheel-ideas-core
-node scripts/sec-adjudication-batch.mjs \
-  --run-id sec-10y-100-company \
-  --limit 20 \
-  --batch-id adj-sec-001
-```
-
-That writes a Flywheel-linked packet under:
-
-```text
-reports/company-runs/sec-10y-100-company/adjudication-batches/<batch-id>.md
-```
-
-Add `--export` if you want packet-only generation to refresh the Markdown evidence snapshot immediately. Applying decisions refreshes the export by default.
-
-The packet includes a decisions JSON template. A reviewer fills each group as `accept`, `reject`, or `defer`. Accepted candidates require a structured lesson memo:
-
-```bash
-node scripts/sec-adjudication-batch.mjs \
-  --run-id sec-10y-100-company \
-  --batch-id adj-sec-001 \
-  --decisions /path/to/decisions.json \
-  --confirm
-```
-
-Applying decisions regenerates company reports, writes a decision log Markdown note, refreshes the Markdown-only evidence export, and keeps the active review queue plus suppressed candidate noise visible.
-
-## What It Is Not
+## What it is not
 
 - Not a stock picker.
-- Not SEC search.
-- Not a claim that filings independently prove business reality.
+- Not an SEC search tool.
 - Not an AI summarizer with a nicer UI.
-- Not an automated verdict engine. Outcomes are staged first and accepted by a human.
+- Not an automated verdict engine — outcomes are staged first and accepted by a human.
+- Not a claim that filings independently prove business reality.
 
-## How To Run The Company Tracker
+---
 
-Tool: `company`
+## Evidence and limits
 
-```json
-{
-  "action": "track",
-  "companies": ["AAPL", "MSFT", "NVDA"],
-  "years": 10,
-  "forms": ["10-K", "10-Q"],
-  "confirm": true
-}
-```
+The decision-loop claim was tested against public historical corpora:
 
-This scans SEC filings, extracts eligible Risk Factors and MD&A sections, groups recurring themes, records dated observations, stages strict realized-risk candidates, and writes reports under `reports/`.
-
-Read the ledger view:
-
-```json
-{
-  "action": "report",
-  "report_kind": "thesis",
-  "run_id": "run-..."
-}
-```
-
-Use `report_kind: "tracker"` for the detailed audit report. The thesis report is the investor-readable decision-support view; the tracker report is the lower-level evidence ledger.
-
-Apply reviewed outcomes:
-
-```json
-{
-  "action": "apply_outcomes",
-  "run_id": "run-...",
-  "outcome_candidate_ids": ["cout-..."],
-  "confirm": true
-}
-```
-
-`company.track` never mutates assumption status directly. Only `company.apply_outcomes` logs accepted outcomes.
-
-## Track Your Own Decisions
-
-The same lifecycle works for private product, engineering, or personal decisions:
-
-```text
-create idea -> declare assumptions -> gather evidence -> log outcome -> write lesson -> review related ideas
-```
-
-The basic tools are:
-
-- `idea`: create, read, list, export, and report on decisions.
-- `assumption`: declare and manage load-bearing assumptions.
-- `outcome`: log what happened, mark assumptions validated/refuted, and write lesson memos.
-- `company`: run the SEC company tracker proof surface.
-- `council`: optional advanced review when you want model-assisted critique.
-- `import`: ingest structured external decision corpora.
-
-Detailed tool examples live in [`docs/import.md`](./docs/import.md), [`docs/outcome.md`](./docs/outcome.md), and [`docs/council.md`](./docs/council.md).
-
-## Install
-
-Requirements:
-
-- Node.js 22+
-- an MCP-aware client
-- an Obsidian vault or Markdown folder
-- `flywheel-memory` installed for the same vault
-- a clear SEC user agent if running live SEC scans
-
-Example MCP config:
-
-```json
-{
-  "mcpServers": {
-    "flywheel-ideas": {
-      "command": "npx",
-      "args": ["-y", "@velvetmonkey/flywheel-ideas"],
-      "env": {
-        "VAULT_PATH": "/path/to/your/vault",
-        "FLYWHEEL_IDEAS_APPROVE": "session"
-      }
-    }
-  }
-}
-```
-
-`flywheel-memory` is a required peer dependency. If it is missing or unreachable, the server fails at startup instead of silently writing around the index.
-
-For live SEC scans:
-
-```bash
-export FLYWHEEL_IDEAS_IMPORT_NETWORK=1
-export FLYWHEEL_IDEAS_SEC_CONTACT_EMAIL="you@your-domain.example"
-```
-
-`FLYWHEEL_IDEAS_SEC_USER_AGENT` can still override the full header when needed, but it must include a real contact email or project URL. Placeholder agents such as `contact@example.com` are rejected.
-
-## Reports And Artifacts
-
-Company tracker reports are written to:
-
-```text
-reports/company-tracker-<run_id>.md
-reports/company-tracker-<run_id>.json
-reports/company-thesis-<run_id>.md
-reports/company-thesis-<run_id>.json
-reports/company-runs/<run_id>/index.md
-```
-
-The Markdown reports are Flywheel notes with `type: report`; tracker reports use `report_kind: sec_company_tracker`, thesis reports use `report_kind: company_thesis`, and sector bundles use `company_*` report kinds. Production writes request flywheel-memory markup/linking during the write. JSON reports remain raw local machine-readable artifacts and are not part of the committed SEC evidence corpus.
-
-SEC ledger visibility is available through `idea.report({ report_kind: "sec_company" })`.
-
-Decision portfolio exports are written through `idea.export`.
-
-Private idea context is stored in the DB sidecar and is excluded from exports unless `include_private_context: true` is passed.
-
-The May 2026 SEC dogfood generated local raw report bundles under `/home/ben/sec-dogfood/`. The public SEC evidence target is now the stable Markdown-only ledger snapshot at [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/), generated from the local compounding ledger without committing SQLite state.
-
-## Evidence And Limits
-
-The original decision-loop claim was tested against public historical corpora:
-
-- Python 2 to 3 cite-rate pilot: [`pilot/RESULT.md`](./pilot/RESULT.md)
+- Python 2 → 3 cite-rate pilot: [`pilot/RESULT.md`](./pilot/RESULT.md)
 - SEC and ADR readability wedges: [`pilot/RESULT.wedges.md`](./pilot/RESULT.wedges.md)
 - SEC lifecycle dogfood: [`docs/sec-lifecycle-dogfood.md`](./docs/sec-lifecycle-dogfood.md)
 - SEC company ledger evidence target: [`evidence/sec-company-ledgers/sec-10y-100-company`](./evidence/sec-company-ledgers/sec-10y-100-company/)
 
-Those evaluations show that the system can identify and track load-bearing assumptions in known decision records and public filings. They do not prove market demand, investment value, or that the system improves every real-world decision.
+Those evaluations show the system can identify and track load-bearing
+assumptions in known decision records and public filings. They do
+**not** prove market demand, investment value, or that the system
+improves every real-world decision.
+
+---
 
 ## Packages
 
 | Package | Purpose |
 |---|---|
-| `@velvetmonkey/flywheel-ideas` | MCP server |
-| `@velvetmonkey/flywheel-ideas-core` | Internal core library |
+| `@velvetmonkey/flywheel-ideas` | MCP server (the binary you install + register) |
+| `@velvetmonkey/flywheel-ideas-core` | Internal core library (consumed by the MCP server; not a public JS API) |
 
 ## The Flywheel Suite
 
-- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — local-first MCP server. Hybrid BM25 + semantic search, knowledge graph, safe writes over an Obsidian vault.
+- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — local-first MCP server. Hybrid BM25 + semantic search, knowledge graph, safe writes over an Obsidian vault. Required peer dependency of flywheel-ideas.
 - **[flywheel-crank](https://github.com/velvetmonkey/flywheel-crank)** — Obsidian plugin. Visual layer over Memory's graph: sidebar, vault health, semantic search UI.
 - **flywheel-ideas** *(this repo)* — falsifiable decision ledger. Pre-registered assumptions, multi-model AI council dissent, outcome-driven refutation propagation.
 - **[flywheel-geometry](https://github.com/velvetmonkey/flywheel-geometry)** — geodesic retrieval extension. v0.1 pre-registered falsifier **resolved FAIL 2026-05-10** ([postmortem](https://github.com/velvetmonkey/flywheel-geometry/blob/main/docs/trial2-postmortem.md)); successor research lane at [flywheel-concept](https://github.com/velvetmonkey/flywheel-concept).
