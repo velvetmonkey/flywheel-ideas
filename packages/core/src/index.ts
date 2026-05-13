@@ -67,6 +67,9 @@ export {
   SCHEMA_SQL_V10,
   SCHEMA_SQL_V11,
   SCHEMA_SQL_V12,
+  SCHEMA_SQL_V13,
+  SCHEMA_SQL_V14,
+  SCHEMA_SQL_V15,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';

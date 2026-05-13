@@ -1,8 +1,10 @@
 /**
- * Per-CLI stdout → CouncilStance parsers (M8).
+ * Per-CLI stdout → CouncilStance parsers.
  *
- * M8 implements claude only. codex + gemini stubs throw NotYetImplemented —
- * they're wired in M9 alongside concurrency.
+ * All three CLIs (claude, codex, gemini) ship with their own stance parsers;
+ * the M9 milestone added codex + gemini after the original M8 claude-only cut.
+ * `NotYetImplementedError` is kept exported as the failure signal for any
+ * future CLI added without a parser.
  *
  * Extraction is three-pass per council-implementation.md:
  *   1. Parse stdout as JSON array (claude's --output-format=json shape)
