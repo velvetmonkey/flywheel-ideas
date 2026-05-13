@@ -67,6 +67,9 @@ export {
   SCHEMA_SQL_V10,
   SCHEMA_SQL_V11,
   SCHEMA_SQL_V12,
+  SCHEMA_SQL_V13,
+  SCHEMA_SQL_V14,
+  SCHEMA_SQL_V15,
 } from './schema.js';
 
 export { runMigrations, getCurrentVersion } from './migrations.js';
@@ -129,6 +132,8 @@ export type {
 export { buildConsistencyDoctorReport } from './consistency-doctor.js';
 export type {
   ConsistencyDoctorIssue,
+  ConsistencyDoctorMode,
+  ConsistencyDoctorOptions,
   ConsistencyDoctorReport,
   ConsistencyIssueKind,
   ConsistencyIssueSeverity,
@@ -483,6 +488,28 @@ export type {
 export { buildIdeaPath, slugifyIdeaTitle } from './idea-paths.js';
 export { createIdea } from './idea-create.js';
 export type { CreateIdeaInput, CreateIdeaResult } from './idea-create.js';
+
+// Doc-mode file format (parser + serializer; pure, no DB/fs)
+export {
+  buildDocIdeaPath,
+  DOC_ASSUMPTION_STATUSES,
+  DOC_IDEA_STATES,
+  DOC_MODE_FOLDER,
+  DOC_VERDICT_STATES,
+  DocFormatError,
+  parseDocIdea,
+  renderDocIdea,
+  slugifyDocTitle,
+} from './doc-mode/format.js';
+export type {
+  DocAssumption,
+  DocAssumptionStatus,
+  DocEvidenceEntry,
+  DocIdeaState,
+  DocModeIdea,
+  DocVerdict,
+  DocVerdictState,
+} from './doc-mode/format.js';
 
 // Bulk-import subsystem (v0.2 Phase 2)
 export {

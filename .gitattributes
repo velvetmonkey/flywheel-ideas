@@ -1,0 +1,5 @@
+# Doc-mode round-trip tests compare byte-identical fixtures; lock EOL to LF
+# so Windows checkout doesn't break the parser or the byte-equality assertion.
+* text=auto eol=lf
+*.md text eol=lf
+*.png binary

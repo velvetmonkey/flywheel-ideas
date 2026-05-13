@@ -30,7 +30,8 @@ import {
   type IdeasDatabase,
   type OutcomeMemo,
 } from '@velvetmonkey/flywheel-ideas-core';
-import { mcpError, mcpText, type NextStep } from '../next_steps.js';
+import { mcpError, mcpNotSupportedInDocMode, mcpText, type NextStep } from '../next_steps.js';
+import { docLogVerdict } from './idea/doc-mode.js';
 
 export function registerOutcomeTool(
   server: McpServer,
@@ -50,6 +51,12 @@ export function registerOutcomeTool(
     ].join(''),
     {
       action: z.enum(['log', 'undo', 'list', 'read', 'memo_upsert']).describe('Operation to perform'),
+      backend: z
+        .enum(['sqlite', 'doc'])
+        .optional()
+        .describe(
+          '[all] Storage backend. "sqlite" (default) records the outcome and cascades refutation to related ideas. "doc" sets the verdict block on a single portable .md (no cross-idea propagation); only `log` is supported in doc mode, other actions return not_supported_in_doc_mode. See docs/single-doc-format.md.',
+        ),
       // log
       idea_id: z
         .string()
@@ -104,6 +111,29 @@ export function registerOutcomeTool(
     },
     async (args) => {
       try {
+        // Doc-mode boundary: only `log` has a doc-mode handler (writes a
+        // verdict block into the single .md). undo / list / read /
+        // memo_upsert rely on the SQLite outcomes table and cross-idea
+        // propagation; reject in doc mode. `log` itself currently returns
+        // the in-flight placeholder; B2 swaps it for the real verdict-
+        // block writer.
+        if (args.backend === 'doc') {
+          if (args.action !== 'log') {
+            return mcpNotSupportedInDocMode(`outcome.${args.action}`);
+          }
+          // Doc mode writes a single verdict block to the idea file; it
+          // does not propagate to other ideas. Infer verdict from the
+          // refutes/validates lists for callers that omit it explicitly.
+          const hasRefutes = Array.isArray(args.refutes) && args.refutes.length > 0;
+          const hasValidates = Array.isArray(args.validates) && args.validates.length > 0;
+          const verdict = hasRefutes ? 'fail' : hasValidates ? 'pass' : undefined;
+          return await docLogVerdict(getVaultPath(), {
+            idea_id: args.idea_id,
+            text: args.text,
+            verdict,
+          });
+        }
+
         switch (args.action) {
           case 'log':
             return await handleLog(getVaultPath(), getDb(), args);

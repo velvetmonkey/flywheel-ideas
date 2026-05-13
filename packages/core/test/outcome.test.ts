@@ -266,11 +266,16 @@ describe('logOutcome — happy path', () => {
           ORDER BY assumption_id`,
       )
       .all(result.outcome.id);
+    // SQLite ORDER BY uses byte-comparison (BINARY collation) by default;
+    // matching expected order via String.prototype.localeCompare is locale-
+    // and ICU-version-dependent (mixed-case nanoids sort differently under
+    // some Node 24 ICU builds). Sort by simple < comparison so the test is
+    // deterministic across runners.
     expect(verdicts).toEqual(
       [
         { assumption_id: refutedAsm, verdict: 'refuted' },
         { assumption_id: validatedAsm, verdict: 'validated' },
-      ].sort((a, b) => a.assumption_id.localeCompare(b.assumption_id)),
+      ].sort((a, b) => (a.assumption_id < b.assumption_id ? -1 : a.assumption_id > b.assumption_id ? 1 : 0)),
     );
 
     expect(getAssumption(db, refutedAsm)?.status).toBe('refuted');

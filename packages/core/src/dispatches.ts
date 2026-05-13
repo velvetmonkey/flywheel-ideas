@@ -1,13 +1,11 @@
 /**
  * Dispatch audit-log helpers for `ideas_dispatches`.
  *
- * M6 ships these as unit-tested primitives. They are NOT called from the MCP
- * tool surface until M8 (real dispatcher). The M6 council.run stub does not
- * write dispatch rows — avoids synthetic audit data accumulating in the
- * user's vault during the stub milestone.
+ * Called from the real council dispatcher (M8+) on every CLI subprocess
+ * spawn; populates `ideas_dispatches` for the council audit trail.
  *
- * argv storage constraint (enforced starting M8): CLI prompts route via
- * `child.stdin.write(prompt)`, never as argv. argv carries flags only — e.g.
+ * argv storage constraint: CLI prompts route via `child.stdin.write(prompt)`,
+ * never as argv. argv carries flags only — e.g.
  * `['-p', '--output-format', 'json']`. This guarantees `ideas_dispatches.argv`
  * never holds user-idea text.
  */

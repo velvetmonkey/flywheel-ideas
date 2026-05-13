@@ -1,6 +1,8 @@
-# flywheel-ideas
-
-**A local-first decision ledger that turns messy evidence into falsifiable bets, accepted outcomes, and reusable lessons.**
+<div align="center">
+  <img src="header.png" alt="Flywheel" width="256"/>
+  <h1>Flywheel Ideas</h1>
+  <p><strong>A local-first decision ledger that turns messy evidence into falsifiable bets, accepted outcomes, and reusable lessons.</strong></p>
+</div>
 
 `flywheel-ideas` is for people who make judgment calls and want a memory that compounds. It keeps the original bet, the assumptions behind it, the evidence that arrives later, the human verdict on whether the bet failed, and the lesson that should change future decisions.
 
