@@ -206,7 +206,7 @@ the sufficiency of our sources of funding for working capital, capital expenditu
 
 •
 
-our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the final outcome of our tax-related examinations,
+our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the final [[outcome]] of our tax-related examinations,
 
 1
 

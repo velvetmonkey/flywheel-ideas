@@ -40,7 +40,7 @@ Signature
 
 The Procter & Gamble Company 1
 
-PART I. FINANCIAL INFORMATION
+PART I. [[financials|FINANCIAL]] INFORMATION
 
 Item 1.
 

@@ -54,7 +54,7 @@ Our ability to respond to and keep up with the rapid pace of technological and m
 
 •
 
-Any change by our search and meta-search partners in how they present travel search results or conduct their auctions for search placement that would impact us negatively;
+Any change by our search and [[meta]]-search partners in how they present travel search results or conduct their auctions for search placement that would impact us negatively;
 
 •
 

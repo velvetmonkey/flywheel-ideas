@@ -126,9 +126,9 @@ A deterministic decision-support view of current company bets, prior failures, u
 
 ## Executive Readout
 
-- Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
+- Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, [[googl]], HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - Filings scanned: 1468
-- Current thesis dependencies: 349 open bet(s).
+- Current [[thesis]] dependencies: 349 open bet(s).
 - Human review queue: 0 event(s), 31 staged candidate(s).
 - Accepted failures: 70; lessons recorded: 70; missing lesson memos: 0.
 - Posture: evidence needs human review before thesis confidence should increase.

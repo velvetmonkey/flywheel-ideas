@@ -27,7 +27,7 @@ created: '2026-05-08T16:38:07.757Z'
 - **AI, R&D, and technology**: 76 observation(s), latest 2026-02-04, assumption asm-YZqMAAdx
 - **Competition**: 71 observation(s), latest 2026-02-04, assumption asm-6USJ5rRZ
 - **Customer and platform dependency**: 71 observation(s), latest 2026-02-04, assumption asm-M8Xsoi1Q
-- **Liquidity**: 68 observation(s), latest 2026-02-04, assumption asm-E1S8hNjw
+- **[[liquidity]]**: 68 observation(s), latest 2026-02-04, assumption asm-E1S8hNjw
 - **Cloud and data center capacity**: 66 observation(s), latest 2026-02-04, assumption asm-Vc3UnXrd
 
 ## Flywheel Audit

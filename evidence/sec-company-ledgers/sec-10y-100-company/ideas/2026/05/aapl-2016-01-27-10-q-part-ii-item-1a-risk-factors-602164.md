@@ -52,7 +52,7 @@ In the
 
 event of financial turmoil affecting the banking system and financial markets, additional consolidation of the financial services industry, or significant financial service institution failures, there could be tightening in the
 
-credit markets, low liquidity and extreme volatility in fixed income, credit, currency and equity markets. This could have a number of effects on the Companys business, including the insolvency or financial instability of
+credit markets, low [[liquidity]] and extreme volatility in fixed income, credit, currency and equity markets. This could have a number of effects on the Companys business, including the insolvency or financial instability of
 
 outsourcing partners or suppliers or their inability to obtain credit to finance development and/or manufacture products resulting in product delays; inability of customers, including channel partners, to obtain credit to finance purchases
 
@@ -96,7 +96,7 @@ markets related third-party digital content and applications. The Company faces 
 
 software and digital content supplier relationships; and the Company has a minority market share in the global smartphone market. Additionally, the Company faces significant price competition as competitors reduce their selling prices and attempt to
 
-imitate the Companys product features and applications within their own products or, alternatively, collaborate with each other to offer solutions that are more competitive than those they currently offer. The Company competes with business
+imitate the Companys product [[features]] and applications within their own products or, alternatively, collaborate with each other to offer solutions that are more competitive than those they currently offer. The Company competes with business
 
 models that provide content to users for free. The Company also competes with illegitimate means to obtain third-party digital content and applications. Some of the Companys competitors have greater experience, product breadth and distribution
 

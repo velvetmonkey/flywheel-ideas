@@ -50,9 +50,9 @@ Trademarks and service marks in this report are the registered property of, or l
 
 Table of Contents
 
-PART I – FINANCIAL INFORMATION
+PART I – [[financials|FINANCIAL]] INFORMATION
 
-Item 1. Financial Statements.
+Item 1. [[financials|Financial]] Statements.
 
 Philip Morris International Inc. and Subsidiaries
 
@@ -454,7 +454,7 @@ Leaf tobacco
 
 1,942
 
-Other raw materials
+Other raw [[materials]]
 
 2,162
 
@@ -1650,4 +1650,4 @@ Smoke-free products (also referred to herein as "SFPs") is the term PMI uses to 
 
 Basis of Presentation
 
-The interim condensed consolidated financial statements of PMI are unaudited. These interim condensed consolidated financial statements have been prepared in conformity with accounting principles generally accepted in the United States of America ("U.S. GAAP") and such principles are applied on a consistent basis. Certain information and footnote disclosures normally included in annual financial statements prepared in accordance with U.S.GAAP have been omitted. It is the opinion of PMI's management that all adjustments necessary for a fair statement of the interim results presented have been reflected therein. All such adjustments were of a normal recurring nature. Net revenues and net earnings attributable to PMI for any interim period are not necessarily indicative of results that may be expected for the entire year.
+The interim condensed consolidated financial statements of PMI are unaudited. These interim condensed consolidated financial statements have been prepared in conformity with accounting principles generally accepted in the United States of America ("U.S. GAAP") and such principles are applied on a consistent basis. Certain information and footnote disclosures normally included in annual financial statements prepared in accordance with U.S.GAAP have been omitted. It is the opinion of PMI's management that all adjustments necessary for a fair statement of the interim results presented have been reflected therein. All such adjustments were of a normal recurring nature. Net revenues and net earnings attributable to PMI for any interim period are not necessarily indicative of results that may be expected fo

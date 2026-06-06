@@ -114,7 +114,7 @@ $
 
 •
 
-Total revenues were $55.3 billion, an increase of 34% year over year, primarily driven by an increase in Google Services segment revenues of $13.0 billion or 34% and an increase in Google Cloud segment
+Total revenues were $55.3 billion, an increase of 34% year over year, primarily driven by an increase in Google Services segment revenues of $13.0 billion or 34% and an increase in [[googl|Google]] Cloud segment
 
 29
 
@@ -324,7 +324,7 @@ Google Network
 
 Google Network revenues increased $1,577 million from the three months ended March 31, 2020 to the three months ended March 31, 2021. The growth was primarily driven by strength in AdMob and Google Ad Manager. The adverse effect of COVID-19 on prior period revenues also contributed to the year-over-year increase.
 
-Use of Monetization Metrics
+Use of Monetization [[metrics]]
 
 Paid clicks for our Google Search & other properties represent engagement by users and include clicks on advertisements by end-users on Google search properties and other owned and operated properties including Gmail, Google Maps, and Google Play. Historically, we included certain viewed YouTube engagement ads and the related revenues in our paid clicks and cost-per-click monetization metrics. Over time, advertising on YouTube has expanded to multiple advertising formats and the type of viewed engagement ads historically included in paid clicks and cost-per-click metrics have increasingly covered a smaller portion of YouTube advertising revenues. As a result, beginning in the fourth quarter of 2020, we removed these ads and the related revenues from the paid clicks and cost-per-click metrics. The revised metrics presented below provide a better understanding of monetization trends on the properties included within Google Search & other, as they now more closely correlate with the related changes in revenues.
 

@@ -40,9 +40,9 @@ Trademarks and service marks in this report are the registered property of, or l
 
 Table of Contents
 
-PART I – FINANCIAL INFORMATION
+PART I – [[financials|FINANCIAL]] INFORMATION
 
-Item 1. Financial Statements.
+Item 1. [[financials|Financial]] Statements.
 
 Philip Morris International Inc. and Subsidiaries
 
@@ -398,7 +398,7 @@ Leaf tobacco
 
 2,063
 
-Other raw materials
+Other raw [[materials]]
 
 1,719
 
@@ -1488,7 +1488,7 @@ Basis of Presentation
 
 The interim condensed consolidated financial statements of PMI are unaudited. These interim condensed consolidated financial statements have been prepared in conformity with accounting principles generally accepted in the United States of America ("U.S. GAAP") and such principles are applied on a consistent basis. It is the opinion of PMI's management that all adjustments necessary for a fair statement of the interim results presented have been reflected therein. All such adjustments were of a normal recurring nature. Net revenues and net earnings attributable to PMI for any interim period are not necessarily indicative of results that may be expected for the entire year.
 
-Certain prior years' amounts have been reclassified to conform with the current year's presentation. The changes did not have a material impact on PMI's consolidated financial position, results of operations or cash flows in any of the periods presented.
+Certain prior years' amounts have been reclassified to conform with the current year's presentation. The changes did not have a [[materials|material]] impact on PMI's consolidated financial position, results of operations or cash flows in any of the periods presented.
 
 These statements should be read in conjunction with the audited consolidated financial statements and related notes, which appear in PMI's Annual Report on Form 10-K for the year ended December 31, 2020.
 

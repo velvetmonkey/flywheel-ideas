@@ -1088,7 +1088,7 @@ and $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,456
 
@@ -2044,4 +2044,4 @@ When used in this report, the terms "we," "us," "our," "PepsiCo" and the "Compan
 
 The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with U.S. Generally Accepted Accounting Principles (GAAP) for interim financial information and with the rules and regulations for reporting the Quarterly Report on Form 10-Q (Form 10-Q). Accordingly, they do not include all of the information and footnotes required by GAAP for complete financial statements. The condensed consolidated balance sheet at December 31, 2022 has been derived from the audited consolidated financial statements at that date, but does not include all of the information and footnotes required by GAAP for complete financial statements. These financial statements have been prepared on a basis that is substantially consistent with the accounting principles applied in our Annual Report on Form 10-K for the fiscal year ended December 31, 2022 (2022 Form 10-K). This report should be read in conjunction with our 2022 Form 10-K. In our opinion, these financial statements include all normal and recurring adjustments necessary for a fair presentation. The results for the 12 and 36 weeks ended September 9, 2023 are not necessarily indicative of the results expected for any future period or the full year.
 
-Raw materials, direct labor and plant overhead, as well as purchasing and receiving costs, costs directly related to production planning, inspection costs and raw materials handling facilities, are included in cost of sales. The costs of moving, storing and delivering finished product, including merchandising activities, are included in selling, general and administrative expenses.
+Raw [[materials]], direct labor and plant overhead, as well as purchasing and receiving costs, costs directly related to production planning, inspection costs and raw materials handling facilities, are included in cost of sales. The costs of moving, storing and delivering finished product, including merchandising activities, are included in selling, general and administrative expenses.

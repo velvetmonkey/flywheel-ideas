@@ -42,7 +42,7 @@ The demand for our products depends in part on the market conditions in the indu
 
 •
 
-The success of our business depends on our ability to introduce products on a timely basis with features and performance levels that provide value to our customers while supporting significant industry transitions.
+The success of our business depends on our ability to introduce products on a timely basis with [[features]] and performance levels that provide value to our customers while supporting significant industry transitions.
 
 •
 
@@ -72,7 +72,7 @@ We rely on third parties to manufacture our products, and if they are unable to 
 
 •
 
-Essential equipment, materials, substrates or manufacturing processes may not be available to us.
+Essential equipment, [[materials]], substrates or manufacturing processes may not be available to us.
 
 •
 

@@ -12,7 +12,7 @@ created: '2026-05-08T16:38:07.997Z'
 ---
 # Cybersecurity and privacy sec-10y-100-company
 
-- Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, VZ, WBD, WMT
+- Companies: [[aapl]], ABNB, AMD, [[amzn]], AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, [[googl]], HD, INTC, KO, LOW, MAR, MCD, META, MO, [[msft]], MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, [[tsla]], VZ, WBD, WMT
 - Observations: 844
 - Latest seen: 2026-05-01
 

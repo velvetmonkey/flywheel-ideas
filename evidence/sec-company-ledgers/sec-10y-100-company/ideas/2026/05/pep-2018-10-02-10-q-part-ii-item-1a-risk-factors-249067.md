@@ -868,7 +868,7 @@ Accounts and notes receivable, less allowance: 9/18 - $120 and 12/17 - $129
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 1,401
 

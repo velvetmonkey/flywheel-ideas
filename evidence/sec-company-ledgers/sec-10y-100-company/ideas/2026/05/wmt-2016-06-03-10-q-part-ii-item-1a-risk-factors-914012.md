@@ -1296,7 +1296,7 @@ January 31, 2016
 
 Inventories
 
-The Company values inventories at the lower of cost or market as determined primarily by the retail inventory method of accounting, using the last-in, first-out ("LIFO") method for substantially all of the Walmart U.S. segment's inventories. The inventory at the Walmart International segment is valued primarily by the retail inventory method of accounting, using the first-in, first-out ("FIFO") method. The retail inventory method of accounting results in inventory being valued at the lower of cost or market, since permanent markdowns are immediately recorded as a reduction of the retail value of inventory. The inventory at the Sam's Club segment is valued based on the weighted-average cost using the LIFO method. At
+The Company values inventories at the lower of cost or market as determined primarily by the retail inventory method of accounting, using the last-in, first-out ("LIFO") method for substantially all of the Walmart U.S. segment's inventories. The inventory at the Walmart International segment is valued primarily by the retail inventory method of accounting, using the first-in, first-out ("FIFO") method. The retail inventory method of accounting results in inventory being valued at the lower of cost or market, since permanent markdowns are immediately recorded as a reduction of the retail value of inventory. The inventory at the [[Sam]]'s Club segment is valued based on the weighted-average cost using the LIFO method. At
 
 April 30, 2016
 

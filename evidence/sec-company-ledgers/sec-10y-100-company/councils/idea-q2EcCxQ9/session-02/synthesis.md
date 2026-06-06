@@ -55,7 +55,7 @@ Net: the project died either because it couldn’t ship a robust pipeline (britt
 
 ### Growth Optimist (codex)
 
-By May 4, 2027, this idea failed because we implicitly assumed that “starting with one great MD&A” could bootstrap a durable product wedge. The NVDA FY2017 Q1 MD&A is rich, readable, and has real narrative momentum (Gaming up, Datacenter up 63%, Automotive up 47%), so it’s easy to mistake “compelling text” for “repeatable decision utility.” Twelve months later, the market proved that a single issuer + single quarter is a magnet for interesting anecdotes, not a system that reliably changes outcomes.
+By May 4, 2027, this idea failed because we implicitly assumed that “starting with one great MD&A” could bootstrap a durable product wedge. The [[nvda]] FY2017 Q1 MD&A is rich, readable, and has real narrative momentum (Gaming up, Datacenter up 63%, Automotive up 47%), so it’s easy to mistake “compelling text” for “repeatable decision utility.” Twelve months later, the market proved that a single issuer + single quarter is a magnet for interesting anecdotes, not a system that reliably changes outcomes.
 
 Working backwards, the collapse looks like a funnel problem: lots of initial curiosity, low durable pull. Users asked, “So what do I do differently tomorrow?”—and we couldn’t answer with a crisp, testable action loop. Without cross-quarter comparability, peer baselines, and explicit mapping from claims to measurable KPIs (guidance deltas, segment revenue trajectories, margin drivers), the product read like a well-written briefing, not a tool. The optimistic upside (MD&A is high-signal when structured) remained true, but we didn’t convert it into a scalable workflow.
 

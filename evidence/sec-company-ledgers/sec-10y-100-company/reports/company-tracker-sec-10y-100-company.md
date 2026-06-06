@@ -1471,7 +1471,7 @@ No dependent ideas are currently flagged by accepted refutations.
 
 ## Observation Evidence Examples
 
-- **GOOGL / AI, R&D, and technology** (2016-02-11, item-1a)
+- **[[googl]] / AI, R&D, and technology** (2016-02-11, item-1a)
   - Source: sec-company://0001652044/0001652044-16-000012#item-1a:theme:ai-rd-technology:assumption
   - Our current and potential domestic and international competitors range from large and established companies to emerging start-ups. Established companies have longer operating histories and more established relationships with customers and users, and they can use their experiences and resources in wa
 - **KO / Demand** (2016-02-25, item-1a)
@@ -1480,7 +1480,7 @@ No dependent ideas are currently flagged by accepted refutations.
 - **PEP / Demand** (2016-02-11, item-1a)
   - Source: sec-company://0000077476/0000077476-16-000066#item-1a:theme:demand:assumption
   - Demand for our products may be adversely affected by changes in consumer preferences or any inability on our part to innovate or market our products effectively, and any significant reduction in demand could adversely affect our business, financial condition or results of operations.
-- **AAPL / Demand** (2016-01-27, part-i-item-2)
+- **[[aapl]] / Demand** (2016-01-27, part-i-item-2)
   - Source: sec-company://0000320193/0001193125-16-439878#part-i-item-2:theme:demand:assumption
   - , a portfolio of consumer and professional software applications, iOS, OS X
 - **VZ / Demand** (2016-02-23, item-1a)
@@ -1813,7 +1813,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **AMZN / Macro and foreign exchange**: first 2016-01-29, latest 2026-04-30, assumption asm-B5T3mVMZ
 - **AMZN / Regulation and legal**: first 2016-01-29, latest 2026-04-30, assumption asm-KNZTaZZZ
 - **AMZN / Supply chain**: first 2016-01-29, latest 2026-04-30, assumption asm-p9bqfJFt
-- **NVDA / AI, R&D, and technology**: first 2016-03-17, latest 2026-02-25, assumption asm-GDaMBKx5
+- **[[nvda]] / AI, R&D, and technology**: first 2016-03-17, latest 2026-02-25, assumption asm-GDaMBKx5
 - **NVDA / Cloud and data center capacity**: first 2016-03-17, latest 2026-02-25, assumption asm-z6FaBvWf
 - **NVDA / Competition**: first 2016-03-17, latest 2026-02-25, assumption asm-SLGXP9yJ
 - **NVDA / Customer and platform dependency**: first 2016-03-17, latest 2026-02-25, assumption asm-tF3gKQpt
@@ -1885,7 +1885,7 @@ These candidates are staged for human review. Applying them requires company.app
 - **TMUS / Macro and foreign exchange**: first 2016-02-17, latest 2026-02-11, assumption asm-ji8XFodt
 - **TMUS / Regulation and legal**: first 2016-02-17, latest 2026-04-28, assumption asm-bebTqrbN
 - **TMUS / Supply chain**: first 2016-02-17, latest 2026-02-11, assumption asm-uDnUFn7W
-- **TSLA / AI, R&D, and technology**: first 2016-02-24, latest 2026-04-23, assumption asm-mvpfdpYB
+- **[[tsla]] / AI, R&D, and technology**: first 2016-02-24, latest 2026-04-23, assumption asm-mvpfdpYB
 - **TSLA / Cloud and data center capacity**: first 2016-02-24, latest 2026-04-23, assumption asm-xMkZ5VjM
 - **TSLA / Competition**: first 2016-02-24, latest 2026-04-23, assumption asm-FAwMrAbv
 - **TSLA / Customer and platform dependency**: first 2019-07-29, latest 2026-01-29, assumption asm-jf7ekqir

@@ -22,7 +22,7 @@ created: '2026-05-08T16:38:07.793Z'
 ## Top Themes
 
 - **Demand**: 80 observation(s), latest 2026-03-13, assumption asm-cvCS8mqh
-- **Liquidity**: 77 observation(s), latest 2026-03-13, assumption asm-TdCfCYWy
+- **[[liquidity]]**: 77 observation(s), latest 2026-03-13, assumption asm-TdCfCYWy
 - **Supply chain**: 65 observation(s), latest 2026-03-13, assumption asm-RQqF2iAr
 - **Competition**: 55 observation(s), latest 2026-03-13, assumption asm-tkJE9ARS
 - **Macro and foreign exchange**: 55 observation(s), latest 2026-03-13, assumption asm-CmkdeW2a

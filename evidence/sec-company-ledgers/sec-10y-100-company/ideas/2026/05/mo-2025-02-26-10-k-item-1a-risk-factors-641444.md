@@ -84,7 +84,7 @@ We have growth strategies involving innovative products that may have reduced he
 
 on!
 
-and NJOY products once regulatory authorizations are received. If the outcome of any legal proceedings or investigations involving NJOY prevent us from, or we are otherwise unsuccessful in, executing these strategies, there could be a material negative impact on our business and our ability to achieve our Vision. For example, in January 2025, in a patent lawsuit adjudicated before the U.S. International Trade Commission ("ITC"), the ITC imposed bans on the importation of
+and NJOY products once regulatory authorizations are received. If the [[outcome]] of any legal proceedings or investigations involving NJOY prevent us from, or we are otherwise unsuccessful in, executing these strategies, there could be a material negative impact on our business and our ability to achieve our Vision. For example, in January 2025, in a patent lawsuit adjudicated before the U.S. International Trade Commission ("ITC"), the ITC imposed bans on the importation of
 
 NJOY ACE
 

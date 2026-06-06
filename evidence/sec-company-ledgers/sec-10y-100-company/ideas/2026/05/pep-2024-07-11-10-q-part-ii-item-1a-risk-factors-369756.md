@@ -1012,7 +1012,7 @@ and $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,635
 
@@ -1964,4 +1964,4 @@ While our financial results in the United States and Canada (North America) are 
 
 June 15, 2024 and June 17, 2023, and the months of January through May are reflected in our results for the 24 weeks ended June 15, 2024 and June 17, 2023.
 
-The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from volatile geopolitical conditions and the high interest rate and inflationary cost environment has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and outcomes could differ from those estimates.
+The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from volatile geopolitical conditions and the high interest rate and inflationary cost environment has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and [[outcome|outcomes]] could differ from those estimates.

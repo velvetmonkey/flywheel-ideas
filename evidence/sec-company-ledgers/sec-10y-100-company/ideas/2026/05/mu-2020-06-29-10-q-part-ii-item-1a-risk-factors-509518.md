@@ -36,7 +36,7 @@ increased costs resulting from our efforts to mitigate the impact of COVID-19 th
 
 ◦
 
-increased costs for, or unavailability of, transportation, raw materials, or other inputs necessary for the operation of our business;
+increased costs for, or unavailability of, transportation, raw [[materials]], or other inputs necessary for the operation of our business;
 
 ◦
 
@@ -128,7 +128,7 @@ Beginning in 2020, revenue and units for MCPs and SSDs, which contain both DRAM 
 
 We may be unable to maintain or improve gross margins.
 
-Our gross margins are dependent, in part, upon continuing decreases in per gigabit manufacturing costs achieved through improvements in our manufacturing processes and product designs, including, but not limited to, process line-width, additional 3D memory layers, additional bits per cell (i.e., cell levels), architecture, number of mask layers, number of fabrication steps, and yield. In future periods, we may be unable to reduce our per gigabit manufacturing costs at sufficient levels to maintain or improve gross margins. Factors that may limit our ability to maintain or reduce costs include, but are not limited to, strategic product diversification decisions affecting product mix, the increasing complexity of manufacturing processes, difficulties in transitioning to smaller line-width process technologies, 3D memory layers, NAND cell levels, transitioning to replacement gate technology for NAND, process complexity including number of mask layers and fabrication steps, manufacturing yield, technological barriers, changes in process technologies, and new products that may require relatively larger die sizes.
+Our gross margins are dependent, in part, upon continuing decreases in per gigabit manufacturing costs achieved through improvements in our manufacturing processes and product designs, including, but not limited to, process line-width, additional 3D memory layers, additional bits per cell (i.e., cell levels), [[architecture]], number of mask layers, number of fabrication steps, and yield. In future periods, we may be unable to reduce our per gigabit manufacturing costs at sufficient levels to maintain or improve gross margins. Factors that may limit our ability to maintain or reduce costs include, but are not limited to, strategic product diversification decisions affecting product mix, the increasing complexity of manufacturing processes, difficulties in transitioning to smaller line-width process technologies, 3D memory layers, NAND cell levels, transitioning to replacement gate technology for NAND, process complexity including number of mask layers and fabrication steps, manufacturing yield, technological barriers, changes in process technologies, and new products that may require relatively larger die sizes.
 
 Many factors may result in a reduction of our output or a delay in ramping production, which could lead to underutilization of our production assets. These factors may include, among others, a weak demand environment, industry oversupply, inventory surpluses, our ramp of emerging technologies in dedicated manufacturing capacity, declining selling prices, and changes in supply agreements. A significant portion of our manufacturing costs are fixed and do not vary proportionally with changes in production output. As a result, lower utilization and increases in our per gigabit manufacturing costs may adversely affect our gross margins, business, results of operations, or financial condition.
 

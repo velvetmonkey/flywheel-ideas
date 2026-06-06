@@ -118,7 +118,7 @@ the extent to which use of our services is affected by spyware, viruses, phishin
 
 •
 
-disruptions from natural or man-made disasters, extreme weather, geopolitical events and security issues (including terrorist attacks and armed hostilities), labor or trade disputes, and similar events.
+disruptions from natural or man-made disasters, extreme weather, geopolitical events and security issues (including terrorist attacks and armed hostilities), labor or trade [[disputes]], and similar events.
 
 Our International Operations Expose Us to a Number of Risks
 

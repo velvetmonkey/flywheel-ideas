@@ -27,7 +27,7 @@ created: '2026-05-08T16:38:07.839Z'
 - **Regulation and legal**: 83 observation(s), latest 2026-04-29, assumption asm-EqZEvCR8
 - **Supply chain**: 83 observation(s), latest 2026-04-29, assumption asm-rVK5kqKU
 - **Customer and platform dependency**: 73 observation(s), latest 2026-04-29, assumption asm-pY64YDwZ
-- **Liquidity**: 64 observation(s), latest 2026-04-29, assumption asm-pvTxdvNS
+- **[[liquidity]]**: 64 observation(s), latest 2026-04-29, assumption asm-pvTxdvNS
 - **Macro and foreign exchange**: 61 observation(s), latest 2026-04-29, assumption asm-jVgFUFR3
 
 ## Flywheel Audit

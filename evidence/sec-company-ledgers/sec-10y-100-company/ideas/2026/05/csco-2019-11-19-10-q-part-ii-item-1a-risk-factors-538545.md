@@ -74,7 +74,7 @@ The ability of our customers, channel partners, contract manufacturers and suppl
 
 •
 
-Actual events, circumstances, outcomes, and amounts differing from judgments, assumptions, and estimates used in determining the values of certain assets (including the amounts of related valuation allowances), liabilities, and other items reflected in our Consolidated Financial Statements
+Actual events, circumstances, [[outcome|outcomes]], and amounts differing from judgments, assumptions, and estimates used in determining the values of certain assets (including the amounts of related valuation allowances), liabilities, and other items reflected in our Consolidated Financial Statements
 
 •
 

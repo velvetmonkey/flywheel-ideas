@@ -12,7 +12,7 @@ created: '2026-05-08T16:38:07.966Z'
 ---
 # Competition sec-10y-100-company
 
-- Companies: AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
+- Companies: [[aapl]], ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, [[googl]], HD, INTC, KO, LOW, MAR, MCD, META, MO, [[msft]], MU, [[nflx]], NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, [[tsla]], VZ, WBD, WMT
 - Observations: 1713
 - Latest seen: 2026-05-01
 

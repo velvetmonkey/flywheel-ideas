@@ -23,7 +23,7 @@ created: '2026-05-08T16:38:07.858Z'
 
 - **Demand**: 84 observation(s), latest 2026-04-30, assumption asm-vyQBE4kp
 - **Inventory and channel**: 84 observation(s), latest 2026-04-30, assumption asm-YKKxzUbi
-- **Liquidity**: 84 observation(s), latest 2026-04-30, assumption asm-LPvDrzY9
+- **[[liquidity]]**: 84 observation(s), latest 2026-04-30, assumption asm-LPvDrzY9
 - **Regulation and legal**: 84 observation(s), latest 2026-04-30, assumption asm-KNZTaZZZ
 - **Supply chain**: 84 observation(s), latest 2026-04-30, assumption asm-p9bqfJFt
 - **Macro and foreign exchange**: 82 observation(s), latest 2026-04-30, assumption asm-B5T3mVMZ

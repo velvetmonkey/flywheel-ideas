@@ -12,7 +12,7 @@ created: '2026-05-08T16:38:07.687Z'
 ---
 # Communication Services sec-10y-100-company
 
-- Companies: CMCSA, DIS, EA, GOOGL, META, NFLX, T, TMUS, VZ, WBD
+- Companies: CMCSA, [[dis]], EA, [[googl]], [[meta]], [[nflx]], T, TMUS, VZ, [[wbd]]
 - Observations: 5374
 - Staged outcomes: 10
 

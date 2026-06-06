@@ -108,7 +108,7 @@ the loss of key management personnel or popular on-air and creative talent could
 
 •
 
-labor disputes, whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
+labor [[disputes]], whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
 
 •
 
@@ -162,7 +162,7 @@ Programming and production
 
 8,823
 
-Marketing and promotion
+Marketing and [[promotion]]
 
 2,071
 

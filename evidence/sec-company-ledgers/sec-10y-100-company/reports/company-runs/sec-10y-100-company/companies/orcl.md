@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:07.904Z'
 - Filings scanned: 41
 - Window: 2016-03-18 to 2026-03-11
 - Observations: 655
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Top Themes
 
@@ -27,7 +27,7 @@ created: '2026-05-08T16:38:07.904Z'
 - **Competition**: 80 observation(s), latest 2026-03-11, assumption asm-nwLYDwmb
 - **Regulation and legal**: 78 observation(s), latest 2026-03-11, assumption asm-Zu1asXEe
 - **Macro and foreign exchange**: 72 observation(s), latest 2026-03-11, assumption asm-BgEPBKBS
-- **Liquidity**: 69 observation(s), latest 2026-03-11, assumption asm-3sW43ezk
+- **[[liquidity]]**: 69 observation(s), latest 2026-03-11, assumption asm-3sW43ezk
 - **Customer and platform dependency**: 37 observation(s), latest 2025-06-18, assumption asm-uXtpdB2q
 
 ## Flywheel Audit

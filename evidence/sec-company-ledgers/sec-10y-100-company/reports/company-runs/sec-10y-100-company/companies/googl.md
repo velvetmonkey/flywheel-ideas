@@ -27,7 +27,7 @@ created: '2026-05-08T16:38:07.928Z'
 - **Cloud and data center capacity**: 83 observation(s), latest 2026-04-30, assumption asm-ofhsdo1p
 - **Competition**: 83 observation(s), latest 2026-04-30, assumption asm-NcDdzVnR
 - **Regulation and legal**: 83 observation(s), latest 2026-04-30, assumption asm-jVUMVYoy
-- **Liquidity**: 58 observation(s), latest 2026-04-30, assumption asm-fiiTg9bN
+- **[[liquidity]]**: 58 observation(s), latest 2026-04-30, assumption asm-fiiTg9bN
 - **Inventory and channel**: 50 observation(s), latest 2026-04-30, assumption asm-VLBeYHJ8
 
 ## Flywheel Audit

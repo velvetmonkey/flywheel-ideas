@@ -126,7 +126,7 @@ unfavorable litigation or governmental investigation results could require us to
 
 •
 
-labor disputes, whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
+labor [[disputes]], whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
 
 •
 
@@ -192,7 +192,7 @@ Programming and production
 
 19,457
 
-Marketing and promotion
+Marketing and [[promotion]]
 
 2,100
 

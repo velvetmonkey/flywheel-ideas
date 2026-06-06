@@ -34,7 +34,7 @@ our ability to retain and grow the number of Hosts and the number of available l
 
 •
 
-events beyond our control such as pandemics and other health concerns, restrictions on travel and immigration, political, social or economic instability, including international disputes, war, or terrorism, trade disputes, economic downturns, and the impact of climate change on travel including the availability of preferred destinations and the increase in the frequency and severity of weather-related events, including fires, floods, droughts, extreme temperatures and ambient temperature increases, severe weather, and other natural disasters, and the impact of other climate change on seasonal destinations;
+events beyond our control such as pandemics and other health concerns, restrictions on travel and immigration, political, social or economic instability, including international [[disputes]], war, or terrorism, trade disputes, economic downturns, and the impact of climate change on travel including the availability of preferred destinations and the increase in the frequency and severity of weather-related events, including fires, floods, droughts, extreme temperatures and ambient temperature increases, severe weather, and other natural disasters, and the impact of other climate change on seasonal destinations;
 
 •
 
@@ -128,7 +128,7 @@ guests not receiving timely and adequate community support from us;
 
 •
 
-our failure to provide new or enhanced offerings, tiers, or features that guests value;
+our failure to provide new or enhanced offerings, tiers, or [[features]] that guests value;
 
 •
 

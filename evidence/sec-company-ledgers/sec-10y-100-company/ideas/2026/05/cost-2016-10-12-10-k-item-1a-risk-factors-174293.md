@@ -18,7 +18,7 @@ We receive, retain, and transmit personal information about our members and entr
 
 '
 
-information being obtained by unauthorized persons, could adversely affect our reputation with our members and others, as well as our operations, results of operations, financial condition and liquidity, and could result in litigation against us or the imposition of penalties. In addition, a breach could require that we expend significant additional resources related to the security of information systems and could disrupt our operations.
+information being obtained by unauthorized persons, could adversely affect our reputation with our members and others, as well as our operations, results of operations, financial condition and [[liquidity]], and could result in litigation against us or the imposition of penalties. In addition, a breach could require that we expend significant additional resources related to the security of information systems and could disrupt our operations.
 
 The use of data by our business and our business associates is regulated at the national and state or local level in all of our operating countries.
 

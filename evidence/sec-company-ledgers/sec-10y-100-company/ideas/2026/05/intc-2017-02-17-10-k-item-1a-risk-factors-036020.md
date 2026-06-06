@@ -70,7 +70,7 @@ If we are not able to compete effectively, our financial results will be adverse
 
 Changes in the mix of products sold may harm our financial results.
 
-Our pricing and margins vary across our products and market segments due to differences in product features or manufacturing costs. For example, our platform product offerings range from lower-priced and entry-level platforms, such as those based on Intel Quark or Intel Atom processors, to higher-end platforms based on Intel Xeon processors. If demand shifts from our higher-priced to lower-priced platforms in any of our market segments, our gross margin and revenue would decrease. In addition, when products are introduced, they tend to have higher costs because of initial development costs and lower production volumes relative to the previous product generation, which can impact gross margin.
+Our pricing and margins vary across our products and market segments due to differences in product [[features]] or manufacturing costs. For example, our platform product offerings range from lower-priced and entry-level platforms, such as those based on Intel Quark or Intel Atom processors, to higher-end platforms based on Intel Xeon processors. If demand shifts from our higher-priced to lower-priced platforms in any of our market segments, our gross margin and revenue would decrease. In addition, when products are introduced, they tend to have higher costs because of initial development costs and lower production volumes relative to the previous product generation, which can impact gross margin.
 
 We operate globally and are subject to significant risks in many jurisdictions.
 
@@ -100,7 +100,7 @@ natural disasters, public health issues, and other catastrophic events;
 
 •
 
-inefficient infrastructure and other disruptions, such as supply chain interruptions and large-scale outages or unreliable provision of services from utilities, transportation, data hosting, or telecommunications providers;
+inefficient infrastructure and other disruptions, such as supply chain interruptions and large-scale outages or unreliable provision of services from [[utilities]], transportation, data hosting, or telecommunications providers;
 
 •
 
@@ -138,7 +138,7 @@ We are potentially exposed to adverse as well as beneficial movements in currenc
 
 Catastrophic events or geopolitical conditions could have a material adverse effect on our operations and financial results.
 
-Our operations or systems could be disrupted by natural disasters; industrial accidents; geopolitical conditions; terrorist activity; public health issues; cybersecurity incidents; interruptions of service from utilities, transportation, or telecommunications providers; or other catastrophic events. Such events could make it difficult or impossible to manufacture or deliver products to our customers, receive production materials from our suppliers, or perform critical functions, which could adversely affect our revenue and require significant recovery time and expenditures to resume operations. While we maintain business recovery plans that are intended to enable us to recover from natural disasters or other events that can be disruptive to our business, some of our systems are not fully redundant and we cannot be sure that our plans will fully protect us from all such disruptions.
+Our operations or systems could be disrupted by natural disasters; industrial accidents; geopolitical conditions; terrorist activity; public health issues; cybersecurity incidents; interruptions of service from utilities, transportation, or telecommunications providers; or other catastrophic events. Such events could make it difficult or impossible to manufacture or deliver products to our customers, receive production [[materials]] from our suppliers, or perform critical functions, which could adversely affect our revenue and require significant recovery time and expenditures to resume operations. While we maintain business recovery plans that are intended to enable us to recover from natural disasters or other events that can be disruptive to our business, some of our systems are not fully redundant and we cannot be sure that our plans will fully protect us from all such disruptions.
 
 We maintain a program of insurance coverage for a variety of property, casualty, and other risks. The types and amounts of insurance we obtain vary depending on availability, cost, and decisions with respect to risk retention. Some of our policies have large deductibles and broad exclusions. In addition, one or more of our insurance providers may be unable or unwilling to pay a claim. Losses not covered by insurance may be large, which could harm our results of operations and financial condition.
 

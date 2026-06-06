@@ -8,4 +8,4 @@ declared_at: '2026-05-03T19:43:43.734Z'
 date: '2026-05-03'
 created: '2026-05-03T19:43:44.086Z'
 ---
-In the context of **ORCL disclosed liquidity risk in 10-Q 2016-03-18.**, facing **repurchases, debt repayments and other matters;**, we assume **ORCL can manage liquidity risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+In the context of **[[orcl]] disclosed [[liquidity]] risk in 10-Q 2016-03-18.**, facing **repurchases, debt repayments and other matters;**, we assume **[[orcl]] can manage [[liquidity]] risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.

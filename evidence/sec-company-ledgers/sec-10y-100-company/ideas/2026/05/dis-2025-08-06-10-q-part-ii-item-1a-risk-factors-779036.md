@@ -26,7 +26,7 @@ The operation and profitability of our businesses and demand for and consumption
 
 i
 
-ncluding tariffs and other trade and international disputes and social unrest; macroeconomic conditions, including a decline in economic activity, inflation and foreign exchange rates; and terrorist attacks. These events and others, such as fluctuations in travel and energy costs, supply chain disruptions and malware and other cyber-related attacks or intrusions or other widespread computing, telecommunications or payment processing failures, from time to time disrupt our ability to provide our products and services, raise the cost of providing our products and services and in certain instances affect
+ncluding tariffs and other trade and international [[disputes]] and social unrest; macroeconomic conditions, including a decline in economic activity, inflation and foreign exchange rates; and terrorist attacks. These events and others, such as fluctuations in travel and energy costs, supply chain disruptions and malware and other cyber-related attacks or intrusions or other widespread computing, telecommunications or payment processing failures, from time to time disrupt our ability to provide our products and services, raise the cost of providing our products and services and in certain instances affect
 
 75
 

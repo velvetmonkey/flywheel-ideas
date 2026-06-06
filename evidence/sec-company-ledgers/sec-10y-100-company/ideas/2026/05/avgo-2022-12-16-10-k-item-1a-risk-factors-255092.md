@@ -38,7 +38,7 @@ Dependence on contract manufacturing and suppliers of critical components within
 
 •
 
-We purchase a significant amount of the materials used in our products from a limited number of suppliers.
+We purchase a significant amount of the [[materials]] used in our products from a limited number of suppliers.
 
 •
 
@@ -214,7 +214,7 @@ For a more complete discussion of the material risks facing our business, see be
 
 Risks Related to Our Business
 
-Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and liquidity.
+Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and [[liquidity]].
 
 A general slowdown in the global economy, including a recession, or in a particular region or industry, an increase in trade tensions with U.S. trading partners, inflation or a tightening of the credit markets could negatively impact our business, financial condition and liquidity. Adverse global economic conditions have from time to time caused or exacerbated significant slowdowns in the industries and markets in which we operate, which have adversely affected our business and results of operations. Macroeconomic weakness and uncertainty also make it more difficult for us to accurately forecast revenue, gross margin and expenses, and may make it more difficult to raise or refinance debt. An escalation of trade tensions between the U.S. and China has resulted in trade restrictions and increased tariffs that harm our ability to participate in Chinese markets or compete effectively with Chinese companies. Sustained uncertainty about, or worsening of, current global economic conditions and further escalation of trade tensions between the U.S. and its trading partners, especially China, and possible
 

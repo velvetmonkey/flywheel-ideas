@@ -12,7 +12,7 @@ created: '2026-05-03T21:42:57.652Z'
 Filed: 2022-02-25
 Source: https://www.sec.gov/Archives/edgar/data/764180/000076418022000019/mo-20211231.htm
 
-The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Form 10-K. Any of the following risks could materially adversely affect our business, our results of operations, our cash flows, our financial position and the actual outcome of matters as to which forward-looking statements are made in this Form 10-K.
+The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Form 10-K. Any of the following risks could materially adversely affect our business, our results of operations, our cash flows, our financial position and the actual [[outcome]] of matters as to which forward-looking statements are made in this Form 10-K.
 
 We may from time to time make written or oral forward-looking statements, including earnings guidance and other statements contained in filings with the SEC, reports to security holders, press releases and investor webcasts and presentations. You can identify these forward-looking statements by use of words such as "strategy," "expects," "continues," "plans," "anticipates," "believes," "will," "estimates," "forecasts," "intends," "projects," "goals," "objectives," "guidance," "targets" and other words of similar meaning. You can also identify them by the fact that they do not relate strictly to historical or current facts.
 

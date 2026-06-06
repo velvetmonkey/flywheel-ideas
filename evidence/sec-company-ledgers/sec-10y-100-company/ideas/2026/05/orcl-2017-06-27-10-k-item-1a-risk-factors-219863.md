@@ -222,7 +222,7 @@ continued realization of gains or losses with respect to our foreign currency ex
 
 our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the
 
-final outcome of our tax related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, and our belief that our net deferred tax assets will be realized in the foreseeable future;
+final [[outcome]] of our tax related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, and our belief that our net deferred tax assets will be realized in the foreseeable future;
 
 
 

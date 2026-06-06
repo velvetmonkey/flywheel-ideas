@@ -104,9 +104,9 @@ Any substantial disruption in TSMC's supply of wafers to us, or in the other con
 
 We also depend on our contract manufacturers to timely develop new, advanced manufacturing processes, including, in the case of wafer fabrication, transitions to smaller geometry process technologies. If these new processes are not timely developed or we do not have sufficient access to them, we may be unable to maintain or increase our manufacturing efficiency to the same extent as our competitors or deliver products to our customers, which could result in loss of revenue opportunities and damage our relationships with our customers.
 
-We purchase a significant amount of the materials used in our products from a limited number of suppliers.
+We purchase a significant amount of the [[materials]] used in our products from a limited number of suppliers.
 
-Our manufacturing processes rely on many materials, including silicon, gallium arsenide and indium phosphide wafers, copper lead frames, precious and rare earth metals, mold compound, ceramic packages and various chemicals and gases. We purchase a significant portion of our semiconductor materials, components and finished goods used in our products from a few materials providers, some of which are single source suppliers. During the
+Our manufacturing processes rely on many [[materials]], including silicon, gallium arsenide and indium phosphide wafers, copper lead frames, precious and rare earth metals, mold compound, ceramic packages and various chemicals and gases. We purchase a significant portion of our semiconductor materials, components and finished goods used in our products from a few materials providers, some of which are single source suppliers. During the
 
 two fiscal quarters
 

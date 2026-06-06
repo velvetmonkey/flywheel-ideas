@@ -16,7 +16,7 @@ created: '2026-05-04T12:19:48.054Z'
 ---
 ## Revised stance (Pass 2)
 
-This “idea” still implicitly assumes that pulling MD&A text is, by itself, a decision-useful artifact. That’s fragile: MD&A is management-curated narrative under safe-harbor language, meant to contextualize results, not to provide a falsifiable thesis. Without an explicit decision objective (e.g., what question we’re answering and what would change our mind), the output risks becoming quote-mining that feels substantive but can’t be stress-tested. (asm-obj)
+This “idea” still implicitly assumes that pulling MD&A text is, by itself, a decision-useful artifact. That’s fragile: MD&A is management-curated narrative under safe-harbor language, meant to contextualize results, not to provide a falsifiable [[thesis]]. Without an explicit decision objective (e.g., what question we’re answering and what would change our mind), the output risks becoming quote-mining that feels substantive but can’t be stress-tested. (asm-obj)
 
 It also assumes the highlighted growth metrics are comparable and durable signals. In this excerpt, Datacenter +63% and Automotive +47% could be small-base effects, product-cycle timing (e.g., launches), mix shifts, or contract timing; treating them as structural trend proof is a classic extrapolation trap. The downside is building conviction on a single quarter’s percent changes rather than on multi-period cohorts, customer concentration, backlog/visibility, and margin/capex/working-capital implications. (asm-dur)
 

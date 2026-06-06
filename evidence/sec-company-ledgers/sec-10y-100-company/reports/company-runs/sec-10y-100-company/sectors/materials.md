@@ -14,7 +14,7 @@ created: '2026-05-08T16:38:07.742Z'
 
 - Companies: APD, CRH, CTVA, ECL, FCX, LIN, NEM, NUE, SHW, VMC
 - Observations: 0
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

@@ -42,7 +42,7 @@ the terror attacks in Paris in November 2015; Hurricane Sandy, which disrupted t
 
 Intense competition could reduce our market share and harm our financial performance.
 
-We compete with both online and traditional travel and restaurant reservation and related services. The market for the services we offer is intensely competitive, and current and new competitors can launch new services at a relatively low cost. Some of our current and potential competitors, such as Google, Apple, Alibaba, Amazon and Facebook, have access to significantly greater and more diversified resources than we do, and they may be able to leverage other aspects of their businesses (e.g., search or mobile device businesses) to enable them to compete more effectively with us. For example, Google has entered various aspects of the online travel market through its acquisition in 2011 of ITA Software, Inc., a major flight information software company, its hotel search and reservation booking business ("Book on Google") and its license of hotel-booking software from Room 77.
+We compete with both online and traditional travel and restaurant reservation and related services. The market for the services we offer is intensely competitive, and current and new competitors can launch new services at a relatively low cost. Some of our current and potential competitors, such as [[googl|Google]], Apple, Alibaba, Amazon and Facebook, have access to significantly greater and more diversified resources than we do, and they may be able to leverage other aspects of their businesses (e.g., search or mobile device businesses) to enable them to compete more effectively with us. For example, Google has entered various aspects of the online travel market through its acquisition in 2011 of ITA Software, Inc., a major flight information software company, its hotel search and reservation booking business ("Book on Google") and its license of hotel-booking software from Room 77.
 
 We currently, or may potentially in the future, compete with a variety of companies, including:
 
@@ -68,7 +68,7 @@ travel service providers such as accommodation providers, rental car companies a
 
 •
 
-online travel search and price comparison services (generally referred to as "meta-search" services), such as TripAdvisor, trivago (in which Expedia holds a majority ownership interest), Qunar (which is controlled by Ctrip), Skyscanner, HotelsCombined and Traveloka;
+online travel search and price comparison services (generally referred to as "[[meta]]-search" services), such as TripAdvisor, trivago (in which Expedia holds a majority ownership interest), Qunar (which is controlled by Ctrip), Skyscanner, HotelsCombined and Traveloka;
 
 •
 

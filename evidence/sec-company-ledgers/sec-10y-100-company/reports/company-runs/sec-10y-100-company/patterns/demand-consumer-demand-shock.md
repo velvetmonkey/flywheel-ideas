@@ -15,7 +15,7 @@ created: '2026-05-08T16:38:08.008Z'
 - Theme: Demand
 - Mechanism: Consumer or end-market demand shock
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: AMD, DIS, T, TJX, TMUS, WMT
+- Companies: AMD, [[dis]], T, TJX, TMUS, WMT
 - Observations: 408
 - Realized candidates: 4
 - Accepted lessons: 6
@@ -37,7 +37,7 @@ Demand is now connected to accepted lesson evidence through the consumer or end-
   - Lesson: Retail demand pressure becomes decision-grade when negative comparable sales create cost deleverage, not only when headline revenue declines.
   - Evidence: 1 accepted verdict(s), outcome(s) out-7F4mfxw6
   - Context: HD reported increased depreciation and amortization, including deleverage from a negative comparable sales environment.
-- **WBD / Demand**
+- **[[wbd]] / Demand**
   - Lesson: Media demand risk is decision-grade when revenue softness flows through content expense, participant payments, or impairment language rather than only audience commentary.
   - Evidence: 1 accepted verdict(s), outcome(s) out-awfUrwLp
   - Context: WBD reported a 41% decrease in theatrical product content expense tied to lower theatrical product revenue and a games-content impairment.

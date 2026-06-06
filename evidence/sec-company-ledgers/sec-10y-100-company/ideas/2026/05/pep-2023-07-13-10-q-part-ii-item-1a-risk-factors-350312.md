@@ -1070,7 +1070,7 @@ and $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,638
 

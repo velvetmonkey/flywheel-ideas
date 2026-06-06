@@ -174,7 +174,7 @@ our expectation that our monetization trends will fluctuate, which could affect 
 
 •
 
-fluctuations in our revenue growth, as well as the change in paid clicks and cost-per-click on Google properties and the change in impressions and cost-per-impression on Google Network Members' properties, and various factors contributing to such fluctuations;
+fluctuations in our revenue growth, as well as the change in paid clicks and cost-per-click on [[googl|Google]] properties and the change in impressions and cost-per-impression on Google Network Members' properties, and various factors contributing to such fluctuations;
 
 •
 

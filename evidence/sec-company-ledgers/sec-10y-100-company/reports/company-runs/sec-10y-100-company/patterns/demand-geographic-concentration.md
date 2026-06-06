@@ -15,7 +15,7 @@ created: '2026-05-08T16:38:08.042Z'
 - Theme: Demand
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Consumer Discretionary
-- Companies: MAR, WBD
+- Companies: [[mar]], WBD
 - Observations: 164
 - Realized candidates: 1
 - Accepted lessons: 6
@@ -49,7 +49,7 @@ Demand is now connected to accepted lesson evidence through the geographic conce
   - Lesson: Demand risk in telecom can be triggered by partner hardware failures; OEM recalls should be linked to revenue recognition and inventory impairment review.
   - Evidence: 1 accepted verdict(s), outcome(s) out-1UVkXkKo
   - Context: TMUS recorded no revenue associated with recalled device sales and impaired the devices to net realizable value.
-- **DIS / Demand**
+- **[[dis]] / Demand**
   - Lesson: Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.
   - Evidence: 1 accepted verdict(s), outcome(s) out-bDqnUbbv
   - Context: The filing disclosed quarterly revenues decreased 42%, or $8.5 billion, to $11.8 billion, while net income attributable to Disney decreased $6.5 billion to a $4.7 billion loss.

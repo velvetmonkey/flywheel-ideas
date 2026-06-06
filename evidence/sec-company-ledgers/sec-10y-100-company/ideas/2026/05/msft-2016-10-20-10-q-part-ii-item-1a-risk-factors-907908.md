@@ -68,7 +68,7 @@ significant business transactions, warranty or product claims, and employment pr
 
 conduct our business. The litigation and other claims are subject to inherent uncertainties and managements view of these matters may change in the future. A material adverse impact on our consolidated financial statements could occur for the
 
-period in which the effect of an unfavorable final outcome becomes probable and reasonably estimable.
+period in which the effect of an unfavorable final [[outcome]] becomes probable and reasonably estimable.
 
 We may have additional tax
 
@@ -78,7 +78,7 @@ We are subject to income taxes in the U.S. and many foreign jurisdictions. Signi
 
 there are many transactions and calculations where the ultimate tax determination is uncertain. We regularly are under audit by tax authorities in different jurisdictions. Economic and political pressures to increase tax revenue in various
 
-jurisdictions may make resolving tax disputes favorably more difficult. Although we believe our tax estimates are reasonable, the final determination of tax audits and any related litigation in the jurisdictions where we are subject to taxation
+jurisdictions may make resolving tax [[disputes]] favorably more difficult. Although we believe our tax estimates are reasonable, the final determination of tax audits and any related litigation in the jurisdictions where we are subject to taxation
 
 could be materially different from our historical income tax provisions and accruals. The results of an audit or litigation could have a material effect on our consolidated financial statements in the period or periods in which that determination is
 

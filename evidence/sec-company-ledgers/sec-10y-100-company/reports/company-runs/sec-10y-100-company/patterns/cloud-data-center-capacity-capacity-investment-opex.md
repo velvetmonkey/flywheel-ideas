@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.119Z'
 - Theme: Cloud and data center capacity
 - Mechanism: Capacity investment and operating expense drag
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: ABNB, AMD, AVGO, BKNG, CSCO, KO, LOW, MAR, MCD, MO, PLTR, PM, SBUX, VZ, WMT
+- Companies: [[abnb]], AMD, [[avgo]], BKNG, CSCO, KO, LOW, [[mar]], MCD, MO, PLTR, PM, SBUX, VZ, WMT
 - Observations: 480
 - Realized candidates: 1
 - Accepted lessons: 1

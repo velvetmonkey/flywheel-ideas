@@ -12,7 +12,7 @@ created: '2026-05-03T20:46:19.081Z'
 Filed: 2019-07-26
 Source: https://www.sec.gov/Archives/edgar/data/1283699/000128369919000109/tmus06302019form10-q.htm
 
-In addition to the other information contained in this Form 10-Q, the Risk Factors as previously disclosed in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2018, and the following risk factors, should be considered carefully in evaluating T-Mobile. Our business, financial condition, liquidity, or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
+In addition to the other information contained in this Form 10-Q, the Risk Factors as previously disclosed in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2018, and the following risk factors, should be considered carefully in evaluating T-Mobile. Our business, financial condition, [[liquidity]], or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
 
 Risks Related to the Proposed Transactions
 
@@ -44,7 +44,7 @@ The Business Combination Agreement also restricts us, without Sprint's consent, 
 
 Management and financial resources have been diverted and will continue to be diverted toward the completion of the Transactions. We have incurred, and expect to incur, significant costs, expenses and fees for professional services and other transaction costs in connection with the Transactions. These costs could adversely affect our or the combined company's financial condition and results of operations.
 
-In addition, we and our affiliates are involved in various disputes, governmental and/or regulatory inspections, investigations and proceedings and litigation matters that arise from time to time, including the antitrust litigation related to the Transactions brought by the attorneys general of thirteen states and the District of Columbia, and it is possible that an unfavorable resolution of these matters could prevent the consummation of the Transactions and/or adversely affect us and our results of operations, financial condition and cash flows and the results of operations, financial condition and cash flows of the combined company.
+In addition, we and our affiliates are involved in various [[disputes]], governmental and/or regulatory inspections, investigations and proceedings and litigation matters that arise from time to time, including the antitrust litigation related to the Transactions brought by the attorneys general of thirteen states and the District of Columbia, and it is possible that an unfavorable resolution of these matters could prevent the consummation of the Transactions and/or adversely affect us and our results of operations, financial condition and cash flows and the results of operations, financial condition and cash flows of the combined company.
 
 The Business Combination Agreement contains provisions that restrict the ability of our Board to pursue alternatives to the Transactions.
 

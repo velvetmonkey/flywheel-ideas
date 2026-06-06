@@ -16,7 +16,7 @@ In addition to the other information contained in this Form 10-Q, the risk facto
 
 December 31, 2017
 
-, and the following risk factors, should be considered carefully in evaluating T-Mobile. Our business, financial condition, liquidity, or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
+, and the following risk factors, should be considered carefully in evaluating T-Mobile. Our business, financial condition, [[liquidity]], or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
 
 Risks Related to the Proposed Transactions
 

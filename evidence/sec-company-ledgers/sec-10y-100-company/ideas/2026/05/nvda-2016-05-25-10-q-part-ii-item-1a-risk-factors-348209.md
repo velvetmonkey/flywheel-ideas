@@ -34,7 +34,7 @@ Signature
 
 WHERE YOU CAN FIND MORE INFORMATION
 
-Investors and others should note that we announce material financial information to our investors using our investor relations website, press releases, SEC filings and public conference calls and webcasts. We also use the following social media channels as a means of disclosing information about the company, our products, our planned financial and other announcements and attendance at upcoming investor and industry conferences, and other matters and for complying with our disclosure obligations under Regulation FD:
+Investors and others should note that we announce material [[financials|financial]] information to our investors using our investor relations website, press releases, SEC filings and public conference calls and webcasts. We also use the following social media channels as a means of disclosing information about the company, our products, our planned financial and other announcements and attendance at upcoming investor and [[industrials|industry]] conferences, and other matters and for complying with our disclosure obligations under Regulation FD:
 
 NVIDIA Twitter Account (
 

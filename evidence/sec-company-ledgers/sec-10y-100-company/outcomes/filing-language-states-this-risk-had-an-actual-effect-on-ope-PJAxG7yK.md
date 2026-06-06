@@ -10,7 +10,7 @@ undone_at: null
 ---
 Filing language states this risk had an actual effect on operations, results, costs, or supply.
 
-Source: sec-company://0001413329/0001413329-21-000058#part-i-item-2:theme:inventory-channel:outcome
+Source: sec-company://0001413329/0001413329-21-000058#part-i-item-2:theme:inventory-channel:[[outcome]]
 
 . On the basis of these decisions and in line with arrangements with the distributors, we recorded a pre-tax charge of $246 million in the second quarter of 2021 (representing $215 million net of income tax and
 

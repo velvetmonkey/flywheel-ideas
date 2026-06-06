@@ -9,4 +9,4 @@ date: '2026-05-03'
 created: '2026-05-03T19:17:17.616Z'
 refuted_at: "2026-05-04T14:15:16.289Z"
 ---
-In the context of **AAPL disclosed geopolitics and tariffs risk in 10-Q 2016-01-27.**, facing **Greater China**, we assume **AAPL can manage geopolitics and tariffs risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+In the context of **[[aapl]] disclosed geopolitics and tariffs risk in 10-Q 2016-01-27.**, facing **Greater China**, we assume **[[aapl]] can manage geopolitics and tariffs risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.

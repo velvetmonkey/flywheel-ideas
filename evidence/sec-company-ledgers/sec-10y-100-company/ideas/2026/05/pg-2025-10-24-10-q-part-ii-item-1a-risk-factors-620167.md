@@ -1322,7 +1322,7 @@ $
 
 (1)
 
-Certain prior period amounts within Operating Activities have been reclassified for consistency with the current period presentation. These reclassifications had no effect on the previously reported Total Operating Activities.
+Certain prior period amounts within Operating Activities have been reclassified for [[consistency]] with the current period presentation. These reclassifications had no effect on the previously reported Total Operating Activities.
 
 See accompanying Notes to Consolidated Financial Statements.
 
@@ -1342,7 +1342,7 @@ The accompanying unaudited Consolidated Financial Statements of The Procter & Ga
 
 New Accounting Pronouncements and Policies
 
-In December 2023, the Financial Accounting Standards Board (FASB) issued Accounting Standards Update (ASU) No. 2023-09, "Income Taxes: Improvements to Income Tax Disclosures". This guidance requires consistent categories and greater disaggregation of information in the rate reconciliation and disclosures of income taxes paid by jurisdiction. This amendment is effective for our fiscal year ending June 30, 2026. This guidance will require additional disclosures in the Income Tax footnote but will not have a material impact on our Consolidated Financial Statements.
+In December 2023, the Financial Accounting Standards Board (FASB) issued Accounting Standards Update (ASU) No. 2023-09, "Income Taxes: Improvements to Income Tax Disclosures". This guidance requires [[consistency|consistent]] categories and greater disaggregation of information in the rate reconciliation and disclosures of income taxes paid by jurisdiction. This amendment is effective for our fiscal year ending June 30, 2026. This guidance will require additional disclosures in the Income Tax footnote but will not have a material impact on our Consolidated Financial Statements.
 
 In November 2024, the FASB issued ASU No. 2024-03, "Income Statement—Reporting Comprehensive Income—Expense Disaggregation Disclosures: Disaggregation of Income Statement Expenses". This guidance requires disclosures about significant expense categories, including but not limited to, inventory purchases, employee compensation, depreciation, amortization and selling expenses. This amendment is effective for our fiscal year ending June 30, 2028 and our interim periods within the fiscal year ending June 30, 2029. We are currently assessing the impact of this guidance on our disclosures.
 

@@ -15,7 +15,7 @@ created: '2026-05-08T16:38:08.025Z'
 - Theme: Macro and foreign exchange
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: ABNB, AMZN, EA, KO, LOW, MAR, NFLX, ORCL, T, TJX, TSLA, VZ
+- Companies: ABNB, [[amzn]], EA, KO, LOW, MAR, [[nflx]], ORCL, T, TJX, [[tsla]], VZ
 - Observations: 741
 - Realized candidates: 2
 - Accepted lessons: 6
@@ -29,7 +29,7 @@ Macro and foreign exchange is now connected to accepted lesson evidence through 
 
 ## Accepted Failure Chains
 
-- **DIS / Macro and foreign exchange**
+- **[[dis]] / Macro and foreign exchange**
   - Lesson: Experience-business macro assumptions should track cost inflation in guest-facing merchandise, food, and beverage because demand recovery can still carry margin pressure.
   - Evidence: 1 accepted verdict(s), outcome(s) out-oGp6QiUf
   - Context: The filing disclosed cost of products increased 4% to $1.7 billion due to higher sales volumes and cost inflation at theme parks and resorts.

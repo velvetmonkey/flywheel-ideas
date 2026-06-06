@@ -82,7 +82,7 @@ $80.15
 
 (1)
 
-All transactions were made either in the open market with large financial institutions or as part of the share exchange in the Duracell transaction. The Duracell transaction was completed on February 29, 2016, and the Company received 52,477,678 shares from Berkshire Hathaway in the exchange. This table excludes shares withheld from employees to satisfy minimum tax withholding requirements on option exercises and other equity-based transactions. The Company administers cashless exercises through an independent third party and does not repurchase stock in connection with cashless exercises.
+All transactions were made either in the open market with large [[financials|financial]] institutions or as part of the share exchange in the Duracell transaction. The Duracell transaction was completed on February 29, 2016, and the Company received 52,477,678 shares from Berkshire Hathaway in the exchange. This table excludes shares withheld from employees to satisfy minimum tax withholding requirements on option exercises and other equity-based transactions. The Company administers cashless exercises through an independent third party and does not repurchase stock in connection with cashless exercises.
 
 (2)
 

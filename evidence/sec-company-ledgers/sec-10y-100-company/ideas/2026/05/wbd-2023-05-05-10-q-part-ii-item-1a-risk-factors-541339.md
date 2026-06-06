@@ -1866,7 +1866,7 @@ DESCRIPTION OF BUSINESS AND BASIS OF PRESENTATION
 
 Description of Business
 
-Warner Bros. Discovery, Inc. ("Warner Bros. Discovery", "WBD", the "Company", "we", "us" or "our") is a premier global media and entertainment company that combines the WarnerMedia Business's premium entertainment, sports and news assets with Discovery's leading non-fiction and international entertainment and sports businesses, thus offering audiences a differentiated portfolio of content, brands and franchises across television, film, streaming and gaming. Some of our iconic brands and franchises include Warner Bros. Pictures Group, Warner Bros. Television Group, DC, HBO, HBO Max, Discovery Channel, discovery+, CNN, HGTV, Food Network, TNT, TBS, TLC, OWN, Warner Bros. Games, Batman, Superman, Wonder Woman, Harry Potter, Looney Tunes, Hanna-Barbera, Game of Thrones, and The Lord of the Rings.
+Warner Bros. Discovery, Inc. ("Warner Bros. Discovery", "[[wbd]]", the "Company", "we", "us" or "our") is a premier global media and entertainment company that combines the WarnerMedia Business's premium entertainment, sports and news assets with Discovery's leading non-fiction and international entertainment and sports businesses, thus offering audiences a differentiated portfolio of content, brands and franchises across television, film, streaming and gaming. Some of our iconic brands and franchises include Warner Bros. Pictures Group, Warner Bros. Television Group, DC, HBO, HBO Max, Discovery Channel, discovery+, CNN, HGTV, Food Network, TNT, TBS, TLC, OWN, Warner Bros. Games, Batman, Superman, Wonder Woman, Harry Potter, Looney Tunes, Hanna-Barbera, Game of Thrones, and The Lord of the Rings.
 
 Merger with the WarnerMedia Business of AT&T
 

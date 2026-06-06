@@ -78,7 +78,7 @@ $140.00
 
 (1)
 
-All transactions are reported on a trade date basis and were made in the open market with large financial institutions. This table excludes shares withheld from employees to satisfy minimum tax withholding requirements on option exercises and other equity-based transactions. The Company administers cashless exercises through an independent third party and does not repurchase stock in connection with cashless exercises.
+All transactions are reported on a trade date basis and were made in the open market with large [[financials|financial]] institutions. This table excludes shares withheld from employees to satisfy minimum tax withholding requirements on option exercises and other equity-based transactions. The Company administers cashless exercises through an independent third party and does not repurchase stock in connection with cashless exercises.
 
 (2)
 
@@ -152,7 +152,7 @@ Rule 13a-14(a)/15d-14(a) Certification – Chief Executive Officer +
 
 31.2
 
-Rule 13a-14(a)/15d-14(a) Certification – Chief Financial Officer +
+Rule 13a-14(a)/15d-14(a) Certification – Chief [[financials|Financial]] Officer +
 
 31.3
 

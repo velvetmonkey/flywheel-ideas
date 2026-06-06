@@ -158,7 +158,7 @@ as well as other statements regarding our future operations, financial condition
 
 As used herein, "Alphabet," "the company," "we," "us," "our," and similar terms include Alphabet Inc. and its subsidiaries, unless the context indicates otherwise.
 
-"Alphabet," "Google," and other trademarks of ours appearing in this report are our property. We do not intend our use or display of other companies' trade names or trademarks to imply an endorsement or sponsorship of us by such companies, or any relationship with any of these companies.
+"Alphabet," "[[googl|Google]]," and other trademarks of ours appearing in this report are our property. We do not intend our use or display of other companies' trade names or trademarks to imply an endorsement or sponsorship of us by such companies, or any relationship with any of these companies.
 
 4
 

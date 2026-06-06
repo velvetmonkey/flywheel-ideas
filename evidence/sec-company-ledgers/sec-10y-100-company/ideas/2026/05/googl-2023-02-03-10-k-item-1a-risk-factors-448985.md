@@ -284,7 +284,7 @@ as well as other statements regarding our future operations, financial condition
 
 As used herein, "Alphabet," "the company," "we," "us," "our," and similar terms include Alphabet Inc. and its subsidiaries, unless the context indicates otherwise.
 
-"Alphabet," "Google," and other trademarks of ours appearing in this report are our property. We do not intend our use or display of other companies' trade names or trademarks to imply an endorsement or sponsorship of us by such companies, or any relationship with any of these companies.
+"Alphabet," "[[googl|Google]]," and other trademarks of ours appearing in this report are our property. We do not intend our use or display of other companies' trade names or trademarks to imply an endorsement or sponsorship of us by such companies, or any relationship with any of these companies.
 
 PART I
 
@@ -302,7 +302,7 @@ Access and technology for everyone
 
 The Internet is one of the world's most powerful equalizers; it propels ideas, people and businesses large and small. Our mission to organize the world's information and make it universally accessible and useful is as relevant today as it was when we were founded in 1998. Since then, we have evolved from a company that helps people find answers to a company that also helps people get things done.
 
-We are focused on building an even more helpful Google for everyone, and we aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success. Google Search helps people find information and make sense of the world in more natural and intuitive ways, with trillions of searches on Google every year. YouTube provides people with entertainment, information, and opportunities to learn something new. Google Assistant offers the best way to get things done seamlessly across different devices, providing intelligent help throughout a person's day, no matter where they are. Google Cloud helps customers solve today's business challenges, improve productivity, reduce costs, and unlock new growth engines. We are continually innovating and building new products and features that will help our users, partners, customers, and communities and have invested more than $100 billion in research and development in the last five years in support of these efforts.
+We are focused on building an even more helpful Google for everyone, and we aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success. Google Search helps people find information and make sense of the world in more natural and intuitive ways, with trillions of searches on Google every year. YouTube provides people with entertainment, information, and opportunities to learn something new. Google Assistant offers the best way to get things done seamlessly across different devices, providing intelligent help throughout a person's day, no matter where they are. Google Cloud helps customers solve today's business challenges, improve productivity, reduce costs, and unlock new growth engines. We are continually innovating and building new products and [[features]] that will help our users, partners, customers, and communities and have invested more than $100 billion in research and development in the last five years in support of these efforts.
 
 4
 

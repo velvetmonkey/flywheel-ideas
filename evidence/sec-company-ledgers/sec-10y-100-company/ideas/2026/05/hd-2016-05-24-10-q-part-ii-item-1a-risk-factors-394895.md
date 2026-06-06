@@ -782,7 +782,7 @@ January 31, 2016
 
 Business
 
-The Home Depot, Inc., together with its subsidiaries (the "Company"), is a home improvement retailer that sells a wide assortment of building materials, home improvement products and lawn and garden products and provides a number of services to do-it-yourself customers, do-it-for-me customers and professional customers. The Home Depot stores, which are full-service, warehouse-style stores averaging approximately
+The Home Depot, Inc., together with its subsidiaries (the "Company"), is a home improvement retailer that sells a wide assortment of building [[materials]], home improvement products and lawn and garden products and provides a number of services to do-it-yourself customers, do-it-for-me customers and professional customers. The Home Depot stores, which are full-service, warehouse-style stores averaging approximately
 
 104,000
 

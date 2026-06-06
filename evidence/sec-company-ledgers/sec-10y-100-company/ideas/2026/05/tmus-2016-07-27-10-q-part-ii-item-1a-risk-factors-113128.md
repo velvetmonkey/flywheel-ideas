@@ -1496,7 +1496,7 @@ In June 2016, we introduced #GetThanked, the latest of our Un-Carrier initiative
 
 •
 
-T-Mobile stock - A share of T-Mobile stock to eligible new (through December 31, 2016) or existing (as of June 6, 2016) customers. Shares issued to customers under this promotion are purchased by an independent third-party broker in the open market on behalf of eligible customers. The associated cost, which is paid by T-Mobile, is recorded as a reduction of service revenue for existing customers and as a reduction of equipment revenue for new customers in our
+T-Mobile stock - A share of T-Mobile stock to eligible new (through December 31, 2016) or existing (as of June 6, 2016) customers. Shares issued to customers under this [[promotion]] are purchased by an independent third-party broker in the open market on behalf of eligible customers. The associated cost, which is paid by T-Mobile, is recorded as a reduction of service revenue for existing customers and as a reduction of equipment revenue for new customers in our
 
 Condensed Consolidated Statements of Comprehensive Income
 

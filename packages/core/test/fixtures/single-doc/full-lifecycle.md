@@ -31,7 +31,7 @@ status: refuted
 ~~~
 
 ## Evidence log
-- 2026-04-18T14:22:00Z — NVDA Q1 FY25 filing cites $4.5B H20 inventory and purchase-obligation charge.
+- 2026-04-18T14:22:00Z — [[nvda]] Q1 FY25 filing cites $4.5B H20 inventory and purchase-obligation charge.
 - 2026-05-02T09:11:00Z — Author confirms charge is licence-restriction driven, not demand-shock driven.
 
 ## Verdict

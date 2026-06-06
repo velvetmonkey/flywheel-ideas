@@ -110,7 +110,7 @@ Pages
 
 47
 
-Liquidity and capital resources
+[[liquidity]] and capital resources
 
 Pages
 

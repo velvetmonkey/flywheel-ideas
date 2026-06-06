@@ -28,7 +28,7 @@ created: '2026-05-04T12:25:55.646Z'
 
 ### Risk Pessimist (codex)
 
-This “idea” still implicitly assumes that pulling MD&A text is, by itself, a decision-useful artifact. That’s fragile: MD&A is management-curated narrative under safe-harbor language, meant to contextualize results, not to provide a falsifiable thesis. Without an explicit decision objective (e.g., what question we’re answering and what would change our mind), the output risks becoming quote-mining that feels substantive but can’t be stress-tested. (asm-obj)
+This “idea” still implicitly assumes that pulling MD&A text is, by itself, a decision-useful artifact. That’s fragile: MD&A is management-curated narrative under safe-harbor language, meant to contextualize results, not to provide a falsifiable [[thesis]]. Without an explicit decision objective (e.g., what question we’re answering and what would change our mind), the output risks becoming quote-mining that feels substantive but can’t be stress-tested. (asm-obj)
 
 It also assumes the highlighted growth metrics are comparable and durable signals. In this excerpt, Datacenter +63% and Automotive +47% could be small-base effects, product-cycle timing (e.g., launches), mix shifts, or contract timing; treating them as structural trend proof is a classic extrapolation trap. The downside is building conviction on a single quarter’s percent changes rather than on multi-period cohorts, customer concentration, backlog/visibility, and margin/capex/working-capital implications. (asm-dur)
 
@@ -138,7 +138,7 @@ This foundational strength is further amplified by significant growth in Gaming,
 - Confidence rationale: The data overwhelmingly supports a strong growth narrative, but the inherent volatility of the tech sector, rapid pace of innovation, and competitive landscape prevent a perfect score. The explicit mention of 'risks, uncertainties and other factors' also warrants a slight reduction in absolute certainty.
 
 **Evidence:**
-- "Revenue grew 13% for the first quarter of fiscal year 2017 to $1.30 billion." — Document: NVDA 2016-05-25 10-Q Part I Item 2 MD&A, page 25
+- "Revenue grew 13% for the first quarter of fiscal year 2017 to $1.30 billion." — Document: [[nvda]] 2016-05-25 10-Q Part I Item 2 MD&A, page 25
 - "Net income for the first quarter of fiscal year 2017 was $196 million, up 46% from a year earlier." — Document: NVDA 2016-05-25 10-Q Part I Item 2 MD&A, page 26
 - "Datacenter revenue, including Tesla and NVIDIA GRID, was $143 million, up 63% from a year earlier, reflecting strong demand for GPU acceleration related to deep learning." — Document: NVDA 2016-05-25 10-Q Part I Item 2 MD&A, page 25
 - "We intend to return approximately $1.00 billion to shareholders through share repurchases and quarterly cash dividends." — Document: NVDA 2016-05-25 10-Q Part I Item 2 MD&A, page 26

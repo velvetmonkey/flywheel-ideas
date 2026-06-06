@@ -15,7 +15,7 @@ created: '2026-05-08T16:38:08.056Z'
 - Theme: Liquidity
 - Mechanism: Interest, credit, or liquidity stress
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: ABNB, COST, KO, MAR, MU, NFLX, ORCL, PEP, PLTR, T, TMUS, WBD, WMT
+- Companies: ABNB, COST, KO, [[mar]], MU, [[nflx]], ORCL, PEP, PLTR, T, TMUS, WBD, WMT
 - Observations: 925
 - Realized candidates: 0
 - Accepted lessons: 6
@@ -29,7 +29,7 @@ Liquidity is now connected to accepted lesson evidence through the interest, cre
 
 ## Accepted Failure Chains
 
-- **MSFT / Liquidity**
+- **[[msft]] / Liquidity**
   - Lesson: Liquidity and credit assumptions should watch bad debt expense as an early signal of customer payment stress, even inside otherwise growing enterprise businesses.
   - Evidence: 1 accepted verdict(s), outcome(s) out-nCkT2qHA
   - Context: MSFT reported higher sales and marketing expense partly due to increased bad debt expense.
@@ -50,7 +50,7 @@ Liquidity is now connected to accepted lesson evidence through the interest, cre
   - Evidence: 1 accepted verdict(s), outcome(s) out-nzwXFuEc
   - Context: Lowe's disclosed a $530M non-cash impairment charge associated with exiting the Australian home improvement market.
 - **PM / Liquidity**
-  - Lesson: Legal/liquidity risks become falsified when filings move from exposure language to probable adverse outcomes with quantified P&L and EPS effects.
+  - Lesson: Legal/liquidity risks become falsified when filings move from exposure language to probable adverse [[outcome|outcomes]] with quantified P&L and EPS effects.
   - Evidence: 1 accepted verdict(s), outcome(s) out-VEELu9Yp
   - Context: PM recorded a $204M non-cash pre-tax charge after concluding an adverse outcome was probable, with a stated $0.11 diluted EPS impact.
 

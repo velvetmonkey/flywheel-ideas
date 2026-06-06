@@ -34,7 +34,7 @@ Increases in our benefit plans' costs, including increases due to adverse change
 
 ·
 
-The final outcome of FCC and other federal or state agency proceedings (including judicial review, if any, of such proceedings) involving issues that are important to our business, including, without limitation, intercarrier compensation, interconnection obligations, pending Notices of Apparent Liability, the transition from legacy technologies to IP-based infrastructure including the withdrawal of legacy TDM-based services, universal service, broadband deployment, E911 services, competition policy, net neutrality, including the FCC's order reclassifying broadband as Title II services subject to much more fulsome regulation, unbundled network elements and other wholesale obligations, multi-channel video programming distributor services and equipment, availability of new spectrum from the FCC on fair and balanced terms, and wireless and satellite license awards and renewals.
+The final [[outcome]] of FCC and other federal or state agency proceedings (including judicial review, if any, of such proceedings) involving issues that are important to our business, including, without limitation, intercarrier compensation, interconnection obligations, pending Notices of Apparent Liability, the transition from legacy technologies to IP-based infrastructure including the withdrawal of legacy TDM-based services, universal service, broadband deployment, E911 services, competition policy, net neutrality, including the FCC's order reclassifying broadband as Title II services subject to much more fulsome regulation, unbundled network elements and other wholesale obligations, multi-channel video programming distributor services and equipment, availability of new spectrum from the FCC on fair and balanced terms, and wireless and satellite license awards and renewals.
 
 ·
 
@@ -94,7 +94,7 @@ The issuance by the Financial Accounting Standards Board or other accounting ove
 
 ·
 
-The issuance by the Internal Revenue Service and/or state or foreign tax authorities of new tax regulations or changes to existing standards and actions by federal, state, local or foreign tax agencies and judicial authorities with respect to applying applicable tax laws and regulations and the resolution of disputes with any taxing jurisdictions.
+The issuance by the Internal Revenue Service and/or state or foreign tax authorities of new tax regulations or changes to existing standards and actions by federal, state, local or foreign tax agencies and judicial authorities with respect to applying applicable tax laws and regulations and the resolution of [[disputes]] with any taxing jurisdictions.
 
 ·
 

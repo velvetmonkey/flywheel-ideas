@@ -32,9 +32,9 @@ SIGNATURES
 
 2
 
-PART I — FINANCIAL INFORMATION
+PART I — [[financials|FINANCIAL]] INFORMATION
 
-Item 1. Financial Statements
+Item 1. [[financials|Financial]] Statements
 
 Booking Holdings Inc.
 

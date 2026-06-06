@@ -22,7 +22,7 @@ implemented competition laws, their enforcement activities are unpredictable.
 
 Government regulatory actions and court decisions such as
 
-these may hinder our ability to provide the benefits of our software to consumers and businesses, reducing the attractiveness of our products and the revenue that come from them. New competition law actions could be initiated. The outcome of such
+these may hinder our ability to provide the benefits of our software to consumers and businesses, reducing the attractiveness of our products and the revenue that come from them. New competition law actions could be initiated. The [[outcome]] of such
 
 actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
 
@@ -130,7 +130,7 @@ We are subject to income taxes in the
 
 U.S. and many foreign jurisdictions. Significant judgment is required in determining our worldwide provision for income taxes. In the ordinary course of our business, there are many transactions and calculations where the ultimate tax determination
 
-is uncertain. We regularly are under audit by tax authorities in different jurisdictions. Economic and political pressures to increase tax revenue in various jurisdictions may make resolving tax disputes favorably more difficult. Although
+is uncertain. We regularly are under audit by tax authorities in different jurisdictions. Economic and political pressures to increase tax revenue in various jurisdictions may make resolving tax [[disputes]] favorably more difficult. Although
 
 we believe our tax estimates are reasonable, the final determination of tax audits and any related litigation in the jurisdictions where we are subject to taxation could be materially different from our historical income tax provisions and accruals.
 

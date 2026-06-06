@@ -40,7 +40,7 @@ Signature
 
 The Procter & Gamble Company 1
 
-PART I. FINANCIAL INFORMATION
+PART I. [[financials|FINANCIAL]] INFORMATION
 
 Item 1.
 
@@ -1992,7 +1992,7 @@ $
 
 (1)
 
-Certain prior period amounts within Operating Activities have been reclassified for consistency with the current period presentation. These reclassifications had no effect on the previously reported Total Operating Activities.
+Certain prior period amounts within Operating Activities have been reclassified for [[consistency]] with the current period presentation. These reclassifications had no effect on the previously reported Total Operating Activities.
 
 See accompanying Notes to Consolidated Financial Statements.
 

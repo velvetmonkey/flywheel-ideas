@@ -14,7 +14,7 @@ created: '2026-05-08T16:38:07.710Z'
 
 - Companies: COP, CVX, EOG, KMI, MPC, PSX, SLB, VLO, WMB, XOM
 - Observations: 0
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

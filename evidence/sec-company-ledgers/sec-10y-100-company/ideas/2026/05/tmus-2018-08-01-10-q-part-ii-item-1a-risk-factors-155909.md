@@ -16,7 +16,7 @@ In addition to the other information contained in this Form 10-Q, the risk facto
 
 December 31, 2017
 
-, and as supplemented by the following risk factors and the risk factors contained in the section entitled "Risk Factors" in the preliminary joint consent solicitation/proxy statement of T-Mobile and Sprint included in the registration statement on Form S-4 file with the SEC on July 30, 2018, should be considered carefully in evaluating T-Mobile. Our business, financial condition, liquidity, or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
+, and as supplemented by the following risk factors and the risk factors contained in the section entitled "Risk Factors" in the preliminary joint consent solicitation/proxy statement of T-Mobile and Sprint included in the registration statement on Form S-4 file with the SEC on July 30, 2018, should be considered carefully in evaluating T-Mobile. Our business, financial condition, [[liquidity]], or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
 
 Risks Related to the Proposed Transactions
 
@@ -48,7 +48,7 @@ The Business Combination Agreement also restricts us, without Sprint's consent, 
 
 Management and financial resources have been diverted and will continue to be diverted toward the completion of the Transactions. We have incurred, and expect to incur, significant costs, expenses and fees for professional services and other transaction costs in connection with the Transactions. These costs could adversely affect our or the combined company's financial condition and results of operations.
 
-In addition, we and our affiliates are involved in various disputes, governmental and/or regulatory inspections, investigations and proceedings and litigation matters that arise from time to time, and it is possible that an unfavorable resolution of these matters could adversely affect us and our results of operations, financial condition and cash flows and the results of operations, financial condition and cash flows of the combined company.
+In addition, we and our affiliates are involved in various [[disputes]], governmental and/or regulatory inspections, investigations and proceedings and litigation matters that arise from time to time, and it is possible that an unfavorable resolution of these matters could adversely affect us and our results of operations, financial condition and cash flows and the results of operations, financial condition and cash flows of the combined company.
 
 The Business Combination Agreement contains provisions that restrict the ability of our Board to pursue alternatives to the Transactions.
 

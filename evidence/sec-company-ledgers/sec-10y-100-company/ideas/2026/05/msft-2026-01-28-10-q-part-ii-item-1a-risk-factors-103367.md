@@ -28,7 +28,7 @@ If our reputation or our brands are damaged, our business and results of operati
 
 •
 
-The introduction of new features, products, services, or terms of service that customers, users, or partners do not like.
+The introduction of new [[features]], products, services, or terms of service that customers, users, or partners do not like.
 
 •
 
@@ -68,7 +68,7 @@ The long-term effects of climate change on the global economy and the IT industr
 
 Our global business exposes us to operational and economic risks.
 
-Our customers, employees, and infrastructure are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Global, regional, and local economic developments, monetary policy, geopolitical tension, particularly between the U.S. and Europe, restrictions on international trade, such as tariffs and other controls on imports or exports, inflation, and recession, as well as political and military disputes, could adversely affect our results of operations. Non-compliance with sanctions as well as general ecosystem disruptions could result in reputational harm, operational delays, monetary fines, loss of revenue, increased costs, loss of export privileges, or criminal sanctions, which could adversely affect our business, financial condition, and results of operations.
+Our customers, employees, and infrastructure are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Global, regional, and local economic developments, monetary policy, geopolitical tension, particularly between the U.S. and Europe, restrictions on international trade, such as tariffs and other controls on imports or exports, inflation, and recession, as well as political and military [[disputes]], could adversely affect our results of operations. Non-compliance with sanctions as well as general ecosystem disruptions could result in reputational harm, operational delays, monetary fines, loss of revenue, increased costs, loss of export privileges, or criminal sanctions, which could adversely affect our business, financial condition, and results of operations.
 
 60
 

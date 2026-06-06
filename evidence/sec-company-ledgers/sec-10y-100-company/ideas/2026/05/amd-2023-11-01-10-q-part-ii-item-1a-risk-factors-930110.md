@@ -70,7 +70,7 @@ We rely on third parties to manufacture our products, and if they are unable to 
 
 •
 
-If essential equipment, materials, substrates or manufacturing processes are not available to manufacture our products, we could be materially adversely affected.
+If essential equipment, [[materials]], substrates or manufacturing processes are not available to manufacture our products, we could be materially adversely affected.
 
 •
 
@@ -78,7 +78,7 @@ Failure to achieve expected manufacturing yields for our products could negative
 
 •
 
-The success of our business is dependent upon our ability to introduce products on a timely basis with features and performance levels that provide value to our customers while supporting and coinciding with significant industry transitions.
+The success of our business is dependent upon our ability to introduce products on a timely basis with [[features]] and performance levels that provide value to our customers while supporting and coinciding with significant industry transitions.
 
 •
 
@@ -176,7 +176,7 @@ Acquisitions, joint ventures and/or investments, and the failure to integrate ac
 
 Any impairment of our tangible, definite-lived intangible or indefinite-lived intangible assets, including goodwill, may adversely impact our financial position and results of operations.
 
-Liquidity and Capital Resources Risks
+[[liquidity]] and Capital Resources Risks
 
 •
 
@@ -224,6 +224,6 @@ We also compete with Intel in field programmable gate arrays (FPGAs) and Adaptiv
 
 Economic and market uncertainty may adversely impact our business and operating results.
 
-Uncertain global or regional economic conditions have and may in the future adversely impact our business. Uncertainty in the economic environment or other unfavorable changes in economic conditions, such as inflation, higher interest rates, recession, slowing growth, increased unemployment, tighter credit markets, changes in fiscal monetary or trade policy, or currency fluctuations, may negatively impact consumer confidence and spending causing our customers to stop or postpone purchases. For example, we have experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain during the second half of 2022 and first half of 2023. During challenging economic times, our current or potential future customers may experience cash flow problems and as a result may modify, delay or cancel plans to purchase our products. Additionally, if our customers are not successful in generating sufficient revenue or are unable to secure financing, they may not be able to pay, or may delay payment of, accounts receivable that they owe us. The risk related to our customers potentially defaulting on or delaying payments to us is increased because we expect that a small number of customers will continue to account for a substantial part of our revenue. Any inability of our current or potential future customers to pay us for our products may adversely affect our earnings and cash flow. Moreover, our key suppliers may reduce their output or become insolvent, thereby adversely impacting our ability to manufacture our products. Adverse changes in economic conditions could cause increased costs of memory, equipment, materials or substrates and other supply chain expenses. If we are not able to procure a stable supply of materials on an ongoing basis and at reasonable costs to meet our production requirements, we could experience a supply shortage or an increase in production costs, which could negatively impact our gross margin and materially adversely affect our business. In addition, uncertain economic conditions could lead to higher borrowing costs and reduced availability of capital and credit markets, making it more difficult for us to raise funds through borrowings or private or public sales of debt or equity securities. An economic downturn or increased uncertainty could also lead to failures of counterparties including financial institutions and insurers, asset impairments and declines in the value of our financial instruments.
+Uncertain global or regional economic conditions have and may in the future adversely impact our business. Uncertainty in the economic environment or other unfavorable changes in economic conditions, such as inflation, higher interest rates, recession, slowing growth, increased unemployment, tighter credit markets, changes in fiscal monetary or trade policy, or currency fluctuations, may negatively impact consumer confidence and spending causing our customers to stop or postpone purchases. For example, we have experienced a decline in our Client segment revenue as a result of weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain during the second half of 2022 and first half of 2023. During challenging economic times, our current or potential future customers may experience cash flow problems and as a result may modify, delay or cancel plans to purchase our products. Additionally, if our customers are not successful in generating sufficient revenue or are unable to secure financing, they may not be able to pay, or may delay payment of, accounts receivable that they owe us. The risk related to our customers potentially defaulting on or delaying payments to us is increased because we expect that a small number of customers will continue to account for a substantial part of our revenue. Any inability of our current or potential future customers to pay us for our products may adversely affect our earnings and cash flow. Moreover, our key suppliers may reduce their output or become insolvent, thereby adversely impacting our ability to manufacture our products. Adverse changes in economic conditions could cause increased costs of memory, equipment, [[materials]] or substrates and other supply chain expenses. If we are not able to procure a stable supply of materials on an ongoing basis and at reasonable costs to meet our production requirements, we could experience a supply shortage or an increase in production costs, which could negatively impact our gross margin and materially adversely affect our business. In addition, uncertain economic conditions could lead to higher borrowing costs and reduced availability of capital and credit markets, making it more difficult for us to raise funds through borrowings or private or public sales of debt or equity securities. An economic downturn or increased uncertainty could also lead to failures of counterparties including financial institutions and insurers, asset impairments and declines in the value of our financial instruments.
 
 32

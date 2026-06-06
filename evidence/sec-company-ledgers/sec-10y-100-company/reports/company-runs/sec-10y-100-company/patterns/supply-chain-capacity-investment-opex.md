@@ -15,7 +15,7 @@ created: '2026-05-08T16:38:08.030Z'
 - Theme: Supply chain
 - Mechanism: Capacity investment and operating expense drag
 - Sectors: Communication Services, Information Technology
-- Companies: AAPL, AMD, AVGO, GOOGL
+- Companies: [[aapl]], AMD, AVGO, [[googl]]
 - Observations: 203
 - Realized candidates: 2
 - Accepted lessons: 6
@@ -37,14 +37,14 @@ Supply chain is now connected to accepted lesson evidence through the capacity i
   - Lesson: Semiconductor supply-chain assumptions should track early disruption language even when quantified impact is limited because it signals the operating loop being actively rebalanced.
   - Evidence: 1 accepted verdict(s), outcome(s) out-AiaZth1U
   - Context: The filing disclosed AMD experienced some disruptions to parts of its supply chain during the first quarter of 2020 and continued adjusting supply-chain requirements based on changing customer needs and demand.
-- **NVDA / Supply chain**
+- **[[nvda]] / Supply chain**
   - Lesson: Semiconductor supply-chain assumptions should track architecture-transition inventory because component commitments can become charges when product platforms shift.
   - Evidence: 1 accepted verdict(s), outcome(s) out-QuoB6Xk9
   - Context: The filing disclosed approximately $128 million in excess DRAM and other component charges plus a $57 million charge for prior-architecture components and chips.
 - **MO / Supply chain**
   - Lesson: Domestic-business geopolitics assumptions should still track indirect input exposure because conflict can reach companies through supplier cost and availability rather than direct revenue.
   - Evidence: 1 accepted verdict(s), outcome(s) out-pHzkjaqp
-  - Context: The filing disclosed negative effects on the cost and availability of certain raw materials and component parts despite little direct Russia/Ukraine exposure.
+  - Context: The filing disclosed negative effects on the cost and availability of certain raw [[materials]] and component parts despite little direct Russia/Ukraine exposure.
 - **AAPL / Supply chain**
   - Lesson: Hardware supply-chain assumptions should track outsourcing-partner geography because localized disruptions can create global product shortages.
   - Evidence: 1 accepted verdict(s), outcome(s) out-1ZsB57E2

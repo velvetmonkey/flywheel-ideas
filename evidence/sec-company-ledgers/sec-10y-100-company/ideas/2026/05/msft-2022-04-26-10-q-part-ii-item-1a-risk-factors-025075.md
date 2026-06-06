@@ -50,7 +50,7 @@ Other competitors develop and offer free applications, online services and conte
 
 •
 
-Some companies compete with us by modifying and then distributing open source software at little or no cost to end users, and earning revenue on advertising or integrated products and services. These firms do not bear the full costs of research and development for the open source software. Some open source software mimics the features and functionality of our products.
+Some companies compete with us by modifying and then distributing open source software at little or no cost to end users, and earning revenue on advertising or integrated products and services. These firms do not bear the full costs of research and development for the open source software. Some open source software mimics the [[features]] and functionality of our products.
 
 The competitive pressures described above may cause decreased sales volumes, price reductions, and/or increased operating costs, such as for research and development, marketing, and sales incentives. This may lead to lower revenue, gross margins, and operating income.
 

@@ -42,7 +42,7 @@ I
 
 -
 
-Financial Information
+[[financials|Financial]] Information
 
 Item 1. Financial Statements
 
@@ -948,7 +948,7 @@ In May 2014, the accounting standard update related to the recognition of revenu
 
 contracts with customers was issued. This standard update clarifies the principles for recognizing revenue and develops a common revenue standard for generally accepted accounting principles in the United States (U.S. GAAP) and International
 
-Financial Reporting Standards. The standard update intends to provide a more robust framework for addressing revenue issues; improve comparability of revenue recognition practices across entities, industries, jurisdictions, and capital markets; and
+Financial Reporting Standards. The standard update intends to provide a more robust framework for addressing revenue issues; improve comparability of revenue recognition practices across entities, [[industrials|industries]], jurisdictions, and capital markets; and
 
 provide more useful information to users of financial statements through improved disclosure requirements. Upon adoption of this standard update, we expect that the allocation and timing of revenue recognition will be impacted. In August 2015, an
 

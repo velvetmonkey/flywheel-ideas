@@ -32,7 +32,7 @@ Wine Segment - Business Environment
 
 in Item 2.
 
-Significant changes in price, availability or quality of tobacco, other raw materials or component parts could have an adverse effect on the profitability and business of Altria's tobacco subsidiaries and investees.
+Significant changes in price, availability or quality of tobacco, other raw [[materials]] or component parts could have an adverse effect on the profitability and business of Altria's tobacco subsidiaries and investees.
 
 Any significant change in prices, quality or availability of tobacco, other raw materials or component parts, particularly as a result of the COVID-19 pandemic, could adversely affect our tobacco subsidiaries' and our investees' profitability and business. The COVID-19 pandemic also may impact the availability of direct materials necessary for our tobacco subsidiaries and JUUL to remain compliant with FDA and other regulatory requirements for tobacco products. For further discussion, see
 

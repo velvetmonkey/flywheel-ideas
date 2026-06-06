@@ -274,7 +274,7 @@ You should not rely upon forward-looking statements as predictions of future eve
 
 10-K
 
-primarily on our current expectations and projections about future events and trends that we believe may affect our business, financial condition, results of operations, and prospects. The outcome of the events described in these forward-looking statements is subject to risks, uncertainties, and other factors, including those described in the section titled "
+primarily on our current expectations and projections about future events and trends that we believe may affect our business, financial condition, results of operations, and prospects. The [[outcome]] of the events described in these forward-looking statements is subject to risks, uncertainties, and other factors, including those described in the section titled "
 
 Risk Factors
 
@@ -324,7 +324,7 @@ We build software that empowers organizations to effectively integrate their dat
 
 We were founded in 2003 and started building software for the intelligence community in the United States to assist in counterterrorism investigations and operations. We later began working with commercial enterprises, who often faced fundamentally similar challenges in working with data.
 
-We have built three principal software platforms, Palantir Gotham ("Gotham"), Palantir Foundry ("Foundry"), and Palantir Apollo ("Apollo"). Gotham and Foundry enable institutions to transform massive amounts of information into an integrated data asset that reflects their operations. For over a decade, Gotham has surfaced insights for global defense agencies, the intelligence community, disaster relief organizations and beyond. And Foundry is becoming a central operating system not only for individual institutions but also for entire industries. Apollo is a cloud-agnostic, single control layer that coordinates ongoing delivery of new features, security updates, and platform configurations, helping to ensure the continuous operation of critical systems and allowing our customers to run their software in virtually any environment.
+We have built three principal software platforms, Palantir Gotham ("Gotham"), Palantir Foundry ("Foundry"), and Palantir Apollo ("Apollo"). Gotham and Foundry enable institutions to transform massive amounts of information into an integrated data asset that reflects their operations. For over a decade, Gotham has surfaced insights for global defense agencies, the intelligence community, disaster relief organizations and beyond. And Foundry is becoming a central operating system not only for individual institutions but also for entire industries. Apollo is a cloud-agnostic, single control layer that coordinates ongoing delivery of new [[features]], security updates, and platform configurations, helping to ensure the continuous operation of critical systems and allowing our customers to run their software in virtually any environment.
 
 Recent crises and systemic shocks, such as the
 

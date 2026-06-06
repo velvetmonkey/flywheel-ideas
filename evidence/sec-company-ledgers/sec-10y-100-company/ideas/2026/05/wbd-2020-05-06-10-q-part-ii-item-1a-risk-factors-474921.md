@@ -28,7 +28,7 @@ SIGNATURES.
 
 3
 
-PART I. FINANCIAL INFORMATION
+PART I. [[financials|FINANCIAL]] INFORMATION
 
 ITEM 1. Unaudited Financial Statements.
 
@@ -1818,6 +1818,6 @@ Significant estimates and judgments inherent in the preparation of the consolida
 
 Impact of COVID-19
 
-On March 11, 2020, the World Health Organization declared the current novel coronavirus ("COVID-19") outbreak to be a global pandemic. COVID-19 continues to spread throughout the world, and the duration and severity of its effects and economic disruption are currently unknown. In response to this declaration and the rapid spread of COVID-19, the United States and other countries throughout the world have imposed varying degrees of restrictions on social and commercial activity in an effort to slow the spread of the illness. These measures have begun to have a significant adverse impact upon many sectors of the economy, including the media industry. The Company is closely monitoring the impact of COVID-19 on all aspects of its business and geographies, including how it will impact its customers, employees, suppliers, vendors, distribution and advertising partners, production facilities, and various third parties.
+On March 11, 2020, the World Health Organization declared the current novel coronavirus ("COVID-19") outbreak to be a global pandemic. COVID-19 continues to spread throughout the world, and the duration and severity of its effects and economic disruption are currently unknown. In response to this declaration and the rapid spread of COVID-19, the United States and other countries throughout the world have imposed varying degrees of restrictions on social and commercial activity in an effort to slow the spread of the illness. These measures have begun to have a significant adverse impact upon many sectors of the economy, including the media [[industrials|industry]]. The Company is closely monitoring the impact of COVID-19 on all aspects of its business and geographies, including how it will impact its customers, employees, suppliers, vendors, distribution and advertising partners, production facilities, and various third parties.
 
 10

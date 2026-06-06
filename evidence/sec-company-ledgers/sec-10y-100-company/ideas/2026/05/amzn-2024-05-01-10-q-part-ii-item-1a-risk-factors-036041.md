@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-
 
 Risk Factors
 
-Please carefully consider the following discussion of significant factors, events, and uncertainties that make an investment in our securities risky. The events and consequences discussed in these risk factors could, in circumstances we may or may not be able to accurately predict, recognize, or control, have a material adverse effect on our business, growth, reputation, prospects, financial condition, operating results (including components of our financial results), cash flows, liquidity, and stock price. These risk factors do not identify all risks that we face; our operations could also be affected by factors, events, or uncertainties that are not presently known to us or that we currently do not consider to present significant risks to our operations. In addition to the factors discussed in Item 2 of Part I, "Management's Discussion and Analysis of Financial Condition and Results of Operations," and in the risk factors below, global economic and geopolitical conditions and additional or unforeseen circumstances, developments, or events may give rise to or amplify many of the risks discussed below. Many of the risks discussed below also impact our customers, including third-party sellers, which could indirectly have a material adverse effect on us.
+Please carefully consider the following discussion of significant factors, events, and uncertainties that make an investment in our securities risky. The events and consequences discussed in these risk factors could, in circumstances we may or may not be able to accurately predict, recognize, or control, have a material adverse effect on our business, growth, reputation, prospects, financial condition, operating results (including components of our financial results), cash flows, [[liquidity]], and stock price. These risk factors do not identify all risks that we face; our operations could also be affected by factors, events, or uncertainties that are not presently known to us or that we currently do not consider to present significant risks to our operations. In addition to the factors discussed in Item 2 of Part I, "Management's Discussion and Analysis of Financial Condition and Results of Operations," and in the risk factors below, global economic and geopolitical conditions and additional or unforeseen circumstances, developments, or events may give rise to or amplify many of the risks discussed below. Many of the risks discussed below also impact our customers, including third-party sellers, which could indirectly have a material adverse effect on us.
 
 Business and Industry Risks
 
@@ -46,7 +46,7 @@ local economic and political conditions;
 
 •
 
-government regulation (such as regulation of our product and service offerings and of competition); restrictive governmental actions (such as trade protection measures, including export duties and quotas and custom duties and tariffs, and restrictions around the import and export of certain products, technologies, and components); nationalization; and restrictions on foreign ownership;
+government regulation (such as regulation of our product and service offerings and of competition); restrictive governmental actions (such as trade protection measures, including export duties and quotas and custom duties and tariffs, and restrictions around the [[import]] and export of certain products, technologies, and components); nationalization; and restrictions on foreign ownership;
 
 •
 

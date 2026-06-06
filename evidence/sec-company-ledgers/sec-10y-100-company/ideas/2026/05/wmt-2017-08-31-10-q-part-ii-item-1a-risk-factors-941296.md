@@ -16,7 +16,7 @@ In addition to the other information set forth in this report, you should carefu
 
 January 31, 2017
 
-, which risks could materially and adversely affect our business, results of operations, financial condition, and liquidity. The Company is supplementing those risk factors by updating the risk factors below. Our business operations could also be affected by additional factors that apply to all companies operating in the U.S. and globally.
+, which risks could materially and adversely affect our business, results of operations, financial condition, and [[liquidity]]. The Company is supplementing those risk factors by updating the risk factors below. Our business operations could also be affected by additional factors that apply to all companies operating in the U.S. and globally.
 
 We rely extensively on information systems to process transactions, summarize results and manage our business. Disruptions in our systems could harm our ability to conduct our operations.
 

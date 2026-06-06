@@ -36,7 +36,7 @@ Certifications
 
 Table of Contents
 
-Part I - Financial Information
+Part I - [[financials|Financial]] Information
 
 Item 1. Financial Statements (Unaudited)
 
@@ -952,7 +952,7 @@ $
 
 Recently Adopted Accounting Standards
 
-In May 2014, the Financial Accounting Standards Board (FASB) issued Accounting Standards Update (ASU) 2014-09, "Revenue from Contracts with Customers (Topic 606)." This standard update, along with related subsequently issued updates, clarifies the principles for recognizing revenue and develops a common revenue standard for United States (U.S.) generally accepted accounting principles (GAAP). The standard update also amends current guidance for the recognition of costs to obtain and fulfill contracts with customers such that incremental costs of obtaining and direct costs of fulfilling contracts with customers will be deferred and amortized consistent with the transfer of the related good or service. The standard update intends to provide a more robust framework for addressing revenue issues; improve comparability of revenue recognition practices across entities, industries, jurisdictions, and capital markets; and provide more useful information to users of financial statements through improved disclosure requirements. We adopted this standard update beginning on January 1, 2018 using the modified retrospective method. As this method requires that the cumulative effect of initially applying the standard be recognized at the date of application beginning January 1, 2018, we recorded the pre-tax cumulative effect of
+In May 2014, the Financial Accounting Standards Board (FASB) issued Accounting Standards Update (ASU) 2014-09, "Revenue from Contracts with Customers (Topic 606)." This standard update, along with related subsequently issued updates, clarifies the principles for recognizing revenue and develops a common revenue standard for United States (U.S.) generally accepted accounting principles (GAAP). The standard update also amends current guidance for the recognition of costs to obtain and fulfill contracts with customers such that incremental costs of obtaining and direct costs of fulfilling contracts with customers will be deferred and amortized consistent with the transfer of the related good or service. The standard update intends to provide a more robust framework for addressing revenue issues; improve comparability of revenue recognition practices across entities, [[industrials|industries]], jurisdictions, and capital markets; and provide more useful information to users of financial statements through improved disclosure requirements. We adopted this standard update beginning on January 1, 2018 using the modified retrospective method. As this method requires that the cumulative effect of initially applying the standard be recognized at the date of application beginning January 1, 2018, we recorded the pre-tax cumulative effect of
 
 $3.9 billion
 

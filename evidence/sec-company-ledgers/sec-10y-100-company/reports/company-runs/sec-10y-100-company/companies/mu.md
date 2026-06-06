@@ -25,7 +25,7 @@ created: '2026-05-08T16:38:07.818Z'
 - **AI, R&D, and technology**: 83 observation(s), latest 2026-03-19, assumption asm-o5RkVgmn
 - **Demand**: 83 observation(s), latest 2026-03-19, assumption asm-PNGucCzS
 - **Cloud and data center capacity**: 82 observation(s), latest 2026-03-19, assumption asm-sjxR8DDD
-- **Liquidity**: 71 observation(s), latest 2026-03-19, assumption asm-RFSk51ax
+- **[[liquidity]]**: 71 observation(s), latest 2026-03-19, assumption asm-RFSk51ax
 - **Geopolitics and tariffs**: 70 observation(s), latest 2026-03-19, assumption asm-wqLG5C3V
 - **Competition**: 67 observation(s), latest 2026-03-19, assumption asm-9u6GsKqY
 - **Regulation and legal**: 67 observation(s), latest 2026-03-19, assumption asm-qUnSzML4

@@ -12,7 +12,7 @@ created: '2026-05-08T16:38:07.578Z'
 ---
 # Candidate Noise sec-10y-100-company
 
-This page explains staged outcome candidates that are not in the active human review queue.
+This page explains staged [[outcome]] candidates that are not in the active human review queue.
 
 ## Summary
 
@@ -31,7 +31,7 @@ This page explains staged outcome candidates that are not in the active human re
 
 ## Examples
 
-- **NVDA / Supply chain** (cout-eGqEKVbF)
+- **[[nvda]] / Supply chain** (cout-eGqEKVbF)
   - Reason: linked assumption is already refuted
   - Assumption: asm-iGQnHDHS (refuted)
   - Source: sec-company://0001045810/0001045810-20-000065#part-i-item-2:theme:supply-chain:outcome
@@ -41,7 +41,7 @@ This page explains staged outcome candidates that are not in the active human re
   - Assumption: asm-iGQnHDHS (refuted)
   - Source: sec-company://0001045810/0001045810-20-000065#part-ii-item-1a:theme:supply-chain:outcome
   - Evidence: impact, our workforce and operations, the operations of our customers and our partners, and those of our respective vendors and suppliers (including our subcontractors and third-party contract manufacturers). For exampl…
-- **MSFT / AI, R&D, and technology** (cout-h4HuM9Cw)
+- **[[msft]] / AI, R&D, and technology** (cout-h4HuM9Cw)
   - Reason: linked assumption is already refuted
   - Assumption: asm-e7XCszRn (refuted)
   - Source: sec-company://0000789019/0001564590-18-019062#item-7:theme:ai-rd-technology:outcome

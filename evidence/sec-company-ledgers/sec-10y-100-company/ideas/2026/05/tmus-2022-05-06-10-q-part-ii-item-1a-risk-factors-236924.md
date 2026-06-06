@@ -52,7 +52,7 @@ Signatures
 
 2
 
-Index for Notes to the Condensed Consolidated Financial Statements
+Index for Notes to the Condensed Consolidated [[financials|Financial]] Statements
 
 PART I. FINANCIAL INFORMATION
 
@@ -1622,6 +1622,6 @@ Accounting Pronouncements Adopted During the Current Year
 
 Reference Rate Reform
 
-In March 2020, the Financial Accounting Standards Board ("FASB") issued Accounting Standards Update ("ASU") 2020-04, "Reference Rate Reform (Topic 848): Facilitation of the Effects of Reference Rate Reform on Financial Reporting," and has since modified the standard with ASU 2021-01, "Reference Rate Reform (Topic 848): Scope" (together, the "reference rate reform standard"). The reference rate reform standard provides temporary optional expedients and allows for certain exceptions to applying existing GAAP for contract modifications and hedging relationships, subject to meeting certain criteria, that reference LIBOR or another reference rate expected to be discontinued as a result of reference rate reform. The reference rate reform standard is available for adoption through December 31, 2022, and the optional expedients for contract modifications must be elected for all arrangements within a given Accounting Standards Codification ("ASC") Topic or Industry Subtopic. As of January 1, 2022, we have elected to apply the practical expedients provided by the reference rate reform standard for all ASC Topics and Industry Subtopics related to eligible contract modifications as they occur. This election did not have a material impact on our condensed consolidated financial statements for the three months ended March 31, 2022, and the impact of applying the election to future eligible contract modifications that occur through December 31, 2022 is also not expected to be material
+In March 2020, the Financial Accounting Standards Board ("FASB") issued Accounting Standards Update ("ASU") 2020-04, "Reference Rate Reform (Topic 848): Facilitation of the Effects of Reference Rate Reform on Financial Reporting," and has since modified the standard with ASU 2021-01, "Reference Rate Reform (Topic 848): Scope" (together, the "reference rate reform standard"). The reference rate reform standard provides temporary optional expedients and allows for certain exceptions to applying existing GAAP for contract modifications and hedging relationships, subject to meeting certain criteria, that reference LIBOR or another reference rate expected to be discontinued as a result of reference rate reform. The reference rate reform standard is available for adoption through December 31, 2022, and the optional expedients for contract modifications must be elected for all arrangements within a given Accounting Standards Codification ("ASC") Topic or [[industrials|Industry]] Subtopic. As of January 1, 2022, we have elected to apply the practical expedients provided by the reference rate reform standard for all ASC Topics and Industry Subtopics related to eligible contract modifications as they occur. This election did not have a material impact on our condensed consolidated financial statements for the three months ended March 31, 2022, and the impact of applying the election to future eligible contract modifications that occur through December 31, 2022 is also not expected to be material
 
 .

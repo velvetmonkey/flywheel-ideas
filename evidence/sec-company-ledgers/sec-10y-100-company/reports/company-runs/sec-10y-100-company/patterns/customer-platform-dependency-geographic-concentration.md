@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.108Z'
 - Theme: Customer and platform dependency
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples
-- Companies: GOOGL, MAR, MO, PEP
+- Companies: [[googl]], [[mar]], MO, PEP
 - Observations: 89
 - Realized candidates: 0
 - Accepted lessons: 2
@@ -35,7 +35,7 @@ Customer and platform dependency is now connected to accepted lesson evidence th
   - Lesson: Partner-dependency assumptions should treat OEM quality failures as first-order financial risk when the company sells, finances, or stocks the affected devices.
   - Evidence: 1 accepted verdict(s), outcome(s) out-r9mw4Nbw
   - Context: TMUS recorded no revenue for recalled device sales, impaired devices to net realizable value, and booked an OEM reimbursement receivable.
-- **AAPL / Customer and platform dependency**
+- **[[aapl]] / Customer and platform dependency**
   - Lesson: Channel-dependency assumptions should treat retail and partner access as load-bearing when regional shutdowns can directly suppress sales.
   - Evidence: 1 accepted verdict(s), outcome(s) out-yu9stwSH
   - Context: The filing disclosed that China sales were adversely affected by public-health measures, including temporary closure of Apple retail stores and channel-partner points of sale.

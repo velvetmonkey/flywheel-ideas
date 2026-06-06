@@ -32,7 +32,7 @@ Consolidation of, or cooperation between, our competitors, including suppliers a
 
 The ability of our businesses to compete effectively also depends on our perceived image and reputation among our various constituencies, including our customers, consumers, advertisers, business partners, employees, investors and government authorities. In addition, our ability to compete will be negatively affected if we do not provide our customers with a satisfactory customer experience.
 
-Changes in consumer behavior continue to adversely affect our businesses and challenge existing business models.
+Changes in consumer behavior continue to adversely affect our businesses and challenge existing business [[models]].
 
 Distribution platforms for viewing and purchasing content have been, and will likely continue to be, developed that further increase the number of competitors that all our businesses face and challenge existing business models. As consumers increasingly turn to DTC streaming and other OTT services, the number of Cable Communications' video customers and amount of subscriber fees paid to NBCUniversal's television networks decrease, even as Cable Communications' broadband services have become more important to consumers. DTC streaming and other OTT services have driven, and will continue to drive, changes in consumer behavior as consumers seek more control over when, where and how they consume content and access communications services, and how much they pay for such content.
 

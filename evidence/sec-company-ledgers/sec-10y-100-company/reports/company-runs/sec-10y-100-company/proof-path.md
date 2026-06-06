@@ -51,7 +51,7 @@ Flywheel Ideas is useful when it keeps a durable chain from a prior assumption t
   - Human verdict: 1 accepted failure verdict(s).
   - Lesson: Retail demand pressure becomes decision-grade when negative comparable sales create cost deleverage, not only when headline revenue declines.
   - Outcomes: out-7F4mfxw6
-- **MSFT / Liquidity**
+- **[[msft]] / Liquidity**
   - Prior assumption: the company could manage this risk without material disruption.
   - Later evidence: MSFT reported higher sales and marketing expense partly due to increased bad debt expense.
   - Human verdict: 1 accepted failure verdict(s).

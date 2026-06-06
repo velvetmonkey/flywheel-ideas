@@ -44,12 +44,12 @@ Net: the downside isn’t “bankruptcy risk”; it’s earnings/cash-flow volat
 **Assumptions cited:** `asm-z8gxKvQh`, `asm-XtUoWXU4`
 
 **Metacognitive reflection:**
-- Could be wrong if: Stress evidence shows NVDA could sustain the stated capital returns while absorbing large negative shocks without meaningful operational or financing disruption (e.g., detailed liquidity facilities, covenants, and sensitivity analyses showing ample headroom), and empirical history shows capital returns were flexed smoothly without signaling damage.
+- Could be wrong if: Stress evidence shows [[nvda]] could sustain the stated capital returns while absorbing large negative shocks without meaningful operational or financing disruption (e.g., detailed liquidity facilities, covenants, and sensitivity analyses showing ample headroom), and empirical history shows capital returns were flexed smoothly without signaling damage.
 - Most vulnerable assumption: `asm-z8gxKvQh`
-- Confidence rationale: Moderate confidence because the MD&A text clearly indicates payout growth and non-estimable distributor return exposure, but I lack quantified liquidity headroom, contractual constraints, and outcome data; those missing specifics could materially reduce (or increase) the disruption risk.
+- Confidence rationale: Moderate confidence because the MD&A text clearly indicates payout growth and non-estimable distributor return exposure, but I lack quantified liquidity headroom, contractual constraints, and [[outcome]] data; those missing specifics could materially reduce (or increase) the disruption risk.
 
 **Evidence:**
-- "NVDA returned $800M to shareholders in FY2016 and intended to return about $1.0B in FY2017, while reporting cash/marketable securities of $5.04B and operating cash flow of $1.18B for FY2016." — https://www.sec.gov/Archives/edgar/data/1045810/000104581016000205/nvda-2016x10k.htm
+- "[[nvda]] returned $800M to shareholders in FY2016 and intended to return about $1.0B in FY2017, while reporting cash/marketable securities of $5.04B and operating cash flow of $1.18B for FY2016." — https://www.sec.gov/Archives/edgar/data/1045810/000104581016000205/nvda-2016x10k.htm
 - "For certain distributors with rights of return where returns cannot be reasonably estimated, NVDA deferred revenue until distributors resold the product and/or return rights lapsed." — https://www.sec.gov/Archives/edgar/data/1045810/000104581016000205/nvda-2016x10k.htm
 
 ### Growth Optimist (codex)
@@ -58,7 +58,7 @@ I remain optimistic about the upside optionality in this FY2016 MD&A snapshot: N
 
 But the two declared assumptions don’t actually follow from the excerpt, and I shouldn’t treat them as “true enough” just because the narrative is confident. The capital return plan ($800M returned in FY2016; intent for ~$1B in FY2017) shows willingness to return cash, not proof that liquidity risk is intrinsically manageable under stress. Likewise, the channel/returns policy highlights uncertainty and demand-visibility limits; it’s a control mechanism for recognition, not evidence that inventory/channel risk won’t create real disruption.
 
-My revised council stance: pursue the growth-optionality thesis, but treat liquidity and channel mechanics as live constraints that can cap the speed of reinvestment and distort signals. The creative alternative is to reframe “risk control” as an offensive move: bias capital allocation toward flexibility (variable buyback pacing; more countercyclical R&D) and bias channel policy toward higher-quality demand signals (even at the cost of near-term smoothness). If those moves work, they increase the probability that the platform S-curves are captured without being derailed by avoidable execution or cycle shocks.
+My revised council stance: pursue the growth-optionality [[thesis]], but treat liquidity and channel mechanics as live constraints that can cap the speed of reinvestment and distort signals. The creative alternative is to reframe “risk control” as an offensive move: bias capital allocation toward flexibility (variable buyback pacing; more countercyclical R&D) and bias channel policy toward higher-quality demand signals (even at the cost of near-term smoothness). If those moves work, they increase the probability that the platform S-curves are captured without being derailed by avoidable execution or cycle shocks.
 
 **Key risks:**
 - Channel opacity/returns dynamics create demand-visibility gaps and revenue volatility that can force reactive pricing or inventory actions
@@ -95,7 +95,7 @@ NVIDIA is unequivocally positioned for monumental growth, anchored by its undisp
 **Assumptions cited:** `asm-z8gxKvQh`, `asm-XtUoWXU4`
 
 **Metacognitive reflection:**
-- Could be wrong if: A significant technological paradigm shift occurs where NVIDIA's core competencies become less relevant, or if a competitor emerges with a disruptive technology that captures market share rapidly. Unforeseen litigation outcomes or major geopolitical events impacting global supply chains could also present challenges. Furthermore, if the increasing operating expenses outpace revenue growth without a corresponding acceleration in innovation or market penetration, profitability could be pressured.
+- Could be wrong if: A significant technological paradigm shift occurs where NVIDIA's core competencies become less relevant, or if a competitor emerges with a disruptive technology that captures market share rapidly. Unforeseen litigation [[outcome|outcomes]] or major geopolitical events impacting global supply chains could also present challenges. Furthermore, if the increasing operating expenses outpace revenue growth without a corresponding acceleration in innovation or market penetration, profitability could be pressured.
 - Most vulnerable assumption: `asm-XtUoWXU4`
 - Confidence rationale: The strong market position, clear innovation roadmap in high-growth sectors (AI, Automotive), and robust financial health provide a solid basis for optimism. However, the dynamic nature of the tech industry and supply chain complexities introduce inherent uncertainties that warrant a slightly tempered, though still high, confidence.
 
@@ -183,7 +183,7 @@ _(no shared claims across views at current threshold)_
 - "But the two declared assumptions don’t actually follow from the excerpt, and I shouldn’t treat them as “true enough” just because the narrative is confident."
 - "The capital return plan ($800M returned in FY2016; intent for ~$1B in FY2017) shows willingness to return cash, not proof that liquidity risk is intrinsically manageable under stress."
 - "Likewise, the channel/returns policy highlights uncertainty and demand-visibility limits; it’s a control mechanism for recognition, not evidence that inventory/channel risk won’t create real disruption."
-- "My revised council stance: pursue the growth-optionality thesis, but treat liquidity and channel mechanics as live constraints that can cap the speed of reinvestment and distort signals."
+- "My revised council stance: pursue the growth-optionality [[thesis]], but treat liquidity and channel mechanics as live constraints that can cap the speed of reinvestment and distort signals."
 - "The creative alternative is to reframe “risk control” as an offensive move: bias capital allocation toward flexibility (variable buyback pacing; more countercyclical R&D) and bias channel policy toward higher-quality demand signals (even at the cost of near-term smoothness)."
 - "If those moves work, they increase the probability that the platform S-curves are captured without being derailed by avoidable execution or cycle shocks."
 - "NVIDIA is unequivocally positioned for monumental growth, anchored by its undisputed global leadership in visual computing."
@@ -245,4 +245,4 @@ _(no stderr captured)_
 - [ ] `idea.read({ id: "idea-5aMHRJeQ" })` — re-read with council context
 - [ ] `assumption.signposts_due({ idea_id: "idea-5aMHRJeQ" })` — check any flagged signposts
 - [ ] `idea.transition({ id, to: ..., reason: "..." })` — if the council changed your view
-- [ ] `assumption.declare(...)` — add any new assumption the council surfaced
+- [ ] `assumption.declare(...)` — add any new assumption the counc

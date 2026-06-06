@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/1413329/000141332917000014/pm123
 
 Risk Factors.
 
-The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual outcome of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
+The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual [[outcome]] of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
 
 Forward-Looking and Cautionary Statements
 
@@ -112,7 +112,7 @@ Our operating income could be significantly affected by regulatory initiatives r
 
 •
 
-Litigation related to tobacco use and exposure to environmental tobacco smoke could substantially reduce our profitability and could severely impair our liquidity.
+Litigation related to tobacco use and exposure to environmental tobacco smoke could substantially reduce our profitability and could severely impair our [[liquidity]].
 
 There is litigation related to tobacco products pending in certain jurisdictions. Damages claimed in some tobacco-related litigation are significant and, in certain cases in Brazil, Canada and Nigeria, range into the billions of U.S. dollars. We anticipate that new cases will continue to be filed. The FCTC encourages litigation against tobacco product manufacturers. It is possible that our consolidated results of operations, cash flows or financial position could be materially affected in a particular fiscal quarter or fiscal year by an unfavorable outcome or settlement of certain pending litigation. See Item 3.
 

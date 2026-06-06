@@ -996,7 +996,7 @@ and $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,940
 
@@ -1946,6 +1946,6 @@ When used in this report, the terms "we," "us," "our," "PepsiCo" and the "Compan
 
 The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with U.S. Generally Accepted Accounting Principles (GAAP) for interim financial information and with the rules and regulations for reporting the Quarterly Report on Form 10-Q (Form 10-Q). Accordingly, they do not include all of the information and footnotes required by GAAP for complete financial statements. We have subsidiaries operating in highly inflationary economies, such as Argentina, Egypt and Turkey, and accordingly apply highly inflationary accounting for these subsidiaries. The condensed consolidated balance sheet at December 28, 2024 has been derived from the audited consolidated financial statements at that date, but does not include all of the information and footnotes required by GAAP for complete financial statements. These financial statements have been prepared on a basis that is substantially consistent with the accounting principles applied in our Annual Report on Form 10-K for the fiscal year ended December 28, 2024 (2024 Form 10-K) and in Exhibit 99.2 to our Current Report on Form 8-K dated July 17, 2025 (Recast Segment Information). This report should be read in conjunction with our 2024 Form 10-K and our Recast Segment Information, in which we retrospectively recast historical segment reporting to reflect our current organizational structure. In our opinion, these financial statements include all normal and recurring adjustments necessary for a fair presentation. The results for the 12 and 24 weeks ended June 14, 2025 are not necessarily indicative of the results expected for any future period or the full year.
 
-Raw materials, direct labor and plant overhead, as well as purchasing and receiving costs, costs directly related to production planning, inspection costs and raw materials handling facilities, are included in cost of sales. The costs of moving, storing and delivering finished product, including merchandising activities, are included in selling, general and administrative expenses.
+Raw [[materials]], direct labor and plant overhead, as well as purchasing and receiving costs, costs directly related to production planning, inspection costs and raw materials handling facilities, are included in cost of sales. The costs of moving, storing and delivering finished product, including merchandising activities, are included in selling, general and administrative expenses.
 
 While our financial results in the United States and Canada (North America) are reported on a 12-week basis, all of our international operations are reported on a monthly calendar basis for which the months of March, April and May are reflected in our results for the 12 weeks ended

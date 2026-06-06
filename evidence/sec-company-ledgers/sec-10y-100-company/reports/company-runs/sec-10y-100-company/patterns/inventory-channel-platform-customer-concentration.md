@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.075Z'
 - Theme: Inventory and channel
 - Mechanism: Platform or customer concentration
 - Sectors: Consumer Discretionary, Information Technology
-- Companies: ABNB, MU
+- Companies: [[abnb]], MU
 - Observations: 58
 - Realized candidates: 5
 - Accepted lessons: 5
@@ -43,7 +43,7 @@ Inventory and channel is now connected to accepted lesson evidence through the p
   - Lesson: Perishable retail inventory assumptions should watch write-off language because demand shocks can convert quickly into margin losses.
   - Evidence: 1 accepted verdict(s), outcome(s) out-P9gZXJq1
   - Context: The filing disclosed higher expenses from inventory write-offs, contributing to significantly lower operating margins for retail store businesses.
-- **NVDA / Inventory and channel**
+- **[[nvda]] / Inventory and channel**
   - Lesson: AI accelerator inventory assumptions should treat export-control shocks as channel-risk events because regulatory access can instantly impair demand and purchase commitments.
   - Evidence: 1 accepted verdict(s), outcome(s) out-VxXuqAUS
   - Context: The fiscal 2026 filing disclosed a $4.5 billion charge associated with H20 excess inventory and purchase obligations after new China export license requirements diminished demand.

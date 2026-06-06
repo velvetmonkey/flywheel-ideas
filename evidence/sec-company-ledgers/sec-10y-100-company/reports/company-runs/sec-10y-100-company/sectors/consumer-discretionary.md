@@ -12,9 +12,9 @@ created: '2026-05-08T16:38:07.697Z'
 ---
 # Consumer Discretionary sec-10y-100-company
 
-- Companies: ABNB, AMZN, BKNG, HD, LOW, MAR, MCD, SBUX, TJX, TSLA
+- Companies: ABNB, [[amzn]], BKNG, HD, LOW, [[mar]], MCD, SBUX, [[tjx]], [[tsla]]
 - Observations: 5501
-- Staged outcomes: 5
+- Staged [[outcome|outcomes]]: 5
 
 ## Companies
 

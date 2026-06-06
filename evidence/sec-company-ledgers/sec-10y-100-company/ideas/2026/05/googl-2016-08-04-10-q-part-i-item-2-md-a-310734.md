@@ -42,7 +42,7 @@ year over year.
 
 •
 
-Google segment revenues of
+[[googl|Google]] segment revenues of
 
 $21.3 billion
 

@@ -48,7 +48,7 @@ achieving or maintaining certain outcomes and the compliance requirements associ
 
 •
 
-availability and quality of materials, supplies, electrical power, water, and capital equipment, or dependency on third-party service providers;
+availability and quality of [[materials]], supplies, electrical power, water, and capital equipment, or dependency on third-party service providers;
 
 •
 

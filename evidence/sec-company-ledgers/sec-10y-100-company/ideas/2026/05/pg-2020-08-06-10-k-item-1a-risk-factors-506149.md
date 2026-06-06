@@ -34,7 +34,7 @@ Our business could be negatively impacted by reduced demand for our products rel
 
 The Procter & Gamble Company 3
 
-materials and services we need, in which case our business and results of operations could be adversely affected. Customers may also suffer financial hardships due to economic conditions such that their accounts become uncollectible or are subject to longer collection cycles. In addition, if we are unable to generate sufficient sales, income and cash flow, it could affect the Company's ability to achieve expected share repurchase and dividend payments.
+[[materials]] and services we need, in which case our business and results of operations could be adversely affected. Customers may also suffer financial hardships due to economic conditions such that their accounts become uncollectible or are subject to longer collection cycles. In addition, if we are unable to generate sufficient sales, income and cash flow, it could affect the Company's ability to achieve expected share repurchase and dividend payments.
 
 Disruptions in credit markets or changes to our credit ratings may reduce our access to credit.
 
@@ -42,7 +42,7 @@ A disruption in the credit markets or a downgrade of our current credit rating c
 
 Our business results depend on our ability to manage disruptions in our global supply chain.
 
-Our ability to meet our customers' needs and achieve cost targets depends on our ability to maintain key manufacturing and supply arrangements, including execution of supply chain optimizations and certain sole supplier or sole manufacturing plant arrangements. The loss or disruption of such manufacturing and supply arrangements, including for issues such as labor disputes, loss or impairment of key manufacturing sites, discontinuity in our internal information and data systems, inability to procure sufficient raw or input materials, significant changes in trade policy, natural disasters, increasing severity or frequency of extreme weather events due to climate change or otherwise, acts of war or terrorism, disease outbreaks or other external factors over which we have no control, have interrupted product supply and, if not effectively managed and remedied, could have an adverse impact on our business, financial condition, results of operations or cash flows.
+Our ability to meet our customers' needs and achieve cost targets depends on our ability to maintain key manufacturing and supply arrangements, including execution of supply chain optimizations and certain sole supplier or sole manufacturing plant arrangements. The loss or disruption of such manufacturing and supply arrangements, including for issues such as labor [[disputes]], loss or impairment of key manufacturing sites, discontinuity in our internal information and data systems, inability to procure sufficient raw or input materials, significant changes in trade policy, natural disasters, increasing severity or frequency of extreme weather events due to climate change or otherwise, acts of war or terrorism, disease outbreaks or other external factors over which we have no control, have interrupted product supply and, if not effectively managed and remedied, could have an adverse impact on our business, financial condition, results of operations or cash flows.
 
 Our businesses face cost fluctuations and pressures that could affect our business results.
 

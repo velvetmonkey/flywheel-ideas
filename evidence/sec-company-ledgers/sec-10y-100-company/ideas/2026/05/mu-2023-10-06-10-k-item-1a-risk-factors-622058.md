@@ -48,7 +48,7 @@ achieving or maintaining certain performance or other obligations associated wit
 
 •
 
-availability and quality of materials, supplies, and capital equipment and dependency on third-party service providers;
+availability and quality of [[materials]], supplies, and capital equipment and dependency on third-party service providers;
 
 •
 

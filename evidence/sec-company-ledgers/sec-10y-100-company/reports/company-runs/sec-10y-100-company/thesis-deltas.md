@@ -22,7 +22,7 @@ created: '2026-05-08T16:38:07.650Z'
   - Across the referenced filings, KO’s “demand” risk thesis tied to geopolitical instability, activism/boycotts, and related cross-border/trade constraints appears consistent rather than directionally changing; the 2022 Russia-related impairment is disclosed as small in overall asset context and does not by itself indicate a new trajectory.
 - **HD**: new_watchpoint (0.62)
   - Filing evidence suggests the demand narrative shifted from a 2020 pandemic-driven online demand surge (with operational capacity risk) to a later-period environment featuring negative comparable sales and operating deleverage, alongside higher amortization/depreciation tied partly to the SRS acquisition—creating a new watchpoint around demand normalization/softness and margin pressure from fixed costs and acquisition-related intangibles.
-- **GOOGL**: insufficient_evidence (0.28)
+- **[[googl]]**: insufficient_evidence (0.28)
   - The cited filings document (1) a post-2020-COVID shift back toward more commercial search activity with improving advertiser spend, alongside margin variability from less-variable costs, and (2) a sharp year-over-year increase in TAC driven by higher revenue subject to TAC, with other cost of revenues influenced by lower depreciation due to server/network equipment useful-life estimate changes. These observations are directionally informative but too dated and incomplete to determine a present thesis delta for GOOGL.
 - **MO**: insufficient_evidence (0.66)
   - The cited SEC evidence highlights (1) ongoing macro/geopolitical-driven supply-chain and input-cost pressure (2022), and (2) multiple material non-cash impairments tied to investments/segments (JUUL in 2020; ABI equity investment in 2022; e-vapor reporting unit goodwill in 2025). Without the actual thesis being tested, the direction of the thesis delta cannot be determined.
@@ -30,7 +30,7 @@ created: '2026-05-08T16:38:07.650Z'
   - The excerpts show (1) disruption-driven demand and margin pressure in 2020 via lost revenues, partner costs, inventory write-offs, and supplier obligations, and (2) a 2018 East China JV accounting change that mechanically lowered reported operating margin due to consolidation effects. These are relevant risk/interpretation points, but alone they do not establish whether the overall company thesis has strengthened or weakened as of the latest filings.
 - **PEP**: new_watchpoint (0.62)
   - 2020 mid-year to Q3 filings introduce/escalate COVID-19-driven operational disruption and cost pressure as a distinct watchpoint affecting supply chain continuity, manufacturing capacity (via absenteeism), transportation/logistics availability, and liquidity-related uncertainty.
-- **AAPL**: new_watchpoint (0.62)
+- **[[aapl]]**: new_watchpoint (0.62)
   - From 2020 to 2021 filings, Apple’s operational disruption narrative shifts from acute COVID-driven shutdowns and demand weakness to broader, recurring supply shortages driven by supplier/logistics disruptions, suggesting an ongoing supply-chain fragility watchpoint rather than a one-off pandemic event.
 - **WBD**: new_watchpoint (0.62)
   - Filing evidence indicates COVID-19/regulatory disruption to production and demand became less material by FY2021, while later disclosures highlight theatrical demand softness and related cost/revenue declines (including impairment-linked items), suggesting the thesis should de-emphasize pandemic/regulatory impact and add an ongoing demand-quality watchpoint (especially theatrical).
@@ -38,13 +38,13 @@ created: '2026-05-08T16:38:07.650Z'
   - Across 2022–2025 filings, Verizon repeatedly cites inflation-driven cost increases (energy, transport, labor) and rising interest expense, noting 2022 pressure on EPS and guidance; the language appears persistent rather than a discrete new development. A separate older (2020) demand datapoint highlights ad/search revenue sensitivity in Verizon Media during a shock period, but it is temporally distant from the macro/liquidity cluster.
 - **META**: new_watchpoint (0.66)
   - Across filings, META repeatedly attributes advertising revenue variability to macro-driven marketer spend changes and to iOS/regulatory constraints on targeting/measurement; the latest evidence adds a more concrete, company-specific geopolitics/disruption vector affecting user access/engagement (and thus impression supply).
-- **MSFT**: new_watchpoint (0.62)
+- **[[msft]]**: new_watchpoint (0.62)
   - Across filings spanning 2021→2026, disclosure emphasis shifts toward sustained, portfolio-wide investment in AI-related compute capacity, AI talent, and supporting data, alongside recurring impairment-related expenses in Gaming. This introduces a more explicit execution/cost discipline watchpoint around scaling AI infrastructure while managing non-core volatility.
 - **BKNG**: ambiguous (0.46)
   - Across 2020–early 2021 filings, BKNG repeatedly attributes performance to travel/restaurant demand and describes COVID-19 as causing material declines in bookings, revenues, income, and operating cash flow, alongside ongoing liquidity focus. The evidence supports continued sensitivity to macro demand shocks, but the provided excerpts also indicate periods of sequential improvement, making the net thesis direction (strengthened vs. weakened) unclear without the full staged outcomes or a stated baseline thesis.
 - **COST**: thesis_unchanged (0.55)
   - The referenced liquidity-related filing evidence appears to be repeated, non-directional disclosure (fair value of current liabilities approximates carrying value; long-term debt carried at issuance price with amortization; no material changes in valuation techniques), yielding no clear thesis-relevant change signal over the cited periods.
-- **NVDA**: new_watchpoint (0.74)
+- **[[nvda]]**: new_watchpoint (0.74)
   - Recent filings introduce a concrete, quantified export-controls-driven demand and inventory impairment event (H20/China) that adds a new, high-materiality watchpoint on regional demand exposure and inventory/purchase obligation risk.
 - **MU**: new_watchpoint (0.62)
   - The filing excerpts add a clearer watchpoint around multi-quarter demand/price downturn dynamics (4Q2022 into early 2024) and Micron’s supply response (wafer-start cuts, capex reductions, underutilization costs), plus an explicit China regulatory/geopolitical risk signal (CAC cybersecurity review).
@@ -54,7 +54,7 @@ created: '2026-05-08T16:38:07.650Z'
   - Across the cited filings, the most material “delta” is the emergence (and continuation) of R&D/intangible and goodwill impairment signals tied to newer/adjacent businesses (e.g., Wellness & Healthcare) and a Europe reporting unit. Separately, the evidence reiterates a pattern of episodic charges from footprint optimization, geopolitical disruptions, and adverse legal/tax outcomes—suggesting ongoing execution/one-off risk rather than a cleanly improving or deteriorating core demand picture from this excerpt set alone.
 - **NFLX**: ambiguous (0.62)
   - Across the Demand-themed excerpts, the narrative shifts from early-stage consumer adoption and seasonal membership growth to more mature period commentary where revenue/operating income growth is described alongside rising content amortization and higher taxes; this combination supports continued monetization but is not clean, direct evidence of demand acceleration or deterioration.
-- **TSLA**: insufficient_evidence (0.72)
+- **[[tsla]]**: insufficient_evidence (0.72)
   - Across 2021–2026 filings referenced, Tesla repeatedly discloses materially similar supply-chain and production-ramp risks (bottlenecks, hiring/training constraints, unexpected challenges, inflation/shipping/raw material/labor cost pressures). The evidence indicates persistence of the risk framing, but does not establish a directional change in underlying exposure or mitigation effectiveness.
 - **DIS**: new_watchpoint (0.56)
   - Across the provided filings, the risk/impact narrative appears to shift from COVID-driven government restrictions and reopening compliance costs (2020–2021) toward (a) theme-park/resort cost inflation tied to higher volumes and inflation (2024) and (b) discrete legal/regulatory expense items (legal ruling charge) that can create earnings volatility. This supports adding a watchpoint focused on the persistence/magnitude of operating cost inflation and episodic legal/regulatory charges rather than treating earlier COVID restrictions as the primary regulatory driver.

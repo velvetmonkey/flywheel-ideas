@@ -240,7 +240,7 @@ Other operating and administrative
 
 9.8
 
-Advertising, marketing and promotion
+Advertising, marketing and [[promotion]]
 
 1,487
 

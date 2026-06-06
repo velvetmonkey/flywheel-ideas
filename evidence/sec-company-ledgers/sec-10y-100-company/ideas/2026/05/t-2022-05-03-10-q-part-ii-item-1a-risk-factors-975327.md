@@ -134,7 +134,7 @@ Rule 13a-14(a)/15d-14(a) Certifications
 
 31.1 Certification of Principal Executive Officer
 
-31.2 Certification of Principal Financial Officer
+31.2 Certification of Principal [[financials|Financial]] Officer
 
 32
 

@@ -26,7 +26,7 @@ adversely affect our businesses and challenge existing business models.
 
 Competition for our cable services consists primarily of
 
-DBS providers and phone companies with fiber-based networks that typically offer features, pricing and packaging for services comparable to ours. In 2015, AT&T, our largest phone company competitor, acquired DirecTV, the nations largest
+DBS providers and phone companies with fiber-based networks that typically offer [[features]], pricing and packaging for services comparable to ours. In 2015, AT&T, our largest phone company competitor, acquired DirecTV, the nations largest
 
 DBS provider to create an even larger competitor that also has its own wireless phone facilities, which we do not, and in 2016, announced a proposed merger with Time Warner, a media and entertainment company. Some of these competitors have begun
 

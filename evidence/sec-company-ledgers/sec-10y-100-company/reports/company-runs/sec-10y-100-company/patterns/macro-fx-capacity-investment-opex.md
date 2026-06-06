@@ -29,7 +29,7 @@ Macro and foreign exchange is now connected to accepted lesson evidence through 
 
 ## Accepted Failure Chains
 
-- **DIS / Macro and foreign exchange**
+- **[[dis]] / Macro and foreign exchange**
   - Lesson: Experience-business macro assumptions should track cost inflation in guest-facing merchandise, food, and beverage because demand recovery can still carry margin pressure.
   - Evidence: 1 accepted verdict(s), outcome(s) out-oGp6QiUf
   - Context: The filing disclosed cost of products increased 4% to $1.7 billion due to higher sales volumes and cost inflation at theme parks and resorts.
@@ -45,7 +45,7 @@ Macro and foreign exchange is now connected to accepted lesson evidence through 
   - Lesson: Semiconductor macro assumptions should be tested against segment-level revenue deterioration, not only company-wide demand language.
   - Evidence: 1 accepted verdict(s), outcome(s) out-vm5Za9Qq
   - Context: The 2023 10-K disclosed a Client segment revenue decline from weak PC market macroeconomic conditions and inventory correction actions across the PC supply chain in the second half of 2022.
-- **TSLA / Macro and foreign exchange**
+- **[[tsla]] / Macro and foreign exchange**
   - Lesson: Macro assumptions for manufacturers should connect inflation language to pricing actions and margin pressure, not treat macro risk as abstract background noise.
   - Evidence: 1 accepted verdict(s), outcome(s) out-9gcDshGU
   - Context: The 2022 10-Q disclosed inflationary pressure tied to global economic conditions and supply-chain disruptions, with cost-structure impact contributing to product pricing adjustments.

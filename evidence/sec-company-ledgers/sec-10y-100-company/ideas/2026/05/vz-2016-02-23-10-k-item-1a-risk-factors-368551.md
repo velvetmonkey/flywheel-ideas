@@ -290,7 +290,7 @@ across our diverse portfolio of wireless devices. Our location-based services pr
 
 data services allow our customers to access data services and the Internet on all of our smartphones and many of our tablets and basic phones from hundreds of international destinations. In addition, depending upon their wireless devices
 
-operating system, our customers have access to more than one million applications and services offered by Google Inc. (Google) via Google Play, Apple Inc. (Apple) via iTunes, Microsoft Inc. (Microsoft) via its Windows Phone operating system and
+operating system, our customers have access to more than one million applications and services offered by [[googl|Google]] Inc. (Google) via Google Play, Apple Inc. (Apple) via iTunes, Microsoft Inc. (Microsoft) via its Windows Phone operating system and
 
 BlackBerry Limited (BlackBerry) via its BlackBerry App World webstore.
 
@@ -302,7 +302,7 @@ connections in their homes using our 4G LTE network.
 
 In addition, we provide network access and, in some cases, enhanced
 
-value added services to support wireless connections for the Internet of Things (IoT). Our IoT services support devices that are used by a variety of vertical market segments, including health monitoring, education, manufacturing, utilities,
+value added services to support wireless connections for the Internet of Things (IoT). Our IoT services support devices that are used by a variety of vertical market segments, including health monitoring, education, manufacturing, [[utilities]],
 
 distribution and consumer products. For example, companies purchase network access and, in some cases, enhanced services from us in order to connect with and monitor equipment, such as medical devices used to monitor patients, fleet management
 

@@ -46,7 +46,7 @@ future growth, and incur costs associated with general administration, including
 
 increasing our customer base, we may also incur increased losses because the costs associated with acquiring and growing our customers via our Acquire, Expand, and Scale business model and with research and development are generally incurred
 
-upfront, while our revenue from customer contracts is generally recognized over the contract term. Furthermore, our sales model often requires us to spend months and invest significant resources working with customers on pilot deployments at no or
+upfront, while our revenue from customer contracts is generally recognized over the contract term. Furthermore, our sales model often requires us to spend months and invest significant resources working with customers on [[pilot]] deployments at no or
 
 low cost to them, which may result in no or minimal future revenue. We may not be able to increase our revenue at a rate sufficient to offset increases in our costs of revenue and operating expenses in the near term or at all, which would prevent us
 
@@ -86,7 +86,7 @@ requirements, and typically involve their senior management.
 
 Our results of operations depend on sales to enterprise customers, which
 
-make product purchasing decisions based in part or entirely on factors, or perceived factors, not directly related to the features of the platforms, including, among others, that customers projections of business growth, uncertainty about
+make product purchasing decisions based in part or entirely on factors, or perceived factors, not directly related to the [[features]] of the platforms, including, among others, that customers projections of business growth, uncertainty about
 
 economic conditions (including as a result of the recent
 

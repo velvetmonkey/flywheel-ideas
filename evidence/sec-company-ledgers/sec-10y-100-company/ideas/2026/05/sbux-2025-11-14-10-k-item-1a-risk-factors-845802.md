@@ -194,7 +194,7 @@ s Discussion and Analysis of Financial Condition and Results of Operations" sect
 
 • inherent risks of operating a global business, including changing conditions in our markets, local factors affecting store openings, protectionist trade or foreign investment policies, such as tariffs and import/export regulations, economic or trade sanctions, compliance with local laws and other regulations, and local labor policies and conditions, including labor strikes and work stoppages;
 
-• higher costs, lower quality, or unavailability of coffee, dairy, cocoa, energy, water, raw materials, or product ingredients and related volatility;
+• higher costs, lower quality, or unavailability of coffee, dairy, cocoa, energy, water, raw [[materials]], or product ingredients and related volatility;
 
 • the ability of our supply chain to meet current or future business needs and our ability to scale and improve our forecasting, planning, production, and logistics management;
 
@@ -224,7 +224,7 @@ s Discussion and Analysis of Financial Condition and Results of Operations" sect
 
 Table of Contents
 
-• the impact or likelihood of significant legal disputes and proceedings or government investigations;
+• the impact or likelihood of significant legal [[disputes]] and proceedings or government investigations;
 
 • the unauthorized access, use, theft, or destruction of our data, or of our proprietary or confidential information and the impact thereof;
 
@@ -248,7 +248,7 @@ General
 
 In this Annual Report on Form 10-K ("10-K" or "Report") for the fiscal year ended September 28, 2025 ("fiscal 2025"), Starbucks Corporation (together with its subsidiaries) is referred to as "Starbucks," the "Company," "we," "us," or "our."
 
-Starbucks is the premier roaster, marketer, and retailer of specialty coffee in the world, operating in 89 markets. Formed in 1985, Starbucks Corporation's common stock trades on the Nasdaq Global Select Market ("Nasdaq") under the symbol "SBUX." We purchase and roast high-quality coffees that we sell, along with handcrafted coffee, tea, and other beverages and a variety of high-quality food items through company-operated stores ("stores" or "coffeehouses"). We also sell a variety of coffee and tea products and license our trademarks through other channels, such as licensed stores as well as grocery and foodservice through our Global Coffee Alliance with Nestlé S.A. ("Nestlé"). In addition to our flagship Starbucks Coffee
+Starbucks is the premier roaster, marketer, and retailer of specialty coffee in the world, operating in 89 markets. Formed in 1985, Starbucks Corporation's common stock trades on the Nasdaq Global Select Market ("Nasdaq") under the symbol "[[sbux]]." We purchase and roast high-quality coffees that we sell, along with handcrafted coffee, tea, and other beverages and a variety of high-quality food items through company-operated stores ("stores" or "coffeehouses"). We also sell a variety of coffee and tea products and license our trademarks through other channels, such as licensed stores as well as grocery and foodservice through our Global Coffee Alliance with Nestlé S.A. ("Nestlé"). In addition to our flagship Starbucks Coffee
 
 ®
 

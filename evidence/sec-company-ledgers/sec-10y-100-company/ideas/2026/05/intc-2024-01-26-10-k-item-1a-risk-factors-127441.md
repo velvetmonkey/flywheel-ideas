@@ -96,9 +96,9 @@ Item 6.
 
 Item 7.
 
-Management's Discussion and Analysis of Financial Condition and Results of Operations:
+Management's Discussion and Analysis of [[financials|Financial]] Condition and Results of Operations:
 
-Liquidity and capital resources
+[[liquidity]] and capital resources
 
 Pages
 

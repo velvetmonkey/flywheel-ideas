@@ -10,7 +10,7 @@ undone_at: null
 ---
 Filing language states this risk had an actual effect on operations, results, costs, or supply.
 
-Source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:demand:outcome
+Source: sec-company://0000320193/0000320193-20-000052#part-i-item-2:theme:demand:[[outcome]]
 
 Additionally, many of the Company's channel partner points of sale outside of China temporarily closed. As a result of the above factors, the Company also experienced weakened demand for its products and services outside of China during the last three weeks of the quarter.
 

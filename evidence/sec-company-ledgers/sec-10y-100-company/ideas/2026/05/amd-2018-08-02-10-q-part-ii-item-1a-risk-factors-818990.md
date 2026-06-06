@@ -28,11 +28,11 @@ Signature
 
 2
 
-PART I. FINANCIAL INFORMATION
+PART I. [[financials|FINANCIAL]] INFORMATION
 
 ITEM 1.
 
-FINANCIAL STATEMENTS
+[[financials|FINANCIAL]] STATEMENTS
 
 Advanced Micro Devices, Inc.
 

@@ -14,7 +14,7 @@ created: '2026-05-08T16:38:07.716Z'
 
 - Companies: AXP, BAC, BRK-B, C, GS, JPM, MA, MS, V, WFC
 - Observations: 0
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

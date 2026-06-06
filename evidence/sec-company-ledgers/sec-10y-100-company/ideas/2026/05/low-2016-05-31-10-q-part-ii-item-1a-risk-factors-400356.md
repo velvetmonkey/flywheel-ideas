@@ -1170,7 +1170,7 @@ to the consolidated financial statements included herein for additional informat
 
 There were no transfers between Levels 1, 2 or 3 during any of the periods presented.
 
-When available, quoted prices were used to determine fair value. When quoted prices in active markets were available, investments were classified within Level 1 of the fair value hierarchy. When quoted prices in active markets were not available, fair values were determined using pricing models, and the inputs to those pricing models were based on observable market inputs. The inputs to the pricing models were typically benchmark yields, foreign currency exchange rates, reported trades, broker-dealer quotes, issuer spreads and benchmark securities, among others.
+When available, quoted prices were used to determine fair value. When quoted prices in active markets were available, investments were classified within Level 1 of the fair value hierarchy. When quoted prices in active markets were not available, fair values were determined using pricing [[models]], and the inputs to those pricing models were based on observable market inputs. The inputs to the pricing models were typically benchmark yields, foreign currency exchange rates, reported trades, broker-dealer quotes, issuer spreads and benchmark securities, among others.
 
 Assets and Liabilities that are Measured at Fair Value on a Nonrecurring Basis
 

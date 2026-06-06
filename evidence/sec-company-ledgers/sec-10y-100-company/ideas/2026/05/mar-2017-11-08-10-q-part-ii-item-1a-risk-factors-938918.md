@@ -86,7 +86,7 @@ percent of the rooms in our system at the end of the
 
 2017 third quarter
 
-. We expect that our international operations, and resulting revenues, will continue to grow. As a result, we are increasingly exposed to the challenges and risks of doing business outside the United States, many of which are outside of our control, and which could reduce our revenues or profits, increase our costs, result in significant liabilities or sanctions, otherwise disrupt our business, or damage our reputation. These challenges include: (1) compliance with complex and changing laws, regulations, and government policies that may impact our operations, such as foreign ownership restrictions, import and export controls, and trade restrictions; (2) compliance with U.S. and foreign laws that affect the activities of companies abroad, such as competition laws,
+. We expect that our international operations, and resulting revenues, will continue to grow. As a result, we are increasingly exposed to the challenges and risks of doing business outside the United States, many of which are outside of our control, and which could reduce our revenues or profits, increase our costs, result in significant liabilities or sanctions, otherwise disrupt our business, or damage our reputation. These challenges include: (1) compliance with complex and changing laws, regulations, and government policies that may impact our operations, such as foreign ownership restrictions, [[import]] and export controls, and trade restrictions; (2) compliance with U.S. and foreign laws that affect the activities of companies abroad, such as competition laws,
 
 36
 

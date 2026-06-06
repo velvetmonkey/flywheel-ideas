@@ -24,7 +24,7 @@ created: '2026-05-08T16:38:07.881Z'
 - **Demand**: 84 observation(s), latest 2026-04-23, assumption asm-hNS1BXy4
 - **Competition**: 77 observation(s), latest 2026-04-23, assumption asm-rPQ3gUSs
 - **Macro and foreign exchange**: 75 observation(s), latest 2026-04-23, assumption asm-Qw2RNyYr
-- **Liquidity**: 73 observation(s), latest 2026-04-23, assumption asm-bZEYteB4
+- **[[liquidity]]**: 73 observation(s), latest 2026-04-23, assumption asm-bZEYteB4
 - **Regulation and legal**: 73 observation(s), latest 2026-04-23, assumption asm-Vq1KB2xB
 - **Cybersecurity and privacy**: 58 observation(s), latest 2026-04-23, assumption asm-QBKTT7E8
 - **Customer and platform dependency**: 55 observation(s), latest 2026-02-03, assumption asm-AJnfVh8h

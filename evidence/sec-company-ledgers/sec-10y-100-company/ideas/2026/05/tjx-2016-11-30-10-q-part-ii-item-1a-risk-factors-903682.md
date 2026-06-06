@@ -22,7 +22,7 @@ Information on Share Repurchases
 
 The
 
-number of shares of common stock repurchased by TJX during the third quarter of fiscal 2017 and the average price paid per share are as follows:
+number of shares of common stock repurchased by [[tjx]] during the third quarter of fiscal 2017 and the average price paid per share are as follows:
 
 Total
 
@@ -146,7 +146,7 @@ Certification of Chief Executive Officer pursuant to Section 302 of the Sarbanes
 
 31.2
 
-Certification of Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.
+Certification of Chief [[financials|Financial]] Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.
 
 32.1
 
@@ -158,7 +158,7 @@ Certification of Chief Financial Officer pursuant to Section 906 of the Sarbanes
 
 101
 
-The following materials from The TJX Companies, Inc.s Quarterly Report on Form 10-Q for the quarter ended October 29, 2016, formatted in XBRL (Extensible Business Reporting Language): (i) the Consolidated Statements of Income,
+The following [[materials]] from The TJX Companies, Inc.s Quarterly Report on Form 10-Q for the quarter ended October 29, 2016, formatted in XBRL (Extensible Business Reporting Language): (i) the Consolidated Statements of Income,
 
 (ii) the Consolidated Statements of Comprehensive Income, (iii) the Consolidated Balance Sheets, (iv) the Consolidated Statements of Cash Flows, (v) the Consolidated Statement of Shareholders Equity, and (vi) Notes to Consolidated Financial
 

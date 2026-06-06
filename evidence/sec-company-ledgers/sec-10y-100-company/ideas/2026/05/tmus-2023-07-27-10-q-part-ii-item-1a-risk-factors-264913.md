@@ -30,7 +30,7 @@ Note 13 – Commitments and Contingencies
 
 of the Notes to the Consolidated Financial Statements.
 
-In January 2023, we disclosed that a bad actor was obtaining data through a single Application Programming Interface ("API") without authorization. Based on our investigation, the impacted API is only able to provide a limited set of customer account data, including name, billing address, email, phone number, date of birth, T-Mobile account number and information such as the number of lines on the account and plan features. The result from our investigation indicates that the bad actor(s) obtained data from this API for approximately 37 million current postpaid and prepaid customer accounts, though many of these accounts did not include the full data set. We believe that the bad actor first retrieved data through the impacted API starting on or around November 25, 2022. We have notified individuals whose information was impacted consistent with state and federal requirements.
+In January 2023, we disclosed that a bad actor was obtaining data through a single Application Programming Interface ("API") without authorization. Based on our investigation, the impacted API is only able to provide a limited set of customer account data, including name, billing address, email, phone number, date of birth, T-Mobile account number and information such as the number of lines on the account and plan [[features]]. The result from our investigation indicates that the bad actor(s) obtained data from this API for approximately 37 million current postpaid and prepaid customer accounts, though many of these accounts did not include the full data set. We believe that the bad actor first retrieved data through the impacted API starting on or around November 25, 2022. We have notified individuals whose information was impacted consistent with state and federal requirements.
 
 As a result of the August 2021 cyberattack and the January 2023 cyberattack, we have incurred and may continue to incur significant costs or experience other material financial impacts, which may not be covered by, or may exceed the coverage
 
@@ -46,13 +46,13 @@ Our procedures and safeguards to prevent unauthorized access to Confidential Inf
 
 Unfavorable outcomes of legal proceedings may adversely affect our business, reputation, financial condition, cash flows and operating results.
 
-We and our affiliates are involved in various disputes, governmental and/or regulatory inspections, investigations and proceedings, mass arbitrations and litigation matters. Such legal proceedings can be complex, costly, and highly disruptive to our business operations by diverting the attention and energy of management and other key personnel.
+We and our affiliates are involved in various [[disputes]], governmental and/or regulatory inspections, investigations and proceedings, mass arbitrations and litigation matters. Such legal proceedings can be complex, costly, and highly disruptive to our business operations by diverting the attention and energy of management and other key personnel.
 
 In connection with the Transactions, we became subject to a number of legal proceedings, including a putative shareholder class action and derivative lawsuit and a putative antitrust class action. For more information, see "– Contingencies and Litigation – Litigation and Regulatory Matters" in
 
 Note 13 – Commitments and Contingencies
 
-of the Notes to the Consolidated Financial Statements. It is possible that stockholders of T-Mobile and/or Sprint may file additional putative class action lawsuits or shareholder derivative actions against the Company and the legacy T-Mobile board of directors and/or the legacy Sprint board of directors. Among other remedies, these stockholders could seek damages. The outcome of any litigation is uncertain, and any such potential lawsuits could result in substantial costs and may be costly and distracting to management.
+of the Notes to the Consolidated Financial Statements. It is possible that stockholders of T-Mobile and/or Sprint may file additional putative class action lawsuits or shareholder derivative actions against the Company and the legacy T-Mobile board of directors and/or the legacy Sprint board of directors. Among other remedies, these stockholders could seek damages. The [[outcome]] of any litigation is uncertain, and any such potential lawsuits could result in substantial costs and may be costly and distracting to management.
 
 Additionally, on April 1, 2020, in connection with the closing of the Merger, we assumed the contingencies and litigation matters of Sprint. Those matters include a wide variety of disputes, claims, government agency investigations and enforcement actions and other proceedings. Unfavorable resolution of these matters could require us to make additional reimbursements and pay additional fines and penalties.
 

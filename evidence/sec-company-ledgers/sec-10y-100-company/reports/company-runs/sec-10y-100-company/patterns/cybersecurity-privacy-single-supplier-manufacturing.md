@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.148Z'
 - Theme: Cybersecurity and privacy
 - Mechanism: Single supplier or manufacturing concentration
 - Sectors: Consumer Staples, Information Technology
-- Companies: AAPL, AVGO, MU, PG
+- Companies: [[aapl]], AVGO, MU, PG
 - Observations: 101
 - Realized candidates: 0
 - Accepted lessons: 1

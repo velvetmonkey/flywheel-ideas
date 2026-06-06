@@ -874,7 +874,7 @@ Accounts and notes receivable, less allowance: 3/16 - $136 and 12/15 - $130
 
 Inventories:
 
-Raw materials
+Raw [[materials]]
 
 1,418
 

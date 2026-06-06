@@ -108,7 +108,7 @@ Any substantial disruption in TSMC's supply of wafers to us, or in the other con
 
 We also depend on our contract manufacturers to timely develop new, advanced manufacturing processes, including, in the case of wafer fabrication, transitions to smaller geometry process technologies. If these new processes are not timely developed or we do not have sufficient access to them, we may be unable to maintain or increase our manufacturing efficiency to the same extent as our competitors or to deliver products to our customers, which could result in loss of revenue opportunities and damage our relationships with our customers.
 
-We purchase a significant amount of the materials used in our products from a limited number of suppliers.
+We purchase a significant amount of the [[materials]] used in our products from a limited number of suppliers.
 
 Our manufacturing processes and those of our contract manufacturers rely on many materials, including silicon, gallium arsenide and indium phosphide wafers, copper lead frames, precious and rare earth metals, mold compound, ceramic packages and various chemicals and gases. We purchase a significant portion of our semiconductor materials, components and finished goods used in our products from a few materials providers, some of which are single source suppliers. During the
 
@@ -128,7 +128,7 @@ five
 
 materials providers. Substantially all of our purchases are on a purchase order basis, and we do not generally have long-term contracts with our materials providers. Suppliers may extend lead times, limit supplies or increase prices due to commodity price increases, capacity constraints or other factors, all of which may be exacerbated by the COVID-19 pandemic, and could lead to interruption of supply or increased demand in the industry. In the event that we cannot timely obtain sufficient quantities of materials or at reasonable prices, the quality of the material deteriorates or we are not able to pass on higher materials or energy costs to our customers, our business, financial condition and results of operations could be adversely impacted.
 
-Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and liquidity.
+Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and [[liquidity]].
 
 A general slowdown in the global economy or in a particular region or industry, an increase in trade tensions with U.S. trading partners or a tightening of the credit markets could negatively impact our business, financial condition and liquidity. Adverse global economic conditions have from time to time caused or exacerbated significant slowdowns in the industries and markets in which we operate, which have adversely affected our business and results of operations. In recent periods, investor and customer concerns about the global economic outlook have adversely affected market and business conditions in general. Macroeconomic weakness and uncertainty also make it more difficult for us to accurately forecast revenue, gross margin and expenses, and may make it more difficult to raise or refinance debt. An escalation of recent trade tensions between the U.S. and China has resulted in trade restrictions and increased tariffs that harm our ability to participate in Chinese markets or compete effectively with Chinese companies. Sustained uncertainty about, or worsening of, current global economic conditions and further escalation of trade tensions between the U.S. and its trading partners, especially China, could result in a global economic slowdown and long-term changes to global trade. Such events may also (i) cause our customers and consumers to reduce, delay or forgo technology spending, (ii) result in customers sourcing products from other suppliers not subject to such restrictions or tariffs, (iii) lead to the insolvency or consolidation of key suppliers and customers, and (iv) intensify pricing pressures. Any or all of these factors could negatively affect demand for our products and our business, financial condition and results of operations.
 
@@ -158,6 +158,6 @@ changes in political, regulatory, legal or economic conditions or geopolitical t
 
 •
 
-restrictive governmental actions, such as restrictions on the transfer or repatriation of funds and foreign investments, data privacy regulations and trade protection measures, including increasing protectionism, import/export restrictions, import/export duties and quotas, trade sanctions and customs duties and tariffs, all of which have increased under the current U.S. administration;
+restrictive governmental actions, such as restrictions on the transfer or repatriation of funds and foreign investments, data privacy regulations and trade protection measures, including increasing protectionism, [[import]]/export restrictions, import/export duties and quotas, trade sanctions and customs duties and tariffs, all of which have increased under the current U.S. administration;
 
 •

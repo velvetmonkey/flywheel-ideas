@@ -74,7 +74,7 @@ of
 
 Contents
 
-global commercialization of additional innovative smoke-free tobacco products, such an outcome could have a negative effect on our ability to generate new revenue streams and enter new geographic markets.
+global commercialization of additional innovative smoke-free tobacco products, such an [[outcome]] could have a negative effect on our ability to generate new revenue streams and enter new geographic markets.
 
 In September 2022, we exercised our option to be released from our JUUL non-competition obligations. As a result, we now have less voting power and influence over JUUL's financial and operating policies, and JUUL has greater flexibility to pursue strategic options with respect to its business. If we are unable to identify and execute on new opportunities to acquire, develop or commercialize innovative products within the e-vapor space, we could be at a competitive disadvantage in the e-vapor category, which could have a negative effect on our ability to generate new revenue streams.
 
@@ -90,4 +90,4 @@ Failure to complete or manage strategic transactions, including acquisitions, di
 
 We regularly evaluate potential strategic transactions, including acquisitions, dispositions, joint ventures and investments in third parties. Opportunities for strategic transactions may be limited, and the success of any such transaction is dependent upon our ability to realize the expected benefits of the transaction in the expected time frame or at all. Furthermore, following the completion of a transaction there may be certain financial, managerial, staffing and talent, and operational risks, including diversion of management's attention from existing core businesses, difficulties integrating other businesses into existing operations and other challenges presented by a transaction that does not achieve anticipated sales levels and profitability. We can provide no assurance that we will be able to enter into attractive business relationships or execute strategic transactions on favorable terms or at all or that any such relationships or transactions will improve our competitive position or have the intended financial outcomes. For example, to date, our investments in JUUL and Cronos have not resulted in the economic and competitive advantages expected at the time the investments were made. If any acquisition, disposition, joint venture, investment in a third party or other strategic relationship is not successful, there could be a material negative impact on our business, financial position and our ability to achieve our Vision.
 
-Significant changes in price, availability or quality of tobacco, other raw materials or component parts could have a material adverse effect on our profitability and business.
+Significant changes in price, availability or quality of tobacco, other raw [[materials]] or component parts could have a material adverse effect on our profitability and business.

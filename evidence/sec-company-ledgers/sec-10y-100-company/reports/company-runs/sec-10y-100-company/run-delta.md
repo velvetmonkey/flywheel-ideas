@@ -12,7 +12,7 @@ created: '2026-05-08T16:38:07.671Z'
 ---
 # Run Delta sec-10y-100-company
 
-No prior run manifest was supplied to this core bundle writer.
+No prior run [[manifest]] was supplied to this core bundle writer.
 
 The sector dogfood script writes a richer run-over-run delta when it finds a previous local manifest.
 

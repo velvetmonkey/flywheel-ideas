@@ -74,7 +74,7 @@ Dependence on contract manufacturing and suppliers of critical components within
 
 •
 
-We purchase a significant amount of the materials used in our products from a limited number of suppliers.
+We purchase a significant amount of the [[materials]] used in our products from a limited number of suppliers.
 
 •
 
@@ -194,7 +194,7 @@ For a more complete discussion of the material risks facing our business, see be
 
 Risks Related to Our Business
 
-Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and liquidity.
+Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and [[liquidity]].
 
 A general slowdown in the global economy or in a particular region or industry, other unfavorable changes in economic conditions, such as inflation, higher interest rates, tightening of the credit markets, recession or slowing growth, or an increase in trade tensions with U.S. trading partners could negatively impact our business, financial condition and liquidity. Adverse global economic conditions have from time to time caused or exacerbated significant slowdowns in the industries and markets in which we operate, which have adversely affected our business and results of operations. Macroeconomic weakness and uncertainty also make it more difficult for us to accurately forecast operating results, and may make it more difficult to raise or refinance debt. An escalation of trade tensions between the U.S. and China has resulted in trade restrictions, increased protectionism and increased tariffs that harm our ability to participate in Chinese markets or compete effectively with Chinese companies. Sustained uncertainty about, or worsening of, current global economic conditions and further escalation of trade tensions between the U.S. and its trading partners, especially China, and the decoupling of the U.S. and China economies, could result in a global economic slowdown and long-term changes to global trade. Such events may also (i) cause our customers and consumers to reduce, delay or forgo technology spending, (ii) result in customers sourcing products from other suppliers not subject to such restrictions or tariffs, (iii) lead to the insolvency or consolidation of key suppliers and customers, and (iv) intensify pricing pressures. Any or all of these factors could negatively affect demand for our products and our business, financial condition and results of operations.
 
@@ -204,7 +204,7 @@ these regulations may cause us to incur significant expense and failure to maint
 
 compliance with applicable regulations could adversely affect our business.
 
-Our business is subject to various domestic and international laws and other legal requirements, including anti-competition and import/export regulations, such as the U.S. Export Administration Regulations, and applicable executive
+Our business is subject to various domestic and international laws and other legal requirements, including anti-competition and [[import]]/export regulations, such as the U.S. Export Administration Regulations, and applicable executive
 
 17
 

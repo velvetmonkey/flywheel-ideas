@@ -12,7 +12,7 @@ created: '2026-05-03T20:02:52.345Z'
 Filed: 2025-03-21
 Source: https://www.sec.gov/Archives/edgar/data/354950/000035495025000085/hd-20250202.htm
 
-Our business, results of operations, cash flows, financial condition and prospects are subject to numerous risks and uncertainties. In connection with any investment decision with respect to our securities, you should carefully consider the following risk factors, as well as the other information contained in this report and our other filings with the SEC. Additional risks and uncertainties not presently known to us or that we currently deem immaterial may also impact our business operations. Should any of these risks materialize, our business, results of operations, cash flows, financial condition and prospects could be negatively impacted, which in turn could affect the trading value of our securities. You should read these Risk Factors in conjunction with
+Our business, results of operations, cash flows, financial condition and prospects are subject to numerous risks and uncertainties. In connection with any investment decision with respect to our securities, you should carefully consider the following risk factors, as well as the other information contained in this report and our other filings with the SEC. Additional risks and uncertainties not presently known to us or that we currently deem immaterial may also impact our business operations. Should any of these risks [[materials|materialize]], our business, results of operations, cash flows, financial condition and prospects could be negatively impacted, which in turn could affect the trading value of our securities. You should read these Risk Factors in conjunction with
 
 Part II, Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations
 
@@ -24,7 +24,7 @@ Strong competition could adversely affect prices and demand for our products and
 
 Our industry is highly competitive, highly fragmented, and evolving. As a result, we face competition for customers for our products and services from a variety of retailers, suppliers, service providers, and distributors and manufacturers that sell products directly to their respective customer bases.
 
-These competitors range from traditional brick-and-mortar, to multichannel, to exclusively online, and they include a number of other home improvement retailers; local, regional and national hardware stores; electrical, plumbing and building materials supply houses; and lumber yards. With respect to some products and services, we also compete
+These competitors range from traditional brick-and-mortar, to multichannel, to exclusively online, and they include a number of other home improvement retailers; local, regional and national hardware stores; electrical, plumbing and building [[materials]] supply houses; and lumber yards. With respect to some products and services, we also compete
 
 Fiscal 2024 Form 10-K
 

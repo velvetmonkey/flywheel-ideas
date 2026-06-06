@@ -48,7 +48,7 @@ Government regulatory actions and court decisions such as these may result in fi
 
 s
 
-from them. New competition law actions could be initiated, potentially using previous actions as precedent. The outcome of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
+from them. New competition law actions could be initiated, potentially using previous actions as precedent. The [[outcome]] of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
 
 •
 

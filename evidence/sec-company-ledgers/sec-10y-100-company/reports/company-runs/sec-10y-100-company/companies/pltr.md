@@ -25,7 +25,7 @@ created: '2026-05-08T16:38:07.895Z'
 - **Customer and platform dependency**: 43 observation(s), latest 2026-02-17, assumption asm-zT554GZv
 - **Regulation and legal**: 42 observation(s), latest 2026-02-17, assumption asm-oridaenZ
 - **AI, R&D, and technology**: 41 observation(s), latest 2026-02-17, assumption asm-CFdDZ1Qg
-- **Liquidity**: 38 observation(s), latest 2026-02-17, assumption asm-EA7XXQ4c
+- **[[liquidity]]**: 38 observation(s), latest 2026-02-17, assumption asm-EA7XXQ4c
 - **Macro and foreign exchange**: 36 observation(s), latest 2026-02-17, assumption asm-7QoEGjkb
 - **Cloud and data center capacity**: 35 observation(s), latest 2026-02-17, assumption asm-puiyGvAQ
 - **Competition**: 29 observation(s), latest 2026-02-17, assumption asm-aw5W6Z2w

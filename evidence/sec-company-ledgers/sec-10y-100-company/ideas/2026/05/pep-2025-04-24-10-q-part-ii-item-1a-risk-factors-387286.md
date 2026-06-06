@@ -798,7 +798,7 @@ and $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,673
 
@@ -1442,7 +1442,7 @@ While our financial results in the United States and Canada (North America) are 
 
 March 22, 2025 and March 23, 2024.
 
-The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from volatile geopolitical conditions, expanded or retaliatory tariffs and changes in the interest rate and inflationary cost environment have made such estimates and assumptions more difficult to calculate. Accordingly, actual results and outcomes could differ from those estimates.
+The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from volatile geopolitical conditions, expanded or retaliatory tariffs and changes in the interest rate and inflationary cost environment have made such estimates and assumptions more difficult to calculate. Accordingly, actual results and [[outcome|outcomes]] could differ from those estimates.
 
 Our significant interim accounting policies include the recognition of a pro rata share of certain estimated annual sales incentives and certain advertising and marketing costs in proportion to revenue or volume, as applicable, and the recognition of income taxes using an estimated annual effective tax rate.
 

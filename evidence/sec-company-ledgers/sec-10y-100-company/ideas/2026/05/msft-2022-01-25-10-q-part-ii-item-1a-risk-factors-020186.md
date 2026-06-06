@@ -48,7 +48,7 @@ hinder our ability to provide the benefits of our software to consumers and busi
 
 , potentially using previous actions as precedent.
 
-The outcome of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
+The [[outcome]] of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
 
 •
 

@@ -8,4 +8,4 @@ declared_at: '2026-05-03T19:25:33.759Z'
 date: '2026-05-03'
 created: '2026-05-03T19:25:34.132Z'
 ---
-In the context of **AVGO disclosed inventory and channel risk in 10-Q 2018-06-14.**, facing **Inventory**, we assume **AVGO can manage inventory and channel risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.
+In the context of **[[avgo]] disclosed inventory and channel risk in 10-Q 2018-06-14.**, facing **Inventory**, we assume **AVGO can manage inventory and channel risk without material disruption.**, accepting **The filing language is company-authored risk disclosure, not an independent forecast.**.

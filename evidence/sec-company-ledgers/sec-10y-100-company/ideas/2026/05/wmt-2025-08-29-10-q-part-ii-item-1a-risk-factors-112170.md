@@ -354,7 +354,7 @@ Returns
 
 As we execute our financial framework, we believe our return on capital will improve over time. We measure return on capital with our return on investment and free cash flow metrics. In addition, we provide returns in the form of share repurchases and dividends, which are discussed in the
 
-Liquidity and Capital Resources
+[[liquidity]] and Capital Resources
 
 section.
 

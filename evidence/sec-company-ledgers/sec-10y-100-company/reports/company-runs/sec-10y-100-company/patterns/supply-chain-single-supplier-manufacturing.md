@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.019Z'
 - Theme: Supply chain
 - Mechanism: Single supplier or manufacturing concentration
 - Sectors: Consumer Staples, Information Technology
-- Companies: NVDA, PG, PLTR
+- Companies: [[nvda]], PG, PLTR
 - Observations: 142
 - Realized candidates: 3
 - Accepted lessons: 6
@@ -46,8 +46,8 @@ Supply chain is now connected to accepted lesson evidence through the single sup
 - **MO / Supply chain**
   - Lesson: Domestic-business geopolitics assumptions should still track indirect input exposure because conflict can reach companies through supplier cost and availability rather than direct revenue.
   - Evidence: 1 accepted verdict(s), outcome(s) out-pHzkjaqp
-  - Context: The filing disclosed negative effects on the cost and availability of certain raw materials and component parts despite little direct Russia/Ukraine exposure.
-- **AAPL / Supply chain**
+  - Context: The filing disclosed negative effects on the cost and availability of certain raw [[materials]] and component parts despite little direct Russia/Ukraine exposure.
+- **[[aapl]] / Supply chain**
   - Lesson: Hardware supply-chain assumptions should track outsourcing-partner geography because localized disruptions can create global product shortages.
   - Evidence: 1 accepted verdict(s), outcome(s) out-1ZsB57E2
   - Context: The filing disclosed temporary iPhone supply shortages that affected sales worldwide after manufacturing, supply-chain, and logistics disruptions.

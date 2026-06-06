@@ -50,7 +50,7 @@ Winning business in the semiconductor solutions industry is an unpredictable pro
 
 •
 
-Dependence on a limited number of contract manufacturers and suppliers of critical materials and components within our supply chain, and potential failure to adjust such manufacturing and supply chain to meet customer demand, may adversely affect our ability to bring products to market and our results of operations.
+Dependence on a limited number of contract manufacturers and suppliers of critical [[materials]] and components within our supply chain, and potential failure to adjust such manufacturing and supply chain to meet customer demand, may adversely affect our ability to bring products to market and our results of operations.
 
 •
 
@@ -182,7 +182,7 @@ For a more complete discussion of the material risks facing our business, see be
 
 Risks Related to Our Business
 
-Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and liquidity.
+Adverse global economic conditions could have a negative effect on our business, results of operations and financial condition and [[liquidity]].
 
 A general weakening of the economy globally or in a particular region or industry, uncertainty and volatility in financial markets, efforts of governments to stimulate or stabilize the economy or to achieve specific policy objectives such as onshoring of semiconductor manufacturing and other unfavorable changes in economic conditions, such as inflation, higher interest rates, tightening of the credit markets, recession or slowing growth, as well as an increase in trade tensions and related tariffs with U.S. trading partners, could negatively impact our business, financial condition, cash flows and liquidity. Adverse global economic conditions have from time to time caused or exacerbated significant slowdowns in the industries and markets in which we operate, which have adversely affected our business and results of operations. Macroeconomic weakness and uncertainty may also make it more difficult to accurately forecast operating results, and market volatility stemming from current macroeconomic events may materially impact our cash flow and our ability to raise or refinance debt at favorable rates. An escalation of trade tensions between the U.S. and its trading partners may continue to result in trade restrictions and increased protectionism on both ends that harm our ability to participate in some markets or compete effectively.
 
@@ -194,7 +194,7 @@ these regulations may cause us to incur significant expense and failure to maint
 
 compliance with applicable regulations could adversely affect our business.
 
-Our business is subject to various domestic and international laws and other legal requirements, including antitrust and import/export regulations, such as the U.S. Export Administration Regulations, and applicable executive orders. These laws,
+Our business is subject to various domestic and international laws and other legal requirements, including antitrust and [[import]]/export regulations, such as the U.S. Export Administration Regulations, and applicable executive orders. These laws,
 
 13
 

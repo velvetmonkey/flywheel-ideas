@@ -260,7 +260,7 @@ Our DE&I objectives are to build teams that reflect the life experiences of our 
 
 ◦
 
-The Company's Reimagine Tomorrow efforts, which build on Disney's longstanding commitment to diversity, equity and inclusion, and features a website, Disney's first large-scale platform for amplifying underrepresented voices
+The Company's Reimagine Tomorrow efforts, which build on Disney's longstanding commitment to diversity, equity and inclusion, and [[features]] a website, Disney's first large-scale platform for amplifying underrepresented voices
 
 ◦
 

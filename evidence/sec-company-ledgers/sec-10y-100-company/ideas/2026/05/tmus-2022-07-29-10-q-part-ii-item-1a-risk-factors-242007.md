@@ -40,13 +40,13 @@ and controls at all times. We cannot provide any assurances that actions taken b
 
 Unfavorable outcomes of legal proceedings may adversely affect our business, reputation, financial condition, cash flows and operating results.
 
-We and our affiliates are involved in various disputes, governmental and/or regulatory inspections, investigations and proceedings and litigation matters. Such legal proceedings can be complex, costly, and highly disruptive to our business operations by diverting the attention and energy of management and other key personnel.
+We and our affiliates are involved in various [[disputes]], governmental and/or regulatory inspections, investigations and proceedings and litigation matters. Such legal proceedings can be complex, costly, and highly disruptive to our business operations by diverting the attention and energy of management and other key personnel.
 
 In connection with the Transactions, we became subject to a number of legal proceedings, including a putative shareholder class action and derivative lawsuit and a putative antitrust class action. For more information, see "– Contingencies and Litigation – Litigation and Regulatory Matters" in
 
 Note 11 – Commitments and Contingencies
 
-of the Notes to the Consolidated Financial Statements. It is possible that stockholders of T-Mobile and/or Sprint may file additional putative class action lawsuits or shareholder derivative actions against the Company and the legacy T-Mobile board of directors and/or the legacy Sprint board of directors. Among other remedies, these stockholders could seek damages. The outcome of any litigation is uncertain and any such potential lawsuits could result in substantial costs and may be costly and distracting to management.
+of the Notes to the Consolidated Financial Statements. It is possible that stockholders of T-Mobile and/or Sprint may file additional putative class action lawsuits or shareholder derivative actions against the Company and the legacy T-Mobile board of directors and/or the legacy Sprint board of directors. Among other remedies, these stockholders could seek damages. The [[outcome]] of any litigation is uncertain and any such potential lawsuits could result in substantial costs and may be costly and distracting to management.
 
 Additionally, on April 1, 2020, in connection with the closing of the Merger, we assumed the contingencies and litigation matters of Sprint. Those matters include a wide variety of disputes, claims, government agency investigations and enforcement actions and other proceedings. Unfavorable resolution of these matters could require making additional reimbursements and paying additional fines and penalties.
 

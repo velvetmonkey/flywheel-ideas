@@ -20,7 +20,7 @@ Risk Factors Summary
 
 •
 
-The adverse impact of the COVID-19 pandemic on our business, financial performance and travel demand, generally, including the impact on our liquidity, credit ratings and ongoing access to capital, the restructuring of our business and our participation in government stimulus programs;
+The adverse impact of the COVID-19 pandemic on our business, financial performance and travel demand, generally, including the impact on our [[liquidity]], credit ratings and ongoing access to capital, the restructuring of our business and our participation in government stimulus programs;
 
 •
 
@@ -60,7 +60,7 @@ Our performance marketing efficiency and the general effectiveness of our market
 
 •
 
-Any change by our search and meta-search partners in how they present travel search results or conduct their auctions for search placement in a manner that is competitively disadvantageous to us;
+Any change by our search and [[meta]]-search partners in how they present travel search results or conduct their auctions for search placement in a manner that is competitively disadvantageous to us;
 
 •
 

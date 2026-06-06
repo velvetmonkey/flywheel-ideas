@@ -18,7 +18,7 @@ created: '2026-05-04T12:05:07.146Z'
 
 Failure 12 months out is less “NVIDIA hit one risk factor” and more “we institutionalized a non-plan.” We took a disclosure list and upgraded it to a capability statement (“they can manage X without material disruption”) without specifying what “manage” means, what leading indicators would warn us, or what hard tradeoffs we’d accept (margin vs. share, allocation vs. launch cadence, compliance conservatism vs. revenue). The upside lens made correlated risks feel diversified because they were described under different headings; in reality, many share the same single points of failure (foundry + packaging + geopolitics + key customers).
 
-Working backwards: a demand wobble or competitive wedge hit guidance; supply/packaging/yield timing made the response late; customer concentration made that lateness visible immediately in revenue; geopolitics/regulation turned “late” into “can’t ship” in at least one key geography; and a cyber/quality incident (even modest) acted as the accelerator by consuming engineering bandwidth and spooking customers/partners. The council mistake wasn’t optimism per se—it was optimism without instrumentation.
+Working backwards: a demand wobble or competitive wedge hit guidance; supply/packaging/yield timing made the response late; customer concentration made that lateness visible immediately in revenue; geopolitics/regulation turned “late” into “can’t ship” in at least one key geography; and a cyber/quality incident (even modest) acted as the accelerator by consuming engineering bandwidth and spooking customers/partners. The [[council]] mistake wasn’t optimism per se—it was optimism without instrumentation.
 
 Assumption attacks (explicit):
 - asm-QncdPdYh: We assumed demand risk is “manageable,” but demand can be reflexive (expectations-driven) and discrete (pause/cancel behavior). A modest end-market dip, channel inventory correction, or hyperscaler digestion turns into a material disruption when pricing actions compress margins and fixed opex stays high.
@@ -59,7 +59,7 @@ Assumption-by-assumption attack:
 
 [asm-uWLMiPhM] Geopolitics/tariffs “managed”: the disruption came from policy lags and sudden rule changes, not gradual friction. Export controls, tariffs, sanctions, or cross-strait tension hit China-related demand and/or supply routing, causing shipment blocks, redesign costs (SKU bifurcation), and receivables risk. Even if demand existed, inability to legally ship or support at scale is a material disruption.
 
-[asm-iGQnHDHS] Supply chain risk “managed”: NVIDIA’s fabless model concentrates risk in foundry allocation, node transitions, packaging/test, and component availability. A capacity crunch, a delayed process transition, or a packaging materials shortage forced product allocation, missed launches, and margin pressure. Because these dependencies are shared across segments, the disruption was correlated—gaming, datacenter, and automotive all felt it simultaneously.
+[asm-iGQnHDHS] Supply chain risk “managed”: NVIDIA’s fabless model concentrates risk in foundry allocation, node transitions, packaging/test, and component availability. A capacity crunch, a delayed process transition, or a packaging [[materials]] shortage forced product allocation, missed launches, and margin pressure. Because these dependencies are shared across segments, the disruption was correlated—gaming, datacenter, and automotive all felt it simultaneously.
 
 [asm-GDaMBKx5] AI/R&D/technology risk “managed”: the bet on new markets and new business models demanded heavy upfront spend and flawless execution. What went wrong: the R&D ramp didn’t translate into on-time, cost-effective, customer-accepted products; or the software/driver stack couldn’t keep pace with emerging workloads; or automotive investments lagged regulatory/partner timelines. The result is the worst combo—higher opex plus delayed/uncertain revenue—i.e., material disruption.
 
@@ -67,7 +67,7 @@ Assumption-by-assumption attack:
 
 [asm-mFYToqD4] Cybersecurity/privacy risk “managed”: a breach (internal systems or third-party SaaS) or a product/OTA update compromise triggered operational disruption (shipments, procurement, engineering diversion) and customer trust loss. Even absent catastrophic data loss, “perceived breach” plus downtime can cause delayed orders and escalated costs. In a high-expectations environment, cyber incidents are disproportionately material.
 
-Net: the idea failed because every assumption was framed as a binary outcome (“managed without material disruption”) rather than as a set of measurable controls and contingency paths. The council accepted the disclaimer (“company-authored, not forecast”) but still implicitly treated it like reassurance; the failure is that it was a warning label we didn’t operationalize.
+Net: the idea failed because every assumption was framed as a binary [[outcome]] (“managed without material disruption”) rather than as a set of measurable controls and contingency paths. The council accepted the disclaimer (“company-authored, not forecast”) but still implicitly treated it like reassurance; the failure is that it was a warning label we didn’t operationalize.
 
 ## Key risks
 
@@ -98,4 +98,4 @@ Net: the idea failed because every assumption was framed as a binary outcome (�
 
 ## Evidence
 
-- "The idea’s assumptions are anchored to NVDA’s own risk disclosure about competition, new markets, defects, cyber, and third-party manufacturing dependencies." — https://www.sec.gov/Archives/edgar/data/1045810/000104581016000205/nvda-2016x10k.htm
+- "The idea’s assumptions are anchored to [[nvda]]’s own risk disclosure about competition, new markets, defects, cyber, and third-party manufacturing dependencies." — https://www.sec.gov/Archives/edgar/data/1045810/000104581016000205/nvda-2016x10k.htm

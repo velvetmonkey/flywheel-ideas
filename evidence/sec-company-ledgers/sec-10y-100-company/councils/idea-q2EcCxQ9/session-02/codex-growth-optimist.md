@@ -16,11 +16,11 @@ created: '2026-05-04T12:27:34.585Z'
 ---
 ## Revised stance (Pass 2)
 
-By May 4, 2027, this idea failed because we implicitly assumed that “starting with one great MD&A” could bootstrap a durable product wedge. The NVDA FY2017 Q1 MD&A is rich, readable, and has real narrative momentum (Gaming up, Datacenter up 63%, Automotive up 47%), so it’s easy to mistake “compelling text” for “repeatable decision utility.” Twelve months later, the market proved that a single issuer + single quarter is a magnet for interesting anecdotes, not a system that reliably changes outcomes.
+By May 4, 2027, this idea failed because we implicitly assumed that “starting with one great MD&A” could bootstrap a durable product wedge. The [[nvda]] FY2017 Q1 MD&A is rich, readable, and has real narrative momentum (Gaming up, Datacenter up 63%, Automotive up 47%), so it’s easy to mistake “compelling text” for “repeatable decision utility.” Twelve months later, the market proved that a single issuer + single quarter is a magnet for interesting anecdotes, not a system that reliably changes outcomes.
 
 Working backwards, the collapse looks like a funnel problem: lots of initial curiosity, low durable pull. Users asked, “So what do I do differently tomorrow?”—and we couldn’t answer with a crisp, testable action loop. Without cross-quarter comparability, peer baselines, and explicit mapping from claims to measurable KPIs (guidance deltas, segment revenue trajectories, margin drivers), the product read like a well-written briefing, not a tool. The optimistic upside (MD&A is high-signal when structured) remained true, but we didn’t convert it into a scalable workflow.
 
-The most likely proximate causes were operational, not conceptual: messy SEC HTML extraction edge-cases, the need for consistent taxonomy over time (segments and product branding evolve), and continuous “interpretation debt” because forward-looking language is intentionally hedged. The council’s optimism kept us shipping narrative summaries, but the market demanded instrumentation: evaluation against outcomes, alerting tied to change detection, and coverage breadth. In short, we shipped insight theater instead of a measurable edge.
+The most likely proximate causes were operational, not conceptual: messy SEC HTML extraction edge-cases, the need for consistent taxonomy over time (segments and product branding evolve), and continuous “interpretation debt” because forward-looking language is intentionally hedged. The [[council]]’s optimism kept us shipping narrative summaries, but the market demanded instrumentation: evaluation against outcomes, alerting tied to change detection, and coverage breadth. In short, we shipped insight theater instead of a measurable edge.
 
 If we had done the “growth optimist” pivot earlier, we could have reframed this as a structured decision-support product: (1) normalize segment metrics across quarters, (2) classify drivers (demand, mix, pricing, supply), (3) compare against consensus/expectations, and (4) backtest which textual shifts precede revisions. The failure wasn’t that MD&A is useless—it’s that we treated the absence of declared assumptions as permission to avoid pinning down the actual assumptions we were making, so we never stress-tested the foundations until churn did it for us.
 
@@ -63,7 +63,7 @@ Net: the upside was real (MD&A is high-signal when contextualized), but the “s
 
 ## Metacognitive reflection
 
-- **Could be wrong if:** If, by May 4, 2027, user data shows high retention and paid renewals for a single-issuer, single-document-first product—especially among roles that value narrative synthesis over prediction (IR, corp dev, earnings prep)—then the “single document can’t wedge” diagnosis is false.
+- **Could be wrong if:** If, by May 4, 2027, user data shows high retention and paid renewals for a single-issuer, single-document-first product—especially among roles that value narrative [[synthesis]] over prediction (IR, corp dev, earnings prep)—then the “single document can’t wedge” diagnosis is false.
 - **Most vulnerable assumption:** `asm-users-want-actionable-edge`
 - **Confidence rationale:** Moderate confidence because the failure narrative fits common pattern-matches (curiosity-driven content products struggle without a tight workflow), but we have no actual telemetry, ICP definition, pricing model, or usage context—so several alternative failure/success paths remain plausible.
 

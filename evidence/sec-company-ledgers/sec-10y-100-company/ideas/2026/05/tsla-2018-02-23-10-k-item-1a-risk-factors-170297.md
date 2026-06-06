@@ -176,7 +176,7 @@ Long Range and Recharging Flexibility
 
 High-Performance Without Compromised Design or Functionality
 
-. Our vehicles deliver instantaneous and sustained acceleration, an advanced autopilot system with active safety and convenience features, and over-the-air software updates.
+. Our vehicles deliver instantaneous and sustained acceleration, an advanced autopilot system with active safety and convenience [[features]], and over-the-air software updates.
 
 •
 
@@ -220,7 +220,7 @@ We are planning to introduce additional vehicles to address a broader cross-sect
 
 Energy Storage
 
-Using the energy management technologies and manufacturing processes developed for our vehicle powertrain systems, we developed energy storage products for use in homes, commercial facilities and on the utility grid. Advances in battery architecture, thermal management and power electronics that were originally commercialized in our vehicles, are now being leveraged in our energy storage products. Our energy storage systems are used for backup power, grid independence, peak demand reduction, demand response, reducing intermittency of renewable generation and wholesale electric market services.
+Using the energy management technologies and manufacturing processes developed for our vehicle powertrain systems, we developed energy storage products for use in homes, commercial facilities and on the utility grid. Advances in battery [[architecture]], thermal management and power electronics that were originally commercialized in our vehicles, are now being leveraged in our energy storage products. Our energy storage systems are used for backup power, grid independence, peak demand reduction, demand response, reducing intermittency of renewable generation and wholesale electric market services.
 
 2
 

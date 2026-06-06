@@ -28,7 +28,7 @@ One-page decision-support view: what failed, what lesson survived, what still ne
 ## Start Here
 
 - Proof path: [[reports/company-runs/sec-10y-100-company/proof-path|Proof path]]
-- Full thesis: [[reports/company-runs/sec-10y-100-company/thesis|Company thesis]]
+- Full [[thesis]]: [[reports/company-runs/sec-10y-100-company/thesis|Company thesis]]
 - Evidence tracker: [[reports/company-runs/sec-10y-100-company/tracker|Evidence tracker]]
 - Accepted lessons: [[reports/company-runs/sec-10y-100-company/accepted-lessons|Accepted lessons]]
 - Human review queue: [[reports/company-runs/sec-10y-100-company/review-queue|Human review queue]]
@@ -104,8 +104,8 @@ No staged review events are waiting for human judgment.
 
 ## Cross-Company Mechanisms
 
-- **Regulation and legal**: 32 open bet(s), 2053 observation(s), pressure 0, companies AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WMT
-- **Liquidity**: 29 open bet(s), 2008 observation(s), pressure 0, companies AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, MAR, META, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, WBD, WMT
+- **Regulation and legal**: 32 open bet(s), 2053 observation(s), pressure 0, companies AAPL, ABNB, AMZN, AVGO, BKNG, CMCSA, COST, EA, [[googl]], HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, [[nvda]], ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WMT
+- **Liquidity**: 29 open bet(s), 2008 observation(s), pressure 0, companies AAPL, ABNB, AMD, AMZN, AVGO, CMCSA, COST, CSCO, [[dis]], EA, GOOGL, HD, INTC, KO, MAR, META, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, SBUX, T, TMUS, TSLA, WBD, WMT
 - **Macro and foreign exchange**: 31 open bet(s), 1784 observation(s), pressure 0, companies AAPL, ABNB, AMZN, BKNG, CMCSA, COST, CSCO, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, WBD, WMT
 - **Competition**: 36 open bet(s), 1640 observation(s), pressure 0, companies AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
 - **Demand**: 21 open bet(s), 1502 observation(s), pressure 0, companies ABNB, AMZN, AVGO, CMCSA, COST, EA, GOOGL, INTC, LOW, MAR, MCD, MO, MSFT, NFLX, ORCL, PEP, PG, PLTR, T, TJX, WMT

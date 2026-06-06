@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.002Z'
 - Theme: Geopolitics and tariffs
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: AAPL, ABNB, AMZN, CMCSA, COST, CSCO, DIS, EA, KO, MAR, MCD, META, MO, MU, NFLX, NVDA, ORCL, PEP, PG, PM, T, TJX, TSLA, VZ, WBD
+- Companies: [[aapl]], ABNB, [[amzn]], CMCSA, COST, CSCO, DIS, EA, KO, MAR, MCD, META, MO, MU, [[nflx]], [[nvda]], ORCL, PEP, PG, PM, T, TJX, [[tsla]], VZ, WBD
 - Observations: 896
 - Realized candidates: 12
 - Accepted lessons: 6

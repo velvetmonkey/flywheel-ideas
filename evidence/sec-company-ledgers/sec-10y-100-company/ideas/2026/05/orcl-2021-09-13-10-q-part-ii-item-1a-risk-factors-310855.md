@@ -80,7 +80,7 @@ the sufficiency of our sources of funding for working capital, capital expenditu
 
 •
 
-our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the final outcome of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, and our belief that our net deferred tax assets will likely be realized in the foreseeable future;
+our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the final [[outcome]] of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, and our belief that our net deferred tax assets will likely be realized in the foreseeable future;
 
 •
 

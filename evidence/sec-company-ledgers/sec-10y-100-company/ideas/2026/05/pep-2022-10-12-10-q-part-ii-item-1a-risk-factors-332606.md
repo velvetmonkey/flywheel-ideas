@@ -1058,7 +1058,7 @@ and 12/21 - $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,303
 
@@ -2000,4 +2000,4 @@ The accompanying unaudited condensed consolidated financial statements have been
 
 While our financial results in the United States and Canada (North America) are reported on a 12-week basis, substantially all of our international operations reported on a monthly calendar basis prior to the fourth quarter of 2021. Beginning in the fourth quarter of 2021, all of our international operations reported on a monthly calendar basis. This change did not have a material impact on our condensed consolidated financial statements. For our international operations, the months of June, July and August are reflected in our results for the 12 weeks ended September 3, 2022, and the months of January through August are reflected in our results for the 36 weeks ended September 3, 2022.
 
-The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from the novel coronavirus (COVID-19) pandemic and the Russia-Ukraine conflict has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and outcomes could differ from those estimates.
+The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from the novel coronavirus (COVID-19) pandemic and the Russia-Ukraine conflict has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and [[outcome|outcomes]] could differ from those estimates.

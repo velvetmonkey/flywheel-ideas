@@ -1158,6 +1158,6 @@ In December 2025, the FASB issued ASU 2025-11,
 
 Interim Reporting (Topic 270): Narrow-Scope Improvements
 
-, which clarifies the guidance in Topic 270 to improve the consistency of interim financial reporting. The ASU provides a comprehensive list of required interim disclosures and introduces a disclosure principle requiring entities to disclose events since the end of the last annual reporting period that have a material impact on the entity. ASU 2025-11 is effective for fiscal years beginning after December 15, 2027, including interim periods within those fiscal years, with early adoption permitted. The Company is currently evaluating the impact of adopting ASU 2025-11.
+, which clarifies the guidance in Topic 270 to improve the [[consistency]] of interim financial reporting. The ASU provides a comprehensive list of required interim disclosures and introduces a disclosure principle requiring entities to disclose events since the end of the last annual reporting period that have a material impact on the entity. ASU 2025-11 is effective for fiscal years beginning after December 15, 2027, including interim periods within those fiscal years, with early adoption permitted. The Company is currently evaluating the impact of adopting ASU 2025-11.
 
 2.

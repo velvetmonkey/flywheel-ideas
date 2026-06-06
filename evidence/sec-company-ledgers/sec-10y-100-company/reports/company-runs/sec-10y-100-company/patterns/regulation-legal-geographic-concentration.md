@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.089Z'
 - Theme: Regulation and legal
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Consumer Discretionary
-- Companies: ABNB, CMCSA, GOOGL
+- Companies: ABNB, CMCSA, [[googl]]
 - Observations: 198
 - Realized candidates: 0
 - Accepted lessons: 5
@@ -35,11 +35,11 @@ Regulation and legal is now connected to accepted lesson evidence through the ge
   - Lesson: Semiconductor legal assumptions should track contingent-loss language because even small legal reserves mark realized friction that can recur or compound around transactions.
   - Evidence: 1 accepted verdict(s), outcome(s) out-PzSBYfnX
   - Context: The filing disclosed a $5 million contingent loss in connection with a legal matter, alongside other transaction-related expense items.
-- **WBD / Regulation and legal**
+- **[[wbd]] / Regulation and legal**
   - Lesson: Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.
   - Evidence: 1 accepted verdict(s), outcome(s) out-sTpYBDUQ
   - Context: The filing disclosed third-party production partners were shut down during most of the second quarter of 2020 due to COVID-19 restrictions, and after reopening the company incurred additional costs to comply with governmental regulations and safety measures.
-- **DIS / Regulation and legal**
+- **[[dis]] / Regulation and legal**
   - Lesson: Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.
   - Evidence: 1 accepted verdict(s), outcome(s) out-HR8ZaBsU
   - Context: The filing disclosed that reopening or closure of Disney businesses depended on changing government requirements and that reopened businesses incurred additional costs to address regulations and safety of employees, talent, and guests.

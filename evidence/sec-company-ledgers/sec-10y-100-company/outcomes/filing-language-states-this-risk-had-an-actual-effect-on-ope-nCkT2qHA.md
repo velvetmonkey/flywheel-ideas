@@ -10,7 +10,7 @@ undone_at: null
 ---
 Filing language states this risk had an actual effect on operations, results, costs, or supply.
 
-Source: sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:liquidity:outcome
+Source: sec-company://0000789019/0001564590-20-019706#part-i-item-2:theme:[[liquidity]]:[[outcome]]
 
 Sales and marketing expenses increased $346 million or 8%, driven by investments in LinkedIn and commercial sales, as well as an increase in bad debt expense.
 

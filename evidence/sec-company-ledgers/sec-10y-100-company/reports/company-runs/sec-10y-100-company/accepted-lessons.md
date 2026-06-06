@@ -101,7 +101,7 @@ created: '2026-05-08T16:38:07.664Z'
   - Themes: Geopolitics and tariffs
   - Outcomes: out-aWE2ftCq
 - **A geopolitics risk becomes decision-grade when filings move from generic exposure language to named-market exits, impairment charges, and quantified restructuring costs.**
-  - Companies: DIS
+  - Companies: [[dis]]
   - Themes: Geopolitics and tariffs
   - Outcomes: out-tnWp4P7Z
 - **Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.**
@@ -117,7 +117,7 @@ created: '2026-05-08T16:38:07.664Z'
   - Themes: Regulation and legal
   - Outcomes: out-PzSBYfnX
 - **Hardware demand assumptions should track channel availability because temporary closures can weaken demand even when supply-chain issues are the more visible shock.**
-  - Companies: AAPL
+  - Companies: [[aapl]]
   - Themes: Demand
   - Outcomes: out-ziDKD8UB
 - **Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.**
@@ -125,7 +125,7 @@ created: '2026-05-08T16:38:07.664Z'
   - Themes: Regulation and legal
   - Outcomes: out-sTpYBDUQ
 - **EV demand assumptions should track revenue declines across both quarterly and year-to-date windows because short-term delivery or pricing weakness can compound into a broader demand reset.**
-  - Companies: TSLA
+  - Companies: [[tsla]]
   - Themes: Demand
   - Outcomes: out-dRsn956z
 - **Channel assumptions should track distributor-arrangement charges because route-to-market decisions can create direct P&L costs even when underlying consumer demand is stable.**

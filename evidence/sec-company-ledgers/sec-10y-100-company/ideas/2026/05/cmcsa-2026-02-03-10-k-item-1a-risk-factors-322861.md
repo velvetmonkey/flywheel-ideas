@@ -50,9 +50,9 @@ Comcast 2025 Annual Report on Form 10-K
 
 Table of Contents
 
-Changes in consumer behavior continue to adversely affect our businesses and challenge existing business models.
+Changes in consumer behavior continue to adversely affect our businesses and challenge existing business [[models]].
 
-Distribution platforms for viewing and purchasing content continue to challenge existing business models, increase the number of competitors that our businesses face, and have driven, and will continue to drive, changes in consumer behavior as consumers seek control over when, where and how they consume content and access communications services, and how much or for how long they pay for such content.
+Distribution platforms for viewing and purchasing content continue to challenge existing business [[models]], increase the number of competitors that our businesses face, and have driven, and will continue to drive, changes in consumer behavior as consumers seek control over when, where and how they consume content and access communications services, and how much or for how long they pay for such content.
 
 The number of entertainment choices available to consumers, including DTC streaming service providers and aggregators, social networking and user-generated content platforms, and gaming and virtual reality products and services, continues to increase, intensify audience fragmentation and disaggregate how content traditionally has been distributed to and viewed by consumers. The popularity of many of these content distribution platforms has changed, and we expect will continue to change, consumers' expectations of video content, video aggregation services and the value of our video services, their willingness to pay for such content and services, their perception of quality entertainment and their tolerance for commercial interruptions.
 

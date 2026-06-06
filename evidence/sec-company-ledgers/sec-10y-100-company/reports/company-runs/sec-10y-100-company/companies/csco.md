@@ -23,7 +23,7 @@ created: '2026-05-08T16:38:07.849Z'
 
 - **AI, R&D, and technology**: 82 observation(s), latest 2026-02-17, assumption asm-n7FhB48i
 - **Demand**: 82 observation(s), latest 2026-02-17, assumption asm-apaexpGF
-- **Liquidity**: 78 observation(s), latest 2026-02-17, assumption asm-UsPRNsQW
+- **[[liquidity]]**: 78 observation(s), latest 2026-02-17, assumption asm-UsPRNsQW
 - **Cloud and data center capacity**: 73 observation(s), latest 2026-02-17, assumption asm-2uJDeUV2
 - **Competition**: 73 observation(s), latest 2026-02-17, assumption asm-x5MTksh5
 - **Customer and platform dependency**: 73 observation(s), latest 2026-02-17, assumption asm-G8uoQwJk

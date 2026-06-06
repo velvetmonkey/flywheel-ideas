@@ -176,7 +176,7 @@ High-Performance Without Compromised Design or Functionality.
 
 Our vehicles deliver unparalleled driving experiences with instantaneous and sustained acceleration, an
 
-advanced autopilot system with active safety and convenience features, and over-the-air software updates.
+advanced autopilot system with active safety and convenience [[features]], and over-the-air software updates.
 
 •
 

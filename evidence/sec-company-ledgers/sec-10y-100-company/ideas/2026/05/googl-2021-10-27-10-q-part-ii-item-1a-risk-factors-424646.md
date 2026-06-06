@@ -48,7 +48,7 @@ the ongoing effect of the novel coronavirus pandemic ("COVID-19"), including its
 
 •
 
-the growth of our business and revenues and our expectations about the factors that influence our success and trends in our business, including the size and timing of the expected return on our continuing investments in our Google Cloud segment;
+the growth of our business and revenues and our expectations about the factors that influence our success and trends in our business, including the size and timing of the expected return on our continuing investments in our [[googl|Google]] Cloud segment;
 
 •
 

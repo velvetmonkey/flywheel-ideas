@@ -10,7 +10,7 @@ undone_at: null
 ---
 Filing language states this risk had an actual effect on operations, results, costs, or supply.
 
-Source: sec-company://0001413329/0001413329-19-000055#part-i-item-2:theme:supply-chain:outcome
+Source: sec-company://0001413329/0001413329-19-000055#part-i-item-2:theme:supply-chain:[[outcome]]
 
 As a part of the optimization of our global manufacturing infrastructure, we recorded pre-tax asset impairment and exit costs of
 

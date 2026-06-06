@@ -834,7 +834,7 @@ and 12/21 - $
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 2,017
 
@@ -1466,7 +1466,7 @@ The accompanying unaudited condensed consolidated financial statements have been
 
 While our financial results in the United States and Canada (North America) are reported on a 12-week basis, substantially all of our international operations reported on a monthly calendar basis prior to the fourth quarter of 2021. Beginning in the fourth quarter of 2021, all of our international operations reported on a monthly calendar basis. This change did not have a material impact on our condensed consolidated financial statements. For our international operations, the months of January and February are reflected in our results for the 12 weeks ended March 19, 2022.
 
-The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from the novel coronavirus (COVID-19) pandemic and the deadly conflict in Ukraine has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and outcomes could differ from those estimates.
+The preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. Additionally, the business and economic uncertainty resulting from the novel coronavirus (COVID-19) pandemic and the deadly conflict in Ukraine has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and [[outcome|outcomes]] could differ from those estimates.
 
 Our significant interim accounting policies include the recognition of a pro rata share of certain estimated annual sales incentives and certain advertising and marketing costs in proportion to revenue or volume, as applicable, and the recognition of income taxes using an estimated annual effective tax rate. Raw materials, direct labor and plant overhead, as well as purchasing and receiving costs, costs directly related to production planning, inspection costs and raw materials handling facilities, are included in cost of sales. The costs of moving, storing and delivering finished product, including merchandising activities, are included in selling, general and administrative expenses.
 

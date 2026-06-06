@@ -38,7 +38,7 @@ increased costs resulting from our efforts to mitigate the impact of COVID-19 th
 
 ◦
 
-increased costs for, or unavailability of, transportation, raw materials, or other inputs necessary for the operation of our business;
+increased costs for, or unavailability of, transportation, raw [[materials]], or other inputs necessary for the operation of our business;
 
 ◦
 
@@ -124,7 +124,7 @@ Beginning in 2020, revenue and units for MCPs and SSDs, which contain both DRAM 
 
 We may be unable to maintain or improve gross margins.
 
-Our gross margins are dependent, in part, upon continuing decreases in per gigabit manufacturing costs achieved through improvements in our manufacturing processes and product designs, including, but not limited to, process line-width, additional 3D memory layers, additional bits per cell (i.e., cell levels), architecture, number of mask layers, number of fabrication steps, and yield. In future periods, we may be unable to reduce our per gigabit manufacturing costs at sufficient levels to maintain or improve gross margins. Factors that may limit our ability to maintain or reduce costs include, but are not limited to, strategic product diversification decisions affecting product mix, the increasing complexity of manufacturing processes, difficulties in transitioning to smaller line-width process technologies, 3D memory layers, NAND cell levels, transitioning to replacement gate technology for NAND, process
+Our gross margins are dependent, in part, upon continuing decreases in per gigabit manufacturing costs achieved through improvements in our manufacturing processes and product designs, including, but not limited to, process line-width, additional 3D memory layers, additional bits per cell (i.e., cell levels), [[architecture]], number of mask layers, number of fabrication steps, and yield. In future periods, we may be unable to reduce our per gigabit manufacturing costs at sufficient levels to maintain or improve gross margins. Factors that may limit our ability to maintain or reduce costs include, but are not limited to, strategic product diversification decisions affecting product mix, the increasing complexity of manufacturing processes, difficulties in transitioning to smaller line-width process technologies, 3D memory layers, NAND cell levels, transitioning to replacement gate technology for NAND, process
 
 15
 

@@ -20,7 +20,7 @@ all of
 
 these claims may result in significant monetary damages or injunctive relief that could adversely affect our ability to conduct our business. The litigation and other claims are subject to inherent uncertainties and management's view of these matters may change in the future. A material adverse impact
 
-in our consolidated financial statements could occur for the period in which the effect of an unfavorable outcome becomes probable and reasonably estimable.
+in our consolidated financial statements could occur for the period in which the effect of an unfavorable [[outcome]] becomes probable and reasonably estimable.
 
 Our business with government customers may present additional uncertainties.
 
@@ -30,7 +30,7 @@ We may have additional tax liabilities.
 
 We are subject to income taxes in the U.S. and many foreign jurisdictions. Significant judgment is required in determining our worldwide provision for income taxes. In the course of our business, there are many transactions and calculations where the ultimate tax determination is uncertain. For example, compliance with the 2017 United States Tax Cuts and Jobs Act ("TCJA") and possible future legislative changes may require the collection of information not regularly produced within the Company, the use of estimates in our consolidated financial statements, and the exercise of significant judgment in accounting for its provisions. As regulations and guidance evolve with respect to the TCJA or possible future legislative changes, and as we gather more information and perform more analysis, our results may differ from previous estimates and may materially affect our consolidated financial statements.
 
-We regularly are under audit by tax authorities in different jurisdictions. Although we believe that our provision for income taxes and our tax estimates are reasonable, tax authorities may disagree with certain positions we have taken. In addition, economic and political pressures to increase tax revenue in various jurisdictions may make resolving tax disputes favorably more difficult. We are currently under Internal Revenue Service audit for prior tax years, with the primary unresolved issues relating to transfer pricing. The final resolution of those audits, and other audits or litigation, may differ from the amounts recorded in our consolidated financial statements and may materially affect our consolidated financial statements in the period or periods in which that determination is made.
+We regularly are under audit by tax authorities in different jurisdictions. Although we believe that our provision for income taxes and our tax estimates are reasonable, tax authorities may disagree with certain positions we have taken. In addition, economic and political pressures to increase tax revenue in various jurisdictions may make resolving tax [[disputes]] favorably more difficult. We are currently under Internal Revenue Service audit for prior tax years, with the primary unresolved issues relating to transfer pricing. The final resolution of those audits, and other audits or litigation, may differ from the amounts recorded in our consolidated financial statements and may materially affect our consolidated financial statements in the period or periods in which that determination is made.
 
 We earn a significant amount of our operating income outside the U.S. A change in the mix of earnings and losses in countries with differing statutory tax rates, changes in our business or structure, or the expiration of or disputes about certain tax agreements in a particular country may result in higher effective tax rates for the Company. In addition, changes in U.S. federal and state or international tax laws applicable to corporate multinationals, other fundamental law changes currently being considered by many countries, including in the U.S., and changes in taxing jurisdictions' administrative interpretations, decisions, policies, and positions may materially adversely impact our consolidated financial statements.
 
@@ -70,7 +70,7 @@ product offering decisions or public policy positions. Damage to our reputation 
 
 •
 
-The introduction of new features, products, services, or terms of service that customers, users, or partners do not like.
+The introduction of new [[features]], products, services, or terms of service that customers, users, or partners do not like.
 
 •
 

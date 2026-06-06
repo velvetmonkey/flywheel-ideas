@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/1413329/000141332922000011/pm-20
 
 Risk Factors.
 
-The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual outcome of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
+The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual [[outcome]] of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
 
 Forward-Looking and Cautionary Statements
 
@@ -56,7 +56,7 @@ Prior to CoP 9 that took place in November 2021, the WHO and the WHO FCTC Secret
 
 Additionally, any claims, regardless of merit, challenging our research and clinical data available to date, may impact the development of science-based regulatory frameworks for the commercialization of the RRP category and the commercialization of the RRP category in general.
 
-Our RRPs and commercial activities for these products are designed for, and directed toward, current adult smokers and users of nicotine-containing products, and not for non-smokers or youth. We put significant effort in place to restrict access of our products to non-smokers or youth. Nevertheless, technological, regulatory and/or commercial setbacks might prevent us from delivering necessary infrastructure required to fulfill our commitment of having 100% of our RRP device portfolio equipped with "Age Verification"-technology and device activation features by 2023.
+Our RRPs and commercial activities for these products are designed for, and directed toward, current adult smokers and users of nicotine-containing products, and not for non-smokers or youth. We put significant effort in place to restrict access of our products to non-smokers or youth. Nevertheless, technological, regulatory and/or commercial setbacks might prevent us from delivering necessary infrastructure required to fulfill our commitment of having 100% of our RRP device portfolio equipped with "Age Verification"-technology and device activation [[features]] by 2023.
 
 7
 

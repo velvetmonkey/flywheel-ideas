@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.138Z'
 - Theme: Cloud and data center capacity
 - Mechanism: Platform or customer concentration
 - Sectors: Communication Services, Information Technology
-- Companies: CMCSA, MSFT, MU, NVDA
+- Companies: [[cmcsa]], [[msft]], MU, [[nvda]]
 - Observations: 245
 - Realized candidates: 0
 - Accepted lessons: 1

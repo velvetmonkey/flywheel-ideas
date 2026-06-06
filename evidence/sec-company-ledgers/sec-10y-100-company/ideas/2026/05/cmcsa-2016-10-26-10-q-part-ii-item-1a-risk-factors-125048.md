@@ -158,7 +158,7 @@ strategic initiatives and acquisitions present many risks, and we may not realiz
 
 
 
-labor disputes, whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
+labor [[disputes]], whether involving employees or sports organizations, may disrupt our operations and adversely affect our businesses
 
 
 

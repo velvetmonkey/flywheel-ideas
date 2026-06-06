@@ -12,7 +12,7 @@ created: '2026-05-08T16:38:07.736Z'
 ---
 # Information Technology sec-10y-100-company
 
-- Companies: AAPL, AMD, AVGO, CSCO, INTC, MSFT, MU, NVDA, ORCL, PLTR
+- Companies: [[aapl]], AMD, AVGO, CSCO, [[intc]], [[msft]], MU, [[nvda]], [[orcl]], PLTR
 - Observations: 6412
 - Staged outcomes: 10
 

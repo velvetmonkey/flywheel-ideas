@@ -550,7 +550,7 @@ IQOS
 
 devices and heated tobacco units. We seek to compete in all profitable retail price categories, although our brand portfolio is weighted towards the premium-price category.
 
-Procurement and Raw Materials
+Procurement and Raw [[materials]]
 
 We purchase tobacco leaf of various types, grades and styles throughout the world, mostly through independent tobacco suppliers. We also contract directly with farmers in several countries, including Argentina, Brazil, Colombia, Ecuador, Italy, Pakistan, the Philippines and Poland. In 2018, direct sourcing from farmers represented approximately 24% of PMI's global leaf requirements. The largest supplies of tobacco leaf are sourced from Argentina, Brazil, China, Italy, Indonesia (mostly for domestic use in kretek products), Malawi, Mozambique, Philippines, Turkey and the United States.
 

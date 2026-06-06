@@ -26,7 +26,7 @@ Most of our employees and third-party vendors and service providers are working 
 
 We have incurred net losses in each year since inception, and we may not be able to achieve or sustain profitability.
 
-We incurred net losses of $674.3 million, $4.6 billion, and $352.0 million for the years ended December 31, 2019, 2020, and 2021, respectively. As of December 31, 2021, we had an accumulated deficit of $6.4 billion. Historically, we have invested significantly in efforts to grow our Host and guest community, introduced new or enhanced offerings and features, increased our marketing spend, expanded our operations, hired additional employees, and enhanced our platform.
+We incurred net losses of $674.3 million, $4.6 billion, and $352.0 million for the years ended December 31, 2019, 2020, and 2021, respectively. As of December 31, 2021, we had an accumulated deficit of $6.4 billion. Historically, we have invested significantly in efforts to grow our Host and guest community, introduced new or enhanced offerings and [[features]], increased our marketing spend, expanded our operations, hired additional employees, and enhanced our platform.
 
 Certain of our offerings and certain regions in which we operate result in listings with lower service fees and will require significant additional investments from us, which could have a materially negative impact on our overall operating margins as these offerings and regions increase in size over time relative to other areas in which we operate. In addition, we have changed, and may in the future reduce, our service fees for strategic or competitive reasons. Any failure to increase our revenue or any failure to manage an increase in our operating expenses could prevent us from achieving or sustaining profitability as measured by net income, operating income, or Adjusted EBITDA.
 
@@ -62,7 +62,7 @@ our ability to retain and grow the number of Hosts and the number of available l
 
 •
 
-events beyond our control such as pandemics and other health concerns, increased or continuing restrictions on travel and immigration, trade disputes, economic downturns, and the impact of climate change on travel, including fires, floods, extreme temperatures and ambient temperature increases, severe weather and other natural disasters, and the impact of climate change on seasonal destinations;
+events beyond our control such as pandemics and other health concerns, increased or continuing restrictions on travel and immigration, trade [[disputes]], economic downturns, and the impact of climate change on travel, including fires, floods, extreme temperatures and ambient temperature increases, severe weather and other natural disasters, and the impact of climate change on seasonal destinations;
 
 •
 

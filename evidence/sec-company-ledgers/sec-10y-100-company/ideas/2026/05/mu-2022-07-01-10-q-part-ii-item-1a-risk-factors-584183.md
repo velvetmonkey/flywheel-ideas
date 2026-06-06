@@ -48,7 +48,7 @@ our international operations, including geopolitical risks;
 
 •
 
-limited availability and quality of materials, supplies, and capital equipment and dependency on third-party service providers for ourselves and our customers;
+limited availability and quality of [[materials]], supplies, and capital equipment and dependency on third-party service providers for ourselves and our customers;
 
 •
 

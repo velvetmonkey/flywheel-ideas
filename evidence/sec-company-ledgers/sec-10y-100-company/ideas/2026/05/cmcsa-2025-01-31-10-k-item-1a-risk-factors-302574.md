@@ -44,7 +44,7 @@ Competitors with significant resources, greater efficiencies of scale, fewer reg
 
 Our competitive position may be negatively affected if we do not provide our customers with a satisfactory customer experience. In addition, our ability to compete effectively depends on our perceived image and reputation among our various constituencies, including our customers, consumers, advertisers, business partners, employees, investors and government authorities. For example, some of these constituencies may have their own, and some have conflicting, environmental, social and governance priorities, which may present risks to our reputation and brands if these constituencies perceive misalignment.
 
-Changes in consumer behavior continue to adversely affect our businesses and challenge existing business models.
+Changes in consumer behavior continue to adversely affect our businesses and challenge existing business [[models]].
 
 Distribution platforms for viewing and purchasing content continue to challenge existing business models, increase the number of competitors that our businesses face, and have driven, and will continue to drive, changes in consumer behavior as consumers seek control over when, where and how they consume content and access communications services, and how much or for how long they pay for such content.
 

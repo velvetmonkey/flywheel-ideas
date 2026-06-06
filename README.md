@@ -30,7 +30,7 @@ Start with these checked-in artifacts:
 - [`review-queue.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/review-queue.md): the active judgment queue; it is currently clear.
 - [`candidate-noise.md`](./evidence/sec-company-ledgers/sec-10y-100-company/reports/company-runs/sec-10y-100-company/candidate-noise.md): the 31 staged candidates intentionally kept out of the active queue because they are duplicate pressure on already-refuted assumptions.
 
-This is decision support, not investment advice. The useful role is analyst memory: what did the thesis depend on, what later challenged it, which challenges were accepted, and what should be reviewed next?
+This is decision support, not investment advice. The useful role is analyst memory: what did the [[thesis]] depend on, what later challenged it, which challenges were accepted, and what should be reviewed next?
 
 ## What It Does
 
@@ -152,7 +152,7 @@ await company.track({
 
 In compound mode, refreshes reuse prior filings, assumptions, observations, and outcome candidates by source keys. New filings extend the ledger; unchanged filings are not duplicated.
 
-Generated bundle Markdown now includes a linked top-down index, a Markdown manifest, run history, rebuild instructions, and structured `flywheel-audit-json` blocks for Markdown-only evidence snapshots.
+Generated bundle Markdown now includes a linked top-down index, a Markdown [[manifest]], run history, rebuild instructions, and structured `flywheel-audit-json` blocks for Markdown-only evidence snapshots.
 
 Generated idea, assumption, outcome, evaluation, and report notes request Flywheel wikilink markup and outgoing-link suggestions at write time. The SEC corpus does not depend on a later background markup pass to become navigable.
 

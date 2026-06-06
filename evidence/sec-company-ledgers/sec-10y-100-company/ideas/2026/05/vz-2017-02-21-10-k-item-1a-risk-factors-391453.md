@@ -100,7 +100,7 @@ federal, state and local agencies, and our international operations are regulate
 
 areas and provide specified products or services. We are frequently required to maintain licenses for our operations and conduct our operations in accordance with prescribed standards. We are often involved in regulatory and other governmental
 
-proceedings or inquiries related to the application of these requirements. It is impossible to predict with any certainty the outcome of pending federal and state regulatory proceedings relating to our operations, or the reviews by federal or state
+proceedings or inquiries related to the application of these requirements. It is impossible to predict with any certainty the [[outcome]] of pending federal and state regulatory proceedings relating to our operations, or the reviews by federal or state
 
 courts of regulatory rulings. Without relief, existing laws and regulations may inhibit our ability to expand our business and introduce new products and services. Similarly, we cannot guarantee that we will be successful in obtaining the licenses
 
@@ -124,7 +124,7 @@ so-called
 
 network
 
-neutrality regulations, the FCC reversed course in 2015 on the longstanding light touch approach and reclassified broadband Internet access services as telecommunications services subject to utilities-style common
+neutrality regulations, the FCC reversed course in 2015 on the longstanding light touch approach and reclassified broadband Internet access services as telecommunications services subject to [[utilities]]-style common
 
 carriage regulation. While the full scope and effect of this new regulatory approach is uncertain, these rules limit the ways that a broadband Internet access service provider can structure business arrangements, manage its network and open the door
 

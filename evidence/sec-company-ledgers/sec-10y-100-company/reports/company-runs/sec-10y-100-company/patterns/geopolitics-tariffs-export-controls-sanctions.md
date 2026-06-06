@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.064Z'
 - Theme: Geopolitics and tariffs
 - Mechanism: Export controls or sanctions
 - Sectors: Communication Services, Consumer Discretionary
-- Companies: GOOGL, LOW, TMUS
+- Companies: [[googl]], LOW, TMUS
 - Observations: 91
 - Realized candidates: 0
 - Accepted lessons: 6

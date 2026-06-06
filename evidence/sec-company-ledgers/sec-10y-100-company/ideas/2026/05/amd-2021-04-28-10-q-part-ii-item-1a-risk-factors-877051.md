@@ -70,7 +70,7 @@ We rely on third parties to manufacture our products, and if they are unable to 
 
 •
 
-If essential equipment, materials, substrates or manufacturing processes are not available to manufacture our products, we could be materially adversely affected.
+If essential equipment, [[materials]], substrates or manufacturing processes are not available to manufacture our products, we could be materially adversely affected.
 
 •
 
@@ -78,7 +78,7 @@ Failure to achieve expected manufacturing yields for our products could negative
 
 •
 
-The success of our business is dependent upon our ability to introduce products on a timely basis with features and performance levels that provide value to our customers while supporting and coinciding with significant industry transitions.
+The success of our business is dependent upon our ability to introduce products on a timely basis with [[features]] and performance levels that provide value to our customers while supporting and coinciding with significant industry transitions.
 
 •
 
@@ -182,7 +182,7 @@ Whether or not it is completed, the announcement and pendency of the Merger coul
 
 Any impairment of the combined company's tangible, definite-lived intangible or indefinite-lived intangible assets, including goodwill, may adversely impact the combined company's financial position and results of operations.
 
-Liquidity and Capital Resources Risks
+[[liquidity]] and Capital Resources Risks
 
 •
 

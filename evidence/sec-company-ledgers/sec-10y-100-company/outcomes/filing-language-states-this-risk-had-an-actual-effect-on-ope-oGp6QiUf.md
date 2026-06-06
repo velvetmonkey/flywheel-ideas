@@ -10,7 +10,7 @@ undone_at: null
 ---
 Filing language states this risk had an actual effect on operations, results, costs, or supply.
 
-Source: sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:macro-fx:outcome
+Source: sec-company://0001744489/0001744489-24-000081#part-i-item-2:theme:macro-fx:[[outcome]]
 
 Cost of products for the quarter increased 4%, or $0.1 billion, to $1.7 billion due to higher sales volumes of merchandise, food and beverage and cost inflation at our theme parks and resorts.
 

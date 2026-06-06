@@ -14,7 +14,7 @@ Start at the generated [`proof path`](../evidence/sec-company-ledgers/sec-10y-10
 
 `flywheel-ideas` is not a stock picker and not an automated verdict engine. It is an analyst memory system. It records what a thesis depended on, watches later evidence accumulate, stages possible failures, requires a human verdict, and keeps the resulting lesson linked to the original assumption.
 
-The proof corpus matters because SEC filings are a hard input: repeated boilerplate, dated disclosures, noisy candidates, and later realized-risk language. If the tool only summarized filings, this corpus would not be interesting. It becomes useful when an old assumption remains linked to a later accepted outcome and a lesson that can change future review.
+The proof corpus matters because SEC filings are a hard input: repeated boilerplate, dated disclosures, noisy candidates, and later realized-risk language. If the tool only summarized filings, this corpus would not be interesting. It becomes useful when an old assumption remains linked to a later accepted [[outcome]] and a lesson that can change future review.
 
 ## Current Corpus State
 
@@ -119,7 +119,7 @@ That separation is the safety rail. It lets the tool be useful without pretendin
 ## What Is Not Novel Yet
 
 - The SEC data source itself.
-- Basic extraction of risk-factor or MD&A language.
+- Basic [[extraction]] of risk-factor or MD&A language.
 - Simple filing search.
 - Generic summarization.
 - Fully automated investment conclusions.

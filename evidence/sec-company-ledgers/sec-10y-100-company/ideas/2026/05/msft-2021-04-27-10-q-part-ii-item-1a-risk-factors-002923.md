@@ -34,7 +34,7 @@ product offering decisions or public policy positions. Damage to our reputation 
 
 •
 
-The introduction of new features, products, services, or terms of service that customers, users, or partners do not like.
+The introduction of new [[features]], products, services, or terms of service that customers, users, or partners do not like.
 
 •
 
@@ -116,7 +116,7 @@ The long-term effects of climate change on the global economy and the IT industr
 
 Our global business exposes us to operational and economic risks.
 
-Our customers are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Our results of operations may be affected by global, regional, and local economic developments, monetary policy, inflation, and recession, as well as political and military disputes. In addition, our international growth strategy includes certain markets, the developing nature of which presents several risks, including deterioration of social, political, labor, or economic conditions in a country or region, and difficulties in staffing and managing foreign operations. Emerging nationalist and protectionist trends in specific countries may significantly alter the trade and commercial environments. Changes to trade policy or agreements as a result of populism, protectionism, or economic nationalism may result in higher tariffs, local sourcing initiatives, or other developments that make it more difficult to sell our products in foreign countries. Disruptions of these kinds in developed or emerging markets could negatively impact demand for our products and services or increase operating costs. Although we hedge a portion of our international currency exposure, significant fluctuations in foreign exchange rates between the U.S. dollar and foreign currencies may adversely affect our results of operations.
+Our customers are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Our results of operations may be affected by global, regional, and local economic developments, monetary policy, inflation, and recession, as well as political and military [[disputes]]. In addition, our international growth strategy includes certain markets, the developing nature of which presents several risks, including deterioration of social, political, labor, or economic conditions in a country or region, and difficulties in staffing and managing foreign operations. Emerging nationalist and protectionist trends in specific countries may significantly alter the trade and commercial environments. Changes to trade policy or agreements as a result of populism, protectionism, or economic nationalism may result in higher tariffs, local sourcing initiatives, or other developments that make it more difficult to sell our products in foreign countries. Disruptions of these kinds in developed or emerging markets could negatively impact demand for our products and services or increase operating costs. Although we hedge a portion of our international currency exposure, significant fluctuations in foreign exchange rates between the U.S. dollar and foreign currencies may adversely affect our results of operations.
 
 Our business depends on our ability to attract and retain talented employees.
 

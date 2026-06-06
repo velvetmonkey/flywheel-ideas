@@ -54,7 +54,7 @@ adversely affected.
 
 In addition to our own execution, we may need to react to factors affecting inventory flow that are outside our
 
-control, discussed further below, such as adverse weather and natural disasters or changes in conditions affecting our vendors and others in our supply chain, such as political instability; labor issues, including port labor disputes, strikes or
+control, discussed further below, such as adverse weather and natural disasters or changes in conditions affecting our vendors and others in our supply chain, such as political instability; labor issues, including port labor [[disputes]], strikes or
 
 threats of strikes; or increasing cost of compliance with regulations. If we are not able to adjust appropriately to such factors, our inventory management may be affected, which could impact our performance and our relationship with our customers.
 

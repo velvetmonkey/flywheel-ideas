@@ -12,7 +12,7 @@ created: '2026-05-03T20:45:43.779Z'
 Filed: 2018-02-08
 Source: https://www.sec.gov/Archives/edgar/data/1283699/000128369918000011/tmus12312017form10-k.htm
 
-In addition to the other information contained in this Form 10-K, the following risk factors should be considered carefully in evaluating T-Mobile. Our business, financial condition, liquidity, or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
+In addition to the other information contained in this Form 10-K, the following risk factors should be considered carefully in evaluating T-Mobile. Our business, financial condition, [[liquidity]], or operating results, as well as the price of our common stock and other securities, could be materially adversely affected by any of these risks.
 
 Risks Related to Our Business and the Wireless Industry
 

@@ -14,7 +14,7 @@ created: '2026-05-08T16:38:07.748Z'
 
 - Companies: AMT, CBRE, DLR, EQIX, O, PLD, PSA, SPG, VTR, WELL
 - Observations: 0
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

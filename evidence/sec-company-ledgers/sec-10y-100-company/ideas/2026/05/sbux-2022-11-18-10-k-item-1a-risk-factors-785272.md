@@ -54,7 +54,7 @@ severe weather or other natural or man-made disasters affecting a large market o
 
 •
 
-changes in climate, including changes to the frequency of severe weather events, that impact the price and availability or cost of goods and services, energy and other materials throughout our supply chain; and
+changes in climate, including changes to the frequency of severe weather events, that impact the price and availability or cost of goods and services, energy and other [[materials]] throughout our supply chain; and
 
 •
 
@@ -64,7 +64,7 @@ especially in our largest markets, including the U.S. and China, labor discord o
 
 Economic conditions in the U.S. and international markets could adversely affect our business and financial results.
 
-As a retailer that is dependent upon consumer discretionary spending, our results of operations are sensitive to changes in or uncertainty about macroeconomic conditions. A continued economic downturn or recession, or slowing or stalled recovery therefrom, may have a material adverse effect on our business, financial condition or results of operations. Our customers may have or in the future have less money for discretionary purchases and may stop or reduce their purchases of our products or switch to Starbucks or competitors' lower-priced products as a result of various factors, including job losses, inflation, higher taxes, reduced access to credit, changes in federal economic policy, the COVID-19 pandemic and recent international trade disputes. Due to the COVID-19 pandemic or other global health events, we may experience a reduction and increased volatility in demand for our products. Such reductions and volatility may be caused by, among other things: store closures or modified operating hours and business model, reduced customer traffic due to illness, quarantine or government or self-imposed
+As a retailer that is dependent upon consumer discretionary spending, our results of operations are sensitive to changes in or uncertainty about macroeconomic conditions. A continued economic downturn or recession, or slowing or stalled recovery therefrom, may have a material adverse effect on our business, financial condition or results of operations. Our customers may have or in the future have less money for discretionary purchases and may stop or reduce their purchases of our products or switch to Starbucks or competitors' lower-priced products as a result of various factors, including job losses, inflation, higher taxes, reduced access to credit, changes in federal economic policy, the COVID-19 pandemic and recent international trade [[disputes]]. Due to the COVID-19 pandemic or other global health events, we may experience a reduction and increased volatility in demand for our products. Such reductions and volatility may be caused by, among other things: store closures or modified operating hours and business model, reduced customer traffic due to illness, quarantine or government or self-imposed
 
 10
 

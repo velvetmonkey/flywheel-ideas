@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.103Z'
 - Theme: Customer and platform dependency
 - Mechanism: Platform or customer concentration
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: AAPL, ABNB, AMZN, BKNG, CMCSA, CSCO, DIS, EA, HD, LOW, MCD, META, MSFT, MU, NVDA, ORCL, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT
+- Companies: [[aapl]], ABNB, [[amzn]], BKNG, CMCSA, CSCO, DIS, EA, HD, LOW, MCD, META, [[msft]], MU, [[nvda]], ORCL, PLTR, PM, SBUX, T, TJX, TMUS, [[tsla]], VZ, WBD, WMT
 - Observations: 1011
 - Realized candidates: 2
 - Accepted lessons: 2

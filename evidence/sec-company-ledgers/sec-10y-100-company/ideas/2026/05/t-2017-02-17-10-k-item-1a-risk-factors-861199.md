@@ -34,7 +34,7 @@ Increases in our benefit plans' costs, including increases due to adverse change
 
 ·
 
-The final outcome of FCC and other federal, state or foreign government agency proceedings (including judicial review, if any, of such proceedings) involving issues that are important to our business, including, without limitation, special access and business data services; intercarrier compensation; interconnection obligations; pending Notices of Apparent Liability; the transition from legacy technologies to IP-based infrastructure, including the withdrawal of legacy TDM-based services; universal service; broadband deployment; E911 services; competition policy; privacy net neutrality, including the FCC's order classifying broadband as Title II services subject to much more comprehensive regulation; unbundled network elements and other wholesale obligations; multi-channel video programming distributor services and equipment; availability of new spectrum, on fair and balanced terms; and wireless and satellite license awards and renewals.
+The final [[outcome]] of FCC and other federal, state or foreign government agency proceedings (including judicial review, if any, of such proceedings) involving issues that are important to our business, including, without limitation, special access and business data services; intercarrier compensation; interconnection obligations; pending Notices of Apparent Liability; the transition from legacy technologies to IP-based infrastructure, including the withdrawal of legacy TDM-based services; universal service; broadband deployment; E911 services; competition policy; privacy net neutrality, including the FCC's order classifying broadband as Title II services subject to much more comprehensive regulation; unbundled network elements and other wholesale obligations; multi-channel video programming distributor services and equipment; availability of new spectrum, on fair and balanced terms; and wireless and satellite license awards and renewals.
 
 ·
 
@@ -42,7 +42,7 @@ The final outcome of state and federal legislative efforts involving issues that
 
 ·
 
-Enactment of additional state, local, federal and/or foreign regulatory and tax laws and regulations, or changes to existing standards and actions by tax agencies and judicial authorities including the resolution of disputes with any taxing jurisdictions, pertaining to our subsidiaries and foreign investments, including laws and regulations that reduce our incentive to invest in our networks, resulting in lower revenue growth and/or higher operating costs.
+Enactment of additional state, local, federal and/or foreign regulatory and tax laws and regulations, or changes to existing standards and actions by tax agencies and judicial authorities including the resolution of [[disputes]] with any taxing jurisdictions, pertaining to our subsidiaries and foreign investments, including laws and regulations that reduce our incentive to invest in our networks, resulting in lower revenue growth and/or higher operating costs.
 
 ·
 

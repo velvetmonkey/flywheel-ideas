@@ -52,7 +52,7 @@ Forward-looking statements generally can be identified by words such as, but not
 
 As used herein, "Alphabet," "the company," "we," "us," "our," and similar terms include Alphabet Inc. and its subsidiaries, unless the context indicates otherwise.
 
-"Alphabet," "Google," and other trademarks of ours appearing in this report are our property. We do not intend our use or display of other companies' trade names or trademarks to imply an endorsement or sponsorship of us by such companies, or any relationship with any of these companies.
+"Alphabet," "[[googl|Google]]," and other trademarks of ours appearing in this report are our property. We do not intend our use or display of other companies' trade names or trademarks to imply an endorsement or sponsorship of us by such companies, or any relationship with any of these companies.
 
 3
 
@@ -1440,7 +1440,7 @@ We generate revenues by delivering relevant, cost-effective online advertising; 
 
 Basis of Consolidation
 
-The consolidated financial statements of Alphabet include the accounts of Alphabet and entities consolidated under the variable interest and voting models. Intercompany balances and transactions have been eliminated.
+The consolidated financial statements of Alphabet include the accounts of Alphabet and entities consolidated under the variable interest and voting [[models]]. Intercompany balances and transactions have been eliminated.
 
 Unaudited Interim Financial Information
 

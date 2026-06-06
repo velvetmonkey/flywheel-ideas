@@ -72,7 +72,7 @@ We are subject to a variety of claims and lawsuits. Adverse outcomes in some or 
 
 affect our ability to conduct our business. The litigation and other claims are subject to inherent uncertainties and managements view of these matters may change in the future. A material adverse impact on our consolidated financial
 
-statements could occur for the period in which the effect of an unfavorable final outcome becomes probable and reasonably estimable.
+statements could occur for the period in which the effect of an unfavorable final [[outcome]] becomes probable and reasonably estimable.
 
 We may have additional tax liabilities.
 
@@ -80,7 +80,7 @@ We are subject to income taxes in the U.S. and many foreign jurisdictions.
 
 Significant judgment is required in determining our worldwide provision for income taxes. In the ordinary course of our business, there are many transactions and calculations where the ultimate tax determination is uncertain. We regularly are under
 
-audit by tax authorities in different jurisdictions. Economic and political pressures to increase tax revenue in various jurisdictions may make resolving tax disputes favorably more difficult. Although we believe our tax estimates are
+audit by tax authorities in different jurisdictions. Economic and political pressures to increase tax revenue in various jurisdictions may make resolving tax [[disputes]] favorably more difficult. Although we believe our tax estimates are
 
 55
 

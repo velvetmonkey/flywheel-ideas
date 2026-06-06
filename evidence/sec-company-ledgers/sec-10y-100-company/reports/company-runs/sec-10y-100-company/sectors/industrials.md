@@ -14,7 +14,7 @@ created: '2026-05-08T16:38:07.728Z'
 
 - Companies: BA, CAT, DE, ETN, GE, GEV, HON, RTX, UBER, UNP
 - Observations: 0
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

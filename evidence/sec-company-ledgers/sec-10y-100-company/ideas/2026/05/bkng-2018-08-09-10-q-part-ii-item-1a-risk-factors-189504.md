@@ -36,7 +36,7 @@ In addition, unforeseen events beyond our control, such as oil prices, stock mar
 
 Intense competition could reduce our market share and harm our financial performance.
 
-We compete globally with both online and traditional travel and restaurant reservation and related services. The markets for the services we offer are intensely competitive, and current and new competitors can launch new services at a relatively low cost. Some of our current and potential competitors, such as Google, Apple, Alibaba, Tencent, Amazon and Facebook, have access to significantly greater and more diversified resources than we do, and they may be able to leverage other aspects of their businesses (e.g., search or mobile device businesses) to enable them to compete more effectively with us. For example, Google has entered various aspects of the online travel market, including by establishing a flight meta-search product ("Google Flights") and a hotel meta-search product ("Google Hotel Ads") that are growing rapidly, as well as its "Book on Google" reservation functionality and its Google Trips app.
+We compete globally with both online and traditional travel and restaurant reservation and related services. The markets for the services we offer are intensely competitive, and current and new competitors can launch new services at a relatively low cost. Some of our current and potential competitors, such as [[googl|Google]], Apple, Alibaba, Tencent, Amazon and Facebook, have access to significantly greater and more diversified resources than we do, and they may be able to leverage other aspects of their businesses (e.g., search or mobile device businesses) to enable them to compete more effectively with us. For example, [[googl|Google]] has entered various aspects of the online travel market, including by establishing a flight [[meta]]-search product ("Google Flights") and a hotel [[meta]]-search product ("Google Hotel Ads") that are growing rapidly, as well as its "Book on Google" reservation functionality and its Google Trips app.
 
 We currently, or may potentially in the future, compete with a variety of companies, including:
 
@@ -74,6 +74,4 @@ online restaurant reservation services, such as TripAdvisor's LaFourchette, Yelp
 
 •
 
-companies offering new rental car business models or car- or ride-sharing services that affect demand for rental cars, some of which have developed innovative technologies to improve efficiency of point-to-point transportation and extensively utilize mobile platforms, such as Uber, Lyft, Gett, Zipcar (which is owned by Avis), BlaBlaCar, Didi Chuxing (in which we hold a small minority interest), Grab and Ola; and
-
-•
+companies offering new rental car business models or car- or ride-sharing services that affect demand for rental cars, some of which have developed innovative technologies to improve efficiency of point-to-point transportation and extensively utilize mobile platforms, such as Uber, Lyft, Gett, Zipcar (which is owned by Avis), BlaBlaCar, Didi Chuxing (in which we hold a small minority interest), Grab and 

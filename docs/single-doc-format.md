@@ -89,7 +89,7 @@ status: open
 - 2026-05-02T09:11:00Z — Author follow-up: ordered to retract export licenses confirmed.
 ```
 
-- Each entry is a bullet of the form `- <ISO-8601 UTC> — <one-line note>`.
+- Each entry is a [[bullets|bullet]] of the form `- <ISO-8601 UTC> — <one-line note>`.
 - Order is chronological (oldest first). Timestamps must be monotonically
   non-decreasing within the section; violations fail
   `doc_transition_out_of_order`.
@@ -107,7 +107,7 @@ inventory write-down, refuting the "inventory risk manageable" claim.
 - `state` is one of `pass | fail | parked`. (Independent from frontmatter
   `state`; the frontmatter `state` is the lifecycle marker, the verdict
   `state` is the final adjudication on the claim.)
-- Frontmatter `state` must be consistent with verdict `state`: if
+- Frontmatter `state` must be [[consistency|consistent]] with verdict `state`: if
   frontmatter is `validated`, verdict must be `pass`; if `refuted`,
   verdict must be `fail`; if `parked`, verdict must be `parked`.
   Mismatches fail `doc_state_verdict_mismatch`.
@@ -138,8 +138,8 @@ and flags violations as `doc_round_trip_failed`.
 
 ## Backend boundary
 
-Doc mode is the **embeddable lifecycle** for a single idea. The features
-that require cross-idea state — council dispatch, outcome propagation,
+Doc mode is the **embeddable lifecycle** for a single idea. The [[features]]
+that require cross-idea state — council dispatch, [[outcome]] propagation,
 lineage / ancestry / descendants, shared-assumption detection, SEC
 company tracking — are SQLite-only. The corresponding actions return
 `not_supported_in_doc_mode` when called with `backend: 'doc'`.

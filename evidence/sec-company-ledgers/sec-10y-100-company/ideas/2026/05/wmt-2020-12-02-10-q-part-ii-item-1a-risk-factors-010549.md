@@ -36,7 +36,7 @@ Table of C
 
 ontents
 
-PART I. FINANCIAL INFORMATION
+PART I. [[financials|FINANCIAL]] INFORMATION
 
 Item 1.
 

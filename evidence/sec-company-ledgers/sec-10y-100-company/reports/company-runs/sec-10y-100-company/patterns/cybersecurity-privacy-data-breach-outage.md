@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.124Z'
 - Theme: Cybersecurity and privacy
 - Mechanism: Data breach, outage, or service disruption
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: ABNB, AMD, DIS, HD, KO, ORCL
+- Companies: ABNB, AMD, [[dis]], HD, KO, ORCL
 - Observations: 107
 - Realized candidates: 1
 - Accepted lessons: 1

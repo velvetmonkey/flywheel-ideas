@@ -34,7 +34,7 @@ Dependence on contract manufacturing and suppliers of critical components within
 
 •
 
-We purchase a significant amount of the materials used in our products from a limited number of suppliers.
+We purchase a significant amount of the [[materials]] used in our products from a limited number of suppliers.
 
 35
 

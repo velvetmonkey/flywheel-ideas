@@ -14,7 +14,7 @@ created: '2026-05-08T16:38:07.722Z'
 
 - Companies: ABBV, ABT, AMGN, GILD, ISRG, JNJ, LLY, MRK, TMO, UNH
 - Observations: 0
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

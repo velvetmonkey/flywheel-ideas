@@ -12,7 +12,7 @@ created: '2026-05-03T20:58:45.144Z'
 Filed: 2020-02-20
 Source: https://www.sec.gov/Archives/edgar/data/732717/000156276220000064/t-20191231.htm
 
-In addition to the other information set forth in this document, including the matters contained under the caption "Cautionary Language Concerning Forward-Looking Statements," you should carefully read the matters described below. We believe that each of these matters could materially affect our business. We recognize that most of these factors are beyond our ability to control and therefore we cannot predict an outcome.
+In addition to the other information set forth in this document, including the matters contained under the caption "Cautionary Language Concerning Forward-Looking Statements," you should carefully read the matters described below. We believe that each of these matters could materially affect our business. We recognize that most of these factors are beyond our ability to control and therefore we cannot predict an [[outcome]].
 
 Macro-economic Factors:
 

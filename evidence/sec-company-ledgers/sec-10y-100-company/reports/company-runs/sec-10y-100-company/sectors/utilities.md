@@ -14,7 +14,7 @@ created: '2026-05-08T16:38:07.753Z'
 
 - Companies: AEP, CEG, D, DUK, ETR, NEE, SO, SRE, VST, XEL
 - Observations: 0
-- Staged outcomes: 0
+- Staged [[outcome|outcomes]]: 0
 
 ## Companies
 

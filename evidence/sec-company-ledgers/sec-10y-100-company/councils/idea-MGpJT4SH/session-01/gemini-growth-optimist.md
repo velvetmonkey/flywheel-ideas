@@ -49,6 +49,6 @@ The disclosed "risks" for NVIDIA in 2016 are, in my view, merely indicators of t
 
 ## Evidence
 
-- "NVIDIA operates in highly competitive markets like Gaming, Professional Visualization, Datacenter, and Automotive, with ongoing intensification from competitors." — NVDA 10-K 2016-03-17, Item 1A Risk Factors
+- "NVIDIA operates in highly competitive markets like Gaming, Professional Visualization, Datacenter, and Automotive, with ongoing intensification from competitors." — [[nvda]] 10-K 2016-03-17, Item 1A Risk Factors
 - "NVIDIA relies on third-party foundries and subcontractors for manufacturing, assembly, testing, and packaging, leading to risks in supply, quality, and cost." — NVDA 10-K 2016-03-17, Item 1A Risk Factors
 - "System security and data protection breaches, as well as cyber-attacks, are identified as significant threats that could disrupt operations and damage reputation." — NVDA 10-K 2016-03-17, Item 1A Risk Factors

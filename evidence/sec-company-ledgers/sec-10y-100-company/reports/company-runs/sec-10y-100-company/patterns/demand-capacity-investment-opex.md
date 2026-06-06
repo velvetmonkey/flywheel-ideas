@@ -37,7 +37,7 @@ Demand is now connected to accepted lesson evidence through the capacity investm
   - Lesson: Retail demand pressure becomes decision-grade when negative comparable sales create cost deleverage, not only when headline revenue declines.
   - Evidence: 1 accepted verdict(s), outcome(s) out-7F4mfxw6
   - Context: HD reported increased depreciation and amortization, including deleverage from a negative comparable sales environment.
-- **WBD / Demand**
+- **[[wbd]] / Demand**
   - Lesson: Media demand risk is decision-grade when revenue softness flows through content expense, participant payments, or impairment language rather than only audience commentary.
   - Evidence: 1 accepted verdict(s), outcome(s) out-awfUrwLp
   - Context: WBD reported a 41% decrease in theatrical product content expense tied to lower theatrical product revenue and a games-content impairment.
@@ -49,7 +49,7 @@ Demand is now connected to accepted lesson evidence through the capacity investm
   - Lesson: Demand risk in telecom can be triggered by partner hardware failures; OEM recalls should be linked to revenue recognition and inventory impairment review.
   - Evidence: 1 accepted verdict(s), outcome(s) out-1UVkXkKo
   - Context: TMUS recorded no revenue associated with recalled device sales and impaired the devices to net realizable value.
-- **DIS / Demand**
+- **[[dis]] / Demand**
   - Lesson: Experience and media demand assumptions should track revenue and operating-income shocks together because attendance, production, advertising, and distribution disruptions can compound into enterprise-level losses.
   - Evidence: 1 accepted verdict(s), outcome(s) out-bDqnUbbv
   - Context: The filing disclosed quarterly revenues decreased 42%, or $8.5 billion, to $11.8 billion, while net income attributable to Disney decreased $6.5 billion to a $4.7 billion loss.

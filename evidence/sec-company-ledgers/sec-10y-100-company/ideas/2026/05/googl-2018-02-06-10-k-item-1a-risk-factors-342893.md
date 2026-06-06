@@ -44,7 +44,7 @@ Our ongoing investment in new businesses and new products, services, and technol
 
 We have invested and expect to continue to invest in new businesses, products, services, and technologies. The creation of Alphabet as a holding company in 2015
 
-and the investments that we are making across various areas in Google and Other Bets are a reflection of our ongoing efforts to innovate and provide products and services that are useful to users.
+and the investments that we are making across various areas in [[googl|Google]] and Other Bets are a reflection of our ongoing efforts to innovate and provide products and services that are useful to users.
 
 Such endeavors may involve significant risks and uncertainties, including insufficient revenues from such investments to offset any new liabilities assumed and expenses associated with these new investments, inadequate return of capital on our investments, distraction of management from current operations, use of alternative investment or compensation structures, and unidentified issues not discovered in our due diligence of such strategies and offerings that could cause us to fail to realize the anticipated benefits of such investments and incur unanticipated liabilities. Because these new ventures are inherently risky, no assurance can be given that such strategies and offerings will be successful and will not adversely affect our reputation, financial condition, and operating results.
 

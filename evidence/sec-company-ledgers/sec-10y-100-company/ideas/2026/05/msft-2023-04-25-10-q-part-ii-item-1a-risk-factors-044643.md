@@ -42,7 +42,7 @@ The European Commission ("the Commission") closely scrutinizes the design of hig
 
 Our portfolio of first-party devices continues to grow; at the same time our OEM partners offer a large variety of devices for our platforms. As a result, increasingly we both cooperate and compete with our OEM partners, creating a risk that we fail to do so in compliance with competition rules. Regulatory scrutiny in this area may increase. Certain foreign governments, particularly in China and other countries in Asia, have advanced arguments under their competition laws that exert downward pressure on royalties for our intellectual property.
 
-Government regulatory actions and court decisions such as these may result in fines or hinder our ability to provide the benefits of our software to consumers and businesses, reducing the attractiveness of our products and the revenue that comes from them. New competition law actions could be initiated, potentially using previous actions as precedent. The outcome of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
+Government regulatory actions and court decisions such as these may result in fines or hinder our ability to provide the benefits of our software to consumers and businesses, reducing the attractiveness of our products and the revenue that comes from them. New competition law actions could be initiated, potentially using previous actions as precedent. The [[outcome]] of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including:
 
 •
 

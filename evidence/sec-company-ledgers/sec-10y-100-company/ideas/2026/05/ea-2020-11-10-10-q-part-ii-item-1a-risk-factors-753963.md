@@ -46,7 +46,7 @@ Our development process usually starts with particular platforms and distributio
 
 Negative perceptions about our business, products and services and the communities within our products and services may damage our business, and we may incur costs to address concerns.
 
-Expectations regarding the quality, performance and integrity of our products and services are high. Players have sometimes been critical of our brands, products, services, online communities, business models and/or business practices for a wide variety of reasons, including perceptions about gameplay fun, fairness, game content, features or services, or objections to certain of our business practices. These negative responses may not be foreseeable. We also may not effectively manage these responses because of reasons within or outside of our control. For example, we have included in certain games the ability for players to
+Expectations regarding the quality, performance and integrity of our products and services are high. Players have sometimes been critical of our brands, products, services, online communities, business models and/or business practices for a wide variety of reasons, including perceptions about gameplay fun, fairness, game content, [[features]] or services, or objections to certain of our business practices. These negative responses may not be foreseeable. We also may not effectively manage these responses because of reasons within or outside of our control. For example, we have included in certain games the ability for players to
 
 48
 
@@ -56,7 +56,7 @@ purchase digital items, including in some instances virtual "packs", "boxes" or 
 
 In addition, we aim to offer our players safe, inclusive and fulfilling environments in which to play. We may not be able to maintain healthy, long-term online communities within our games and services as a result of the use of those communities as forums for harassment or bullying, our inability to successfully discourage overuse of our games and services or overspending within our games and services, or the successful implementation of cheating programs. Although we expend resources, and expect to continue to expend resources, to promote positive play, our efforts may not be successful due to scale, limitations of existing technologies or other factors.
 
-Negative sentiment about gameplay fairness, our online communities, our business practices, business models or game content also can lead to investigations or increased scrutiny from governmental bodies and consumer groups, as well as litigation, which, regardless of their outcome, may be costly, damaging to our reputation and harm our business.
+Negative sentiment about gameplay fairness, our online communities, our business practices, business models or game content also can lead to investigations or increased scrutiny from governmental bodies and consumer groups, as well as litigation, which, regardless of their [[outcome]], may be costly, damaging to our reputation and harm our business.
 
 During the transition period to new console systems, our operating results may be more volatile.
 

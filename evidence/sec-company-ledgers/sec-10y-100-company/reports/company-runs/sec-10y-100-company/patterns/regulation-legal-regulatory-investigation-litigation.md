@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.079Z'
 - Theme: Regulation and legal
 - Mechanism: Regulatory investigation or litigation
 - Sectors: Communication Services, Consumer Discretionary, Consumer Staples, Information Technology
-- Companies: AAPL, MAR, MCD, META, MO, MSFT, PG, SBUX, T
+- Companies: [[aapl]], [[mar]], MCD, META, MO, [[msft]], PG, SBUX, T
 - Observations: 615
 - Realized candidates: 1
 - Accepted lessons: 5
@@ -39,7 +39,7 @@ Regulation and legal is now connected to accepted lesson evidence through the re
   - Lesson: Media-production regulation assumptions should track production shutdowns and reopening compliance costs because restrictions can impair both content supply and operating margins.
   - Evidence: 1 accepted verdict(s), outcome(s) out-sTpYBDUQ
   - Context: The filing disclosed third-party production partners were shut down during most of the second quarter of 2020 due to COVID-19 restrictions, and after reopening the company incurred additional costs to comply with governmental regulations and safety measures.
-- **DIS / Regulation and legal**
+- **[[dis]] / Regulation and legal**
   - Lesson: Experience-business regulation assumptions should track operating restrictions and compliance-cost burdens because rules can affect both revenue availability and cost structure.
   - Evidence: 1 accepted verdict(s), outcome(s) out-HR8ZaBsU
   - Context: The filing disclosed that reopening or closure of Disney businesses depended on changing government requirements and that reopened businesses incurred additional costs to address regulations and safety of employees, talent, and guests.

@@ -272,7 +272,7 @@ Key Customers
 
 . Our customers include mass merchandisers, e-commerce (including social commerce) channels, grocery stores, membership club stores, drug stores, department stores, distributors, wholesalers, specialty beauty stores (including airport duty-free stores), high-frequency stores, pharmacies, electronics stores and professional channels. We also sell direct to consumers. Sales to Walmart Inc. and its affiliates represent approximately 15% of our total sales in 2022, 2021 and 2020. No other customer represents more than 10% of our total sales. Our top ten customers accounted for approximately 39% of our total sales in 2022, 39% in 2021 and 38% in 2020.
 
-Sources and Availability of Materials
+Sources and Availability of [[materials]]
 
 . Almost all of the raw and packaging materials used by the Company are purchased from third parties, some of whom are single-source suppliers. We produce certain raw materials, primarily chemicals, for further use in the manufacturing process. In addition, fuel, natural gas and derivative products are important commodities consumed in our manufacturing processes and in the transportation of input materials and finished products. The prices we pay for materials and other commodities are subject to fluctuation. When prices for these items change, we may or may not pass the change to our customers. The Company purchases a substantial variety of other raw and packaging materials, none of which are material to our business taken as a whole.
 

@@ -48,7 +48,7 @@ achieving or maintaining certain outcomes or compliance with other obligations a
 
 •
 
-availability and quality of materials, supplies, and capital equipment and dependency on third-party service providers;
+availability and quality of [[materials]], supplies, and capital equipment and dependency on third-party service providers;
 
 •
 

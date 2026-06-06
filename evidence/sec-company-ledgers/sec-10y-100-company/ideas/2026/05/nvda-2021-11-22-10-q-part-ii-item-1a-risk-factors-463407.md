@@ -30,7 +30,7 @@ a lack of guaranteed supply of wafers, components and capacity and potential hig
 
 •
 
-a failure by our foundries or contract manufacturers to procure raw materials or to provide or allocate adequate, or any, manufacturing or test capacity for our products;
+a failure by our foundries or contract manufacturers to procure raw [[materials]] or to provide or allocate adequate, or any, manufacturing or test capacity for our products;
 
 •
 
@@ -54,7 +54,7 @@ delays in product shipments, shortages, a decrease in product quality and/or hig
 
 In addition, low manufacturing yields could have an adverse effect on our ability to meet customer demand, increase manufacturing costs, harm customer or partner relationships, and/or negatively impact our business operations, gross margin, revenue and/or financial results. Manufacturing yields for our products are a function of product design, which is developed largely by us, and process technology, which typically is proprietary to the foundry. Low yields may result from either product design or process technology failure. We do not know whether a yield problem will exist until our design is actually manufactured by the foundry. As a result, yield problems may not be identified until well into the manufacturing process and require us and the foundry to cooperate to resolve the problem.
 
-We also rely on third-party software development tools to assist us in the design, simulation and verification of new products or product enhancements, and to bring such new products and enhancements to market in a timely manner. In the past, we have experienced delays in the introduction of products and enhancements as a result of the inability of then available software development tools to fully simulate the complex features and functionalities of our products. The design requirements necessary to meet consumer demands for more features and greater functionality from our products may exceed the capabilities of available software development tools. If we miss design cycles or lose design wins due to the unavailability of such software development tools, we could lose market share and our revenues could decline. If we fail to achieve design wins for our products, our business will be harmed.
+We also rely on third-party software development tools to assist us in the design, simulation and verification of new products or product enhancements, and to bring such new products and enhancements to market in a timely manner. In the past, we have experienced delays in the introduction of products and enhancements as a result of the inability of then available software development tools to fully simulate the complex [[features]] and functionalities of our products. The design requirements necessary to meet consumer demands for more features and greater functionality from our products may exceed the capabilities of available software development tools. If we miss design cycles or lose design wins due to the unavailability of such software development tools, we could lose market share and our revenues could decline. If we fail to achieve design wins for our products, our business will be harmed.
 
 34
 

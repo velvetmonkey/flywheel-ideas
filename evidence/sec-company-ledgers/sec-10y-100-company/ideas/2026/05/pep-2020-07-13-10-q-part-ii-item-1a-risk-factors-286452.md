@@ -934,7 +934,7 @@ Accounts and notes receivable, less allowance: 6/20 - $235 and 12/19 - $105
 
 Inventories:
 
-Raw materials and packaging
+Raw [[materials]] and packaging
 
 1,869
 
@@ -1908,7 +1908,7 @@ June 13, 2020
 
 are not necessarily indicative of the results expected for any future period or the full year.
 
-Preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. The business and economic uncertainty resulting from the novel coronavirus (COVID-19) pandemic has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and outcomes could differ from those estimates.
+Preparation of our condensed consolidated financial statements requires management to make estimates and assumptions that affect the amounts reported in our condensed consolidated financial statements and related disclosures. The business and economic uncertainty resulting from the novel coronavirus (COVID-19) pandemic has made such estimates and assumptions more difficult to calculate. Accordingly, actual results and [[outcome|outcomes]] could differ from those estimates.
 
 While our financial results in
 

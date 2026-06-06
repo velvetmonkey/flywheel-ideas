@@ -14,7 +14,7 @@ Source: https://www.sec.gov/Archives/edgar/data/1413329/000141332923000025/pm-20
 
 Risk Factors.
 
-The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual outcome of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
+The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks could materially adversely affect our business, our operating results, our financial condition and the actual [[outcome]] of matters as to which forward-looking statements are made in this Annual Report on Form 10-K.
 
 Forward-Looking and Cautionary Statements
 

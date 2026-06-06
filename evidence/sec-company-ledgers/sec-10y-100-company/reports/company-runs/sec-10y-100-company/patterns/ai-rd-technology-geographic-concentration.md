@@ -17,7 +17,7 @@ created: '2026-05-08T16:38:08.093Z'
 - Theme: AI, R&D, and technology
 - Mechanism: Geographic concentration or local disruption
 - Sectors: Communication Services, Consumer Discretionary
-- Companies: ABNB, GOOGL, NFLX
+- Companies: ABNB, [[googl]], [[nflx]]
 - Observations: 99
 - Realized candidates: 0
 - Accepted lessons: 4
@@ -35,7 +35,7 @@ AI, R&D, and technology is now connected to accepted lesson evidence through the
   - Lesson: Technology/R&D exposure becomes falsified when strategic cost resets require quantified restructuring and severance charges rather than normal operating adjustment.
   - Evidence: 1 accepted verdict(s), outcome(s) out-TJEZc2NV
   - Context: Micron disclosed $171M of restructuring charges in 2023, primarily related to employee severance, while pursuing a plan expected to generate cost savings.
-- **MSFT / AI, R&D, and technology**
+- **[[msft]] / AI, R&D, and technology**
   - Lesson: AI/R&D assumptions should separate productive investment from impairment-backed cost pressure; both can rise together and change the risk profile.
   - Evidence: 1 accepted verdict(s), outcome(s) out-JiCcBcGp
   - Context: The filing disclosed operating expenses increased $236 million, driven by Gaming impairment charges and R&D investments in compute capacity and AI talent.

@@ -210,7 +210,7 @@ our expectation that we will continue paying comparable cash dividends on a quar
 
 our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the
 
-final outcome of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, our assumptions regarding the potential U.S. income tax liability associated with any repatriation of our
+final [[outcome]] of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, our assumptions regarding the potential U.S. income tax liability associated with any repatriation of our
 
 undistributed earnings held by our foreign subsidiaries, and our belief that our net deferred tax assets will be realized in the foreseeable future;
 

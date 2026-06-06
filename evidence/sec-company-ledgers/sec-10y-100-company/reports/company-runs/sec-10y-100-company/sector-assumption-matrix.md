@@ -30,7 +30,7 @@ created: '2026-05-08T16:38:07.628Z'
 
 ## Shared Assumptions Across Companies
 
-- **Demand** appears across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT with 2785 observation(s).
+- **Demand** appears across [[aapl]], ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, [[googl]], HD, INTC, KO, LOW, MAR, MCD, META, MO, [[msft]], MU, NFLX, [[nvda]], ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, [[tsla]], VZ, WBD, WMT with 2785 observation(s).
 - **Liquidity** appears across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT with 2606 observation(s).
 - **Regulation and legal** appears across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT with 2374 observation(s).
 - **Macro and foreign exchange** appears across AAPL, ABNB, AMD, AMZN, AVGO, BKNG, CMCSA, COST, CSCO, DIS, EA, GOOGL, HD, INTC, KO, LOW, MAR, MCD, META, MO, MSFT, MU, NFLX, NVDA, ORCL, PEP, PG, PLTR, PM, SBUX, T, TJX, TMUS, TSLA, VZ, WBD, WMT with 2109 observation(s).

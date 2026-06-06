@@ -12,7 +12,7 @@ created: '2026-05-03T19:35:54.687Z'
 Filed: 2025-02-05
 Source: https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm
 
-The risks and uncertainties described below are not the only ones we face. If any of the following risks actually occurs, our business, financial condition or results of operations could be materially adversely affected. In addition, you should consider the interrelationship and compounding effects of two or more risks occurring simultaneously.
+The risks and uncertainties described below are not the only ones we face. If any of the following risks actually occurs, our business, financial condition or results of operations could be [[materials|materially]] adversely affected. In addition, you should consider the interrelationship and compounding effects of two or more risks occurring simultaneously.
 
 Risk Factors Summary
 
@@ -42,7 +42,7 @@ The demand for our products depends in part on the market conditions in the indu
 
 ◦
 
-The success of our business depends on our ability to introduce products on a timely basis with features and performance levels that provide value to our customers while supporting significant industry transitions.
+The success of our business depends on our ability to introduce products on a timely basis with [[features]] and performance levels that provide value to our customers while supporting significant industry transitions.
 
 ◦
 
@@ -72,7 +72,7 @@ We rely on third parties to manufacture our products, and if they are unable to 
 
 ◦
 
-Essential equipment, materials, substrates or manufacturing processes may not be available to us.
+Essential equipment, [[materials]], substrates or manufacturing processes may not be available to us.
 
 ◦
 
@@ -226,7 +226,7 @@ Nvidia's Data Center GPU market share position, significant financial resources,
 
 The markets in which our products are sold are highly competitive and rapidly evolving.
 
-The markets in which our products are sold are highly competitive and rapidly evolving. We expect that competition will continue to be intense due to rapid technological changes, new and evolving industry standards, changing customer preferences and requirements, and frequent introductions by our competitors or new competitors of products that may provide better performance/experience or that may include additional features that render our products comparatively less competitive.
+The markets in which our products are sold are highly competitive and rapidly evolving. We expect that competition will continue to be intense due to rapid technological changes, new and evolving industry standards, changing customer preferences and requirements, and frequent introductions by our competitors or new competitors of products that may provide better performance/experience or that may include additional [[features]] that render our products comparatively less competitive.
 
 In addition, we are entering markets with current and new competitors who may be able to adapt more quickly to customer requirements and emerging technologies. For example, the AI market is subject to rapid technological change, product obsolescence, frequent new product introductions and feature enhancements, changes in end-user requirements and evolving industry trends and legal standards. We cannot guarantee that we will be able to compete successfully against current or new competitors who may have stronger positions in these new markets or superior ability to anticipate customer requirements and emerging industry trends. While we see significant opportunity in AI, we expect intense competition from companies such as Nvidia in the supply of GPUs and other accelerators for the AI market. We may face competition from some of our customers who internally develop the same products as us. Increased adoption of Arm-based semiconductor designs could lead to further growth and development of the Arm ecosystem. We may also face delays or disruptions in research and development efforts, or we may be required to invest significantly greater resources in research and development than anticipated. In addition, the semiconductor industry has seen several mergers and acquisitions over the last number of years. Further consolidation could adversely impact our business due to there being fewer suppliers, customers and partners in the industry.
 

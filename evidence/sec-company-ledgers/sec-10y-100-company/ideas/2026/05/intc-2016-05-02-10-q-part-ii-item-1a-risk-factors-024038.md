@@ -18,7 +18,7 @@ The risks described in Part I, Item 1A, "Risk Factors," in our Annual Report on 
 
 December 26, 2015
 
-, could materially and adversely affect our business, financial condition and results of operations, and the trading price of our common stock could decline. These risk factors do not identify all risks that we face - our operations could also be affected by factors that are not presently known to us or that we currently consider to be immaterial to our operations. Due to risks and uncertainties, known and unknown, our past financial results may not be a reliable indicator of future performance and historical trends should not be used to anticipate results or trends in future periods. The Risk Factors section of our
+, could materially and adversely affect our business, [[financials|financial]] condition and results of operations, and the trading price of our common stock could decline. These risk factors do not identify all risks that we face - our operations could also be affected by factors that are not presently known to us or that we currently consider to be immaterial to our operations. Due to risks and uncertainties, known and unknown, our past [[financials|financial]] results may not be a reliable indicator of future performance and historical trends should not be used to anticipate results or trends in future periods. The Risk Factors section of our
 
 2015
 

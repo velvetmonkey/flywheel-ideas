@@ -130,7 +130,7 @@ users increasingly engage with other competitive products or services;
 
 •
 
-we fail to introduce new features, products, or services that users find engaging or if we introduce new products or services, or make changes to existing products and services, that are not favorably received;
+we fail to introduce new [[features]], products, or services that users find engaging or if we introduce new products or services, or make changes to existing products and services, that are not favorably received;
 
 •
 

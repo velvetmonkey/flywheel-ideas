@@ -30,7 +30,7 @@ Table of Contents
 
 Competition for the cable services we offer consists primarily of companies that typically offer
 
-features, pricing and packaging for services comparable to our video, high-speed Internet and voice services, such as DBS providers and phone companies with fiber-based networks. In 2015, AT&T, our largest phone company competitor, acquired
+[[features]], pricing and packaging for services comparable to our video, high-speed Internet and voice services, such as DBS providers and phone companies with fiber-based networks. In 2015, AT&T, our largest phone company competitor, acquired
 
 DirecTV, the nations largest DBS provider, which created an even larger competitor.
 
@@ -42,7 +42,7 @@ continue to face increased competition from wireless and Internet-based phone se
 
 There also continue to be new entrants, some with significant financial resources, that potentially may compete with our cable services. In
 
-particular, Google, which has launched high-speed Internet and video services in a limited number of areas, has announced plans to expand in more areas, including in some of our significant markets. As Google expands to more areas, we expect it to
+particular, [[googl|Google]], which has launched high-speed Internet and video services in a limited number of areas, has announced plans to expand in more areas, including in some of our significant markets. As [[googl|Google]] expands to more areas, we expect it to
 
 become a meaningful wireline competitor to our high-speed Internet and video services. In addition, some local municipalities are launching their own fiber-based high-speed Internet services. Companies that provide subscription video on demand
 
@@ -170,4 +170,4 @@ and local levels, including laws and regulations relating to environmental prote
 
 and the NBCUniversal Consent Decree, which have imposed numerous conditions on our businesses relating to the treatment of competitors and other matters. Failure to comply with the laws and regulations applicable to our businesses could result in
 
-administrative enforcement actions, fines, and civil and criminal liability. For a more extensive discussion of the significant risks associated with the regulation of our businesses, see Item 1, Business and refer to the Legislation and
+administrative enforcement actions, fines, and civil and criminal liability. For a more extensive discussion of the significant risks associated with the regulation of our businesses, see Item 1, Business and refer to the Le

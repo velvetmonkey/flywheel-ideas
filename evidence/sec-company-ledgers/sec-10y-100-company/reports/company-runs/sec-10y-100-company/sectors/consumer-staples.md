@@ -12,9 +12,9 @@ created: '2026-05-08T16:38:07.704Z'
 ---
 # Consumer Staples sec-10y-100-company
 
-- Companies: CL, COST, KO, MDLZ, MNST, MO, PEP, PG, PM, WMT
+- Companies: CL, COST, KO, MDLZ, MNST, MO, [[pep]], PG, PM, [[wmt]]
 - Observations: 3899
-- Staged outcomes: 6
+- Staged [[outcome|outcomes]]: 6
 
 ## Companies
 

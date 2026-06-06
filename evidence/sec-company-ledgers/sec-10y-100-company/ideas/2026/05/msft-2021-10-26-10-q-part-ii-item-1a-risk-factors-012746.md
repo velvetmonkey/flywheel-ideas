@@ -30,7 +30,7 @@ product offering decisions or public policy positions. Damage to our reputation 
 
 •
 
-The introduction of new features, products, services, or terms of service that customers, users, or partners do not like.
+The introduction of new [[features]], products, services, or terms of service that customers, users, or partners do not like.
 
 •
 
@@ -132,7 +132,7 @@ we use to develop software and provide cloud-based services.
 
 Our global business exposes us to operational and economic risks.
 
-Our customers are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Our results of operations may be affected by global, regional, and local economic developments, monetary policy, inflation, and recession, as well as political and military disputes. In addition, our international growth strategy includes certain markets, the developing nature of which presents several risks, including deterioration of social, political, labor, or economic conditions in a country or region, and difficulties in staffing and managing foreign operations. Emerging nationalist and protectionist trends
+Our customers are located throughout the world and a significant part of our revenue comes from international sales. The global nature of our business creates operational, economic, and geopolitical risks. Our results of operations may be affected by global, regional, and local economic developments, monetary policy, inflation, and recession, as well as political and military [[disputes]]. In addition, our international growth strategy includes certain markets, the developing nature of which presents several risks, including deterioration of social, political, labor, or economic conditions in a country or region, and difficulties in staffing and managing foreign operations. Emerging nationalist and protectionist trends
 
 and concerns about human rights and political expression
 

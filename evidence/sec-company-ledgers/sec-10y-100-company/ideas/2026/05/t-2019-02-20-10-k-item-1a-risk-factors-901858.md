@@ -46,7 +46,7 @@ regulations or related court decisions.
 
 ·
 
-The final outcome of FCC and other federal, state or foreign government agency proceedings (including judicial
+The final [[outcome]] of FCC and other federal, state or foreign government agency proceedings (including judicial
 
 review, if any, of such proceedings) involving issues that are important to our business, including, without limitation, special access and business data services; pending Notices of Apparent Liability; the transition from legacy technologies to
 

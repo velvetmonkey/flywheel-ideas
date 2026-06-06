@@ -30,7 +30,7 @@ Information on Share Repurchases
 
 The number of shares of
 
-common stock repurchased by TJX during the first quarter of fiscal 2019 and the average price paid per share are as follows:
+common stock repurchased by [[tjx]] during the first quarter of fiscal 2019 and the average price paid per share are as follows:
 
 Total
 
@@ -156,7 +156,7 @@ Certification of Chief Executive Officer pursuant to Section 302 of the Sarbanes
 
 31.2
 
-Certification of Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.
+Certification of Chief [[financials|Financial]] Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.
 
 32.1
 
@@ -168,7 +168,7 @@ Certification of Chief Financial Officer pursuant to Section 906 of the Sarbanes
 
 101
 
-The following materials from The TJX Companies, Inc.s Quarterly Report on Form
+The following [[materials]] from The TJX Companies, Inc.s Quarterly Report on Form
 
 10-Q
 

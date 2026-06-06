@@ -378,7 +378,7 @@ Leaf tobacco
 
 2,052
 
-Other raw materials
+Other raw [[materials]]
 
 2,155
 
@@ -1584,6 +1584,6 @@ Basis of Presentation
 
 The interim condensed consolidated financial statements of PMI are unaudited. These interim condensed consolidated financial statements have been prepared in conformity with accounting principles generally accepted in the United States of America ("U.S. GAAP") and such principles are applied on a consistent basis. It is the opinion of PMI's management that all adjustments necessary for a fair statement of the interim results presented have been reflected therein. All such adjustments were of a normal recurring nature. Net revenues and net earnings attributable to PMI for any interim period are not necessarily indicative of results that may be expected for the entire year.
 
-PMI has analyzed the impact of the Coronavirus pandemic ("COVID-19") on its financial statements as of March 31, 2020. PMI has determined that the changes to its significant judgements and estimates did not have a material impact with respect to goodwill, intangible assets, long-lived assets or its hedge accounting activities. Additionally, PMI believes that the modification of certain customer payment terms has not changed its assessment of collectability and therefore, there has been no material impact on PMI's revenue recognition.
+PMI has analyzed the impact of the Coronavirus pandemic ("COVID-19") on its financial statements as of March 31, 2020. PMI has determined that the changes to its significant judgements and estimates did not have a [[materials|material]] impact with respect to goodwill, intangible assets, long-lived assets or its hedge accounting activities. Additionally, PMI believes that the modification of certain customer payment terms has not changed its assessment of collectability and therefore, there has been no material impact on PMI's revenue recognition.
 
 As of

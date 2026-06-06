@@ -236,7 +236,7 @@ the sufficiency of our sources of funding for working capital, capital expenditu
 
 •
 
-our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the final outcome of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, our belief that our net deferred tax assets will likely be realized in the foreseeable future, and our expectations regarding the "Build Back Better Act" budget reconciliation bill;
+our belief that we have adequately provided under U.S. generally accepted accounting principles for outcomes related to our tax audits and that the final [[outcome]] of our tax-related examinations, agreements or judicial proceedings will not have a material effect on our results of operations, our belief that our net deferred tax assets will likely be realized in the foreseeable future, and our expectations regarding the "Build Back Better Act" budget reconciliation bill;
 
 •
 

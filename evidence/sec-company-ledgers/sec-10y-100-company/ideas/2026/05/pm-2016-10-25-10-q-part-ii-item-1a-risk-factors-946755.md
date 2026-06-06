@@ -42,9 +42,9 @@ In this report, "PMI," "we," "us" and "our" refer to Philip Morris International
 
 Table of Contents
 
-PART I – FINANCIAL INFORMATION
+PART I – [[financials|FINANCIAL]] INFORMATION
 
-Item 1. Financial Statements.
+Item 1. [[financials|Financial]] Statements.
 
 Philip Morris International Inc. and Subsidiaries
 
@@ -88,7 +88,7 @@ Leaf tobacco
 
 2,640
 
-Other raw materials
+Other raw [[materials]]
 
 1,566
 
@@ -1568,4 +1568,4 @@ Segment Reporting
 
 . The changes did not have an impact on PMI's consolidated financial position, results of operations or cash flows in any of the periods presented.
 
-These statements should be read in conjunction with the audited consolidated financial statements and related notes, which appear in PMI's Annual Report on Form 10-K for the year ended
+These statements should be read in conjunction with the audited consolidated financial statements and related notes, which appear in PMI's Annual Report on Form 10-K 

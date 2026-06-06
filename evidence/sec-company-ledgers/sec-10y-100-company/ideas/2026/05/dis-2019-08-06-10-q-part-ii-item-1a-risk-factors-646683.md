@@ -32,7 +32,7 @@ The increased indebtedness could have the effect of, among other things, reducin
 
 Risks that impact our business as a whole may also impact the success of our direct-to-consumer business.
 
-We may not successfully execute on technology development, service promotion, or creative development. Consumers may not be willing to pay for an expanding set of Direct-to-Consumer (DTC) services, potentially exacerbated by an economic downturn. We face competition for creative talent and may not be successful in recruiting and retaining talent. Government regulation, including revised foreign content and ownership regulations, may impact the implementation of our DTC business plans. Poor quality broadband infrastructure in certain markets may impact our customers' access to our DTC products and may diminish our customers' experience with our DTC products. These and other risks may impact the profitability and success of our DTC businesses.
+We may not successfully execute on technology development, service [[promotion]], or creative development. Consumers may not be willing to pay for an expanding set of Direct-to-Consumer (DTC) services, potentially exacerbated by an economic downturn. We face competition for creative talent and may not be successful in recruiting and retaining talent. Government regulation, including revised foreign content and ownership regulations, may impact the implementation of our DTC business plans. Poor quality broadband infrastructure in certain markets may impact our customers' access to our DTC products and may diminish our customers' experience with our DTC products. These and other risks may impact the profitability and success of our DTC businesses.
 
 Additional factors are discussed in the
 

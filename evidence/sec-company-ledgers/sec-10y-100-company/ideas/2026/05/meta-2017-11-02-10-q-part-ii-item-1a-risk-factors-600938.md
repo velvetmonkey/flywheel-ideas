@@ -68,7 +68,7 @@ there are adverse changes in our products that are mandated by legislation, regu
 
 •
 
-there is decreased engagement or acceptance of product features on our service, or decreased acceptance of our terms of service, as part of changes that may be implemented in connection with the General Data Protection Regulation (GDPR) in Europe;
+there is decreased engagement or acceptance of product [[features]] on our service, or decreased acceptance of our terms of service, as part of changes that may be implemented in connection with the General Data Protection Regulation (GDPR) in Europe;
 
 •
 
