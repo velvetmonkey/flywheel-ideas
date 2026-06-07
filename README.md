@@ -344,6 +344,27 @@ Those evaluations show that the system can identify and track load-bearing assum
 - **[flywheel-geometry](https://github.com/velvetmonkey/flywheel-geometry)** — geodesic retrieval extension. v0.1 pre-registered falsifier **resolved FAIL 2026-05-10** ([postmortem](https://github.com/velvetmonkey/flywheel-geometry/blob/main/docs/trial2-postmortem.md)); successor research lane at [flywheel-concept](https://github.com/velvetmonkey/flywheel-concept).
 - **[flywheel-concept](https://github.com/velvetmonkey/flywheel-concept)** — research programme on whether cross-model activations reveal structured concept geometry.
 
+## Related repositories
+
+Part of the **Flywheel suite** — local-first knowledge infrastructure over a plain-markdown Obsidian vault:
+
+- [vault-core](https://github.com/velvetmonkey/vault-core) — Shared infrastructure for the Flywheel ecosystem.
+- [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) — Persistent knowledge-graph memory MCP server: semantic search, read, and write over your vault.
+- [flywheel-crank](https://github.com/velvetmonkey/flywheel-crank) — Desktop window into your vault's Flywheel MCP server.
+- [flywheel-gravity](https://github.com/velvetmonkey/flywheel-gravity) — A compressed, reality-filtered context field over a vault.
+- **flywheel-ideas** (this repo) — Local-first decision ledger: falsifiable bets, accepted outcomes, reusable lessons.
+- [mega-monkey](https://github.com/velvetmonkey/mega-monkey) — Telegram-native AI research cockpit over an Obsidian vault.
+- [roundtable](https://github.com/velvetmonkey/roundtable) — Local MCP server for delegating tasks to multiple AI models.
+
+Research and experiments:
+
+- [flywheel-concept](https://github.com/velvetmonkey/flywheel-concept) — A falsifiable study of cross-model concept geometry.
+- [flywheel-geometry](https://github.com/velvetmonkey/flywheel-geometry) — A pre-registered study of cross-domain knowledge retrieval.
+- [flywheel-universe](https://github.com/velvetmonkey/flywheel-universe) — Lean 4 / Mathlib-verified core of the descent argument.
+- [flywheel-velvetgram](https://github.com/velvetmonkey/flywheel-velvetgram) — Local widescreen Telegram reader for long-form reading.
+
+Verified-cognition demo: [mcp-seal](https://github.com/velvetmonkey/mcp-seal) (verified MCP approval gate) and [canary](https://github.com/velvetmonkey/canary) (the seal demo host).
+
 ## License
 
 Apache-2.0
